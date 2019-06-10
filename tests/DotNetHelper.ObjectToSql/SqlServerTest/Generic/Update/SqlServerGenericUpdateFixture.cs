@@ -1,0 +1,37 @@
+﻿using System.Text;
+using DotNetHelper.ObjectToSql.Enum;
+using DotNetHelper.ObjectToSql.Exceptions;
+using DotNetHelper.ObjectToSql.Tests.Models;
+using NUnit.Framework;
+
+namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
+{
+    public class SqlServerGenericUpdateFixture
+    {
+
+        public StringBuilder StringBuilder { get; set; }
+
+        [SetUp]
+        public void Setup()
+        {
+            StringBuilder = new StringBuilder();
+        }
+        [TearDown]
+        public void Teardown()
+        {
+            StringBuilder.Clear();
+        }
+
+        [Test]
+        public void Test_Generic_BuildUpdateQuery_Ensure_MissingKeyException_Is_Thrown()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            Assert.That(() => sqlServerObjectToSql.BuildUpdateQuery<Employee>(StringBuilder, nameof(Employee)),
+                Throws.Exception
+                    .TypeOf<MissingKeyAttributeException>());
+        }
+
+
+
+    }
+}
