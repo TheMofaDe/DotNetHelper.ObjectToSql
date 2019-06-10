@@ -138,9 +138,13 @@ Task("Test")
     foreach(var project in projects)
     {
         foreach(var targetFramework in MyProject.TargetFrameworks){
+
+
+		var tf = targetFramework.Replace("netstandard","netcoreapp");
+		var coverageFile = parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage-{tf}.xml";
         var settings = new DotNetCoreTestSettings
         {
-            Framework = targetFramework,
+            Framework = tf,
             NoBuild = true,
             NoRestore = true,
             Configuration = parameters.Configuration,
@@ -155,16 +159,34 @@ Task("Test")
             settings.Filter = "TestCategory!=NoMono";
         }
 
-		var openCoverSettings = new OpenCoverSettings {
-										 OldStyle = false,
-									     MergeOutput = true
-								}.WithFilter("+[*]* -[*.Tests*]*");
-	    OpenCover(context => context.DotNetCoreTest(project.FullPath, settings), parameters.Paths.Files.TestCoverageOutputFilePath, openCoverSettings);
+        //DotNetCoreTest(project.FullPath,  settings);
 
-        DotNetCoreTest(project.FullPath,  settings);
+		var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + tf + "/*DotNetHelper.ObjectToSql.Tests.dll");
+
+		var nunitSettings = new NUnit3Settings
+		{
+		    Results = new List<NUnit3Result> { new NUnit3Result { FileName = parameters.Paths.Directories.TestCoverageOutput + $"/TestResult-{tf}.xml"  } }
+		};
+
+		if(IsRunningOnUnix()) {
+		    nunitSettings.Where = "cat!=NoMono";
+		    nunitSettings.Agents = 1;
+		}
+
+		NUnit3(testAssemblies, nunitSettings);
+
+
+		var openCoverSettings = new OpenCoverSettings {
+										 OldStyle = true,
+									     MergeOutput = false
+								}.WithFilter("+[*]* -[*.Tests*]*")
+								 .WithFilter("-[*NUnit3.*]*");
+	    OpenCover(context => context.DotNetCoreTest(project.FullPath, settings),coverageFile, openCoverSettings);
+
         }
-		//ReportGenerator(parameters.Paths.Files.TestCoverageOutputFilePath,parameters.Paths.Directories.TestCoverageOutput + "/" + "htmlreports");
-    }
+		       //ReportGenerator(coverageFile,parameters.Paths.Directories.TestCoverageOutput + "/" + "htmlreports");
+			//	ReportGenerator(coverageFile,parameters.Paths.Directories.TestCoverageOutput);
+     }
 
 
 });
@@ -524,6 +546,7 @@ Task("Publish-Coverage")
         Codecov(new CodecovSettings {
             Files = new [] { coverageFile.ToString() },
             Token = token
+			//,Required = true
         });
 		Information("Uploading Coverage File --> " + coverageFile.ToString());
     }
