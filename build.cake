@@ -142,14 +142,12 @@ Task("Test")
             Framework = targetFramework,
             NoBuild = true,
             NoRestore = true,
-            Configuration = parameters.Configuration
-        };
+            Configuration = parameters.Configuration,
+		//	OutputDirectory = parameters.Paths.Directories.TestCoverageOutput + "/",
+			ArgumentCustomization = args => args
+			.Append("--results-directory").AppendQuoted("../../" + parameters.Paths.Directories.TestCoverageOutput + "/") 
+            .Append("--collect").AppendQuoted("Code Coverage")
 
-        var coverletSettings = new CoverletSettings {
-            CollectCoverage = true,
-            CoverletOutputFormat = CoverletOutputFormat.opencover,
-            CoverletOutputDirectory = parameters.Paths.Directories.TestCoverageOutput + "/",
-            CoverletOutputName = $"{project.GetFilenameWithoutExtension()}-{targetFramework}.coverage.xml"
         };
 
         if (IsRunningOnUnix())
@@ -157,26 +155,13 @@ Task("Test")
             settings.Filter = "TestCategory!=NoMono";
         }
 
-        DotNetCoreTest(project.FullPath,  settings, coverletSettings);
+        DotNetCoreTest(project.FullPath,  settings);
+
+
         }
     }
 
-    foreach(var targetFramework in MyProject.TargetFrameworks){
-    // run using NUnit
-    var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + targetFramework + "/*.Tests.dll");
 
-    var nunitSettings = new NUnit3Settings
-    {
-        Results = new List<NUnit3Result> { new NUnit3Result { FileName = parameters.Paths.Files.TestCoverageOutputFilePath } }
-    };
-
-    if(IsRunningOnUnix()) {
-        nunitSettings.Where = "cat!=NoMono";
-        nunitSettings.Agents = 1;
-    }
-
-    NUnit3(testAssemblies, nunitSettings);
-    }
 });
 
 
@@ -522,7 +507,7 @@ Task("Publish-Coverage")
     .IsDependentOn("Test")
     .Does<BuildParameters>((parameters) =>
 {
-    var coverageFiles = GetFiles(parameters.Paths.Directories.TestCoverageOutput + "/*.coverage.xml");
+    var coverageFiles = GetFiles(parameters.Paths.Directories.TestCoverageOutput + "/**/*.coverage");
 
     var token = parameters.Credentials.CodeCov.Token;
     if(string.IsNullOrEmpty(token)) {
