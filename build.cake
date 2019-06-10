@@ -134,7 +134,7 @@ Task("Test")
  
 
     // run using dotnet test
-    var projects = GetFiles("./src/**/*.Tests.csproj");
+    var projects = GetFiles("./tests/**/*.Tests.csproj");
     foreach(var project in projects)
     {
         foreach(var targetFramework in MyProject.TargetFrameworks){
