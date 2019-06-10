@@ -25,7 +25,8 @@
 #tool "nuget:?package=GitVersion.CommandLine&version=5.0.0-beta2-95"
 #tool "nuget:?package=docfx.console&version=2.41.0"
 #tool "nuget:?package=WiX.Toolset.UnofficialFork&version=3.11.1"
-//#tool "nuget:?package=WiX.Toolset"
+#tool "nuget:?package=OpenCover&version=4.7.922"
+#tool nuget:?package=ReportGenerator&version=4.0.4
 
 // Install .NET Core Global tools.
 #tool "dotnet:?package=GitReleaseManager.Tool&version=0.8.0"
@@ -133,7 +134,7 @@ Task("Test")
  
 
     // run using dotnet test
-    var projects = GetFiles("./tests/**/*.Tests.csproj");
+    var projects = GetFiles("./src/**/*.Tests.csproj");
     foreach(var project in projects)
     {
         foreach(var targetFramework in MyProject.TargetFrameworks){
@@ -143,11 +144,10 @@ Task("Test")
             NoBuild = true,
             NoRestore = true,
             Configuration = parameters.Configuration,
-		//	OutputDirectory = parameters.Paths.Directories.TestCoverageOutput + "/",
 			ArgumentCustomization = args => args
-			.Append("--results-directory").AppendQuoted("../../" + parameters.Paths.Directories.TestCoverageOutput + "/") 
-            .Append("--collect").AppendQuoted("Code Coverage")
-
+			//.Append("--results-directory").AppendQuoted("../../" + parameters.Paths.Directories.TestCoverageOutput) 
+			//.Append("--collect").AppendQuoted("Code Coverage")
+			//.Append("--logger trx")
         };
 
         if (IsRunningOnUnix())
@@ -155,10 +155,15 @@ Task("Test")
             settings.Filter = "TestCategory!=NoMono";
         }
 
+		var openCoverSettings = new OpenCoverSettings {
+										 OldStyle = false,
+									     MergeOutput = true
+								}.WithFilter("+[*]* -[*.Tests*]*");
+	    OpenCover(context => context.DotNetCoreTest(project.FullPath, settings), parameters.Paths.Files.TestCoverageOutputFilePath, openCoverSettings);
+
         DotNetCoreTest(project.FullPath,  settings);
-
-
         }
+		//ReportGenerator(parameters.Paths.Files.TestCoverageOutputFilePath,parameters.Paths.Directories.TestCoverageOutput + "/" + "htmlreports");
     }
 
 
@@ -507,7 +512,7 @@ Task("Publish-Coverage")
     .IsDependentOn("Test")
     .Does<BuildParameters>((parameters) =>
 {
-    var coverageFiles = GetFiles(parameters.Paths.Directories.TestCoverageOutput + "/**/*.coverage");
+    var coverageFiles = GetFiles(parameters.Paths.Directories.TestCoverageOutput + "/*.xml");
 
     var token = parameters.Credentials.CodeCov.Token;
     if(string.IsNullOrEmpty(token)) {

@@ -41,7 +41,7 @@ public class BuildPaths
 //         var zipArtifactPathDesktop = artifactsDir.CombineWithFilePath("DotNetHelper-Contracts-bin-fullfx-v" + semVersion + ".zip"); // TODO :: Configurable per project
 //         var zipArtifactPathStandard = artifactsDir.CombineWithFilePath("DotNetHelper-Contracts-bin-standardfx-v" + semVersion + ".zip"); // TODO :: Configurable per project
  
-        var testCoverageOutputFilePath = testCoverageOutputDir.CombineWithFilePath("TestResult.xml");
+        var testCoverageOutputFilePath = testCoverageOutputDir.CombineWithFilePath("CodeCoverage.xml");
 
         var releaseNotesOutputFilePath = buildArtifactDir.CombineWithFilePath("releasenotes.md");
         var gemOutputFilePath  = buildArtifactDir.CombineWithFilePath("-" + version.GemVersion + ".gem");
