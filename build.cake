@@ -520,6 +520,7 @@ Task("Publish-Coverage")
             Files = new [] { coverageFile.ToString() },
             Token = token
         });
+		Information("Uploading Coverage File --> " + coverageFile.ToString());
     }
 });
 

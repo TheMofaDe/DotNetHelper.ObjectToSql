@@ -31,6 +31,89 @@ namespace DotNetHelper.ObjectToSql.Services
             DatabaseType = type;
         }
 
+
+
+        public string BuildQuery<T>(string tableName, ActionType actionType, T instance) where T : class
+        {
+
+            var sqlBuilder = new StringBuilder();
+            switch (actionType)
+            {
+                case ActionType.Insert:
+                    if (instance is IDynamicMetaObjectProvider dynamicInsert)
+                    {
+                        BuildInsertQuery(dynamicInsert, sqlBuilder,tableName);
+                    }
+                    BuildInsertQuery<T>(sqlBuilder, tableName);
+                    break;
+                case ActionType.Update:
+                    if (instance is IDynamicMetaObjectProvider dynamicUpdate)
+                    {
+                        BuildUpdateQuery(dynamicUpdate, sqlBuilder, tableName);
+                    }
+                    BuildUpdateQuery<T>(sqlBuilder, tableName);
+                    break;
+                case ActionType.Upsert:
+                    if (instance is IDynamicMetaObjectProvider dynamicUpsert)
+                    {
+                        BuildUpsertQuery(dynamicUpsert, sqlBuilder, tableName);
+                    }
+                    BuildUpsertQuery<T>(sqlBuilder, tableName);
+                    break;
+                case ActionType.Delete:
+                    if (instance is IDynamicMetaObjectProvider dynamicDelete)
+                    {
+                        BuildDeleteQuery(dynamicDelete, sqlBuilder, tableName);
+                    }
+                    BuildDeleteQuery<T>(sqlBuilder, tableName);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null);
+            }
+            return sqlBuilder.ToString();
+        }
+
+        public string BuildQuery(string tableName, ActionType actionType, object instance) 
+        {
+            instance.IsNullThrow(nameof(instance));
+            var sqlBuilder = new StringBuilder();
+            switch (actionType)
+            {
+                case ActionType.Insert:
+                    if (instance is IDynamicMetaObjectProvider dynamicInsert)
+                    {
+                        BuildInsertQuery(dynamicInsert, sqlBuilder, tableName);
+                    }
+                    BuildInsertQuery(sqlBuilder, tableName, instance.GetType());
+                    break;
+                case ActionType.Update:
+                    if (instance is IDynamicMetaObjectProvider dynamicUpdate)
+                    {
+                        BuildUpdateQuery(dynamicUpdate, sqlBuilder, tableName);
+                    }
+                    BuildUpdateQuery(sqlBuilder, tableName, instance.GetType());
+                    break;
+                case ActionType.Upsert:
+                    if (instance is IDynamicMetaObjectProvider dynamicUpsert)
+                    {
+                        BuildUpsertQuery(dynamicUpsert, sqlBuilder, tableName);
+                    }
+                    BuildUpsertQuery(sqlBuilder, tableName, instance.GetType());
+                    break;
+                case ActionType.Delete:
+                    if (instance is IDynamicMetaObjectProvider dynamicDelete)
+                    {
+                        BuildDeleteQuery(dynamicDelete, sqlBuilder, tableName);
+                    }
+                    BuildDeleteQuery(sqlBuilder, tableName, instance.GetType());
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null);
+            }
+            return sqlBuilder.ToString();
+        }
+
+
         /// <summary>
         /// Builds the insert query.
         /// </summary>
@@ -86,7 +169,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="type"></param>
         public void BuildInsertQuery(StringBuilder sqlBuilder, string tableName,Type type) 
         {
-            var allFields = ObjectToSqlHelper.GetNonIdentityFields(type, IncludeNonPublicAccessor);
+            var allFields = ObjectToSqlHelper.GetNonIdentityFields(IncludeNonPublicAccessor, type);
             // Insert sql statement prefix 
             sqlBuilder.Append($"INSERT INTO {tableName ?? type.Name} (");
 
@@ -315,6 +398,32 @@ namespace DotNetHelper.ObjectToSql.Services
         /// Builds the update query.
         /// </summary>
         /// <typeparam name="T"></typeparam>
+        /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="tableName">Name of the table.</param>
+        public void BuildUpdateQuery(StringBuilder sqlBuilder, string tableName,Type type)
+        {
+
+            var keyFields = ObjectToSqlHelper.GetKeyFields(IncludeNonPublicAccessor,type);
+
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
+            var updateFields = ObjectToSqlHelper.GetNonIdentityFields(IncludeNonPublicAccessor,type);
+
+            // Build Update Statement Prefix
+            sqlBuilder.Append($"UPDATE {tableName} SET ");
+
+            // Build Set fields
+            updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+
+            // Build Where clause.
+            sqlBuilder.Append(" ");
+            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
+        }
+
+        /// <summary>
+        /// Builds the update query.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="dynamicObject"></param>
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
@@ -336,6 +445,8 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append(" ");
             ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
         }
+
+
 
         /// <summary>
         /// Builds the update query.
@@ -411,6 +522,24 @@ namespace DotNetHelper.ObjectToSql.Services
 
             var keyFields = ObjectToSqlHelper.GetKeyFields<T>(IncludeNonPublicAccessor);
             
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
+
+
+            sqlBuilder.Append($"DELETE FROM {tableName} ");
+            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
+        }
+
+        /// <summary>
+        /// Builds the delete query.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="tableName">Name of the table.</param>
+        public void BuildDeleteQuery(StringBuilder sqlBuilder, string tableName, Type type) 
+        {
+
+            var keyFields = ObjectToSqlHelper.GetKeyFields(IncludeNonPublicAccessor, type);
+
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 
@@ -521,6 +650,29 @@ namespace DotNetHelper.ObjectToSql.Services
             BuildUpdateQuery<T>(sb, tableName);
             var sb1 = new StringBuilder();
             BuildInsertQuery<T>(sb1, tableName);
+            var sb2 = new StringBuilder();
+            ObjectToSqlHelper.BuildWhereClause(sb2, keyFields);
+
+            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+
+        }
+
+        /// <summary>
+        /// Builds the upsert query.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="tableName">Name of the table.</param>
+        public void BuildUpsertQuery(StringBuilder sqlBuilder, string tableName,Type type) 
+        {
+
+            var keyFields = ObjectToSqlHelper.GetKeyFields(IncludeNonPublicAccessor,type);
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
+
+            var sb = new StringBuilder();
+            BuildUpdateQuery(sb, tableName,type);
+            var sb1 = new StringBuilder();
+            BuildInsertQuery(sb1, tableName,type);
             var sb2 = new StringBuilder();
             ObjectToSqlHelper.BuildWhereClause(sb2, keyFields);
 

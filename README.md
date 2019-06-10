@@ -28,37 +28,27 @@ public class Employee {
       public FirstName { get; set; }
       public LastName  { get; set; }
 }
-
-// CREATE A INSERT STATEMENT
-            var sqlBuilder =  new StringBuilder();
             var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            sqlServerObjectToSql.BuildInsertQuery<Employee>(sqlBuilder, "TableNameGoHere");
-            var insertSql = sqlBuilder.ToString(); 
+            var insertSql = sqlServerObjectToSql.BuildQuery<Employee>("TableNameGoesHere", ActionType.Insert,null);
+// OR 
+            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert, new Employee());
 ```
 
 ## How to Use With Dynamic Objects
 ```csharp
-
-// CREATE A INSERT STATEMENT
-            var sqlBuilder =  new StringBuilder();
+            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
             dynamic record = new ExpandoObject();
             record.FirstName = "John";
             record.LastName = "Doe";
-            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            sqlServerObjectToSql.BuildInsertQuery(record,sqlBuilder, "TableNameGoHere");
-            var insertSql = sqlBuilder.ToString(); 
+            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,record);
 ```
 
 
 ## How to Use With Anonymous Objects
 ```csharp
-
-// CREATE A INSERT STATEMENT
-            var sqlBuilder =  new StringBuilder();
             var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
             var anonymousObject = new { FirstName = "John" , LastName = "Doe"}
-            sqlServerObjectToSql.BuildInsertQuery(anonymousObject,sqlBuilder, "TableNameGoHere");
-            var insertSql = sqlBuilder.ToString(); 
+            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,anonymousObject);
 ```
 ## Output
 ```sql

@@ -128,7 +128,7 @@ namespace DotNetHelper.ObjectToSql.Helper
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public List<MemberWrapper> GetKeyFields(Type type, bool includeNonPublicAccessor)
+        public static List<MemberWrapper> GetKeyFields( bool includeNonPublicAccessor, Type type)
         {
             // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
             return ExtFastMember.GetMemberWrappers(type,includeNonPublicAccessor).Where(m => m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).AsList();
@@ -161,7 +161,7 @@ namespace DotNetHelper.ObjectToSql.Helper
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public static List<MemberWrapper> GetNonIdentityFields(Type type, bool includeNonPublicAccessor) 
+        public static List<MemberWrapper> GetNonIdentityFields( bool includeNonPublicAccessor, Type type) 
         {
             return ExtFastMember.GetMemberWrappers(type,includeNonPublicAccessor).Where(m => !m.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored()).AsList();
         }
@@ -197,7 +197,7 @@ namespace DotNetHelper.ObjectToSql.Helper
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public List<MemberWrapper> GetAllNonIgnoreFields(Type type, bool includeNonPublicAccessor)
+        public static List<MemberWrapper> GetAllNonIgnoreFields(Type type, bool includeNonPublicAccessor)
         {
             // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
 
