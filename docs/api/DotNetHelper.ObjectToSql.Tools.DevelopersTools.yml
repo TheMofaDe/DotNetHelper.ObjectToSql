@@ -1,0 +1,523 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  commentId: T:DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  id: DevelopersTools
+  parent: DotNetHelper.ObjectToSql.Tools
+  children:
+  - DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass(System.Data.IDataReader,System.String,System.Boolean)
+  - DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType(System.Type,DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  - DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass(System.String)
+  langs:
+  - csharp
+  - vb
+  name: DevelopersTools
+  nameWithType: DevelopersTools
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  type: Class
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Tools/DevelopersTools.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: DevelopersTools
+    path: ../src/DotNetHelper.ObjectToSql/Tools/DevelopersTools.cs
+    startLine: 12
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Tools
+  syntax:
+    content: public static class DevelopersTools
+    content.vb: Public Module DevelopersTools
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass(System.Data.IDataReader,System.String,System.Boolean)
+  commentId: M:DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass(System.Data.IDataReader,System.String,System.Boolean)
+  id: ToCSharpClass(System.Data.IDataReader,System.String,System.Boolean)
+  parent: DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  langs:
+  - csharp
+  - vb
+  name: ToCSharpClass(IDataReader, String, Boolean)
+  nameWithType: DevelopersTools.ToCSharpClass(IDataReader, String, Boolean)
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass(System.Data.IDataReader, System.String, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Tools/DevelopersTools.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ToCSharpClass
+    path: ../src/DotNetHelper.ObjectToSql/Tools/DevelopersTools.cs
+    startLine: 14
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Tools
+  syntax:
+    content: public static string ToCSharpClass(IDataReader reader, string className = null, bool nullifyProperties = false)
+    parameters:
+    - id: reader
+      type: System.Data.IDataReader
+    - id: className
+      type: System.String
+    - id: nullifyProperties
+      type: System.Boolean
+    return:
+      type: System.String
+    content.vb: Public Shared Function ToCSharpClass(reader As IDataReader, className As String = Nothing, nullifyProperties As Boolean = False) As String
+  overload: DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass(System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass(System.String)
+  id: XmlTCSharpClass(System.String)
+  parent: DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  langs:
+  - csharp
+  - vb
+  name: XmlTCSharpClass(String)
+  nameWithType: DevelopersTools.XmlTCSharpClass(String)
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Tools/DevelopersTools.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: XmlTCSharpClass
+    path: ../src/DotNetHelper.ObjectToSql/Tools/DevelopersTools.cs
+    startLine: 51
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Tools
+  syntax:
+    content: public static string XmlTCSharpClass(string xml)
+    parameters:
+    - id: xml
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Shared Function XmlTCSharpClass(xml As String) As String
+  overload: DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType(System.Type,DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  commentId: M:DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType(System.Type,DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  id: TypeToSqlType(System.Type,DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  parent: DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  langs:
+  - csharp
+  - vb
+  name: TypeToSqlType(Type, DataBaseType)
+  nameWithType: DevelopersTools.TypeToSqlType(Type, DataBaseType)
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType(System.Type, DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Tools/DevelopersTools.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: TypeToSqlType
+    path: ../src/DotNetHelper.ObjectToSql/Tools/DevelopersTools.cs
+    startLine: 189
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Tools
+  syntax:
+    content: public static string TypeToSqlType(Type type, DataBaseType sqlType)
+    parameters:
+    - id: type
+      type: System.Type
+    - id: sqlType
+      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    return:
+      type: System.String
+    content.vb: Public Shared Function TypeToSqlType(type As Type, sqlType As DataBaseType) As String
+  overload: DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: DotNetHelper.ObjectToSql.Tools
+  commentId: N:DotNetHelper.ObjectToSql.Tools
+  name: DotNetHelper.ObjectToSql.Tools
+  nameWithType: DotNetHelper.ObjectToSql.Tools
+  fullName: DotNetHelper.ObjectToSql.Tools
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass*
+  commentId: Overload:DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass
+  name: ToCSharpClass
+  nameWithType: DevelopersTools.ToCSharpClass
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass
+- uid: System.Data.IDataReader
+  commentId: T:System.Data.IDataReader
+  parent: System.Data
+  isExternal: true
+  name: IDataReader
+  nameWithType: IDataReader
+  fullName: System.Data.IDataReader
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass*
+  commentId: Overload:DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass
+  name: XmlTCSharpClass
+  nameWithType: DevelopersTools.XmlTCSharpClass
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType*
+  commentId: Overload:DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType
+  name: TypeToSqlType
+  nameWithType: DevelopersTools.TypeToSqlType
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.DataBaseType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: DataBaseType
+  nameWithType: DataBaseType
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
+- uid: DotNetHelper.ObjectToSql.Enum
+  commentId: N:DotNetHelper.ObjectToSql.Enum
+  name: DotNetHelper.ObjectToSql.Enum
+  nameWithType: DotNetHelper.ObjectToSql.Enum
+  fullName: DotNetHelper.ObjectToSql.Enum

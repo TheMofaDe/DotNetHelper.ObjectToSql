@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Helper
+  commentId: N:DotNetHelper.ObjectToSql.Helper
+  id: DotNetHelper.ObjectToSql.Helper
+  children:
+  - DotNetHelper.ObjectToSql.Helper.DBTypeMap
+  - DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper.ObjectToSql.Helper
+  nameWithType: DotNetHelper.ObjectToSql.Helper
+  fullName: DotNetHelper.ObjectToSql.Helper
+  type: Namespace
+  assemblies:
+  - DotNetHelper.ObjectToSql
+references:
+- uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap
+  commentId: T:DotNetHelper.ObjectToSql.Helper.DBTypeMap
+  name: DBTypeMap
+  nameWithType: DBTypeMap
+  fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
+  commentId: T:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
+  name: ObjectToSqlHelper
+  nameWithType: ObjectToSqlHelper
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  commentId: T:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  name: SqlSyntaxHelper
+  nameWithType: SqlSyntaxHelper
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper

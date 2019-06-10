@@ -1,0 +1,178 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.ActionType
+  id: ActionType
+  parent: DotNetHelper.ObjectToSql.Enum
+  children:
+  - DotNetHelper.ObjectToSql.Enum.ActionType.Delete
+  - DotNetHelper.ObjectToSql.Enum.ActionType.Insert
+  - DotNetHelper.ObjectToSql.Enum.ActionType.Update
+  - DotNetHelper.ObjectToSql.Enum.ActionType.Upsert
+  langs:
+  - csharp
+  - vb
+  name: ActionType
+  nameWithType: ActionType
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+  type: Enum
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ActionType
+    path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
+    startLine: 9
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: public enum ActionType
+    content.vb: Public Enum ActionType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType.Insert
+  commentId: F:DotNetHelper.ObjectToSql.Enum.ActionType.Insert
+  id: Insert
+  parent: DotNetHelper.ObjectToSql.Enum.ActionType
+  langs:
+  - csharp
+  - vb
+  name: Insert
+  nameWithType: ActionType.Insert
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType.Insert
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: Insert
+    path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: Insert = 0
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType.Update
+  commentId: F:DotNetHelper.ObjectToSql.Enum.ActionType.Update
+  id: Update
+  parent: DotNetHelper.ObjectToSql.Enum.ActionType
+  langs:
+  - csharp
+  - vb
+  name: Update
+  nameWithType: ActionType.Update
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType.Update
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: Update
+    path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
+    startLine: 12
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: Update = 1
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType.Upsert
+  commentId: F:DotNetHelper.ObjectToSql.Enum.ActionType.Upsert
+  id: Upsert
+  parent: DotNetHelper.ObjectToSql.Enum.ActionType
+  langs:
+  - csharp
+  - vb
+  name: Upsert
+  nameWithType: ActionType.Upsert
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType.Upsert
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: Upsert
+    path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
+    startLine: 13
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: Upsert = 2
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType.Delete
+  commentId: F:DotNetHelper.ObjectToSql.Enum.ActionType.Delete
+  id: Delete
+  parent: DotNetHelper.ObjectToSql.Enum.ActionType
+  langs:
+  - csharp
+  - vb
+  name: Delete
+  nameWithType: ActionType.Delete
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType.Delete
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: Delete
+    path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
+    startLine: 14
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: Delete = 3
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: DotNetHelper.ObjectToSql.Enum
+  commentId: N:DotNetHelper.ObjectToSql.Enum
+  name: DotNetHelper.ObjectToSql.Enum
+  nameWithType: DotNetHelper.ObjectToSql.Enum
+  fullName: DotNetHelper.ObjectToSql.Enum
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.ActionType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: ActionType
+  nameWithType: ActionType
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType

@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Exceptions
+  commentId: N:DotNetHelper.ObjectToSql.Exceptions
+  id: DotNetHelper.ObjectToSql.Exceptions
+  children:
+  - DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
+  - DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
+  - DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper.ObjectToSql.Exceptions
+  nameWithType: DotNetHelper.ObjectToSql.Exceptions
+  fullName: DotNetHelper.ObjectToSql.Exceptions
+  type: Namespace
+  assemblies:
+  - DotNetHelper.ObjectToSql
+references:
+- uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
+  commentId: T:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
+  name: EmptyArgumentException
+  nameWithType: EmptyArgumentException
+  fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
+  commentId: T:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
+  name: MissingIdentityKeyAttributeException
+  nameWithType: MissingIdentityKeyAttributeException
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
+  commentId: T:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
+  name: MissingKeyAttributeException
+  nameWithType: MissingKeyAttributeException
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException

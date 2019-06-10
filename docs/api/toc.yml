@@ -1,0 +1,56 @@
+### YamlMime:TableOfContent
+- uid: DotNetHelper.ObjectToSql.Attribute
+  name: DotNetHelper.ObjectToSql.Attribute
+  items:
+  - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
+    name: SqlColumnAttribute
+  - uid: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute
+    name: SqlTableAttribute
+- uid: DotNetHelper.ObjectToSql.Enum
+  name: DotNetHelper.ObjectToSql.Enum
+  items:
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+  - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    name: DataBaseType
+  - uid: DotNetHelper.ObjectToSql.Enum.ScriptType
+    name: ScriptType
+  - uid: DotNetHelper.ObjectToSql.Enum.SerializableType
+    name: SerializableType
+  - uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+    name: SQLJoinType
+- uid: DotNetHelper.ObjectToSql.Exceptions
+  name: DotNetHelper.ObjectToSql.Exceptions
+  items:
+  - uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
+    name: EmptyArgumentException
+  - uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
+    name: MissingIdentityKeyAttributeException
+  - uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
+    name: MissingKeyAttributeException
+- uid: DotNetHelper.ObjectToSql.Extension
+  name: DotNetHelper.ObjectToSql.Extension
+  items:
+  - uid: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension
+    name: IDataParameterExtension
+  - uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
+    name: MemberWrapperExtension
+- uid: DotNetHelper.ObjectToSql.Helper
+  name: DotNetHelper.ObjectToSql.Helper
+  items:
+  - uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap
+    name: DBTypeMap
+  - uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
+    name: ObjectToSqlHelper
+  - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+    name: SqlSyntaxHelper
+- uid: DotNetHelper.ObjectToSql.Services
+  name: DotNetHelper.ObjectToSql.Services
+  items:
+  - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
+    name: ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Tools
+  name: DotNetHelper.ObjectToSql.Tools
+  items:
+  - uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools
+    name: DevelopersTools

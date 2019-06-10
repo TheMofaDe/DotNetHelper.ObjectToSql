@@ -1,0 +1,1545 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: DotNetHelper.ObjectToSql.Attribute
+  name: DotNetHelper.ObjectToSql.Attribute
+  href: api/DotNetHelper.ObjectToSql.Attribute.html
+  commentId: N:DotNetHelper.ObjectToSql.Attribute
+  fullName: DotNetHelper.ObjectToSql.Attribute
+  nameWithType: DotNetHelper.ObjectToSql.Attribute
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
+  name: SqlColumnAttribute
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html
+  commentId: T:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
+  nameWithType: SqlColumnAttribute
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId
+  name: ApiId
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_ApiId
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId
+  nameWithType: SqlColumnAttribute.ApiId
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId*
+  name: ApiId
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_ApiId_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId
+  nameWithType: SqlColumnAttribute.ApiId
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy
+  name: AutoIncrementBy
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_AutoIncrementBy
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy
+  nameWithType: SqlColumnAttribute.AutoIncrementBy
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy*
+  name: AutoIncrementBy
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_AutoIncrementBy_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy
+  nameWithType: SqlColumnAttribute.AutoIncrementBy
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue
+  name: DefaultValue
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_DefaultValue
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue
+  nameWithType: SqlColumnAttribute.DefaultValue
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue*
+  name: DefaultValue
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_DefaultValue_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue
+  nameWithType: SqlColumnAttribute.DefaultValue
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore
+  name: Ignore
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_Ignore
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore
+  nameWithType: SqlColumnAttribute.Ignore
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore*
+  name: Ignore
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_Ignore_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore
+  nameWithType: SqlColumnAttribute.Ignore
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey
+  name: IsIdentityKey
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_IsIdentityKey
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey
+  nameWithType: SqlColumnAttribute.IsIdentityKey
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey*
+  name: IsIdentityKey
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_IsIdentityKey_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey
+  nameWithType: SqlColumnAttribute.IsIdentityKey
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MappingIds
+  name: MappingIds
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_MappingIds
+  commentId: F:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MappingIds
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MappingIds
+  nameWithType: SqlColumnAttribute.MappingIds
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo
+  name: MapTo
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_MapTo
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo
+  nameWithType: SqlColumnAttribute.MapTo
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo*
+  name: MapTo
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_MapTo_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo
+  nameWithType: SqlColumnAttribute.MapTo
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MaxColumnSize
+  name: MaxColumnSize
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_MaxColumnSize
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MaxColumnSize
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MaxColumnSize
+  nameWithType: SqlColumnAttribute.MaxColumnSize
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MaxColumnSize*
+  name: MaxColumnSize
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_MaxColumnSize_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MaxColumnSize
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MaxColumnSize
+  nameWithType: SqlColumnAttribute.MaxColumnSize
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Nullable
+  name: Nullable
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_Nullable
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Nullable
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Nullable
+  nameWithType: SqlColumnAttribute.Nullable
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Nullable*
+  name: Nullable
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_Nullable_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Nullable
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Nullable
+  nameWithType: SqlColumnAttribute.Nullable
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey
+  name: PrimaryKey
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_PrimaryKey
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey
+  nameWithType: SqlColumnAttribute.PrimaryKey
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey*
+  name: PrimaryKey
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_PrimaryKey_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey
+  nameWithType: SqlColumnAttribute.PrimaryKey
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SerializableType
+  name: SerializableType
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SerializableType
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SerializableType
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SerializableType
+  nameWithType: SqlColumnAttribute.SerializableType
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SerializableType*
+  name: SerializableType
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SerializableType_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SerializableType
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SerializableType
+  nameWithType: SqlColumnAttribute.SerializableType
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId
+  name: SetApiId
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetApiId
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId
+  nameWithType: SqlColumnAttribute.SetApiId
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId*
+  name: SetApiId
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetApiId_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId
+  nameWithType: SqlColumnAttribute.SetApiId
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy
+  name: SetAutoIncrementBy
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetAutoIncrementBy
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy
+  nameWithType: SqlColumnAttribute.SetAutoIncrementBy
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy*
+  name: SetAutoIncrementBy
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetAutoIncrementBy_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy
+  nameWithType: SqlColumnAttribute.SetAutoIncrementBy
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIgnore
+  name: SetIgnore
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetIgnore
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIgnore
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIgnore
+  nameWithType: SqlColumnAttribute.SetIgnore
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIgnore*
+  name: SetIgnore
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetIgnore_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIgnore
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIgnore
+  nameWithType: SqlColumnAttribute.SetIgnore
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsIdentityKey
+  name: SetIsIdentityKey
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetIsIdentityKey
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsIdentityKey
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsIdentityKey
+  nameWithType: SqlColumnAttribute.SetIsIdentityKey
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsIdentityKey*
+  name: SetIsIdentityKey
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetIsIdentityKey_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsIdentityKey
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsIdentityKey
+  nameWithType: SqlColumnAttribute.SetIsIdentityKey
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetMaxColumnSize
+  name: SetMaxColumnSize
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetMaxColumnSize
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetMaxColumnSize
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetMaxColumnSize
+  nameWithType: SqlColumnAttribute.SetMaxColumnSize
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetMaxColumnSize*
+  name: SetMaxColumnSize
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetMaxColumnSize_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetMaxColumnSize
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetMaxColumnSize
+  nameWithType: SqlColumnAttribute.SetMaxColumnSize
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetNullable
+  name: SetNullable
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetNullable
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetNullable
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetNullable
+  nameWithType: SqlColumnAttribute.SetNullable
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetNullable*
+  name: SetNullable
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetNullable_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetNullable
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetNullable
+  nameWithType: SqlColumnAttribute.SetNullable
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetPrimaryKey
+  name: SetPrimaryKey
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetPrimaryKey
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetPrimaryKey
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetPrimaryKey
+  nameWithType: SqlColumnAttribute.SetPrimaryKey
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetPrimaryKey*
+  name: SetPrimaryKey
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetPrimaryKey_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetPrimaryKey
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetPrimaryKey
+  nameWithType: SqlColumnAttribute.SetPrimaryKey
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt
+  name: SetStartIncrementAt
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetStartIncrementAt
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt
+  nameWithType: SqlColumnAttribute.SetStartIncrementAt
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt*
+  name: SetStartIncrementAt
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetStartIncrementAt_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt
+  nameWithType: SqlColumnAttribute.SetStartIncrementAt
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime
+  name: SetSyncTime
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetSyncTime
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime
+  nameWithType: SqlColumnAttribute.SetSyncTime
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime*
+  name: SetSyncTime
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetSyncTime_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime
+  nameWithType: SqlColumnAttribute.SetSyncTime
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime
+  name: SetUtcDateTime
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetUtcDateTime
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime
+  nameWithType: SqlColumnAttribute.SetUtcDateTime
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime*
+  name: SetUtcDateTime
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetUtcDateTime_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime
+  nameWithType: SqlColumnAttribute.SetUtcDateTime
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade
+  name: SetxRefOnDeleteCascade
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetxRefOnDeleteCascade
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade
+  nameWithType: SqlColumnAttribute.SetxRefOnDeleteCascade
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade*
+  name: SetxRefOnDeleteCascade
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetxRefOnDeleteCascade_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade
+  nameWithType: SqlColumnAttribute.SetxRefOnDeleteCascade
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade
+  name: SetxRefOnUpdateCascade
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetxRefOnUpdateCascade
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade
+  nameWithType: SqlColumnAttribute.SetxRefOnUpdateCascade
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade*
+  name: SetxRefOnUpdateCascade
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetxRefOnUpdateCascade_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade
+  nameWithType: SqlColumnAttribute.SetxRefOnUpdateCascade
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType
+  name: SetxRefTableType
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetxRefTableType
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType
+  nameWithType: SqlColumnAttribute.SetxRefTableType
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType*
+  name: SetxRefTableType
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetxRefTableType_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType
+  nameWithType: SqlColumnAttribute.SetxRefTableType
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt
+  name: StartIncrementAt
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_StartIncrementAt
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt
+  nameWithType: SqlColumnAttribute.StartIncrementAt
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt*
+  name: StartIncrementAt
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_StartIncrementAt_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt
+  nameWithType: SqlColumnAttribute.StartIncrementAt
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime
+  name: SyncTime
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SyncTime
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime
+  nameWithType: SqlColumnAttribute.SyncTime
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime*
+  name: SyncTime
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SyncTime_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime
+  nameWithType: SqlColumnAttribute.SyncTime
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue
+  name: TSQLDefaultValue
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_TSQLDefaultValue
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue
+  nameWithType: SqlColumnAttribute.TSQLDefaultValue
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue*
+  name: TSQLDefaultValue
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_TSQLDefaultValue_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue
+  nameWithType: SqlColumnAttribute.TSQLDefaultValue
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime
+  name: UtcDateTime
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_UtcDateTime
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime
+  nameWithType: SqlColumnAttribute.UtcDateTime
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime*
+  name: UtcDateTime
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_UtcDateTime_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime
+  nameWithType: SqlColumnAttribute.UtcDateTime
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn
+  name: xRefJoinOnColumn
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefJoinOnColumn
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn
+  nameWithType: SqlColumnAttribute.xRefJoinOnColumn
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn*
+  name: xRefJoinOnColumn
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefJoinOnColumn_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn
+  nameWithType: SqlColumnAttribute.xRefJoinOnColumn
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade
+  name: xRefOnDeleteCascade
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefOnDeleteCascade
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade
+  nameWithType: SqlColumnAttribute.xRefOnDeleteCascade
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade*
+  name: xRefOnDeleteCascade
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefOnDeleteCascade_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade
+  nameWithType: SqlColumnAttribute.xRefOnDeleteCascade
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade
+  name: xRefOnUpdateCascade
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefOnUpdateCascade
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade
+  nameWithType: SqlColumnAttribute.xRefOnUpdateCascade
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade*
+  name: xRefOnUpdateCascade
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefOnUpdateCascade_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade
+  nameWithType: SqlColumnAttribute.xRefOnUpdateCascade
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName
+  name: xRefTableName
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefTableName
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName
+  nameWithType: SqlColumnAttribute.xRefTableName
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName*
+  name: xRefTableName
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefTableName_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName
+  nameWithType: SqlColumnAttribute.xRefTableName
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema
+  name: xRefTableSchema
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefTableSchema
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema
+  nameWithType: SqlColumnAttribute.xRefTableSchema
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema*
+  name: xRefTableSchema
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefTableSchema_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema
+  nameWithType: SqlColumnAttribute.xRefTableSchema
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType
+  name: xRefTableType
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefTableType
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType
+  nameWithType: SqlColumnAttribute.xRefTableType
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType*
+  name: xRefTableType
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_xRefTableType_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType
+  nameWithType: SqlColumnAttribute.xRefTableType
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute
+  name: SqlTableAttribute
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.html
+  commentId: T:DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute
+  nameWithType: SqlTableAttribute
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.JoinType
+  name: JoinType
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlTableAttribute_JoinType
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.JoinType
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.JoinType
+  nameWithType: SqlTableAttribute.JoinType
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.JoinType*
+  name: JoinType
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlTableAttribute_JoinType_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.JoinType
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.JoinType
+  nameWithType: SqlTableAttribute.JoinType
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.TableName
+  name: TableName
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlTableAttribute_TableName
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.TableName
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.TableName
+  nameWithType: SqlTableAttribute.TableName
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.TableName*
+  name: TableName
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlTableAttribute_TableName_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.TableName
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.TableName
+  nameWithType: SqlTableAttribute.TableName
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.XReferenceTable
+  name: XReferenceTable
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlTableAttribute_XReferenceTable
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.XReferenceTable
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.XReferenceTable
+  nameWithType: SqlTableAttribute.XReferenceTable
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.XReferenceTable*
+  name: XReferenceTable
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlTableAttribute_XReferenceTable_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.XReferenceTable
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute.XReferenceTable
+  nameWithType: SqlTableAttribute.XReferenceTable
+- uid: DotNetHelper.ObjectToSql.Enum
+  name: DotNetHelper.ObjectToSql.Enum
+  href: api/DotNetHelper.ObjectToSql.Enum.html
+  commentId: N:DotNetHelper.ObjectToSql.Enum
+  fullName: DotNetHelper.ObjectToSql.Enum
+  nameWithType: DotNetHelper.ObjectToSql.Enum
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType
+  name: ActionType
+  href: api/DotNetHelper.ObjectToSql.Enum.ActionType.html
+  commentId: T:DotNetHelper.ObjectToSql.Enum.ActionType
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+  nameWithType: ActionType
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType.Delete
+  name: Delete
+  href: api/DotNetHelper.ObjectToSql.Enum.ActionType.html#DotNetHelper_ObjectToSql_Enum_ActionType_Delete
+  commentId: F:DotNetHelper.ObjectToSql.Enum.ActionType.Delete
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType.Delete
+  nameWithType: ActionType.Delete
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType.Insert
+  name: Insert
+  href: api/DotNetHelper.ObjectToSql.Enum.ActionType.html#DotNetHelper_ObjectToSql_Enum_ActionType_Insert
+  commentId: F:DotNetHelper.ObjectToSql.Enum.ActionType.Insert
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType.Insert
+  nameWithType: ActionType.Insert
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType.Update
+  name: Update
+  href: api/DotNetHelper.ObjectToSql.Enum.ActionType.html#DotNetHelper_ObjectToSql_Enum_ActionType_Update
+  commentId: F:DotNetHelper.ObjectToSql.Enum.ActionType.Update
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType.Update
+  nameWithType: ActionType.Update
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType.Upsert
+  name: Upsert
+  href: api/DotNetHelper.ObjectToSql.Enum.ActionType.html#DotNetHelper_ObjectToSql_Enum_ActionType_Upsert
+  commentId: F:DotNetHelper.ObjectToSql.Enum.ActionType.Upsert
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType.Upsert
+  nameWithType: ActionType.Upsert
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
+  name: DataBaseType
+  href: api/DotNetHelper.ObjectToSql.Enum.DataBaseType.html
+  commentId: T:DotNetHelper.ObjectToSql.Enum.DataBaseType
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
+  nameWithType: DataBaseType
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType.Access95
+  name: Access95
+  href: api/DotNetHelper.ObjectToSql.Enum.DataBaseType.html#DotNetHelper_ObjectToSql_Enum_DataBaseType_Access95
+  commentId: F:DotNetHelper.ObjectToSql.Enum.DataBaseType.Access95
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType.Access95
+  nameWithType: DataBaseType.Access95
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType.MySql
+  name: MySql
+  href: api/DotNetHelper.ObjectToSql.Enum.DataBaseType.html#DotNetHelper_ObjectToSql_Enum_DataBaseType_MySql
+  commentId: F:DotNetHelper.ObjectToSql.Enum.DataBaseType.MySql
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType.MySql
+  nameWithType: DataBaseType.MySql
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType.Odbc
+  name: Odbc
+  href: api/DotNetHelper.ObjectToSql.Enum.DataBaseType.html#DotNetHelper_ObjectToSql_Enum_DataBaseType_Odbc
+  commentId: F:DotNetHelper.ObjectToSql.Enum.DataBaseType.Odbc
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType.Odbc
+  nameWithType: DataBaseType.Odbc
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType.Oledb
+  name: Oledb
+  href: api/DotNetHelper.ObjectToSql.Enum.DataBaseType.html#DotNetHelper_ObjectToSql_Enum_DataBaseType_Oledb
+  commentId: F:DotNetHelper.ObjectToSql.Enum.DataBaseType.Oledb
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType.Oledb
+  nameWithType: DataBaseType.Oledb
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType.Oracle
+  name: Oracle
+  href: api/DotNetHelper.ObjectToSql.Enum.DataBaseType.html#DotNetHelper_ObjectToSql_Enum_DataBaseType_Oracle
+  commentId: F:DotNetHelper.ObjectToSql.Enum.DataBaseType.Oracle
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType.Oracle
+  nameWithType: DataBaseType.Oracle
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType.Sqlite
+  name: Sqlite
+  href: api/DotNetHelper.ObjectToSql.Enum.DataBaseType.html#DotNetHelper_ObjectToSql_Enum_DataBaseType_Sqlite
+  commentId: F:DotNetHelper.ObjectToSql.Enum.DataBaseType.Sqlite
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType.Sqlite
+  nameWithType: DataBaseType.Sqlite
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType.SqlServer
+  name: SqlServer
+  href: api/DotNetHelper.ObjectToSql.Enum.DataBaseType.html#DotNetHelper_ObjectToSql_Enum_DataBaseType_SqlServer
+  commentId: F:DotNetHelper.ObjectToSql.Enum.DataBaseType.SqlServer
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType.SqlServer
+  nameWithType: DataBaseType.SqlServer
+- uid: DotNetHelper.ObjectToSql.Enum.ScriptType
+  name: ScriptType
+  href: api/DotNetHelper.ObjectToSql.Enum.ScriptType.html
+  commentId: T:DotNetHelper.ObjectToSql.Enum.ScriptType
+  fullName: DotNetHelper.ObjectToSql.Enum.ScriptType
+  nameWithType: ScriptType
+- uid: DotNetHelper.ObjectToSql.Enum.ScriptType.HumanReadable
+  name: HumanReadable
+  href: api/DotNetHelper.ObjectToSql.Enum.ScriptType.html#DotNetHelper_ObjectToSql_Enum_ScriptType_HumanReadable
+  commentId: F:DotNetHelper.ObjectToSql.Enum.ScriptType.HumanReadable
+  fullName: DotNetHelper.ObjectToSql.Enum.ScriptType.HumanReadable
+  nameWithType: ScriptType.HumanReadable
+- uid: DotNetHelper.ObjectToSql.Enum.ScriptType.Parameterized
+  name: Parameterized
+  href: api/DotNetHelper.ObjectToSql.Enum.ScriptType.html#DotNetHelper_ObjectToSql_Enum_ScriptType_Parameterized
+  commentId: F:DotNetHelper.ObjectToSql.Enum.ScriptType.Parameterized
+  fullName: DotNetHelper.ObjectToSql.Enum.ScriptType.Parameterized
+  nameWithType: ScriptType.Parameterized
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType
+  name: SerializableType
+  href: api/DotNetHelper.ObjectToSql.Enum.SerializableType.html
+  commentId: T:DotNetHelper.ObjectToSql.Enum.SerializableType
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType
+  nameWithType: SerializableType
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType.CSV
+  name: CSV
+  href: api/DotNetHelper.ObjectToSql.Enum.SerializableType.html#DotNetHelper_ObjectToSql_Enum_SerializableType_CSV
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SerializableType.CSV
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType.CSV
+  nameWithType: SerializableType.CSV
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType.JSON
+  name: JSON
+  href: api/DotNetHelper.ObjectToSql.Enum.SerializableType.html#DotNetHelper_ObjectToSql_Enum_SerializableType_JSON
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SerializableType.JSON
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType.JSON
+  nameWithType: SerializableType.JSON
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType.NONE
+  name: NONE
+  href: api/DotNetHelper.ObjectToSql.Enum.SerializableType.html#DotNetHelper_ObjectToSql_Enum_SerializableType_NONE
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SerializableType.NONE
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType.NONE
+  nameWithType: SerializableType.NONE
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType.XML
+  name: XML
+  href: api/DotNetHelper.ObjectToSql.Enum.SerializableType.html#DotNetHelper_ObjectToSql_Enum_SerializableType_XML
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SerializableType.XML
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType.XML
+  nameWithType: SerializableType.XML
+- uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  name: SQLJoinType
+  href: api/DotNetHelper.ObjectToSql.Enum.SQLJoinType.html
+  commentId: T:DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  fullName: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  nameWithType: SQLJoinType
+- uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType.INNER
+  name: INNER
+  href: api/DotNetHelper.ObjectToSql.Enum.SQLJoinType.html#DotNetHelper_ObjectToSql_Enum_SQLJoinType_INNER
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SQLJoinType.INNER
+  fullName: DotNetHelper.ObjectToSql.Enum.SQLJoinType.INNER
+  nameWithType: SQLJoinType.INNER
+- uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType.LEFT
+  name: LEFT
+  href: api/DotNetHelper.ObjectToSql.Enum.SQLJoinType.html#DotNetHelper_ObjectToSql_Enum_SQLJoinType_LEFT
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SQLJoinType.LEFT
+  fullName: DotNetHelper.ObjectToSql.Enum.SQLJoinType.LEFT
+  nameWithType: SQLJoinType.LEFT
+- uid: DotNetHelper.ObjectToSql.Exceptions
+  name: DotNetHelper.ObjectToSql.Exceptions
+  href: api/DotNetHelper.ObjectToSql.Exceptions.html
+  commentId: N:DotNetHelper.ObjectToSql.Exceptions
+  fullName: DotNetHelper.ObjectToSql.Exceptions
+  nameWithType: DotNetHelper.ObjectToSql.Exceptions
+- uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
+  name: EmptyArgumentException
+  href: api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html
+  commentId: T:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
+  fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
+  nameWithType: EmptyArgumentException
+- uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor
+  name: EmptyArgumentException()
+  href: api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html#DotNetHelper_ObjectToSql_Exceptions_EmptyArgumentException__ctor
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor
+  fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.EmptyArgumentException()
+  nameWithType: EmptyArgumentException.EmptyArgumentException()
+- uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: EmptyArgumentException(SerializationInfo, StreamingContext)
+  href: api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html#DotNetHelper_ObjectToSql_Exceptions_EmptyArgumentException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.EmptyArgumentException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: EmptyArgumentException.EmptyArgumentException(SerializationInfo, StreamingContext)
+- uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.String)
+  name: EmptyArgumentException(String)
+  href: api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html#DotNetHelper_ObjectToSql_Exceptions_EmptyArgumentException__ctor_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.String)
+  fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.EmptyArgumentException(System.String)
+  nameWithType: EmptyArgumentException.EmptyArgumentException(String)
+- uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.String,System.Exception)
+  name: EmptyArgumentException(String, Exception)
+  href: api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html#DotNetHelper_ObjectToSql_Exceptions_EmptyArgumentException__ctor_System_String_System_Exception_
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.String,System.Exception)
+  fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.EmptyArgumentException(System.String, System.Exception)
+  nameWithType: EmptyArgumentException.EmptyArgumentException(String, Exception)
+- uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor*
+  name: EmptyArgumentException
+  href: api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html#DotNetHelper_ObjectToSql_Exceptions_EmptyArgumentException__ctor_
+  commentId: Overload:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.EmptyArgumentException
+  nameWithType: EmptyArgumentException.EmptyArgumentException
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
+  name: MissingIdentityKeyAttributeException
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html
+  commentId: T:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
+  nameWithType: MissingIdentityKeyAttributeException
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor
+  name: MissingIdentityKeyAttributeException()
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException()
+  nameWithType: MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException()
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: MissingIdentityKeyAttributeException(SerializationInfo, StreamingContext)
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(SerializationInfo, StreamingContext)
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.String)
+  name: MissingIdentityKeyAttributeException(String)
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.String)
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(System.String)
+  nameWithType: MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(String)
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.String,System.Exception)
+  name: MissingIdentityKeyAttributeException(String, Exception)
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor_System_String_System_Exception_
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.String,System.Exception)
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(System.String, System.Exception)
+  nameWithType: MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(String, Exception)
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor*
+  name: MissingIdentityKeyAttributeException
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor_
+  commentId: Overload:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException
+  nameWithType: MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
+  name: MissingKeyAttributeException
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html
+  commentId: T:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
+  nameWithType: MissingKeyAttributeException
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor
+  name: MissingKeyAttributeException()
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingKeyAttributeException__ctor
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.MissingKeyAttributeException()
+  nameWithType: MissingKeyAttributeException.MissingKeyAttributeException()
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: MissingKeyAttributeException(SerializationInfo, StreamingContext)
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingKeyAttributeException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.MissingKeyAttributeException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: MissingKeyAttributeException.MissingKeyAttributeException(SerializationInfo, StreamingContext)
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.String)
+  name: MissingKeyAttributeException(String)
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingKeyAttributeException__ctor_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.String)
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.MissingKeyAttributeException(System.String)
+  nameWithType: MissingKeyAttributeException.MissingKeyAttributeException(String)
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.String,System.Exception)
+  name: MissingKeyAttributeException(String, Exception)
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingKeyAttributeException__ctor_System_String_System_Exception_
+  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.String,System.Exception)
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.MissingKeyAttributeException(System.String, System.Exception)
+  nameWithType: MissingKeyAttributeException.MissingKeyAttributeException(String, Exception)
+- uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor*
+  name: MissingKeyAttributeException
+  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingKeyAttributeException__ctor_
+  commentId: Overload:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.MissingKeyAttributeException
+  nameWithType: MissingKeyAttributeException.MissingKeyAttributeException
+- uid: DotNetHelper.ObjectToSql.Extension
+  name: DotNetHelper.ObjectToSql.Extension
+  href: api/DotNetHelper.ObjectToSql.Extension.html
+  commentId: N:DotNetHelper.ObjectToSql.Extension
+  fullName: DotNetHelper.ObjectToSql.Extension
+  nameWithType: DotNetHelper.ObjectToSql.Extension
+- uid: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension
+  name: IDataParameterExtension
+  href: api/DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.html
+  commentId: T:DotNetHelper.ObjectToSql.Extension.IDataParameterExtension
+  fullName: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension
+  nameWithType: IDataParameterExtension
+- uid: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.AddRange*
+  name: AddRange
+  href: api/DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.html#DotNetHelper_ObjectToSql_Extension_IDataParameterExtension_AddRange_
+  commentId: Overload:DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.AddRange
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.AddRange
+  nameWithType: IDataParameterExtension.AddRange
+- uid: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.AddRange``1(System.Data.IDataParameterCollection,System.Collections.Generic.IEnumerable{``0})
+  name: AddRange<T>(IDataParameterCollection, IEnumerable<T>)
+  href: api/DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.html#DotNetHelper_ObjectToSql_Extension_IDataParameterExtension_AddRange__1_System_Data_IDataParameterCollection_System_Collections_Generic_IEnumerable___0__
+  commentId: M:DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.AddRange``1(System.Data.IDataParameterCollection,System.Collections.Generic.IEnumerable{``0})
+  name.vb: AddRange(Of T)(IDataParameterCollection, IEnumerable(Of T))
+  fullName: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.AddRange<T>(System.Data.IDataParameterCollection, System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.AddRange(Of T)(System.Data.IDataParameterCollection, System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: IDataParameterExtension.AddRange<T>(IDataParameterCollection, IEnumerable<T>)
+  nameWithType.vb: IDataParameterExtension.AddRange(Of T)(IDataParameterCollection, IEnumerable(Of T))
+- uid: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.ParamToSql(System.Data.IDataParameterCollection,System.String)
+  name: ParamToSql(IDataParameterCollection, String)
+  href: api/DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.html#DotNetHelper_ObjectToSql_Extension_IDataParameterExtension_ParamToSql_System_Data_IDataParameterCollection_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.ParamToSql(System.Data.IDataParameterCollection,System.String)
+  fullName: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.ParamToSql(System.Data.IDataParameterCollection, System.String)
+  nameWithType: IDataParameterExtension.ParamToSql(IDataParameterCollection, String)
+- uid: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.ParamToSql*
+  name: ParamToSql
+  href: api/DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.html#DotNetHelper_ObjectToSql_Extension_IDataParameterExtension_ParamToSql_
+  commentId: Overload:DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.ParamToSql
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension.ParamToSql
+  nameWithType: IDataParameterExtension.ParamToSql
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
+  name: MemberWrapperExtension
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html
+  commentId: T:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
+  nameWithType: MemberWrapperExtension
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  name: GetNameFromCustomAttributeOrDefault(MemberWrapper)
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_GetNameFromCustomAttributeOrDefault_DotNetHelper_FastMember_Extension_Models_MemberWrapper_
+  commentId: M:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  nameWithType: MemberWrapperExtension.GetNameFromCustomAttributeOrDefault(MemberWrapper)
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.GetNameFromCustomAttributeOrDefault*
+  name: GetNameFromCustomAttributeOrDefault
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_GetNameFromCustomAttributeOrDefault_
+  commentId: Overload:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.GetNameFromCustomAttributeOrDefault
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.GetNameFromCustomAttributeOrDefault
+  nameWithType: MemberWrapperExtension.GetNameFromCustomAttributeOrDefault
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAnIdentityColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  name: IsMemberAnIdentityColumn(MemberWrapper)
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_IsMemberAnIdentityColumn_DotNetHelper_FastMember_Extension_Models_MemberWrapper_
+  commentId: M:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAnIdentityColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAnIdentityColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  nameWithType: MemberWrapperExtension.IsMemberAnIdentityColumn(MemberWrapper)
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAnIdentityColumn*
+  name: IsMemberAnIdentityColumn
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_IsMemberAnIdentityColumn_
+  commentId: Overload:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAnIdentityColumn
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAnIdentityColumn
+  nameWithType: MemberWrapperExtension.IsMemberAnIdentityColumn
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  name: IsMemberAPrimaryKeyColumn(MemberWrapper)
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_IsMemberAPrimaryKeyColumn_DotNetHelper_FastMember_Extension_Models_MemberWrapper_
+  commentId: M:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  nameWithType: MemberWrapperExtension.IsMemberAPrimaryKeyColumn(MemberWrapper)
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAPrimaryKeyColumn*
+  name: IsMemberAPrimaryKeyColumn
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_IsMemberAPrimaryKeyColumn_
+  commentId: Overload:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAPrimaryKeyColumn
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAPrimaryKeyColumn
+  nameWithType: MemberWrapperExtension.IsMemberAPrimaryKeyColumn
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  name: IsMemberASerializableColumn(MemberWrapper)
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_IsMemberASerializableColumn_DotNetHelper_FastMember_Extension_Models_MemberWrapper_
+  commentId: M:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  nameWithType: MemberWrapperExtension.IsMemberASerializableColumn(MemberWrapper)
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn*
+  name: IsMemberASerializableColumn
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_IsMemberASerializableColumn_
+  commentId: Overload:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn
+  nameWithType: MemberWrapperExtension.IsMemberASerializableColumn
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.ShouldMemberBeIgnored(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  name: ShouldMemberBeIgnored(MemberWrapper)
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_ShouldMemberBeIgnored_DotNetHelper_FastMember_Extension_Models_MemberWrapper_
+  commentId: M:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.ShouldMemberBeIgnored(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.ShouldMemberBeIgnored(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  nameWithType: MemberWrapperExtension.ShouldMemberBeIgnored(MemberWrapper)
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.ShouldMemberBeIgnored*
+  name: ShouldMemberBeIgnored
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_ShouldMemberBeIgnored_
+  commentId: Overload:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.ShouldMemberBeIgnored
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.ShouldMemberBeIgnored
+  nameWithType: MemberWrapperExtension.ShouldMemberBeIgnored
+- uid: DotNetHelper.ObjectToSql.Helper
+  name: DotNetHelper.ObjectToSql.Helper
+  href: api/DotNetHelper.ObjectToSql.Helper.html
+  commentId: N:DotNetHelper.ObjectToSql.Helper
+  fullName: DotNetHelper.ObjectToSql.Helper
+  nameWithType: DotNetHelper.ObjectToSql.Helper
+- uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap
+  name: DBTypeMap
+  href: api/DotNetHelper.ObjectToSql.Helper.DBTypeMap.html
+  commentId: T:DotNetHelper.ObjectToSql.Helper.DBTypeMap
+  fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap
+  nameWithType: DBTypeMap
+- uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  name: DBTypeMap(DataBaseType)
+  href: api/DotNetHelper.ObjectToSql.Helper.DBTypeMap.html#DotNetHelper_ObjectToSql_Helper_DBTypeMap__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap.DBTypeMap(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  nameWithType: DBTypeMap.DBTypeMap(DataBaseType)
+- uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor*
+  name: DBTypeMap
+  href: api/DotNetHelper.ObjectToSql.Helper.DBTypeMap.html#DotNetHelper_ObjectToSql_Helper_DBTypeMap__ctor_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap.DBTypeMap
+  nameWithType: DBTypeMap.DBTypeMap
+- uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap
+  name: TypeToSqlTypeMap
+  href: api/DotNetHelper.ObjectToSql.Helper.DBTypeMap.html#DotNetHelper_ObjectToSql_Helper_DBTypeMap_TypeToSqlTypeMap
+  commentId: P:DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap
+  fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap
+  nameWithType: DBTypeMap.TypeToSqlTypeMap
+- uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap*
+  name: TypeToSqlTypeMap
+  href: api/DotNetHelper.ObjectToSql.Helper.DBTypeMap.html#DotNetHelper_ObjectToSql_Helper_DBTypeMap_TypeToSqlTypeMap_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap
+  nameWithType: DBTypeMap.TypeToSqlTypeMap
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
+  name: ObjectToSqlHelper
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html
+  commentId: T:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
+  nameWithType: ObjectToSqlHelper
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.#ctor
+  name: ObjectToSqlHelper()
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper__ctor
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.#ctor
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.ObjectToSqlHelper()
+  nameWithType: ObjectToSqlHelper.ObjectToSqlHelper()
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.#ctor*
+  name: ObjectToSqlHelper
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper__ctor_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.#ctor
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.ObjectToSqlHelper
+  nameWithType: ObjectToSqlHelper.ObjectToSqlHelper
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildDbParameterList*
+  name: BuildDbParameterList
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_BuildDbParameterList_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildDbParameterList
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildDbParameterList
+  nameWithType: ObjectToSqlHelper.BuildDbParameterList
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter},DotNetHelper.Serialization.Abstractions.Interface.ISerializer,DotNetHelper.Serialization.Abstractions.Interface.ISerializer,DotNetHelper.Serialization.Abstractions.Interface.ISerializer,System.Boolean)
+  name: BuildDbParameterList<T>(T, Func<String, Object, DbParameter>, ISerializer, ISerializer, ISerializer, Boolean)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_BuildDbParameterList__1___0_System_Func_System_String_System_Object_System_Data_Common_DbParameter__DotNetHelper_Serialization_Abstractions_Interface_ISerializer_DotNetHelper_Serialization_Abstractions_Interface_ISerializer_DotNetHelper_Serialization_Abstractions_Interface_ISerializer_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter},DotNetHelper.Serialization.Abstractions.Interface.ISerializer,DotNetHelper.Serialization.Abstractions.Interface.ISerializer,DotNetHelper.Serialization.Abstractions.Interface.ISerializer,System.Boolean)
+  name.vb: BuildDbParameterList(Of T)(T, Func(Of String, Object, DbParameter), ISerializer, ISerializer, ISerializer, Boolean)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildDbParameterList<T>(T, System.Func<System.String, System.Object, System.Data.Common.DbParameter>, DotNetHelper.Serialization.Abstractions.Interface.ISerializer, DotNetHelper.Serialization.Abstractions.Interface.ISerializer, DotNetHelper.Serialization.Abstractions.Interface.ISerializer, System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildDbParameterList(Of T)(T, System.Func(Of System.String, System.Object, System.Data.Common.DbParameter), DotNetHelper.Serialization.Abstractions.Interface.ISerializer, DotNetHelper.Serialization.Abstractions.Interface.ISerializer, DotNetHelper.Serialization.Abstractions.Interface.ISerializer, System.Boolean)
+  nameWithType: ObjectToSqlHelper.BuildDbParameterList<T>(T, Func<String, Object, DbParameter>, ISerializer, ISerializer, ISerializer, Boolean)
+  nameWithType.vb: ObjectToSqlHelper.BuildDbParameterList(Of T)(T, Func(Of String, Object, DbParameter), ISerializer, ISerializer, ISerializer, Boolean)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
+  name: BuildWhereClause(StringBuilder, List<MemberWrapper>)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_BuildWhereClause_System_Text_StringBuilder_System_Collections_Generic_List_DotNetHelper_FastMember_Extension_Models_MemberWrapper__
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
+  name.vb: BuildWhereClause(StringBuilder, List(Of MemberWrapper))
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClause(System.Text.StringBuilder, System.Collections.Generic.List<DotNetHelper.FastMember.Extension.Models.MemberWrapper>)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClause(System.Text.StringBuilder, System.Collections.Generic.List(Of DotNetHelper.FastMember.Extension.Models.MemberWrapper))
+  nameWithType: ObjectToSqlHelper.BuildWhereClause(StringBuilder, List<MemberWrapper>)
+  nameWithType.vb: ObjectToSqlHelper.BuildWhereClause(StringBuilder, List(Of MemberWrapper))
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClause*
+  name: BuildWhereClause
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_BuildWhereClause_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClause
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClause
+  nameWithType: ObjectToSqlHelper.BuildWhereClause
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClauseAndGetDbParameters*
+  name: BuildWhereClauseAndGetDbParameters
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_BuildWhereClauseAndGetDbParameters_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClauseAndGetDbParameters
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClauseAndGetDbParameters
+  nameWithType: ObjectToSqlHelper.BuildWhereClauseAndGetDbParameters
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClauseAndGetDbParameters``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter},System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper},System.Boolean)
+  name: BuildWhereClauseAndGetDbParameters<T>(T, Func<String, Object, DbParameter>, StringBuilder, List<MemberWrapper>, Boolean)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_BuildWhereClauseAndGetDbParameters__1___0_System_Func_System_String_System_Object_System_Data_Common_DbParameter__System_Text_StringBuilder_System_Collections_Generic_List_DotNetHelper_FastMember_Extension_Models_MemberWrapper__System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClauseAndGetDbParameters``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter},System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper},System.Boolean)
+  name.vb: BuildWhereClauseAndGetDbParameters(Of T)(T, Func(Of String, Object, DbParameter), StringBuilder, List(Of MemberWrapper), Boolean)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClauseAndGetDbParameters<T>(T, System.Func<System.String, System.Object, System.Data.Common.DbParameter>, System.Text.StringBuilder, System.Collections.Generic.List<DotNetHelper.FastMember.Extension.Models.MemberWrapper>, System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.BuildWhereClauseAndGetDbParameters(Of T)(T, System.Func(Of System.String, System.Object, System.Data.Common.DbParameter), System.Text.StringBuilder, System.Collections.Generic.List(Of DotNetHelper.FastMember.Extension.Models.MemberWrapper), System.Boolean)
+  nameWithType: ObjectToSqlHelper.BuildWhereClauseAndGetDbParameters<T>(T, Func<String, Object, DbParameter>, StringBuilder, List<MemberWrapper>, Boolean)
+  nameWithType.vb: ObjectToSqlHelper.BuildWhereClauseAndGetDbParameters(Of T)(T, Func(Of String, Object, DbParameter), StringBuilder, List(Of MemberWrapper), Boolean)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.ConvertToDatabaseValue(DotNetHelper.FastMember.Extension.Models.MemberWrapper,System.Object,DotNetHelper.Serialization.Abstractions.Interface.ISerializer,DotNetHelper.Serialization.Abstractions.Interface.ISerializer,DotNetHelper.Serialization.Abstractions.Interface.ISerializer)
+  name: ConvertToDatabaseValue(MemberWrapper, Object, ISerializer, ISerializer, ISerializer)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_ConvertToDatabaseValue_DotNetHelper_FastMember_Extension_Models_MemberWrapper_System_Object_DotNetHelper_Serialization_Abstractions_Interface_ISerializer_DotNetHelper_Serialization_Abstractions_Interface_ISerializer_DotNetHelper_Serialization_Abstractions_Interface_ISerializer_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.ConvertToDatabaseValue(DotNetHelper.FastMember.Extension.Models.MemberWrapper,System.Object,DotNetHelper.Serialization.Abstractions.Interface.ISerializer,DotNetHelper.Serialization.Abstractions.Interface.ISerializer,DotNetHelper.Serialization.Abstractions.Interface.ISerializer)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.ConvertToDatabaseValue(DotNetHelper.FastMember.Extension.Models.MemberWrapper, System.Object, DotNetHelper.Serialization.Abstractions.Interface.ISerializer, DotNetHelper.Serialization.Abstractions.Interface.ISerializer, DotNetHelper.Serialization.Abstractions.Interface.ISerializer)
+  nameWithType: ObjectToSqlHelper.ConvertToDatabaseValue(MemberWrapper, Object, ISerializer, ISerializer, ISerializer)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.ConvertToDatabaseValue*
+  name: ConvertToDatabaseValue
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_ConvertToDatabaseValue_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.ConvertToDatabaseValue
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.ConvertToDatabaseValue
+  nameWithType: ObjectToSqlHelper.ConvertToDatabaseValue
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields(System.Type,System.Boolean)
+  name: GetAllNonIgnoreFields(Type, Boolean)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetAllNonIgnoreFields_System_Type_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields(System.Type,System.Boolean)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields(System.Type, System.Boolean)
+  nameWithType: ObjectToSqlHelper.GetAllNonIgnoreFields(Type, Boolean)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields*
+  name: GetAllNonIgnoreFields
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetAllNonIgnoreFields_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields
+  nameWithType: ObjectToSqlHelper.GetAllNonIgnoreFields
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields``1(``0)
+  name: GetAllNonIgnoreFields<T>(T)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetAllNonIgnoreFields__1___0_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields``1(``0)
+  name.vb: GetAllNonIgnoreFields(Of T)(T)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields<T>(T)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields(Of T)(T)
+  nameWithType: ObjectToSqlHelper.GetAllNonIgnoreFields<T>(T)
+  nameWithType.vb: ObjectToSqlHelper.GetAllNonIgnoreFields(Of T)(T)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields``1(System.Boolean)
+  name: GetAllNonIgnoreFields<T>(Boolean)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetAllNonIgnoreFields__1_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields``1(System.Boolean)
+  name.vb: GetAllNonIgnoreFields(Of T)(Boolean)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields<T>(System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetAllNonIgnoreFields(Of T)(System.Boolean)
+  nameWithType: ObjectToSqlHelper.GetAllNonIgnoreFields<T>(Boolean)
+  nameWithType.vb: ObjectToSqlHelper.GetAllNonIgnoreFields(Of T)(Boolean)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields(System.Type,System.Boolean)
+  name: GetKeyFields(Type, Boolean)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetKeyFields_System_Type_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields(System.Type,System.Boolean)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields(System.Type, System.Boolean)
+  nameWithType: ObjectToSqlHelper.GetKeyFields(Type, Boolean)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields*
+  name: GetKeyFields
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetKeyFields_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields
+  nameWithType: ObjectToSqlHelper.GetKeyFields
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields``1(``0)
+  name: GetKeyFields<T>(T)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetKeyFields__1___0_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields``1(``0)
+  name.vb: GetKeyFields(Of T)(T)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields<T>(T)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields(Of T)(T)
+  nameWithType: ObjectToSqlHelper.GetKeyFields<T>(T)
+  nameWithType.vb: ObjectToSqlHelper.GetKeyFields(Of T)(T)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields``1(System.Boolean)
+  name: GetKeyFields<T>(Boolean)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetKeyFields__1_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields``1(System.Boolean)
+  name.vb: GetKeyFields(Of T)(Boolean)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields<T>(System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetKeyFields(Of T)(System.Boolean)
+  nameWithType: ObjectToSqlHelper.GetKeyFields<T>(Boolean)
+  nameWithType.vb: ObjectToSqlHelper.GetKeyFields(Of T)(Boolean)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields(System.Type,System.Boolean)
+  name: GetNonIdentityFields(Type, Boolean)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetNonIdentityFields_System_Type_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields(System.Type,System.Boolean)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields(System.Type, System.Boolean)
+  nameWithType: ObjectToSqlHelper.GetNonIdentityFields(Type, Boolean)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields*
+  name: GetNonIdentityFields
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetNonIdentityFields_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields
+  nameWithType: ObjectToSqlHelper.GetNonIdentityFields
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields``1(``0)
+  name: GetNonIdentityFields<T>(T)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetNonIdentityFields__1___0_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields``1(``0)
+  name.vb: GetNonIdentityFields(Of T)(T)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields<T>(T)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields(Of T)(T)
+  nameWithType: ObjectToSqlHelper.GetNonIdentityFields<T>(T)
+  nameWithType.vb: ObjectToSqlHelper.GetNonIdentityFields(Of T)(T)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields``1(System.Boolean)
+  name: GetNonIdentityFields<T>(Boolean)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetNonIdentityFields__1_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields``1(System.Boolean)
+  name.vb: GetNonIdentityFields(Of T)(Boolean)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields<T>(System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonIdentityFields(Of T)(System.Boolean)
+  nameWithType: ObjectToSqlHelper.GetNonIdentityFields<T>(Boolean)
+  nameWithType.vb: ObjectToSqlHelper.GetNonIdentityFields(Of T)(Boolean)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonKeyFields*
+  name: GetNonKeyFields
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetNonKeyFields_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonKeyFields
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonKeyFields
+  nameWithType: ObjectToSqlHelper.GetNonKeyFields
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonKeyFields``1(``0)
+  name: GetNonKeyFields<T>(T)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetNonKeyFields__1___0_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonKeyFields``1(``0)
+  name.vb: GetNonKeyFields(Of T)(T)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonKeyFields<T>(T)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonKeyFields(Of T)(T)
+  nameWithType: ObjectToSqlHelper.GetNonKeyFields<T>(T)
+  nameWithType.vb: ObjectToSqlHelper.GetNonKeyFields(Of T)(T)
+- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonKeyFields``1(System.Boolean)
+  name: GetNonKeyFields<T>(Boolean)
+  href: api/DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.html#DotNetHelper_ObjectToSql_Helper_ObjectToSqlHelper_GetNonKeyFields__1_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonKeyFields``1(System.Boolean)
+  name.vb: GetNonKeyFields(Of T)(Boolean)
+  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonKeyFields<T>(System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper.GetNonKeyFields(Of T)(System.Boolean)
+  nameWithType: ObjectToSqlHelper.GetNonKeyFields<T>(Boolean)
+  nameWithType.vb: ObjectToSqlHelper.GetNonKeyFields(Of T)(Boolean)
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  name: SqlSyntaxHelper
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html
+  commentId: T:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  nameWithType: SqlSyntaxHelper
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  name: SqlSyntaxHelper(DataBaseType)
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.SqlSyntaxHelper(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  nameWithType: SqlSyntaxHelper.SqlSyntaxHelper(DataBaseType)
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor*
+  name: SqlSyntaxHelper
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper__ctor_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.SqlSyntaxHelper
+  nameWithType: SqlSyntaxHelper.SqlSyntaxHelper
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement(System.String,System.String,System.String)
+  name: BuildIfExistStatement(String, String, String)
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_BuildIfExistStatement_System_String_System_String_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement(System.String,System.String,System.String)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement(System.String, System.String, System.String)
+  nameWithType: SqlSyntaxHelper.BuildIfExistStatement(String, String, String)
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement*
+  name: BuildIfExistStatement
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_BuildIfExistStatement_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement
+  nameWithType: SqlSyntaxHelper.BuildIfExistStatement
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
+  name: DataBaseType
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_DataBaseType
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
+  nameWithType: SqlSyntaxHelper.DataBaseType
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType*
+  name: DataBaseType
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_DataBaseType_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
+  nameWithType: SqlSyntaxHelper.DataBaseType
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+  name: EnclosedValueLookup
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_EnclosedValueLookup
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+  nameWithType: SqlSyntaxHelper.EnclosedValueLookup
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup*
+  name: EnclosedValueLookup
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_EnclosedValueLookup_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+  nameWithType: SqlSyntaxHelper.EnclosedValueLookup
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
+  name: GetEnclosedValueChar(Type)
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_GetEnclosedValueChar_System_Type_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
+  nameWithType: SqlSyntaxHelper.GetEnclosedValueChar(Type)
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar*
+  name: GetEnclosedValueChar
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_GetEnclosedValueChar_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar
+  nameWithType: SqlSyntaxHelper.GetEnclosedValueChar
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar
+  name: GetTableClosedChar()
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_GetTableClosedChar
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar()
+  nameWithType: SqlSyntaxHelper.GetTableClosedChar()
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar*
+  name: GetTableClosedChar
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_GetTableClosedChar_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar
+  nameWithType: SqlSyntaxHelper.GetTableClosedChar
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar
+  name: GetTableOpenChar()
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_GetTableOpenChar
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar()
+  nameWithType: SqlSyntaxHelper.GetTableOpenChar()
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar*
+  name: GetTableOpenChar
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_GetTableOpenChar_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar
+  nameWithType: SqlSyntaxHelper.GetTableOpenChar
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar(System.String)
+  name: RemoveBracketsChar(String)
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_RemoveBracketsChar_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar(System.String)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar(System.String)
+  nameWithType: SqlSyntaxHelper.RemoveBracketsChar(String)
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar*
+  name: RemoveBracketsChar
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_RemoveBracketsChar_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar
+  nameWithType: SqlSyntaxHelper.RemoveBracketsChar
+- uid: DotNetHelper.ObjectToSql.Services
+  name: DotNetHelper.ObjectToSql.Services
+  href: api/DotNetHelper.ObjectToSql.Services.html
+  commentId: N:DotNetHelper.ObjectToSql.Services
+  fullName: DotNetHelper.ObjectToSql.Services
+  nameWithType: DotNetHelper.ObjectToSql.Services
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  name: ObjectToSql
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html
+  commentId: T:DotNetHelper.ObjectToSql.Services.ObjectToSql
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  nameWithType: ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  name: ObjectToSql(DataBaseType)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.ObjectToSql(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  nameWithType: ObjectToSql.ObjectToSql(DataBaseType)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
+  name: ObjectToSql(DataBaseType, Boolean)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.ObjectToSql(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Boolean)
+  nameWithType: ObjectToSql.ObjectToSql(DataBaseType, Boolean)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor*
+  name: ObjectToSql
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql__ctor_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.ObjectToSql
+  nameWithType: ObjectToSql.ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery*
+  name: BuildDeleteQuery
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDeleteQuery_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery
+  nameWithType: ObjectToSql.BuildDeleteQuery
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String)
+  name: BuildDeleteQuery<T>(T, StringBuilder, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDeleteQuery__1___0_System_Text_StringBuilder_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String)
+  name.vb: BuildDeleteQuery(Of T)(T, StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery<T>(T, System.Text.StringBuilder, System.String)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery(Of T)(T, System.Text.StringBuilder, System.String)
+  nameWithType: ObjectToSql.BuildDeleteQuery<T>(T, StringBuilder, String)
+  nameWithType.vb: ObjectToSql.BuildDeleteQuery(Of T)(T, StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  name: BuildDeleteQuery<T>(T, StringBuilder, String, List<String>)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDeleteQuery__1___0_System_Text_StringBuilder_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  name.vb: BuildDeleteQuery(Of T)(T, StringBuilder, String, List(Of String))
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery<T>(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery(Of T)(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List(Of System.String))
+  nameWithType: ObjectToSql.BuildDeleteQuery<T>(T, StringBuilder, String, List<String>)
+  nameWithType.vb: ObjectToSql.BuildDeleteQuery(Of T)(T, StringBuilder, String, List(Of String))
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(System.Text.StringBuilder,System.String)
+  name: BuildDeleteQuery<T>(StringBuilder, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDeleteQuery__1_System_Text_StringBuilder_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(System.Text.StringBuilder,System.String)
+  name.vb: BuildDeleteQuery(Of T)(StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery<T>(System.Text.StringBuilder, System.String)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery(Of T)(System.Text.StringBuilder, System.String)
+  nameWithType: ObjectToSql.BuildDeleteQuery<T>(StringBuilder, String)
+  nameWithType.vb: ObjectToSql.BuildDeleteQuery(Of T)(StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: BuildDeleteQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDeleteQuery__1_System_Text_StringBuilder_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: BuildDeleteQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery<T>(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery(Of T)(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: ObjectToSql.BuildDeleteQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  nameWithType.vb: ObjectToSql.BuildDeleteQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery*
+  name: BuildGetQuery
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildGetQuery_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery
+  nameWithType: ObjectToSql.BuildGetQuery
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery``1(System.Text.StringBuilder,System.String,System.String)
+  name: BuildGetQuery<T>(StringBuilder, String, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildGetQuery__1_System_Text_StringBuilder_System_String_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery``1(System.Text.StringBuilder,System.String,System.String)
+  name.vb: BuildGetQuery(Of T)(StringBuilder, String, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery<T>(System.Text.StringBuilder, System.String, System.String)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery(Of T)(System.Text.StringBuilder, System.String, System.String)
+  nameWithType: ObjectToSql.BuildGetQuery<T>(StringBuilder, String, String)
+  nameWithType.vb: ObjectToSql.BuildGetQuery(Of T)(StringBuilder, String, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery(System.Text.StringBuilder,System.String,System.Type)
+  name: BuildInsertQuery(StringBuilder, String, Type)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildInsertQuery_System_Text_StringBuilder_System_String_System_Type_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery(System.Text.StringBuilder,System.String,System.Type)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery(System.Text.StringBuilder, System.String, System.Type)
+  nameWithType: ObjectToSql.BuildInsertQuery(StringBuilder, String, Type)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery*
+  name: BuildInsertQuery
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildInsertQuery_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery
+  nameWithType: ObjectToSql.BuildInsertQuery
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  name: BuildInsertQuery<T>(T, StringBuilder, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildInsertQuery__1___0_System_Text_StringBuilder_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  name.vb: BuildInsertQuery(Of T)(T, StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery<T>(T, System.Text.StringBuilder, System.String)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery(Of T)(T, System.Text.StringBuilder, System.String)
+  nameWithType: ObjectToSql.BuildInsertQuery<T>(T, StringBuilder, String)
+  nameWithType.vb: ObjectToSql.BuildInsertQuery(Of T)(T, StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery``1(System.Text.StringBuilder,System.String)
+  name: BuildInsertQuery<T>(StringBuilder, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildInsertQuery__1_System_Text_StringBuilder_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery``1(System.Text.StringBuilder,System.String)
+  name.vb: BuildInsertQuery(Of T)(StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery<T>(System.Text.StringBuilder, System.String)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery(Of T)(System.Text.StringBuilder, System.String)
+  nameWithType: ObjectToSql.BuildInsertQuery<T>(StringBuilder, String)
+  nameWithType.vb: ObjectToSql.BuildInsertQuery(Of T)(StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs*
+  name: BuildInsertQueryWithIdentityOutputs
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildInsertQueryWithIdentityOutputs_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs
+  nameWithType: ObjectToSql.BuildInsertQueryWithIdentityOutputs
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs``1(System.Text.StringBuilder,System.String)
+  name: BuildInsertQueryWithIdentityOutputs<T>(StringBuilder, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildInsertQueryWithIdentityOutputs__1_System_Text_StringBuilder_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs``1(System.Text.StringBuilder,System.String)
+  name.vb: BuildInsertQueryWithIdentityOutputs(Of T)(StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs<T>(System.Text.StringBuilder, System.String)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs(Of T)(System.Text.StringBuilder, System.String)
+  nameWithType: ObjectToSql.BuildInsertQueryWithIdentityOutputs<T>(StringBuilder, String)
+  nameWithType.vb: ObjectToSql.BuildInsertQueryWithIdentityOutputs(Of T)(StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs*
+  name: BuildInsertQueryWithOutputs
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildInsertQueryWithOutputs_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs
+  nameWithType: ObjectToSql.BuildInsertQueryWithOutputs
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  name: BuildInsertQueryWithOutputs<T>(T, StringBuilder, String, List<String>)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildInsertQueryWithOutputs__1___0_System_Text_StringBuilder_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  name.vb: BuildInsertQueryWithOutputs(Of T)(T, StringBuilder, String, List(Of String))
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs<T>(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs(Of T)(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List(Of System.String))
+  nameWithType: ObjectToSql.BuildInsertQueryWithOutputs<T>(T, StringBuilder, String, List<String>)
+  nameWithType.vb: ObjectToSql.BuildInsertQueryWithOutputs(Of T)(T, StringBuilder, String, List(Of String))
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: BuildInsertQueryWithOutputs<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildInsertQueryWithOutputs__1_System_Text_StringBuilder_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: BuildInsertQueryWithOutputs(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs<T>(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs(Of T)(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: ObjectToSql.BuildInsertQueryWithOutputs<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  nameWithType.vb: ObjectToSql.BuildInsertQueryWithOutputs(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery*
+  name: BuildUpdateQuery
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildUpdateQuery_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery
+  nameWithType: ObjectToSql.BuildUpdateQuery
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String)
+  name: BuildUpdateQuery<T>(T, StringBuilder, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildUpdateQuery__1___0_System_Text_StringBuilder_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String)
+  name.vb: BuildUpdateQuery(Of T)(T, StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery<T>(T, System.Text.StringBuilder, System.String)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery(Of T)(T, System.Text.StringBuilder, System.String)
+  nameWithType: ObjectToSql.BuildUpdateQuery<T>(T, StringBuilder, String)
+  nameWithType.vb: ObjectToSql.BuildUpdateQuery(Of T)(T, StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  name: BuildUpdateQuery<T>(T, StringBuilder, String, List<String>)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildUpdateQuery__1___0_System_Text_StringBuilder_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  name.vb: BuildUpdateQuery(Of T)(T, StringBuilder, String, List(Of String))
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery<T>(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery(Of T)(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List(Of System.String))
+  nameWithType: ObjectToSql.BuildUpdateQuery<T>(T, StringBuilder, String, List<String>)
+  nameWithType.vb: ObjectToSql.BuildUpdateQuery(Of T)(T, StringBuilder, String, List(Of String))
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(System.Text.StringBuilder,System.String)
+  name: BuildUpdateQuery<T>(StringBuilder, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildUpdateQuery__1_System_Text_StringBuilder_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(System.Text.StringBuilder,System.String)
+  name.vb: BuildUpdateQuery(Of T)(StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery<T>(System.Text.StringBuilder, System.String)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery(Of T)(System.Text.StringBuilder, System.String)
+  nameWithType: ObjectToSql.BuildUpdateQuery<T>(StringBuilder, String)
+  nameWithType.vb: ObjectToSql.BuildUpdateQuery(Of T)(StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: BuildUpdateQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildUpdateQuery__1_System_Text_StringBuilder_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: BuildUpdateQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery<T>(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery(Of T)(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: ObjectToSql.BuildUpdateQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  nameWithType.vb: ObjectToSql.BuildUpdateQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery*
+  name: BuildUpsertQuery
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildUpsertQuery_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery
+  nameWithType: ObjectToSql.BuildUpsertQuery
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  name: BuildUpsertQuery<T>(T, StringBuilder, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildUpsertQuery__1___0_System_Text_StringBuilder_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  name.vb: BuildUpsertQuery(Of T)(T, StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery<T>(T, System.Text.StringBuilder, System.String)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery(Of T)(T, System.Text.StringBuilder, System.String)
+  nameWithType: ObjectToSql.BuildUpsertQuery<T>(T, StringBuilder, String)
+  nameWithType.vb: ObjectToSql.BuildUpsertQuery(Of T)(T, StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  name: BuildUpsertQuery<T>(T, StringBuilder, String, List<String>)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildUpsertQuery__1___0_System_Text_StringBuilder_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  name.vb: BuildUpsertQuery(Of T)(T, StringBuilder, String, List(Of String))
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery<T>(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery(Of T)(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List(Of System.String))
+  nameWithType: ObjectToSql.BuildUpsertQuery<T>(T, StringBuilder, String, List<String>)
+  nameWithType.vb: ObjectToSql.BuildUpsertQuery(Of T)(T, StringBuilder, String, List(Of String))
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(System.Text.StringBuilder,System.String)
+  name: BuildUpsertQuery<T>(StringBuilder, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildUpsertQuery__1_System_Text_StringBuilder_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(System.Text.StringBuilder,System.String)
+  name.vb: BuildUpsertQuery(Of T)(StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery<T>(System.Text.StringBuilder, System.String)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery(Of T)(System.Text.StringBuilder, System.String)
+  nameWithType: ObjectToSql.BuildUpsertQuery<T>(StringBuilder, String)
+  nameWithType.vb: ObjectToSql.BuildUpsertQuery(Of T)(StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: BuildUpsertQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildUpsertQuery__1_System_Text_StringBuilder_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: BuildUpsertQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery<T>(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery(Of T)(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: ObjectToSql.BuildUpsertQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  nameWithType.vb: ObjectToSql.BuildUpsertQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
+  name: DatabaseType
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_DatabaseType
+  commentId: P:DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
+  nameWithType: ObjectToSql.DatabaseType
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType*
+  name: DatabaseType
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_DatabaseType_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
+  nameWithType: ObjectToSql.DatabaseType
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
+  name: IncludeNonPublicAccessor
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_IncludeNonPublicAccessor
+  commentId: P:DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
+  nameWithType: ObjectToSql.IncludeNonPublicAccessor
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor*
+  name: IncludeNonPublicAccessor
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_IncludeNonPublicAccessor_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
+  nameWithType: ObjectToSql.IncludeNonPublicAccessor
+- uid: DotNetHelper.ObjectToSql.Tools
+  name: DotNetHelper.ObjectToSql.Tools
+  href: api/DotNetHelper.ObjectToSql.Tools.html
+  commentId: N:DotNetHelper.ObjectToSql.Tools
+  fullName: DotNetHelper.ObjectToSql.Tools
+  nameWithType: DotNetHelper.ObjectToSql.Tools
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  name: DevelopersTools
+  href: api/DotNetHelper.ObjectToSql.Tools.DevelopersTools.html
+  commentId: T:DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  nameWithType: DevelopersTools
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass(System.Data.IDataReader,System.String,System.Boolean)
+  name: ToCSharpClass(IDataReader, String, Boolean)
+  href: api/DotNetHelper.ObjectToSql.Tools.DevelopersTools.html#DotNetHelper_ObjectToSql_Tools_DevelopersTools_ToCSharpClass_System_Data_IDataReader_System_String_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass(System.Data.IDataReader,System.String,System.Boolean)
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass(System.Data.IDataReader, System.String, System.Boolean)
+  nameWithType: DevelopersTools.ToCSharpClass(IDataReader, String, Boolean)
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass*
+  name: ToCSharpClass
+  href: api/DotNetHelper.ObjectToSql.Tools.DevelopersTools.html#DotNetHelper_ObjectToSql_Tools_DevelopersTools_ToCSharpClass_
+  commentId: Overload:DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.ToCSharpClass
+  nameWithType: DevelopersTools.ToCSharpClass
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType(System.Type,DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  name: TypeToSqlType(Type, DataBaseType)
+  href: api/DotNetHelper.ObjectToSql.Tools.DevelopersTools.html#DotNetHelper_ObjectToSql_Tools_DevelopersTools_TypeToSqlType_System_Type_DotNetHelper_ObjectToSql_Enum_DataBaseType_
+  commentId: M:DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType(System.Type,DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType(System.Type, DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  nameWithType: DevelopersTools.TypeToSqlType(Type, DataBaseType)
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType*
+  name: TypeToSqlType
+  href: api/DotNetHelper.ObjectToSql.Tools.DevelopersTools.html#DotNetHelper_ObjectToSql_Tools_DevelopersTools_TypeToSqlType_
+  commentId: Overload:DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.TypeToSqlType
+  nameWithType: DevelopersTools.TypeToSqlType
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass(System.String)
+  name: XmlTCSharpClass(String)
+  href: api/DotNetHelper.ObjectToSql.Tools.DevelopersTools.html#DotNetHelper_ObjectToSql_Tools_DevelopersTools_XmlTCSharpClass_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass(System.String)
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass(System.String)
+  nameWithType: DevelopersTools.XmlTCSharpClass(String)
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass*
+  name: XmlTCSharpClass
+  href: api/DotNetHelper.ObjectToSql.Tools.DevelopersTools.html#DotNetHelper_ObjectToSql_Tools_DevelopersTools_XmlTCSharpClass_
+  commentId: Overload:DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools.XmlTCSharpClass
+  nameWithType: DevelopersTools.XmlTCSharpClass

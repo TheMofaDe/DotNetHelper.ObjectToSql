@@ -1,0 +1,1710 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  commentId: T:DotNetHelper.ObjectToSql.Services.ObjectToSql
+  id: ObjectToSql
+  parent: DotNetHelper.ObjectToSql.Services
+  children:
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(System.Text.StringBuilder,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery``1(System.Text.StringBuilder,System.String,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery(System.Text.StringBuilder,System.String,System.Type)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery``1(System.Text.StringBuilder,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs``1(System.Text.StringBuilder,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(System.Text.StringBuilder,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(System.Text.StringBuilder,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
+  langs:
+  - csharp
+  - vb
+  name: ObjectToSql
+  nameWithType: ObjectToSql
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  type: Class
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ObjectToSql
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 16
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  syntax:
+    content: public class ObjectToSql
+    content.vb: Public Class ObjectToSql
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
+  commentId: P:DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
+  id: IncludeNonPublicAccessor
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: IncludeNonPublicAccessor
+  nameWithType: ObjectToSql.IncludeNonPublicAccessor
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: IncludeNonPublicAccessor
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 20
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  syntax:
+    content: public bool IncludeNonPublicAccessor { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IncludeNonPublicAccessor As Boolean
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
+  commentId: P:DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
+  id: DatabaseType
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: DatabaseType
+  nameWithType: ObjectToSql.DatabaseType
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: DatabaseType
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 21
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  syntax:
+    content: public DataBaseType DatabaseType { get; }
+    parameters: []
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    content.vb: Public ReadOnly Property DatabaseType As DataBaseType
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
+  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)'
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: ObjectToSql(DataBaseType, Boolean)
+  nameWithType: ObjectToSql.ObjectToSql(DataBaseType, Boolean)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.ObjectToSql(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: .ctor
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 23
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  syntax:
+    content: public ObjectToSql(DataBaseType type, bool includeNonPublicAccessor)
+    parameters:
+    - id: type
+      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    - id: includeNonPublicAccessor
+      type: System.Boolean
+    content.vb: Public Sub New(type As DataBaseType, includeNonPublicAccessor As Boolean)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)'
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: ObjectToSql(DataBaseType)
+  nameWithType: ObjectToSql.ObjectToSql(DataBaseType)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.ObjectToSql(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  type: Constructor
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: .ctor
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 28
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  syntax:
+    content: public ObjectToSql(DataBaseType type)
+    parameters:
+    - id: type
+      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    content.vb: Public Sub New(type As DataBaseType)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery``1(System.Text.StringBuilder,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery``1(System.Text.StringBuilder,System.String)
+  id: BuildInsertQuery``1(System.Text.StringBuilder,System.String)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildInsertQuery<T>(StringBuilder, String)
+  nameWithType: ObjectToSql.BuildInsertQuery<T>(StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery<T>(System.Text.StringBuilder, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildInsertQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 39
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the insert query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildInsertQuery<T>(StringBuilder sqlBuilder, string tableName)
+          where T : class
+    parameters:
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildInsertQuery(Of T As Class)(sqlBuilder As StringBuilder, tableName As String)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery*
+  nameWithType.vb: ObjectToSql.BuildInsertQuery(Of T)(StringBuilder, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery(Of T)(System.Text.StringBuilder, System.String)
+  name.vb: BuildInsertQuery(Of T)(StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  id: BuildInsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildInsertQuery<T>(T, StringBuilder, String)
+  nameWithType: ObjectToSql.BuildInsertQuery<T>(T, StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery<T>(T, System.Text.StringBuilder, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildInsertQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 63
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the insert query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildInsertQuery<T>(T poco, StringBuilder sqlBuilder, string tableName)
+          where T : IDynamicMetaObjectProvider
+    parameters:
+    - id: poco
+      type: '{T}'
+      description: ''
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildInsertQuery(Of T As IDynamicMetaObjectProvider)(poco As T, sqlBuilder As StringBuilder, tableName As String)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery*
+  nameWithType.vb: ObjectToSql.BuildInsertQuery(Of T)(T, StringBuilder, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery(Of T)(T, System.Text.StringBuilder, System.String)
+  name.vb: BuildInsertQuery(Of T)(T, StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery(System.Text.StringBuilder,System.String,System.Type)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery(System.Text.StringBuilder,System.String,System.Type)
+  id: BuildInsertQuery(System.Text.StringBuilder,System.String,System.Type)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildInsertQuery(StringBuilder, String, Type)
+  nameWithType: ObjectToSql.BuildInsertQuery(StringBuilder, String, Type)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery(System.Text.StringBuilder, System.String, System.Type)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildInsertQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 86
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the insert query.\n"
+  example: []
+  syntax:
+    content: public void BuildInsertQuery(StringBuilder sqlBuilder, string tableName, Type type)
+    parameters:
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    - id: type
+      type: System.Type
+      description: ''
+    content.vb: Public Sub BuildInsertQuery(sqlBuilder As StringBuilder, tableName As String, type As Type)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: BuildInsertQueryWithOutputs``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildInsertQueryWithOutputs<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  nameWithType: ObjectToSql.BuildInsertQueryWithOutputs<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs<T>(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildInsertQueryWithOutputs
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 115
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the insert query and return the expression.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildInsertQueryWithOutputs<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] outFields)
+          where T : class
+    parameters:
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    - id: outFields
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildInsertQueryWithOutputs(Of T As Class)(sqlBuilder As StringBuilder, tableName As String, ParamArray outFields As Expression(Of Func(Of T, Object))())
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs*
+  nameWithType.vb: ObjectToSql.BuildInsertQueryWithOutputs(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs(Of T)(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: BuildInsertQueryWithOutputs(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  id: BuildInsertQueryWithOutputs``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildInsertQueryWithOutputs<T>(T, StringBuilder, String, List<String>)
+  nameWithType: ObjectToSql.BuildInsertQueryWithOutputs<T>(T, StringBuilder, String, List<String>)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs<T>(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List<System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildInsertQueryWithOutputs
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 157
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: >
+    O
+
+    Builds the insert query and return the expression.
+  example: []
+  syntax:
+    content: >-
+      public void BuildInsertQueryWithOutputs<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName, List<string> outFields)
+          where T : IDynamicMetaObjectProvider
+    parameters:
+    - id: dynamicObject
+      type: '{T}'
+      description: ''
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    - id: outFields
+      type: System.Collections.Generic.List{System.String}
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildInsertQueryWithOutputs(Of T As IDynamicMetaObjectProvider)(dynamicObject As T, sqlBuilder As StringBuilder, tableName As String, outFields As List(Of String))
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs*
+  nameWithType.vb: ObjectToSql.BuildInsertQueryWithOutputs(Of T)(T, StringBuilder, String, List(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs(Of T)(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List(Of System.String))
+  name.vb: BuildInsertQueryWithOutputs(Of T)(T, StringBuilder, String, List(Of String))
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs``1(System.Text.StringBuilder,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs``1(System.Text.StringBuilder,System.String)
+  id: BuildInsertQueryWithIdentityOutputs``1(System.Text.StringBuilder,System.String)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildInsertQueryWithIdentityOutputs<T>(StringBuilder, String)
+  nameWithType: ObjectToSql.BuildInsertQueryWithIdentityOutputs<T>(StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs<T>(System.Text.StringBuilder, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildInsertQueryWithIdentityOutputs
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 244
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the insert query and return the expression.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildInsertQueryWithIdentityOutputs<T>(StringBuilder sqlBuilder, string tableName)
+          where T : class
+    parameters:
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildInsertQueryWithIdentityOutputs(Of T As Class)(sqlBuilder As StringBuilder, tableName As String)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs*
+  nameWithType.vb: ObjectToSql.BuildInsertQueryWithIdentityOutputs(Of T)(StringBuilder, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs(Of T)(System.Text.StringBuilder, System.String)
+  name.vb: BuildInsertQueryWithIdentityOutputs(Of T)(StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(System.Text.StringBuilder,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(System.Text.StringBuilder,System.String)
+  id: BuildUpdateQuery``1(System.Text.StringBuilder,System.String)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildUpdateQuery<T>(StringBuilder, String)
+  nameWithType: ObjectToSql.BuildUpdateQuery<T>(StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery<T>(System.Text.StringBuilder, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildUpdateQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 293
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the update query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName)
+          where T : class
+    parameters:
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildUpdateQuery(Of T As Class)(sqlBuilder As StringBuilder, tableName As String)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery*
+  nameWithType.vb: ObjectToSql.BuildUpdateQuery(Of T)(StringBuilder, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery(Of T)(System.Text.StringBuilder, System.String)
+  name.vb: BuildUpdateQuery(Of T)(StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String)
+  id: BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildUpdateQuery<T>(T, StringBuilder, String)
+  nameWithType: ObjectToSql.BuildUpdateQuery<T>(T, StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery<T>(T, System.Text.StringBuilder, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildUpdateQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 320
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the update query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildUpdateQuery<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName)
+          where T : IDynamicMetaObjectProvider
+    parameters:
+    - id: dynamicObject
+      type: '{T}'
+      description: ''
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildUpdateQuery(Of T As IDynamicMetaObjectProvider)(dynamicObject As T, sqlBuilder As StringBuilder, tableName As String)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery*
+  nameWithType.vb: ObjectToSql.BuildUpdateQuery(Of T)(T, StringBuilder, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery(Of T)(T, System.Text.StringBuilder, System.String)
+  name.vb: BuildUpdateQuery(Of T)(T, StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: BuildUpdateQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildUpdateQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  nameWithType: ObjectToSql.BuildUpdateQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery<T>(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildUpdateQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 346
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the update query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys)
+          where T : class
+    parameters:
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    - id: overrideKeys
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildUpdateQuery(Of T As Class)(sqlBuilder As StringBuilder, tableName As String, ParamArray overrideKeys As Expression(Of Func(Of T, Object))())
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery*
+  nameWithType.vb: ObjectToSql.BuildUpdateQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery(Of T)(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: BuildUpdateQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  id: BuildUpdateQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildUpdateQuery<T>(T, StringBuilder, String, List<String>)
+  nameWithType: ObjectToSql.BuildUpdateQuery<T>(T, StringBuilder, String, List<String>)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery<T>(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List<System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildUpdateQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 382
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the update query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildUpdateQuery<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName, List<string> overrideKeys)
+          where T : IDynamicMetaObjectProvider
+    parameters:
+    - id: dynamicObject
+      type: '{T}'
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    - id: overrideKeys
+      type: System.Collections.Generic.List{System.String}
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildUpdateQuery(Of T As IDynamicMetaObjectProvider)(dynamicObject As T, sqlBuilder As StringBuilder, tableName As String, overrideKeys As List(Of String))
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery*
+  nameWithType.vb: ObjectToSql.BuildUpdateQuery(Of T)(T, StringBuilder, String, List(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery(Of T)(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List(Of System.String))
+  name.vb: BuildUpdateQuery(Of T)(T, StringBuilder, String, List(Of String))
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(System.Text.StringBuilder,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(System.Text.StringBuilder,System.String)
+  id: BuildDeleteQuery``1(System.Text.StringBuilder,System.String)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildDeleteQuery<T>(StringBuilder, String)
+  nameWithType: ObjectToSql.BuildDeleteQuery<T>(StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery<T>(System.Text.StringBuilder, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildDeleteQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 408
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the delete query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName)
+          where T : class
+    parameters:
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildDeleteQuery(Of T As Class)(sqlBuilder As StringBuilder, tableName As String)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery*
+  nameWithType.vb: ObjectToSql.BuildDeleteQuery(Of T)(StringBuilder, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery(Of T)(System.Text.StringBuilder, System.String)
+  name.vb: BuildDeleteQuery(Of T)(StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String)
+  id: BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildDeleteQuery<T>(T, StringBuilder, String)
+  nameWithType: ObjectToSql.BuildDeleteQuery<T>(T, StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery<T>(T, System.Text.StringBuilder, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildDeleteQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 427
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the delete query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildDeleteQuery<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName)
+          where T : IDynamicMetaObjectProvider
+    parameters:
+    - id: dynamicObject
+      type: '{T}'
+      description: ''
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildDeleteQuery(Of T As IDynamicMetaObjectProvider)(dynamicObject As T, sqlBuilder As StringBuilder, tableName As String)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery*
+  nameWithType.vb: ObjectToSql.BuildDeleteQuery(Of T)(T, StringBuilder, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery(Of T)(T, System.Text.StringBuilder, System.String)
+  name.vb: BuildDeleteQuery(Of T)(T, StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: BuildDeleteQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildDeleteQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  nameWithType: ObjectToSql.BuildDeleteQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery<T>(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildDeleteQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 446
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the delete query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys)
+          where T : class
+    parameters:
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    - id: overrideKeys
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildDeleteQuery(Of T As Class)(sqlBuilder As StringBuilder, tableName As String, ParamArray overrideKeys As Expression(Of Func(Of T, Object))())
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery*
+  nameWithType.vb: ObjectToSql.BuildDeleteQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery(Of T)(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: BuildDeleteQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  id: BuildDeleteQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildDeleteQuery<T>(T, StringBuilder, String, List<String>)
+  nameWithType: ObjectToSql.BuildDeleteQuery<T>(T, StringBuilder, String, List<String>)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery<T>(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List<System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildDeleteQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 475
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the delete query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildDeleteQuery<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName, List<string> overrideKeys)
+          where T : IDynamicMetaObjectProvider
+    parameters:
+    - id: dynamicObject
+      type: '{T}'
+      description: ''
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    - id: overrideKeys
+      type: System.Collections.Generic.List{System.String}
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildDeleteQuery(Of T As IDynamicMetaObjectProvider)(dynamicObject As T, sqlBuilder As StringBuilder, tableName As String, overrideKeys As List(Of String))
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery*
+  nameWithType.vb: ObjectToSql.BuildDeleteQuery(Of T)(T, StringBuilder, String, List(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery(Of T)(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List(Of System.String))
+  name.vb: BuildDeleteQuery(Of T)(T, StringBuilder, String, List(Of String))
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery``1(System.Text.StringBuilder,System.String,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery``1(System.Text.StringBuilder,System.String,System.String)
+  id: BuildGetQuery``1(System.Text.StringBuilder,System.String,System.String)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildGetQuery<T>(StringBuilder, String, String)
+  nameWithType: ObjectToSql.BuildGetQuery<T>(StringBuilder, String, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery<T>(System.Text.StringBuilder, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildGetQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 493
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the get query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildGetQuery<T>(StringBuilder sqlBuilder, string tableName, string whereClause)
+          where T : class
+    parameters:
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    - id: whereClause
+      type: System.String
+      description: The where clause.
+    typeParameters:
+    - id: T
+    content.vb: Public Sub BuildGetQuery(Of T As Class)(sqlBuilder As StringBuilder, tableName As String, whereClause As String)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery*
+  nameWithType.vb: ObjectToSql.BuildGetQuery(Of T)(StringBuilder, String, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery(Of T)(System.Text.StringBuilder, System.String, System.String)
+  name.vb: BuildGetQuery(Of T)(StringBuilder, String, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(System.Text.StringBuilder,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(System.Text.StringBuilder,System.String)
+  id: BuildUpsertQuery``1(System.Text.StringBuilder,System.String)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildUpsertQuery<T>(StringBuilder, String)
+  nameWithType: ObjectToSql.BuildUpsertQuery<T>(StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery<T>(System.Text.StringBuilder, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildUpsertQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 513
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the upsert query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName)
+          where T : class
+    parameters:
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildUpsertQuery(Of T As Class)(sqlBuilder As StringBuilder, tableName As String)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery*
+  nameWithType.vb: ObjectToSql.BuildUpsertQuery(Of T)(StringBuilder, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery(Of T)(System.Text.StringBuilder, System.String)
+  name.vb: BuildUpsertQuery(Of T)(StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  id: BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildUpsertQuery<T>(T, StringBuilder, String)
+  nameWithType: ObjectToSql.BuildUpsertQuery<T>(T, StringBuilder, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery<T>(T, System.Text.StringBuilder, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildUpsertQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 536
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the upsert query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildUpsertQuery<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName)
+          where T : IDynamicMetaObjectProvider
+    parameters:
+    - id: dynamicObject
+      type: '{T}'
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildUpsertQuery(Of T As IDynamicMetaObjectProvider)(dynamicObject As T, sqlBuilder As StringBuilder, tableName As String)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery*
+  nameWithType.vb: ObjectToSql.BuildUpsertQuery(Of T)(T, StringBuilder, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery(Of T)(T, System.Text.StringBuilder, System.String)
+  name.vb: BuildUpsertQuery(Of T)(T, StringBuilder, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: BuildUpsertQuery``1(System.Text.StringBuilder,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildUpsertQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  nameWithType: ObjectToSql.BuildUpsertQuery<T>(StringBuilder, String, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery<T>(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildUpsertQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 553
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  syntax:
+    content: >-
+      public void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys)
+          where T : class
+    parameters:
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+    - id: tableName
+      type: System.String
+    - id: overrideKeys
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+    typeParameters:
+    - id: T
+    content.vb: Public Sub BuildUpsertQuery(Of T As Class)(sqlBuilder As StringBuilder, tableName As String, ParamArray overrideKeys As Expression(Of Func(Of T, Object))())
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery*
+  nameWithType.vb: ObjectToSql.BuildUpsertQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery(Of T)(System.Text.StringBuilder, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: BuildUpsertQuery(Of T)(StringBuilder, String, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  id: BuildUpsertQuery``1(``0,System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildUpsertQuery<T>(T, StringBuilder, String, List<String>)
+  nameWithType: ObjectToSql.BuildUpsertQuery<T>(T, StringBuilder, String, List<String>)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery<T>(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List<System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildUpsertQuery
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 586
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the upsert query.\n"
+  example: []
+  syntax:
+    content: >-
+      public void BuildUpsertQuery<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName, List<string> overrideKeys)
+          where T : IDynamicMetaObjectProvider
+    parameters:
+    - id: dynamicObject
+      type: '{T}'
+    - id: sqlBuilder
+      type: System.Text.StringBuilder
+      description: The SQL builder.
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    - id: overrideKeys
+      type: System.Collections.Generic.List{System.String}
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Sub BuildUpsertQuery(Of T As IDynamicMetaObjectProvider)(dynamicObject As T, sqlBuilder As StringBuilder, tableName As String, overrideKeys As List(Of String))
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery*
+  nameWithType.vb: ObjectToSql.BuildUpsertQuery(Of T)(T, StringBuilder, String, List(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery(Of T)(T, System.Text.StringBuilder, System.String, System.Collections.Generic.List(Of System.String))
+  name.vb: BuildUpsertQuery(Of T)(T, StringBuilder, String, List(Of String))
+references:
+- uid: DotNetHelper.ObjectToSql.Services
+  commentId: N:DotNetHelper.ObjectToSql.Services
+  name: DotNetHelper.ObjectToSql.Services
+  nameWithType: DotNetHelper.ObjectToSql.Services
+  fullName: DotNetHelper.ObjectToSql.Services
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
+  name: IncludeNonPublicAccessor
+  nameWithType: ObjectToSql.IncludeNonPublicAccessor
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
+  name: DatabaseType
+  nameWithType: ObjectToSql.DatabaseType
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.DataBaseType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: DataBaseType
+  nameWithType: DataBaseType
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
+- uid: DotNetHelper.ObjectToSql.Enum
+  commentId: N:DotNetHelper.ObjectToSql.Enum
+  name: DotNetHelper.ObjectToSql.Enum
+  nameWithType: DotNetHelper.ObjectToSql.Enum
+  fullName: DotNetHelper.ObjectToSql.Enum
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor
+  name: ObjectToSql
+  nameWithType: ObjectToSql.ObjectToSql
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery
+  name: BuildInsertQuery
+  nameWithType: ObjectToSql.BuildInsertQuery
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQuery
+- uid: System.Text.StringBuilder
+  commentId: T:System.Text.StringBuilder
+  parent: System.Text
+  isExternal: true
+  name: StringBuilder
+  nameWithType: StringBuilder
+  fullName: System.Text.StringBuilder
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs
+  name: BuildInsertQueryWithOutputs
+  nameWithType: ObjectToSql.BuildInsertQueryWithOutputs
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithOutputs
+- uid: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+  isExternal: true
+  name: Expression<Func<T, Object>>[]
+  nameWithType: Expression<Func<T, Object>>[]
+  fullName: System.Linq.Expressions.Expression<System.Func<T, System.Object>>[]
+  nameWithType.vb: Expression(Of Func(Of T, Object))()
+  fullName.vb: System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))()
+  name.vb: Expression(Of Func(Of T, Object))()
+  spec.csharp:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<String>
+  nameWithType: List<String>
+  fullName: System.Collections.Generic.List<System.String>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of System.String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs
+  name: BuildInsertQueryWithIdentityOutputs
+  nameWithType: ObjectToSql.BuildInsertQueryWithIdentityOutputs
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildInsertQueryWithIdentityOutputs
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery
+  name: BuildUpdateQuery
+  nameWithType: ObjectToSql.BuildUpdateQuery
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpdateQuery
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery
+  name: BuildDeleteQuery
+  nameWithType: ObjectToSql.BuildDeleteQuery
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDeleteQuery
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery
+  name: BuildGetQuery
+  nameWithType: ObjectToSql.BuildGetQuery
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildGetQuery
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery
+  name: BuildUpsertQuery
+  nameWithType: ObjectToSql.BuildUpsertQuery
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildUpsertQuery

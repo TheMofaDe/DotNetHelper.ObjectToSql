@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Tools
+  commentId: N:DotNetHelper.ObjectToSql.Tools
+  id: DotNetHelper.ObjectToSql.Tools
+  children:
+  - DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper.ObjectToSql.Tools
+  nameWithType: DotNetHelper.ObjectToSql.Tools
+  fullName: DotNetHelper.ObjectToSql.Tools
+  type: Namespace
+  assemblies:
+  - DotNetHelper.ObjectToSql
+references:
+- uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  commentId: T:DotNetHelper.ObjectToSql.Tools.DevelopersTools
+  name: DevelopersTools
+  nameWithType: DevelopersTools
+  fullName: DotNetHelper.ObjectToSql.Tools.DevelopersTools

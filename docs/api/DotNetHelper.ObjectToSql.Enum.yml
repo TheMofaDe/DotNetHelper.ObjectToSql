@@ -1,0 +1,56 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Enum
+  commentId: N:DotNetHelper.ObjectToSql.Enum
+  id: DotNetHelper.ObjectToSql.Enum
+  children:
+  - DotNetHelper.ObjectToSql.Enum.ActionType
+  - DotNetHelper.ObjectToSql.Enum.DataBaseType
+  - DotNetHelper.ObjectToSql.Enum.ScriptType
+  - DotNetHelper.ObjectToSql.Enum.SerializableType
+  - DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper.ObjectToSql.Enum
+  nameWithType: DotNetHelper.ObjectToSql.Enum
+  fullName: DotNetHelper.ObjectToSql.Enum
+  type: Namespace
+  assemblies:
+  - DotNetHelper.ObjectToSql
+references:
+- uid: DotNetHelper.ObjectToSql.Enum.ScriptType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.ScriptType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: ScriptType
+  nameWithType: ScriptType
+  fullName: DotNetHelper.ObjectToSql.Enum.ScriptType
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.ActionType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: ActionType
+  nameWithType: ActionType
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.DataBaseType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: DataBaseType
+  nameWithType: DataBaseType
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.SerializableType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: SerializableType
+  nameWithType: SerializableType
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType
+- uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: SQLJoinType
+  nameWithType: SQLJoinType
+  fullName: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+- uid: DotNetHelper.ObjectToSql.Enum
+  commentId: N:DotNetHelper.ObjectToSql.Enum
+  name: DotNetHelper.ObjectToSql.Enum
+  nameWithType: DotNetHelper.ObjectToSql.Enum
+  fullName: DotNetHelper.ObjectToSql.Enum
