@@ -38,16 +38,23 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 
 
         [Test]
-        public void Test_Dynamic_BuildUpdateQuery_Ensure_Exception_Thrown_When_NoKeys_Provided()
+        public void Test_Dynamic_BuildUpdateQuery_Ensure_Exception_MissingKeyAttributeException_Thrown_When_NoKeys_Provided()
         {
             dynamic record = new ExpandoObject();
             record.FirstName = "John";
             record.LastName = "Doe";
 
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => sqlServerObjectToSql.BuildUpdateQuery(record, new StringBuilder(), "Employee"),
-                Throws.Exception
-                    .TypeOf<EmptyArgumentException>());
+            try
+            {
+                sqlServerObjectToSql.BuildUpdateQuery(record, new StringBuilder(), "Employee");
+            }
+            catch (MissingKeyAttributeException e)
+            {
+                return;
+            }
+   
+
         }
 
         [Test]
