@@ -3,7 +3,7 @@
 
 | Package  | Tests | Coverage |
 | :-----:  | :---: | :------: |
-| ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![Coverage Status](https://coveralls.io/repos/github/TheMofaDe/DotNetHelper.ObjectToSql/badge.svg)](https://coveralls.io/github/TheMofaDe/DotNetHelper.ObjectToSql) |
+| ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![Coverage Status](https://coveralls.io/repos/github/TheMofaDe/DotNetHelper.ObjectToSql/badge.svg)][![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql) |
 
 ### *Azure DevOps*
 | Windows | Linux | MacOS |
@@ -85,6 +85,7 @@ Created Using [DotNet-Starter-Template](http://themofade.github.io/DotNet-Starte
 [nuget-downloads]: https://img.shields.io/nuget/dt/DotNetHelper.ObjectToSql.svg?style=flat-square
 [tests]: https://img.shields.io/appveyor/tests/themofade/DotNetHelper.ObjectToSql.svg?style=flat-square
 [coverage-status]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_apis/build/status/TheMofaDe.DotNetHelper.ObjectToSql?branchName=master&jobName=Windows
+
 
 [azure-windows]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_apis/build/status/TheMofaDe.DotNetHelper.ObjectToSql?branchName=master&jobName=Windows
 [azure-linux]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_apis/build/status/TheMofaDe.DotNetHelper.ObjectToSql?branchName=master&jobName=Linux
