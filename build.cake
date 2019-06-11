@@ -141,7 +141,7 @@ Task("Test")
 
 
 		var tf = targetFramework.Replace("netstandard","netcoreapp");
-		var coverageFile = parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage-{tf}.xml";
+		var coverageFile = parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml";
         var settings = new DotNetCoreTestSettings
         {
             Framework = tf,
@@ -165,7 +165,7 @@ Task("Test")
 
 		var nunitSettings = new NUnit3Settings
 		{
-		    Results = new List<NUnit3Result> { new NUnit3Result { FileName = parameters.Paths.Directories.TestCoverageOutput + $"/TestResult-{tf}.xml"  } }
+		    Results = new List<NUnit3Result> { new NUnit3Result { FileName = parameters.Paths.Directories.TestCoverageOutput + $"/TestResult.xml"  } }
 		};
 
 		if(IsRunningOnUnix()) {
