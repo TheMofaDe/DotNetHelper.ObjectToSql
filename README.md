@@ -3,7 +3,7 @@
 
 | Package  | Tests | Coverage |
 | :-----:  | :---: | :------: |
-| ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![Coverage Status](https://coveralls.io/repos/github/TheMofaDe/DotNetHelper.ObjectToSql/badge.svg)][![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql) |
+| ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql) |
 
 ### *Azure DevOps*
 | Windows | Linux | MacOS |
