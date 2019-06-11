@@ -16,41 +16,10 @@ namespace DotNetHelper.ObjectToSql.Extension
 
 
 
-        public static bool IsCSharpClass(this Type type)
-        {
-
-            return    type != typeof(DateTime)
-                   && type != typeof(DateTimeOffset)
-                   && type != typeof(string)
-                   && type != typeof(bool)
-                   && type != typeof(double)
-                   && type != typeof(char)
-                   && type != typeof(decimal)
-                   && type != typeof(Guid)
-                   && type != typeof(short)
-                   && type != typeof(int) //   || type == typeof(Int16) || type == typeof(Int32) || type == typeof(Int64)           
-                   && type != typeof(float)
-                   && type != typeof(long)
-                   && type != typeof(byte)
-                   && type != typeof(byte[])
-                   && type != typeof(sbyte)
-                   && type != typeof(ulong)
-                   && type != typeof(ushort)
-                   && type != typeof(uint)
-                   ;
-            
-
-        }
-
-
-        public static bool IsStruct(this Type type)
-        {
-            return type.IsValueType && !type.IsEnum;
-        }
-
+      
      
 
-    /// <summary>
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="type"></param>

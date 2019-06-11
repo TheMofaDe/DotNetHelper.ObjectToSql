@@ -22,15 +22,6 @@ namespace DotNetHelper.ObjectToSql.Extension
         }
 
 
-        /// <summary>
-        /// Method Name Pretty Much Says It All
-        /// </summary> 
-        /// <param name="source"></param>
-        /// <returns></returns>
-        public static bool IsNullOrEmpty(this IEnumerable source)
-        {
-            return source == null || !source.GetEnumerator().MoveNext();
-        }
 
 
         /// <summary>

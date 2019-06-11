@@ -16,8 +16,7 @@ namespace DotNetHelper.ObjectToSql.Services
 {
     public class ObjectToSql
     {
-        //    #region Dynamic Query Building
-
+        
         public bool IncludeNonPublicAccessor { get; set; } = true;
         public DataBaseType DatabaseType { get; }
 
@@ -30,7 +29,6 @@ namespace DotNetHelper.ObjectToSql.Services
         {
             DatabaseType = type;
         }
-
 
 
         public string BuildQuery<T>(string tableName, ActionType actionType, T instance) where T : class

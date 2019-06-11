@@ -9,7 +9,6 @@ using DotNetHelper.FastMember.Extension.Models;
 using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Extension;
-using ISerializer = DotNetHelper.Serialization.Abstractions.Interface.ISerializer;
 
 namespace DotNetHelper.ObjectToSql.Helper
 {
@@ -200,7 +199,6 @@ namespace DotNetHelper.ObjectToSql.Helper
         public static List<MemberWrapper> GetAllNonIgnoreFields(Type type, bool includeNonPublicAccessor)
         {
             // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
-
             var temp = ExtFastMember.GetMemberWrappers(type, includeNonPublicAccessor).Where(m => !m.ShouldMemberBeIgnored()).AsList();
             return temp;
         }
@@ -215,7 +213,7 @@ namespace DotNetHelper.ObjectToSql.Helper
         /// <param name="member">The member.</param>
         /// <param name="value">The value.</param>
         /// <returns>System.Object.</returns>
-        public static object ConvertToDatabaseValue(MemberWrapper member, object value, ISerializer XmlSerializer, ISerializer JsonSerializer, ISerializer CsvSerializer)
+        public static object ConvertToDatabaseValue(MemberWrapper member, object value, Func<object,string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
         {
             if (value == null)
             {
@@ -231,13 +229,13 @@ namespace DotNetHelper.ObjectToSql.Helper
                     {
                         case SerializableType.XML:
                             XmlSerializer.IsNullThrow(nameof(XmlSerializer), new ArgumentNullException(nameof(XmlSerializer),$"{ExceptionHelper.NullSerializer(member,SerializableType.XML)}"));
-                            return XmlSerializer.SerializeToString(value);
+                            return XmlSerializer.Invoke(value);
                         case SerializableType.JSON:
                             JsonSerializer.IsNullThrow(nameof(JsonSerializer), new ArgumentNullException(nameof(JsonSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.JSON)}"));
-                            return JsonSerializer.SerializeToString(value);
+                            return JsonSerializer.Invoke(value);
                         case SerializableType.CSV:
                             CsvSerializer.IsNullThrow(nameof(CsvSerializer), new ArgumentNullException(nameof(CsvSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.CSV)}"));
-                            return CsvSerializer.SerializeToString(value);
+                            return CsvSerializer.Invoke(value);
                         case SerializableType.NONE:
                         case null:
                             break;
@@ -256,14 +254,13 @@ namespace DotNetHelper.ObjectToSql.Helper
         /// <typeparam name="T"></typeparam>
         /// <param name="poco">The poco.</param>
         /// <returns>List&lt;DbParameter&gt;.</returns>
-        public List<DbParameter> BuildDbParameterList<T>(T poco, Func<string, object, DbParameter> GetNewParameter, ISerializer XmlSerializer, ISerializer JsonSerializer, ISerializer CsvSerializer, bool includeNonPublicAccessor) where T : class
+        public List<DbParameter> BuildDbParameterList<T>(T poco, Func<string, object, DbParameter> GetNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer, bool includeNonPublicAccessor) where T : class
         {
             var list = new List<DbParameter>() { };
             ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).ForEach(delegate (MemberWrapper p)
             {
                 var  parameterValue = ConvertToDatabaseValue(p, p.GetValue(poco),XmlSerializer,JsonSerializer,CsvSerializer);
                 list.Add(GetNewParameter($"@{p.Name}", parameterValue));
-
             });
             return list;
         }

@@ -9,25 +9,7 @@ namespace DotNetHelper.ObjectToSql.Extension
 {
    public static class MemberWrapperExtension
    {
-        //internal static SqlColumnAttribute GetSqlColumnAttribute(this MemberWrapper member)
-        //{
-        //    return member.GetCustomAttribute<SqlColumnAttribute>();
-        //}
-
-        //internal static ColumnAttribute GetColumnAttribute(this MemberWrapper member)
-        //{
-        //    return member.GetCustomAttribute<ColumnAttribute>();
-        //}
-
-        //internal static DatabaseGeneratedAttribute GetDatabaseGeneratedAttribute(this MemberWrapper member)
-        //{
-        //    return member.GetCustomAttribute<DatabaseGeneratedAttribute>();
-        //}
-
-
-
-
-        public static bool ShouldMemberBeIgnored(this MemberWrapper member)
+       public static bool ShouldMemberBeIgnored(this MemberWrapper member)
         {
             var attr1 = member.GetCustomAttribute<SqlColumnAttribute>();
             if (attr1?.Ignore == true) return true;
@@ -70,10 +52,10 @@ namespace DotNetHelper.ObjectToSql.Extension
         {
             if (member.ShouldMemberBeIgnored()) return false;
             var sqlColumnAttribute = member.GetCustomAttribute<SqlColumnAttribute>();
-            var dataAnnonationAttribute = member.GetCustomAttribute<DatabaseGeneratedAttribute>();
+            var dataAnnotationAttribute = member.GetCustomAttribute<DatabaseGeneratedAttribute>();
             return
-                 (  dataAnnonationAttribute?.DatabaseGeneratedOption == DatabaseGeneratedOption.Identity
-                 || dataAnnonationAttribute?.DatabaseGeneratedOption == DatabaseGeneratedOption.Computed)
+                 (  dataAnnotationAttribute?.DatabaseGeneratedOption == DatabaseGeneratedOption.Identity
+                 || dataAnnotationAttribute?.DatabaseGeneratedOption == DatabaseGeneratedOption.Computed)
                  || (sqlColumnAttribute?.IsIdentityKey == true) 
                 ;
         }
@@ -82,11 +64,11 @@ namespace DotNetHelper.ObjectToSql.Extension
         {
             if (member.ShouldMemberBeIgnored()) return false;
             var sqlColumnAttribute = member.GetCustomAttribute<SqlColumnAttribute>();
-            var dataAnnonationAttribute = member.GetCustomAttribute<DatabaseGeneratedAttribute>();
+            var dataAnnotationAttribute = member.GetCustomAttribute<DatabaseGeneratedAttribute>();
             var keyAttribute = member.GetCustomAttribute<KeyAttribute>();
             return
-                (dataAnnonationAttribute?.DatabaseGeneratedOption == DatabaseGeneratedOption.Identity
-                 || dataAnnonationAttribute?.DatabaseGeneratedOption == DatabaseGeneratedOption.Computed)
+                (dataAnnotationAttribute?.DatabaseGeneratedOption == DatabaseGeneratedOption.Identity
+                 || dataAnnotationAttribute?.DatabaseGeneratedOption == DatabaseGeneratedOption.Computed)
                  || (sqlColumnAttribute?.IsIdentityKey == true || sqlColumnAttribute?.PrimaryKey == true)
                  || (keyAttribute != null);
         }

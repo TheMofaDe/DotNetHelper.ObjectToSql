@@ -10,7 +10,7 @@ namespace DotNetHelper.ObjectToSql.Extension
 
 
 
-
+// TODO : REDO
 //   public static T DictionaryToObject<T>(this IOrderedDictionary dict)
 //   {
 //       var accessor = TypeAccessor.Create(typeof(T));
