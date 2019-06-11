@@ -185,7 +185,6 @@ Task("Test")
 
         }
 		       //ReportGenerator(coverageFile,parameters.Paths.Directories.TestCoverageOutput + "/" + "htmlreports");
-			//	ReportGenerator(coverageFile,parameters.Paths.Directories.TestCoverageOutput);
      }
 
 
