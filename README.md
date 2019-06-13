@@ -5,10 +5,12 @@
 | :-----:  | :---: | :------: |
 | ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql) |
 
+<!-- 
 ### *Azure DevOps*
 | Windows | Linux | MacOS |
 | :-----: | :-----: | :---: | 
 | ![Build Status][azure-windows]  | ![Build Status][azure-linux]  | ![Build Status][azure-macOS] 
+-->
 
 ### *AppVeyor*
 | Windows |
@@ -91,4 +93,4 @@ Created Using [DotNet-Starter-Template](http://themofade.github.io/DotNet-Starte
 [azure-linux]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_apis/build/status/TheMofaDe.DotNetHelper.ObjectToSql?branchName=master&jobName=Linux
 [azure-macOS]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_apis/build/status/TheMofaDe.DotNetHelper.ObjectToSql?branchName=master&jobName=macOS
 
-[appveyor-windows]: https://ci.appveyor.com/project/TheMofaDe/DotNetHelper.ObjectToSql/branch/master
+[appveyor-windows]: https://ci.appveyor.com/api/projects/status/0ogx4qcayyfnhkhk?svg=true
