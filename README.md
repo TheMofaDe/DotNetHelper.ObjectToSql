@@ -5,12 +5,12 @@
 | :-----:  | :---: | :------: |
 | ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql) |
 
-<!-- 
+
 ### *Azure DevOps*
 | Windows | Linux | MacOS |
 | :-----: | :-----: | :---: | 
 | ![Build Status][azure-windows]  | ![Build Status][azure-linux]  | ![Build Status][azure-macOS] 
--->
+
 
 ### *AppVeyor*
 | Windows |
