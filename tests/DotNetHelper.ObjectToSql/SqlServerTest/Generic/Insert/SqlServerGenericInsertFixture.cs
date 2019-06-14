@@ -8,48 +8,66 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
     public class SqlServerGenericInsertFixture
     {
 
-        public StringBuilder StringBuilder { get; set; }
+     
+        public ActionType ActionType { get; } = ActionType.Insert;
         
         [SetUp]
         public void Setup()
         {
-            StringBuilder = new StringBuilder();
+          
         }
         [TearDown]
         public void Teardown()
         {
-            StringBuilder.Clear();
+          
         }
 
 
         [Test]
-        public void Test_Generic_BuildInsertQuery()
+        public void Test_Generic_Build_Insert_Query()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            sqlServerObjectToSql.BuildInsertQuery<Employee>(StringBuilder, "Table");
-            Assert.AreEqual(StringBuilder.ToString(), "INSERT INTO Table ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
+            var sql = sqlServerObjectToSql.BuildQuery("Employee", ActionType,new Employee());
+            Assert.AreEqual(sql, Employee.ToSql(ActionType));
         }
 
         [Test]
-        public void Test_Generic_BuildInsertQuery_uses_type_name_when_null()
+        public void Test_Generic_As_Object_Build_Insert_Query()
         {
+            object employee = new Employee();
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            sqlServerObjectToSql.BuildInsertQuery<Employee>(StringBuilder, null);
-            Assert.AreEqual(StringBuilder.ToString(), "INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
+            var sql = sqlServerObjectToSql.BuildQuery("Employee", ActionType,employee);
+            Assert.AreEqual(sql, Employee.ToSql(ActionType));
         }
-
-
 
         [Test]
-        public void Test_Generic_BuildInsertQueryWithOutputs()
+        public void Test_Generic_Build_Insert_Query_Uses_Type_Name_When_Table_Name_Is_Not_Specified()
         {
-            var stringBuilder = new StringBuilder();
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-
-            sqlServerObjectToSql.BuildInsertQueryWithOutputs<Employee>(stringBuilder, nameof(Employee),e =>e.FirstName  );
-            var sql = stringBuilder.ToString();
-            Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName],[LastName]) \r\n OUTPUT INSERTED.[FirstName] \r\n VALUES (@FirstName,@LastName)");
+            var sql = sqlServerObjectToSql.BuildQuery<Employee>(null, ActionType, new Employee());
+            Assert.AreEqual(sql, Employee.ToSql(ActionType));
         }
+
+        [Test]
+        public void Test_Generic_Build_Insert_Query_When_Object_Instance_Is_Null()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = sqlServerObjectToSql.BuildQuery<Employee>("Employee", ActionType, null);
+            Assert.AreEqual(sql, Employee.ToSql(ActionType));
+        }
+
+
+
+        //[Test]
+        //public void Test_Generic_BuildInsertQueryWithOutputs()
+        //{
+        //    var stringBuilder = new StringBuilder();
+        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+
+        //    sqlServerObjectToSql.BuildInsertQueryWithOutputs<Employee>(stringBuilder, nameof(Employee),e =>e.FirstName  );
+        //    var sql = stringBuilder.ToString();
+        //    Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName],[LastName]) \r\n OUTPUT INSERTED.[FirstName] \r\n VALUES (@FirstName,@LastName)");
+        //}
 
 
 

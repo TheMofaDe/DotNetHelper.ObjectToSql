@@ -42,28 +42,40 @@ namespace DotNetHelper.ObjectToSql.Services
                     {
                         BuildInsertQuery(dynamicInsert, sqlBuilder,tableName);
                     }
-                    BuildInsertQuery<T>(sqlBuilder, tableName);
+                    else
+                    {
+                        BuildInsertQuery<T>(sqlBuilder, tableName);
+                    }
                     break;
                 case ActionType.Update:
                     if (instance is IDynamicMetaObjectProvider dynamicUpdate)
                     {
                         BuildUpdateQuery(dynamicUpdate, sqlBuilder, tableName);
                     }
-                    BuildUpdateQuery<T>(sqlBuilder, tableName);
+                    else
+                    {
+                        BuildUpdateQuery<T>(sqlBuilder, tableName);
+                    }
                     break;
                 case ActionType.Upsert:
                     if (instance is IDynamicMetaObjectProvider dynamicUpsert)
                     {
                         BuildUpsertQuery(dynamicUpsert, sqlBuilder, tableName);
                     }
-                    BuildUpsertQuery<T>(sqlBuilder, tableName);
+                    else
+                    {
+                        BuildUpsertQuery<T>(sqlBuilder, tableName);
+                    }
                     break;
                 case ActionType.Delete:
                     if (instance is IDynamicMetaObjectProvider dynamicDelete)
                     {
                         BuildDeleteQuery(dynamicDelete, sqlBuilder, tableName);
                     }
-                    BuildDeleteQuery<T>(sqlBuilder, tableName);
+                    else
+                    {
+                        BuildDeleteQuery<T>(sqlBuilder, tableName);
+                    }
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null);
@@ -82,28 +94,40 @@ namespace DotNetHelper.ObjectToSql.Services
                     {
                         BuildInsertQuery(dynamicInsert, sqlBuilder, tableName);
                     }
-                    BuildInsertQuery(sqlBuilder, tableName, instance.GetType());
+                    else
+                    {
+                        BuildInsertQuery(sqlBuilder, tableName,instance.GetType());
+                    }
                     break;
                 case ActionType.Update:
                     if (instance is IDynamicMetaObjectProvider dynamicUpdate)
                     {
                         BuildUpdateQuery(dynamicUpdate, sqlBuilder, tableName);
                     }
-                    BuildUpdateQuery(sqlBuilder, tableName, instance.GetType());
+                    else
+                    {
+                        BuildUpdateQuery(sqlBuilder, tableName, instance.GetType());
+                    }
                     break;
                 case ActionType.Upsert:
                     if (instance is IDynamicMetaObjectProvider dynamicUpsert)
                     {
                         BuildUpsertQuery(dynamicUpsert, sqlBuilder, tableName);
                     }
-                    BuildUpsertQuery(sqlBuilder, tableName, instance.GetType());
+                    else
+                    {
+                        BuildUpsertQuery(sqlBuilder, tableName, instance.GetType());
+                    }
                     break;
                 case ActionType.Delete:
                     if (instance is IDynamicMetaObjectProvider dynamicDelete)
                     {
                         BuildDeleteQuery(dynamicDelete, sqlBuilder, tableName);
                     }
-                    BuildDeleteQuery(sqlBuilder, tableName, instance.GetType());
+                    else
+                    {
+                        BuildDeleteQuery(sqlBuilder, tableName, instance.GetType());
+                    }
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null);
@@ -227,94 +251,6 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
             sqlBuilder.Append(")");
         }
-
-        /// <summary>O
-        /// Builds the insert query and return the expression.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="dynamicObject"></param>
-        /// <param name="sqlBuilder">The SQL builder.</param>
-        /// <param name="tableName">Name of the table.</param>
-        /// <param name="outFields"></param>
-        public void BuildInsertQueryWithOutputs<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName, List<string> outFields) where T : IDynamicMetaObjectProvider
-        {
-
-
-            outFields.IsEmptyThrow(nameof(outFields));
-            var allFields = ObjectToSqlHelper.GetNonIdentityFields<T>(dynamicObject);
-            // Insert sql statement prefix 
-
-            sqlBuilder.Append($"INSERT INTO {tableName} (");
-
-            // Add field names
-            allFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}],"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-            // Add parameter names for values
-            sqlBuilder.Append($") {Environment.NewLine}");
-            sqlBuilder.Append($" OUTPUT");
-            var members = ExtFastMember.GetMemberWrappers<T>(dynamicObject);
-            outFields.ForEach(delegate (string s) {
-                sqlBuilder.Append($" INSERTED.[{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}] ,");
-            });
-            if (!outFields.IsNullOrEmpty())
-            {
-                sqlBuilder.Remove(sqlBuilder.Length - 1, 1);
-            }
-
-            sqlBuilder.Append($"{Environment.NewLine} VALUES (");
-            allFields.ForEach(p => sqlBuilder.Append($"@{p.Name},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-            sqlBuilder.Append(")");
-        }
-
-        //  /// <summary>
-        //  /// Builds the insert query and return the expression.
-        //  /// </summary>
-        //  /// <typeparam name="T"></typeparam>
-        //  /// <param name="sqlBuilder">The SQL builder.</param>
-        //  /// <param name="tableName">Name of the table.</param>
-        //  /// <param name="expression"></param>
-        //  internal void BuildUpdateQueryWithOutputs<T>(StringBuilder sqlBuilder, string tableName) where T : class
-        //  {
-        // 
-        //      var outputFields = new List<string>() { };
-        //      var members = ExtFastMember.GetMemberWrappers<T>();
-        // 
-        //      if (members.Exists(a => a.GetCustomAttribute<SqlColumnAttribute>()?.AutoIncrementBy != null && a.GetCustomAttribute<SqlColumnAttribute>()?.AutoIncrementBy > 0))
-        //          outputFields.Add(members.First(a => a.GetCustomAttribute<SqlColumnAttribute>()?.AutoIncrementBy != null && a.GetCustomAttribute<SqlColumnAttribute>()?.AutoIncrementBy > 0).Name);
-        // 
-        // 
-        //      var allFields = GetNonIdentityFields<T>();
-        //      // Insert sql statement prefix 
-        // 
-        //      sqlBuilder.Append($"INSERT INTO {tableName} (");
-        // 
-        //      // Add field names
-        //      allFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}],"));
-        //      sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-        // 
-        //      // Add parameter names for values
-        //      sqlBuilder.Append($" ) {Environment.NewLine}");
-        //      sqlBuilder.Append($" OUTPUT ");
-        // 
-        // 
-        //      outputFields.ForEach(delegate (string s) {
-        //          sqlBuilder.Append($" UPDATED.[{members.FirstOrDefault(av => av.Name == s)?.GetCustomAttribute<SqlColumnAttribute>()?.MapTo ?? s}] ,");
-        //      });
-        //      // outputFields.ForEach(delegate (string s) {
-        //      //     sqlBuilder.Append($" INSERTED.[{s}] ,");
-        //      // });
-        //      if (!outputFields.IsNullOrEmpty())
-        //      {
-        //          sqlBuilder.Remove(sqlBuilder.Length - 1, 1);
-        //      }
-        // 
-        //      sqlBuilder.Append($"{Environment.NewLine} VALUES (");
-        //      allFields.ForEach(p => sqlBuilder.Append($"@{p.Name},"));
-        //      sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-        //      sqlBuilder.Append(")");
-        //  }
 
 
         /// <summary>
@@ -809,49 +745,6 @@ namespace DotNetHelper.ObjectToSql.Services
 
         }
 
-
-        //internal Dictionary<Type, char> GetTableAliasRecursive<T>() where T : class
-        //{
-
-        //    var currentAlias = 'A';
-        //    var lookup = new Dictionary<Type, char>()
-        //    {
-        //         {   typeof(T),currentAlias  }
-        //    };
-
-
-        //    void addAlias(MemberWrapper m)
-        //    {
-        //        if (lookup.ContainsKey(m.Type))
-        //        {
-
-        //        }
-        //        else
-        //        {
-        //            currentAlias = AlphabetHelper.GetNextLetter(currentAlias);
-        //            lookup.Add(m.Type, currentAlias);
-        //        }
-
-        //    }
-
-
-
-        //    void getTableMembers(Type type)
-        //    {
-        //        ExtFastMember.GetMemberWrappers(type).Where(m => m.GetCustomAttribute<SqlTableAttribute>() != null).ToList().ForEach(delegate (MemberWrapper m)
-        //        {
-        //            addAlias(m);
-        //            getTableMembers(m.Type);
-        //        });
-        //    }
-
-
-
-        //    getTableMembers(typeof(T));
-
-
-        //    return lookup;
-        //}
 
     }
 }

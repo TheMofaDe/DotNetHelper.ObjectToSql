@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using DotNetHelper.FastMember.Extension;
 using DotNetHelper.FastMember.Extension.Models;
 using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;
@@ -9,7 +10,31 @@ namespace DotNetHelper.ObjectToSql.Extension
 {
    public static class MemberWrapperExtension
    {
-       public static bool ShouldMemberBeIgnored(this MemberWrapper member)
+
+
+       public static object GetMemberValue(this MemberWrapper member, object instanceOfObject , Func<object, string> xmlDeserializer, Func<object, string> jsonDeserializer, Func<object, string> csvDeserializer)
+       {
+           var value = ExtFastMember.GetMemberValue(instanceOfObject, member.Name);
+           var sqlAttribute = member.GetCustomAttribute<SqlColumnAttribute>();
+           if (sqlAttribute != null && sqlAttribute.SerializableType != SerializableType.NONE)
+           {
+               switch (sqlAttribute.SerializableType)
+               {
+                   case SerializableType.XML:
+                       value = xmlDeserializer.Invoke(value);
+                       break;
+                   case SerializableType.JSON:
+                       value = jsonDeserializer.Invoke(value);
+                       break;
+                   case SerializableType.CSV:
+                       value = csvDeserializer.Invoke(value);
+                       break;
+               }
+           }
+           return value;
+       }
+
+        public static bool ShouldMemberBeIgnored(this MemberWrapper member)
         {
             var attr1 = member.GetCustomAttribute<SqlColumnAttribute>();
             if (attr1?.Ignore == true) return true;
@@ -72,5 +97,8 @@ namespace DotNetHelper.ObjectToSql.Extension
                  || (sqlColumnAttribute?.IsIdentityKey == true || sqlColumnAttribute?.PrimaryKey == true)
                  || (keyAttribute != null);
         }
+
+
+
     }
 }

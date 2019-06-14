@@ -9,72 +9,77 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
     public class SqlServerGenericInsertFixtureDataAnnotation
     {
 
-        public StringBuilder StringBuilder { get; set; }
+        public ActionType ActionType { get; } = ActionType.Insert;
 
         [SetUp]
         public void Setup()
         {
-            StringBuilder = new StringBuilder();
+
         }
         [TearDown]
         public void Teardown()
         {
-            StringBuilder.Clear();
+           
         }
 
 
         [Test]
-        public void Test_Generic_BuildInsertQuery_Uses_MappedColumn_Name_Instead_Of_PropertyName()
+        public void Test_Generic_BuildInsertQuery_Uses_Mapped_Column_Name_Instead_Of_PropertyName()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            sqlServerObjectToSql.BuildInsertQuery<EmployeeWithMappedColumnDataAnnotation>(StringBuilder, nameof(Employee));
-            Assert.AreEqual(StringBuilder.ToString(), "INSERT INTO Employee ([FirstName2],[LastName]) VALUES (@FirstName,@LastName)");
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnDataAnnotation>(null, ActionType, new EmployeeWithMappedColumnDataAnnotation());
+            Assert.AreEqual(sql, EmployeeWithMappedColumnDataAnnotation.ToSql(ActionType));
         }
 
         [Test]
         public void Test_Generic_BuildInsertQuery_Doesnt_Include_Ignored_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            sqlServerObjectToSql.BuildInsertQuery<EmployeeWithIgnorePropertyDataAnnotation>(StringBuilder, nameof(Employee));
-            Assert.AreEqual(StringBuilder.ToString(), "INSERT INTO Employee ([LastName]) VALUES (@LastName)");
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIgnorePropertyDataAnnotation>(null, ActionType, new EmployeeWithIgnorePropertyDataAnnotation());
+            Assert.AreEqual(sql, EmployeeWithIgnorePropertyDataAnnotation.ToSql(ActionType));
+
         }
 
         [Test]
         public void Test_Generic_BuildInsertQuery_Doesnt_Try_To_Insert_Identity_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            sqlServerObjectToSql.BuildInsertQuery<EmployeeWithIdentityKeyDataAnnotation>(StringBuilder, nameof(Employee));
-            Assert.AreEqual(StringBuilder.ToString(), "INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeyDataAnnotation>(null, ActionType, new EmployeeWithIdentityKeyDataAnnotation());
+            Assert.AreEqual(sql, EmployeeWithIdentityKeyDataAnnotation.ToSql(ActionType));
+
         }
+
 
         [Test]
         public void Test_Generic_BuildInsertQuery_Does_Try_To_Insert_PrimaryKey_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            sqlServerObjectToSql.BuildInsertQuery<EmployeeWithPrimaryKeyDataAnnotation>(StringBuilder, nameof(Employee));
-            Assert.AreEqual(StringBuilder.ToString(), "INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey)");
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeyDataAnnotation>(null, ActionType, new EmployeeWithPrimaryKeyDataAnnotation());
+            Assert.AreEqual(sql, EmployeeWithPrimaryKeyDataAnnotation.ToSql(ActionType));
+
         }
 
         [Test]
-        public void Test_Generic_BuildInsertQueryWithOutputs_Ensure_MissingIdenityKey_Is_Thrown()
+        public void Test_Generic_BuildInsertQueryWithOutputs_Ensure_Missing_Identity_Key_Is_Thrown()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => sqlServerObjectToSql.BuildInsertQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(StringBuilder, nameof(Employee)),
+            Assert.That(() => sqlServerObjectToSql.BuildInsertQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(new StringBuilder(), nameof(Employee)),
                 Throws.Exception
                     .TypeOf<EmptyArgumentException>());
         }
 
 
-        [Test]
-        public void Test_Generic_BuildInsertQueryWithOutputs_Uses_MappedColumn_Name_Instead_Of_PropertyName()
-        {
-            var stringBuilder = new StringBuilder();
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
 
-            sqlServerObjectToSql.BuildInsertQueryWithOutputs<EmployeeWithMappedColumnDataAnnotation>(stringBuilder, nameof(Employee), e => e.FirstName);
-            var sql = stringBuilder.ToString();
-            Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)");
-        }
+        //[Test]
+        //public void Test_Generic_BuildInsertQueryWithOutputs_Uses_MappedColumn_Name_Instead_Of_PropertyName()
+        //{
+        //    var stringBuilder = new StringBuilder();
+        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+
+        //    sqlServerObjectToSql.BuildInsertQueryWithOutputs<EmployeeWithMappedColumnDataAnnotation>(stringBuilder, nameof(Employee), e => e.FirstName);
+        //    var sql = stringBuilder.ToString();
+        //    Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)");
+        //}
 
 
 
