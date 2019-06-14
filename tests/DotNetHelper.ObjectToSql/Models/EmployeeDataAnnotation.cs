@@ -21,7 +21,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Insert:
                     return $"INSERT INTO EmployeeWithIdentityKeyDataAnnotation ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
                 case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"UPDATE EmployeeWithIdentityKeyDataAnnotation SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey";
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
@@ -46,7 +46,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Insert:
                     return $"INSERT INTO EmployeeWithPrimaryKeyDataAnnotation ([FirstName],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey)";
                 case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"UPDATE EmployeeWithPrimaryKeyDataAnnotation SET [FirstName]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey";
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
@@ -72,7 +72,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Insert:
                     return $"INSERT INTO EmployeeWithManyPrimaryKeyDataAnnotation ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
                 case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"UPDATE EmployeeWithManyPrimaryKeyDataAnnotation SET [FirstName]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey,[PrimaryKey1]=@PrimaryKey1 WHERE [PrimaryKey]=@PrimaryKey AND [PrimaryKey1]=@PrimaryKey1";
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
@@ -120,9 +120,9 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
             switch (action)
             {
                 case ActionType.Insert:
-                    return $"INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
+                    return $"INSERT INTO EmployeeWithMappedColumnAndPrimaryKeyDataAnnotation ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey)";
                 case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"UPDATE EmployeeWithMappedColumnAndPrimaryKeyDataAnnotation SET [FirstName2]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey";
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
@@ -174,7 +174,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Insert:
                     return $"INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)"; // NO TEST CASE FOR tis
                 case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"UPDATE EmployeeWithIgnorePropertyAndKeyDataAnnotation SET [LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey";
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:

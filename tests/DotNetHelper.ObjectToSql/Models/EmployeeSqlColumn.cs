@@ -20,11 +20,11 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Insert:
                     return $"INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
                 case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey"; 
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"DELETE FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey";
                 default:
                     throw new ArgumentOutOfRangeException(nameof(action), action, null);
             }
@@ -45,11 +45,11 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Insert:
                     return $"INSERT INTO EmployeeWithPrimaryKeySqlColumn ([FirstName],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey)";
                 case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"UPDATE EmployeeWithPrimaryKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey";
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"DELETE FROM EmployeeWithPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey";
                 default:
                     throw new ArgumentOutOfRangeException(nameof(action), action, null);
             }
@@ -71,11 +71,11 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Insert:
                     return $"INSERT INTO EmployeeWithManyPrimaryKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
                 case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"UPDATE EmployeeWithManyPrimaryKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey,[PrimaryKey1]=@PrimaryKey1 WHERE [PrimaryKey]=@PrimaryKey AND [PrimaryKey1]=@PrimaryKey1"; 
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return "DELETE FROM EmployeeWithManyPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey AND [PrimaryKey1]=@PrimaryKey1";
                 default:
                     throw new ArgumentOutOfRangeException(nameof(action), action, null);
             }
@@ -119,9 +119,9 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
             switch (action)
             {
                 case ActionType.Insert:
-                    return $"INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
+                    return $"INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey)";
                 case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey";
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
@@ -171,9 +171,9 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
             switch (action)
             {
                 case ActionType.Insert:
-                    return $"INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)"; // NO TEST CASE FOR tis
+                    return $"INSERT INTO EmployeeWithIgnorePropertyAndKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)"; // NO TEST CASE FOR tis
                 case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"UPDATE EmployeeWithIgnorePropertyAndKeySqlColumn SET [LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey";
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:

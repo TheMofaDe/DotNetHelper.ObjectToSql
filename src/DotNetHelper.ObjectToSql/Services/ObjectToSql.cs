@@ -30,7 +30,13 @@ namespace DotNetHelper.ObjectToSql.Services
             DatabaseType = type;
         }
 
-
+        /// <summary>
+        /// Builds the query based on the specified actionType & table name
+        /// </summary>
+        /// <typeparam name="T">a class</typeparam>
+        /// <param name="tableName">Name of the table.</param>
+        /// <param name="actionType">INSERT,DELETE,UPDATE,OR UPSERT</param>
+        /// <param name="instance">Only required for dynamic types otherwise can be null </param>
         public string BuildQuery<T>(string tableName, ActionType actionType, T instance) where T : class
         {
 
@@ -82,7 +88,12 @@ namespace DotNetHelper.ObjectToSql.Services
             }
             return sqlBuilder.ToString();
         }
-
+        /// <summary>
+        /// Builds the query based on the specified actionType & table name
+        /// </summary>
+        /// <param name="tableName">Name of the table.</param>
+        /// <param name="actionType">INSERT,DELETE,UPDATE,OR UPSERT</param>
+        /// <param name="instance">Only required for dynamic types otherwise can be null </param>
         public string BuildQuery(string tableName, ActionType actionType, object instance) 
         {
             instance.IsNullThrow(nameof(instance));
@@ -136,6 +147,13 @@ namespace DotNetHelper.ObjectToSql.Services
         }
 
 
+        
+
+        #region  
+
+
+
+
         /// <summary>
         /// Builds the insert query.
         /// </summary>
@@ -158,11 +176,10 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
             sqlBuilder.Append(")");
         }
-
         /// <summary>
         /// Builds the insert query.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">A type that inherits IDynamicMetaObjectProvider </typeparam>
         /// <param name="poco"></param>
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
@@ -687,6 +704,7 @@ namespace DotNetHelper.ObjectToSql.Services
 
         }
 
+        #endregion
         /// <summary>
         /// 
         /// </summary>

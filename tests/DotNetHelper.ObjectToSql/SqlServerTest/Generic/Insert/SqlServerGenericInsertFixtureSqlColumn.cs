@@ -20,7 +20,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             
         }
-
+    
 
 
 
@@ -31,6 +31,16 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
             var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnSqlColumn>(null,ActionType,new EmployeeWithMappedColumnSqlColumn());
             Assert.AreEqual(sql, EmployeeWithMappedColumnSqlColumn.ToSql(ActionType));
         }
+
+        [Test]
+        public void Test_Generic_BuildInsertQuery_Uses_Mapped_Column_Name_Instead_Of_PropertyName_Insert_Key()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(null, ActionType, new EmployeeWithMappedColumnAndPrimaryKeySqlColumn());
+            Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType));
+        }
+
+
 
         [Test]
         public void Test_Generic_BuildInsertQuery_Doesnt_Include_Ignored_Column()
