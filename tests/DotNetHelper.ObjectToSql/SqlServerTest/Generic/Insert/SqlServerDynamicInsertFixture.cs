@@ -11,17 +11,16 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
     public class SqlServerDynamicInsertFixtureDataAnnotation
     {
 
-        public StringBuilder StringBuilder { get; set; }
 
         [SetUp]
         public void Setup()
         {
-            StringBuilder = new StringBuilder();
+
         }
         [TearDown]
         public void Teardown()
         {
-            StringBuilder.Clear();
+   
         }
 
 
@@ -32,8 +31,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
             dynamic record = new ExpandoObject();
             record.FirstName = "John";
             record.LastName = "Doe";
-            sqlServerObjectToSql.BuildInsertQuery(record,StringBuilder,"Employee");
-            Assert.AreEqual(StringBuilder.ToString(), "INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
+            var sql =sqlServerObjectToSql.BuildQuery("Employee",ActionType.Insert,record);
+            Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
         }
 
 
@@ -45,15 +44,10 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
             record.LastName = "Doe";
 
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            try
-            {
-                sqlServerObjectToSql.BuildUpdateQuery(record, new StringBuilder(), "Employee");
-            }
-            catch (MissingKeyAttributeException e)
-            {
-                return;
-            }
-   
+            Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>(nameof(Employee), ActionType.Update, record),
+                Throws.Exception
+                    .TypeOf<MissingKeyAttributeException>());
+
 
         }
 

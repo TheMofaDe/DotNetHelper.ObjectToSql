@@ -25,7 +25,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"DELETE FROM EmployeeWithIdentityKeyDataAnnotation WHERE [IdentityKey]=@IdentityKey";
                 default:
                     throw new ArgumentOutOfRangeException(nameof(action), action, null);
             }
@@ -50,7 +50,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"DELETE FROM EmployeeWithPrimaryKeyDataAnnotation WHERE [PrimaryKey]=@PrimaryKey";
                 default:
                     throw new ArgumentOutOfRangeException(nameof(action), action, null);
             }
@@ -76,7 +76,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"DELETE FROM EmployeeWithManyPrimaryKeyDataAnnotation WHERE [PrimaryKey]=@PrimaryKey AND [PrimaryKey1]=@PrimaryKey1"; 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(action), action, null);
             }

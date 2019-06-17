@@ -22,6 +22,12 @@ namespace DotNetHelper.ObjectToSql.Helper
 
             return $"The property {member.Name} is marked with the Serializable attribute of type {type} but no implementation of a Serializer was provided";
         }
-           
+
+        public static string InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(ActionType actionType,string typeName)
+        {
+            return $"This overload doesn't support {typeName} type for action type {actionType}. " +
+                   $"{Environment.NewLine} Please use the overload string BuildQuery<T>(string tableName, ActionType actionType, T instance, List<RunTimeAttributeMap> runTimeAttributes) where T : class " +
+                   $"{Environment.NewLine}";
+        }
     }
 }

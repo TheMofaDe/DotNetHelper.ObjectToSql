@@ -9,6 +9,7 @@ using DotNetHelper.FastMember.Extension.Models;
 using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Extension;
+using DotNetHelper.ObjectToSql.Model;
 
 namespace DotNetHelper.ObjectToSql.Helper
 {
@@ -96,6 +97,7 @@ namespace DotNetHelper.ObjectToSql.Helper
         {
             // Get non primary key fields - the ones we want to update.
             return ExtFastMember.GetMemberWrappers<T>(dynamicObject).Where(m => !m.IsMemberAPrimaryKeyColumn()).ToList();
+            return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => r.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
         }
 
 
@@ -110,16 +112,19 @@ namespace DotNetHelper.ObjectToSql.Helper
                 return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).ToList();
         }
 
+
         /// <summary>
         /// Gets the key fields.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public static List<MemberWrapper> GetKeyFields<T>(T dynamicObject) where T : IDynamicMetaObjectProvider
+        public static List<MemberWrapper> GetKeyFields<T>(List<RunTimeAttributeMap> runTimeAttributes) where T : class
         {
             // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
-            return ExtFastMember.GetMemberWrappers(dynamicObject).Where(m => m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).ToList();
+            return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault( r => r.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
         }
+
+
 
 
         /// <summary>
