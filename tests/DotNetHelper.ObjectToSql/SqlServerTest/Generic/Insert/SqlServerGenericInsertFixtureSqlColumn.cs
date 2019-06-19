@@ -70,25 +70,32 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 
         }
 
-        //[Test]
-        //public void Test_Generic_BuildInsertQueryWithOutputs_Ensure_Missing_Identity_Key_Is_Thrown()
-        //{
-        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-        //    Assert.That(() => sqlServerObjectToSql.BuildInsertQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(new StringBuilder(), nameof(Employee)),
-        //        Throws.Exception
-        //            .TypeOf<EmptyArgumentException>());
-        //}
+
+
+        [Test]
+        public void Test_Generic_BuildQueryWithOutputs()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(nameof(Employee),
+                ActionType, a => a.PrimaryKey);
+            Assert.AreEqual(sql, $@"INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) 
+ OUTPUT INSERTED.[PrimaryKey] 
+ VALUES (@FirstName,@LastName,@PrimaryKey)");
+        }
 
 
 
-        //[Test]
-        //public void Test_Generic_BuildInsertQueryWithOutputs_Uses_Mapped_Column_Name_Instead_Of_PropertyName()
-        //{
-        //    var sb = new StringBuilder();
-        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-        //    sqlServerObjectToSql.BuildInsertQueryWithOutputs<EmployeeWithMappedColumnSqlColumn>(sb, nameof(Employee), e => e.FirstName);
-        //    Assert.AreEqual(sb.ToString(), "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)");
-        //}
+
+
+        [Test]
+        public void Test_Generic_BuildQueryWithOutputs_Uses_MappedColumn_Name_Instead_Of_PropertyName()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+
+            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnSqlColumn>(nameof(Employee), ActionType, e => e.FirstName);
+            Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)");
+        }
+
 
 
 

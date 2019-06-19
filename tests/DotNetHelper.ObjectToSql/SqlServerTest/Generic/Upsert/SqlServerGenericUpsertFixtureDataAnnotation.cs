@@ -26,8 +26,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         public void Test_Generic_BuildUpsertQuery_Uses_MappedColumn_Name_Instead_Of_PropertyName()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>( nameof(Employee),ActionType.Upsert);
-            Assert.AreEqual(StringBuilder.ToString(), "IF EXISTS ( SELECT * FROM Employee WHERE [PrimaryKey]=@PrimaryKey ) " +
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>( nameof(Employee),ActionType.Upsert);
+            Assert.AreEqual(sql, "IF EXISTS ( SELECT * FROM Employee WHERE [PrimaryKey]=@PrimaryKey ) " +
                                                       "BEGIN " +
                                                       "UPDATE Employee SET [FirstName2]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey " +
                                                       "END ELSE BEGIN " +

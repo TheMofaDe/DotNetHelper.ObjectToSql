@@ -69,29 +69,29 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 
         }
 
-        //[Test]
-        //public void Test_Generic_BuildInsertQueryWithOutputs_Ensure_Missing_Identity_Key_Is_Thrown()
-        //{
-        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-        //    Assert.That(() => sqlServerObjectToSql.BuildInsertQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(new StringBuilder(), nameof(Employee)),
-        //        Throws.Exception
-        //            .TypeOf<EmptyArgumentException>());
-        //}
+        [Test]
+        public void Test_Generic_BuildQueryWithOutputs()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(nameof(Employee),
+                ActionType, a => a.PrimaryKey);
+            Assert.AreEqual(sql, $@"INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) 
+ OUTPUT INSERTED.[PrimaryKey] 
+ VALUES (@FirstName,@LastName,@PrimaryKey)");
+        }
 
 
 
 
 
-        //[Test]
-        //public void Test_Generic_BuildInsertQueryWithOutputs_Uses_MappedColumn_Name_Instead_Of_PropertyName()
-        //{
-        //    var stringBuilder = new StringBuilder();
-        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+        [Test]
+        public void Test_Generic_BuildQueryWithOutputs_Uses_MappedColumn_Name_Instead_Of_PropertyName()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
 
-        //    sqlServerObjectToSql.BuildInsertQueryWithOutputs<EmployeeWithMappedColumnDataAnnotation>(stringBuilder, nameof(Employee), e => e.FirstName);
-        //    var sql = stringBuilder.ToString();
-        //    Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)");
-        //}
+            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnDataAnnotation>(nameof(Employee),ActionType, e => e.FirstName);
+            Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)");
+        }
 
 
 

@@ -27,7 +27,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Anonymous.Insert
         {
             var obj = new { FirstName = 1, LastName = "sfsd"};
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery( "Table",ActionType.Insert,obj.GetType());
+            var sql = sqlServerObjectToSql.BuildQuery( "Table",ActionType.Insert,obj);
             Assert.AreEqual(sql, "INSERT INTO Table ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
         }
 

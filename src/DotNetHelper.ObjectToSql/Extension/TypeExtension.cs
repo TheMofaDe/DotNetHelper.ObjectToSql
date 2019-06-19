@@ -13,12 +13,6 @@ namespace DotNetHelper.ObjectToSql.Extension
 
     internal static class TypeExtension
     {
-
-
-
-      
-     
-
         /// <summary>
         /// 
         /// </summary>
@@ -95,7 +89,6 @@ namespace DotNetHelper.ObjectToSql.Extension
 
             return elementType;
         }
-
 
 
     }

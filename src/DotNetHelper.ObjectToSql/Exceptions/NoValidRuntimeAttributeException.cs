@@ -8,13 +8,13 @@ namespace DotNetHelper.ObjectToSql.Exceptions
     /// Custom Exception that is thrown when attempted to access properties of object that isn't decorated with either [Key] attribute , or [SqlColumn(SetPrimaryKey=true)] attribute 
     /// </summary>
     [Serializable()]
-    public class MissingKeyAttributeException : System.Exception
+    public class NoValidRuntimeAttributeException : System.Exception
     {
         /// <inheritdoc />
         /// <summary>
         /// Just create the exception
         /// </summary>
-        public MissingKeyAttributeException() : base()
+        public NoValidRuntimeAttributeException() : base()
         {
 
         }
@@ -24,7 +24,7 @@ namespace DotNetHelper.ObjectToSql.Exceptions
         /// Create the exception with description
         /// </summary>
         /// <param name="message">Exception description</param>
-        public MissingKeyAttributeException(string message) : base(message)
+        public NoValidRuntimeAttributeException(string message) : base(message)
         {
 
         }
@@ -35,7 +35,7 @@ namespace DotNetHelper.ObjectToSql.Exceptions
         /// </summary>
         /// <param name="message">Exception description</param>
         /// <param name="innerException">Exception inner cause</param>
-        public MissingKeyAttributeException(string message, System.Exception innerException) : base(message, innerException)
+        public NoValidRuntimeAttributeException(string message, System.Exception innerException) : base(message, innerException)
         {
 
         }
@@ -48,7 +48,7 @@ namespace DotNetHelper.ObjectToSql.Exceptions
         /// </summary>
         /// <param name="info">Serialization info</param>
         /// <param name="context">Serialization context</param>
-        protected MissingKeyAttributeException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected NoValidRuntimeAttributeException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
 
         }
