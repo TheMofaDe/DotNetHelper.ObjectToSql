@@ -45,7 +45,6 @@ namespace DotNetHelper.ObjectToSql.Services
         }
 
 
-
         /// <summary>
         /// Builds the query based on the specified actionType & table name
         /// </summary>
@@ -333,55 +332,7 @@ namespace DotNetHelper.ObjectToSql.Services
         }
 
 
-        /// <summary>
-        /// Builds the insert query and return the expression.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="sqlBuilder">The SQL builder.</param>
-        /// <param name="tableName">Name of the table.</param>
-        private void BuildInsertQueryWithIdentityOutputs<T>(StringBuilder sqlBuilder, string tableName) where T : class
-        {
-
-            var outputFields = new List<string>() { };
-            var members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
-
-                outputFields.AddRange(members.Where(a => a.GetCustomAttribute<SqlColumnAttribute>()?.AutoIncrementBy != null && a.GetCustomAttribute<SqlColumnAttribute>()?.AutoIncrementBy > 0).Select(d => d.Name));
-            if (outputFields.IsNullOrEmpty()) throw new MissingIdentityKeyAttributeException(ExceptionHelper.MissingIdentityKeyMessage(typeof(T)));
-
-            var allFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
-            // Insert sql statement prefix 
-
-            sqlBuilder.Append($"INSERT INTO {tableName} (");
-
-            // Add field names
-            allFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}],"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-            // Add parameter names for values
-            sqlBuilder.Append($") {Environment.NewLine}");
-
-            if (DatabaseType == DataBaseType.SqlServer)
-            {
-                sqlBuilder.Append($" OUTPUT ");
-                if (outputFields.IsNullOrEmpty()) throw new MissingIdentityKeyAttributeException(ExceptionHelper.MissingIdentityKeyMessage(typeof(T)));
-                outputFields.ForEach(delegate(string s)
-                {
-                    sqlBuilder.Append(
-                        $" INSERTED.[{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}] ,");
-                });
-            }
-
-            if (!outputFields.IsNullOrEmpty())
-            {
-                sqlBuilder.Remove(sqlBuilder.Length - 1, 1);
-            }
-
-            sqlBuilder.Append($"{Environment.NewLine} VALUES (");
-            allFields.ForEach(p => sqlBuilder.Append($"@{p.Name},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-            sqlBuilder.Append(")");
-        }
-
+       
 
         #endregion
 
@@ -733,33 +684,6 @@ namespace DotNetHelper.ObjectToSql.Services
 
         }
 
-        private void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys ) where T : class
-        {
-
-            var keyFields = new List<MemberWrapper>() { };
-
-            if (overrideKeys != null)
-            {
-                var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
-                keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
-            }
-            else
-            {
-                keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
-            }
-            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-
-            var sb = new StringBuilder();
-            BuildUpdateQuery(sb, tableName, overrideKeys);
-            var sb1 = new StringBuilder();
-            BuildInsertQuery<T>(sb1, tableName);
-            var sb2 = new StringBuilder();
-            BuildWhereClause(sb2,keyFields);
-
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}",sb.ToString(),sb1.ToString()));
-
-        }
-
         /// <summary>
         /// Builds the update query and return the expression.
         /// </summary>
@@ -778,35 +702,10 @@ namespace DotNetHelper.ObjectToSql.Services
             BuildInsertQueryWithOutputs<T>(sb, tableName, outFields);
             var sb2 = new StringBuilder();
             BuildWhereClause(sb2, keyFields);
-
             sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
         }
 
         #endregion
-
-        #region GET METHODS
-
-        /// <summary>
-        /// Builds the get query.
-        /// </summary>
-        /// <param name="sqlBuilder">The SQL builder.</param>
-        /// <param name="tableName">Name of the table.</param>
-        /// <param name="whereClause">The where clause.</param>
-        private void BuildGetQuery<T>(StringBuilder sqlBuilder, string tableName, string whereClause) where T : class
-        {
-            sqlBuilder.Append($"SELECT * FROM {tableName ?? typeof(T).Name} ");
-            if (string.IsNullOrEmpty(whereClause))
-            {
-
-            }
-            else
-            {
-                sqlBuilder.Append(whereClause.ToLower().Replace(" ", "").StartsWith("where") ? $"{whereClause}" : $"WHERE {whereClause}");
-            }
-        }
-
-        #endregion
-
 
         #region GetNonKeyFields
 
@@ -978,7 +877,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="member">The member.</param>
         /// <param name="value">The value.</param>
         /// <returns>System.Object.</returns>
-        private object ConvertToDatabaseValue(MemberWrapper member, object value, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
+        public object ConvertToDatabaseValue(MemberWrapper member, object value, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
         {
             if (value == null)
             {
@@ -1017,7 +916,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="member">The member.</param>
         /// <param name="value">The value.</param>
         /// <returns>System.Object.</returns>
-        private object ConvertToDatabaseValue(object value)
+        public object ConvertToDatabaseValue(object value)
         {
             if (value == null)
             {
@@ -1096,7 +995,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var splitOn = "";
             memberWrappers.Where(a1 => a1.GetCustomAttribute<SqlTableAttribute>() == null && a1.GetCustomAttribute<SqlColumnAttribute>()?.Ignore != true).ToList().ForEach(delegate (MemberWrapper member) // BUILD SQL COLUMNS
             {
-                var columnName = $"{tableAlias}.{sqlSyntax.GetTableOpenChar()}{member.Name}{sqlSyntax.GetTableClosedChar()}";
+                var columnName = $"{tableAlias}.{sqlSyntax.GetKeywordEscapeOpenChar()}{member.Name}{sqlSyntax.GetKeywordEscapeClosedChar()}";
                 sb.AppendLine($"{columnName} , ");
                 if (isFirstTime)
                 {

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class DBTypeMap
+    <title>Class NoValidRuntimeAttributeException
    | DotNetHelper.ObjectToSql </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class DBTypeMap
+    <meta name="title" content="Class NoValidRuntimeAttributeException
    | DotNetHelper.ObjectToSql ">
     <meta name="generator" content="docfx 2.41.0.0">
     
@@ -141,8 +141,8 @@
                           <li class="">
                             <a href="DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html" title="MissingKeyAttributeException" class="">MissingKeyAttributeException</a>
                           </li>
-                          <li class="">
-                            <a href="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.html" title="NoValidRuntimeAttributeException" class="">NoValidRuntimeAttributeException</a>
+                          <li class="active">
+                            <a href="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.html" title="NoValidRuntimeAttributeException" class="active">NoValidRuntimeAttributeException</a>
                           </li>
                         </ul>  </li>
                     <li class="">
@@ -162,8 +162,8 @@
                       <a href="DotNetHelper.ObjectToSql.Helper.html" title="DotNetHelper.ObjectToSql.Helper" class="">DotNetHelper.ObjectToSql.Helper</a>
                         
                         <ul class="nav level2">
-                          <li class="active">
-                            <a href="DotNetHelper.ObjectToSql.Helper.DBTypeMap.html" title="DBTypeMap" class="active">DBTypeMap</a>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Helper.DBTypeMap.html" title="DBTypeMap" class="">DBTypeMap</a>
                           </li>
                           <li class="">
                             <a href="DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html" title="SqlSyntaxHelper" class="">SqlSyntaxHelper</a>
@@ -200,22 +200,65 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DotNetHelper.ObjectToSql.Helper.DBTypeMap">
+            <article class="content wrap" id="_content" data-uid="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException">
   
   
-  <h1 id="DotNetHelper_ObjectToSql_Helper_DBTypeMap" data-uid="DotNetHelper.ObjectToSql.Helper.DBTypeMap" class="text-break">Class DBTypeMap
+  <h1 id="DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException" data-uid="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException" class="text-break">Class NoValidRuntimeAttributeException
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Custom Exception that is thrown when attempted to access properties of object that isn't decorated with either [Key] attribute , or [SqlColumn(SetPrimaryKey=true)] attribute</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">DBTypeMap</span></div>
+    <div class="level1"><span class="xref">System.Exception</span></div>
+    <div class="level2"><span class="xref">NoValidRuntimeAttributeException</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Runtime.Serialization.ISerializable</span></div>
+    <div><span class="xref">System.Runtime.InteropServices._Exception</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">System.Object.ToString()</span>
+      <span class="xref">System.Exception.GetBaseException()</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.Message</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.Data</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.InnerException</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.TargetSite</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.StackTrace</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.HelpLink</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.Source</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.HResult</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.SerializeObjectState</span>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -230,34 +273,51 @@
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
     <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="DotNetHelper.ObjectToSql.Helper.html">DotNetHelper.ObjectToSql.Helper</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DotNetHelper.ObjectToSql.Exceptions.html">DotNetHelper.ObjectToSql.Exceptions</a></h6>
   <h6><strong>Assembly</strong>: DotNetHelper.ObjectToSql.dll</h6>
-  <h5 id="DotNetHelper_ObjectToSql_Helper_DBTypeMap_syntax">Syntax</h5>
+  <h5 id="DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DBTypeMap</code></pre>
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class NoValidRuntimeAttributeException : Exception, ISerializable, _Exception</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/Unit-Test/apiSpec/new?filename=DotNetHelper_ObjectToSql_Helper_DBTypeMap__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Helper.DBTypeMap.%23ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/Unit-Test/apiSpec/new?filename=DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/Unit-Test/src/DotNetHelper.ObjectToSql/Helper/DBTypeMap.cs/#L11">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/Unit-Test/src/DotNetHelper.ObjectToSql/Exceptions/NoValidRuntimeAttributeException.cs/#L17">View Source</a>
   </span>
-  <a id="DotNetHelper_ObjectToSql_Helper_DBTypeMap__ctor_" data-uid="DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor*"></a>
-  <h4 id="DotNetHelper_ObjectToSql_Helper_DBTypeMap__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_" data-uid="DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)">DBTypeMap(DataBaseType)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_" data-uid="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor" data-uid="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor">NoValidRuntimeAttributeException()</h4>
+  <div class="markdown level1 summary"><p>Just create the exception</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DBTypeMap(DataBaseType dataBaseType)</code></pre>
+    <pre><code class="lang-csharp hljs">public NoValidRuntimeAttributeException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/Unit-Test/apiSpec/new?filename=DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.%23ctor(System.Runtime.Serialization.SerializationInfo%2CSystem.Runtime.Serialization.StreamingContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/Unit-Test/src/DotNetHelper.ObjectToSql/Exceptions/NoValidRuntimeAttributeException.cs/#L51">View Source</a>
+  </span>
+  <a id="DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_" data-uid="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_" data-uid="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">NoValidRuntimeAttributeException(SerializationInfo, StreamingContext)</h4>
+  <div class="markdown level1 summary"><p>Create the exception from serialized data.
+Usual scenario is when exception is occured somewhere on the remote workstation
+and we have to re-create/re-throw the exception on the local machine</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected NoValidRuntimeAttributeException(SerializationInfo info, StreamingContext context)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -270,44 +330,100 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="DotNetHelper.ObjectToSql.Enum.DataBaseType.html">DataBaseType</a></td>
-        <td><span class="parametername">dataBaseType</span></td>
-        <td></td>
+        <td><span class="xref">System.Runtime.Serialization.SerializationInfo</span></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>Serialization info</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Runtime.Serialization.StreamingContext</span></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>Serialization context</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <h3 id="properties">Properties
-  </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/Unit-Test/apiSpec/new?filename=DotNetHelper_ObjectToSql_Helper_DBTypeMap_TypeToSqlTypeMap.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/Unit-Test/apiSpec/new?filename=DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/Unit-Test/src/DotNetHelper.ObjectToSql/Helper/DBTypeMap.cs/#L10">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/Unit-Test/src/DotNetHelper.ObjectToSql/Exceptions/NoValidRuntimeAttributeException.cs/#L27">View Source</a>
   </span>
-  <a id="DotNetHelper_ObjectToSql_Helper_DBTypeMap_TypeToSqlTypeMap_" data-uid="DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap*"></a>
-  <h4 id="DotNetHelper_ObjectToSql_Helper_DBTypeMap_TypeToSqlTypeMap" data-uid="DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap">TypeToSqlTypeMap</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_" data-uid="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_System_String_" data-uid="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor(System.String)">NoValidRuntimeAttributeException(String)</h4>
+  <div class="markdown level1 summary"><p>Create the exception with description</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Dictionary&lt;Type, DbType&gt; TypeToSqlTypeMap { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public NoValidRuntimeAttributeException(string message)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Type</span>, <span class="xref">System.Data.DbType</span>&gt;</td>
-        <td></td>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>Exception description</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/Unit-Test/apiSpec/new?filename=DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_System_String_System_Exception_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.%23ctor(System.String%2CSystem.Exception)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/Unit-Test/src/DotNetHelper.ObjectToSql/Exceptions/NoValidRuntimeAttributeException.cs/#L38">View Source</a>
+  </span>
+  <a id="DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_" data-uid="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_System_String_System_Exception_" data-uid="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor(System.String,System.Exception)">NoValidRuntimeAttributeException(String, Exception)</h4>
+  <div class="markdown level1 summary"><p>Create the exception with description and inner cause</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NoValidRuntimeAttributeException(string message, Exception innerException)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>Exception description</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><span class="parametername">innerException</span></td>
+        <td><p>Exception inner cause</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Runtime.Serialization.ISerializable</span>
+  </div>
+  <div>
+      <span class="xref">System.Runtime.InteropServices._Exception</span>
+  </div>
 </article>
           </div>
           
@@ -316,10 +432,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/Unit-Test/apiSpec/new?filename=DotNetHelper_ObjectToSql_Helper_DBTypeMap.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Helper.DBTypeMap%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/Unit-Test/apiSpec/new?filename=DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/Unit-Test/src/DotNetHelper.ObjectToSql/Helper/DBTypeMap.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/Unit-Test/src/DotNetHelper.ObjectToSql/Exceptions/NoValidRuntimeAttributeException.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

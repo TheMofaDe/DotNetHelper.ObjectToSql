@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Dynamic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using DotNetHelper.ObjectToSql.Attribute;
 
 namespace DotNetHelper.ObjectToSql.Extension
 {
@@ -88,6 +90,22 @@ namespace DotNetHelper.ObjectToSql.Extension
 
 
             return elementType;
+        }
+
+
+
+        public static string GetNameFromCustomAttributeOrDefault(this Type type)
+        {
+            var t = type;
+            while (type.IsTypeAnIEnumerable())
+            {
+                t = type.GetEnumerableItemType();
+            }
+            var sqlTableAttribute = t.GetCustomAttribute<SqlTableAttribute>(false);
+            var tableAttribute = t.GetCustomAttribute<TableAttribute>(false);
+            if (!string.IsNullOrEmpty(tableAttribute.Name)) return tableAttribute.Name;
+            if (!string.IsNullOrEmpty(sqlTableAttribute.TableName)) return sqlTableAttribute.TableName;
+            return t.Name;
         }
 
 

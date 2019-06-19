@@ -1,0 +1,41 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Model
+  commentId: N:DotNetHelper.ObjectToSql.Model
+  id: DotNetHelper.ObjectToSql.Model
+  children:
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+  - DotNetHelper.ObjectToSql.Model.SQLTable
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper.ObjectToSql.Model
+  nameWithType: DotNetHelper.ObjectToSql.Model
+  fullName: DotNetHelper.ObjectToSql.Model
+  type: Namespace
+  assemblies:
+  - DotNetHelper.ObjectToSql
+references:
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  commentId: T:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  parent: DotNetHelper.ObjectToSql.Model
+  name: RunTimeAttributeMap
+  nameWithType: RunTimeAttributeMap
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+  commentId: T:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+  parent: DotNetHelper.ObjectToSql.Model
+  name: RunTimeAttributeMapExtension
+  nameWithType: RunTimeAttributeMapExtension
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+- uid: DotNetHelper.ObjectToSql.Model.SQLTable
+  commentId: T:DotNetHelper.ObjectToSql.Model.SQLTable
+  name: SQLTable
+  nameWithType: SQLTable
+  fullName: DotNetHelper.ObjectToSql.Model.SQLTable
+- uid: DotNetHelper.ObjectToSql.Model
+  commentId: N:DotNetHelper.ObjectToSql.Model
+  name: DotNetHelper.ObjectToSql.Model
+  nameWithType: DotNetHelper.ObjectToSql.Model
+  fullName: DotNetHelper.ObjectToSql.Model

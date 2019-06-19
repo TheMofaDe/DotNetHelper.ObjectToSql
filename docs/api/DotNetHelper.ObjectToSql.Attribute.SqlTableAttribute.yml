@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SqlTableAttribute
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
     startLine: 10
@@ -120,8 +120,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: TableName
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
     startLine: 17
@@ -158,8 +158,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: XReferenceTable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
     startLine: 19
@@ -193,8 +193,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: JoinType
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
     startLine: 25

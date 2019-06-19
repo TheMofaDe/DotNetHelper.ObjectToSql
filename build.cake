@@ -184,7 +184,7 @@ Task("Test")
 	    OpenCover(context => context.DotNetCoreTest(project.FullPath, settings),coverageFile, openCoverSettings);
 
         }
-		       //ReportGenerator(coverageFile,parameters.Paths.Directories.TestCoverageOutput + "/" + "htmlreports");
+		       ReportGenerator(coverageFile,parameters.Paths.Directories.TestCoverageOutput + "/" + "htmlreports");
      }
 
 

@@ -49,8 +49,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SqlColumnAttribute
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 17
@@ -151,8 +151,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: MaxColumnSize
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 24
@@ -189,8 +189,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetMaxColumnSize
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 30
@@ -231,8 +231,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SerializableType
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 40
@@ -269,8 +269,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: AutoIncrementBy
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 47
@@ -307,8 +307,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetAutoIncrementBy
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 53
@@ -349,8 +349,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: IsIdentityKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 63
@@ -387,8 +387,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetIsIdentityKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 69
@@ -429,8 +429,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: StartIncrementAt
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 79
@@ -467,8 +467,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetStartIncrementAt
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 85
@@ -509,8 +509,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: UtcDateTime
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 95
@@ -547,8 +547,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetUtcDateTime
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 101
@@ -589,8 +589,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: PrimaryKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 110
@@ -627,8 +627,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetPrimaryKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 116
@@ -669,8 +669,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: xRefTableType
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 127
@@ -707,8 +707,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetxRefTableType
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 133
@@ -749,8 +749,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: xRefTableSchema
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 164
@@ -787,8 +787,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: xRefTableName
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 171
@@ -825,8 +825,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: xRefJoinOnColumn
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 178
@@ -863,8 +863,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: xRefOnUpdateCascade
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 185
@@ -901,8 +901,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetxRefOnUpdateCascade
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 192
@@ -943,8 +943,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: xRefOnDeleteCascade
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 203
@@ -981,8 +981,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetxRefOnDeleteCascade
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 209
@@ -1023,8 +1023,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Nullable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 220
@@ -1061,8 +1061,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetNullable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 226
@@ -1103,8 +1103,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ApiId
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 235
@@ -1141,8 +1141,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetApiId
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 241
@@ -1183,8 +1183,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SyncTime
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 250
@@ -1221,8 +1221,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetSyncTime
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 256
@@ -1263,8 +1263,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Ignore
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 266
@@ -1301,8 +1301,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetIgnore
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 272
@@ -1343,8 +1343,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DefaultValue
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 282
@@ -1381,8 +1381,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: TSQLDefaultValue
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 288
@@ -1419,8 +1419,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: MapTo
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 294
@@ -1457,8 +1457,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: MappingIds
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 302

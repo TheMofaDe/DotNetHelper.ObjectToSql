@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/IDataParameterExtension.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: IDataParameterExtension
     path: ../src/DotNetHelper.ObjectToSql/Extension/IDataParameterExtension.cs
     startLine: 9
@@ -60,8 +60,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/IDataParameterExtension.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: AddRange
     path: ../src/DotNetHelper.ObjectToSql/Extension/IDataParameterExtension.cs
     startLine: 11
@@ -106,8 +106,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/IDataParameterExtension.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ParamToSql
     path: ../src/DotNetHelper.ObjectToSql/Extension/IDataParameterExtension.cs
     startLine: 21
