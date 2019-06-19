@@ -135,58 +135,41 @@ Task("Test")
 
     // run using dotnet test
     var projects = GetFiles("./tests/**/*.Tests.csproj");
+	var coverageFile = parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml";
     foreach(var project in projects)
     {
+
         foreach(var targetFramework in MyProject.TargetFrameworks){
 
-
 		var tf = targetFramework.Replace("netstandard","netcoreapp");
-		var coverageFile = parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml";
-        var settings = new DotNetCoreTestSettings
-        {
-            Framework = tf,
-            NoBuild = true,
-            NoRestore = true,
-            Configuration = parameters.Configuration,
-			ArgumentCustomization = args => args
-			//.Append("--results-directory").AppendQuoted("../../" + parameters.Paths.Directories.TestCoverageOutput) 
-			//.Append("--collect").AppendQuoted("Code Coverage")
-			//.Append("--logger trx")
-        };
 
-        if (IsRunningOnUnix())
-        {
-            settings.Filter = "TestCategory!=NoMono";
-        }
-
-        //DotNetCoreTest(project.FullPath,  settings);
-
-		var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + tf + "/*DotNetHelper.ObjectToSql.Tests.dll");
+	    var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + tf + "/*DotNetHelper.ObjectToSql.Tests.dll");
 
 		var nunitSettings = new NUnit3Settings
 		{
 		    Results = new List<NUnit3Result> { new NUnit3Result { FileName = parameters.Paths.Directories.TestCoverageOutput + $"/TestResult.xml"  } }
 		};
-
 		if(IsRunningOnUnix()) {
 		    nunitSettings.Where = "cat!=NoMono";
 		    nunitSettings.Agents = 1;
 		}
 
-		NUnit3(testAssemblies, nunitSettings);
-
-
-		var openCoverSettings = new OpenCoverSettings {
-										 OldStyle = true,
-									     MergeOutput = false
-								}.WithFilter("+[*]* -[*.Tests*]*")
-								 .WithFilter("-[*NUnit3.*]*");
-	    OpenCover(context => context.DotNetCoreTest(project.FullPath, settings),coverageFile, openCoverSettings);
+       OpenCover(tool => {
+			tool.NUnit3(testAssemblies, nunitSettings);
+        },
+        new FilePath(coverageFile),
+        new OpenCoverSettings(){
+            LogLevel = OpenCoverLogLevel.Info,
+			OldStyle = true,
+			MergeOutput = false
+        }     
+        .WithFilter("+[*]* -[*.Tests*]*")
+		.WithFilter("-[*NUnit3.*]*"));
 
         }
-		       ReportGenerator(coverageFile,parameters.Paths.Directories.TestCoverageOutput + "/" + "htmlreports");
+		    
      }
-
+	  //  ReportGenerator(coverageFile,parameters.Paths.Directories.TestCoverageOutput + "/" + "htmlreports");
 
 });
 
