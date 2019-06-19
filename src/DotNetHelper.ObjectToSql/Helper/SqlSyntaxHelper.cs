@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Extension;
+using DotNetHelper.ObjectToSql.Model;
 
 namespace DotNetHelper.ObjectToSql.Helper
 {
@@ -111,14 +114,14 @@ namespace DotNetHelper.ObjectToSql.Helper
         }
 
 
-        public string GetTableOpenChar()
+        public string GetKeywordEscapeOpenChar()
         {
             switch (DataBaseType)
             {
                 case DataBaseType.SqlServer:
                     return "[";
                 case DataBaseType.MySql:
-                    return "[";
+                    return "`";
                 case DataBaseType.Sqlite:
                     return "[";
                 case DataBaseType.Oracle:
@@ -133,14 +136,14 @@ namespace DotNetHelper.ObjectToSql.Helper
                     throw new ArgumentOutOfRangeException();
             }
         }
-        public string GetTableClosedChar()
+        public string GetKeywordEscapeClosedChar()
         {
             switch (DataBaseType)
             {
                 case DataBaseType.SqlServer:
                     return "]";
                 case DataBaseType.MySql:
-                    return "]";
+                    return "`";
                 case DataBaseType.Sqlite:
                     return "]";
                 case DataBaseType.Oracle:
@@ -155,10 +158,10 @@ namespace DotNetHelper.ObjectToSql.Helper
                     throw new ArgumentOutOfRangeException();
             }
         }
-        public string RemoveBracketsChar(string value)
+        public string RemoveKeywordEscapeChars(string value)
         {
             if (string.IsNullOrEmpty(value)) return value;
-            return value.Replace(GetTableOpenChar(), string.Empty).Replace(GetTableClosedChar(), string.Empty);
+            return value.Replace(GetKeywordEscapeOpenChar(), string.Empty).Replace(GetKeywordEscapeClosedChar(), string.Empty);
 
         }
 
@@ -244,7 +247,12 @@ namespace DotNetHelper.ObjectToSql.Helper
 
 
 
-   
+
+
+
+     
+
+
 
     }
 

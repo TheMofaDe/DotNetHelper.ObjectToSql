@@ -10,9 +10,9 @@ items:
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
-  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar
-  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar
-  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar(System.String)
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars(System.String)
   langs:
   - csharp
   - vb
@@ -23,11 +23,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SqlSyntaxHelper
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -64,11 +64,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: EnclosedValueLookup
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -99,11 +99,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DataBaseType
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -134,11 +134,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -153,101 +153,101 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar
-  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar
-  id: GetTableOpenChar
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
+  id: GetKeywordEscapeOpenChar
   parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
   langs:
   - csharp
   - vb
-  name: GetTableOpenChar()
-  nameWithType: SqlSyntaxHelper.GetTableOpenChar()
-  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar()
+  name: GetKeywordEscapeOpenChar()
+  nameWithType: SqlSyntaxHelper.GetKeywordEscapeOpenChar()
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar()
   type: Method
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: GetTableOpenChar
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+    id: GetKeywordEscapeOpenChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 113
+    startLine: 116
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
   syntax:
-    content: public string GetTableOpenChar()
+    content: public string GetKeywordEscapeOpenChar()
     return:
       type: System.String
-    content.vb: Public Function GetTableOpenChar As String
-  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar*
+    content.vb: Public Function GetKeywordEscapeOpenChar As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar
-  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar
-  id: GetTableClosedChar
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
+  id: GetKeywordEscapeClosedChar
   parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
   langs:
   - csharp
   - vb
-  name: GetTableClosedChar()
-  nameWithType: SqlSyntaxHelper.GetTableClosedChar()
-  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar()
+  name: GetKeywordEscapeClosedChar()
+  nameWithType: SqlSyntaxHelper.GetKeywordEscapeClosedChar()
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar()
   type: Method
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: GetTableClosedChar
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+    id: GetKeywordEscapeClosedChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 135
+    startLine: 138
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
   syntax:
-    content: public string GetTableClosedChar()
+    content: public string GetKeywordEscapeClosedChar()
     return:
       type: System.String
-    content.vb: Public Function GetTableClosedChar As String
-  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar*
+    content.vb: Public Function GetKeywordEscapeClosedChar As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar(System.String)
-  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar(System.String)
-  id: RemoveBracketsChar(System.String)
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars(System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars(System.String)
+  id: RemoveKeywordEscapeChars(System.String)
   parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
   langs:
   - csharp
   - vb
-  name: RemoveBracketsChar(String)
-  nameWithType: SqlSyntaxHelper.RemoveBracketsChar(String)
-  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar(System.String)
+  name: RemoveKeywordEscapeChars(String)
+  nameWithType: SqlSyntaxHelper.RemoveKeywordEscapeChars(String)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars(System.String)
   type: Method
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: RemoveBracketsChar
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+    id: RemoveKeywordEscapeChars
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 157
+    startLine: 160
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
   syntax:
-    content: public string RemoveBracketsChar(string value)
+    content: public string RemoveKeywordEscapeChars(string value)
     parameters:
     - id: value
       type: System.String
     return:
       type: System.String
-    content.vb: Public Function RemoveBracketsChar(value As String) As String
-  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar*
+    content.vb: Public Function RemoveKeywordEscapeChars(value As String) As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -266,11 +266,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: GetEnclosedValueChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 165
+    startLine: 168
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -301,11 +301,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      branch: Unit-Test
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildIfExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 217
+    startLine: 220
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -767,11 +767,11 @@ references:
   name: SqlSyntaxHelper
   nameWithType: SqlSyntaxHelper.SqlSyntaxHelper
   fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.SqlSyntaxHelper
-- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar*
-  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar
-  name: GetTableOpenChar
-  nameWithType: SqlSyntaxHelper.GetTableOpenChar
-  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableOpenChar
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
+  name: GetKeywordEscapeOpenChar
+  nameWithType: SqlSyntaxHelper.GetKeywordEscapeOpenChar
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -779,16 +779,16 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar*
-  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar
-  name: GetTableClosedChar
-  nameWithType: SqlSyntaxHelper.GetTableClosedChar
-  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetTableClosedChar
-- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar*
-  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar
-  name: RemoveBracketsChar
-  nameWithType: SqlSyntaxHelper.RemoveBracketsChar
-  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveBracketsChar
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
+  name: GetKeywordEscapeClosedChar
+  nameWithType: SqlSyntaxHelper.GetKeywordEscapeClosedChar
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars
+  name: RemoveKeywordEscapeChars
+  nameWithType: SqlSyntaxHelper.RemoveKeywordEscapeChars
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars
 - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar*
   commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar
   name: GetEnclosedValueChar

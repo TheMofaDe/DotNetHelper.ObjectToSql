@@ -5,7 +5,6 @@ items:
   id: DotNetHelper.ObjectToSql.Helper
   children:
   - DotNetHelper.ObjectToSql.Helper.DBTypeMap
-  - DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
   langs:
   - csharp
@@ -22,11 +21,6 @@ references:
   name: DBTypeMap
   nameWithType: DBTypeMap
   fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap
-- uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
-  commentId: T:DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
-  name: ObjectToSqlHelper
-  nameWithType: ObjectToSqlHelper
-  fullName: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
 - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
   commentId: T:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
   name: SqlSyntaxHelper

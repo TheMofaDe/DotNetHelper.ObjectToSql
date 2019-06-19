@@ -5,7 +5,7 @@ namespace DotNetHelper.ObjectToSql.Exceptions
 {
     /// <inheritdoc />
     /// <summary>
-    /// Custom Exception that lets the user know a code change is required to fix this error
+    /// Custom Exception that is thrown when attempted to access properties of object that isn't decorated with either [Key] attribute , or [SqlColumn(SetPrimaryKey=true)] attribute 
     /// </summary>
     [Serializable()]
     public class MissingKeyAttributeException : System.Exception

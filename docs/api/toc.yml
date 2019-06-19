@@ -28,6 +28,8 @@
     name: MissingIdentityKeyAttributeException
   - uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
     name: MissingKeyAttributeException
+  - uid: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException
+    name: NoValidRuntimeAttributeException
 - uid: DotNetHelper.ObjectToSql.Extension
   name: DotNetHelper.ObjectToSql.Extension
   items:
@@ -40,17 +42,19 @@
   items:
   - uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap
     name: DBTypeMap
-  - uid: DotNetHelper.ObjectToSql.Helper.ObjectToSqlHelper
-    name: ObjectToSqlHelper
   - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
     name: SqlSyntaxHelper
+- uid: DotNetHelper.ObjectToSql.Model
+  name: DotNetHelper.ObjectToSql.Model
+  items:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+    name: RunTimeAttributeMapExtension
+  - uid: DotNetHelper.ObjectToSql.Model.SQLTable
+    name: SQLTable
 - uid: DotNetHelper.ObjectToSql.Services
   name: DotNetHelper.ObjectToSql.Services
   items:
   - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
     name: ObjectToSql
-- uid: DotNetHelper.ObjectToSql.Tools
-  name: DotNetHelper.ObjectToSql.Tools
-  items:
-  - uid: DotNetHelper.ObjectToSql.Tools.DevelopersTools
-    name: DevelopersTools
