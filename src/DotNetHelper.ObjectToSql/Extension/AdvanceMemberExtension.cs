@@ -12,27 +12,27 @@ namespace DotNetHelper.ObjectToSql.Extension
    {
 
 
-       public static object GetMemberValue(this MemberWrapper member, object instanceOfObject , Func<object, string> xmlDeserializer, Func<object, string> jsonDeserializer, Func<object, string> csvDeserializer)
-       {
-           var value = ExtFastMember.GetMemberValue(instanceOfObject, member.Name);
-           var sqlAttribute = member.GetCustomAttribute<SqlColumnAttribute>();
-           if (sqlAttribute != null && sqlAttribute.SerializableType != SerializableType.NONE)
-           {
-               switch (sqlAttribute.SerializableType)
-               {
-                   case SerializableType.XML:
-                       value = xmlDeserializer.Invoke(value);
-                       break;
-                   case SerializableType.JSON:
-                       value = jsonDeserializer.Invoke(value);
-                       break;
-                   case SerializableType.CSV:
-                       value = csvDeserializer.Invoke(value);
-                       break;
-               }
-           }
-           return value;
-       }
+       //public static object GetMemberValue(this MemberWrapper member, object instanceOfObject , Func<object, string> xmlDeserializer, Func<object, string> jsonDeserializer, Func<object, string> csvDeserializer)
+       //{
+       //    var value = ExtFastMember.GetMemberValue(instanceOfObject, member.Name);
+       //    var sqlAttribute = member.GetCustomAttribute<SqlColumnAttribute>();
+       //    if (sqlAttribute != null && sqlAttribute.SerializableType != SerializableType.NONE)
+       //    {
+       //        switch (sqlAttribute.SerializableType)
+       //        {
+       //            case SerializableType.XML:
+       //                value = xmlDeserializer.Invoke(value);
+       //                break;
+       //            case SerializableType.JSON:
+       //                value = jsonDeserializer.Invoke(value);
+       //                break;
+       //            case SerializableType.CSV:
+       //                value = csvDeserializer.Invoke(value);
+       //                break;
+       //        }
+       //    }
+       //    return value;
+       //}
 
         public static bool ShouldMemberBeIgnored(this MemberWrapper member)
         {

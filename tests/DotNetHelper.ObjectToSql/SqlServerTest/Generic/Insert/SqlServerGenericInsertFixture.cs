@@ -44,7 +44,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_Build_Insert_Query_Uses_Type_Name_When_Table_Name_Is_Not_Specified()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<Employee>(null, ActionType, new Employee());
+            var sql = sqlServerObjectToSql.BuildQuery<Employee>(null, ActionType);
             Assert.AreEqual(sql, Employee.ToSql(ActionType));
         }
 
@@ -52,7 +52,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_Build_Insert_Query_When_Object_Instance_Is_Null()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<Employee>("Employee", ActionType, null);
+            var sql = sqlServerObjectToSql.BuildQuery<Employee>("Employee", ActionType);
             Assert.AreEqual(sql, Employee.ToSql(ActionType));
         }
 

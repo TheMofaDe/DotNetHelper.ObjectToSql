@@ -25,7 +25,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
         public void Test_Generic_BuildUpdateQuery_Uses_MappedColumn_Name_Instead_Of_PropertyName()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeyDataAnnotation>(nameof(EmployeeWithMappedColumnAndPrimaryKeyDataAnnotation), ActionType, null);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeyDataAnnotation>(nameof(EmployeeWithMappedColumnAndPrimaryKeyDataAnnotation), ActionType);
             Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeyDataAnnotation.ToSql(ActionType));
         }
 
@@ -33,7 +33,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
         public void Test_Generic_BuildUpdateQuery_Doesnt_Include_Ignored_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIgnorePropertyAndKeyDataAnnotation>(nameof(EmployeeWithIgnorePropertyAndKeyDataAnnotation), ActionType, null);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIgnorePropertyAndKeyDataAnnotation>(nameof(EmployeeWithIgnorePropertyAndKeyDataAnnotation), ActionType);
             Assert.AreEqual(sql, EmployeeWithIgnorePropertyAndKeyDataAnnotation.ToSql(ActionType));
         }
 
@@ -41,7 +41,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
         public void Test_Generic_BuildUpdateQuery_Includes_Where_Clause_With_Identity_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeyDataAnnotation>(nameof(EmployeeWithIdentityKeyDataAnnotation), ActionType, null);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeyDataAnnotation>(nameof(EmployeeWithIdentityKeyDataAnnotation), ActionType);
             Assert.AreEqual(sql, EmployeeWithIdentityKeyDataAnnotation.ToSql(ActionType));
         }
 
@@ -49,7 +49,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
         public void Test_Generic_BuildUpdateQuery_Includes_Where_Clause_With_Primary_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeyDataAnnotation>(nameof(EmployeeWithPrimaryKeyDataAnnotation), ActionType, null);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeyDataAnnotation>(nameof(EmployeeWithPrimaryKeyDataAnnotation), ActionType);
             Assert.AreEqual(sql, EmployeeWithPrimaryKeyDataAnnotation.ToSql(ActionType));
 
         }
@@ -58,7 +58,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
         public void Test_Generic_BuildUpdateQuery_Includes_Where_Clause_With_Multiple_Primary_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithManyPrimaryKeyDataAnnotation>(nameof(EmployeeWithManyPrimaryKeyDataAnnotation), ActionType, null);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithManyPrimaryKeyDataAnnotation>(nameof(EmployeeWithManyPrimaryKeyDataAnnotation), ActionType);
             Assert.AreEqual(sql, EmployeeWithManyPrimaryKeyDataAnnotation.ToSql(ActionType));
         }
 

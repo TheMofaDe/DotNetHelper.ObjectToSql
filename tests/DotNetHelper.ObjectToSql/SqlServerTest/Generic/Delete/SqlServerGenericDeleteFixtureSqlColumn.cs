@@ -28,7 +28,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Delete
         public void Test_Generic_BuildDeleteQuery_Ensure_MissingKeyException_Is_Thrown_()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnSqlColumn>( nameof(EmployeeWithMappedColumnSqlColumn),ActionType,null),
+            Assert.That(() => sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnSqlColumn>( nameof(EmployeeWithMappedColumnSqlColumn),ActionType),
                 Throws.Exception
                     .TypeOf<MissingKeyAttributeException>());
         }
@@ -38,7 +38,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Delete
         public void Test_Generic_BuildDeleteQuery_Includes_Where_Clause_With_Identity_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>( nameof(EmployeeWithIdentityKeySqlColumn),ActionType,null);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>( nameof(EmployeeWithIdentityKeySqlColumn),ActionType);
             Assert.AreEqual(sql,EmployeeWithIdentityKeySqlColumn.ToSql(ActionType) );
         }
 
@@ -46,7 +46,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Delete
         public void Test_Generic_BuildDeleteQuery_Includes_Where_Clause_With_Primary_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>(nameof(EmployeeWithPrimaryKeySqlColumn), ActionType, null);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>(nameof(EmployeeWithPrimaryKeySqlColumn), ActionType);
             Assert.AreEqual(sql, EmployeeWithPrimaryKeySqlColumn.ToSql(ActionType));
         }
 
@@ -54,7 +54,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Delete
         public void Test_Generic_BuildDeleteQuery_Includes_Where_Clause_With_Multiple_Primary_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithManyPrimaryKeySqlColumn>(nameof(EmployeeWithManyPrimaryKeySqlColumn), ActionType, null);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithManyPrimaryKeySqlColumn>(nameof(EmployeeWithManyPrimaryKeySqlColumn), ActionType);
             Assert.AreEqual(sql, EmployeeWithManyPrimaryKeySqlColumn.ToSql(ActionType));
         }
 

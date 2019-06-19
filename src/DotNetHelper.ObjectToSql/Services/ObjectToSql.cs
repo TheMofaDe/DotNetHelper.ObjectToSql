@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Dynamic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -37,6 +38,11 @@ namespace DotNetHelper.ObjectToSql.Services
             if (typeof(T).IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
             if (typeof(T).IsTypeAnonymousType()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Anonymous"));
         }
+        private void ThrowIfDynamicOrAnonymous(ActionType actionType, Type type) 
+        {
+            if (type.IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
+            if (type.IsTypeAnonymousType()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Anonymous"));
+        }
 
 
 
@@ -54,6 +60,7 @@ namespace DotNetHelper.ObjectToSql.Services
             switch (actionType)
             {
                 case ActionType.Insert:
+                    ThrowIfDynamicOrAnonymous<T>(actionType);
                     BuildInsertQuery<T>(sqlBuilder, tableName);
                     break;
                 case ActionType.Update:
@@ -88,44 +95,20 @@ namespace DotNetHelper.ObjectToSql.Services
             switch (actionType)
             {
                 case ActionType.Insert:
-                    if (instance is IDynamicMetaObjectProvider dynamicInsert)
-                    {
-                        BuildInsertQuery(dynamicInsert, sqlBuilder, tableName);
-                    }
-                    else
-                    {
-                        BuildInsertQuery(sqlBuilder, tableName,instance.GetType());
-                    }
+                    ThrowIfDynamicOrAnonymous(actionType, instance.GetType());
+                    BuildInsertQuery(sqlBuilder, tableName,instance.GetType());
                     break;
                 case ActionType.Update:
-                    if (instance is IDynamicMetaObjectProvider dynamicUpdate)
-                    {
-                        BuildUpdateQuery(dynamicUpdate, sqlBuilder, tableName);
-                    }
-                    else
-                    {
-                        BuildUpdateQuery(sqlBuilder, tableName, instance.GetType());
-                    }
+                    ThrowIfDynamicOrAnonymous(actionType, instance.GetType());
+                    BuildUpdateQuery(sqlBuilder, tableName, instance.GetType());
                     break;
                 case ActionType.Upsert:
-                    if (instance is IDynamicMetaObjectProvider dynamicUpsert)
-                    {
-                        BuildUpsertQuery(dynamicUpsert, sqlBuilder, tableName);
-                    }
-                    else
-                    {
-                        BuildUpsertQuery(sqlBuilder, tableName, instance.GetType());
-                    }
+                    ThrowIfDynamicOrAnonymous(actionType, instance.GetType());
+                    BuildUpsertQuery(sqlBuilder, tableName, instance.GetType());
                     break;
                 case ActionType.Delete:
-                    if (instance is IDynamicMetaObjectProvider dynamicDelete)
-                    {
-                        BuildDeleteQuery(dynamicDelete, sqlBuilder, tableName);
-                    }
-                    else
-                    {
-                        BuildDeleteQuery(sqlBuilder, tableName, instance.GetType());
-                    }
+                    ThrowIfDynamicOrAnonymous(actionType, instance.GetType());
+                    BuildDeleteQuery(sqlBuilder, tableName, instance.GetType());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null);
@@ -149,44 +132,16 @@ namespace DotNetHelper.ObjectToSql.Services
             switch (actionType)
             {
                 case ActionType.Insert:
-                    if (instance is IDynamicMetaObjectProvider dynamicInsert)
-                    {
-                        BuildInsertQuery(dynamicInsert, sqlBuilder, tableName);
-                    }
-                    else
-                    {
-                        BuildInsertQuery<T>(sqlBuilder, tableName);
-                    }
+                    BuildInsertQuery(sqlBuilder, tableName, instance, runTimeAttributes);
                     break;
                 case ActionType.Update:
-                    if (instance is IDynamicMetaObjectProvider dynamicUpdate)
-                    {
-                        BuildUpdateQuery(dynamicUpdate, sqlBuilder, tableName, runTimeAttributes);
-                    }
-                    else
-                    {
-                        BuildUpdateQuery<T>(sqlBuilder, tableName);
-                    }
+                    BuildUpdateQuery(sqlBuilder, tableName, instance, runTimeAttributes);
                     break;
                 case ActionType.Upsert:
-                    if (instance is IDynamicMetaObjectProvider dynamicUpsert)
-                    {
-                        BuildUpsertQuery(dynamicUpsert, sqlBuilder, tableName, runTimeAttributes);
-                    }
-                    else
-                    {
-                        BuildUpsertQuery<T>(sqlBuilder, tableName);
-                    }
+                    BuildUpsertQuery(sqlBuilder, tableName, instance, runTimeAttributes);
                     break;
                 case ActionType.Delete:
-                    if (instance is IDynamicMetaObjectProvider dynamicDelete)
-                    {
-                        BuildDeleteQuery(dynamicDelete, sqlBuilder, tableName, runTimeAttributes);
-                    }
-                    else
-                    {
-                        BuildDeleteQuery<T>(sqlBuilder, tableName);
-                    }
+                    BuildDeleteQuery(sqlBuilder, tableName, instance, runTimeAttributes);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null);
@@ -195,7 +150,7 @@ namespace DotNetHelper.ObjectToSql.Services
         }
 
 
-        #region
+       
 
 
         #region INSERT METHODS
@@ -212,7 +167,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="tableName">Name of the table.</param>
         private void BuildInsertQuery<T>(StringBuilder sqlBuilder, string tableName) where T : class
         {
-            var allFields = ObjectToSqlHelper.GetNonIdentityFields<T>(IncludeNonPublicAccessor);
+            var allFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
             // Insert sql statement prefix 
             sqlBuilder.Append($"INSERT INTO {tableName ?? typeof(T).Name} (");
 
@@ -226,16 +181,16 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
             sqlBuilder.Append(")");
         }
+
         /// <summary>
         /// Builds the insert query.
         /// </summary>
-        /// <typeparam name="T">A type that inherits IDynamicMetaObjectProvider </typeparam>
-        /// <param name="poco"></param>
+        /// <typeparam name="T"></typeparam>
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
-        private void BuildInsertQuery<T>(T poco, StringBuilder sqlBuilder, string tableName) where T : IDynamicMetaObjectProvider
+        private void BuildInsertQuery<T>(StringBuilder sqlBuilder, string tableName, T instance, List<RunTimeAttributeMap> runTimeAttributes) where T : class
         {
-            var allFields = ObjectToSqlHelper.GetNonIdentityFields<T>(poco);
+            var allFields = GetNonIdentityFields<T>(runTimeAttributes,instance);
             // Insert sql statement prefix 
             sqlBuilder.Append($"INSERT INTO {tableName ?? typeof(T).Name} (");
 
@@ -258,7 +213,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="type"></param>
         private void BuildInsertQuery(StringBuilder sqlBuilder, string tableName,Type type) 
         {
-            var allFields = ObjectToSqlHelper.GetNonIdentityFields(IncludeNonPublicAccessor, type);
+            var allFields = GetNonIdentityFields(IncludeNonPublicAccessor, type);
             // Insert sql statement prefix 
             sqlBuilder.Append($"INSERT INTO {tableName ?? type.Name} (");
 
@@ -291,7 +246,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var outputFields = outFields.GetPropertyNamesFromExpressions();
 
             outputFields.IsEmptyThrow(nameof(outputFields));
-            var allFields = ObjectToSqlHelper.GetNonIdentityFields<T>(IncludeNonPublicAccessor);
+            var allFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
             // Insert sql statement prefix 
 
             sqlBuilder.Append($"INSERT INTO {tableName} (");
@@ -335,7 +290,7 @@ namespace DotNetHelper.ObjectToSql.Services
                 outputFields.AddRange(members.Where(a => a.GetCustomAttribute<SqlColumnAttribute>()?.AutoIncrementBy != null && a.GetCustomAttribute<SqlColumnAttribute>()?.AutoIncrementBy > 0).Select(d => d.Name));
             if (outputFields.IsNullOrEmpty()) throw new MissingIdentityKeyAttributeException(ExceptionHelper.MissingIdentityKeyMessage(typeof(T)));
 
-            var allFields = ObjectToSqlHelper.GetNonIdentityFields<T>(IncludeNonPublicAccessor);
+            var allFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
             // Insert sql statement prefix 
 
             sqlBuilder.Append($"INSERT INTO {tableName} (");
@@ -372,6 +327,10 @@ namespace DotNetHelper.ObjectToSql.Services
 
         #endregion
 
+        #region UPDATE METHODS
+
+        
+
         /// <summary>
         /// Builds the update query.
         /// </summary>
@@ -381,10 +340,10 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName) where T : class
         {
 
-            var keyFields = ObjectToSqlHelper.GetKeyFields<T>(IncludeNonPublicAccessor);
+            var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
 
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            var updateFields = ObjectToSqlHelper.GetNonIdentityFields<T>(IncludeNonPublicAccessor);
+            var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
 
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName} SET ");
@@ -395,7 +354,7 @@ namespace DotNetHelper.ObjectToSql.Services
 
             // Build Where clause.
             sqlBuilder.Append(" ");
-            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
+            BuildWhereClause(sqlBuilder, keyFields);
         }
 
         /// <summary>
@@ -408,10 +367,10 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildUpdateQuery(StringBuilder sqlBuilder, string tableName,Type type)
         {
 
-            var keyFields = ObjectToSqlHelper.GetKeyFields(IncludeNonPublicAccessor,type);
+            var keyFields = GetKeyFields(IncludeNonPublicAccessor,type);
 
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            var updateFields = ObjectToSqlHelper.GetNonIdentityFields(IncludeNonPublicAccessor,type);
+            var updateFields = GetNonIdentityFields(IncludeNonPublicAccessor,type);
 
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName} SET ");
@@ -422,22 +381,22 @@ namespace DotNetHelper.ObjectToSql.Services
 
             // Build Where clause.
             sqlBuilder.Append(" ");
-            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
+            BuildWhereClause(sqlBuilder, keyFields);
         }
 
         /// <summary>
         /// Builds the update query.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="dynamicObject"></param>
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
-        private void BuildUpdateQuery<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName) where T : IDynamicMetaObjectProvider
+        private void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName, T instance, List<RunTimeAttributeMap> runTimeAttributes) where T : class
         {
 
-            var keyFields = ObjectToSqlHelper.GetKeyFields<T>(dynamicObject);
+            var keyFields = GetKeyFields<T>(runTimeAttributes,instance);
+
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            var updateFields = ObjectToSqlHelper.GetNonIdentityFields<T>(dynamicObject);
+            var updateFields = GetNonIdentityFields<T>(runTimeAttributes,instance);
 
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName} SET ");
@@ -448,7 +407,7 @@ namespace DotNetHelper.ObjectToSql.Services
 
             // Build Where clause.
             sqlBuilder.Append(" ");
-            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
+            BuildWhereClause(sqlBuilder, keyFields);
         }
 
 
@@ -471,10 +430,10 @@ namespace DotNetHelper.ObjectToSql.Services
             }
             else
             {
-                keyFields = ObjectToSqlHelper.GetKeyFields<T>(IncludeNonPublicAccessor);
+                keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
             }
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            var updateFields = ObjectToSqlHelper.GetNonIdentityFields<T>(IncludeNonPublicAccessor);
+            var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
 
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName} SET ");
@@ -485,35 +444,17 @@ namespace DotNetHelper.ObjectToSql.Services
 
             // Build Where clause.
             sqlBuilder.Append(" ");
-            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
+            BuildWhereClause(sqlBuilder, keyFields);
         }
 
 
-        /// <summary>
-        /// Builds the update query.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="sqlBuilder">The SQL builder.</param>
-        /// <param name="tableName">Name of the table.</param>
-        /// <param name="overrideKeys"></param>
-        private void BuildUpdateQuery<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName, List<RunTimeAttributeMap> overrideKeys) where T : IDynamicMetaObjectProvider
-        {
-            overrideKeys.IsEmptyThrow(nameof(overrideKeys));
-            var keyFields = ExtFastMember.GetMemberWrappers<T>(dynamicObject).Where(m => overrideKeys.Contains(m.Name)).AsList();
+    
 
-            var updateFields = ObjectToSqlHelper.GetNonIdentityFields<T>(dynamicObject);
+        #endregion
 
-            // Build Update Statement Prefix
-            sqlBuilder.Append($"UPDATE {tableName} SET ");
+        #region  DELETE METHODS
 
-            // Build Set fields
-            updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-            // Build Where clause.
-            sqlBuilder.Append(" ");
-            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
-        }
+        
 
 
         /// <summary>
@@ -525,13 +466,13 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName) where T : class
         {
 
-            var keyFields = ObjectToSqlHelper.GetKeyFields<T>(IncludeNonPublicAccessor);
+            var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
             
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 
             sqlBuilder.Append($"DELETE FROM {tableName} ");
-            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
+            BuildWhereClause(sqlBuilder, keyFields);
         }
 
         /// <summary>
@@ -543,31 +484,31 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildDeleteQuery(StringBuilder sqlBuilder, string tableName, Type type) 
         {
 
-            var keyFields = ObjectToSqlHelper.GetKeyFields(IncludeNonPublicAccessor, type);
+            var keyFields = GetKeyFields(IncludeNonPublicAccessor, type);
 
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 
             sqlBuilder.Append($"DELETE FROM {tableName} ");
-            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
+            BuildWhereClause(sqlBuilder, keyFields);
         }
 
         /// <summary>
         /// Builds the delete query.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="dynamicObject"></param>
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
-        private void BuildDeleteQuery<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName) where T : IDynamicMetaObjectProvider
+        private void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName, T instance, List<RunTimeAttributeMap> runTimeAttributes) where T : class
         {
 
-            var keyFields =  ObjectToSqlHelper.GetKeyFields<T>(dynamicObject);
+            var keyFields = GetKeyFields<T>(runTimeAttributes,instance);
+
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 
             sqlBuilder.Append($"DELETE FROM {tableName} ");
-            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
+            BuildWhereClause(sqlBuilder, keyFields);
         }
 
 
@@ -590,13 +531,13 @@ namespace DotNetHelper.ObjectToSql.Services
             }
             else
             {
-                keyFields = ObjectToSqlHelper.GetKeyFields<T>(IncludeNonPublicAccessor);
+                keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
             }
             if(keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 
             sqlBuilder.Append($"DELETE FROM {tableName} ");
-            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
+            BuildWhereClause(sqlBuilder, keyFields);
         }
 
         /// <summary>
@@ -613,9 +554,119 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = ExtFastMember.GetMemberWrappers<T>(dynamicObject).Where(m => overrideKeys.Contains(m.Name)).ToList();
             
             sqlBuilder.Append($"DELETE FROM {tableName} ");
-            ObjectToSqlHelper.BuildWhereClause(sqlBuilder, keyFields);
+            BuildWhereClause(sqlBuilder, keyFields);
         }
 
+
+        #endregion
+
+        #region UPSERT METHODS
+
+
+        /// <summary>
+        /// Builds the upsert query.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="tableName">Name of the table.</param>
+        private void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName) where T : class
+        {
+
+            var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
+
+            var sb = new StringBuilder();
+            BuildUpdateQuery<T>(sb, tableName);
+            var sb1 = new StringBuilder();
+            BuildInsertQuery<T>(sb1, tableName);
+            var sb2 = new StringBuilder();
+            BuildWhereClause(sb2, keyFields);
+
+            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+
+        }
+
+        /// <summary>
+        /// Builds the upsert query.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="tableName">Name of the table.</param>
+        private void BuildUpsertQuery(StringBuilder sqlBuilder, string tableName,Type type) 
+        {
+
+            var keyFields = GetKeyFields(IncludeNonPublicAccessor,type);
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
+
+            var sb = new StringBuilder();
+            BuildUpdateQuery(sb, tableName,type);
+            var sb1 = new StringBuilder();
+            BuildInsertQuery(sb1, tableName,type);
+            var sb2 = new StringBuilder();
+            BuildWhereClause(sb2, keyFields);
+
+            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+
+        }
+
+
+        /// <summary>
+        /// Builds the upsert query.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="tableName">Name of the table.</param>
+        private void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName, T instance, List<RunTimeAttributeMap> runTimeAttributes) where T : class
+        {
+
+            var keyFields = GetKeyFields<T>(runTimeAttributes,instance);
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
+
+            var sb = new StringBuilder();
+            BuildUpdateQuery<T>(sb, tableName,instance,runTimeAttributes);
+            var sb1 = new StringBuilder();
+            BuildInsertQuery<T>(sb1, tableName, instance, runTimeAttributes);
+            var sb2 = new StringBuilder();
+            BuildWhereClause(sb2, keyFields);
+
+            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+
+        }
+
+        private void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys ) where T : class
+        {
+
+            var keyFields = new List<MemberWrapper>() { };
+
+            if (overrideKeys != null)
+            {
+                var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
+                keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
+            }
+            else
+            {
+                keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
+            }
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
+
+            var sb = new StringBuilder();
+            BuildUpdateQuery(sb, tableName, overrideKeys);
+            var sb1 = new StringBuilder();
+            BuildInsertQuery<T>(sb1, tableName);
+            var sb2 = new StringBuilder();
+            BuildWhereClause(sb2,keyFields);
+
+            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}",sb.ToString(),sb1.ToString()));
+
+        }
+
+
+
+        #endregion
+
+        #region GET METHODS
+
+        
 
 
 
@@ -638,127 +689,286 @@ namespace DotNetHelper.ObjectToSql.Services
             }
         }
 
+        #endregion
+
+
+        #region GetNonKeyFields
 
         /// <summary>
-        /// Builds the upsert query.
+        /// Gets the non key fields.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="sqlBuilder">The SQL builder.</param>
-        /// <param name="tableName">Name of the table.</param>
-        private void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName) where T : class
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetNonKeyFields<T>(bool includeNonPublicAccessor) where T : class
         {
-
-            var keyFields = ObjectToSqlHelper.GetKeyFields<T>(IncludeNonPublicAccessor);
-            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-
-            var sb = new StringBuilder();
-            BuildUpdateQuery<T>(sb, tableName);
-            var sb1 = new StringBuilder();
-            BuildInsertQuery<T>(sb1, tableName);
-            var sb2 = new StringBuilder();
-            ObjectToSqlHelper.BuildWhereClause(sb2, keyFields);
-
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
-
+            // Get non primary key fields - the ones we want to update.
+            return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => !m.IsMemberAPrimaryKeyColumn()).AsList();
         }
-
         /// <summary>
-        /// Builds the upsert query.
+        /// Gets the non key fields.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="sqlBuilder">The SQL builder.</param>
-        /// <param name="tableName">Name of the table.</param>
-        private void BuildUpsertQuery(StringBuilder sqlBuilder, string tableName,Type type) 
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetNonKeyFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance) where T : class
         {
-
-            var keyFields = ObjectToSqlHelper.GetKeyFields(IncludeNonPublicAccessor,type);
-            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-
-            var sb = new StringBuilder();
-            BuildUpdateQuery(sb, tableName,type);
-            var sb1 = new StringBuilder();
-            BuildInsertQuery(sb1, tableName,type);
-            var sb2 = new StringBuilder();
-            ObjectToSqlHelper.BuildWhereClause(sb2, keyFields);
-
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
-
-        }
-
-        /// <summary>
-        /// Builds the upsert query.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="sqlBuilder">The SQL builder.</param>
-        /// <param name="tableName">Name of the table.</param>
-        private void BuildUpsertQuery<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName) where T : IDynamicMetaObjectProvider
-        {
-
-            var keyFields = ObjectToSqlHelper.GetKeyFields<T>(dynamicObject);
-            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-
-            var sb = new StringBuilder();
-            BuildUpdateQuery(dynamicObject, sb, tableName);
-            var sb1 = new StringBuilder();
-            BuildInsertQuery<T>(dynamicObject, sb1, tableName);
-            var sb2 = new StringBuilder();
-            ObjectToSqlHelper.BuildWhereClause(sb2, keyFields);
-
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
-
-        }
-
-        private void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys ) where T : class
-        {
-
-            var keyFields = new List<MemberWrapper>() { };
-
-            if (overrideKeys != null)
+            // Get non primary key fields - the ones we want to update.
+            if (instance is IDynamicMetaObjectProvider a)
             {
-                var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
-                keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
+                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => !m.IsMemberAPrimaryKeyColumn() && r.PropertyName == m.Name) != null).AsList();
             }
-            else
-            {
-                keyFields = ObjectToSqlHelper.GetKeyFields<T>(IncludeNonPublicAccessor);
-            }
-            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-
-            var sb = new StringBuilder();
-            BuildUpdateQuery(sb, tableName, overrideKeys);
-            var sb1 = new StringBuilder();
-            BuildInsertQuery<T>(sb1, tableName);
-            var sb2 = new StringBuilder();
-            ObjectToSqlHelper.BuildWhereClause(sb2,keyFields);
-
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}",sb.ToString(),sb1.ToString()));
-
+            return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => !m.IsMemberAPrimaryKeyColumn() && r.PropertyName == m.Name) != null).AsList();
         }
 
         /// <summary>
-        /// Builds the upsert query.
+        /// Gets the key fields.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="sqlBuilder">The SQL builder.</param>
-        /// <param name="tableName">Name of the table.</param>
-        private void BuildUpsertQuery<T>(T dynamicObject, StringBuilder sqlBuilder, string tableName, List<string> overrideKeys ) where T : IDynamicMetaObjectProvider
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetNonKeyFields(bool includeNonPublicAccessor, Type type)
         {
-
-            overrideKeys.IsEmptyThrow(nameof(overrideKeys));
-            var keyFields = ExtFastMember.GetMemberWrappers<T>(dynamicObject).Where(m => overrideKeys.Contains(m.Name)).ToList();
-
-            var sb = new StringBuilder();
-            BuildUpdateQuery(dynamicObject,sb, tableName, overrideKeys);
-            var sb1 = new StringBuilder();
-            BuildInsertQuery<T>(dynamicObject,sb1, tableName);
-            var sb2 = new StringBuilder();
-            ObjectToSqlHelper.BuildWhereClause(sb2, keyFields);
-
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
-
+            // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
+            return ExtFastMember.GetMemberWrappers(type, includeNonPublicAccessor).Where(m => !m.IsMemberAPrimaryKeyColumn()).AsList();
         }
 
         #endregion
+
+        #region GetKeyFields
+
+        /// <summary>
+        /// Gets the key fields.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetKeyFields<T>(bool includeNonPublicAccessor) where T : class
+        {
+            // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
+            return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).ToList();
+        }
+
+        /// <summary>
+        /// Gets the key fields.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetKeyFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance) where T : class
+        {
+            // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
+            if (instance is IDynamicMetaObjectProvider a)
+            {
+                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => r.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
+            }
+            return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => r.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
+        }
+
+        /// <summary>
+        /// Gets the key fields.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetKeyFields(bool includeNonPublicAccessor, Type type)
+        {
+            // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
+            return ExtFastMember.GetMemberWrappers(type, includeNonPublicAccessor).Where(m => m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).AsList();
+        }
+
+        #endregion
+
+        #region GetNonIdentityFields 
+        /// <summary>
+        /// Gets the non identity fields.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetNonIdentityFields<T>(bool includeNonPublicAccessor) where T : class
+        {
+            return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => !m.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored()).AsList();
+        }
+
+        /// <summary>
+        /// Gets the non identity fields.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetNonIdentityFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance) where T : class
+        {
+            // Get non primary key fields - the ones we want to update.
+            if (instance is IDynamicMetaObjectProvider a)
+            {
+                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => !r.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
+            }
+            return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => !r.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
+        }
+
+        /// <summary>
+        /// Gets the non identity fields.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetNonIdentityFields(bool includeNonPublicAccessor, Type type)
+        {
+            return ExtFastMember.GetMemberWrappers(type, includeNonPublicAccessor).Where(m => !m.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored()).AsList();
+        }
+
+
+        #endregion
+
+        #region GetNonIgnoreFields
+        /// <summary>
+        /// Gets all non ignore fields.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetAllNonIgnoreFields<T>(bool includeNonPublicAccessor) where T : class
+        {
+            // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
+            var temp = ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => !m.ShouldMemberBeIgnored()).AsList();
+            return temp;
+        }
+        /// <summary>
+        /// Gets all non ignore fields.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetAllNonIgnoreFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance) where T : class
+        {
+            // Get non primary key fields - the ones we want to update.
+            if (instance is IDynamicMetaObjectProvider a)
+            {
+                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
+            }
+            return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
+        }
+
+
+        /// <summary>
+        /// Gets all non ignore fields.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetAllNonIgnoreFields(Type type, bool includeNonPublicAccessor)
+        {
+            // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
+            var temp = ExtFastMember.GetMemberWrappers(type, includeNonPublicAccessor).Where(m => !m.ShouldMemberBeIgnored()).AsList();
+            return temp;
+        }
+
+        #endregion
+
+        #region DB PARAMETERS
+
+        /// <summary>
+        /// Converts to database value.
+        /// </summary>
+        /// <param name="member">The member.</param>
+        /// <param name="value">The value.</param>
+        /// <returns>System.Object.</returns>
+        private object ConvertToDatabaseValue(MemberWrapper member, object value, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
+        {
+            if (value == null)
+            {
+                return DBNull.Value;
+            }
+            if (member.Type == typeof(DateTime) && (DateTime)value == DateTime.MinValue || member.Type == typeof(DateTime?) && (DateTime)value == DateTime.MinValue)
+            {
+                return new DateTime(1753, 01, 01);
+            }
+            if (member.GetCustomAttribute<SqlColumnAttribute>()?.SerializableType != SerializableType.NONE)
+            {
+                switch (member.GetCustomAttribute<SqlColumnAttribute>()?.SerializableType)
+                {
+                    case SerializableType.XML:
+                        XmlSerializer.IsNullThrow(nameof(XmlSerializer), new ArgumentNullException(nameof(XmlSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.XML)}"));
+                        return XmlSerializer.Invoke(value);
+                    case SerializableType.JSON:
+                        JsonSerializer.IsNullThrow(nameof(JsonSerializer), new ArgumentNullException(nameof(JsonSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.JSON)}"));
+                        return JsonSerializer.Invoke(value);
+                    case SerializableType.CSV:
+                        CsvSerializer.IsNullThrow(nameof(CsvSerializer), new ArgumentNullException(nameof(CsvSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.CSV)}"));
+                        return CsvSerializer.Invoke(value);
+                    case SerializableType.NONE:
+                    case null:
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+            return value;
+        }
+
+        /// <summary>
+        /// Converts to database value.
+        /// </summary>
+        /// <param name="member">The member.</param>
+        /// <param name="value">The value.</param>
+        /// <returns>System.Object.</returns>
+        private object ConvertToDatabaseValue(object value)
+        {
+            if (value == null)
+            {
+                return DBNull.Value;
+            }
+            if (value is DateTime time && time == DateTime.MinValue) // TODO :: VALID NULLABLE DATETIME FALL IN THIS METHOD AS WELL
+            {
+                return new DateTime(1753, 01, 01);
+            }
+            return value;
+        }
+
+
+
+        /// <summary>
+        /// Builds the SQL parameter list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="poco">The poco.</param>
+        /// <returns>List&lt;DbParameter&gt;.</returns>
+        public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> GetNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer, bool includeNonPublicAccessor) where T : class
+        {
+            var list = new List<DbParameter>() { };
+            List<MemberWrapper> members;
+            if (instance is IDynamicMetaObjectProvider a)
+            {
+                members = ExtFastMember.GetMemberWrappers(a);
+            }
+            else
+            {
+                members = ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor);
+            }
+            members.ForEach(delegate (MemberWrapper p)
+            {
+                var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), XmlSerializer, JsonSerializer, CsvSerializer);
+                list.Add(GetNewParameter($"@{p.Name}", parameterValue));
+            });
+            return list;
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Builds the where clause.
+        /// </summary>
+        /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="keyFields">The key fields.</param>
+
+        public void BuildWhereClause(StringBuilder sqlBuilder, List<MemberWrapper> keyFields)
+        {
+
+
+            if (keyFields.IsNullOrEmpty())
+            {
+                // throw new InvalidOperationException("Can't Build Where Clause Or Perform Upsert And Update Statements Without Having At Least One Property That Inherits The SqlColumnAttribute & Have The PRIMARY KEY SET TO TRUE OR The Foreign Key Set Up");
+                return;
+            }
+            else
+            {
+                sqlBuilder.Append("WHERE");
+                keyFields.ForEach(p => sqlBuilder.Append($" [{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name} AND"));
+                if (sqlBuilder.ToString().EndsWith(" AND"))
+                    sqlBuilder.Remove(sqlBuilder.Length - 4, 4); // Remove the last AND       
+            }
+
+        }
+
         /// <summary>
         /// 
         /// </summary>

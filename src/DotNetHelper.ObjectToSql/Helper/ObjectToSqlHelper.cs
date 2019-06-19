@@ -47,7 +47,6 @@ namespace DotNetHelper.ObjectToSql.Helper
 
         }
 
-//        Func<string, object, DbParameter> GetNewParameter
         /// <summary>
         /// Builds the where clause.Dyn
         /// </summary>
@@ -76,202 +75,14 @@ namespace DotNetHelper.ObjectToSql.Helper
             return list;
         }
 
-
-
-        /// <summary>
-        /// Gets the non key fields.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public List<MemberWrapper> GetNonKeyFields<T>(bool includeNonPublicAccessor) where T : class
-        {
-            // Get non primary key fields - the ones we want to update.
-                return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => !m.IsMemberAPrimaryKeyColumn()).ToList();
-        }
-        /// <summary>
-        /// Gets the non key fields.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public List<MemberWrapper> GetNonKeyFields<T>(T dynamicObject) where T : IDynamicMetaObjectProvider
-        {
-            // Get non primary key fields - the ones we want to update.
-            return ExtFastMember.GetMemberWrappers<T>(dynamicObject).Where(m => !m.IsMemberAPrimaryKeyColumn()).ToList();
-            return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => r.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
-        }
-
-
-        /// <summary>
-        /// Gets the key fields.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public static List<MemberWrapper> GetKeyFields<T>(bool includeNonPublicAccessor) where T : class
-        {
-                // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
-                return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).ToList();
-        }
-
-
-        /// <summary>
-        /// Gets the key fields.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public static List<MemberWrapper> GetKeyFields<T>(List<RunTimeAttributeMap> runTimeAttributes) where T : class
-        {
-            // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
-            return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault( r => r.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
-        }
+        
+    
 
 
 
 
-        /// <summary>
-        /// Gets the key fields.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public static List<MemberWrapper> GetKeyFields( bool includeNonPublicAccessor, Type type)
-        {
-            // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
-            return ExtFastMember.GetMemberWrappers(type,includeNonPublicAccessor).Where(m => m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).AsList();
-        }
 
 
-
-        /// <summary>
-        /// Gets the non identity fields.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public static List<MemberWrapper> GetNonIdentityFields<T>(bool includeNonPublicAccessor) where T : class
-        {
-            return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => !m.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored()).AsList();
-        }
-
-        /// <summary>
-        /// Gets the non identity fields.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public static List<MemberWrapper> GetNonIdentityFields<T>(T dynamicObject) where T : IDynamicMetaObjectProvider
-        {
-            return ExtFastMember.GetMemberWrappers<T>(dynamicObject).Where(m => !m.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored()).AsList();
-        }
-
-        /// <summary>
-        /// Gets the non identity fields.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public static List<MemberWrapper> GetNonIdentityFields( bool includeNonPublicAccessor, Type type) 
-        {
-            return ExtFastMember.GetMemberWrappers(type,includeNonPublicAccessor).Where(m => !m.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored()).AsList();
-        }
-
-
-
-        /// <summary>
-        /// Gets all non ignore fields.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public  List<MemberWrapper> GetAllNonIgnoreFields<T>(bool includeNonPublicAccessor) where T : class
-        {
-            // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
-            var temp = ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => !m.ShouldMemberBeIgnored()).AsList();
-            return temp;
-        }
-        /// <summary>
-        /// Gets all non ignore fields.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public List<MemberWrapper> GetAllNonIgnoreFields<T>(T dynamicObject) where T : IDynamicMetaObjectProvider
-        {
-            // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
-            var temp = ExtFastMember.GetMemberWrappers<T>(dynamicObject).Where(m => !m.ShouldMemberBeIgnored()).AsList();
-            return temp;
-        }
-
-
-        /// <summary>
-        /// Gets all non ignore fields.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>List&lt;MemberWrapper&gt;.</returns>
-        public static List<MemberWrapper> GetAllNonIgnoreFields(Type type, bool includeNonPublicAccessor)
-        {
-            // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
-            var temp = ExtFastMember.GetMemberWrappers(type, includeNonPublicAccessor).Where(m => !m.ShouldMemberBeIgnored()).AsList();
-            return temp;
-        }
-
-
-
-   
-
-        /// <summary>
-        /// Converts to database value.
-        /// </summary>
-        /// <param name="member">The member.</param>
-        /// <param name="value">The value.</param>
-        /// <returns>System.Object.</returns>
-        public static object ConvertToDatabaseValue(MemberWrapper member, object value, Func<object,string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
-        {
-            if (value == null)
-            {
-                return DBNull.Value;
-            }
-            if (member.Type == typeof(DateTime) && (DateTime)value == DateTime.MinValue || member.Type == typeof(DateTime?) && (DateTime)value == DateTime.MinValue)
-            {
-                return new DateTime(1753, 01, 01);
-            }
-            if (member.GetCustomAttribute<SqlColumnAttribute>()?.SerializableType != SerializableType.NONE)
-            {
-                    switch (member.GetCustomAttribute<SqlColumnAttribute>()?.SerializableType)
-                    {
-                        case SerializableType.XML:
-                            XmlSerializer.IsNullThrow(nameof(XmlSerializer), new ArgumentNullException(nameof(XmlSerializer),$"{ExceptionHelper.NullSerializer(member,SerializableType.XML)}"));
-                            return XmlSerializer.Invoke(value);
-                        case SerializableType.JSON:
-                            JsonSerializer.IsNullThrow(nameof(JsonSerializer), new ArgumentNullException(nameof(JsonSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.JSON)}"));
-                            return JsonSerializer.Invoke(value);
-                        case SerializableType.CSV:
-                            CsvSerializer.IsNullThrow(nameof(CsvSerializer), new ArgumentNullException(nameof(CsvSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.CSV)}"));
-                            return CsvSerializer.Invoke(value);
-                        case SerializableType.NONE:
-                        case null:
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
-            }
-            return value;
-        }
-
-
-
-        /// <summary>
-        /// Builds the SQL parameter list.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="poco">The poco.</param>
-        /// <returns>List&lt;DbParameter&gt;.</returns>
-        public List<DbParameter> BuildDbParameterList<T>(T poco, Func<string, object, DbParameter> GetNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer, bool includeNonPublicAccessor) where T : class
-        {
-            var list = new List<DbParameter>() { };
-            ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).ForEach(delegate (MemberWrapper p)
-            {
-                var  parameterValue = ConvertToDatabaseValue(p, p.GetValue(poco),XmlSerializer,JsonSerializer,CsvSerializer);
-                list.Add(GetNewParameter($"@{p.Name}", parameterValue));
-            });
-            return list;
-        }
-
-
-       
 
 
 

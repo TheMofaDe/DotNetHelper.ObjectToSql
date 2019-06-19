@@ -28,7 +28,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Uses_Mapped_Column_Name_Instead_Of_PropertyName()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnSqlColumn>(null,ActionType,new EmployeeWithMappedColumnSqlColumn());
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnSqlColumn>(null,ActionType);
             Assert.AreEqual(sql, EmployeeWithMappedColumnSqlColumn.ToSql(ActionType));
         }
 
@@ -36,7 +36,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Uses_Mapped_Column_Name_Instead_Of_PropertyName_Insert_Key()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(null, ActionType, new EmployeeWithMappedColumnAndPrimaryKeySqlColumn());
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(null, ActionType);
             Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType));
         }
 
@@ -46,7 +46,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Doesnt_Include_Ignored_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIgnorePropertySqlColumn>(null, ActionType, new EmployeeWithIgnorePropertySqlColumn());
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIgnorePropertySqlColumn>(null, ActionType);
             Assert.AreEqual(sql, EmployeeWithIgnorePropertySqlColumn.ToSql(ActionType));
             
         }
@@ -55,7 +55,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Doesnt_Try_To_Insert_Identity_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(null, ActionType, new EmployeeWithIdentityKeySqlColumn());
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(null, ActionType);
             Assert.AreEqual(sql, EmployeeWithIdentityKeySqlColumn.ToSql(ActionType));
 
         }
@@ -65,19 +65,19 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Does_Try_To_Insert_PrimaryKey_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>(null, ActionType, new EmployeeWithPrimaryKeySqlColumn());
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>(null, ActionType);
             Assert.AreEqual(sql, EmployeeWithPrimaryKeySqlColumn.ToSql(ActionType));
 
         }
 
-        [Test]
-        public void Test_Generic_BuildInsertQueryWithOutputs_Ensure_Missing_Identity_Key_Is_Thrown()
-        {
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => sqlServerObjectToSql.BuildInsertQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(new StringBuilder(), nameof(Employee)),
-                Throws.Exception
-                    .TypeOf<EmptyArgumentException>());
-        }
+        //[Test]
+        //public void Test_Generic_BuildInsertQueryWithOutputs_Ensure_Missing_Identity_Key_Is_Thrown()
+        //{
+        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+        //    Assert.That(() => sqlServerObjectToSql.BuildInsertQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(new StringBuilder(), nameof(Employee)),
+        //        Throws.Exception
+        //            .TypeOf<EmptyArgumentException>());
+        //}
 
 
 

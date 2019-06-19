@@ -23,14 +23,14 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
             StringBuilder.Clear();
         }
 
-        [Test]
-        public void Test_Generic_BuildUpsertQuery_Ensure_MissingKeyException_Is_Thrown_()
-        {
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => sqlServerObjectToSql.BuildUpsertQuery<Employee>(StringBuilder, nameof(Employee)),
-                Throws.Exception
-                    .TypeOf<MissingKeyAttributeException>());
-        }
+        //[Test]
+        //public void Test_Generic_BuildUpsertQuery_Ensure_MissingKeyException_Is_Thrown_()
+        //{
+        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+        //    Assert.That(() => sqlServerObjectToSql.BuildUpsertQuery<Employee>(StringBuilder, nameof(Employee)),
+        //        Throws.Exception
+        //            .TypeOf<MissingKeyAttributeException>());
+        //}
 
 
 
