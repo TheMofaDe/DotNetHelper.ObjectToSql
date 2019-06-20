@@ -103,8 +103,8 @@ namespace DotNetHelper.ObjectToSql.Extension
             }
             var sqlTableAttribute = t.GetCustomAttribute<SqlTableAttribute>(false);
             var tableAttribute = t.GetCustomAttribute<TableAttribute>(false);
-            if (!string.IsNullOrEmpty(tableAttribute.Name)) return tableAttribute.Name;
-            if (!string.IsNullOrEmpty(sqlTableAttribute.TableName)) return sqlTableAttribute.TableName;
+            if (!string.IsNullOrEmpty(tableAttribute?.Name)) return tableAttribute.Name;
+            if (!string.IsNullOrEmpty(sqlTableAttribute?.TableName)) return sqlTableAttribute.TableName;
             return t.Name;
         }
 

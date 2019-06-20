@@ -77,7 +77,13 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 
 
 
-
+        [Test]
+        public void Test_SqlTable()
+        {
+          
+            var sqlTable = new SQLTable(DataBaseType.SqlServer,typeof(Employee));
+            Assert.AreEqual(sqlTable.TableName,"Employee","Table Name is not what was expected");
+        }
 
 
 

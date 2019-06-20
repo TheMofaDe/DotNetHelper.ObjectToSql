@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
+using System.Text;
 using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Extension;
@@ -16,6 +19,44 @@ namespace DotNetHelper.ObjectToSql.Helper
         public SqlSyntaxHelper(DataBaseType type)
         {
             DataBaseType = type;
+            EnclosedValueLookup = new Dictionary<Type, string>()
+            {
+                {typeof(int), string.Empty},
+                {typeof(Guid), "'"},
+                {typeof(DateTime), "'"},
+                {typeof(DateTimeOffset), "'"},
+                {typeof(TimeSpan), "'"},
+                {typeof(long), string.Empty},
+                {typeof(bool), string.Empty},
+                {typeof(double), string.Empty},
+                {typeof(short), string.Empty},
+                {typeof(decimal), string.Empty},
+                {typeof(float), string.Empty},
+                {typeof(byte), "'"},
+                {typeof(char), "'"},
+                {typeof(uint), string.Empty},
+                {typeof(ushort), string.Empty},
+                {typeof(ulong), string.Empty},
+                {typeof(sbyte), "'"},
+                {typeof(int?), string.Empty},
+                {typeof(Guid?), "'"},
+                {typeof(DateTime?), "'"},
+                {typeof(DateTimeOffset?), "'"},
+                {typeof(TimeSpan?), "'"},
+                {typeof(long?), string.Empty},
+                {typeof(bool?), string.Empty},
+                {typeof(double?), string.Empty},
+                {typeof(decimal?), string.Empty},
+                {typeof(short?), string.Empty},
+                {typeof(float?), string.Empty},
+                {typeof(byte?), string.Empty},
+                {typeof(char?), "'"},
+                {typeof(uint?), string.Empty},
+                {typeof(ushort?), string.Empty},
+                {typeof(ulong?), string.Empty},
+                {typeof(sbyte?), string.Empty}
+
+            };
             switch (type)
             {
                 case DataBaseType.SqlServer:
@@ -247,10 +288,107 @@ namespace DotNetHelper.ObjectToSql.Helper
 
 
 
+        public string ConvertParameterSqlToReadable(List<DbParameter> parameters, string query,Encoding encoding)
+        {
+            var sql = query.Clone().ToString();
+            // Convert Query To Human Readable  
+
+            var orderedParameters = parameters.OrderByDescending(x => x.ParameterName).ToList();
+            orderedParameters.ForEach(delegate (DbParameter parameter)
+            {
+                var name = parameter.ParameterName;
+                sql = sql.Replace(name.StartsWith("@") ? $"{name}" : $"@{name}", CommandToSQl(parameter.Value, encoding ?? Encoding.UTF8));
+            });
+
+            return sql;
+
+        }
+
+
+        private  string CommandToSQl(object obj, Encoding encoding)
+        {
+
+            if (obj == null || obj == DBNull.Value)
+            {
+                return "NULL";
+            }
+            else if (obj is byte[] byteArray)
+            {
+                var quoteField = EnclosedValueLookup[byteArray.GetType()];
+                return byteArray.Length <= 0 ? $@"NULL" : $@"{quoteField}{encoding.GetString(byteArray)}{quoteField}";
+            }
+            else if (obj is string stringValue)
+            {
+                var quoteField = EnclosedValueLookup[stringValue.GetType()];
+                return $@"{quoteField}{stringValue.Replace("'", "''")}{quoteField}"; 
+            }
+            else if (obj is char charValue)
+            {
+                var quoteField = EnclosedValueLookup[charValue.GetType()];
+                return $@"{quoteField}{charValue.ToString().Replace("'", "''")}{quoteField}";
+            }
+            else if (obj is int intValue)
+            {
+                return $@"{intValue}";
+            }
+            else if (obj is byte byteValue)
+            {
+                return $@"{byteValue}";
+            }
+            else if (obj is float floatValue)
+            {
+                return $@"{floatValue}";
+            }
+            else if (obj is long longValue)
+            {
+                return $@"{longValue}";
+            }
+            else if (obj is double doubleValue)
+            {
+                return $@"{doubleValue}";
+            }
+            else if (obj is short shortValue)
+            {
+                return $@"{shortValue}";
+            }
+            else if (obj is decimal decimalValue)
+            {
+                return $@"{decimalValue}";
+            }
+            else if (obj is DateTime dateTimeValue)
+            {
+                var quoteField = EnclosedValueLookup[dateTimeValue.GetType()];
+                return $@"{quoteField}{dateTimeValue}{quoteField}";
+            }
+            else if (obj is DateTimeOffset dateTimeOffsetValue)
+            {
+                var quoteField = EnclosedValueLookup[dateTimeOffsetValue.GetType()];
+                return $@"{quoteField}{dateTimeOffsetValue}{quoteField}";
+            }
+            else if (obj is TimeSpan timespanValue)
+            {
+                var quoteField = EnclosedValueLookup[timespanValue.GetType()];
+                return $@"{quoteField}{timespanValue}{quoteField}";
+            }
+            else if (obj is bool booleanValue)
+            {
+                return booleanValue ? $"1" : $"0"; 
+            }
+            else if (obj is Guid guidValue)
+            {
+                var quoteField = EnclosedValueLookup[guidValue.GetType()];
+                return $@"CAST({quoteField}{guidValue}{quoteField} AS UNIQUEIDENTIFIER)";
+            }
+            else
+            {
+                // We Convert Non System Types To Json
+                return $"NULL";
+
+            }
+        }
 
 
 
-     
 
 
 
