@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Extension;
 using DotNetHelper.ObjectToSql.Helper;
@@ -47,23 +42,23 @@ namespace DotNetHelper.ObjectToSql.Model
                 var splits = tableName.Split('.');
                 if (splits.Length == 3) // database.schema.table
                 {
-                    DatabaseName = splits[0];
-                    SchemaName = splits[1];
-                    TableName = splits[2];
+                    DatabaseName = RemoveBrackets(splits[0]);
+                    SchemaName = RemoveBrackets(splits[1]);
+                    TableName = RemoveBrackets(splits[2]);
                 }
                 else if (splits.Length == 2) // schema.table
                 {
-                    SchemaName = splits[0];
-                    TableName = splits[1];
+                    SchemaName = RemoveBrackets(splits[0]);
+                    TableName = RemoveBrackets(splits[1]);
                 }
                 else if (splits.Length == 1) // .table
                 {
-                    TableName = splits[0];
+                    TableName = RemoveBrackets(splits[0]);
                 }
             }
             else
             {
-                TableName = tableName;
+                TableName = RemoveBrackets(tableName);
             }
         }
 

@@ -95,6 +95,15 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         }
 
 
+        [Test]
+        public void Test_SqlTable_TableName_Doesnt_Include_Brackets()
+        {
+
+            var sqlTable = new SQLTable(DataBaseType.SqlServer, "[Employee]");
+            Assert.AreEqual(sqlTable.TableName, "Employee", "Table Name is not what was expected");
+        }
+
+
 
 
 

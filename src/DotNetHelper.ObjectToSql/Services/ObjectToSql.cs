@@ -44,6 +44,10 @@ namespace DotNetHelper.ObjectToSql.Services
             if (type.IsTypeAnonymousType()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Anonymous"));
         }
 
+        #region Public Method Build Query
+
+        
+
 
         /// <summary>
         /// Builds the query based on the specified actionType & table name
@@ -208,6 +212,7 @@ namespace DotNetHelper.ObjectToSql.Services
             }
             return sqlBuilder.ToString();
         }
+        #endregion
 
         #region INSERT METHODS
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using DotNetHelper.FastMember.Extension;
 using DotNetHelper.FastMember.Extension.Models;
 using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
-using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Extension;
 using DotNetHelper.ObjectToSql.Model;
@@ -266,7 +264,7 @@ namespace DotNetHelper.ObjectToSql.Helper
                 case DataBaseType.SqlServer:
                     return $"IF EXISTS ( {selectStatement} ) BEGIN {onTrueSql} END ELSE BEGIN {onFalseSql} END";
                 case DataBaseType.MySql:
-                    break;
+                    return $@"IF ( {selectStatement} ) THEN BEGIN {onTrueSql} END; ELSE BEGIN {onFalseSql} END; END IF;";
                 case DataBaseType.Sqlite:
                     break;
                 case DataBaseType.Oracle:
@@ -280,9 +278,40 @@ namespace DotNetHelper.ObjectToSql.Helper
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-
-
             return null;
+        }
+
+        public string BuildTableExistStatement(SQLTable sqlTable, string onTrueSql, string onFalseSql)
+        {
+
+            var query = $"";
+            switch (DataBaseType)
+            {
+                case DataBaseType.SqlServer:
+                    query = $"IF OBJECT_ID(N'{sqlTable.FullNameWithBrackets}', N'U') IS NOT NULL BEGIN {onTrueSql} END ELSE BEGIN {onFalseSql} END"; 
+                    break;
+                case DataBaseType.MySql:
+                    query = $"SELECT CASE WHEN COUNT(*) > 0 THEN 'TRUE' ELSE 'FALSE' END FROM information_schema.tables " +
+                            $" WHERE table_schema = '{sqlTable.SchemaName}'" +
+                            $" AND table_name = '{sqlTable.TableName}' " +
+                            $" LIMIT 1;";
+                    break;
+                case DataBaseType.Sqlite:
+                    query = $"SELECT CASE WHEN COUNT(( SELECT name FROM sqlite_master WHERE type='table' AND name='{sqlTable.TableName}')) > 0 THEN 'TRUE' ELSE 'FALSE' END AS WHOCARES";
+                    break;
+                case DataBaseType.Oracle:
+                    break;
+                case DataBaseType.Oledb:
+                    break;
+                case DataBaseType.Access95:
+                    break;
+                case DataBaseType.Odbc:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            return query;
         }
 
 
