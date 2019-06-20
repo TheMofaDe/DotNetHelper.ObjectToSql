@@ -86,6 +86,15 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         }
 
 
+        [Test]
+        public void Test_SqlTable_FullNameWithBrackets()
+        {
+
+            var sqlTable = new SQLTable(DataBaseType.SqlServer, typeof(Employee));
+            Assert.AreEqual(sqlTable.FullNameWithBrackets, "[Employee]", "Table Name is not what was expected");
+        }
+
+
 
 
 

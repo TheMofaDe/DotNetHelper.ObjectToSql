@@ -13,12 +13,13 @@ namespace DotNetHelper.ObjectToSql.Model
     public class SQLTable
     {
         public DataBaseType DBType { get; private set; }
-        public string TableName { get; internal set; } = string.Empty;
-        public string SchemaName { get; internal set; } = string.Empty;
-        public string DatabaseName { get; internal set; } = string.Empty;
-        public string FullNameWithBrackets => GetFullName(true);
-        public string FullNameWithOutBrackets => GetFullName(false);
+        public string TableName { get; private set; } = string.Empty;
+        public string SchemaName { get; private set; } = string.Empty;
+        public string DatabaseName { get; private set; } = string.Empty;
 
+        public string FullNameWithBrackets => GetFullName(true);
+
+        public string FullNameWithOutBrackets => GetFullName(false);
 
 
         public SQLTable(DataBaseType dbType, Type type)
@@ -103,20 +104,20 @@ namespace DotNetHelper.ObjectToSql.Model
             {
                 return includeBrackets
                     ? $"{AddBrackets(DatabaseName)}.{AddBrackets(SchemaName)}.{AddBrackets(TableName)}"
-                    : $"{DatabaseName}.{SchemaName}.{TableName}";
+                    : $"{RemoveBrackets(DatabaseName)}.{RemoveBrackets(SchemaName)}.{RemoveBrackets(TableName)}";
             }
 
             if (!string.IsNullOrEmpty(SchemaName))
             {
                 return includeBrackets
                     ? $"{AddBrackets(SchemaName)}.{AddBrackets(TableName)}"
-                    : $"{SchemaName}.{TableName}";
+                    : $"{RemoveBrackets(SchemaName)}.{RemoveBrackets(TableName)}";
             }
-            if (!string.IsNullOrEmpty(SchemaName))
+            if (!string.IsNullOrEmpty(TableName))
             {
                 return includeBrackets
                     ? $"{AddBrackets(TableName)}"
-                    : $"{TableName}";
+                    : $"{RemoveBrackets(TableName)}";
             }
 
             return string.Empty;
