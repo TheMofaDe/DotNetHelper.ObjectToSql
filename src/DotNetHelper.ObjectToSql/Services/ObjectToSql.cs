@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Dynamic;
 using System.Linq;
@@ -46,8 +47,61 @@ namespace DotNetHelper.ObjectToSql.Services
 
         #region Public Method Build Query
 
-        
 
+        ///// <summary>
+        ///// Builds the query based on the specified actionType & table name
+        ///// </summary>
+        ///// <param name="tableName">Name of the table.</param>
+        ///// <param name="actionType">INSERT,DELETE,UPDATE,OR UPSERT</param>
+        ///// <exception cref="InvalidOperationException"></exception>
+        ///// <exception cref="ArgumentOutOfRangeException"> invalid actionType </exception>
+        ///// <exception cref="MissingKeyAttributeException"> can only be thrown for UPDATE,DELETE, & UPSERT Queries</exception> 
+        //public string BuildQuery(DataTable dataTable, ActionType actionType)
+        //{
+        //    var sqlBuilder = new StringBuilder();
+
+        //    var keyFields = dataTable.PrimaryKey;
+        //    var nonKeyFields = new List<string>() { };
+        //    var nonIdentityFields = new List<string>() { };
+
+        //    List<string> GetNonKeyFields()
+        //    {
+        //        foreach (DataColumn col in dataTable.Columns)
+        //        {
+        //            if (!dataTable.PrimaryKey.Contains(col))
+        //            {
+        //                nonKeyFields.Add(col.ColumnName);
+
+        //            }
+        //            else
+        //            {
+
+        //            }
+        //        }
+        //    }
+        //    switch (actionType)
+        //    {
+        //        case ActionType.Insert:
+        //            ThrowIfDynamicOrAnonymous<T>(actionType);
+        //            BuildInsertQuery<T>(sqlBuilder, tableName);
+        //            break;
+        //        case ActionType.Update:
+        //            ThrowIfDynamicOrAnonymous<T>(actionType);
+        //            BuildUpdateQuery<T>(sqlBuilder, tableName);
+        //            break;
+        //        case ActionType.Upsert:
+        //            ThrowIfDynamicOrAnonymous<T>(actionType);
+        //            BuildUpsertQuery<T>(sqlBuilder, tableName);
+        //            break;
+        //        case ActionType.Delete:
+        //            ThrowIfDynamicOrAnonymous<T>(actionType);
+        //            BuildDeleteQuery<T>(sqlBuilder, tableName);
+        //            break;
+        //        default:
+        //            throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null);
+        //    }
+        //    return sqlBuilder.ToString();
+        //}
 
         /// <summary>
         /// Builds the query based on the specified actionType & table name
