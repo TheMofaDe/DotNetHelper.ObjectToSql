@@ -994,7 +994,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <typeparam name="T"></typeparam>
         /// <param name="poco">The poco.</param>
         /// <returns>List&lt;DbParameter&gt;.</returns>
-        public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> GetNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer, bool includeNonPublicAccessor) where T : class
+        public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> GetNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer) where T : class
         {
             var list = new List<DbParameter>() { };
             List<MemberWrapper> members;
@@ -1004,7 +1004,7 @@ namespace DotNetHelper.ObjectToSql.Services
             }
             else
             {
-                members = ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor);
+                members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
             }
             members.ForEach(delegate (MemberWrapper p)
             {
@@ -1037,63 +1037,64 @@ namespace DotNetHelper.ObjectToSql.Services
 
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="tableAlias"></param>
-        /// <param name="memberWrappers"></param>
-        /// <param name="sqlSyntax"></param>
-        /// <returns>item 1 is the actual columns being selected
-        ///          item 2 is the split on column</returns>
-        internal Tuple<string, string> BuildSelectColumnStatement(char tableAlias, List<MemberWrapper> memberWrappers, SqlSyntaxHelper sqlSyntax)
-        {
-            var sb = new StringBuilder();
-            var isFirstTime = true;
-            var splitOn = "";
-            memberWrappers.Where(a1 => a1.GetCustomAttribute<DBTableAttribute>() == null && a1.GetCustomAttribute<SqlColumnAttribute>()?.Ignore != true).ToList().ForEach(delegate (MemberWrapper member) // BUILD SQL COLUMNS
-            {
-                var columnName = $"{tableAlias}.{sqlSyntax.GetKeywordEscapeOpenChar()}{member.Name}{sqlSyntax.GetKeywordEscapeClosedChar()}";
-                sb.AppendLine($"{columnName} , ");
-                if (isFirstTime)
-                {
-                    splitOn = member.Name;
-                    isFirstTime = false;
-                }
-            });
-            return new Tuple<string, string>(sb.ToString(), splitOn);
-        }
+        // TODO :: COME BACK WHEN READY 
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="tableAlias"></param>
+        ///// <param name="memberWrappers"></param>
+        ///// <param name="sqlSyntax"></param>
+        ///// <returns>item 1 is the actual columns being selected
+        /////          item 2 is the split on column</returns>
+        //internal Tuple<string, string> BuildSelectColumnStatement(char tableAlias, List<MemberWrapper> memberWrappers, SqlSyntaxHelper sqlSyntax)
+        //{
+        //    var sb = new StringBuilder();
+        //    var isFirstTime = true;
+        //    var splitOn = "";
+        //    memberWrappers.Where(a1 => a1.GetCustomAttribute<DBTableAttribute>() == null && a1.GetCustomAttribute<SqlColumnAttribute>()?.Ignore != true).ToList().ForEach(delegate (MemberWrapper member) // BUILD SQL COLUMNS
+        //    {
+        //        var columnName = $"{tableAlias}.{sqlSyntax.GetKeywordEscapeOpenChar()}{member.Name}{sqlSyntax.GetKeywordEscapeClosedChar()}";
+        //        sb.AppendLine($"{columnName} , ");
+        //        if (isFirstTime)
+        //        {
+        //            splitOn = member.Name;
+        //            isFirstTime = false;
+        //        }
+        //    });
+        //    return new Tuple<string, string>(sb.ToString(), splitOn);
+        //}
 
-        internal void BuildJoinOnStatement(List<MemberWrapper> members, char mainTableAlias, List<MemberWrapper> members1, char secondTableAlias, StringBuilder sqlFromBuilder)
-        {
-            var safeKeyword = " AND ";
-            members.Where(a => !a.GetCustomAttribute<SqlColumnAttribute>()?.MappingIds.IsNullOrEmpty() != true && a.GetCustomAttribute<DBTableAttribute>() == null).ToList().ForEach(delegate (MemberWrapper mainTableColumn) // LOOP THRU MAIN TABLE PROPERTIES 
-            {
+        //internal void BuildJoinOnStatement(List<MemberWrapper> members, char mainTableAlias, List<MemberWrapper> members1, char secondTableAlias, StringBuilder sqlFromBuilder)
+        //{
+        //    var safeKeyword = " AND ";
+        //    members.Where(a => !a.GetCustomAttribute<SqlColumnAttribute>()?.MappingIds.IsNullOrEmpty() != true && a.GetCustomAttribute<DBTableAttribute>() == null).ToList().ForEach(delegate (MemberWrapper mainTableColumn) // LOOP THRU MAIN TABLE PROPERTIES 
+        //    {
 
-                members1.Where(a => !a.GetCustomAttribute<SqlColumnAttribute>()?.MappingIds.IsNullOrEmpty() != true).ToList().ForEach(delegate (MemberWrapper secondTableColumn)
-                {
+        //        members1.Where(a => !a.GetCustomAttribute<SqlColumnAttribute>()?.MappingIds.IsNullOrEmpty() != true).ToList().ForEach(delegate (MemberWrapper secondTableColumn)
+        //        {
 
-                    var attr = mainTableColumn.GetCustomAttribute<SqlColumnAttribute>();
-                    var attr2 = mainTableColumn.GetCustomAttribute<SqlColumnAttribute>();
-                    if (attr?.MappingIds.ContainAnySameItem(attr2?.MappingIds) == true)
-                    {
+        //            var attr = mainTableColumn.GetCustomAttribute<SqlColumnAttribute>();
+        //            var attr2 = mainTableColumn.GetCustomAttribute<SqlColumnAttribute>();
+        //            if (attr?.MappingIds.ContainAnySameItem(attr2?.MappingIds) == true)
+        //            {
 
 
-                        sqlFromBuilder.Append($" {mainTableAlias}.{mainTableColumn.Name} " +
-                                              $"= {secondTableAlias}.{secondTableColumn.Name} ");
-                        sqlFromBuilder.Append(safeKeyword);
+        //                sqlFromBuilder.Append($" {mainTableAlias}.{mainTableColumn.Name} " +
+        //                                      $"= {secondTableAlias}.{secondTableColumn.Name} ");
+        //                sqlFromBuilder.Append(safeKeyword);
 
-                        // var iHateThis = sqlFromBuilder.ToString().ReplaceLastOccurrance(safeKeyword, string.Empty, StringComparison.Ordinal);
-                        // sqlFromBuilder.Clear();
-                        //  sqlFromBuilder.Append(sqlFromBuilder.ToString().ReplaceLastOccurrance(safeKeyword, string.Empty, StringComparison.Ordinal));
-                        // sqlFromBuilder.Clear();
-                    }
-                });
+        //                // var iHateThis = sqlFromBuilder.ToString().ReplaceLastOccurrance(safeKeyword, string.Empty, StringComparison.Ordinal);
+        //                // sqlFromBuilder.Clear();
+        //                //  sqlFromBuilder.Append(sqlFromBuilder.ToString().ReplaceLastOccurrance(safeKeyword, string.Empty, StringComparison.Ordinal));
+        //                // sqlFromBuilder.Clear();
+        //            }
+        //        });
 
-            });
+        //    });
 
-            sqlFromBuilder = sqlFromBuilder.ReplaceLastOccurrence(safeKeyword, string.Empty, StringComparison.Ordinal);
+        //    sqlFromBuilder = sqlFromBuilder.ReplaceLastOccurrence(safeKeyword, string.Empty, StringComparison.Ordinal);
 
-        }
+        //}
 
 
     }

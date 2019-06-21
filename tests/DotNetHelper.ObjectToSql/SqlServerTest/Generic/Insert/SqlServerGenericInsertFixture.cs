@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.SqlClient;
+using System.Linq;
 using System.Text;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Model;
@@ -107,6 +109,19 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 
 
 
+        [Test]
+        public void Test_BuildDbParameterList_Contains_Accurate_Values()
+        {
+            var employee = new Employee() {LastName = "John", FirstName = "Doe"};
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+
+            var parameters = sqlServerObjectToSql.BuildDbParameterList(employee, (s, o) => new SqlParameter(s, o), null, null, null);
+
+            Assert.AreEqual(parameters.First().Value,"Doe");
+            Assert.AreEqual(parameters.Last().Value, "John");
+            Assert.AreEqual(parameters.Count, 2);
+
+        }
 
 
 
