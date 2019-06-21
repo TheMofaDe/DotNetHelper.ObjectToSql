@@ -84,6 +84,44 @@ namespace DotNetHelper.ObjectToSql.Services
             }
             return sqlBuilder.ToString();
         }
+
+        /// <summary>
+        /// Builds the query based on the specified actionType & table name
+        /// </summary>
+        /// <typeparam name="T">a class</typeparam>
+        /// <param name="tableName">Name of the table.</param>
+        /// <param name="actionType">INSERT,DELETE,UPDATE,OR UPSERT</param>
+        /// <param name="primaryKeys">During the query build process the properties in the expression will be treated as primary keys</param>
+        /// <exception cref="InvalidOperationException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"> invalid actionType </exception>
+        /// <exception cref="MissingKeyAttributeException"> can only be thrown for UPDATE,DELETE, & UPSERT Queries</exception> 
+        public string BuildQuery<T>(string tableName, ActionType actionType, params Expression<Func<T, object>>[] primaryKeys) where T : class
+        {
+            var sqlBuilder = new StringBuilder();
+            switch (actionType)
+            {
+                case ActionType.Insert:
+                    ThrowIfDynamicOrAnonymous<T>(actionType);
+                    BuildInsertQuery<T>(sqlBuilder, tableName);
+                    break;
+                case ActionType.Update:
+                    ThrowIfDynamicOrAnonymous<T>(actionType);
+                    BuildUpdateQuery<T>(sqlBuilder, tableName,primaryKeys);
+                    break;
+                case ActionType.Upsert:
+                    ThrowIfDynamicOrAnonymous<T>(actionType);
+                    BuildUpsertQuery<T>(sqlBuilder, tableName, primaryKeys);
+                    break;
+                case ActionType.Delete:
+                    ThrowIfDynamicOrAnonymous<T>(actionType);
+                    BuildDeleteQuery<T>(sqlBuilder, tableName, primaryKeys);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null);
+            }
+            return sqlBuilder.ToString();
+        }
+
         /// <summary>
         /// Builds the query based on the specified actionType & table name
         /// </summary>
@@ -186,32 +224,32 @@ namespace DotNetHelper.ObjectToSql.Services
         }
 
 
-        public string BuildQueryWithOutputs<T>(string tableName, ActionType actionType) where T : class
-        {
-            var sqlBuilder = new StringBuilder();
-            switch (actionType)
-            {
-                case ActionType.Insert:
-                    ThrowIfDynamicOrAnonymous<T>(actionType);
-                    BuildInsertQuery<T>(sqlBuilder, tableName);
-                    break;
-                case ActionType.Update:
-                    ThrowIfDynamicOrAnonymous<T>(actionType);
-                    BuildUpdateQuery<T>(sqlBuilder, tableName);
-                    break;
-                case ActionType.Upsert:
-                    ThrowIfDynamicOrAnonymous<T>(actionType);
-                    BuildUpsertQuery<T>(sqlBuilder, tableName);
-                    break;
-                case ActionType.Delete:
-                    ThrowIfDynamicOrAnonymous<T>(actionType);
-                    BuildDeleteQuery<T>(sqlBuilder, tableName);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null);
-            }
-            return sqlBuilder.ToString();
-        }
+        //public string BuildQueryWithOutputs<T>(string tableName, ActionType actionType) where T : class
+        //{
+        //    var sqlBuilder = new StringBuilder();
+        //    switch (actionType)
+        //    {
+        //        case ActionType.Insert:
+        //            ThrowIfDynamicOrAnonymous<T>(actionType);
+        //            BuildInsertQuery<T>(sqlBuilder, tableName);
+        //            break;
+        //        case ActionType.Update:
+        //            ThrowIfDynamicOrAnonymous<T>(actionType);
+        //            BuildUpdateQuery<T>(sqlBuilder, tableName);
+        //            break;
+        //        case ActionType.Upsert:
+        //            ThrowIfDynamicOrAnonymous<T>(actionType);
+        //            BuildUpsertQuery<T>(sqlBuilder, tableName);
+        //            break;
+        //        case ActionType.Delete:
+        //            ThrowIfDynamicOrAnonymous<T>(actionType);
+        //            BuildDeleteQuery<T>(sqlBuilder, tableName);
+        //            break;
+        //        default:
+        //            throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null);
+        //    }
+        //    return sqlBuilder.ToString();
+        //}
         #endregion
 
         #region INSERT METHODS
@@ -433,7 +471,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
         /// <param name="overrideKeys"></param>
-        public void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys) where T : class
+        private void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys) where T : class
         {
             overrideKeys.IsNullThrow(nameof(overrideKeys));
             overrideKeys.IsEmptyThrow(nameof(overrideKeys));
@@ -563,7 +601,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
         /// <param name="overrideKeys"></param>
-        public void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys ) where T : class
+        private void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys ) where T : class
         {
             overrideKeys.IsNullThrow(nameof(overrideKeys));
             overrideKeys.IsEmptyThrow(nameof(overrideKeys));
@@ -632,6 +670,29 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
 
         }
+
+        /// <summary>
+        /// Builds the upsert query.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="tableName">Name of the table.</param>
+        private void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys) where T : class
+        {
+            var sb = new StringBuilder();
+            BuildUpdateQuery<T>(sb, tableName,overrideKeys);
+            var sb1 = new StringBuilder();
+            BuildInsertQuery<T>(sb1, tableName);
+        
+            var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
+            var keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
+            var sb2 = new StringBuilder();
+            BuildWhereClause(sb2, keyFields);
+
+            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+
+        }
+
 
         /// <summary>
         /// Builds the upsert query.

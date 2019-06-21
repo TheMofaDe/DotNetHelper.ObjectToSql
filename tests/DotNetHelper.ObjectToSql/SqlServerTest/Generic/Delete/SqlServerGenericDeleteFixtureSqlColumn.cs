@@ -58,6 +58,13 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Delete
             Assert.AreEqual(sql, EmployeeWithManyPrimaryKeySqlColumn.ToSql(ActionType));
         }
 
+        [Test]
+        public void Test_Generic_BuildQuery_Ensure_Override_Keys_Is_Used()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(nameof(EmployeeWithIdentityKeySqlColumn), ActionType, column => column.IdentityKey);
+            Assert.AreEqual(sql, EmployeeWithIdentityKeySqlColumn.ToSql(ActionType));
+        }
 
         //[Test]
         //public void Test_Generic_BuildDeleteQuery_Ignores_All_Keys_Attributes_And_Uses_Only_OverrideKeys()

@@ -47,8 +47,14 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
             Assert.AreEqual(sql, EmployeeWithIdentityKeySqlColumn.ToSql(ActionType));
         }
 
+        [Test]
+        public void Test_Generic_BuildQuery_Ensure_Override_Keys_Is_Used()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(nameof(EmployeeWithIdentityKeySqlColumn), ActionType,column => column.IdentityKey);
+            Assert.AreEqual(sql, EmployeeWithIdentityKeySqlColumn.ToSql(ActionType));
+        }
 
-       
         [Test]
         public void Test_Generic_BuildUpdateQuery_Includes_Where_Clause_With_Primary_Column()
         {
@@ -66,6 +72,15 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
             Assert.AreEqual(sql, EmployeeWithManyPrimaryKeySqlColumn.ToSql(ActionType));
         }
 
+
+        [Test]
+        public void Test_Generic_BuildQueryWithOutputs()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(nameof(Employee),
+                ActionType, a => a.PrimaryKey);
+            Assert.AreEqual(sql, $@"UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey OUTPUT DELETED.[PrimaryKey]  WHERE [PrimaryKey]=@PrimaryKey");
+        }
 
         //[Test]
         //public void Test_Generic_BuildUpdateQuery_Ignores_All_Keys_Attributes_And_Uses_Only_OverrideKeys()
