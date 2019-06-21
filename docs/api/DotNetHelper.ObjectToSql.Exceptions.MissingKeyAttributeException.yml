@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MissingKeyAttributeException
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
     startLine: 9
@@ -89,8 +89,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
     startLine: 16
@@ -121,8 +121,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
     startLine: 26
@@ -157,8 +157,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
     startLine: 37
@@ -196,8 +196,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
     startLine: 50

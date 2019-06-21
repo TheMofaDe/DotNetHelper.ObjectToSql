@@ -40,8 +40,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ObjectToSql
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
     startLine: 18
@@ -81,8 +81,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IncludeNonPublicAccessor
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
     startLine: 21
@@ -116,8 +116,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DatabaseType
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
     startLine: 22
@@ -151,8 +151,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
     startLine: 24
@@ -186,8 +186,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
     startLine: 29
@@ -219,11 +219,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 56
+    startLine: 60
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -263,11 +263,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 91
+    startLine: 95
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -302,11 +302,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 129
+    startLine: 133
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -350,11 +350,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryWithOutputs
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 160
+    startLine: 164
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -403,11 +403,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryWithOutputs
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 184
+    startLine: 188
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -447,11 +447,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 716
+    startLine: 721
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -493,11 +493,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 726
+    startLine: 731
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -541,11 +541,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 741
+    startLine: 746
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -581,11 +581,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 756
+    startLine: 761
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -627,11 +627,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 767
+    startLine: 772
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -675,11 +675,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 782
+    startLine: 787
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -715,11 +715,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 796
+    startLine: 801
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -761,11 +761,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 806
+    startLine: 811
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -809,11 +809,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 821
+    startLine: 826
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -849,11 +849,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 835
+    startLine: 840
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -895,11 +895,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 846
+    startLine: 851
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -943,11 +943,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 862
+    startLine: 867
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -983,11 +983,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertToDatabaseValue
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 879
+    startLine: 884
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1034,11 +1034,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertToDatabaseValue
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 918
+    startLine: 923
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1073,11 +1073,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 939
+    startLine: 944
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1129,11 +1129,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildWhereClause
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 967
+    startLine: 972
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services

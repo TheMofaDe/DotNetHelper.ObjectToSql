@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ScriptType
     path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
     startLine: 3
@@ -48,8 +48,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Parameterized
     path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
     startLine: 5
@@ -80,8 +80,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: HumanReadable
     path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
     startLine: 6

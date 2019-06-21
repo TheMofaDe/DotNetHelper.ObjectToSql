@@ -7,6 +7,8 @@ items:
   children:
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement(System.String,System.String,System.String)
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
@@ -23,11 +25,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SqlSyntaxHelper
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -64,11 +66,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: EnclosedValueLookup
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -99,11 +101,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DataBaseType
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -134,11 +136,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -167,11 +169,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeywordEscapeOpenChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 116
+    startLine: 155
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -199,11 +201,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeywordEscapeClosedChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 138
+    startLine: 177
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -231,11 +233,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: RemoveKeywordEscapeChars
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 160
+    startLine: 199
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -266,11 +268,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetEnclosedValueChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 168
+    startLine: 207
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -301,11 +303,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildIfExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 220
+    startLine: 259
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -326,6 +328,87 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
+  id: BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: BuildTableExistStatement(SQLTable, String, String)
+  nameWithType: SqlSyntaxHelper.BuildTableExistStatement(SQLTable, String, String)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildTableExistStatement
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 283
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public string BuildTableExistStatement(SQLTable sqlTable, string onTrueSql, string onFalseSql)
+    parameters:
+    - id: sqlTable
+      type: DotNetHelper.ObjectToSql.Model.SQLTable
+    - id: onTrueSql
+      type: System.String
+    - id: onFalseSql
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Function BuildTableExistStatement(sqlTable As SQLTable, onTrueSql As String, onFalseSql As String) As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
+  id: ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: ConvertParameterSqlToReadable(List<DbParameter>, String, Encoding)
+  nameWithType: SqlSyntaxHelper.ConvertParameterSqlToReadable(List<DbParameter>, String, Encoding)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List<System.Data.Common.DbParameter>, System.String, System.Text.Encoding)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ConvertParameterSqlToReadable
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 319
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public string ConvertParameterSqlToReadable(List<DbParameter> parameters, string query, Encoding encoding)
+    parameters:
+    - id: parameters
+      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+    - id: query
+      type: System.String
+    - id: encoding
+      type: System.Text.Encoding
+    return:
+      type: System.String
+    content.vb: Public Function ConvertParameterSqlToReadable(parameters As List(Of DbParameter), query As String, encoding As Encoding) As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable*
+  nameWithType.vb: SqlSyntaxHelper.ConvertParameterSqlToReadable(List(Of DbParameter), String, Encoding)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List(Of System.Data.Common.DbParameter), System.String, System.Text.Encoding)
+  name.vb: ConvertParameterSqlToReadable(List(Of DbParameter), String, Encoding)
 references:
 - uid: DotNetHelper.ObjectToSql.Helper
   commentId: N:DotNetHelper.ObjectToSql.Helper
@@ -806,3 +889,120 @@ references:
   name: BuildIfExistStatement
   nameWithType: SqlSyntaxHelper.BuildIfExistStatement
   fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement
+  name: BuildTableExistStatement
+  nameWithType: SqlSyntaxHelper.BuildTableExistStatement
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement
+- uid: DotNetHelper.ObjectToSql.Model.SQLTable
+  commentId: T:DotNetHelper.ObjectToSql.Model.SQLTable
+  parent: DotNetHelper.ObjectToSql.Model
+  name: SQLTable
+  nameWithType: SQLTable
+  fullName: DotNetHelper.ObjectToSql.Model.SQLTable
+- uid: DotNetHelper.ObjectToSql.Model
+  commentId: N:DotNetHelper.ObjectToSql.Model
+  name: DotNetHelper.ObjectToSql.Model
+  nameWithType: DotNetHelper.ObjectToSql.Model
+  fullName: DotNetHelper.ObjectToSql.Model
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable
+  name: ConvertParameterSqlToReadable
+  nameWithType: SqlSyntaxHelper.ConvertParameterSqlToReadable
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable
+- uid: System.Collections.Generic.List{System.Data.Common.DbParameter}
+  commentId: T:System.Collections.Generic.List{System.Data.Common.DbParameter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<DbParameter>
+  nameWithType: List<DbParameter>
+  fullName: System.Collections.Generic.List<System.Data.Common.DbParameter>
+  nameWithType.vb: List(Of DbParameter)
+  fullName.vb: System.Collections.Generic.List(Of System.Data.Common.DbParameter)
+  name.vb: List(Of DbParameter)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Text.Encoding
+  commentId: T:System.Text.Encoding
+  parent: System.Text
+  isExternal: true
+  name: Encoding
+  nameWithType: Encoding
+  fullName: System.Text.Encoding
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text

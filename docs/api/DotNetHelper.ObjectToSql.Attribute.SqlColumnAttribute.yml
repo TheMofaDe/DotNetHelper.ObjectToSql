@@ -5,9 +5,6 @@ items:
   id: SqlColumnAttribute
   parent: DotNetHelper.ObjectToSql.Attribute
   children:
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MappingIds
@@ -16,29 +13,11 @@ items:
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Nullable
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SerializableType
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIgnore
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsIdentityKey
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetMaxColumnSize
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetNullable
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetPrimaryKey
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema
-  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType
   langs:
   - csharp
   - vb
@@ -49,8 +28,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SqlColumnAttribute
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 17
@@ -151,8 +130,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MaxColumnSize
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 24
@@ -189,8 +168,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetMaxColumnSize
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 30
@@ -231,8 +210,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SerializableType
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 40
@@ -255,86 +234,6 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy
-  id: AutoIncrementBy
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: AutoIncrementBy
-  nameWithType: SqlColumnAttribute.AutoIncrementBy
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: AutoIncrementBy
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 47
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets the automatic increment by. If this value is set then the property will be treated as an IDENTITY column\n"
-  example: []
-  syntax:
-    content: public int? AutoIncrementBy { get; set; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Int32}
-      description: The automatic increment by.
-    content.vb: Public Property AutoIncrementBy As Integer?
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy
-  id: SetAutoIncrementBy
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: SetAutoIncrementBy
-  nameWithType: SqlColumnAttribute.SetAutoIncrementBy
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: SetAutoIncrementBy
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 53
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets the set automatic increment by.\n"
-  example: []
-  syntax:
-    content: public int SetAutoIncrementBy { get; set; }
-    parameters: []
-    return:
-      type: System.Int32
-      description: The set automatic increment by.
-    content.vb: Public Property SetAutoIncrementBy As Integer
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy*
-  exceptions:
-  - type: System.Exception
-    commentId: T:System.Exception
-    description: Nooo...  Your Using SqlColumnAttribute wrong do not try to get from the Set Property use the orignial
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey
   commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey
   id: IsIdentityKey
@@ -349,8 +248,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsIdentityKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 63
@@ -387,8 +286,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetIsIdentityKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 69
@@ -415,166 +314,6 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt
-  id: StartIncrementAt
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: StartIncrementAt
-  nameWithType: SqlColumnAttribute.StartIncrementAt
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: StartIncrementAt
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 79
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets the start increment at.\n"
-  example: []
-  syntax:
-    content: public int? StartIncrementAt { get; set; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Int32}
-      description: The start increment at.
-    content.vb: Public Property StartIncrementAt As Integer?
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt
-  id: SetStartIncrementAt
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: SetStartIncrementAt
-  nameWithType: SqlColumnAttribute.SetStartIncrementAt
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: SetStartIncrementAt
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 85
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets the set start increment at.\n"
-  example: []
-  syntax:
-    content: public int SetStartIncrementAt { get; set; }
-    parameters: []
-    return:
-      type: System.Int32
-      description: The set start increment at.
-    content.vb: Public Property SetStartIncrementAt As Integer
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt*
-  exceptions:
-  - type: System.Exception
-    commentId: T:System.Exception
-    description: Nooo...  Your Using SqlColumnAttribute wrong do not try to get from the Set Property use the orignial
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime
-  id: UtcDateTime
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: UtcDateTime
-  nameWithType: SqlColumnAttribute.UtcDateTime
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: UtcDateTime
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 95
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets a value indicating whether [UTC date time].\n"
-  example: []
-  syntax:
-    content: public bool? UtcDateTime { get; set; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Boolean}
-      description: <code>null</code> if [UTC date time] contains no value, <code>true</code> if [UTC date time]; otherwise, <code>false</code>.
-    content.vb: Public Property UtcDateTime As Boolean?
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime
-  id: SetUtcDateTime
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: SetUtcDateTime
-  nameWithType: SqlColumnAttribute.SetUtcDateTime
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: SetUtcDateTime
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 101
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets a value indicating whether [set UTC date time].\n"
-  example: []
-  syntax:
-    content: public bool SetUtcDateTime { get; set; }
-    parameters: []
-    return:
-      type: System.Boolean
-      description: <code>true</code> if [set UTC date time]; otherwise, <code>false</code>.
-    content.vb: Public Property SetUtcDateTime As Boolean
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime*
-  exceptions:
-  - type: System.Exception
-    commentId: T:System.Exception
-    description: Nooo...  Your Using SqlColumnAttribute wrong do not try to get from the Set Property use the orignial
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey
   commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey
   id: PrimaryKey
@@ -589,8 +328,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: PrimaryKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 110
@@ -627,8 +366,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetPrimaryKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 116
@@ -655,360 +394,6 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType
-  id: xRefTableType
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: xRefTableType
-  nameWithType: SqlColumnAttribute.xRefTableType
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: xRefTableType
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 127
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets the type of the x reference table.\n"
-  example: []
-  syntax:
-    content: public Type xRefTableType { get; set; }
-    parameters: []
-    return:
-      type: System.Type
-      description: The type of the x reference table.
-    content.vb: Public Property xRefTableType As Type
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType
-  id: SetxRefTableType
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: SetxRefTableType
-  nameWithType: SqlColumnAttribute.SetxRefTableType
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: SetxRefTableType
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 133
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets the type of the setx reference table.\n"
-  example: []
-  syntax:
-    content: public Type SetxRefTableType { get; set; }
-    parameters: []
-    return:
-      type: System.Type
-      description: The type of the setx reference table.
-    content.vb: Public Property SetxRefTableType As Type
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType*
-  exceptions:
-  - type: System.Exception
-    commentId: T:System.Exception
-    description: Nooo...  Your Using SqlColumnAttribute wrong do not try to get from the Set Property use the orignial
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema
-  id: xRefTableSchema
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: xRefTableSchema
-  nameWithType: SqlColumnAttribute.xRefTableSchema
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: xRefTableSchema
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 164
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets the x reference table schema.\n"
-  example: []
-  syntax:
-    content: public string xRefTableSchema { get; set; }
-    parameters: []
-    return:
-      type: System.String
-      description: The x reference table schema.
-    content.vb: Public Property xRefTableSchema As String
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName
-  id: xRefTableName
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: xRefTableName
-  nameWithType: SqlColumnAttribute.xRefTableName
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: xRefTableName
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 171
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets the name of the x reference table.\n"
-  example: []
-  syntax:
-    content: public string xRefTableName { get; set; }
-    parameters: []
-    return:
-      type: System.String
-      description: The name of the x reference table.
-    content.vb: Public Property xRefTableName As String
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn
-  id: xRefJoinOnColumn
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: xRefJoinOnColumn
-  nameWithType: SqlColumnAttribute.xRefJoinOnColumn
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: xRefJoinOnColumn
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 178
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets the x reference join on column.\n"
-  example: []
-  syntax:
-    content: public string xRefJoinOnColumn { get; set; }
-    parameters: []
-    return:
-      type: System.String
-      description: The x reference join on column.
-    content.vb: Public Property xRefJoinOnColumn As String
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade
-  id: xRefOnUpdateCascade
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: xRefOnUpdateCascade
-  nameWithType: SqlColumnAttribute.xRefOnUpdateCascade
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: xRefOnUpdateCascade
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 185
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets a value indicating whether [x reference on update cascade].\n"
-  example: []
-  syntax:
-    content: public bool? xRefOnUpdateCascade { get; set; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Boolean}
-      description: <code>null</code> if [x reference on update cascade] contains no value, <code>true</code> if [x reference on update cascade]; otherwise, <code>false</code>.
-    content.vb: Public Property xRefOnUpdateCascade As Boolean?
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade
-  id: SetxRefOnUpdateCascade
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: SetxRefOnUpdateCascade
-  nameWithType: SqlColumnAttribute.SetxRefOnUpdateCascade
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: SetxRefOnUpdateCascade
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 192
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets a value indicating whether [setx reference on update cascade].\n"
-  example: []
-  syntax:
-    content: public bool SetxRefOnUpdateCascade { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-      description: <code>true</code> if [setx reference on update cascade]; otherwise, <code>false</code>.
-    content.vb: Public ReadOnly Property SetxRefOnUpdateCascade As Boolean
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade*
-  exceptions:
-  - type: System.Exception
-    commentId: T:System.Exception
-    description: Nooo...  Your Using SqlColumnAttribute wrong do not try to get from the Set Property use the orignial
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade
-  id: xRefOnDeleteCascade
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: xRefOnDeleteCascade
-  nameWithType: SqlColumnAttribute.xRefOnDeleteCascade
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: xRefOnDeleteCascade
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 203
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets a value indicating whether [x reference on delete cascade].\n"
-  example: []
-  syntax:
-    content: public bool? xRefOnDeleteCascade { get; set; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Boolean}
-      description: <code>null</code> if [x reference on delete cascade] contains no value, <code>true</code> if [x reference on delete cascade]; otherwise, <code>false</code>.
-    content.vb: Public Property xRefOnDeleteCascade As Boolean?
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade
-  id: SetxRefOnDeleteCascade
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: SetxRefOnDeleteCascade
-  nameWithType: SqlColumnAttribute.SetxRefOnDeleteCascade
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: SetxRefOnDeleteCascade
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 209
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets a value indicating whether [setx reference on delete cascade].\n"
-  example: []
-  syntax:
-    content: public bool SetxRefOnDeleteCascade { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-      description: <code>true</code> if [setx reference on delete cascade]; otherwise, <code>false</code>.
-    content.vb: Public ReadOnly Property SetxRefOnDeleteCascade As Boolean
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade*
-  exceptions:
-  - type: System.Exception
-    commentId: T:System.Exception
-    description: Nooo...  Your Using SqlColumnAttribute wrong do not try to get from the Set Property use the orignial
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Nullable
   commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Nullable
   id: Nullable
@@ -1023,8 +408,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Nullable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 220
@@ -1061,8 +446,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetNullable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 226
@@ -1089,166 +474,6 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId
-  id: ApiId
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: ApiId
-  nameWithType: SqlColumnAttribute.ApiId
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: ApiId
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 235
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets a value indicating whether [API identifier].\n"
-  example: []
-  syntax:
-    content: public bool? ApiId { get; set; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Boolean}
-      description: <code>null</code> if [API identifier] contains no value, <code>true</code> if [API identifier]; otherwise, <code>false</code>.
-    content.vb: Public Property ApiId As Boolean?
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId
-  id: SetApiId
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: SetApiId
-  nameWithType: SqlColumnAttribute.SetApiId
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: SetApiId
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 241
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets a value indicating whether [set API identifier].\n"
-  example: []
-  syntax:
-    content: public bool SetApiId { get; set; }
-    parameters: []
-    return:
-      type: System.Boolean
-      description: <code>true</code> if [set API identifier]; otherwise, <code>false</code>.
-    content.vb: Public Property SetApiId As Boolean
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId*
-  exceptions:
-  - type: System.Exception
-    commentId: T:System.Exception
-    description: Nooo...  Your Using SqlColumnAttribute wrong do not try to get from the Set Property use the orignial
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime
-  id: SyncTime
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: SyncTime
-  nameWithType: SqlColumnAttribute.SyncTime
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: SyncTime
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 250
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nWhen A Record Is Be Inserted Or Updated This Column Value Will Be DateTime.Now\n"
-  example: []
-  syntax:
-    content: public bool? SyncTime { get; set; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Boolean}
-      description: <code>null</code> if [synchronize time] contains no value, <code>true</code> if [synchronize time]; otherwise, <code>false</code>.
-    content.vb: Public Property SyncTime As Boolean?
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime
-  id: SetSyncTime
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: SetSyncTime
-  nameWithType: SqlColumnAttribute.SetSyncTime
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: SetSyncTime
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 256
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets a value indicating whether [set synchronize time].\n"
-  example: []
-  syntax:
-    content: public bool SetSyncTime { get; set; }
-    parameters: []
-    return:
-      type: System.Boolean
-      description: <code>true</code> if [set synchronize time]; otherwise, <code>false</code>.
-    content.vb: Public Property SetSyncTime As Boolean
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime*
-  exceptions:
-  - type: System.Exception
-    commentId: T:System.Exception
-    description: Nooo...  Your Using SqlColumnAttribute wrong do not try to get from the Set Property use the orignial
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore
   commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore
   id: Ignore
@@ -1263,8 +488,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Ignore
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 266
@@ -1301,8 +526,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetIgnore
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 272
@@ -1329,82 +554,6 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue
-  id: DefaultValue
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: DefaultValue
-  nameWithType: SqlColumnAttribute.DefaultValue
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: DefaultValue
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 282
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets the default value.\n"
-  example: []
-  syntax:
-    content: public object DefaultValue { get; set; }
-    parameters: []
-    return:
-      type: System.Object
-      description: The default value.
-    content.vb: Public Property DefaultValue As Object
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue
-  id: TSQLDefaultValue
-  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-  langs:
-  - csharp
-  - vb
-  name: TSQLDefaultValue
-  nameWithType: SqlColumnAttribute.TSQLDefaultValue
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
-    id: TSQLDefaultValue
-    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 288
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Attribute
-  summary: "\nGets or sets the default value THIS IS ONLY WHEN THIS LIBRARY IS CREATING A TABLE SCRIPT \n"
-  example: []
-  syntax:
-    content: public string TSQLDefaultValue { get; set; }
-    parameters: []
-    return:
-      type: System.String
-      description: The default value.
-    content.vb: Public Property TSQLDefaultValue As String
-  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo
   commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo
   id: MapTo
@@ -1419,8 +568,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MapTo
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 294
@@ -1457,8 +606,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MappingIds
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 302
@@ -4329,16 +3478,6 @@ references:
   name: DotNetHelper.ObjectToSql.Enum
   nameWithType: DotNetHelper.ObjectToSql.Enum
   fullName: DotNetHelper.ObjectToSql.Enum
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy
-  name: AutoIncrementBy
-  nameWithType: SqlColumnAttribute.AutoIncrementBy
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.AutoIncrementBy
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy
-  name: SetAutoIncrementBy
-  nameWithType: SqlColumnAttribute.SetAutoIncrementBy
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetAutoIncrementBy
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey*
   commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey
   name: IsIdentityKey
@@ -4400,26 +3539,6 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt
-  name: StartIncrementAt
-  nameWithType: SqlColumnAttribute.StartIncrementAt
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.StartIncrementAt
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt
-  name: SetStartIncrementAt
-  nameWithType: SqlColumnAttribute.SetStartIncrementAt
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetStartIncrementAt
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime
-  name: UtcDateTime
-  nameWithType: SqlColumnAttribute.UtcDateTime
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.UtcDateTime
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime
-  name: SetUtcDateTime
-  nameWithType: SqlColumnAttribute.SetUtcDateTime
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetUtcDateTime
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey*
   commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey
   name: PrimaryKey
@@ -4430,65 +3549,6 @@ references:
   name: SetPrimaryKey
   nameWithType: SqlColumnAttribute.SetPrimaryKey
   fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetPrimaryKey
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType
-  name: xRefTableType
-  nameWithType: SqlColumnAttribute.xRefTableType
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableType
-- uid: System.Type
-  commentId: T:System.Type
-  parent: System
-  isExternal: true
-  name: Type
-  nameWithType: Type
-  fullName: System.Type
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType
-  name: SetxRefTableType
-  nameWithType: SqlColumnAttribute.SetxRefTableType
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefTableType
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema
-  name: xRefTableSchema
-  nameWithType: SqlColumnAttribute.xRefTableSchema
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableSchema
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName
-  name: xRefTableName
-  nameWithType: SqlColumnAttribute.xRefTableName
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefTableName
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn
-  name: xRefJoinOnColumn
-  nameWithType: SqlColumnAttribute.xRefJoinOnColumn
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefJoinOnColumn
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade
-  name: xRefOnUpdateCascade
-  nameWithType: SqlColumnAttribute.xRefOnUpdateCascade
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnUpdateCascade
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade
-  name: SetxRefOnUpdateCascade
-  nameWithType: SqlColumnAttribute.SetxRefOnUpdateCascade
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnUpdateCascade
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade
-  name: xRefOnDeleteCascade
-  nameWithType: SqlColumnAttribute.xRefOnDeleteCascade
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.xRefOnDeleteCascade
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade
-  name: SetxRefOnDeleteCascade
-  nameWithType: SqlColumnAttribute.SetxRefOnDeleteCascade
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetxRefOnDeleteCascade
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
   commentId: T:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
   name: SqlColumnAttribute
@@ -4504,26 +3564,6 @@ references:
   name: SetNullable
   nameWithType: SqlColumnAttribute.SetNullable
   fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetNullable
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId
-  name: ApiId
-  nameWithType: SqlColumnAttribute.ApiId
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.ApiId
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId
-  name: SetApiId
-  nameWithType: SqlColumnAttribute.SetApiId
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetApiId
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime
-  name: SyncTime
-  nameWithType: SqlColumnAttribute.SyncTime
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SyncTime
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime
-  name: SetSyncTime
-  nameWithType: SqlColumnAttribute.SetSyncTime
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetSyncTime
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore*
   commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore
   name: Ignore
@@ -4534,21 +3574,18 @@ references:
   name: SetIgnore
   nameWithType: SqlColumnAttribute.SetIgnore
   fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIgnore
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue
-  name: DefaultValue
-  nameWithType: SqlColumnAttribute.DefaultValue
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.DefaultValue
-- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue
-  name: TSQLDefaultValue
-  nameWithType: SqlColumnAttribute.TSQLDefaultValue
-  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.TSQLDefaultValue
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo*
   commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo
   name: MapTo
   nameWithType: SqlColumnAttribute.MapTo
   fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
 - uid: System.String[]
   isExternal: true
   name: String[]

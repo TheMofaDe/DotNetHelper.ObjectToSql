@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MemberWrapperExtension
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-    startLine: 10
+    startLine: 9
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Extension
@@ -63,11 +63,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ShouldMemberBeIgnored
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-    startLine: 36
+    startLine: 35
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Extension
@@ -104,11 +104,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberASerializableColumn
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-    startLine: 45
+    startLine: 44
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Extension
@@ -145,11 +145,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNameFromCustomAttributeOrDefault
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-    startLine: 66
+    startLine: 65
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Extension
@@ -186,11 +186,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberAnIdentityColumn
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-    startLine: 75
+    startLine: 74
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Extension
@@ -227,11 +227,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberAPrimaryKeyColumn
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-    startLine: 87
+    startLine: 86
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Extension

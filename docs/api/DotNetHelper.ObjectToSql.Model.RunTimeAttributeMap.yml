@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: RunTimeAttributeMap
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 11
@@ -67,8 +67,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: PropertyName
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 13
@@ -102,8 +102,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Attributes
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 14
@@ -137,8 +137,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 16
@@ -175,8 +175,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetCustomAttribute
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 22

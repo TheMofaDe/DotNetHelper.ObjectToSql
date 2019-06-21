@@ -21,8 +21,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: RunTimeAttributeMapExtension
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 29
@@ -64,8 +64,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetMemberValue
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 32
@@ -116,8 +116,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ShouldMemberBeIgnored
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 54
@@ -157,8 +157,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberASerializableColumn
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 63
@@ -198,8 +198,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNameFromCustomAttributeOrDefault
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 84
@@ -239,8 +239,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberAnIdentityColumn
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 93
@@ -280,8 +280,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberAPrimaryKeyColumn
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
     startLine: 105

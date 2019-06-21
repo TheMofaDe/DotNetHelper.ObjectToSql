@@ -433,19 +433,15 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
         /// <param name="overrideKeys"></param>
-        private void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys) where T : class
+        public void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys) where T : class
         {
+            overrideKeys.IsNullThrow(nameof(overrideKeys));
+            overrideKeys.IsEmptyThrow(nameof(overrideKeys));
 
-            var keyFields = new List<MemberWrapper>() { }; 
-            if (overrideKeys != null)
-            {
-                var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
-                    keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
-            }
-            else
-            {
-                keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
-            }
+            var keyFields = new List<MemberWrapper>() { };
+            var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
+            keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
+         
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
             var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
 
@@ -567,20 +563,15 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
         /// <param name="overrideKeys"></param>
-        private void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys ) where T : class
+        public void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys ) where T : class
         {
-
+            overrideKeys.IsNullThrow(nameof(overrideKeys));
+            overrideKeys.IsEmptyThrow(nameof(overrideKeys));
             var keyFields = new List<MemberWrapper>() { };
 
-            if (overrideKeys != null)
-            {
                 var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
                 keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
-            }
-            else
-            {
-                keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
-            }
+           
             if(keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 

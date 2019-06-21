@@ -23,11 +23,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SQLTable
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-    startLine: 12
+    startLine: 7
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
@@ -64,11 +64,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DBType
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-    startLine: 14
+    startLine: 9
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
@@ -99,11 +99,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: TableName
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-    startLine: 15
+    startLine: 10
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
@@ -134,11 +134,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SchemaName
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-    startLine: 16
+    startLine: 11
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
@@ -169,11 +169,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DatabaseName
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-    startLine: 17
+    startLine: 12
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
@@ -204,11 +204,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: FullNameWithBrackets
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-    startLine: 18
+    startLine: 14
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
@@ -239,11 +239,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: FullNameWithOutBrackets
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-    startLine: 19
+    startLine: 16
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
@@ -274,11 +274,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-    startLine: 23
+    startLine: 19
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
@@ -309,11 +309,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-    startLine: 32
+    startLine: 28
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model

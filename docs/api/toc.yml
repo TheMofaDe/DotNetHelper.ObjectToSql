@@ -2,10 +2,10 @@
 - uid: DotNetHelper.ObjectToSql.Attribute
   name: DotNetHelper.ObjectToSql.Attribute
   items:
+  - uid: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
+    name: DBTableAttribute
   - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
     name: SqlColumnAttribute
-  - uid: DotNetHelper.ObjectToSql.Attribute.SqlTableAttribute
-    name: SqlTableAttribute
 - uid: DotNetHelper.ObjectToSql.Enum
   name: DotNetHelper.ObjectToSql.Enum
   items:

@@ -31,6 +31,7 @@ references:
   fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
 - uid: DotNetHelper.ObjectToSql.Model.SQLTable
   commentId: T:DotNetHelper.ObjectToSql.Model.SQLTable
+  parent: DotNetHelper.ObjectToSql.Model
   name: SQLTable
   nameWithType: SQLTable
   fullName: DotNetHelper.ObjectToSql.Model.SQLTable

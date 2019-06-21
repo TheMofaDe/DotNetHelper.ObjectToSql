@@ -47,6 +47,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
             Assert.AreEqual(sql, EmployeeWithIdentityKeySqlColumn.ToSql(ActionType));
         }
 
+
+       
         [Test]
         public void Test_Generic_BuildUpdateQuery_Includes_Where_Clause_With_Primary_Column()
         {

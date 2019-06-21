@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DataBaseType
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
     startLine: 3
@@ -53,8 +53,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SqlServer
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
     startLine: 5
@@ -85,8 +85,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MySql
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
     startLine: 6
@@ -117,8 +117,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Sqlite
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
     startLine: 7
@@ -149,8 +149,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Oracle
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
     startLine: 8
@@ -181,8 +181,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Oledb
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
     startLine: 9
@@ -213,8 +213,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Access95
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
     startLine: 10
@@ -245,8 +245,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: Unit-Test
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Odbc
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
     startLine: 11
