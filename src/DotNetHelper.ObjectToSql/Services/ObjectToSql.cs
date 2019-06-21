@@ -1000,16 +1000,23 @@ namespace DotNetHelper.ObjectToSql.Services
             List<MemberWrapper> members;
             if (instance is IDynamicMetaObjectProvider a)
             {
-                members = ExtFastMember.GetMemberWrappers(a);
+                members = GetAllNonIgnoreFields(new List<RunTimeAttributeMap>(){},instance); // create a dynamic overload with imeta T
             }
             else
             {
-                members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
+                members = GetAllNonIgnoreFields<T>(IncludeNonPublicAccessor);
             }
             members.ForEach(delegate (MemberWrapper p)
             {
                 var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), XmlSerializer, JsonSerializer, CsvSerializer);
-                list.Add(GetNewParameter($"@{p.Name}", parameterValue));
+              // try
+              // {
+                    list.Add(GetNewParameter($"@{p.Name}", parameterValue));
+              // }
+              // catch (ArgumentException error)
+              // {
+              //     // TODO :: Throw custom exception explain that we couldn't find a mapping sqldbtype for this value type . In most case this is a list
+              // }
             });
             return list;
         }
