@@ -53,15 +53,7 @@ namespace DotNetHelper.ObjectToSql.Extension
         public static List<T> AsList<T>(this IEnumerable<T> source) => (source == null || source is List<T>) ? (List<T>)source : source.ToList();
 
 
-        public static bool ContainAnySameItem(this IEnumerable<string> a, IEnumerable<string> b)
-        {
-            if (a == null || b == null)
-            {
-                return false;
-            }
-            return a.Intersect(b).Any();
-        }
-
+   
 
 
 
