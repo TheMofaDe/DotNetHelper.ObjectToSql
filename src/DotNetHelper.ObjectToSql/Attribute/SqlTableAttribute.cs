@@ -9,7 +9,7 @@ namespace DotNetHelper.ObjectToSql.Attribute
     /// </summary>
     /// <seealso cref="T:System.Attribute" />
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
-    public class SqlTableAttribute : System.Attribute
+    public class DBTableAttribute : System.Attribute
     {
         /// <summary>
         /// The Sql Table name that this class data belongs to.

@@ -56,6 +56,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
             Assert.AreEqual(sql, Employee.ToSql(ActionType));
         }
 
+
+
         [Test]
         public void Test_Generic_Build_Insert_Query_Throws_ArgumentNull_When_RunTimeAttribute_Mapping_IsNull()
         {

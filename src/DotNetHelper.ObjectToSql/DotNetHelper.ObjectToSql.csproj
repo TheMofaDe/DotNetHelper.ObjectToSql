@@ -26,7 +26,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="DotNetHelper.FastMember.Extension" Version="1.0.11" />
+    <PackageReference Include="DotNetHelper.FastMember.Extension" Version="1.0.13" />
   </ItemGroup>
 
 

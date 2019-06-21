@@ -998,7 +998,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb = new StringBuilder();
             var isFirstTime = true;
             var splitOn = "";
-            memberWrappers.Where(a1 => a1.GetCustomAttribute<SqlTableAttribute>() == null && a1.GetCustomAttribute<SqlColumnAttribute>()?.Ignore != true).ToList().ForEach(delegate (MemberWrapper member) // BUILD SQL COLUMNS
+            memberWrappers.Where(a1 => a1.GetCustomAttribute<DBTableAttribute>() == null && a1.GetCustomAttribute<SqlColumnAttribute>()?.Ignore != true).ToList().ForEach(delegate (MemberWrapper member) // BUILD SQL COLUMNS
             {
                 var columnName = $"{tableAlias}.{sqlSyntax.GetKeywordEscapeOpenChar()}{member.Name}{sqlSyntax.GetKeywordEscapeClosedChar()}";
                 sb.AppendLine($"{columnName} , ");
@@ -1014,7 +1014,7 @@ namespace DotNetHelper.ObjectToSql.Services
         internal void BuildJoinOnStatement(List<MemberWrapper> members, char mainTableAlias, List<MemberWrapper> members1, char secondTableAlias, StringBuilder sqlFromBuilder)
         {
             var safeKeyword = " AND ";
-            members.Where(a => !a.GetCustomAttribute<SqlColumnAttribute>()?.MappingIds.IsNullOrEmpty() != true && a.GetCustomAttribute<SqlTableAttribute>() == null).ToList().ForEach(delegate (MemberWrapper mainTableColumn) // LOOP THRU MAIN TABLE PROPERTIES 
+            members.Where(a => !a.GetCustomAttribute<SqlColumnAttribute>()?.MappingIds.IsNullOrEmpty() != true && a.GetCustomAttribute<DBTableAttribute>() == null).ToList().ForEach(delegate (MemberWrapper mainTableColumn) // LOOP THRU MAIN TABLE PROPERTIES 
             {
 
                 members1.Where(a => !a.GetCustomAttribute<SqlColumnAttribute>()?.MappingIds.IsNullOrEmpty() != true).ToList().ForEach(delegate (MemberWrapper secondTableColumn)

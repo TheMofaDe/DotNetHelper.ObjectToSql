@@ -517,7 +517,7 @@ Task("Publish-Coverage")
     .IsDependentOn("Test")
     .Does<BuildParameters>((parameters) =>
 {
-    var coverageFiles = GetFiles(parameters.Paths.Directories.TestCoverageOutput + "/*TestResult.xml");
+    var coverageFiles = GetFiles(parameters.Paths.Directories.TestCoverageOutput + "/*.xml");
 
     var token = parameters.Credentials.CodeCov.Token;
     if(string.IsNullOrEmpty(token)) {
@@ -529,7 +529,7 @@ Task("Publish-Coverage")
         Codecov(new CodecovSettings {
             Files = new [] { coverageFile.ToString() },
             Token = token
-			,Required = true
+		//	,Required = true
         });
 		Information("Uploading Coverage File --> " + coverageFile.ToString());
     }

@@ -101,7 +101,7 @@ namespace DotNetHelper.ObjectToSql.Extension
             {
                 t = type.GetEnumerableItemType();
             }
-            var sqlTableAttribute = t.GetCustomAttribute<SqlTableAttribute>(false);
+            var sqlTableAttribute = t.GetCustomAttribute<DBTableAttribute>(false);
             var tableAttribute = t.GetCustomAttribute<TableAttribute>(false);
             if (!string.IsNullOrEmpty(tableAttribute?.Name)) return tableAttribute.Name;
             if (!string.IsNullOrEmpty(sqlTableAttribute?.TableName)) return sqlTableAttribute.TableName;
