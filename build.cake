@@ -553,7 +553,8 @@ Task("Publish-AppVeyor")
     }
 
     if (FileExists(parameters.Paths.Files.TestCoverageOutputFilePath)) {
-        AppVeyor.UploadTestResults(parameters.Paths.Files.TestCoverageOutputFilePath, AppVeyorTestResultsType.NUnit3);
+
+        AppVeyor.UploadTestResults(parameters.Paths.Directories.TestCoverageOutput + $"/TestResult.xml" , AppVeyorTestResultsType.NUnit3);
     }
 })
 .OnError(exception =>
