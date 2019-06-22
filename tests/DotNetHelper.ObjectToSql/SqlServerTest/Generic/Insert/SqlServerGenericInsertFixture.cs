@@ -75,38 +75,13 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
             var sql = sqlServerObjectToSql.BuildQueryWithOutputs<Employee>(nameof(Employee),ActionType, e => e.FirstName);
-            Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName],[LastName]) \r\n OUTPUT INSERTED.[FirstName] \r\n VALUES (@FirstName,@LastName)");
+            Assert.AreEqual(sql, $"INSERT INTO Employee ([FirstName],[LastName]) {Environment.NewLine} OUTPUT INSERTED.[FirstName] {Environment.NewLine} VALUES (@FirstName,@LastName)");
         }
 
 
 
 
-        [Test]
-        public void Test_SqlTable()
-        {
-          
-            var sqlTable = new SQLTable(DataBaseType.SqlServer,typeof(Employee));
-            Assert.AreEqual(sqlTable.TableName,"Employee","Table Name is not what was expected");
-        }
-
-
-        [Test]
-        public void Test_SqlTable_FullNameWithBrackets()
-        {
-
-            var sqlTable = new SQLTable(DataBaseType.SqlServer, typeof(Employee));
-            Assert.AreEqual(sqlTable.FullNameWithBrackets, "[Employee]", "Table Name is not what was expected");
-        }
-
-
-        [Test]
-        public void Test_SqlTable_TableName_Doesnt_Include_Brackets()
-        {
-
-            var sqlTable = new SQLTable(DataBaseType.SqlServer, "[Employee]");
-            Assert.AreEqual(sqlTable.TableName, "Employee", "Table Name is not what was expected");
-        }
-
+     
 
 
         [Test]
