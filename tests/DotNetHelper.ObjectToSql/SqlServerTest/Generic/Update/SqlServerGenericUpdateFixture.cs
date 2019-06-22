@@ -30,6 +30,15 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
         //            .TypeOf<MissingKeyAttributeException>());
         //}
 
+        [Test]
+        public void Test_BuildQuery_Generic_As_Object_Overload_Throws_With_Key_Attribute_Decorated()
+        {
+            object employee = new Employee();
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            Assert.That(() => sqlServerObjectToSql.BuildQuery("Employee", ActionType, employee),
+                Throws.Exception
+                    .TypeOf<MissingKeyAttributeException>());
+        }
 
 
     }
