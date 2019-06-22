@@ -920,7 +920,7 @@ namespace DotNetHelper.ObjectToSql.Services
             // Get non primary key fields - the ones we want to update.
             if (instance is IDynamicMetaObjectProvider a)
             {
-                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => !r.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
+                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => r.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) == null).AsList();
             }
             return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => !r.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
         }
@@ -1070,6 +1070,7 @@ namespace DotNetHelper.ObjectToSql.Services
               // catch (ArgumentException error)
               // {
               //     // TODO :: Throw custom exception explain that we couldn't find a mapping sqldbtype for this value type . In most case this is a list
+                    // TODO  :: THE SOLUTION SHOULD BE TO Apply A serailization attribute on as you can't store list in a database 
               // }
             });
             return list;

@@ -1,95 +1,99 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.ComponentModel.DataAnnotations;
-//using System.Dynamic;
-//using System.Text;
-//using DotNetHelper.ObjectToSql.Enum;
-//using DotNetHelper.ObjectToSql.Exceptions;
-//using DotNetHelper.ObjectToSql.Model;
-//using DotNetHelper.ObjectToSql.Tests.Models;
-//using NUnit.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using DotNetHelper.ObjectToSql.Enum;
+using DotNetHelper.ObjectToSql.Exceptions;
+using DotNetHelper.ObjectToSql.Model;
+using DotNetHelper.ObjectToSql.Tests.Models;
+using NUnit.Framework;
 
-//namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
-//{
-//    public class SqlServerDynamicInsertFixtureDataAnnotation
-//    {
-
-
-//        [SetUp]
-//        public void Setup()
-//        {
-
-//        }
-//        [TearDown]
-//        public void Teardown()
-//        {
-   
-//        }
+namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
+{
+    public class SqlServerDynamicInsertFixture
+    {
 
 
-//        [Test]
-//        public void Test_Dynamic_BuildInsertQuery_Throw_InvalidOperation_When_Using_Wrong_Overload()
-//        {
-//            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-//            dynamic record = new ExpandoObject();
-//            record.FirstName = "John";
-//            record.LastName = "Doe";
+        [SetUp]
+        public void Setup()
+        {
 
-//            Assert.That(() => sqlServerObjectToSql.BuildQuery("Employee", ActionType.Insert, record),
-//                Throws.Exception
-//                    .TypeOf<InvalidOperationException>());
-//        }
+        }
+        [TearDown]
+        public void Teardown()
+        {
 
-
-//        [Test]
-//        public void Test_Dynamic_BuildUpdateQuery_Ensure_Exception_MissingKeyAttributeException_Thrown_When_NoKeys_Provided()
-//        {
-//            dynamic record = new ExpandoObject();
-//            record.FirstName = "John";
-//            record.LastName = "Doe";
-
-//            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-//            Assert.That(() => sqlServerObjectToSql.BuildQuery(nameof(Employee), ActionType.Update, record),
-//                Throws.Exception
-//                    .TypeOf<MissingKeyAttributeException>());
-
-
-//        }
-
-//        [Test]
-//        public void Test_Dynamic_BuildUpdateQuery()
-//        {
-//            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-//            dynamic record = new ExpandoObject(); 
-//            record.LastName = "Doe";
-//            record.PrimaryKey = 1;
-
-//            var attribute = new RunTimeAttributeMap("PrimaryKey", new List<System.Attribute>() {new KeyAttribute()});
-//            var list = new List<RunTimeAttributeMap>()
-//            {
-//                attribute
-//            };
-
-//            var sql = sqlServerObjectToSql.BuildQuery("Employee",ActionType.Insert,record,list);
-//            Assert.AreEqual(sql, "UPDATE Employee SET [LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey");
-//        }
-
-
-//        //[Test]
-//        //public void Test_Dynamic_BuildInsertQueryWithOutputs_Ensure_MissingIdenityKey_Is_Thrown()
-//        //{
-//        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-//        //    Assert.That(() => sqlServerObjectToSql.BuildInsertQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(StringBuilder, nameof(Employee)),
-//        //        Throws.Exception
-//        //            .TypeOf<EmptyArgumentException>());
-//        //}
+        }
 
 
 
 
+        [Test]
+        public void Test_BuildQuery()
+        {
+            
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            dynamic obj = new ExpandoObject();
+            obj.FirstName2 = "John";
+            obj.LastName = "Doe";
+
+            var list = System.Enum.GetValues(typeof(ActionType)).Cast<ActionType>().ToList();
+            list.ForEach(delegate(ActionType type)
+            {
+                Assert.That(() => sqlServerObjectToSql.BuildQuery(null, type, obj),
+                    Throws.Exception
+                        .TypeOf<InvalidOperationException>());
+            });
+
+          
+        }
+
+        [Test]
+        public void Test_BuildQuery_With_KeyRunTime_Attribute()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            dynamic obj = new ExpandoObject();
+            obj.FirstName2 = "John";
+            obj.LastName = "Doe";
+            obj.PrimaryKey = 2;
+            var attributes = new List<RunTimeAttributeMap>()
+            {
+                new RunTimeAttributeMap("PrimaryKey", new List<System.Attribute>() {new KeyAttribute()})
+            };
+
+            var list = System.Enum.GetValues(typeof(ActionType)).Cast<ActionType>().ToList();
+            list.ForEach(delegate (ActionType type)
+            {
+                var sql = string.Empty;
+                switch (type)
+                {
+                    case ActionType.Insert:
+                        sql = sqlServerObjectToSql.BuildQuery("EmployeeWithMappedColumnAndPrimaryKeySqlColumn", type, obj,attributes);
+                        Assert.AreEqual(sql, @"INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName2,@LastName,@PrimaryKey)");
+                        break;
+                    case ActionType.Update:
+                        sql = sqlServerObjectToSql.BuildQuery("EmployeeWithMappedColumnAndPrimaryKeySqlColumn", type, obj, attributes);
+                        Assert.AreEqual(sql, $@"UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName2,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey");
+                        break;
+                    case ActionType.Upsert:
+                        sql = sqlServerObjectToSql.BuildQuery("EmployeeWithMappedColumnAndPrimaryKeySqlColumn", type, obj, attributes);
+                        Assert.AreEqual(sql, $@"IF EXISTS ( SELECT * FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey ) BEGIN UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName2,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey END ELSE BEGIN INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName2,@LastName,@PrimaryKey) END");
+                        break;
+                    case ActionType.Delete:
+                        sql = sqlServerObjectToSql.BuildQuery("EmployeeWithMappedColumnAndPrimaryKeySqlColumn", type, obj, attributes);
+                        Assert.AreEqual(sql, $@"DELETE FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey");
+                        break;
+
+                }
+            });
+
+        }
 
 
 
 
-//    }
-//}
+
+    }
+}

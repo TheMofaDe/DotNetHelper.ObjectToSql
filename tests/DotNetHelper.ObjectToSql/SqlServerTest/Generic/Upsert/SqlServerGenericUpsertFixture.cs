@@ -40,7 +40,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         }
 
         [Test]
-        public void Test_Generic_As_Object_Build_Upsert_Query()
+        public void Test_BuildQuery_Generic_As_Object_Overload_Throws_With_Key_Attribute_Decorated()
         {
             object employee = new Employee();
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
@@ -48,6 +48,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
                 Throws.Exception
                     .TypeOf<MissingKeyAttributeException>());
         }
+
+
 
        
 
