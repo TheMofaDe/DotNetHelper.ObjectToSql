@@ -59,33 +59,5 @@ namespace DotNetHelper.ObjectToSql.Extension
         }
 
 #endif
-
-
-        /// <summary>
-        /// create key with value if not exist otherwise update value for key
-        /// </summary>
-        /// <typeparam name="K"></typeparam>
-        /// <typeparam name="V"></typeparam>
-        /// <param name="dictionary"></param>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        /// <returns>return  new value </returns>
-        public static V AddOrUpdate<K, V>(this IDictionary<K, V> dictionary, K key, V value)
-        {
-            if (dictionary.ContainsKey(key))
-            {
-                dictionary[key] = value;
-            }
-            else
-            {
-                dictionary.Add(key, value);
-            }
-            return value;
-        }
-
-
-
-
-
     }
 }
