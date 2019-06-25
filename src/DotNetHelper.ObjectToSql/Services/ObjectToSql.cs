@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Common;
 using System.Dynamic;
 using System.Linq;
@@ -19,11 +18,11 @@ namespace DotNetHelper.ObjectToSql.Services
 {
     public class ObjectToSql
     {
-        
+
         public bool IncludeNonPublicAccessor { get; set; } = true;
         public DataBaseType DatabaseType { get; }
 
-        public ObjectToSql(DataBaseType type,bool includeNonPublicAccessor)
+        public ObjectToSql(DataBaseType type, bool includeNonPublicAccessor)
         {
             DatabaseType = type;
             IncludeNonPublicAccessor = includeNonPublicAccessor;
@@ -39,7 +38,7 @@ namespace DotNetHelper.ObjectToSql.Services
             if (typeof(T).IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
             if (typeof(T).IsTypeAnonymousType()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Anonymous"));
         }
-        private void ThrowIfDynamicOrAnonymous(ActionType actionType, Type type) 
+        private void ThrowIfDynamicOrAnonymous(ActionType actionType, Type type)
         {
             if (type.IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
             if (type.IsTypeAnonymousType()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Anonymous"));
@@ -48,60 +47,7 @@ namespace DotNetHelper.ObjectToSql.Services
         #region Public Method Build Query
 
 
-        ///// <summary>
-        ///// Builds the query based on the specified actionType & table name
-        ///// </summary>
-        ///// <param name="tableName">Name of the table.</param>
-        ///// <param name="actionType">INSERT,DELETE,UPDATE,OR UPSERT</param>
-        ///// <exception cref="InvalidOperationException"></exception>
-        ///// <exception cref="ArgumentOutOfRangeException"> invalid actionType </exception>
-        ///// <exception cref="MissingKeyAttributeException"> can only be thrown for UPDATE,DELETE, & UPSERT Queries</exception> 
-        //public string BuildQuery(DataTable dataTable, ActionType actionType)
-        //{
-        //    var sqlBuilder = new StringBuilder();
 
-        //    var keyFields = dataTable.PrimaryKey;
-        //    var nonKeyFields = new List<string>() { };
-        //    var nonIdentityFields = new List<string>() { };
-
-        //    List<string> GetNonKeyFields()
-        //    {
-        //        foreach (DataColumn col in dataTable.Columns)
-        //        {
-        //            if (!dataTable.PrimaryKey.Contains(col))
-        //            {
-        //                nonKeyFields.Add(col.ColumnName);
-
-        //            }
-        //            else
-        //            {
-
-        //            }
-        //        }
-        //    }
-        //    switch (actionType)
-        //    {
-        //        case ActionType.Insert:
-        //            ThrowIfDynamicOrAnonymous<T>(actionType);
-        //            BuildInsertQuery<T>(sqlBuilder, tableName);
-        //            break;
-        //        case ActionType.Update:
-        //            ThrowIfDynamicOrAnonymous<T>(actionType);
-        //            BuildUpdateQuery<T>(sqlBuilder, tableName);
-        //            break;
-        //        case ActionType.Upsert:
-        //            ThrowIfDynamicOrAnonymous<T>(actionType);
-        //            BuildUpsertQuery<T>(sqlBuilder, tableName);
-        //            break;
-        //        case ActionType.Delete:
-        //            ThrowIfDynamicOrAnonymous<T>(actionType);
-        //            BuildDeleteQuery<T>(sqlBuilder, tableName);
-        //            break;
-        //        default:
-        //            throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null);
-        //    }
-        //    return sqlBuilder.ToString();
-        //}
 
         /// <summary>
         /// Builds the query based on the specified actionType & table name
@@ -160,7 +106,7 @@ namespace DotNetHelper.ObjectToSql.Services
                     break;
                 case ActionType.Update:
                     ThrowIfDynamicOrAnonymous<T>(actionType);
-                    BuildUpdateQuery<T>(sqlBuilder, tableName,primaryKeys);
+                    BuildUpdateQuery<T>(sqlBuilder, tableName, primaryKeys);
                     break;
                 case ActionType.Upsert:
                     ThrowIfDynamicOrAnonymous<T>(actionType);
@@ -193,7 +139,7 @@ namespace DotNetHelper.ObjectToSql.Services
             {
                 case ActionType.Insert:
                     if (instance.GetType().IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
-                    BuildInsertQuery(sqlBuilder, tableName,instance.GetType());
+                    BuildInsertQuery(sqlBuilder, tableName, instance.GetType());
                     break;
                 case ActionType.Update:
                     ThrowIfDynamicOrAnonymous(actionType, instance.GetType());
@@ -260,7 +206,7 @@ namespace DotNetHelper.ObjectToSql.Services
             switch (actionType)
             {
                 case ActionType.Insert:
-                    BuildInsertQueryWithOutputs<T>(sqlBuilder, tableName,outputFields);
+                    BuildInsertQueryWithOutputs<T>(sqlBuilder, tableName, outputFields);
                     break;
                 case ActionType.Update:
                     BuildUpdateQueryWithOutputs<T>(sqlBuilder, tableName, outputFields);
@@ -325,7 +271,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($"INSERT INTO {tableName ?? typeof(T).Name} (");
 
             // Add field names
-            allFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault ()}],"));
+            allFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}],"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
             // Add parameter names for values
@@ -343,8 +289,8 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="tableName">Name of the table.</param>
         private void BuildInsertQuery<T>(StringBuilder sqlBuilder, string tableName, T instance, List<RunTimeAttributeMap> runTimeAttributes) where T : class
         {
-            var allFields = GetNonIdentityFields<T>(runTimeAttributes,instance);
-            if(allFields.IsNullOrEmpty()) throw new InvalidOperationException($"The list of {nameof(RunTimeAttributeMap)} didn't contain any matching properties with {nameof(T)} that isn't declared as an identity column");
+            var allFields = GetNonIdentityFields<T>(runTimeAttributes, instance);
+            if (allFields.IsNullOrEmpty()) throw new InvalidOperationException($"The list of {nameof(RunTimeAttributeMap)} didn't contain any matching properties with {nameof(T)} that isn't declared as an identity column");
             // Insert sql statement prefix 
             sqlBuilder.Append($"INSERT INTO {tableName ?? typeof(T).Name} (");
 
@@ -365,16 +311,16 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
         /// <param name="type"></param>
-        private void BuildInsertQuery(StringBuilder sqlBuilder, string tableName,Type type) 
+        private void BuildInsertQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
             var allFields = GetNonIdentityFields(IncludeNonPublicAccessor, type);
             // Insert sql statement prefix 
             sqlBuilder.Append($"INSERT INTO {tableName ?? type.Name} (");
 
             // Add field names
-            allFields.ForEach(delegate(MemberWrapper member)
+            allFields.ForEach(delegate (MemberWrapper member)
             {
-                sqlBuilder.Append($"[{member.GetNameFromCustomAttributeOrDefault()}],"); 
+                sqlBuilder.Append($"[{member.GetNameFromCustomAttributeOrDefault()}],");
 
             });
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
@@ -429,13 +375,13 @@ namespace DotNetHelper.ObjectToSql.Services
         }
 
 
-       
+
 
         #endregion
 
         #region UPDATE METHODS
 
-        
+
 
         /// <summary>
         /// Builds the update query.
@@ -470,13 +416,13 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
         /// <param name="type"></param>
-        private void BuildUpdateQuery(StringBuilder sqlBuilder, string tableName,Type type)
+        private void BuildUpdateQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
 
-            var keyFields = GetKeyFields(IncludeNonPublicAccessor,type);
+            var keyFields = GetKeyFields(IncludeNonPublicAccessor, type);
 
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            var updateFields = GetNonIdentityFields(IncludeNonPublicAccessor,type);
+            var updateFields = GetNonIdentityFields(IncludeNonPublicAccessor, type);
 
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName} SET ");
@@ -499,10 +445,10 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName, T instance, List<RunTimeAttributeMap> runTimeAttributes) where T : class
         {
 
-            var keyFields = GetKeyFields<T>(runTimeAttributes,instance);
+            var keyFields = GetKeyFields<T>(runTimeAttributes, instance);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            var updateFields = GetNonIdentityFields<T>(runTimeAttributes,instance);
+            var updateFields = GetNonIdentityFields<T>(runTimeAttributes, instance);
             if (updateFields.IsNullOrEmpty()) throw new InvalidOperationException($"The list of {nameof(RunTimeAttributeMap)} didn't contain any matching properties with {nameof(T)} that isn't declared as an key column");
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName} SET ");
@@ -533,7 +479,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = new List<MemberWrapper>() { };
             var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
             keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
-         
+
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
             var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
 
@@ -580,7 +526,7 @@ namespace DotNetHelper.ObjectToSql.Services
                 sqlBuilder.Append($" DELETED.[{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}] ,");
             });
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1);
-            
+
 
             // Build Where clause.
             sqlBuilder.Append(" ");
@@ -618,7 +564,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <typeparam name="T"></typeparam>
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
-        private void BuildDeleteQuery(StringBuilder sqlBuilder, string tableName, Type type) 
+        private void BuildDeleteQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
 
             var keyFields = GetKeyFields(IncludeNonPublicAccessor, type);
@@ -639,7 +585,7 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName, T instance, List<RunTimeAttributeMap> runTimeAttributes) where T : class
         {
 
-            var keyFields = GetKeyFields<T>(runTimeAttributes,instance);
+            var keyFields = GetKeyFields<T>(runTimeAttributes, instance);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 
@@ -655,16 +601,16 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
         /// <param name="overrideKeys"></param>
-        private void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys ) where T : class
+        private void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys) where T : class
         {
             overrideKeys.IsNullThrow(nameof(overrideKeys));
             overrideKeys.IsEmptyThrow(nameof(overrideKeys));
             var keyFields = new List<MemberWrapper>() { };
 
-                var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
-                keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
-           
-            if(keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
+            var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
+            keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
+
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 
             sqlBuilder.Append($"DELETE FROM {tableName} ");
@@ -734,10 +680,10 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys) where T : class
         {
             var sb = new StringBuilder();
-            BuildUpdateQuery<T>(sb, tableName,overrideKeys);
+            BuildUpdateQuery<T>(sb, tableName, overrideKeys);
             var sb1 = new StringBuilder();
             BuildInsertQuery<T>(sb1, tableName);
-        
+
             var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
             var keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
             var sb2 = new StringBuilder();
@@ -754,16 +700,16 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <typeparam name="T"></typeparam>
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
-        private void BuildUpsertQuery(StringBuilder sqlBuilder, string tableName,Type type) 
+        private void BuildUpsertQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
 
-            var keyFields = GetKeyFields(IncludeNonPublicAccessor,type);
+            var keyFields = GetKeyFields(IncludeNonPublicAccessor, type);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
             var sb = new StringBuilder();
-            BuildUpdateQuery(sb, tableName,type);
+            BuildUpdateQuery(sb, tableName, type);
             var sb1 = new StringBuilder();
-            BuildInsertQuery(sb1, tableName,type);
+            BuildInsertQuery(sb1, tableName, type);
             var sb2 = new StringBuilder();
             BuildWhereClause(sb2, keyFields);
 
@@ -781,11 +727,11 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName, T instance, List<RunTimeAttributeMap> runTimeAttributes) where T : class
         {
 
-            var keyFields = GetKeyFields<T>(runTimeAttributes,instance);
+            var keyFields = GetKeyFields<T>(runTimeAttributes, instance);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
             var sb = new StringBuilder();
-            BuildUpdateQuery<T>(sb, tableName,instance,runTimeAttributes);
+            BuildUpdateQuery<T>(sb, tableName, instance, runTimeAttributes);
             var sb1 = new StringBuilder();
             BuildInsertQuery<T>(sb1, tableName, instance, runTimeAttributes);
             var sb2 = new StringBuilder();
@@ -808,7 +754,7 @@ namespace DotNetHelper.ObjectToSql.Services
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
             var sb = new StringBuilder();
-            BuildUpdateQueryWithOutputs<T>(sb, tableName,outFields);
+            BuildUpdateQueryWithOutputs<T>(sb, tableName, outFields);
             var sb1 = new StringBuilder();
             BuildInsertQueryWithOutputs<T>(sb, tableName, outFields);
             var sb2 = new StringBuilder();
@@ -1054,7 +1000,7 @@ namespace DotNetHelper.ObjectToSql.Services
             List<MemberWrapper> members;
             if (instance is IDynamicMetaObjectProvider a)
             {
-                members = GetAllNonIgnoreFields(new List<RunTimeAttributeMap>(){},instance); // create a dynamic overload with imeta T
+                members = GetAllNonIgnoreFields(new List<RunTimeAttributeMap>() { }, instance); // create a dynamic overload with imeta T
             }
             else
             {
@@ -1063,15 +1009,15 @@ namespace DotNetHelper.ObjectToSql.Services
             members.ForEach(delegate (MemberWrapper p)
             {
                 var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), XmlSerializer, JsonSerializer, CsvSerializer);
-              // try
-              // {
-                    list.Add(GetNewParameter($"@{p.Name}", parameterValue));
-              // }
-              // catch (ArgumentException error)
-              // {
-              //     // TODO :: Throw custom exception explain that we couldn't find a mapping sqldbtype for this value type . In most case this is a list
-                    // TODO  :: THE SOLUTION SHOULD BE TO Apply A serailization attribute on as you can't store list in a database 
-              // }
+                // try
+                // {
+                list.Add(GetNewParameter($"@{p.Name}", parameterValue));
+                // }
+                // catch (ArgumentException error)
+                // {
+                //     // TODO :: Throw custom exception explain that we couldn't find a mapping sqldbtype for this value type . In most case this is a list
+                // TODO  :: THE SOLUTION SHOULD BE TO Apply A serailization attribute on as you can't store list in a database 
+                // }
             });
             return list;
         }

@@ -11,6 +11,8 @@ namespace DotNetHelper.ObjectToSql.Helper
             $"{Environment.NewLine} You can use either or the following attributes  [SqlColumn(SetPrimaryKey = true)] OR [Key]" +
             $"{Environment.NewLine} For Identity properties use [DatabaseGenerated(DatabaseGeneratedOption.Identity)] OR [SqlColumn(SetIsIdentityKey = true)] )";
 
+        public static string MissingKeyMessageForDataTable { get; } =
+            "This dataTable doesn't have any columns set as primary keys. Therefore no update statement could be created";
         public static string MissingIdentityKeyMessage(Type type)
         {
 
