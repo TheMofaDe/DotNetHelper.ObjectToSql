@@ -69,6 +69,53 @@ namespace DotNetHelper.ObjectToSql.Services
         }
 
 
+        /// <summary>
+        /// Builds the query based on the specified actionType & table name
+        /// </summary>
+        /// <param name="dataRow"></param>
+        /// <exception cref="InvalidOperationException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"> invalid actionType </exception>
+        /// <exception cref="MissingKeyAttributeException"> can only be thrown for UPDATE,DELETE, & UPSERT Queries</exception> 
+        public string BuildQueryFromRowState(DataRow dataRow)
+        {
+            return BuildQueryFromRowState(dataRow, dataRow.Table.TableName);
+        }
+
+
+        /// <summary>
+        /// Builds the query based on the specified actionType & table name
+        /// </summary>
+        /// <param name="dataRow"></param>
+        /// <param name="tableName">Name of the table.</param>
+        /// <exception cref="InvalidOperationException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"> invalid actionType </exception>
+        /// <exception cref="MissingKeyAttributeException"> can only be thrown for UPDATE,DELETE, & UPSERT Queries</exception> 
+        public string BuildQueryFromRowState(DataRow dataRow,  string tableName)
+        {
+            var sqlBuilder = new StringBuilder();
+            switch (dataRow.RowState)
+            {
+                case DataRowState.Added:
+                    BuildInsertQuery(sqlBuilder, dataRow.Table, tableName);
+                    break;
+                case DataRowState.Deleted:
+                    BuildDeleteQuery(sqlBuilder, dataRow.Table, tableName);
+                    break;
+                case DataRowState.Detached:
+                    break;
+                case DataRowState.Modified:
+                    BuildUpdateQuery(sqlBuilder, dataRow.Table, tableName);
+                    break;
+                case DataRowState.Unchanged:
+                    BuildUpdateQuery(sqlBuilder, dataRow.Table, tableName);
+                    break;
+                default:
+                    break;
+            }
+            return sqlBuilder.ToString();
+        }
+
+
         #endregion
 
 
