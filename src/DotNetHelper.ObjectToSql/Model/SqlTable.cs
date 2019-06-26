@@ -20,7 +20,7 @@ namespace DotNetHelper.ObjectToSql.Model
         public SQLTable(DataBaseType dbType, Type type)
         {
             DBType = dbType;
-            var tableName = type.GetNameFromCustomAttributeOrDefault();
+            var tableName = type.GetTableNameFromCustomAttributeOrDefault();
             Init(tableName);
 
         }

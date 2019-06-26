@@ -80,7 +80,13 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
  VALUES (@FirstName,@LastName,@PrimaryKey)");
         }
 
-
+        [Test]
+        public void Test_Generic_Ensure_Table_Attribute_Name_Is_Used()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithTableAttribute>(null, ActionType);
+            Assert.AreEqual(sql, EmployeeWithTableAttribute.ToSql(ActionType));
+        }
 
 
 

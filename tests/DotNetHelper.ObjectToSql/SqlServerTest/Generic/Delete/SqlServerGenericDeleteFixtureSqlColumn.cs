@@ -43,6 +43,14 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Delete
         }
 
         [Test]
+        public void Test_Generic_Ensure_Table_Attribute_Name_Is_Used()
+        {
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithTableAttribute>(null, ActionType);
+            Assert.AreEqual(sql, EmployeeWithTableAttribute.ToSql(ActionType));
+        }
+
+        [Test]
         public void Test_Generic_BuildDeleteQuery_Includes_Where_Clause_With_Primary_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);

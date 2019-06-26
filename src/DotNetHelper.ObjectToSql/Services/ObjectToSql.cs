@@ -268,7 +268,7 @@ namespace DotNetHelper.ObjectToSql.Services
         {
             var allFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
             // Insert sql statement prefix 
-            sqlBuilder.Append($"INSERT INTO {tableName ?? typeof(T).Name} (");
+            sqlBuilder.Append($"INSERT INTO {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} (");
 
             // Add field names
             allFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}],"));
@@ -292,7 +292,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var allFields = GetNonIdentityFields<T>(runTimeAttributes, instance);
             if (allFields.IsNullOrEmpty()) throw new InvalidOperationException($"The list of {nameof(RunTimeAttributeMap)} didn't contain any matching properties with {nameof(T)} that isn't declared as an identity column");
             // Insert sql statement prefix 
-            sqlBuilder.Append($"INSERT INTO {tableName ?? typeof(T).Name} (");
+            sqlBuilder.Append($"INSERT INTO {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} (");
 
             // Add field names
             allFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}],"));
@@ -315,7 +315,7 @@ namespace DotNetHelper.ObjectToSql.Services
         {
             var allFields = GetNonIdentityFields(IncludeNonPublicAccessor, type);
             // Insert sql statement prefix 
-            sqlBuilder.Append($"INSERT INTO {tableName ?? type.Name} (");
+            sqlBuilder.Append($"INSERT INTO {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} (");
 
             // Add field names
             allFields.ForEach(delegate (MemberWrapper member)
@@ -349,7 +349,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var allFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
             // Insert sql statement prefix 
 
-            sqlBuilder.Append($"INSERT INTO {tableName} (");
+            sqlBuilder.Append($"INSERT INTO {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} (");
 
             // Add field names
             allFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}],"));
@@ -398,7 +398,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
 
             // Build Update Statement Prefix
-            sqlBuilder.Append($"UPDATE {tableName} SET ");
+            sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
 
             // Build Set fields
             updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
@@ -425,7 +425,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var updateFields = GetNonIdentityFields(IncludeNonPublicAccessor, type);
 
             // Build Update Statement Prefix
-            sqlBuilder.Append($"UPDATE {tableName} SET ");
+            sqlBuilder.Append($"UPDATE {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} SET ");
 
             // Build Set fields
             updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
@@ -451,7 +451,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var updateFields = GetNonIdentityFields<T>(runTimeAttributes, instance);
             if (updateFields.IsNullOrEmpty()) throw new InvalidOperationException($"The list of {nameof(RunTimeAttributeMap)} didn't contain any matching properties with {nameof(T)} that isn't declared as an key column");
             // Build Update Statement Prefix
-            sqlBuilder.Append($"UPDATE {tableName} SET ");
+            sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
 
             // Build Set fields
             updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
@@ -484,7 +484,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
 
             // Build Update Statement Prefix
-            sqlBuilder.Append($"UPDATE {tableName} SET ");
+            sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
 
             // Build Set fields
             updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
@@ -513,7 +513,7 @@ namespace DotNetHelper.ObjectToSql.Services
 
             var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
             // Build Update Statement Prefix
-            sqlBuilder.Append($"UPDATE {tableName} SET ");
+            sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
 
             // Build Set fields
             updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
@@ -554,7 +554,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            sqlBuilder.Append($"DELETE FROM {tableName} ");
+            sqlBuilder.Append($"DELETE FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} ");
             BuildWhereClause(sqlBuilder, keyFields);
         }
 
@@ -572,7 +572,7 @@ namespace DotNetHelper.ObjectToSql.Services
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 
-            sqlBuilder.Append($"DELETE FROM {tableName} ");
+            sqlBuilder.Append($"DELETE FROM {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} ");
             BuildWhereClause(sqlBuilder, keyFields);
         }
 
@@ -589,7 +589,7 @@ namespace DotNetHelper.ObjectToSql.Services
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 
-            sqlBuilder.Append($"DELETE FROM {tableName} ");
+            sqlBuilder.Append($"DELETE FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} ");
             BuildWhereClause(sqlBuilder, keyFields);
         }
 
@@ -613,7 +613,7 @@ namespace DotNetHelper.ObjectToSql.Services
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 
-            sqlBuilder.Append($"DELETE FROM {tableName} ");
+            sqlBuilder.Append($"DELETE FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} ");
             BuildWhereClause(sqlBuilder, keyFields);
         }
 
@@ -632,7 +632,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            sqlBuilder.Append($"DELETE FROM {tableName} ");
+            sqlBuilder.Append($"DELETE FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} ");
 
             var members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
             sqlBuilder.Append($" OUTPUT");
@@ -667,7 +667,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb2 = new StringBuilder();
             BuildWhereClause(sb2, keyFields);
 
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
 
         }
 
@@ -689,7 +689,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb2 = new StringBuilder();
             BuildWhereClause(sb2, keyFields);
 
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
 
         }
 

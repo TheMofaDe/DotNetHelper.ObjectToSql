@@ -44,6 +44,9 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
             Assert.AreEqual(sql, "IF EXISTS ( SELECT * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END");
         }
 
+
+     
+
         //[Test]
         //public void Test_Generic_BuildUpsertQuery_Ignores_All_Keys_Attributes_And_Uses_Only_OverrideKeys()
         //{

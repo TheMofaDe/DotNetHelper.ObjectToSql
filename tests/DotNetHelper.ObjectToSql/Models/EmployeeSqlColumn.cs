@@ -6,6 +6,32 @@ using DotNetHelper.ObjectToSql.Enum;
 
 namespace DotNetHelper.ObjectToSql.Tests.Models
 {
+    [Table("EmployeeWithIdentityKeySqlColumn")]
+    public class EmployeeWithTableAttribute
+    {
+        [SqlColumn(SetIsIdentityKey = true)]
+        public int IdentityKey { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        public static string ToSql(ActionType action)
+        {
+            switch (action)
+            {
+                case ActionType.Insert:
+                    return $"INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
+                case ActionType.Update:
+                    return $"UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey";
+                case ActionType.Upsert:
+                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                case ActionType.Delete:
+                    return $"DELETE FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey";
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(action), action, null);
+            }
+        }
+    }
+
     public class EmployeeWithIdentityKeySqlColumn
     {
         [SqlColumn(SetIsIdentityKey = true)]

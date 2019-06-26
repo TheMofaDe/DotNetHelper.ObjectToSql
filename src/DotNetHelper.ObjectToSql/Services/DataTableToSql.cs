@@ -90,7 +90,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentOutOfRangeException"> invalid actionType </exception>
         /// <exception cref="MissingKeyAttributeException"> can only be thrown for UPDATE,DELETE, & UPSERT Queries</exception> 
-        public string BuildQueryFromRowState(DataRow dataRow,  string tableName)
+        public string BuildQueryFromRowState(DataRow dataRow,  string tableName )
         {
             var sqlBuilder = new StringBuilder();
             switch (dataRow.RowState)
