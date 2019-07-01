@@ -1,27 +1,35 @@
 # DotNetHelper.ObjectToSql
 
 
-| Package  | Tests | Coverage |
+
+|| [**Documentation**][Docs] • [**API**][Docs-API] • [**Getting Started**][Docs-getting-started] • [**Samples**](https://github.com/themofade/) || 
+
+| AppVeyor | AzureDevOps | 
+| :-----: | :-----: | 
+| [![Build status](https://ci.appveyor.com/api/projects/status/0ogx4qcayyfnhkhk?svg=true)](https://ci.appveyor.com/project/TheMofaDe/dotnethelper-objecttosql)  | [![Build Status](https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_apis/build/status/TheMofaDe.DotNetHelper.ObjectToSql?branchName=master)](https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_build/latest?definitionId=5&branchName=master)  
+
+| Package  | Tests | Code Coverage |
 | :-----:  | :---: | :------: |
 | ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql) |
 
 
-### *Azure DevOps*
-| Windows | Linux | MacOS |
-| :-----: | :-----: | :---: | 
-| ![Build Status][azure-windows]  | ![Build Status][azure-linux]  | ![Build Status][azure-macOS] 
 
+### DotNetHelper.ObjectToSql takes your generic types or dynamic & anonymous objects and convert it to sql. 
 
-### *AppVeyor*
-| Windows |
-| :-----: | 
-| ![Build Status][appveyor-windows]
+Can create the following sql statements
+* INSERT
++ UPDATE
++ DELETE
++ UPSERT
++ INSERT with OUTPUT Columns 
++ UPDATE with OUTPUT Columns 
++ DELETE with OUTPUT Columns 
++ UPSERT with OUTPUT Columns 
 
-
-##### DotNetHelper.ObjectToSql takes your generic types or dynamic & anonymous objects and convert it to sql. 
-
-Supports Insert,Update,Delete,Upsert Statements
-
+Supports the following databases with more to come
+* SQLSERVER
+- SQLITE
++ MYSQL
 
 
 ## How to Use With Generics Types
@@ -58,17 +66,12 @@ INSERT INTO TableNameGoHere ([FirstName],[LastName]) VALUES (@FirstName,@LastNam
 ```
 
 
-<h2>Fibonacci Generator</h2>
-<p>Here is my example of a Fibonacci generator implemented in C#.</p>
-
-<iframe src="https://try.dot.net/?fromGist=df44833326fcc575e8169fccb9d41fc7">
-</iframe>
-
 
 ## Documentation
-For more information, please refer to the [Officials Docs][2]
+For more information, please refer to the [Officials Docs][Docs] 
 
-Created Using [DotNet-Starter-Template](http://themofade.github.io/DotNet-Starter-Template) 
+## Solution Template
+[![badge](https://img.shields.io/badge/Built%20With-DotNet--Starter--Template-orange.svg)](https://github.com/TheMofaDe/DotNet-Starter-Template)
 
 
 <!-- Links. -->
@@ -86,6 +89,13 @@ Created Using [DotNet-Starter-Template](http://themofade.github.io/DotNet-Starte
 [DocFx]: https://dotnet.github.io/docfx/
 
 
+<!-- Documentation Links. -->
+[Docs]: http://themofade.github.io/DotNetHelper.ObjectToSql
+[Docs-API]: http://wixtoolset.org/
+[Docs-getting-started]: https://dotnet.github.io/docfx/
+[Docs-samples]: https://dotnet.github.io/docfx/
+
+
 
 <!-- BADGES. -->
 
@@ -98,4 +108,5 @@ Created Using [DotNet-Starter-Template](http://themofade.github.io/DotNet-Starte
 [azure-linux]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_apis/build/status/TheMofaDe.DotNetHelper.ObjectToSql?branchName=master&jobName=Linux
 [azure-macOS]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_apis/build/status/TheMofaDe.DotNetHelper.ObjectToSql?branchName=master&jobName=macOS
 
-[appveyor-windows]: https://ci.appveyor.com/api/projects/status/0ogx4qcayyfnhkhk?svg=true
+
+
