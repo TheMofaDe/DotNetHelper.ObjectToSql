@@ -1,6 +1,6 @@
 # DotNetHelper.ObjectToSql
 
-
+#### *DotNetHelper.ObjectToSql takes your generic types or dynamic & anonymous objects and convert it to sql.* 
 
 || [**Documentation**][Docs] • [**API**][Docs-API] • [**Getting Started**][Docs-getting-started] • [**Samples**](https://github.com/themofade/) || 
 
@@ -12,9 +12,6 @@
 | :-----:  | :---: | :------: |
 | ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql) |
 
-
-
-### DotNetHelper.ObjectToSql takes your generic types or dynamic & anonymous objects and convert it to sql. 
 
 Can create the following sql statements
 * INSERT
@@ -96,11 +93,10 @@ For more information, please refer to the [Officials Docs][Docs]
 [Docs-samples]: https://dotnet.github.io/docfx/
 
 
-
 <!-- BADGES. -->
 
 [nuget-downloads]: https://img.shields.io/nuget/dt/DotNetHelper.ObjectToSql.svg?style=flat-square
-[tests]: https://img.shields.io/appveyor/tests/themofade/DotNetHelper.ObjectToSql.svg?style=flat-square
+[tests]: https://img.shields.io/appveyor/tests/TheMofaDe/dotnethelper-objecttosql.svg?style=flat-square
 [coverage-status]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_apis/build/status/TheMofaDe.DotNetHelper.ObjectToSql?branchName=master&jobName=Windows
 
 
