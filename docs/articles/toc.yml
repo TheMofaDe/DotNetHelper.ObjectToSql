@@ -1,0 +1,7 @@
+- name: Home
+  href: docs/index.md
+- name: Articles
+  href: docs/articles/
+  homepage: articles/sample.md
+- name: API Documentation
+  href: docs/api/DotNetHelper_ObjectToSql.html  # if project name have a dash or dot you need to replace it with a underscore 

@@ -288,7 +288,15 @@ namespace DotNetHelper.ObjectToSql.Services
             foreach (DataColumn column in row.Table.Columns)
             {
                 // if(column.AutoIncrement) continue;
-                list.Add(GetNewParameter($"@{column.ColumnName}", row[column.ColumnName]));
+                if (row.RowState == DataRowState.Deleted)
+                {
+                    list.Add(GetNewParameter($"@{column.ColumnName}", row[column.ColumnName,DataRowVersion.Original ]));
+                }
+                else
+                {
+                    list.Add(GetNewParameter($"@{column.ColumnName}", row[column.ColumnName]));
+                }
+
             }
             return list;
         }

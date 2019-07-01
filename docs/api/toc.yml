@@ -1,4 +1,11 @@
 ### YamlMime:TableOfContent
+- uid: DotNetHelper.ObjectToSql
+  name: DotNetHelper.ObjectToSql
+  items:
+  - uid: DotNetHelper.ObjectToSql.DataTableToSql
+    name: DataTableToSql
+  - uid: DotNetHelper.ObjectToSql.ObjectToSql
+    name: ObjectToSql
 - uid: DotNetHelper.ObjectToSql.Attribute
   name: DotNetHelper.ObjectToSql.Attribute
   items:
@@ -33,8 +40,6 @@
 - uid: DotNetHelper.ObjectToSql.Extension
   name: DotNetHelper.ObjectToSql.Extension
   items:
-  - uid: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension
-    name: IDataParameterExtension
   - uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
     name: MemberWrapperExtension
 - uid: DotNetHelper.ObjectToSql.Helper
@@ -53,8 +58,3 @@
     name: RunTimeAttributeMapExtension
   - uid: DotNetHelper.ObjectToSql.Model.SQLTable
     name: SQLTable
-- uid: DotNetHelper.ObjectToSql.Services
-  name: DotNetHelper.ObjectToSql.Services
-  items:
-  - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
-    name: ObjectToSql

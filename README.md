@@ -13,8 +13,8 @@
 | ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql) |
 
 
-Can create the following sql statements
-* INSERT
+#### Can create the following sql statements
++ INSERT
 + UPDATE
 + DELETE
 + UPSERT
@@ -23,13 +23,13 @@ Can create the following sql statements
 + DELETE with OUTPUT Columns 
 + UPSERT with OUTPUT Columns 
 
-Supports the following databases with more to come
-* SQLSERVER
-- SQLITE
+#### Supports the following databases with more to come
++ SQLSERVER
++ SQLITE
 + MYSQL
 
 
-## How to Use With Generics Types
+## H ow to Use With Generics Types
 ```csharp
 public class Employee {
       public FirstName { get; set; }
@@ -38,7 +38,7 @@ public class Employee {
             var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
             var insertSql = sqlServerObjectToSql.BuildQuery<Employee>("TableNameGoesHere", ActionType.Insert);
 // OR 
-            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert);
+            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,typeof(Employee));
 ```
 
 ## How to Use With Dynamic Objects
@@ -47,7 +47,7 @@ public class Employee {
             dynamic record = new ExpandoObject();
             record.FirstName = "John";
             record.LastName = "Doe";
-            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,record,null);
+            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,record);
 ```
 
 
@@ -55,7 +55,7 @@ public class Employee {
 ```csharp
             var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
             var anonymousObject = new { FirstName = "John" , LastName = "Doe"}
-            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,anonymousObject,null);
+            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,anonymousObject);
 ```
 ## Output
 ```sql

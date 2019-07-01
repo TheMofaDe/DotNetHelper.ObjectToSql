@@ -23,7 +23,7 @@
 #tool "nuget:?package=Codecov&version=1.1.0"
 #tool "nuget:?package=nuget.commandline&version=4.9.2"
 #tool "nuget:?package=GitVersion.CommandLine&version=5.0.0-beta2-95"
-#tool "nuget:?package=docfx.console&version=2.41.0"
+#tool "nuget:?package=docfx.console&version=2.43.1"
 #tool "nuget:?package=WiX.Toolset.UnofficialFork&version=3.11.1"
 #tool "nuget:?package=OpenCover&version=4.7.922"
 #tool nuget:?package=ReportGenerator&version=4.0.4

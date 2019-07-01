@@ -4,7 +4,6 @@ items:
   commentId: N:DotNetHelper.ObjectToSql.Extension
   id: DotNetHelper.ObjectToSql.Extension
   children:
-  - DotNetHelper.ObjectToSql.Extension.IDataParameterExtension
   - DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
   langs:
   - csharp
@@ -21,8 +20,3 @@ references:
   name: MemberWrapperExtension
   nameWithType: MemberWrapperExtension
   fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
-- uid: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension
-  commentId: T:DotNetHelper.ObjectToSql.Extension.IDataParameterExtension
-  name: IDataParameterExtension
-  nameWithType: IDataParameterExtension
-  fullName: DotNetHelper.ObjectToSql.Extension.IDataParameterExtension

@@ -4,4 +4,4 @@
   href: articles/
   homepage: articles/sample.md
 - name: API Documentation
-  href: api/DotNetHelper.ObjectToSql.html  # if project name have a dash you need to replace it with a underscore 
+  href: api/DotNetHelper_ObjectToSql.html  # if project name have a dash you need to replace it with a underscore 
