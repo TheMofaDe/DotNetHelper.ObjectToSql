@@ -287,7 +287,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var list = new List<T>() { };
             foreach (DataColumn column in row.Table.Columns)
             {
-                if(column.AutoIncrement) continue;
+                // if(column.AutoIncrement) continue;
                 list.Add(GetNewParameter($"@{column.ColumnName}", row[column.ColumnName]));
             }
             return list;
