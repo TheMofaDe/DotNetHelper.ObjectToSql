@@ -395,7 +395,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
 
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
+            var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
 
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
@@ -422,7 +422,8 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = GetKeyFields(IncludeNonPublicAccessor, type);
 
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            var updateFields = GetNonIdentityFields(IncludeNonPublicAccessor, type);
+            //var updateFields = GetNonIdentityFields(IncludeNonPublicAccessor, type);
+            var updateFields = GetNonKeyFields(IncludeNonPublicAccessor, type);
 
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} SET ");
@@ -448,7 +449,8 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = GetKeyFields<T>(runTimeAttributes, instance);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            var updateFields = GetNonIdentityFields<T>(runTimeAttributes, instance);
+            //var updateFields = GetNonIdentityFields<T>(runTimeAttributes, instance);
+            var updateFields = GetNonKeyFields<T>(runTimeAttributes, instance);
             if (updateFields.IsNullOrEmpty()) throw new InvalidOperationException($"The list of {nameof(RunTimeAttributeMap)} didn't contain any matching properties with {nameof(T)} that isn't declared as an key column");
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
@@ -481,8 +483,8 @@ namespace DotNetHelper.ObjectToSql.Services
             keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
 
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
-
+            //var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
+            var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
 
@@ -511,7 +513,8 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
+            //var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
+            var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
 
@@ -774,7 +777,7 @@ namespace DotNetHelper.ObjectToSql.Services
         public List<MemberWrapper> GetNonKeyFields<T>(bool includeNonPublicAccessor) where T : class
         {
             // Get non primary key fields - the ones we want to update.
-            return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => !m.IsMemberAPrimaryKeyColumn()).AsList();
+            return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => !m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).AsList();
         }
         /// <summary>
         /// Gets the non key fields.
@@ -799,7 +802,7 @@ namespace DotNetHelper.ObjectToSql.Services
         public List<MemberWrapper> GetNonKeyFields(bool includeNonPublicAccessor, Type type)
         {
             // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
-            return ExtFastMember.GetMemberWrappers(type, includeNonPublicAccessor).Where(m => !m.IsMemberAPrimaryKeyColumn()).AsList();
+            return ExtFastMember.GetMemberWrappers(type, includeNonPublicAccessor).Where(m => !m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).AsList();
         }
 
         #endregion
