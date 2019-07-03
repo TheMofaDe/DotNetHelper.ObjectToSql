@@ -75,11 +75,11 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
                         break;
                     case ActionType.Update:
                         sql = sqlServerObjectToSql.BuildQuery("EmployeeWithMappedColumnAndPrimaryKeySqlColumn", type, obj, attributes);
-                        Assert.AreEqual(sql, $@"UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName2,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey");
+                        Assert.AreEqual(sql, $@"UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName2,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey");
                         break;
                     case ActionType.Upsert:
                         sql = sqlServerObjectToSql.BuildQuery("EmployeeWithMappedColumnAndPrimaryKeySqlColumn", type, obj, attributes);
-                        Assert.AreEqual(sql, $@"IF EXISTS ( SELECT * FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey ) BEGIN UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName2,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey END ELSE BEGIN INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName2,@LastName,@PrimaryKey) END");
+                        Assert.AreEqual(sql, $@"IF EXISTS ( SELECT * FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey ) BEGIN UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName2,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey END ELSE BEGIN INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName2,@LastName,@PrimaryKey) END");
                         break;
                     case ActionType.Delete:
                         sql = sqlServerObjectToSql.BuildQuery("EmployeeWithMappedColumnAndPrimaryKeySqlColumn", type, obj, attributes);

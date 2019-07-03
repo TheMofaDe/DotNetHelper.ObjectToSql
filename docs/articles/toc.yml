@@ -1,7 +1,7 @@
 - name: Home
-  href: docs/index.md
+  href: ~/index.md
 - name: Articles
-  href: docs/articles/
+  href: ~/articles/
   homepage: articles/sample.md
 - name: API Documentation
-  href: docs/api/DotNetHelper_ObjectToSql.html  # if project name have a dash or dot you need to replace it with a underscore 
+  href: ~/api/DotNetHelper_ObjectToSql.html  # if project name have a dash you need to replace it with a underscore 

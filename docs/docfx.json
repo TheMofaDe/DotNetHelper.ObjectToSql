@@ -41,11 +41,13 @@
       "_enableSearch": true,
       //   "_navRel": "../toc.html",
       //    "_appLogoPath": "logo/lucene-net-color.png",
-      "_appFooter": "Copyright © 2019 Joseph McNeal Jr"
+      "_appFooter": "Copyright Â© 2019 Joseph McNeal Jr"
     },
     "dest": "./",
     "globalMetadataFiles": [],
-    "template": [ "statictoc" ],
+    "template": [ "default", "templates/darkfx" ],
+    // [ "statictoc" ], 
+    // ["default","templates/material"],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,

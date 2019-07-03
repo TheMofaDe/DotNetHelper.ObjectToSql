@@ -1,36 +1,36 @@
 ### YamlMime:ManagedReference
 items:
-- uid: DotNetHelper.ObjectToSql.DataTableToSql
-  commentId: T:DotNetHelper.ObjectToSql.DataTableToSql
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql
+  commentId: T:DotNetHelper.ObjectToSql.Services.DataTableToSql
   id: DataTableToSql
-  parent: DotNetHelper.ObjectToSql
+  parent: DotNetHelper.ObjectToSql.Services
   children:
-  - DotNetHelper.ObjectToSql.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  - DotNetHelper.ObjectToSql.DataTableToSql.BuildDbParameterList``1(System.Data.DataRow,System.Func{System.String,System.Object,``0})
-  - DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType)
-  - DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
-  - DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow)
-  - DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow,System.String)
-  - DotNetHelper.ObjectToSql.DataTableToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
-  - DotNetHelper.ObjectToSql.DataTableToSql.DatabaseType
+  - DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList``1(System.Data.DataRow,System.Func{System.String,System.Object,``0})
+  - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType)
+  - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow)
+  - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow,System.String)
+  - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
+  - DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType
   langs:
   - csharp
   - vb
   name: DataTableToSql
   nameWithType: DataTableToSql
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql
   type: Class
   source:
     remote:
-      path: src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DataTableToSql
-    path: ../src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 13
   assemblies:
   - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
   syntax:
     content: public class DataTableToSql
     content.vb: Public Class DataTableToSql
@@ -50,96 +50,96 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.DatabaseType
-  commentId: P:DotNetHelper.ObjectToSql.DataTableToSql.DatabaseType
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType
+  commentId: P:DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType
   id: DatabaseType
-  parent: DotNetHelper.ObjectToSql.DataTableToSql
+  parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
   langs:
   - csharp
   - vb
   name: DatabaseType
   nameWithType: DataTableToSql.DatabaseType
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.DatabaseType
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType
   type: Property
   source:
     remote:
-      path: src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DatabaseType
-    path: ../src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 16
   assemblies:
   - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
   syntax:
     content: public DataBaseType DatabaseType { get; }
     parameters: []
     return:
       type: DotNetHelper.ObjectToSql.Enum.DataBaseType
     content.vb: Public ReadOnly Property DatabaseType As DataBaseType
-  overload: DotNetHelper.ObjectToSql.DataTableToSql.DatabaseType*
+  overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType*
   modifiers.csharp:
   - public
   - get
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  commentId: M:DotNetHelper.ObjectToSql.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
   id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)'
-  parent: DotNetHelper.ObjectToSql.DataTableToSql
+  parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
   langs:
   - csharp
   - vb
   name: DataTableToSql(DataBaseType)
   nameWithType: DataTableToSql.DataTableToSql(DataBaseType)
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.DataTableToSql(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.DataTableToSql(DotNetHelper.ObjectToSql.Enum.DataBaseType)
   type: Constructor
   source:
     remote:
-      path: src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
-    path: ../src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 19
   assemblies:
   - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
   syntax:
     content: public DataTableToSql(DataBaseType type)
     parameters:
     - id: type
       type: DotNetHelper.ObjectToSql.Enum.DataBaseType
     content.vb: Public Sub New(type As DataBaseType)
-  overload: DotNetHelper.ObjectToSql.DataTableToSql.#ctor*
+  overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType)
-  commentId: M:DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType)
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType)
+  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType)
   id: BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType)
-  parent: DotNetHelper.ObjectToSql.DataTableToSql
+  parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
   langs:
   - csharp
   - vb
   name: BuildQuery(DataTable, ActionType)
   nameWithType: DataTableToSql.BuildQuery(DataTable, ActionType)
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery(System.Data.DataTable, DotNetHelper.ObjectToSql.Enum.ActionType)
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable, DotNetHelper.ObjectToSql.Enum.ActionType)
   type: Method
   source:
     remote:
-      path: src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
-    path: ../src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 33
   assemblies:
   - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
   syntax:
     content: public string BuildQuery(DataTable dataTable, ActionType actionType)
     parameters:
@@ -150,33 +150,33 @@ items:
     return:
       type: System.String
     content.vb: Public Function BuildQuery(dataTable As DataTable, actionType As ActionType) As String
-  overload: DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery*
+  overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
-  commentId: M:DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
   id: BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
-  parent: DotNetHelper.ObjectToSql.DataTableToSql
+  parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
   langs:
   - csharp
   - vb
   name: BuildQuery(DataTable, ActionType, String)
   nameWithType: DataTableToSql.BuildQuery(DataTable, ActionType, String)
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery(System.Data.DataTable, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
   type: Method
   source:
     remote:
-      path: src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
-    path: ../src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 47
   assemblies:
   - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
   syntax:
     content: public string BuildQuery(DataTable dataTable, ActionType actionType, string tableName)
     parameters:
@@ -189,33 +189,33 @@ items:
     return:
       type: System.String
     content.vb: Public Function BuildQuery(dataTable As DataTable, actionType As ActionType, tableName As String) As String
-  overload: DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery*
+  overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow)
-  commentId: M:DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow)
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow)
+  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow)
   id: BuildQueryFromRowState(System.Data.DataRow)
-  parent: DotNetHelper.ObjectToSql.DataTableToSql
+  parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
   langs:
   - csharp
   - vb
   name: BuildQueryFromRowState(DataRow)
   nameWithType: DataTableToSql.BuildQueryFromRowState(DataRow)
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow)
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow)
   type: Method
   source:
     remote:
-      path: src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryFromRowState
-    path: ../src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 78
   assemblies:
   - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
   syntax:
     content: public string BuildQueryFromRowState(DataRow dataRow)
     parameters:
@@ -224,33 +224,33 @@ items:
     return:
       type: System.String
     content.vb: Public Function BuildQueryFromRowState(dataRow As DataRow) As String
-  overload: DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState*
+  overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow,System.String)
-  commentId: M:DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow,System.String)
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow,System.String)
   id: BuildQueryFromRowState(System.Data.DataRow,System.String)
-  parent: DotNetHelper.ObjectToSql.DataTableToSql
+  parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
   langs:
   - csharp
   - vb
   name: BuildQueryFromRowState(DataRow, String)
   nameWithType: DataTableToSql.BuildQueryFromRowState(DataRow, String)
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow, System.String)
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow, System.String)
   type: Method
   source:
     remote:
-      path: src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryFromRowState
-    path: ../src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 92
   assemblies:
   - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
   syntax:
     content: public string BuildQueryFromRowState(DataRow dataRow, string tableName)
     parameters:
@@ -261,33 +261,33 @@ items:
     return:
       type: System.String
     content.vb: Public Function BuildQueryFromRowState(dataRow As DataRow, tableName As String) As String
-  overload: DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState*
+  overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.BuildDbParameterList``1(System.Data.DataRow,System.Func{System.String,System.Object,``0})
-  commentId: M:DotNetHelper.ObjectToSql.DataTableToSql.BuildDbParameterList``1(System.Data.DataRow,System.Func{System.String,System.Object,``0})
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList``1(System.Data.DataRow,System.Func{System.String,System.Object,``0})
+  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList``1(System.Data.DataRow,System.Func{System.String,System.Object,``0})
   id: BuildDbParameterList``1(System.Data.DataRow,System.Func{System.String,System.Object,``0})
-  parent: DotNetHelper.ObjectToSql.DataTableToSql
+  parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
   langs:
   - csharp
   - vb
   name: BuildDbParameterList<T>(DataRow, Func<String, Object, T>)
   nameWithType: DataTableToSql.BuildDbParameterList<T>(DataRow, Func<String, Object, T>)
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.BuildDbParameterList<T>(System.Data.DataRow, System.Func<System.String, System.Object, T>)
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList<T>(System.Data.DataRow, System.Func<System.String, System.Object, T>)
   type: Method
   source:
     remote:
-      path: src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
-    path: ../src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 284
   assemblies:
   - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
   summary: "\nBuilds the SQL parameter list.\n"
   example: []
   syntax:
@@ -306,36 +306,36 @@ items:
       type: System.Collections.Generic.List{{T}}
       description: List&lt;DbParameter>.
     content.vb: Public Function BuildDbParameterList(Of T As DbParameter)(row As DataRow, GetNewParameter As Func(Of String, Object, T)) As List(Of T)
-  overload: DotNetHelper.ObjectToSql.DataTableToSql.BuildDbParameterList*
+  overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList*
   nameWithType.vb: DataTableToSql.BuildDbParameterList(Of T)(DataRow, Func(Of String, Object, T))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.ObjectToSql.DataTableToSql.BuildDbParameterList(Of T)(System.Data.DataRow, System.Func(Of System.String, System.Object, T))
+  fullName.vb: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList(Of T)(System.Data.DataRow, System.Func(Of System.String, System.Object, T))
   name.vb: BuildDbParameterList(Of T)(DataRow, Func(Of String, Object, T))
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
-  commentId: M:DotNetHelper.ObjectToSql.DataTableToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
+  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
   id: BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
-  parent: DotNetHelper.ObjectToSql.DataTableToSql
+  parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
   langs:
   - csharp
   - vb
   name: BuildWhereClause(StringBuilder, List<String>)
   nameWithType: DataTableToSql.BuildWhereClause(StringBuilder, List<String>)
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.BuildWhereClause(System.Text.StringBuilder, System.Collections.Generic.List<System.String>)
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause(System.Text.StringBuilder, System.Collections.Generic.List<System.String>)
   type: Method
   source:
     remote:
-      path: src/DotNetHelper.ObjectToSql/DataTableToSql.cs
+      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildWhereClause
-    path: ../src/DotNetHelper.ObjectToSql/DataTableToSql.cs
-    startLine: 303
+    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
+    startLine: 311
   assemblies:
   - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
   summary: "\nBuilds the where clause.\n"
   example: []
   syntax:
@@ -348,20 +348,20 @@ items:
       type: System.Collections.Generic.List{System.String}
       description: The key fields.
     content.vb: Public Sub BuildWhereClause(sqlBuilder As StringBuilder, keyFields As List(Of String))
-  overload: DotNetHelper.ObjectToSql.DataTableToSql.BuildWhereClause*
+  overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause*
   nameWithType.vb: DataTableToSql.BuildWhereClause(StringBuilder, List(Of String))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.ObjectToSql.DataTableToSql.BuildWhereClause(System.Text.StringBuilder, System.Collections.Generic.List(Of System.String))
+  fullName.vb: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause(System.Text.StringBuilder, System.Collections.Generic.List(Of System.String))
   name.vb: BuildWhereClause(StringBuilder, List(Of String))
 references:
-- uid: DotNetHelper.ObjectToSql
-  commentId: N:DotNetHelper.ObjectToSql
-  name: DotNetHelper.ObjectToSql
-  nameWithType: DotNetHelper.ObjectToSql
-  fullName: DotNetHelper.ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services
+  commentId: N:DotNetHelper.ObjectToSql.Services
+  name: DotNetHelper.ObjectToSql.Services
+  nameWithType: DotNetHelper.ObjectToSql.Services
+  fullName: DotNetHelper.ObjectToSql.Services
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -654,11 +654,11 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.DatabaseType*
-  commentId: Overload:DotNetHelper.ObjectToSql.DataTableToSql.DatabaseType
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType
   name: DatabaseType
   nameWithType: DataTableToSql.DatabaseType
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.DatabaseType
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType
 - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
   commentId: T:DotNetHelper.ObjectToSql.Enum.DataBaseType
   parent: DotNetHelper.ObjectToSql.Enum
@@ -670,16 +670,16 @@ references:
   name: DotNetHelper.ObjectToSql.Enum
   nameWithType: DotNetHelper.ObjectToSql.Enum
   fullName: DotNetHelper.ObjectToSql.Enum
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.#ctor*
-  commentId: Overload:DotNetHelper.ObjectToSql.DataTableToSql.#ctor
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor
   name: DataTableToSql
   nameWithType: DataTableToSql.DataTableToSql
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.DataTableToSql
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery*
-  commentId: Overload:DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.DataTableToSql
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery
   name: BuildQuery
   nameWithType: DataTableToSql.BuildQuery
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.BuildQuery
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery
 - uid: System.Data.DataTable
   commentId: T:System.Data.DataTable
   parent: System.Data
@@ -706,11 +706,11 @@ references:
   name: System.Data
   nameWithType: System.Data
   fullName: System.Data
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState*
-  commentId: Overload:DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState
   name: BuildQueryFromRowState
   nameWithType: DataTableToSql.BuildQueryFromRowState
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.BuildQueryFromRowState
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState
 - uid: System.Data.DataRow
   commentId: T:System.Data.DataRow
   parent: System.Data
@@ -718,11 +718,11 @@ references:
   name: DataRow
   nameWithType: DataRow
   fullName: System.Data.DataRow
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.BuildDbParameterList*
-  commentId: Overload:DotNetHelper.ObjectToSql.DataTableToSql.BuildDbParameterList
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList
   name: BuildDbParameterList
   nameWithType: DataTableToSql.BuildDbParameterList
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.BuildDbParameterList
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList
 - uid: System.Func{System.String,System.Object,{T}}
   commentId: T:System.Func{System.String,System.Object,``0}
   parent: System
@@ -943,11 +943,11 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
-- uid: DotNetHelper.ObjectToSql.DataTableToSql.BuildWhereClause*
-  commentId: Overload:DotNetHelper.ObjectToSql.DataTableToSql.BuildWhereClause
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause
   name: BuildWhereClause
   nameWithType: DataTableToSql.BuildWhereClause
-  fullName: DotNetHelper.ObjectToSql.DataTableToSql.BuildWhereClause
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause
 - uid: System.Text.StringBuilder
   commentId: T:System.Text.StringBuilder
   parent: System.Text

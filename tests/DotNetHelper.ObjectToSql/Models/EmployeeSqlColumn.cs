@@ -71,7 +71,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Insert:
                     return $"INSERT INTO EmployeeWithPrimaryKeySqlColumn ([FirstName],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey)";
                 case ActionType.Update:
-                    return $"UPDATE EmployeeWithPrimaryKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey";
+                    return $"UPDATE EmployeeWithPrimaryKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey";
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
@@ -97,7 +97,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Insert:
                     return $"INSERT INTO EmployeeWithManyPrimaryKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
                 case ActionType.Update:
-                    return $"UPDATE EmployeeWithManyPrimaryKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey,[PrimaryKey1]=@PrimaryKey1 WHERE [PrimaryKey]=@PrimaryKey AND [PrimaryKey1]=@PrimaryKey1"; 
+                    return $"UPDATE EmployeeWithManyPrimaryKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey AND [PrimaryKey1]=@PrimaryKey1"; 
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
@@ -147,9 +147,14 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Insert:
                     return $"INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey)";
                 case ActionType.Update:
-                    return $"UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey";
+                    return $"UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey";
                 case ActionType.Upsert:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                    return $"IF EXISTS ( SELECT * FROM Employee WHERE [PrimaryKey]=@PrimaryKey ) " +
+                           "BEGIN " +
+                           "UPDATE Employee SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey " +
+                           "END ELSE BEGIN " +
+                           "INSERT INTO Employee ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey) " +
+                           "END"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 default:
@@ -199,7 +204,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Insert:
                     return $"INSERT INTO EmployeeWithIgnorePropertyAndKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)"; // NO TEST CASE FOR tis
                 case ActionType.Update:
-                    return $"UPDATE EmployeeWithIgnorePropertyAndKeySqlColumn SET [LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey";
+                    return $"UPDATE EmployeeWithIgnorePropertyAndKeySqlColumn SET [LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey";
                 case ActionType.Upsert:
                     return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                 case ActionType.Delete:

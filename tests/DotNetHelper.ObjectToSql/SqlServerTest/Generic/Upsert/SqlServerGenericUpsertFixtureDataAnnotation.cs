@@ -8,17 +8,18 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
     public class SqlServerGenericUpsertFixtureDataAnnotation
     {
 
-        public StringBuilder StringBuilder { get; set; }
+
+        public ActionType ActionType { get; } = ActionType.Upsert;
 
         [SetUp]
         public void Setup()
         {
-            StringBuilder = new StringBuilder();
+            
         }
         [TearDown]
         public void Teardown()
         {
-            StringBuilder.Clear();
+            
         }
 
 
@@ -27,12 +28,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
             var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>( nameof(Employee),ActionType.Upsert);
-            Assert.AreEqual(sql, "IF EXISTS ( SELECT * FROM Employee WHERE [PrimaryKey]=@PrimaryKey ) " +
-                                                      "BEGIN " +
-                                                      "UPDATE Employee SET [FirstName2]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [PrimaryKey]=@PrimaryKey " +
-                                                      "END ELSE BEGIN " +
-                                                      "INSERT INTO Employee ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey) " +
-                                                      "END");
+            Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType));
         }
 
 

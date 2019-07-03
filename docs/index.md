@@ -15,7 +15,7 @@ public class Employee {
             var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
             var insertSql = sqlServerObjectToSql.BuildQuery<Employee>("TableNameGoesHere", ActionType.Insert);
 // OR 
-            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert);
+            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,typeof(Employee));
 ```
 
 ## How to Use With Dynamic Objects
@@ -24,7 +24,7 @@ public class Employee {
             dynamic record = new ExpandoObject();
             record.FirstName = "John";
             record.LastName = "Doe";
-            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,record,null);
+            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,record);
 ```
 
 
@@ -32,7 +32,7 @@ public class Employee {
 ```csharp
             var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
             var anonymousObject = new { FirstName = "John" , LastName = "Doe"}
-            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,anonymousObject,null);
+            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,anonymousObject);
 ```
 ## Output
 ```sql

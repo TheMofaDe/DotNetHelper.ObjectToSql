@@ -5,11 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace DotNetHelper.ObjectToSql.Enum
-   | DotNetHelper.ObjectToSql </title>
+    <title>Custom Attributes | DotNetHelper.ObjectToSql </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace DotNetHelper.ObjectToSql.Enum
-   | DotNetHelper.ObjectToSql ">
+    <meta name="title" content="Custom Attributes | DotNetHelper.ObjectToSql ">
     <meta name="generator" content="docfx 2.43.1.0">
     
     <link rel="shortcut icon" href="../logo/favicon.ico">
@@ -17,7 +15,7 @@
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <meta property="docfx:navrel" content="">
+    <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     
     <meta property="docfx:rel" content="../">
@@ -78,25 +76,30 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DotNetHelper.ObjectToSql.Enum">
-  
-  <h1 id="DotNetHelper_ObjectToSql_Enum" data-uid="DotNetHelper.ObjectToSql.Enum" class="text-break">Namespace DotNetHelper.ObjectToSql.Enum
-  </h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="enums">Enums
-  </h3>
-      <h4><a class="xref" href="DotNetHelper.ObjectToSql.Enum.ActionType.html">ActionType</a></h4>
-      <section></section>
-      <h4><a class="xref" href="DotNetHelper.ObjectToSql.Enum.DataBaseType.html">DataBaseType</a></h4>
-      <section></section>
-      <h4><a class="xref" href="DotNetHelper.ObjectToSql.Enum.ScriptType.html">ScriptType</a></h4>
-      <section></section>
-      <h4><a class="xref" href="DotNetHelper.ObjectToSql.Enum.SerializableType.html">SerializableType</a></h4>
-      <section></section>
-      <h4><a class="xref" href="DotNetHelper.ObjectToSql.Enum.SQLJoinType.html">SQLJoinType</a></h4>
-      <section></section>
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="custom-attributes">Custom Attributes</h1>
+
+<p>In the secnarios where you need to build Update,Delete, or Upsert Statements. Attributes are use to generate the where clause. This library has its own custom attributes and can also work with the common DataAnnotation attributes. With the support of DataAnnotation this means this library could be paired with your favorite orm like Dapper or Enitity Framework</p>
+<h6 id="mark-a-property-as-an-identity-fields">Mark a property as an identity fields.</h6>
+<pre><code class="lang-csharp">[SqlColumn(SetIsIdentityKey = true)]
+OR 
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+</code></pre>
+<h6 id="mark-a-property-as-a-key-field">Mark a property as a key field.</h6>
+<pre><code class="lang-csharp">[SqlColumn(SetIsIdentityKey = true)]
+OR 
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+</code></pre>
+<!-- 
+#### Storing Columns As CSV, XML, & JSON
+
+```csharp
+[SqlColumn(SerializableType = SerializableType.Json)]
+or 
+[SqlColumn(SerializableType = SerializableType.Xml)]
+or 
+[SqlColumn(SerializableType = SerializableType.Csv)]
+```  -->
 </article>
           </div>
           
@@ -104,6 +107,9 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/docs/articles/attribute.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

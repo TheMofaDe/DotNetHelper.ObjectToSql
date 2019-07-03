@@ -4,8 +4,8 @@
 
 || [**Documentation**][Docs] • [**API**][Docs-API] • [**Getting Started**][Docs-getting-started] • [**Samples**](https://github.com/themofade/) || 
 
-| AppVeyor | AzureDevOps | 
-| :-----: | :-----: | 
+| AppVeyor | AzureDevOps |
+| :-----: | :-----: |
 | [![Build status](https://ci.appveyor.com/api/projects/status/0ogx4qcayyfnhkhk?svg=true)](https://ci.appveyor.com/project/TheMofaDe/dotnethelper-objecttosql)  | [![Build Status](https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_apis/build/status/TheMofaDe.DotNetHelper.ObjectToSql?branchName=master)](https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_build/latest?definitionId=5&branchName=master)  
 
 | Package  | Tests | Code Coverage |
@@ -18,10 +18,10 @@
 + UPDATE
 + DELETE
 + UPSERT
-+ INSERT with OUTPUT Columns 
-+ UPDATE with OUTPUT Columns 
-+ DELETE with OUTPUT Columns 
-+ UPSERT with OUTPUT Columns 
++ INSERT with OUTPUT Columns
++ UPDATE with OUTPUT Columns
++ DELETE with OUTPUT Columns
++ UPSERT with OUTPUT Columns
 
 #### Supports the following databases with more to come
 + SQLSERVER
@@ -29,7 +29,7 @@
 + MYSQL
 
 
-## H ow to Use With Generics Types
+## How to Use With Generics Types
 ```csharp
 public class Employee {
       public FirstName { get; set; }
