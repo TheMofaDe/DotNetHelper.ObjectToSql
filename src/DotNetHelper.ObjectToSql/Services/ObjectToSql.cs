@@ -671,7 +671,7 @@ namespace DotNetHelper.ObjectToSql.Services
             if (DatabaseType == DataBaseType.Sqlite)
             {
                 var whereClause = sb2.ToString();
-                sqlBuilder.Append($"{sb1} {whereClause} ON CONFLICT DO UPDATE SET ");
+                sqlBuilder.Append($"{sb1} ON CONFLICT DO UPDATE SET ");
              
                 var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
 
@@ -712,7 +712,7 @@ namespace DotNetHelper.ObjectToSql.Services
             if (DatabaseType == DataBaseType.Sqlite)
             {
                 var whereClause = sb2.ToString();
-                sqlBuilder.Append($"{sb1} {whereClause} ON CONFLICT DO UPDATE SET ");
+                sqlBuilder.Append($"{sb1} ON CONFLICT DO UPDATE SET ");
 
                 var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
 
@@ -752,7 +752,7 @@ namespace DotNetHelper.ObjectToSql.Services
             if (DatabaseType == DataBaseType.Sqlite)
             {
                 var whereClause = sb2.ToString();
-                sqlBuilder.Append($"{sb1} {whereClause} ON CONFLICT DO UPDATE SET ");
+                sqlBuilder.Append($"{sb1} ON CONFLICT DO UPDATE SET ");
 
                 var updateFields = GetNonKeyFields(IncludeNonPublicAccessor,type);
 
