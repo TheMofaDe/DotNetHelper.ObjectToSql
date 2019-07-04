@@ -1,0 +1,544 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SQLTable
+   | DotNetHelper.ObjectToSql </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SQLTable
+   | DotNetHelper.ObjectToSql ">
+    <meta name="generator" content="docfx 2.43.1.0">
+    
+    <link rel="shortcut icon" href="../logo/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc">
+    <meta property="docfx:tocrel" content="toc">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../index.html" title="Home">Home</a>
+                      </li>
+                      <li>
+                          <a href="../articles/sample.md" title="Articles">Articles</a>
+                      </li>
+                      <li>
+                          <a href="../api/DotNetHelper_ObjectToSql.html" title="API Documentation">API Documentation</a>
+                      </li>
+                </ul>    </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper.ObjectToSql.Attribute.html" title="DotNetHelper.ObjectToSql.Attribute" class="">DotNetHelper.ObjectToSql.Attribute</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.html" title="DBTableAttribute" class="">DBTableAttribute</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html" title="SqlColumnAttribute" class="">SqlColumnAttribute</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper.ObjectToSql.Enum.html" title="DotNetHelper.ObjectToSql.Enum" class="">DotNetHelper.ObjectToSql.Enum</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Enum.ActionType.html" title="ActionType" class="">ActionType</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Enum.DataBaseType.html" title="DataBaseType" class="">DataBaseType</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Enum.ScriptType.html" title="ScriptType" class="">ScriptType</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Enum.SerializableType.html" title="SerializableType" class="">SerializableType</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Enum.SQLJoinType.html" title="SQLJoinType" class="">SQLJoinType</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper.ObjectToSql.Exceptions.html" title="DotNetHelper.ObjectToSql.Exceptions" class="">DotNetHelper.ObjectToSql.Exceptions</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html" title="EmptyArgumentException" class="">EmptyArgumentException</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html" title="MissingIdentityKeyAttributeException" class="">MissingIdentityKeyAttributeException</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html" title="MissingKeyAttributeException" class="">MissingKeyAttributeException</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.html" title="NoValidRuntimeAttributeException" class="">NoValidRuntimeAttributeException</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper.ObjectToSql.Extension.html" title="DotNetHelper.ObjectToSql.Extension" class="">DotNetHelper.ObjectToSql.Extension</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html" title="MemberWrapperExtension" class="">MemberWrapperExtension</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper.ObjectToSql.Helper.html" title="DotNetHelper.ObjectToSql.Helper" class="">DotNetHelper.ObjectToSql.Helper</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Helper.DBTypeMap.html" title="DBTypeMap" class="">DBTypeMap</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html" title="SqlSyntaxHelper" class="">SqlSyntaxHelper</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper.ObjectToSql.Model.html" title="DotNetHelper.ObjectToSql.Model" class="">DotNetHelper.ObjectToSql.Model</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.html" title="RunTimeAttributeMap" class="">RunTimeAttributeMap</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html" title="RunTimeAttributeMapExtension" class="">RunTimeAttributeMapExtension</a>
+                          </li>
+                          <li class="active">
+                            <a href="DotNetHelper.ObjectToSql.Model.SQLTable.html" title="SQLTable" class="active">SQLTable</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DotNetHelper.ObjectToSql.Services.html" title="DotNetHelper.ObjectToSql.Services" class="">DotNetHelper.ObjectToSql.Services</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Services.DataTableToSql.html" title="DataTableToSql" class="">DataTableToSql</a>
+                          </li>
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Services.ObjectToSql.html" title="ObjectToSql" class="">ObjectToSql</a>
+                          </li>
+                        </ul>  </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable">
+  
+  
+  <h1 id="DotNetHelper_ObjectToSql_Model_SQLTable" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable" class="text-break">Class SQLTable
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">SQLTable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DotNetHelper.ObjectToSql.Model.html">DotNetHelper.ObjectToSql.Model</a></h6>
+  <h6><strong>Assembly</strong>: DotNetHelper.ObjectToSql.dll</h6>
+  <h5 id="DotNetHelper_ObjectToSql_Model_SQLTable_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SQLTable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/apiSpec/new?filename=DotNetHelper_ObjectToSql_Model_SQLTable__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Model.SQLTable.%23ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Model/SqlTable.cs/#L29">View Source</a>
+  </span>
+  <a id="DotNetHelper_ObjectToSql_Model_SQLTable__ctor_" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.#ctor*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Model_SQLTable__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_String_" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)">SQLTable(DataBaseType, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SQLTable(DataBaseType dbType, string tableName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DotNetHelper.ObjectToSql.Enum.DataBaseType.html">DataBaseType</a></td>
+        <td><span class="parametername">dbType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">tableName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/apiSpec/new?filename=DotNetHelper_ObjectToSql_Model_SQLTable__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Type_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Model.SQLTable.%23ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Model/SqlTable.cs/#L20">View Source</a>
+  </span>
+  <a id="DotNetHelper_ObjectToSql_Model_SQLTable__ctor_" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.#ctor*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Model_SQLTable__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Type_" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Type)">SQLTable(DataBaseType, Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SQLTable(DataBaseType dbType, Type type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DotNetHelper.ObjectToSql.Enum.DataBaseType.html">DataBaseType</a></td>
+        <td><span class="parametername">dbType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/apiSpec/new?filename=DotNetHelper_ObjectToSql_Model_SQLTable_DatabaseName.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Model.SQLTable.DatabaseName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Model/SqlTable.cs/#L13">View Source</a>
+  </span>
+  <a id="DotNetHelper_ObjectToSql_Model_SQLTable_DatabaseName_" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.DatabaseName*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Model_SQLTable_DatabaseName" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.DatabaseName">DatabaseName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DatabaseName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/apiSpec/new?filename=DotNetHelper_ObjectToSql_Model_SQLTable_DBType.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Model.SQLTable.DBType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Model/SqlTable.cs/#L10">View Source</a>
+  </span>
+  <a id="DotNetHelper_ObjectToSql_Model_SQLTable_DBType_" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.DBType*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Model_SQLTable_DBType" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.DBType">DBType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataBaseType DBType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DotNetHelper.ObjectToSql.Enum.DataBaseType.html">DataBaseType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/apiSpec/new?filename=DotNetHelper_ObjectToSql_Model_SQLTable_FullNameWithBrackets.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithBrackets%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Model/SqlTable.cs/#L15">View Source</a>
+  </span>
+  <a id="DotNetHelper_ObjectToSql_Model_SQLTable_FullNameWithBrackets_" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithBrackets*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Model_SQLTable_FullNameWithBrackets" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithBrackets">FullNameWithBrackets</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FullNameWithBrackets { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/apiSpec/new?filename=DotNetHelper_ObjectToSql_Model_SQLTable_FullNameWithOutBrackets.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithOutBrackets%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Model/SqlTable.cs/#L17">View Source</a>
+  </span>
+  <a id="DotNetHelper_ObjectToSql_Model_SQLTable_FullNameWithOutBrackets_" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithOutBrackets*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Model_SQLTable_FullNameWithOutBrackets" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithOutBrackets">FullNameWithOutBrackets</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FullNameWithOutBrackets { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/apiSpec/new?filename=DotNetHelper_ObjectToSql_Model_SQLTable_SchemaName.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Model.SQLTable.SchemaName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Model/SqlTable.cs/#L12">View Source</a>
+  </span>
+  <a id="DotNetHelper_ObjectToSql_Model_SQLTable_SchemaName_" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.SchemaName*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Model_SQLTable_SchemaName" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.SchemaName">SchemaName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SchemaName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/apiSpec/new?filename=DotNetHelper_ObjectToSql_Model_SQLTable_TableName.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Model.SQLTable.TableName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Model/SqlTable.cs/#L11">View Source</a>
+  </span>
+  <a id="DotNetHelper_ObjectToSql_Model_SQLTable_TableName_" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.TableName*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Model_SQLTable_TableName" data-uid="DotNetHelper.ObjectToSql.Model.SQLTable.TableName">TableName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TableName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/apiSpec/new?filename=DotNetHelper_ObjectToSql_Model_SQLTable.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Model.SQLTable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Model/SqlTable.cs/#L8" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2019 Joseph McNeal Jr
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

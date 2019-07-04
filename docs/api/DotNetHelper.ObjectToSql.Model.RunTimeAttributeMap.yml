@@ -1,0 +1,1374 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  commentId: T:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  id: RunTimeAttributeMap
+  parent: DotNetHelper.ObjectToSql.Model
+  children:
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.#ctor(System.String,System.Collections.Generic.List{System.Attribute})
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute``1
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName
+  langs:
+  - csharp
+  - vb
+  name: RunTimeAttributeMap
+  nameWithType: RunTimeAttributeMap
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  type: Class
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: RunTimeAttributeMap
+    path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Model
+  syntax:
+    content: public class RunTimeAttributeMap
+    content.vb: Public Class RunTimeAttributeMap
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName
+  commentId: P:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName
+  id: PropertyName
+  parent: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  langs:
+  - csharp
+  - vb
+  name: PropertyName
+  nameWithType: RunTimeAttributeMap.PropertyName
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: PropertyName
+    path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
+    startLine: 13
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Model
+  syntax:
+    content: public string PropertyName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property PropertyName As String
+  overload: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes
+  commentId: P:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes
+  id: Attributes
+  parent: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  langs:
+  - csharp
+  - vb
+  name: Attributes
+  nameWithType: RunTimeAttributeMap.Attributes
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: Attributes
+    path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
+    startLine: 14
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Model
+  syntax:
+    content: public List<Attribute> Attributes { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.Attribute}
+    content.vb: Public ReadOnly Property Attributes As List(Of Attribute)
+  overload: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.#ctor(System.String,System.Collections.Generic.List{System.Attribute})
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.#ctor(System.String,System.Collections.Generic.List{System.Attribute})
+  id: '#ctor(System.String,System.Collections.Generic.List{System.Attribute})'
+  parent: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  langs:
+  - csharp
+  - vb
+  name: RunTimeAttributeMap(String, List<Attribute>)
+  nameWithType: RunTimeAttributeMap.RunTimeAttributeMap(String, List<Attribute>)
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.RunTimeAttributeMap(System.String, System.Collections.Generic.List<System.Attribute>)
+  type: Constructor
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: .ctor
+    path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
+    startLine: 16
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Model
+  syntax:
+    content: public RunTimeAttributeMap(string propertyName, List<Attribute> attributes)
+    parameters:
+    - id: propertyName
+      type: System.String
+    - id: attributes
+      type: System.Collections.Generic.List{System.Attribute}
+    content.vb: Public Sub New(propertyName As String, attributes As List(Of Attribute))
+  overload: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.#ctor*
+  nameWithType.vb: RunTimeAttributeMap.RunTimeAttributeMap(String, List(Of Attribute))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.RunTimeAttributeMap(System.String, System.Collections.Generic.List(Of System.Attribute))
+  name.vb: RunTimeAttributeMap(String, List(Of Attribute))
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute``1
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute``1
+  id: GetCustomAttribute``1
+  parent: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  langs:
+  - csharp
+  - vb
+  name: GetCustomAttribute<T>()
+  nameWithType: RunTimeAttributeMap.GetCustomAttribute<T>()
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute<T>()
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: GetCustomAttribute
+    path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
+    startLine: 22
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Model
+  syntax:
+    content: >-
+      public T GetCustomAttribute<T>()
+
+          where T : Attribute
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Function GetCustomAttribute(Of T As Attribute) As T
+  overload: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute*
+  nameWithType.vb: RunTimeAttributeMap.GetCustomAttribute(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute(Of T)()
+  name.vb: GetCustomAttribute(Of T)()
+references:
+- uid: DotNetHelper.ObjectToSql.Model
+  commentId: N:DotNetHelper.ObjectToSql.Model
+  name: DotNetHelper.ObjectToSql.Model
+  nameWithType: DotNetHelper.ObjectToSql.Model
+  fullName: DotNetHelper.ObjectToSql.Model
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap,System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  parent: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+  definition: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap,System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  name: GetMemberValue(Object, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  nameWithType: RunTimeAttributeMapExtension.GetMemberValue(Object, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(System.Object, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  nameWithType.vb: RunTimeAttributeMapExtension.GetMemberValue(Object, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  fullName.vb: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(System.Object, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  name.vb: GetMemberValue(Object, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+    name: GetMemberValue
+    nameWithType: RunTimeAttributeMapExtension.GetMemberValue
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+    name: GetMemberValue
+    nameWithType: RunTimeAttributeMapExtension.GetMemberValue
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  parent: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+  definition: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  name: ShouldMemberBeIgnored()
+  nameWithType: RunTimeAttributeMapExtension.ShouldMemberBeIgnored()
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored()
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+    name: ShouldMemberBeIgnored
+    nameWithType: RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+    name: ShouldMemberBeIgnored
+    nameWithType: RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  parent: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+  definition: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  name: IsMemberASerializableColumn()
+  nameWithType: RunTimeAttributeMapExtension.IsMemberASerializableColumn()
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn()
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn
+    name: IsMemberASerializableColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberASerializableColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn
+    name: IsMemberASerializableColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberASerializableColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  parent: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+  definition: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  name: GetNameFromCustomAttributeOrDefault()
+  nameWithType: RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault()
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault()
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+    name: GetNameFromCustomAttributeOrDefault
+    nameWithType: RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+    name: GetNameFromCustomAttributeOrDefault
+    nameWithType: RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  parent: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+  definition: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  name: IsMemberAnIdentityColumn()
+  nameWithType: RunTimeAttributeMapExtension.IsMemberAnIdentityColumn()
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn()
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+    name: IsMemberAnIdentityColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+    name: IsMemberAnIdentityColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  parent: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+  definition: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  name: IsMemberAPrimaryKeyColumn()
+  nameWithType: RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn()
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn()
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+    name: IsMemberAPrimaryKeyColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+    name: IsMemberAPrimaryKeyColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap,System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap,System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  isExternal: true
+  name: GetMemberValue(RunTimeAttributeMap, Object, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  nameWithType: RunTimeAttributeMapExtension.GetMemberValue(RunTimeAttributeMap, Object, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap, System.Object, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  nameWithType.vb: RunTimeAttributeMapExtension.GetMemberValue(RunTimeAttributeMap, Object, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  fullName.vb: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap, System.Object, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  name.vb: GetMemberValue(RunTimeAttributeMap, Object, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap,System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+    name: GetMemberValue
+    nameWithType: RunTimeAttributeMapExtension.GetMemberValue
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap,System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+    name: GetMemberValue
+    nameWithType: RunTimeAttributeMapExtension.GetMemberValue
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+  commentId: T:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+  parent: DotNetHelper.ObjectToSql.Model
+  name: RunTimeAttributeMapExtension
+  nameWithType: RunTimeAttributeMapExtension
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  name: ShouldMemberBeIgnored(RunTimeAttributeMap)
+  nameWithType: RunTimeAttributeMapExtension.ShouldMemberBeIgnored(RunTimeAttributeMap)
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+    name: ShouldMemberBeIgnored
+    nameWithType: RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+    name: ShouldMemberBeIgnored
+    nameWithType: RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  name: IsMemberASerializableColumn(RunTimeAttributeMap)
+  nameWithType: RunTimeAttributeMapExtension.IsMemberASerializableColumn(RunTimeAttributeMap)
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+    name: IsMemberASerializableColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberASerializableColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+    name: IsMemberASerializableColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberASerializableColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  name: GetNameFromCustomAttributeOrDefault(RunTimeAttributeMap)
+  nameWithType: RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(RunTimeAttributeMap)
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+    name: GetNameFromCustomAttributeOrDefault
+    nameWithType: RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+    name: GetNameFromCustomAttributeOrDefault
+    nameWithType: RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  name: IsMemberAnIdentityColumn(RunTimeAttributeMap)
+  nameWithType: RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(RunTimeAttributeMap)
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+    name: IsMemberAnIdentityColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+    name: IsMemberAnIdentityColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  name: IsMemberAPrimaryKeyColumn(RunTimeAttributeMap)
+  nameWithType: RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(RunTimeAttributeMap)
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  spec.csharp:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+    name: IsMemberAPrimaryKeyColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+    name: IsMemberAPrimaryKeyColumn
+    nameWithType: RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName*
+  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName
+  name: PropertyName
+  nameWithType: RunTimeAttributeMap.PropertyName
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes*
+  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes
+  name: Attributes
+  nameWithType: RunTimeAttributeMap.Attributes
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes
+- uid: System.Collections.Generic.List{System.Attribute}
+  commentId: T:System.Collections.Generic.List{System.Attribute}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Attribute>
+  nameWithType: List<Attribute>
+  fullName: System.Collections.Generic.List<System.Attribute>
+  nameWithType.vb: List(Of Attribute)
+  fullName.vb: System.Collections.Generic.List(Of System.Attribute)
+  name.vb: List(Of Attribute)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Attribute
+    name: Attribute
+    nameWithType: Attribute
+    fullName: System.Attribute
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Attribute
+    name: Attribute
+    nameWithType: Attribute
+    fullName: System.Attribute
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.#ctor*
+  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.#ctor
+  name: RunTimeAttributeMap
+  nameWithType: RunTimeAttributeMap.RunTimeAttributeMap
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.RunTimeAttributeMap
+- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute*
+  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute
+  name: GetCustomAttribute
+  nameWithType: RunTimeAttributeMap.GetCustomAttribute
+  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T

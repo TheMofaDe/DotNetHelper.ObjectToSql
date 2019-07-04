@@ -1,0 +1,442 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Business/TheMoFaDe/Code/TheMofaDe/DotNetHelper.ObjectToSql/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.html",
+          "hash": "dYV+sK1UHCHZhol6YxQ80g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html",
+          "hash": "fvSd8PunCrsZcSf86nHwMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Attribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Attribute.html",
+          "hash": "AknPbCt3shjoZjTKo/pWtg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Enum.ActionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Enum.ActionType.html",
+          "hash": "9KV3uQgDAcpV0BjFQkzsSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Enum.DataBaseType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Enum.DataBaseType.html",
+          "hash": "rZd5/QDq+GTTZccHdcalYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Enum.SQLJoinType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Enum.SQLJoinType.html",
+          "hash": "TyI7LtrNTU3uvWKY44KCWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Enum.ScriptType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Enum.ScriptType.html",
+          "hash": "JYnKwmk4Jt87+og+WLwIew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Enum.SerializableType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Enum.SerializableType.html",
+          "hash": "KZ7ZP+pr86WQz3AEKJqLVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Enum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Enum.html",
+          "hash": "BnbP/jCM6ulOypcg5c8IXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html",
+          "hash": "0JK77h9sThreaznN9YjPQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html",
+          "hash": "UNB75hleNNV0tPFbiDr0Gw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html",
+          "hash": "S+yfoL21Ji5p336iHc2bYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.html",
+          "hash": "Kd+ebDQacQvUo0tpCVdixg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Exceptions.html",
+          "hash": "wwrfmPLZldD9MfebHFxmuA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html",
+          "hash": "icGr1IFpI0WMpwSFCRZTCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Extension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Extension.html",
+          "hash": "SDplEEzc3+n+k0Sr4Tg8lg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Helper.DBTypeMap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Helper.DBTypeMap.html",
+          "hash": "zz/2XingGsW0043H7215nA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html",
+          "hash": "dzKScJvUT3jQJm3C0Mb9bQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Helper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Helper.html",
+          "hash": "Ddx18rRtFH1x10DFFUVrVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.html",
+          "hash": "15srsqO86xOzO+CO1z3GDw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html",
+          "hash": "LP9qhVXzVAXs68WIyMJTVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Model.SQLTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Model.SQLTable.html",
+          "hash": "H4PpZrNqw5SaG0bbW5+nLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Model.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Model.html",
+          "hash": "sNClqAzwKN0uEJKKTy72vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Services.DataTableToSql.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Services.DataTableToSql.html",
+          "hash": "YlCbs/qS+C27nSt3yPox8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html",
+          "hash": "G0wSbJVhc7uQ6NSR/G6dYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.ObjectToSql.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.ObjectToSql.Services.html",
+          "hash": "cH/nMyC5fW2rxxLtmhazZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/attribute.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/attribute.html",
+          "hash": "KwuLmaWhmsv7ENdRuSHC8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/sample.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/sample.html",
+          "hash": "A90/fvAjV5IvMC5IoRSMYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/icon.png",
+          "link_to_path": "C:\\Business\\TheMoFaDe\\Code\\TheMofaDe\\DotNetHelper.ObjectToSql\\docs/images/icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "MO1LzjdM1QS6IEXiBSe4Iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "langwordmapping/langwordMapping.yml",
+      "output": {
+        "resource": {
+          "relative_path": "langwordmapping/langwordMapping.yml",
+          "link_to_path": "C:\\Business\\TheMoFaDe\\Code\\TheMofaDe\\DotNetHelper.ObjectToSql\\docs/langwordmapping/langwordMapping.yml"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 26,
+          "skipped_file_count": 26
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

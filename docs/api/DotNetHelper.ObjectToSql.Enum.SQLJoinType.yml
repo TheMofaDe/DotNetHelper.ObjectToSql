@@ -1,0 +1,116 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  id: SQLJoinType
+  parent: DotNetHelper.ObjectToSql.Enum
+  children:
+  - DotNetHelper.ObjectToSql.Enum.SQLJoinType.INNER
+  - DotNetHelper.ObjectToSql.Enum.SQLJoinType.LEFT
+  langs:
+  - csharp
+  - vb
+  name: SQLJoinType
+  nameWithType: SQLJoinType
+  fullName: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  type: Enum
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: SQLJoinType
+    path: ../src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs
+    startLine: 2
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: public enum SQLJoinType
+    content.vb: Public Enum SQLJoinType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType.LEFT
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SQLJoinType.LEFT
+  id: LEFT
+  parent: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  langs:
+  - csharp
+  - vb
+  name: LEFT
+  nameWithType: SQLJoinType.LEFT
+  fullName: DotNetHelper.ObjectToSql.Enum.SQLJoinType.LEFT
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: LEFT
+    path: ../src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs
+    startLine: 8
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  summary: "\nSQL-style LEFT OUTER JOIN semantics: All records of the left table are returned. If the right table holds no matching records, the right \nside&apos;s columns contain NULL. \n"
+  example: []
+  syntax:
+    content: LEFT = 1
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType.INNER
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SQLJoinType.INNER
+  id: INNER
+  parent: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  langs:
+  - csharp
+  - vb
+  name: INNER
+  nameWithType: SQLJoinType.INNER
+  fullName: DotNetHelper.ObjectToSql.Enum.SQLJoinType.INNER
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: INNER
+    path: ../src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs
+    startLine: 12
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  summary: "\nSQL-style INNER JOIN semantics: Only records that produce a match are returned.\n"
+  example: []
+  syntax:
+    content: INNER = 2
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: DotNetHelper.ObjectToSql.Enum
+  commentId: N:DotNetHelper.ObjectToSql.Enum
+  name: DotNetHelper.ObjectToSql.Enum
+  nameWithType: DotNetHelper.ObjectToSql.Enum
+  fullName: DotNetHelper.ObjectToSql.Enum
+- uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: SQLJoinType
+  nameWithType: SQLJoinType
+  fullName: DotNetHelper.ObjectToSql.Enum.SQLJoinType

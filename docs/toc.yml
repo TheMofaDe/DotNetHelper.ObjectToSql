@@ -1,7 +1,11 @@
+- name: Test
+  href: ~/index.md
+- name: Test2
+  href: ~/
 - name: Home
-  href: index.md
+  href: index.html
 - name: Articles
   href: articles/
-  homepage: articles/sample.md
+  homepage: articles/sample.html
 - name: API Documentation
   href: api/DotNetHelper_ObjectToSql.html  # if project name have a dash you need to replace it with a underscore 

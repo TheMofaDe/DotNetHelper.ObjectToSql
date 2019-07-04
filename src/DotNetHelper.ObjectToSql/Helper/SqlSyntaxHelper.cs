@@ -266,7 +266,10 @@ namespace DotNetHelper.ObjectToSql.Helper
                 case DataBaseType.MySql:
                     return $@"IF ( {selectStatement} ) THEN BEGIN {onTrueSql} END; ELSE BEGIN {onFalseSql} END; END IF;";
                 case DataBaseType.Sqlite:
-                    break;
+                    // https://stackoverflow.com/questions/418898/sqlite-upsert-not-insert-or-replace/4330694
+                    //  throw new NotSupportedException("SQLITE d");
+                    //  return $@"CASE WHEN ( {selectStatement} ) THEN {onTrueSql} ELSE  {onFalseSql} ;";
+                    return null;
                 case DataBaseType.Oracle:
                     break;
                 case DataBaseType.Oledb:

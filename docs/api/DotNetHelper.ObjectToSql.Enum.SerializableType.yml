@@ -1,0 +1,178 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.SerializableType
+  id: SerializableType
+  parent: DotNetHelper.ObjectToSql.Enum
+  children:
+  - DotNetHelper.ObjectToSql.Enum.SerializableType.CSV
+  - DotNetHelper.ObjectToSql.Enum.SerializableType.JSON
+  - DotNetHelper.ObjectToSql.Enum.SerializableType.NONE
+  - DotNetHelper.ObjectToSql.Enum.SerializableType.XML
+  langs:
+  - csharp
+  - vb
+  name: SerializableType
+  nameWithType: SerializableType
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType
+  type: Enum
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: SerializableType
+    path: ../src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
+    startLine: 2
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: public enum SerializableType
+    content.vb: Public Enum SerializableType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType.NONE
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SerializableType.NONE
+  id: NONE
+  parent: DotNetHelper.ObjectToSql.Enum.SerializableType
+  langs:
+  - csharp
+  - vb
+  name: NONE
+  nameWithType: SerializableType.NONE
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType.NONE
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: NONE
+    path: ../src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
+    startLine: 5
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: NONE = 0
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.SerializableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType.XML
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SerializableType.XML
+  id: XML
+  parent: DotNetHelper.ObjectToSql.Enum.SerializableType
+  langs:
+  - csharp
+  - vb
+  name: XML
+  nameWithType: SerializableType.XML
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType.XML
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: XML
+    path: ../src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
+    startLine: 6
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: XML = 1
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.SerializableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType.JSON
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SerializableType.JSON
+  id: JSON
+  parent: DotNetHelper.ObjectToSql.Enum.SerializableType
+  langs:
+  - csharp
+  - vb
+  name: JSON
+  nameWithType: SerializableType.JSON
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType.JSON
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: JSON
+    path: ../src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
+    startLine: 7
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: JSON = 2
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.SerializableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType.CSV
+  commentId: F:DotNetHelper.ObjectToSql.Enum.SerializableType.CSV
+  id: CSV
+  parent: DotNetHelper.ObjectToSql.Enum.SerializableType
+  langs:
+  - csharp
+  - vb
+  name: CSV
+  nameWithType: SerializableType.CSV
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType.CSV
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: CSV
+    path: ../src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
+    startLine: 8
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: CSV = 3
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.SerializableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: DotNetHelper.ObjectToSql.Enum
+  commentId: N:DotNetHelper.ObjectToSql.Enum
+  name: DotNetHelper.ObjectToSql.Enum
+  nameWithType: DotNetHelper.ObjectToSql.Enum
+  fullName: DotNetHelper.ObjectToSql.Enum
+- uid: DotNetHelper.ObjectToSql.Enum.SerializableType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.SerializableType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: SerializableType
+  nameWithType: SerializableType
+  fullName: DotNetHelper.ObjectToSql.Enum.SerializableType

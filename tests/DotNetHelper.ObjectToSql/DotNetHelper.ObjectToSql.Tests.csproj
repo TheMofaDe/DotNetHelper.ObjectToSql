@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="SqliteTest\Generic\Get\" />
     <Folder Include="SqlServerTest\Generic\Get\" />
   </ItemGroup>
 

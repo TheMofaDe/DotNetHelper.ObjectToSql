@@ -663,15 +663,31 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            var sb = new StringBuilder();
-            BuildUpdateQuery<T>(sb, tableName);
             var sb1 = new StringBuilder();
             BuildInsertQuery<T>(sb1, tableName);
             var sb2 = new StringBuilder();
             BuildWhereClause(sb2, keyFields);
 
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+            if (DatabaseType == DataBaseType.Sqlite)
+            {
+                var whereClause = sb2.ToString();
+                sqlBuilder.Append($"{sb1} {whereClause} ON CONFLICT DO UPDATE SET ");
+             
+                var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
 
+                // Build Set fields
+                updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+
+                // Build Where clause.
+                sqlBuilder.Append($" {whereClause}");
+            }
+            else
+            {
+                var sb = new StringBuilder();
+                BuildUpdateQuery<T>(sb, tableName);
+                sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+            }
         }
 
         /// <summary>
@@ -682,18 +698,37 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="tableName">Name of the table.</param>
         private void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys) where T : class
         {
-            var sb = new StringBuilder();
-            BuildUpdateQuery<T>(sb, tableName, overrideKeys);
-            var sb1 = new StringBuilder();
-            BuildInsertQuery<T>(sb1, tableName);
-
             var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
             var keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
+
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
+
+
+            var sb1 = new StringBuilder();
+            BuildInsertQuery<T>(sb1, tableName);
             var sb2 = new StringBuilder();
             BuildWhereClause(sb2, keyFields);
 
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+            if (DatabaseType == DataBaseType.Sqlite)
+            {
+                var whereClause = sb2.ToString();
+                sqlBuilder.Append($"{sb1} {whereClause} ON CONFLICT DO UPDATE SET ");
 
+                var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
+
+                // Build Set fields
+                updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+
+                // Build Where clause.
+                sqlBuilder.Append($" {whereClause}");
+            }
+            else
+            {
+                var sb = new StringBuilder();
+                BuildUpdateQuery<T>(sb, tableName,overrideKeys);
+                sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+            }
         }
 
 
@@ -705,19 +740,35 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="tableName">Name of the table.</param>
         private void BuildUpsertQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
-
-            var keyFields = GetKeyFields(IncludeNonPublicAccessor, type);
+            var keyFields = GetKeyFields(IncludeNonPublicAccessor,type);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            var sb = new StringBuilder();
-            BuildUpdateQuery(sb, tableName, type);
+
             var sb1 = new StringBuilder();
-            BuildInsertQuery(sb1, tableName, type);
+            BuildInsertQuery(sb1, tableName,type);
             var sb2 = new StringBuilder();
             BuildWhereClause(sb2, keyFields);
 
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+            if (DatabaseType == DataBaseType.Sqlite)
+            {
+                var whereClause = sb2.ToString();
+                sqlBuilder.Append($"{sb1} {whereClause} ON CONFLICT DO UPDATE SET ");
 
+                var updateFields = GetNonKeyFields(IncludeNonPublicAccessor,type);
+
+                // Build Set fields
+                updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+
+                // Build Where clause.
+                sqlBuilder.Append($" {whereClause}");
+            }
+            else
+            {
+                var sb = new StringBuilder();
+                BuildUpdateQuery(sb, tableName,type);
+                sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+            }
         }
 
 

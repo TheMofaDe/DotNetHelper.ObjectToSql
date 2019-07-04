@@ -23,7 +23,7 @@
         "dest": "api"
       },
       {
-        "files": [ "articles/**/*.md", "*.md", "toc.yml" ]
+        "files": [  "*.md", "*.yml"  ,"articles/*.md", "articles/*.yml"  ]
       }
     ],
     "resource": [
@@ -45,8 +45,8 @@
     },
     "dest": "./",
     "globalMetadataFiles": [],
-    "template": [ "default", "templates/darkfx" ],
-    // [ "statictoc" ], 
+    "template": [ "statictoc"],
+    // "template": [ "default", "templates/darkfx" ],
     // ["default","templates/material"],
     "postProcessors": [],
     "markdownEngineName": "markdig",

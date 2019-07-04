@@ -1,0 +1,1008 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  commentId: T:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  id: SqlSyntaxHelper
+  parent: DotNetHelper.ObjectToSql.Helper
+  children:
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement(System.String,System.String,System.String)
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars(System.String)
+  langs:
+  - csharp
+  - vb
+  name: SqlSyntaxHelper
+  nameWithType: SqlSyntaxHelper
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  type: Class
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: SqlSyntaxHelper
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public class SqlSyntaxHelper
+    content.vb: Public Class SqlSyntaxHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+  id: EnclosedValueLookup
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: EnclosedValueLookup
+  nameWithType: SqlSyntaxHelper.EnclosedValueLookup
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: EnclosedValueLookup
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 14
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public Dictionary<Type, string> EnclosedValueLookup { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.Type,System.String}
+    content.vb: Public ReadOnly Property EnclosedValueLookup As Dictionary(Of Type, String)
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
+  id: DataBaseType
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: DataBaseType
+  nameWithType: SqlSyntaxHelper.DataBaseType
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: DataBaseType
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 15
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public DataBaseType DataBaseType { get; }
+    parameters: []
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    content.vb: Public ReadOnly Property DataBaseType As DataBaseType
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)'
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: SqlSyntaxHelper(DataBaseType)
+  nameWithType: SqlSyntaxHelper.SqlSyntaxHelper(DataBaseType)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.SqlSyntaxHelper(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  type: Constructor
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: .ctor
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 16
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public SqlSyntaxHelper(DataBaseType type)
+    parameters:
+    - id: type
+      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    content.vb: Public Sub New(type As DataBaseType)
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
+  id: GetKeywordEscapeOpenChar
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: GetKeywordEscapeOpenChar()
+  nameWithType: SqlSyntaxHelper.GetKeywordEscapeOpenChar()
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar()
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: GetKeywordEscapeOpenChar
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 155
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public string GetKeywordEscapeOpenChar()
+    return:
+      type: System.String
+    content.vb: Public Function GetKeywordEscapeOpenChar As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
+  id: GetKeywordEscapeClosedChar
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: GetKeywordEscapeClosedChar()
+  nameWithType: SqlSyntaxHelper.GetKeywordEscapeClosedChar()
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar()
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: GetKeywordEscapeClosedChar
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 177
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public string GetKeywordEscapeClosedChar()
+    return:
+      type: System.String
+    content.vb: Public Function GetKeywordEscapeClosedChar As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars(System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars(System.String)
+  id: RemoveKeywordEscapeChars(System.String)
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: RemoveKeywordEscapeChars(String)
+  nameWithType: SqlSyntaxHelper.RemoveKeywordEscapeChars(String)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: RemoveKeywordEscapeChars
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 199
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public string RemoveKeywordEscapeChars(string value)
+    parameters:
+    - id: value
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Function RemoveKeywordEscapeChars(value As String) As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
+  id: GetEnclosedValueChar(System.Type)
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: GetEnclosedValueChar(Type)
+  nameWithType: SqlSyntaxHelper.GetEnclosedValueChar(Type)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: GetEnclosedValueChar
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 207
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public string GetEnclosedValueChar(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+    return:
+      type: System.String
+    content.vb: Public Function GetEnclosedValueChar(type As Type) As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement(System.String,System.String,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement(System.String,System.String,System.String)
+  id: BuildIfExistStatement(System.String,System.String,System.String)
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: BuildIfExistStatement(String, String, String)
+  nameWithType: SqlSyntaxHelper.BuildIfExistStatement(String, String, String)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement(System.String, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildIfExistStatement
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 259
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public string BuildIfExistStatement(string selectStatement, string onTrueSql, string onFalseSql)
+    parameters:
+    - id: selectStatement
+      type: System.String
+    - id: onTrueSql
+      type: System.String
+    - id: onFalseSql
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Function BuildIfExistStatement(selectStatement As String, onTrueSql As String, onFalseSql As String) As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
+  id: BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: BuildTableExistStatement(SQLTable, String, String)
+  nameWithType: SqlSyntaxHelper.BuildTableExistStatement(SQLTable, String, String)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildTableExistStatement
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 283
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public string BuildTableExistStatement(SQLTable sqlTable, string onTrueSql, string onFalseSql)
+    parameters:
+    - id: sqlTable
+      type: DotNetHelper.ObjectToSql.Model.SQLTable
+    - id: onTrueSql
+      type: System.String
+    - id: onFalseSql
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Function BuildTableExistStatement(sqlTable As SQLTable, onTrueSql As String, onFalseSql As String) As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
+  id: ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: ConvertParameterSqlToReadable(List<DbParameter>, String, Encoding)
+  nameWithType: SqlSyntaxHelper.ConvertParameterSqlToReadable(List<DbParameter>, String, Encoding)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List<System.Data.Common.DbParameter>, System.String, System.Text.Encoding)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ConvertParameterSqlToReadable
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 319
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public string ConvertParameterSqlToReadable(List<DbParameter> parameters, string query, Encoding encoding)
+    parameters:
+    - id: parameters
+      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+    - id: query
+      type: System.String
+    - id: encoding
+      type: System.Text.Encoding
+    return:
+      type: System.String
+    content.vb: Public Function ConvertParameterSqlToReadable(parameters As List(Of DbParameter), query As String, encoding As Encoding) As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable*
+  nameWithType.vb: SqlSyntaxHelper.ConvertParameterSqlToReadable(List(Of DbParameter), String, Encoding)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List(Of System.Data.Common.DbParameter), System.String, System.Text.Encoding)
+  name.vb: ConvertParameterSqlToReadable(List(Of DbParameter), String, Encoding)
+references:
+- uid: DotNetHelper.ObjectToSql.Helper
+  commentId: N:DotNetHelper.ObjectToSql.Helper
+  name: DotNetHelper.ObjectToSql.Helper
+  nameWithType: DotNetHelper.ObjectToSql.Helper
+  fullName: DotNetHelper.ObjectToSql.Helper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+  name: EnclosedValueLookup
+  nameWithType: SqlSyntaxHelper.EnclosedValueLookup
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+- uid: System.Collections.Generic.Dictionary{System.Type,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.Type,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<Type, String>
+  nameWithType: Dictionary<Type, String>
+  fullName: System.Collections.Generic.Dictionary<System.Type, System.String>
+  nameWithType.vb: Dictionary(Of Type, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, System.String)
+  name.vb: Dictionary(Of Type, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
+  name: DataBaseType
+  nameWithType: SqlSyntaxHelper.DataBaseType
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.DataBaseType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: DataBaseType
+  nameWithType: DataBaseType
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
+- uid: DotNetHelper.ObjectToSql.Enum
+  commentId: N:DotNetHelper.ObjectToSql.Enum
+  name: DotNetHelper.ObjectToSql.Enum
+  nameWithType: DotNetHelper.ObjectToSql.Enum
+  fullName: DotNetHelper.ObjectToSql.Enum
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor
+  name: SqlSyntaxHelper
+  nameWithType: SqlSyntaxHelper.SqlSyntaxHelper
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.SqlSyntaxHelper
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
+  name: GetKeywordEscapeOpenChar
+  nameWithType: SqlSyntaxHelper.GetKeywordEscapeOpenChar
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
+  name: GetKeywordEscapeClosedChar
+  nameWithType: SqlSyntaxHelper.GetKeywordEscapeClosedChar
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars
+  name: RemoveKeywordEscapeChars
+  nameWithType: SqlSyntaxHelper.RemoveKeywordEscapeChars
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.RemoveKeywordEscapeChars
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar
+  name: GetEnclosedValueChar
+  nameWithType: SqlSyntaxHelper.GetEnclosedValueChar
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement
+  name: BuildIfExistStatement
+  nameWithType: SqlSyntaxHelper.BuildIfExistStatement
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement
+  name: BuildTableExistStatement
+  nameWithType: SqlSyntaxHelper.BuildTableExistStatement
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement
+- uid: DotNetHelper.ObjectToSql.Model.SQLTable
+  commentId: T:DotNetHelper.ObjectToSql.Model.SQLTable
+  parent: DotNetHelper.ObjectToSql.Model
+  name: SQLTable
+  nameWithType: SQLTable
+  fullName: DotNetHelper.ObjectToSql.Model.SQLTable
+- uid: DotNetHelper.ObjectToSql.Model
+  commentId: N:DotNetHelper.ObjectToSql.Model
+  name: DotNetHelper.ObjectToSql.Model
+  nameWithType: DotNetHelper.ObjectToSql.Model
+  fullName: DotNetHelper.ObjectToSql.Model
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable
+  name: ConvertParameterSqlToReadable
+  nameWithType: SqlSyntaxHelper.ConvertParameterSqlToReadable
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable
+- uid: System.Collections.Generic.List{System.Data.Common.DbParameter}
+  commentId: T:System.Collections.Generic.List{System.Data.Common.DbParameter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<DbParameter>
+  nameWithType: List<DbParameter>
+  fullName: System.Collections.Generic.List<System.Data.Common.DbParameter>
+  nameWithType.vb: List(Of DbParameter)
+  fullName.vb: System.Collections.Generic.List(Of System.Data.Common.DbParameter)
+  name.vb: List(Of DbParameter)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Text.Encoding
+  commentId: T:System.Text.Encoding
+  parent: System.Text
+  isExternal: true
+  name: Encoding
+  nameWithType: Encoding
+  fullName: System.Text.Encoding
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text

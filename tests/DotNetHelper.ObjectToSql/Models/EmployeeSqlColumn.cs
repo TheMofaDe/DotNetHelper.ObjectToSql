@@ -149,7 +149,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case ActionType.Update:
                     return $"UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey";
                 case ActionType.Upsert:
-                    return $"IF EXISTS ( SELECT * FROM Employee WHERE [PrimaryKey]=@PrimaryKey ) " +
+                    return $"IF EXISTS ( SELECT TOP 1 * FROM Employee WHERE [PrimaryKey]=@PrimaryKey ) " +
                            "BEGIN " +
                            "UPDATE Employee SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey " +
                            "END ELSE BEGIN " +
