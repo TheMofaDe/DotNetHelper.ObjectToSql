@@ -47,9 +47,4 @@ INSERT INTO TableNameGoHere ([FirstName],[LastName]) VALUES (@FirstName,@LastNam
 
     
 
-> [!NOTE]
-> <note content>
-> [!WARNING]
-> <warning content>    
-
 

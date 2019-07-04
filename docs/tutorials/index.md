@@ -50,7 +50,7 @@ DELETE FROM EmployeeWithPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey
 ```
 
 > [!WARNING]
-> <Executing the a update,upsert, or delete query with a type that doesn't have any key attributes with lead to an InvalidOperationException being thrown >  
+> Executing the a update,upsert, or delete query with a type that doesn't have any key attributes with lead to an InvalidOperationException being thrown   
 
 
 <!-- ### Supported Attributes 

@@ -293,6 +293,7 @@ items:
   syntax:
     content: >-
       public List<T> BuildDbParameterList<T>(DataRow row, Func<string, object, T> GetNewParameter)
+
           where T : DbParameter
     parameters:
     - id: row

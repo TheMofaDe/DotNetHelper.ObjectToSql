@@ -47,7 +47,9 @@ items:
       <AttributeUsage(AttributeTargets.Class Or AttributeTargets.Property)>
 
       Public Class SqlColumnAttribute
+
           Inherits Attribute
+
           Implements _Attribute
   seealso:
   - linkId: System.Attribute

@@ -18,14 +18,20 @@
 
     "content": [
       {
-        "files": [ "**/*.yml", "**/**/*.yml" ],
+        "files": [ "*.yml","*.md" ],
         "src": "api",
         "dest": "api"
       },
       {
-        "files": [  "index.md", "toc.yml"  ],
-        "src": "tutorials",
-        "dest": "tutorials"
+        "files": [ "*.md","*.yml" ],
+        "src": ".",
+        "dest": "."
+      },
+
+      {
+        "files": [ "*.md", "*.yml" ],
+        "src": "./tutorials",
+        "dest": "./tutorials"
       }
     ],
     "resource": [
@@ -52,9 +58,9 @@
     },
     "dest": "./",
     "globalMetadataFiles": [],
-    //"template": [ "statictoc"],
+    "template": [ "statictoc"],
     // "template": [ "default", "templates/darkfx" ],
-     "template": [ "statictoc", "templates/material" ],
+    // "template": [ "statictoc", "templates/material" ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,

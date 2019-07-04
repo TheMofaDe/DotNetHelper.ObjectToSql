@@ -1,4 +1,5 @@
 {
+  "DotNetHelper.ObjectToSql": "DotNetHelper.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Attribute": "DotNetHelper.ObjectToSql.Attribute.yml",
   "DotNetHelper.ObjectToSql.Attribute.DBTableAttribute": "DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.yml",
   "DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.JoinType": "DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.yml",
@@ -18,6 +19,11 @@
   "DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetMaxColumnSize": "DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.yml",
   "DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetNullable": "DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.yml",
   "DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetPrimaryKey": "DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.yml",
+  "DotNetHelper.ObjectToSql.Class": "DotNetHelper.ObjectToSql.Class.yml",
+  "DotNetHelper.ObjectToSql.Class.#ctor": "DotNetHelper.ObjectToSql.Class.yml",
+  "DotNetHelper.ObjectToSql.Class.A": "DotNetHelper.ObjectToSql.Class.yml",
+  "DotNetHelper.ObjectToSql.Class1": "DotNetHelper.ObjectToSql.Class1.yml",
+  "DotNetHelper.ObjectToSql.Class1.#ctor": "DotNetHelper.ObjectToSql.Class1.yml",
   "DotNetHelper.ObjectToSql.Enum": "DotNetHelper.ObjectToSql.Enum.yml",
   "DotNetHelper.ObjectToSql.Enum.ActionType": "DotNetHelper.ObjectToSql.Enum.ActionType.yml",
   "DotNetHelper.ObjectToSql.Enum.ActionType.Delete": "DotNetHelper.ObjectToSql.Enum.ActionType.yml",

@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql
+  commentId: N:DotNetHelper.ObjectToSql
+  id: DotNetHelper.ObjectToSql
+  children:
+  - DotNetHelper.ObjectToSql.Class
+  - DotNetHelper.ObjectToSql.Class1
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper.ObjectToSql
+  nameWithType: DotNetHelper.ObjectToSql
+  fullName: DotNetHelper.ObjectToSql
+  type: Namespace
+  assemblies:
+  - DotNetHelper.ObjectToSql
+references:
+- uid: DotNetHelper.ObjectToSql.Class1
+  commentId: T:DotNetHelper.ObjectToSql.Class1
+  name: Class1
+  nameWithType: Class1
+  fullName: DotNetHelper.ObjectToSql.Class1
+- uid: DotNetHelper.ObjectToSql.Class
+  commentId: T:DotNetHelper.ObjectToSql.Class
+  name: Class
+  nameWithType: Class
+  fullName: DotNetHelper.ObjectToSql.Class
