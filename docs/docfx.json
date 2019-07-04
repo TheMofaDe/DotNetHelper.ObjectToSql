@@ -23,7 +23,9 @@
         "dest": "api"
       },
       {
-        "files": [  "*.md", "*.yml"  ,"articles/*.md", "articles/*.yml"  ]
+        "files": [  "index.md", "toc.yml"  ],
+        "src": "tutorials",
+        "dest": "tutorials"
       }
     ],
     "resource": [
@@ -34,20 +36,25 @@
     ],
     "globalMetadata": {
       "_appTitle": "DotNetHelper.ObjectToSql",
+      "_gitContribute": {
+        "repo": "https://github.com/TheMofaDe/DotNetHelper.ObjectToSql",
+        "branch": "master",
+        "apiSpecFolder": "docs-ref-overwrite"
+      },
       "_disableContribution": false,
       "_disableBreadcrumb": false,
       "_appFaviconPath": "logo/favicon.ico",
       "_disableNavbar": false,
       "_enableSearch": true,
-      //   "_navRel": "../toc.html",
+       "_navRel": "toc.html",
       //    "_appLogoPath": "logo/lucene-net-color.png",
       "_appFooter": "Copyright © 2019 Joseph McNeal Jr"
     },
     "dest": "./",
     "globalMetadataFiles": [],
-    "template": [ "statictoc"],
+    //"template": [ "statictoc"],
     // "template": [ "default", "templates/darkfx" ],
-    // ["default","templates/material"],
+     "template": [ "statictoc", "templates/material" ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
