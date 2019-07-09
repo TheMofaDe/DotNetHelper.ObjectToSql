@@ -18,18 +18,18 @@
 
     "content": [
       {
-        "files": [ "*.yml","*.md" ],
+        "files": [ "*.yml", "*.md" ],
         "src": "api",
         "dest": "api"
       },
       {
-        "files": [ "*.md","*.yml" ],
+        "files": [ "*.md", "*.yml" ],
         "src": ".",
         "dest": "."
       },
 
       {
-        "files": [ "*.md", "*.yml" ],
+        "files": [ "*.md", "*.yml", "**/*.md", "**/*.yml" ],
         "src": "./tutorials",
         "dest": "./tutorials"
       }
@@ -52,15 +52,15 @@
       "_appFaviconPath": "logo/favicon.ico",
       "_disableNavbar": false,
       "_enableSearch": true,
-       "_navRel": "toc.html",
+      "_navRel": "toc.html",
       //    "_appLogoPath": "logo/lucene-net-color.png",
-      "_appFooter": "Copyright © 2019 Joseph McNeal Jr"
+      "_appFooter": "Copyright © 2019  <strong>Joseph McNeal Jr</strong>"
     },
     "dest": "./",
     "globalMetadataFiles": [],
-    "template": [ "statictoc"],
-    // "template": [ "default", "templates/darkfx" ],
-    // "template": [ "statictoc", "templates/material" ],
+    
+    //"template": [ "default", "statictoc", "templates/material" ],
+    "template": [ "default", "statictoc", "templates/darkfx" ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,

@@ -27,6 +27,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <summary>
         /// Builds the query based on the specified actionType & table name
         /// </summary>
+        /// <param name="dataTable"></param>
         /// <param name="actionType">INSERT,DELETE,UPDATE,OR UPSERT</param>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentOutOfRangeException"> invalid actionType </exception>
@@ -41,6 +42,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// Builds the query based on the specified actionType & table name
         /// </summary>
         /// <param name="tableName">Name of the table.</param>
+        /// <param name="dataTable"></param>
         /// <param name="actionType">INSERT,DELETE,UPDATE,OR UPSERT</param>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentOutOfRangeException"> invalid actionType </exception>
@@ -155,15 +157,12 @@ namespace DotNetHelper.ObjectToSql.Services
 
         #region INSERT METHODS
 
-
-
-
-
         /// <summary>
         /// Builds the insert query.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="dataTable"></param>
         /// <param name="tableName">Name of the table.</param>
         private void BuildInsertQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null)
         {
@@ -191,13 +190,12 @@ namespace DotNetHelper.ObjectToSql.Services
 
         #region UPDATE METHODS
 
-
-
         /// <summary>
         /// Builds the update query.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="dataTable"></param>
         /// <param name="tableName">Name of the table.</param>
         private void BuildUpdateQuery(StringBuilder sqlBuilder,DataTable dataTable, string tableName = null) 
         {
@@ -225,14 +223,12 @@ namespace DotNetHelper.ObjectToSql.Services
 
         #region  DELETE METHODS
 
-
-
-
         /// <summary>
         /// Builds the delete query.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="dataTable"></param>
         /// <param name="tableName">Name of the table.</param>
         private void BuildDeleteQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null) 
         {
@@ -249,12 +245,12 @@ namespace DotNetHelper.ObjectToSql.Services
 
         #region UPSERT METHODS
 
-
         /// <summary>
         /// Builds the upsert query.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="dataTable"></param>
         /// <param name="tableName">Name of the table.</param>
         private void BuildUpsertQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null) 
         {
@@ -282,7 +278,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns>List&lt;DbParameter&gt;.</returns>
-        public List<T> BuildDbParameterList<T>(DataRow row, Func<string, object, T> GetNewParameter) where T : DbParameter
+        public List<T> BuildDbParameterList<T>(DataRow row, Func<string, object, T> getNewParameter) where T : DbParameter
         {
             var list = new List<T>() { };
             foreach (DataColumn column in row.Table.Columns)
@@ -290,11 +286,11 @@ namespace DotNetHelper.ObjectToSql.Services
                 // if(column.AutoIncrement) continue;
                 if (row.RowState == DataRowState.Deleted)
                 {
-                    list.Add(GetNewParameter($"@{column.ColumnName}", row[column.ColumnName,DataRowVersion.Original ]));
+                    list.Add(getNewParameter($"@{column.ColumnName}", row[column.ColumnName,DataRowVersion.Original ]));
                 }
                 else
                 {
-                    list.Add(GetNewParameter($"@{column.ColumnName}", row[column.ColumnName]));
+                    list.Add(getNewParameter($"@{column.ColumnName}", row[column.ColumnName]));
                 }
 
             }

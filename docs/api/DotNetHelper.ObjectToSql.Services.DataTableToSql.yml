@@ -136,7 +136,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -173,7 +173,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 47
+    startLine: 49
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -212,7 +212,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryFromRowState
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 78
+    startLine: 80
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -247,7 +247,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryFromRowState
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 92
+    startLine: 94
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -284,7 +284,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 284
+    startLine: 280
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -292,13 +292,13 @@ items:
   example: []
   syntax:
     content: >-
-      public List<T> BuildDbParameterList<T>(DataRow row, Func<string, object, T> GetNewParameter)
+      public List<T> BuildDbParameterList<T>(DataRow row, Func<string, object, T> getNewParameter)
 
           where T : DbParameter
     parameters:
     - id: row
       type: System.Data.DataRow
-    - id: GetNewParameter
+    - id: getNewParameter
       type: System.Func{System.String,System.Object,{T}}
     typeParameters:
     - id: T
@@ -306,7 +306,7 @@ items:
     return:
       type: System.Collections.Generic.List{{T}}
       description: List&lt;DbParameter>.
-    content.vb: Public Function BuildDbParameterList(Of T As DbParameter)(row As DataRow, GetNewParameter As Func(Of String, Object, T)) As List(Of T)
+    content.vb: Public Function BuildDbParameterList(Of T As DbParameter)(row As DataRow, getNewParameter As Func(Of String, Object, T)) As List(Of T)
   overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList*
   nameWithType.vb: DataTableToSql.BuildDbParameterList(Of T)(DataRow, Func(Of String, Object, T))
   modifiers.csharp:
@@ -333,7 +333,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildWhereClause
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 311
+    startLine: 307
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services

@@ -10,17 +10,17 @@
     <meta name="title" content="Primary Key &amp; Identity Fields | DotNetHelper.ObjectToSql ">
     <meta name="generator" content="docfx 2.43.1.0">
     
-    <link rel="shortcut icon" href="../logo/favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="shortcut icon" href="../../logo/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <meta property="docfx:navrel" content="toc.html">
-    <meta property="docfx:tocrel" content="../toc">
+    <meta property="docfx:tocrel" content="toc.html">
     
-    <meta property="docfx:rel" content="../">
+    <meta property="docfx:rel" content="../../">
     
-  </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
@@ -34,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -47,13 +47,13 @@
                 
                 <ul class="nav level1 navbar-nav">
                       <li>
-                          <a href="../index.html" title="Home">Home</a>
+                          <a href="index.html" title="Home">Home</a>
                       </li>
                       <li>
-                          <a href="../tutorials/index.html" title="Tutorials">Tutorials</a>
+                          <a href="../index.html" title="Tutorials">Tutorials</a>
                       </li>
                       <li>
-                          <a href="../api/DotNetHelper.ObjectToSql.html" title="API Documentation">API Documentation</a>
+                          <a href="api/DotNetHelper.ObjectToSql.html" title="API Documentation">API Documentation</a>
                       </li>
                 </ul>    </div>
           </div>
@@ -78,7 +78,29 @@
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
-        <div class="article row grid">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <a class="">Generating SQL</a>
+                    </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="primary-key--identity-fields">Primary Key &amp; Identity Fields</h1>
@@ -120,8 +142,24 @@ public class Employee {
 </code></pre>
 <pre><code class="lang-sql">DELETE FROM EmployeeWithPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey
 </code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Executing the a update,upsert, or delete query with a type that doesn't have any key attributes with lead to an InvalidOperationException being thrown</p>
+</div>
 <!-- ### Supported Attributes 
 this library has its own custom attributes and can also work with the common DataAnnotation attributes. With the support of DataAnnotation this means this library could be paired with your favorite orm like Dapper or Enitity Framework -->
+<h1 id="custom-attributes">Custom Attributes</h1>
+<p>In the secnarios where you need to build Update,Delete, or Upsert Statements. Attributes are use to generate the where clause. This library has its own custom attributes and can also work with the common DataAnnotation attributes. With the support of DataAnnotation this means this library could be paired with your favorite orm like Dapper or Enitity Framework</p>
+<h6 id="mark-a-property-as-an-identity-fields">Mark a property as an identity fields.</h6>
+<pre><code class="lang-csharp">[SqlColumn(SetIsIdentityKey = true)]
+OR 
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+</code></pre>
+<h6 id="mark-a-property-as-a-key-field">Mark a property as a key field.</h6>
+<pre><code class="lang-csharp">[SqlColumn(SetIsIdentityKey = true)]
+OR 
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+</code></pre>
 </article>
           </div>
           
@@ -130,7 +168,7 @@ this library has its own custom attributes and can also work with the common Dat
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/docs/tutorials/sample.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/docs/tutorials/GenerateSql/index.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -149,15 +187,15 @@ this library has its own custom attributes and can also work with the common Dat
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2019 Joseph McNeal Jr
+            Copyright © 2019  <strong>Joseph McNeal Jr</strong>
             
           </div>
         </div>
       </footer>
     </div>
     
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
   </body>
 </html>

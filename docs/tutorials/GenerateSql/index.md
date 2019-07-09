@@ -24,6 +24,7 @@ public class Employee {
 ```
 
 using either version of the model above I can now generate update,delete, & upsert statment by doing the following
+ 
 
 ```csharp
    var actionType = ActionType.Update; // A enum with the values Insert,Update,Delete,Upsert
@@ -48,5 +49,26 @@ UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [PrimaryKe
 DELETE FROM EmployeeWithPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey
 ```
 
+> [!WARNING]
+> Executing the a update,upsert, or delete query with a type that doesn't have any key attributes with lead to an InvalidOperationException being thrown   
+
+
 <!-- ### Supported Attributes 
 this library has its own custom attributes and can also work with the common DataAnnotation attributes. With the support of DataAnnotation this means this library could be paired with your favorite orm like Dapper or Enitity Framework -->
+
+
+# Custom Attributes
+In the secnarios where you need to build Update,Delete, or Upsert Statements. Attributes are use to generate the where clause. This library has its own custom attributes and can also work with the common DataAnnotation attributes. With the support of DataAnnotation this means this library could be paired with your favorite orm like Dapper or Enitity Framework 
+
+###### Mark a property as an identity fields. 
+```csharp
+[SqlColumn(SetIsIdentityKey = true)]
+OR 
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+```
+
+###### Mark a property as a key field. 
+```csharp
+[SqlColumn(SetIsIdentityKey = true)]
+OR 
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
