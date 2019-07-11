@@ -1,9 +1,16 @@
+# NAME : name of item this field allows white space 
+# HREF : on item click redirect lnk
 - name: Home
-  href: index.html
-  homepage: index.html
-- name: Attributes # white space is allowed & this will show under the filter
-  href: Attributes/attribute.html
-  topicUid: Tutorial.Attibutes
-- name: How to Generate SQL # white is allowed
-  href: GenerateSQL/index.html
-  topicUid: Tutorial.GenerateSQL
+  topicHref: index.md
+- name: Attributes 
+  href: Attributes/attribute.md
+  # topicUid: Tutorial.Attibutes
+  topicHref: Attributes/attribute.md
+- name: How to Generate SQL 
+  items:
+    - name: "How-to1"
+      href: ../
+      topicHref: GenerateSQL/key.md
+    - name: "How-to2"
+      href: 
+      topicHref: GenerateSQL/test.md

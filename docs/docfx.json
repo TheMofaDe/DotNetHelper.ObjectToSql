@@ -58,9 +58,10 @@
     },
     "dest": "./",
     "globalMetadataFiles": [],
-    
+
     //"template": [ "default", "statictoc", "templates/material" ],
     "template": [ "default", "statictoc", "templates/darkfx" ],
+    //"template": [ "default", "statictoc", "templates/darkfx" ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,

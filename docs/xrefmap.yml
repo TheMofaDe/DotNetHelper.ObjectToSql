@@ -1488,3 +1488,9 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
   nameWithType: ObjectToSql.IncludeNonPublicAccessor
+- uid: Tutorial.GenerateSQL
+  name: Primary Key & Identity Fields
+  href: tutorials/GenerateSql/key.html
+- uid: Tutorial.Grovvy
+  name: Just a Test
+  href: tutorials/GenerateSql/test.html

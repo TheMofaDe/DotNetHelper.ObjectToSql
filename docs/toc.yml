@@ -1,7 +1,33 @@
+# HELP LINK https://dotnet.github.io/docfx/tutorial/intro_toc.html
+# NAME : name of item this field allows white space 
+# HREF : on item click redirect lnk
+# UID  : reference file by unique identifier in header of markdown file
 - name: Home
-  href: index.html
-  homepage: index.html
+  href: index.md
+#  topicHref: ../docs/index.md
+#  uid: Homepage
 - name: Tutorials
-  href: tutorials/
-- name: API Documentation
-  href: api/  # if project name have a dash you need to replace it with a underscore 
+  href: /
+  topicHref: tutorials/index.md
+#  items:
+#    - name: Attributes # white space is allowed & this will show under the filter
+#      href: tutorials/Attributes/attribute.html
+#      topicUid: Tutorial.Attibutes
+#    - name: How to Generate SQL # white is allowed
+#      href: tutorials/GenerateSQL/index.html
+#      topicUid: Tutorial.GenerateSQL
+# - name: API Documentation
+#   href: api/  # if project name have a dash you need to replace it with a underscore 
+- name: API Documentation 
+  topicUid: DotNetHelper.ObjectToSql
+#  topicHref: ~/api/DotNetHelper.ObjectToSql.yml
+  href: api/DotNetHelper.ObjectToSql.yml
+#- name: API Documentation 
+#  topicUid: DotNetHelper.ObjectToSql
+#  topicHref: api/
+#- name: API Documentation 
+#  topicUid: DotNetHelper.ObjectToSql
+#  topicHref: api/DotNetHelper.ObjectToSql.yml
+#- name: API Documentation 
+#  topicUid: DotNetHelper.ObjectToSql
+#  topicHref: ~/api/

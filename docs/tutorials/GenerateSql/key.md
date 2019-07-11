@@ -1,3 +1,7 @@
+---
+uid: Tutorial.GenerateSQL
+---
+
 # Primary Key & Identity Fields
 In the secnarios where you need to build Update,Delete, or Upsert Statements. Attributes are use to generate the where clause.
 
