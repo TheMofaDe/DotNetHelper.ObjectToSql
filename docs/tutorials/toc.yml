@@ -1,7 +1,8 @@
 # NAME : name of item this field allows white space 
 # HREF : on item click redirect lnk
 - name: Home
-  topicHref: index.md
+  href: /
+  topicHref: /index.md
 - name: Attributes 
   href: Attributes/attribute.md
   # topicUid: Tutorial.Attibutes

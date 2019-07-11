@@ -354,7 +354,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.ObjectToSql.html",
-          "hash": "Fk5uc+KW/xHI//6Y5tws6w=="
+          "hash": "Eln6hTGlL9XOCeC43jRJSw=="
         }
       },
       "is_incremental": false,
@@ -409,12 +409,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "2U8LWv79G93i8PgiSYZ2Aw=="
+          "hash": "S2CzBN1ywvSa5y1LHJoJxg=="
         }
       },
       "is_incremental": false,
@@ -426,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/Attributes/attribute.html",
-          "hash": "c8pJo8EtMKVobhJuAKT4xw=="
+          "hash": "Qhup4WsJ2N9GGpg8nwFqYQ=="
         }
       },
       "is_incremental": false,
@@ -486,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/index.html",
-          "hash": "SZjF4Q/SImBYvK2e2F3z7A=="
+          "hash": "e7/uQgwyIQUJTmDAoPswnw=="
         }
       },
       "is_incremental": false,
@@ -498,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/toc.html",
-          "hash": "bJgSUKkuDA+6tniDD/SsNQ=="
+          "hash": "Cg9+/hVD/HdmbbXPlBPGAw=="
         }
       },
       "is_incremental": false,
