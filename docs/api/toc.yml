@@ -1,11 +1,4 @@
 ### YamlMime:TableOfContent
-- uid: DotNetHelper.ObjectToSql
-  name: DotNetHelper.ObjectToSql
-  items:
-  - uid: DotNetHelper.ObjectToSql.Class
-    name: Class
-  - uid: DotNetHelper.ObjectToSql.Class1
-    name: Class1
 - uid: DotNetHelper.ObjectToSql.Attribute
   name: DotNetHelper.ObjectToSql.Attribute
   items:

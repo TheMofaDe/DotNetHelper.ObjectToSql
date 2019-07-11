@@ -19,6 +19,7 @@ namespace DotNetHelper.ObjectToSql.Helper
             DataBaseType = type;
             EnclosedValueLookup = new Dictionary<Type, string>()
             {
+                {typeof(object), "'"},
                 {typeof(int), string.Empty},
                 {typeof(Guid), "'"},
                 {typeof(DateTime), "'"},
@@ -60,6 +61,7 @@ namespace DotNetHelper.ObjectToSql.Helper
                 case DataBaseType.SqlServer:
                     EnclosedValueLookup = new Dictionary<Type, string>()
                     {
+                        {typeof(object), "'"},
                         {typeof(int), string.Empty},
                         {typeof(Guid), "'"},
                         {typeof(DateTime), "'"},
@@ -108,6 +110,7 @@ namespace DotNetHelper.ObjectToSql.Helper
                 case DataBaseType.Access95:
                     EnclosedValueLookup = new Dictionary<Type, string>()
                     {
+                        {typeof(object), "'"},
                         {typeof(int), string.Empty},
                         {typeof(Guid), "'"},
                         {typeof(DateTime), "#"},
@@ -320,13 +323,13 @@ namespace DotNetHelper.ObjectToSql.Helper
 
 
 
-        public string ConvertParameterSqlToReadable(List<DbParameter> parameters, string query,Encoding encoding)
+        public string ConvertParameterSqlToReadable<T>(List<T> parameters, string query,Encoding encoding) where T : DbParameter
         {
             var sql = query.Clone().ToString();
             // Convert Query To Human Readable  
 
             var orderedParameters = parameters.OrderByDescending(x => x.ParameterName).ToList();
-            orderedParameters.ForEach(delegate (DbParameter parameter)
+            orderedParameters.ForEach(delegate (T parameter)
             {
                 var name = parameter.ParameterName;
                 sql = sql.Replace(name.StartsWith("@") ? $"{name}" : $"@{name}", CommandToSQl(parameter.Value, encoding ?? Encoding.UTF8));

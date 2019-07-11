@@ -230,7 +230,6 @@ items:
   syntax:
     content: >-
       public string BuildQuery<T>(string tableName, ActionType actionType)
-
           where T : class
     parameters:
     - id: tableName
@@ -275,7 +274,6 @@ items:
   syntax:
     content: >-
       public string BuildQuery<T>(string tableName, ActionType actionType, params Expression<Func<T, object>>[] primaryKeys)
-
           where T : class
     parameters:
     - id: tableName
@@ -361,7 +359,6 @@ items:
   syntax:
     content: >-
       public string BuildQuery<T>(string tableName, ActionType actionType, T instance, List<RunTimeAttributeMap> runTimeAttributes)
-
           where T : class
     parameters:
     - id: tableName
@@ -412,7 +409,6 @@ items:
   syntax:
     content: >-
       public string BuildQueryWithOutputs<T>(string tableName, ActionType actionType, params Expression<Func<T, object>>[] outputFields)
-
           where T : class
     parameters:
     - id: tableName
@@ -466,7 +462,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetNonKeyFields<T>(bool includeNonPublicAccessor)
-
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -513,7 +508,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetNonKeyFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
-
           where T : class
     parameters:
     - id: runTimeAttributes
@@ -602,7 +596,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetKeyFields<T>(bool includeNonPublicAccessor)
-
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -649,7 +642,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetKeyFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
-
           where T : class
     parameters:
     - id: runTimeAttributes
@@ -738,7 +730,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetNonIdentityFields<T>(bool includeNonPublicAccessor)
-
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -785,7 +776,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetNonIdentityFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
-
           where T : class
     parameters:
     - id: runTimeAttributes
@@ -874,7 +864,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetAllNonIgnoreFields<T>(bool includeNonPublicAccessor)
-
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -921,7 +910,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetAllNonIgnoreFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
-
           where T : class
     parameters:
     - id: runTimeAttributes
@@ -1100,7 +1088,6 @@ items:
   syntax:
     content: >-
       public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> GetNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
-
           where T : class
     parameters:
     - id: instance

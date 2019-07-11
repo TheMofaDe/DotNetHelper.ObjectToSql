@@ -186,7 +186,6 @@ items:
   syntax:
     content: >-
       public T GetCustomAttribute<T>()
-
           where T : Attribute
     typeParameters:
     - id: T

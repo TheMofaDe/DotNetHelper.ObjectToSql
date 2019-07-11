@@ -8,7 +8,7 @@ items:
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement(System.String,System.String,System.String)
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
-  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable``1(System.Collections.Generic.List{``0},System.String,System.Text.Encoding)
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
@@ -173,7 +173,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeywordEscapeOpenChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 155
+    startLine: 158
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -205,7 +205,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeywordEscapeClosedChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 177
+    startLine: 180
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -237,7 +237,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: RemoveKeywordEscapeChars
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 199
+    startLine: 202
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -272,7 +272,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetEnclosedValueChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 207
+    startLine: 210
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -307,7 +307,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildIfExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 259
+    startLine: 262
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -346,7 +346,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildTableExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 286
+    startLine: 289
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -367,16 +367,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
-  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
-  id: ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable``1(System.Collections.Generic.List{``0},System.String,System.Text.Encoding)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable``1(System.Collections.Generic.List{``0},System.String,System.Text.Encoding)
+  id: ConvertParameterSqlToReadable``1(System.Collections.Generic.List{``0},System.String,System.Text.Encoding)
   parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
   langs:
   - csharp
   - vb
-  name: ConvertParameterSqlToReadable(List<DbParameter>, String, Encoding)
-  nameWithType: SqlSyntaxHelper.ConvertParameterSqlToReadable(List<DbParameter>, String, Encoding)
-  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List<System.Data.Common.DbParameter>, System.String, System.Text.Encoding)
+  name: ConvertParameterSqlToReadable<T>(List<T>, String, Encoding)
+  nameWithType: SqlSyntaxHelper.ConvertParameterSqlToReadable<T>(List<T>, String, Encoding)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable<T>(System.Collections.Generic.List<T>, System.String, System.Text.Encoding)
   type: Method
   source:
     remote:
@@ -385,30 +385,34 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertParameterSqlToReadable
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 322
+    startLine: 325
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
   syntax:
-    content: public string ConvertParameterSqlToReadable(List<DbParameter> parameters, string query, Encoding encoding)
+    content: >-
+      public string ConvertParameterSqlToReadable<T>(List<T> parameters, string query, Encoding encoding)
+          where T : DbParameter
     parameters:
     - id: parameters
-      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+      type: System.Collections.Generic.List{{T}}
     - id: query
       type: System.String
     - id: encoding
       type: System.Text.Encoding
+    typeParameters:
+    - id: T
     return:
       type: System.String
-    content.vb: Public Function ConvertParameterSqlToReadable(parameters As List(Of DbParameter), query As String, encoding As Encoding) As String
+    content.vb: Public Function ConvertParameterSqlToReadable(Of T As DbParameter)(parameters As List(Of T), query As String, encoding As Encoding) As String
   overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable*
-  nameWithType.vb: SqlSyntaxHelper.ConvertParameterSqlToReadable(List(Of DbParameter), String, Encoding)
+  nameWithType.vb: SqlSyntaxHelper.ConvertParameterSqlToReadable(Of T)(List(Of T), String, Encoding)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List(Of System.Data.Common.DbParameter), System.String, System.Text.Encoding)
-  name.vb: ConvertParameterSqlToReadable(List(Of DbParameter), String, Encoding)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(Of T)(System.Collections.Generic.List(Of T), System.String, System.Text.Encoding)
+  name.vb: ConvertParameterSqlToReadable(Of T)(List(Of T), String, Encoding)
 references:
 - uid: DotNetHelper.ObjectToSql.Helper
   commentId: N:DotNetHelper.ObjectToSql.Helper
@@ -910,16 +914,16 @@ references:
   name: ConvertParameterSqlToReadable
   nameWithType: SqlSyntaxHelper.ConvertParameterSqlToReadable
   fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable
-- uid: System.Collections.Generic.List{System.Data.Common.DbParameter}
-  commentId: T:System.Collections.Generic.List{System.Data.Common.DbParameter}
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
-  name: List<DbParameter>
-  nameWithType: List<DbParameter>
-  fullName: System.Collections.Generic.List<System.Data.Common.DbParameter>
-  nameWithType.vb: List(Of DbParameter)
-  fullName.vb: System.Collections.Generic.List(Of System.Data.Common.DbParameter)
-  name.vb: List(Of DbParameter)
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
@@ -929,11 +933,9 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Data.Common.DbParameter
-    name: DbParameter
-    nameWithType: DbParameter
-    fullName: System.Data.Common.DbParameter
-    isExternal: true
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -946,11 +948,9 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Data.Common.DbParameter
-    name: DbParameter
-    nameWithType: DbParameter
-    fullName: System.Data.Common.DbParameter
-    isExternal: true
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

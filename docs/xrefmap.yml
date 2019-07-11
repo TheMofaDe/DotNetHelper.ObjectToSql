@@ -1,12 +1,6 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: DotNetHelper.ObjectToSql
-  name: DotNetHelper.ObjectToSql
-  href: api/DotNetHelper.ObjectToSql.html
-  commentId: N:DotNetHelper.ObjectToSql
-  fullName: DotNetHelper.ObjectToSql
-  nameWithType: DotNetHelper.ObjectToSql
 - uid: DotNetHelper.ObjectToSql.Attribute
   name: DotNetHelper.ObjectToSql.Attribute
   href: api/DotNetHelper.ObjectToSql.Attribute.html
@@ -226,57 +220,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetPrimaryKey
   nameWithType: SqlColumnAttribute.SetPrimaryKey
-- uid: DotNetHelper.ObjectToSql.Class
-  name: Class
-  href: api/DotNetHelper.ObjectToSql.Class.html
-  commentId: T:DotNetHelper.ObjectToSql.Class
-  fullName: DotNetHelper.ObjectToSql.Class
-  nameWithType: Class
-- uid: DotNetHelper.ObjectToSql.Class.#ctor
-  name: Class()
-  href: api/DotNetHelper.ObjectToSql.Class.html#DotNetHelper_ObjectToSql_Class__ctor
-  commentId: M:DotNetHelper.ObjectToSql.Class.#ctor
-  fullName: DotNetHelper.ObjectToSql.Class.Class()
-  nameWithType: Class.Class()
-- uid: DotNetHelper.ObjectToSql.Class.#ctor*
-  name: Class
-  href: api/DotNetHelper.ObjectToSql.Class.html#DotNetHelper_ObjectToSql_Class__ctor_
-  commentId: Overload:DotNetHelper.ObjectToSql.Class.#ctor
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Class.Class
-  nameWithType: Class.Class
-- uid: DotNetHelper.ObjectToSql.Class.A
-  name: A
-  href: api/DotNetHelper.ObjectToSql.Class.html#DotNetHelper_ObjectToSql_Class_A
-  commentId: P:DotNetHelper.ObjectToSql.Class.A
-  fullName: DotNetHelper.ObjectToSql.Class.A
-  nameWithType: Class.A
-- uid: DotNetHelper.ObjectToSql.Class.A*
-  name: A
-  href: api/DotNetHelper.ObjectToSql.Class.html#DotNetHelper_ObjectToSql_Class_A_
-  commentId: Overload:DotNetHelper.ObjectToSql.Class.A
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Class.A
-  nameWithType: Class.A
-- uid: DotNetHelper.ObjectToSql.Class1
-  name: Class1
-  href: api/DotNetHelper.ObjectToSql.Class1.html
-  commentId: T:DotNetHelper.ObjectToSql.Class1
-  fullName: DotNetHelper.ObjectToSql.Class1
-  nameWithType: Class1
-- uid: DotNetHelper.ObjectToSql.Class1.#ctor
-  name: Class1()
-  href: api/DotNetHelper.ObjectToSql.Class1.html#DotNetHelper_ObjectToSql_Class1__ctor
-  commentId: M:DotNetHelper.ObjectToSql.Class1.#ctor
-  fullName: DotNetHelper.ObjectToSql.Class1.Class1()
-  nameWithType: Class1.Class1()
-- uid: DotNetHelper.ObjectToSql.Class1.#ctor*
-  name: Class1
-  href: api/DotNetHelper.ObjectToSql.Class1.html#DotNetHelper_ObjectToSql_Class1__ctor_
-  commentId: Overload:DotNetHelper.ObjectToSql.Class1.#ctor
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Class1.Class1
-  nameWithType: Class1.Class1
 - uid: DotNetHelper.ObjectToSql.Enum
   name: DotNetHelper.ObjectToSql.Enum
   href: api/DotNetHelper.ObjectToSql.Enum.html
@@ -741,15 +684,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement
   nameWithType: SqlSyntaxHelper.BuildTableExistStatement
-- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
-  name: ConvertParameterSqlToReadable(List<DbParameter>, String, Encoding)
-  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_ConvertParameterSqlToReadable_System_Collections_Generic_List_System_Data_Common_DbParameter__System_String_System_Text_Encoding_
-  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List{System.Data.Common.DbParameter},System.String,System.Text.Encoding)
-  name.vb: ConvertParameterSqlToReadable(List(Of DbParameter), String, Encoding)
-  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List<System.Data.Common.DbParameter>, System.String, System.Text.Encoding)
-  fullName.vb: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(System.Collections.Generic.List(Of System.Data.Common.DbParameter), System.String, System.Text.Encoding)
-  nameWithType: SqlSyntaxHelper.ConvertParameterSqlToReadable(List<DbParameter>, String, Encoding)
-  nameWithType.vb: SqlSyntaxHelper.ConvertParameterSqlToReadable(List(Of DbParameter), String, Encoding)
 - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable*
   name: ConvertParameterSqlToReadable
   href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_ConvertParameterSqlToReadable_
@@ -757,6 +691,15 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable
   nameWithType: SqlSyntaxHelper.ConvertParameterSqlToReadable
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable``1(System.Collections.Generic.List{``0},System.String,System.Text.Encoding)
+  name: ConvertParameterSqlToReadable<T>(List<T>, String, Encoding)
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_ConvertParameterSqlToReadable__1_System_Collections_Generic_List___0__System_String_System_Text_Encoding_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable``1(System.Collections.Generic.List{``0},System.String,System.Text.Encoding)
+  name.vb: ConvertParameterSqlToReadable(Of T)(List(Of T), String, Encoding)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable<T>(System.Collections.Generic.List<T>, System.String, System.Text.Encoding)
+  fullName.vb: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(Of T)(System.Collections.Generic.List(Of T), System.String, System.Text.Encoding)
+  nameWithType: SqlSyntaxHelper.ConvertParameterSqlToReadable<T>(List<T>, String, Encoding)
+  nameWithType.vb: SqlSyntaxHelper.ConvertParameterSqlToReadable(Of T)(List(Of T), String, Encoding)
 - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
   name: DataBaseType
   href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_DataBaseType
