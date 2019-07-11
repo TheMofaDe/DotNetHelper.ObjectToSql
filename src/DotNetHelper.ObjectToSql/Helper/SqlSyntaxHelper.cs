@@ -19,7 +19,9 @@ namespace DotNetHelper.ObjectToSql.Helper
             DataBaseType = type;
             EnclosedValueLookup = new Dictionary<Type, string>()
             {
+
                 {typeof(object), "'"},
+                {typeof(string), "'"},
                 {typeof(int), string.Empty},
                 {typeof(Guid), "'"},
                 {typeof(DateTime), "'"},
@@ -62,6 +64,7 @@ namespace DotNetHelper.ObjectToSql.Helper
                     EnclosedValueLookup = new Dictionary<Type, string>()
                     {
                         {typeof(object), "'"},
+                        {typeof(string), "'"},
                         {typeof(int), string.Empty},
                         {typeof(Guid), "'"},
                         {typeof(DateTime), "'"},
@@ -111,6 +114,7 @@ namespace DotNetHelper.ObjectToSql.Helper
                     EnclosedValueLookup = new Dictionary<Type, string>()
                     {
                         {typeof(object), "'"},
+                        {typeof(string), "'"},
                         {typeof(int), string.Empty},
                         {typeof(Guid), "'"},
                         {typeof(DateTime), "#"},
