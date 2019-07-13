@@ -1431,6 +1431,9 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
   nameWithType: ObjectToSql.IncludeNonPublicAccessor
+- uid: Homepage
+  name: DotNetHelper.ObjectToSql
+  href: index.html
 - uid: TSD
   name: Use the filter
   href: tutorials/index.html

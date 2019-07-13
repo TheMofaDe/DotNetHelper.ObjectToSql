@@ -3,7 +3,7 @@
 # HREF : on item click redirect lnk
 # UID  : reference file by unique identifier in header of markdown file
 - name: Home
-  href: index.md
+  href: ~/index.html
 #  topicHref: ../docs/index.md
 #  uid: Homepage
 - name: Tutorials
