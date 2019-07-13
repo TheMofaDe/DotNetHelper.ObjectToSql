@@ -55,6 +55,12 @@
                       <li>
                           <a href="api/DotNetHelper.ObjectToSql.Attribute.html" title="API">API</a>
                       </li>
+                      <li>
+                          <a href="changelog.html" title="Change Log">Change Log</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql" title="Github">Github</a>
+                      </li>
                 </ul>    </div>
           </div>
         </nav>
@@ -80,41 +86,57 @@
       <div role="main" class="container body-content hide-when-search">
         <div class="article row grid">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Homepage">
+            <article class="content wrap" id="_content" data-uid="">
 <h1 id="dotnethelperobjecttosql">DotNetHelper.ObjectToSql</h1>
 
-<h5 id="dotnethelperobjecttosql-takes-your-generic-types-or-dynamic--anonymous-objects-and-convert-it-to-sql">DotNetHelper.ObjectToSql takes your generic types or dynamic &amp; anonymous objects and convert it to sql.</h5>
-<p>Supports Insert,Update,Delete,Upsert Statements</p>
-<h2 id="how-to-use-with-generics-types">How to Use With Generics Types</h2>
+<h4 id="dotnethelperobjecttosql-takes-your-generic-types-or-dynamic--anonymous-objects-and-convert-it-to-sql"><em>DotNetHelper.ObjectToSql takes your generic types or dynamic &amp; anonymous objects and convert it to sql.</em></h4>
+<p>|| <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql"><strong>View on Github</strong></a> ||</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>INSERT</li>
+<li>UPDATE</li>
+<li>DELETE</li>
+<li>UPSERT</li>
+<li>INSERT with OUTPUT Columns</li>
+<li>UPDATE with OUTPUT Columns</li>
+<li>DELETE with OUTPUT Columns</li>
+<li>UPSERT with OUTPUT Columns</li>
+</ul>
+<h2 id="supported-databases">Supported Databases</h2>
+<ul>
+<li>SQLSERVER</li>
+<li>SQLITE</li>
+<li>MYSQL</li>
+<li>More to come</li>
+</ul>
+<h2 id="how-to-use">How to use</h2>
+<h5 id="how-to-use-with-generics-types">How to Use With Generics Types</h5>
 <pre><code class="lang-csharp">public class Employee {
       public FirstName { get; set; }
       public LastName  { get; set; }
 }
             var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            var insertSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(&quot;TableNameGoesHere&quot;, ActionType.Insert);
+            var insertSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(&quot;TABLE NAME OR DEFAULT TO TYPE NAME&quot;, ActionType.Insert);
 // OR 
-            var insertSql = sqlServerObjectToSql.BuildQuery(&quot;TableNameGoesHere&quot;, ActionType.Insert,typeof(Employee));
+            var insertSql = sqlServerObjectToSql.BuildQuery(&quot;TABLE NAME OR DEFAULT TO TYPE NAME&quot;, ActionType.Insert,typeof(Employee));
 </code></pre>
-<h2 id="how-to-use-with-dynamic-objects">How to Use With Dynamic Objects</h2>
+<h5 id="how-to-use-with-dynamic-objects">How to Use With Dynamic Objects</h5>
 <pre><code class="lang-csharp">            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
             dynamic record = new ExpandoObject();
             record.FirstName = &quot;John&quot;;
             record.LastName = &quot;Doe&quot;;
-            var insertSql = sqlServerObjectToSql.BuildQuery(&quot;TableNameGoesHere&quot;, ActionType.Insert,record);
+            var insertSql = sqlServerObjectToSql.BuildQuery(&quot;TABLE NAME OR DEFAULT TO TYPE NAME&quot;, ActionType.Insert,record);
 </code></pre>
-<h2 id="how-to-use-with-anonymous-objects">How to Use With Anonymous Objects</h2>
+<h5 id="how-to-use-with-anonymous-objects">How to Use With Anonymous Objects</h5>
 <pre><code class="lang-csharp">            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
             var anonymousObject = new { FirstName = &quot;John&quot; , LastName = &quot;Doe&quot;}
-            var insertSql = sqlServerObjectToSql.BuildQuery(&quot;TableNameGoesHere&quot;, ActionType.Insert,anonymousObject);
+            var insertSql = sqlServerObjectToSql.BuildQuery(&quot;TABLE NAME OR DEFAULT TO TYPE NAME&quot;, ActionType.Insert,anonymousObject);
 </code></pre>
-<h2 id="output">Output</h2>
+<h5 id="output">Output</h5>
 <pre><code class="lang-sql">INSERT INTO TableNameGoHere ([FirstName],[LastName]) VALUES (@FirstName,@LastName)
 </code></pre>
-<h2 id="targeted-net-frameworks">Targeted .NET Frameworks</h2>
-<pre><code>NET452
-NET45
-NETSTANDARD2.0
-</code></pre>
+<!-- Links. -->
+<!-- Documentation Links. -->
 </article>
           </div>
           

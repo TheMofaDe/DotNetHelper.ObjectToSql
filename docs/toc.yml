@@ -8,3 +8,7 @@
   href: ~/tutorials/index.html
 - name: API
   href: ~/api/DotNetHelper.ObjectToSql.Attribute.html
+- name: Change Log
+  href: ~/changelog.html
+- name: Github
+  href: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql

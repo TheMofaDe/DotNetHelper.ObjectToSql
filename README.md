@@ -2,7 +2,7 @@
 
 #### *DotNetHelper.ObjectToSql takes your generic types or dynamic & anonymous objects and convert it to sql.* 
 
-|| [**Documentation**][Docs] • [**API**][Docs-API] • [**Getting Started**][Docs-getting-started] • [**Samples**](https://github.com/themofade/) || 
+|| [**Documentation**][Docs] • [**API**][Docs-API] • [**Tutorials**][Docs-Tutorials] ||  [**Change Log**][Changelogs] • || [**View on Github**][Github]|| 
 
 | AppVeyor | AzureDevOps |
 | :-----: | :-----: |
@@ -13,7 +13,7 @@
 | ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper.ObjectToSql) |
 
 
-#### Can create the following sql statements
+## Features
 + INSERT
 + UPDATE
 + DELETE
@@ -23,45 +23,45 @@
 + DELETE with OUTPUT Columns
 + UPSERT with OUTPUT Columns
 
-#### Supports the following databases with more to come
+## Supported Databases
 + SQLSERVER
 + SQLITE
 + MYSQL
++ More to come
 
-
-## How to Use With Generics Types
+## How to use
+##### How to Use With Generics Types
 ```csharp
 public class Employee {
       public FirstName { get; set; }
       public LastName  { get; set; }
 }
             var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            var insertSql = sqlServerObjectToSql.BuildQuery<Employee>("TableNameGoesHere", ActionType.Insert);
+            var insertSql = sqlServerObjectToSql.BuildQuery<Employee>("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert);
 // OR 
-            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,typeof(Employee));
+            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,typeof(Employee));
 ```
 
-## How to Use With Dynamic Objects
+##### How to Use With Dynamic Objects
 ```csharp
             var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
             dynamic record = new ExpandoObject();
             record.FirstName = "John";
             record.LastName = "Doe";
-            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,record);
+            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,record);
 ```
 
 
-## How to Use With Anonymous Objects
+##### How to Use With Anonymous Objects
 ```csharp
             var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
             var anonymousObject = new { FirstName = "John" , LastName = "Doe"}
-            var insertSql = sqlServerObjectToSql.BuildQuery("TableNameGoesHere", ActionType.Insert,anonymousObject);
+            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,anonymousObject);
 ```
-## Output
+##### Output
 ```sql
 INSERT INTO TableNameGoHere ([FirstName],[LastName]) VALUES (@FirstName,@LastName)
 ```
-
 
 
 ## Documentation
@@ -84,13 +84,15 @@ For more information, please refer to the [Officials Docs][Docs]
 [Chocolately]: https://gist.github.com/davidfowl/ed7564297c61fe9ab814
 [WiX]: http://wixtoolset.org/
 [DocFx]: https://dotnet.github.io/docfx/
+[Github]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
 
 
 <!-- Documentation Links. -->
-[Docs]: http://themofade.github.io/DotNetHelper.ObjectToSql
-[Docs-API]: http://wixtoolset.org/
-[Docs-getting-started]: https://dotnet.github.io/docfx/
+[Docs]: https://themofade.github.io/DotNetHelper.ObjectToSql/index.html
+[Docs-API]: https://themofade.github.io/DotNetHelper.ObjectToSql/api/DotNetHelper.ObjectToSql.Attribute.html
+[Docs-Tutorials]: https://themofade.github.io/DotNetHelper.ObjectToSql/tutorials/index.html
 [Docs-samples]: https://dotnet.github.io/docfx/
+[Changelogs]: https://dotnet.github.io/docfx/
 
 
 <!-- BADGES. -->
