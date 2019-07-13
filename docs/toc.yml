@@ -9,6 +9,6 @@
 - name: API
   href: ~/api/DotNetHelper.ObjectToSql.Attribute.html
 - name: Change Log
-  href: ~/changelog.html
+  href: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/CHANGELOG.md
 - name: Github
   href: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql

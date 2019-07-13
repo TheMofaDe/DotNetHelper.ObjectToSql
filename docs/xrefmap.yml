@@ -1432,11 +1432,11 @@ references:
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
   nameWithType: ObjectToSql.IncludeNonPublicAccessor
 - uid: TSD
-  name: Use the filter
+  name: TSD
   href: tutorials/index.html
 - uid: Tutorial.GenerateSQL
   name: Primary Key & Identity Fields
-  href: tutorials/GenerateSql/key.html
-- uid: Tutorial.Grovvy
-  name: Just a Test
-  href: tutorials/GenerateSql/test.html
+  href: tutorials/GenerateSql/object2sql.html
+- uid: Tutorial.GenerateSQL.Datatable
+  name: Primary Key & Identity Fields
+  href: tutorials/GenerateSql/datatable2sql.html

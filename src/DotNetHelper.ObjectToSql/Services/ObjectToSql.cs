@@ -1047,9 +1047,10 @@ namespace DotNetHelper.ObjectToSql.Services
         /// Builds the SQL parameter list.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="poco">The poco.</param>
+        /// <param name="instance"></param>
+        /// <param name="getNewParameter"></param>
         /// <returns>List&lt;DbParameter&gt;.</returns>
-        public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> GetNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer) where T : class
+        public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer) where T : class
         {
             var list = new List<DbParameter>() { };
             List<MemberWrapper> members;
@@ -1066,7 +1067,7 @@ namespace DotNetHelper.ObjectToSql.Services
                 var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), XmlSerializer, JsonSerializer, CsvSerializer);
                 // try
                 // {
-                list.Add(GetNewParameter($"@{p.Name}", parameterValue));
+                list.Add(getNewParameter($"@{p.Name}", parameterValue));
                 // }
                 // catch (ArgumentException error)
                 // {
@@ -1075,6 +1076,18 @@ namespace DotNetHelper.ObjectToSql.Services
                 // }
             });
             return list;
+        }
+
+        /// <summary>
+        /// Builds the SQL parameter list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance"></param>
+        /// <param name="getNewParameter"></param>
+        /// <returns>List&lt;DbParameter&gt;.</returns>
+        public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter) where T : class
+        {
+            return BuildDbParameterList(instance, getNewParameter, null, null, null);
         }
 
         #endregion

@@ -1,5 +1,5 @@
 ---
-uid: Tutorial.GenerateSQL
+uid: Tutorial.GenerateSQL.Datatable
 ---
 
 # Primary Key & Identity Fields
@@ -32,10 +32,10 @@ using either version of the model above I can now generate update,delete, & upse
 
 ```csharp
    var actionType = ActionType.Update; // A enum with the values Insert,Update,Delete,Upsert
-   var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-   var updateSql = sqlServerObjectToSql.BuildQuery<Employee>("Table Name Go Here If Null Defaults to Type Name",actionType);
-   var upsertSql = sqlServerObjectToSql.BuildQuery<Employee>("Table Name Go Here If Null Defaults to Type Name",ActionType.Upsert);
-   var deleteSql = sqlServerObjectToSql.BuildQuery<Employee>("Table Name Go Here If Null Defaults to Type Name",ActionType.Delete);
+   var DataTableToSql = new DataTableToSql(DataBaseType.SqlServer);
+   var updateSql = DataTableToSql.BuildQuery<Employee>("Table Name Go Here If Null Defaults to Type Name",actionType);
+   var upsertSql = DataTableToSql.BuildQuery<Employee>("Table Name Go Here If Null Defaults to Type Name",ActionType.Upsert);
+   var deleteSql = DataTableToSql.BuildQuery<Employee>("Table Name Go Here If Null Defaults to Type Name",ActionType.Delete);
 
    Console.WriteLine(updateSql);
    Console.WriteLine(upsertSql);
