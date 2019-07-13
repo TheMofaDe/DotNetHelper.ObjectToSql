@@ -37,7 +37,9 @@ items:
       <AttributeUsage(AttributeTargets.Class Or AttributeTargets.Property)>
 
       Public Class DBTableAttribute
+
           Inherits Attribute
+
           Implements _Attribute
   seealso:
   - linkId: System.Attribute

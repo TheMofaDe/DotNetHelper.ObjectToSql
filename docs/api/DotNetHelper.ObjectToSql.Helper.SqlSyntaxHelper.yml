@@ -392,6 +392,7 @@ items:
   syntax:
     content: >-
       public string ConvertParameterSqlToReadable<T>(List<T> parameters, string query, Encoding encoding)
+
           where T : DbParameter
     parameters:
     - id: parameters

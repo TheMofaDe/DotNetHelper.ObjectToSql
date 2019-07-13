@@ -392,6 +392,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;DbParameter&gt; BuildDbParameterList&lt;T&gt;(T instance, Func&lt;string, object, DbParameter&gt; GetNewParameter, Func&lt;object, string&gt; XmlSerializer, Func&lt;object, string&gt; JsonSerializer, Func&lt;object, string&gt; CsvSerializer)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -533,6 +534,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string BuildQuery&lt;T&gt;(string tableName, ActionType actionType)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -601,6 +603,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string BuildQuery&lt;T&gt;(string tableName, ActionType actionType, T instance, List&lt;RunTimeAttributeMap&gt; runTimeAttributes)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -679,6 +682,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string BuildQuery&lt;T&gt;(string tableName, ActionType actionType, params Expression&lt;Func&lt;T, object&gt;&gt;[] primaryKeys)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -752,6 +756,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string BuildQueryWithOutputs&lt;T&gt;(string tableName, ActionType actionType, params Expression&lt;Func&lt;T, object&gt;&gt;[] outputFields)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1041,6 +1046,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetAllNonIgnoreFields&lt;T&gt;(bool includeNonPublicAccessor)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1106,6 +1112,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetAllNonIgnoreFields&lt;T&gt;(List&lt;RunTimeAttributeMap&gt; runTimeAttributes, T instance)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1230,6 +1237,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetKeyFields&lt;T&gt;(bool includeNonPublicAccessor)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1295,6 +1303,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetKeyFields&lt;T&gt;(List&lt;RunTimeAttributeMap&gt; runTimeAttributes, T instance)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1419,6 +1428,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetNonIdentityFields&lt;T&gt;(bool includeNonPublicAccessor)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1484,6 +1494,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetNonIdentityFields&lt;T&gt;(List&lt;RunTimeAttributeMap&gt; runTimeAttributes, T instance)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1608,6 +1619,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetNonKeyFields&lt;T&gt;(bool includeNonPublicAccessor)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1673,6 +1685,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetNonKeyFields&lt;T&gt;(List&lt;RunTimeAttributeMap&gt; runTimeAttributes, T instance)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

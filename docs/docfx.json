@@ -23,7 +23,7 @@
         "dest": "api"
       },
       {
-        "files": [ "*.md", "*.yml" ],
+        "files": [ "*.md", "toc.yml" ],
         "src": ".",
         "dest": "."
       },
