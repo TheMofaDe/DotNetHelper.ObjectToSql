@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DBTableAttribute
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
@@ -120,7 +120,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: TableName
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
@@ -158,7 +158,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: XReferenceTable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
@@ -193,7 +193,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: JoinType
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs

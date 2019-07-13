@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SqlSyntaxHelper
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -66,7 +66,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: EnclosedValueLookup
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -101,7 +101,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DataBaseType
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -136,7 +136,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -169,11 +169,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeywordEscapeOpenChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 158
+    startLine: 162
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -201,11 +201,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeywordEscapeClosedChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 180
+    startLine: 184
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -233,11 +233,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: RemoveKeywordEscapeChars
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 202
+    startLine: 206
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -268,11 +268,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetEnclosedValueChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 210
+    startLine: 214
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -303,11 +303,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildIfExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 262
+    startLine: 266
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -342,11 +342,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildTableExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 289
+    startLine: 293
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -381,11 +381,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: Docs
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertParameterSqlToReadable
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 325
+    startLine: 329
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper

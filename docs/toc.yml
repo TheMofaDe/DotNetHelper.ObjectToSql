@@ -8,36 +8,11 @@
 #  uid: Homepage
 - name: Tutorials
   href: ~/tutorials/index.html
-###- name: Tutorials
-###  href: /
-###  topicHref: tutorials/index.md
-###
-###- name: Tutorials2
-###  href: /tutorials/
-###  topicHref: tutorials/index.md
-###
-###- name: Tutorials3
-###  href: /tutorials/index.md
-###
-###- name: Tutorials4
-###  topicUid: TSD
-###
-###- name: Tutorials5
-###  href: ../
-###  topicHref: tutorials/index.md
-#  items:
-#    - name: Attributes # white space is allowed & this will show under the filter
-#      href: tutorials/Attributes/attribute.html
-#      topicUid: Tutorial.Attibutes
-#    - name: How to Generate SQL # white is allowed
-#      href: tutorials/GenerateSQL/index.html
-#      topicUid: Tutorial.GenerateSQL
-# - name: API Documentation
-#   href: api/  # if project name have a dash you need to replace it with a underscore 
-- name: API Documentation 
-  topicUid: DotNetHelper.ObjectToSql
-#  topicHref: ~/api/DotNetHelper.ObjectToSql.yml
-  href: api/DotNetHelper.ObjectToSql.yml
+- name: API
+  href: ~/api/DotNetHelper.ObjectToSql.html
+#- name: API
+#  topicUid: DotNetHelper.ObjectToSql
+#  href: api/DotNetHelper.ObjectToSql.yml
 #- name: API Documentation 
 #  topicUid: DotNetHelper.ObjectToSql
 #  topicHref: api/
