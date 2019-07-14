@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SQLTable
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DBType
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: TableName
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
@@ -134,7 +134,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SchemaName
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
@@ -169,7 +169,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DatabaseName
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
@@ -204,7 +204,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: FullNameWithBrackets
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
@@ -239,7 +239,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: FullNameWithOutBrackets
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
@@ -274,7 +274,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
@@ -309,7 +309,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs

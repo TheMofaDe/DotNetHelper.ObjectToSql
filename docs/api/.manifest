@@ -121,6 +121,7 @@
   "DotNetHelper.ObjectToSql.Services.ObjectToSql": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
+  "DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter})": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Object)": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType)": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",

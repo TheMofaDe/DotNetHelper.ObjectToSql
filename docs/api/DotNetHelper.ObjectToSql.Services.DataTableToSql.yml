@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DataTableToSql
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DatabaseType
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -132,7 +132,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -169,7 +169,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -208,7 +208,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryFromRowState
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -243,7 +243,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryFromRowState
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -280,7 +280,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -293,7 +293,6 @@ items:
   syntax:
     content: >-
       public List<T> BuildDbParameterList<T>(DataRow row, Func<string, object, T> getNewParameter)
-
           where T : DbParameter
     parameters:
     - id: row
@@ -329,7 +328,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildWhereClause
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs

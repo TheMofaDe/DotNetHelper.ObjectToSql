@@ -1178,6 +1178,15 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList
   nameWithType: ObjectToSql.BuildDbParameterList
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter})
+  name: BuildDbParameterList<T>(T, Func<String, Object, DbParameter>)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDbParameterList__1___0_System_Func_System_String_System_Object_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter})
+  name.vb: BuildDbParameterList(Of T)(T, Func(Of String, Object, DbParameter))
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList<T>(T, System.Func<System.String, System.Object, System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList(Of T)(T, System.Func(Of System.String, System.Object, System.Data.Common.DbParameter))
+  nameWithType: ObjectToSql.BuildDbParameterList<T>(T, Func<String, Object, DbParameter>)
+  nameWithType.vb: ObjectToSql.BuildDbParameterList(Of T)(T, Func(Of String, Object, DbParameter))
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   name: BuildDbParameterList<T>(T, Func<String, Object, DbParameter>, Func<Object, String>, Func<Object, String>, Func<Object, String>)
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDbParameterList__1___0_System_Func_System_String_System_Object_System_Data_Common_DbParameter__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__
@@ -1432,11 +1441,11 @@ references:
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
   nameWithType: ObjectToSql.IncludeNonPublicAccessor
 - uid: TSD
-  name: TSD
+  name: The 2 ways to generate sql
   href: tutorials/index.html
 - uid: Tutorial.GenerateSQL
   name: Primary Key & Identity Fields
   href: tutorials/GenerateSql/object2sql.html
 - uid: Tutorial.GenerateSQL.Datatable
-  name: Primary Key & Identity Fields
+  name: Primary Keys
   href: tutorials/GenerateSql/datatable2sql.html

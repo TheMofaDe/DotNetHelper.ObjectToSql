@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title> | DotNetHelper.ObjectToSql </title>
+    <title>The 2 ways to generate sql | DotNetHelper.ObjectToSql </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content=" | DotNetHelper.ObjectToSql ">
+    <meta name="title" content="The 2 ways to generate sql | DotNetHelper.ObjectToSql ">
     <meta name="generator" content="docfx 2.43.1.0">
     
     <link rel="shortcut icon" href="../logo/favicon.ico">
@@ -124,7 +124,14 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="TSD">
+<h2 id="the-2-ways-to-generate-sql">The 2 ways to generate sql</h2>
 
+<h4 id="objects-to-sql">Objects to sql</h4>
+<pre><code class="lang-csharp">var object2Sql = new ObjectToSql(DataBaseType.SqlServer);
+</code></pre>
+<h4 id="datatable-to-sql">DataTable to sql</h4>
+<pre><code class="lang-csharp">var object2Sql = new DataTableToSql(DataBaseType.SqlServer);
+</code></pre>
 </article>
           </div>
           

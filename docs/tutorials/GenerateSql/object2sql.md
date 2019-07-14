@@ -41,7 +41,7 @@ using either version of the model above I can now generate update,delete, & upse
    Console.WriteLine(upsertSql);
    Console.WriteLine(deleteSql);
 ```
-running the code above will produces the following sql statmente
+running the code above will produces the following sql statments
 
 ```sql 
 UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey
@@ -58,9 +58,15 @@ DELETE FROM TableName WHERE [PrimaryKey]=@PrimaryKey
 
 ## Creating DB Parameters From Object
 
+
 ```csharp
 var parameters = sqlServerObjectToSql.BuildDbParameterList(new Employee(), (s, o) => new SqlParameter(s, o),null,null,null);
 ```
+
+
+> [Tip]
+> The method BuildDBParameterList has an overload that accepts Func<object, string> to allow for columns to be serialize for those senarios where your storing properties as json,csv or xml
+
 
 
 

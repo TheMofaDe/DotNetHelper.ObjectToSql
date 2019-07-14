@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: RunTimeAttributeMap
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
@@ -67,7 +67,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: PropertyName
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
@@ -102,7 +102,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Attributes
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
@@ -137,7 +137,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
@@ -175,7 +175,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetCustomAttribute
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
@@ -186,7 +186,6 @@ items:
   syntax:
     content: >-
       public T GetCustomAttribute<T>()
-
           where T : Attribute
     typeParameters:
     - id: T

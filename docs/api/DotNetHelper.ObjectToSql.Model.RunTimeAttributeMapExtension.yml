@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: RunTimeAttributeMapExtension
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetMemberValue
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
@@ -116,7 +116,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ShouldMemberBeIgnored
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
@@ -157,7 +157,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberASerializableColumn
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
@@ -198,7 +198,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNameFromCustomAttributeOrDefault
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
@@ -239,7 +239,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberAnIdentityColumn
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
@@ -280,7 +280,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberAPrimaryKeyColumn
     path: ../src/DotNetHelper.ObjectToSql/Model/RunTimeAttributeMap.cs

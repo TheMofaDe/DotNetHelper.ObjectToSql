@@ -156,7 +156,7 @@ public class Employee {
    Console.WriteLine(upsertSql);
    Console.WriteLine(deleteSql);
 </code></pre>
-<p>running the code above will produces the following sql statmente</p>
+<p>running the code above will produces the following sql statments</p>
 <pre><code class="lang-sql">UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey
 </code></pre>
 <pre><code class="lang-sql">IF EXISTS ( SELECT TOP 1 * FROM Employee WHERE [PrimaryKey]=@PrimaryKey ) BEGIN UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey END ELSE BEGIN INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey) END
@@ -170,6 +170,10 @@ public class Employee {
 <h2 id="creating-db-parameters-from-object">Creating DB Parameters From Object</h2>
 <pre><code class="lang-csharp">var parameters = sqlServerObjectToSql.BuildDbParameterList(new Employee(), (s, o) =&gt; new SqlParameter(s, o),null,null,null);
 </code></pre>
+<blockquote>
+<p>[Tip]
+The method BuildDBParameterList has an overload that accepts Func&lt;object, string&gt; to allow for columns to be serialize for those senarios where your storing properties as json,csv or xml</p>
+</blockquote>
 <!-- ### Supported Attributes 
 this library has its own custom attributes and can also work with the common DataAnnotation attributes. With the support of DataAnnotation this means this library could be paired with your favorite orm like Dapper or Enitity Framework -->
 </article>

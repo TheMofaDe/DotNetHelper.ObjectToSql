@@ -7,6 +7,7 @@ items:
   children:
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter})
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Object)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType)
@@ -40,7 +41,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ObjectToSql
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -81,7 +82,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IncludeNonPublicAccessor
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -116,7 +117,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DatabaseType
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -151,7 +152,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -186,7 +187,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -219,7 +220,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -230,7 +231,6 @@ items:
   syntax:
     content: >-
       public string BuildQuery<T>(string tableName, ActionType actionType)
-
           where T : class
     parameters:
     - id: tableName
@@ -264,7 +264,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -275,7 +275,6 @@ items:
   syntax:
     content: >-
       public string BuildQuery<T>(string tableName, ActionType actionType, params Expression<Func<T, object>>[] primaryKeys)
-
           where T : class
     parameters:
     - id: tableName
@@ -311,7 +310,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -350,7 +349,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -361,7 +360,6 @@ items:
   syntax:
     content: >-
       public string BuildQuery<T>(string tableName, ActionType actionType, T instance, List<RunTimeAttributeMap> runTimeAttributes)
-
           where T : class
     parameters:
     - id: tableName
@@ -399,7 +397,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryWithOutputs
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -412,7 +410,6 @@ items:
   syntax:
     content: >-
       public string BuildQueryWithOutputs<T>(string tableName, ActionType actionType, params Expression<Func<T, object>>[] outputFields)
-
           where T : class
     parameters:
     - id: tableName
@@ -453,7 +450,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -466,7 +463,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetNonKeyFields<T>(bool includeNonPublicAccessor)
-
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -500,7 +496,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -513,7 +509,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetNonKeyFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
-
           where T : class
     parameters:
     - id: runTimeAttributes
@@ -549,7 +544,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -589,7 +584,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -602,7 +597,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetKeyFields<T>(bool includeNonPublicAccessor)
-
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -636,7 +630,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -649,7 +643,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetKeyFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
-
           where T : class
     parameters:
     - id: runTimeAttributes
@@ -685,7 +678,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -725,7 +718,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -738,7 +731,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetNonIdentityFields<T>(bool includeNonPublicAccessor)
-
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -772,7 +764,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -785,7 +777,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetNonIdentityFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
-
           where T : class
     parameters:
     - id: runTimeAttributes
@@ -821,7 +812,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -861,7 +852,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -874,7 +865,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetAllNonIgnoreFields<T>(bool includeNonPublicAccessor)
-
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -908,7 +898,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -921,7 +911,6 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetAllNonIgnoreFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
-
           where T : class
     parameters:
     - id: runTimeAttributes
@@ -957,7 +946,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -997,7 +986,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertToDatabaseValue
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -1048,7 +1037,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertToDatabaseValue
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
@@ -1087,11 +1076,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1051
+    startLine: 1052
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1099,14 +1088,15 @@ items:
   example: []
   syntax:
     content: >-
-      public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> GetNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
-
+      public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
           where T : class
     parameters:
     - id: instance
       type: '{T}'
-    - id: GetNewParameter
+      description: ''
+    - id: getNewParameter
       type: System.Func{System.String,System.Object,System.Data.Common.DbParameter}
+      description: ''
     - id: XmlSerializer
       type: System.Func{System.Object,System.String}
     - id: JsonSerializer
@@ -1119,7 +1109,7 @@ items:
     return:
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
       description: List&lt;DbParameter>.
-    content.vb: Public Function BuildDbParameterList(Of T As Class)(instance As T, GetNewParameter As Func(Of String, Object, DbParameter), XmlSerializer As Func(Of Object, String), JsonSerializer As Func(Of Object, String), CsvSerializer As Func(Of Object, String)) As List(Of DbParameter)
+    content.vb: Public Function BuildDbParameterList(Of T As Class)(instance As T, getNewParameter As Func(Of String, Object, DbParameter), XmlSerializer As Func(Of Object, String), JsonSerializer As Func(Of Object, String), CsvSerializer As Func(Of Object, String)) As List(Of DbParameter)
   overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList*
   nameWithType.vb: ObjectToSql.BuildDbParameterList(Of T)(T, Func(Of String, Object, DbParameter), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
   modifiers.csharp:
@@ -1128,6 +1118,56 @@ items:
   - Public
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList(Of T)(T, System.Func(Of System.String, System.Object, System.Data.Common.DbParameter), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
   name.vb: BuildDbParameterList(Of T)(T, Func(Of String, Object, DbParameter), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter})
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter})
+  id: BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter})
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildDbParameterList<T>(T, Func<String, Object, DbParameter>)
+  nameWithType: ObjectToSql.BuildDbParameterList<T>(T, Func<String, Object, DbParameter>)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList<T>(T, System.Func<System.String, System.Object, System.Data.Common.DbParameter>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildDbParameterList
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 1087
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nBuilds the SQL parameter list.\n"
+  example: []
+  syntax:
+    content: >-
+      public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter)
+          where T : class
+    parameters:
+    - id: instance
+      type: '{T}'
+      description: ''
+    - id: getNewParameter
+      type: System.Func{System.String,System.Object,System.Data.Common.DbParameter}
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+      description: List&lt;DbParameter>.
+    content.vb: Public Function BuildDbParameterList(Of T As Class)(instance As T, getNewParameter As Func(Of String, Object, DbParameter)) As List(Of DbParameter)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList*
+  nameWithType.vb: ObjectToSql.BuildDbParameterList(Of T)(T, Func(Of String, Object, DbParameter))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList(Of T)(T, System.Func(Of System.String, System.Object, System.Data.Common.DbParameter))
+  name.vb: BuildDbParameterList(Of T)(T, Func(Of String, Object, DbParameter))
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
   commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
   id: BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
@@ -1142,11 +1182,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildWhereClause
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1087
+    startLine: 1100
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services

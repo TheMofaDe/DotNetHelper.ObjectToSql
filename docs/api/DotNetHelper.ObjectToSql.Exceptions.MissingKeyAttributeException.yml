@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MissingKeyAttributeException
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
@@ -38,9 +38,7 @@ items:
       <Serializable>
 
       Public Class MissingKeyAttributeException
-
           Inherits Exception
-
           Implements ISerializable, _Exception
   inheritance:
   - System.Object
@@ -91,7 +89,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
@@ -123,7 +121,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
@@ -159,7 +157,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
@@ -198,7 +196,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/MissingKeyAttribute.cs

@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ActionType
     path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
@@ -50,7 +50,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Insert
     path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Update
     path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Upsert
     path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
@@ -146,7 +146,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Delete
     path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs

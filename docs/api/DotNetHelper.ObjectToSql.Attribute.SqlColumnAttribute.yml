@@ -28,7 +28,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SqlColumnAttribute
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -47,9 +47,7 @@ items:
       <AttributeUsage(AttributeTargets.Class Or AttributeTargets.Property)>
 
       Public Class SqlColumnAttribute
-
           Inherits Attribute
-
           Implements _Attribute
   seealso:
   - linkId: System.Attribute
@@ -132,7 +130,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MaxColumnSize
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -170,7 +168,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetMaxColumnSize
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -212,7 +210,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SerializableType
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -250,7 +248,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsIdentityKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -288,7 +286,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetIsIdentityKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -330,7 +328,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: PrimaryKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -368,7 +366,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetPrimaryKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -410,7 +408,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Nullable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -448,7 +446,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetNullable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -490,7 +488,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Ignore
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -528,7 +526,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetIgnore
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -570,7 +568,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MapTo
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
@@ -608,7 +606,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-      branch: Docs
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MappingIds
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
