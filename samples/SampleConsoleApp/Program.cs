@@ -52,7 +52,7 @@ namespace SampleConsoleApp
 
 
 
-            var parameters = dtToSql.BuildDbParameterList(dt.Rows[0], (s, o) => new SqlParameter(s, o));
+            //var parameters = dtToSql.BuildDbParameterList(dt.Rows[0], (s, o) => new SqlParameter(s, o));
             Console.ReadLine();
 
         }
