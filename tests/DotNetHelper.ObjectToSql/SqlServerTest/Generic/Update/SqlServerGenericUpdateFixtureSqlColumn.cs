@@ -28,7 +28,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
             var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>( nameof(EmployeeWithMappedColumnAndPrimaryKeySqlColumn),ActionType);
-            Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType));
+            Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType, sqlServerObjectToSql.DatabaseType));
         }
 
         [Test]

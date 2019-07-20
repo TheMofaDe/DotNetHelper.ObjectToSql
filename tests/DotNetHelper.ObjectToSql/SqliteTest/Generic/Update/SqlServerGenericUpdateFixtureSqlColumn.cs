@@ -28,7 +28,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
             var sql = SqliteObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>( nameof(EmployeeWithMappedColumnAndPrimaryKeySqlColumn),ActionType);
-            Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType));
+            Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType,SqliteObjectToSql.DatabaseType));
         }
 
         [Test]

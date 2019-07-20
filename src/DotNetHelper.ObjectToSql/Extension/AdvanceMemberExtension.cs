@@ -98,6 +98,6 @@ namespace DotNetHelper.ObjectToSql.Extension
         }
 
 
-
+        
     }
 }

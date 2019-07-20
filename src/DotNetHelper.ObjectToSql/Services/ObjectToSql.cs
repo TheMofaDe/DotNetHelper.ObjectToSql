@@ -652,6 +652,57 @@ namespace DotNetHelper.ObjectToSql.Services
         #region UPSERT METHODS
 
 
+        private void SQLiteBuildUpsertQuery<T>(StringBuilder sqlBuilder, List<MemberWrapper> keyFields, string tableName, string whereClause, string normalInsertSQl) where T : class
+        {
+            var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
+
+            var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
+            if (trueForAll)
+            {
+                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} 
+({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))},{string.Join(",", updateFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))}) 
+VALUES
+( {string.Join(",",keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.GetNameFromCustomAttributeOrDefault()}"))} )");
+            }
+            else
+            {
+                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))} DO UPDATE SET ");
+
+                // Build Set fields
+                updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+
+                // Build Where clause.
+                sqlBuilder.Append($" {whereClause}");
+            }
+        }
+
+        private void SQLiteBuildUpsertQuery(StringBuilder sqlBuilder, List<MemberWrapper> keyFields, string tableName, string whereClause, string normalInsertSQl,Type type) 
+        {
+            var updateFields = GetNonKeyFields(IncludeNonPublicAccessor,type);
+
+            var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
+            if (trueForAll)
+            {
+                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} 
+({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))},{string.Join(",", updateFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))}) 
+VALUES
+( {string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.GetNameFromCustomAttributeOrDefault()}"))} )");
+            }
+            else
+            {
+                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))} DO UPDATE SET ");
+
+                // Build Set fields
+                updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+
+                // Build Where clause.
+                sqlBuilder.Append($" {whereClause}");
+            }
+        }
+
+
         /// <summary>
         /// Builds the upsert query.
         /// </summary>
@@ -670,17 +721,8 @@ namespace DotNetHelper.ObjectToSql.Services
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
-                var whereClause = sb2.ToString();
-                sqlBuilder.Append($"{sb1} ON CONFLICT DO UPDATE SET ");
-             
-                var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
-
-                // Build Set fields
-                updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
-                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-                // Build Where clause.
-                sqlBuilder.Append($" {whereClause}");
+                tableName = tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault();
+                SQLiteBuildUpsertQuery<T>(sqlBuilder,keyFields,tableName,sb2.ToString(),sb1.ToString());
             }
             else
             {
@@ -711,17 +753,8 @@ namespace DotNetHelper.ObjectToSql.Services
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
-                var whereClause = sb2.ToString();
-                sqlBuilder.Append($"{sb1} ON CONFLICT DO UPDATE SET ");
-
-                var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
-
-                // Build Set fields
-                updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
-                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-                // Build Where clause.
-                sqlBuilder.Append($" {whereClause}");
+                tableName = tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault();
+                SQLiteBuildUpsertQuery<T>(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString());
             }
             else
             {
@@ -751,17 +784,8 @@ namespace DotNetHelper.ObjectToSql.Services
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
-                var whereClause = sb2.ToString();
-                sqlBuilder.Append($"{sb1} ON CONFLICT DO UPDATE SET ");
-
-                var updateFields = GetNonKeyFields(IncludeNonPublicAccessor,type);
-
-                // Build Set fields
-                updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
-                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-                // Build Where clause.
-                sqlBuilder.Append($" {whereClause}");
+                tableName = tableName ?? type.GetTableNameFromCustomAttributeOrDefault();
+                SQLiteBuildUpsertQuery(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString(),type);
             }
             else
             {
@@ -841,7 +865,7 @@ namespace DotNetHelper.ObjectToSql.Services
             if (instance is IDynamicMetaObjectProvider a)
             {
                 //return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => !m.IsMemberAPrimaryKeyColumn() && r.PropertyName == m.Name) != null).AsList();
-                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => !r.IsMemberAPrimaryKeyColumn() && r.PropertyName == m.Name) != null).AsList();
+                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => r.IsMemberAPrimaryKeyColumn() && r.PropertyName == m.Name) == null).AsList();
             }
             return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => !r.IsMemberAPrimaryKeyColumn() && r.PropertyName == m.Name) != null).AsList();
         }

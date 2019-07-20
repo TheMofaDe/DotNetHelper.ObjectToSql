@@ -28,7 +28,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Upsert
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
             var sql = SqliteObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>( nameof(Employee),ActionType.Upsert);
-            Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey) WHERE [PrimaryKey]=@PrimaryKey ON CONFLICT DO UPDATE SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey");
+            Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType,SqliteObjectToSql.DatabaseType));
         }
 
 
@@ -37,7 +37,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Upsert
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
             var sql = SqliteObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(nameof(EmployeeWithIdentityKeySqlColumn), ActionType.Upsert, column => column.FirstName);
-            Assert.AreEqual(sql, "IF EXISTS ( SELECT * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END");
+            Assert.AreEqual(sql, "INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) ON CONFLICT ([FirstName] DO UPDATE SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName");
         }
 
 
