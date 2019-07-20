@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
+using DotNetHelper.FastMember.Extension.Models;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Exceptions;
 using DotNetHelper.ObjectToSql.Extension;
@@ -127,7 +128,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var identityFields = new List<string>(){};
             var keyFields = new List<string>(){};
             var nonIdentityFields = new List<string>() { };
-
+            
             void AddIdentityOrNot(DataColumn column)
             {
                 if (column.AutoIncrement)
@@ -245,6 +246,33 @@ namespace DotNetHelper.ObjectToSql.Services
 
         #region UPSERT METHODS
 
+
+        private void SQLiteBuildUpsertQuery(StringBuilder sqlBuilder, List<string> keyFields, List<string> updateFields, string tableName, string whereClause, string normalInsertSQl,bool isAllKeyFieldsInt)
+        {
+           
+
+           // var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
+            if (isAllKeyFieldsInt)
+            {
+                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} 
+({string.Join(",", keyFields.Select(w => $"[{w}]"))},{string.Join(",", updateFields.Select(w => $"[{w}]"))}) 
+VALUES
+({string.Join(",", keyFields.Select(w => $"(SELECT {w} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w}"))} )");
+            }
+            else
+            {
+                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"[{w}]"))} DO UPDATE SET ");
+
+                // Build Set fields
+                updateFields.ForEach(p => sqlBuilder.Append($"[{p}]=@{p},"));
+                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+
+                // Build Where clause.
+                sqlBuilder.Append($" {whereClause}");
+            }
+        }
+
+
         /// <summary>
         /// Builds the upsert query.
         /// </summary>
@@ -264,7 +292,19 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb2 = new StringBuilder();
             BuildWhereClause(sb2, results.keyFields);
 
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+            if (DatabaseType == DataBaseType.Sqlite)
+            {
+                var trueForAll = dataTable.PrimaryKey.AsList().TrueForAll(c => c.DataType == typeof(int) || c.DataType == typeof(long));
+
+                SQLiteBuildUpsertQuery(sqlBuilder, results.keyFields, results.nonIdentityFields, tableName ?? dataTable.TableName, sb2.ToString(), sb1.ToString(), trueForAll);
+            }
+            else
+            {
+                sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+            }
+
+
+           
 
         }
 
