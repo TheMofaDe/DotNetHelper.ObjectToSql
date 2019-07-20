@@ -662,7 +662,7 @@ namespace DotNetHelper.ObjectToSql.Services
                 sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} 
 ({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))},{string.Join(",", updateFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))}) 
 VALUES
-( {string.Join(",",keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.GetNameFromCustomAttributeOrDefault()}"))} )");
+( {string.Join(",",keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
             }
             else
             {
@@ -687,7 +687,7 @@ VALUES
                 sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} 
 ({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))},{string.Join(",", updateFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))}) 
 VALUES
-( {string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.GetNameFromCustomAttributeOrDefault()}"))} )");
+( {string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
             }
             else
             {
