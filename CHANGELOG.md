@@ -3,14 +3,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
-## [1.0.60] - 2019-01-01
+## [1.0.57] - 2019-07-20
 
 ### Changed
 - Fix bug in upsert statement generatation for sqlite.
 
 
 
-[0.0.1]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v0.0.1
+[1.0.57]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.57
 
 
 <!--  EXAMPLE SEE LINK https://keepachangelog.com/en/1.0.0/
