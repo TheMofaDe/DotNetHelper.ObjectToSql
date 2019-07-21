@@ -42,6 +42,11 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Insert
             var list = System.Enum.GetValues(typeof(ActionType)).Cast<ActionType>().ToList();
             list.ForEach(delegate(ActionType type)
             {
+                if (type == ActionType.Insert)
+                {
+                    Assert.DoesNotThrow(() =>  SqliteObjectToSql.BuildQuery(null, type, obj)); 
+                    return;
+                }
                 Assert.That(() => SqliteObjectToSql.BuildQuery(null, type, obj),
                     Throws.Exception
                         .TypeOf<InvalidOperationException>());

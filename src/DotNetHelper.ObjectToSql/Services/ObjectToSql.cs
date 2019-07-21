@@ -138,8 +138,8 @@ namespace DotNetHelper.ObjectToSql.Services
             switch (actionType)
             {
                 case ActionType.Insert:
-                    if (instance.GetType().IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
-                    BuildInsertQuery(sqlBuilder, tableName, instance.GetType());
+                    // if (instance.GetType().IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
+                    BuildInsertQuery(sqlBuilder, tableName, instance.GetType(),instance);
                     break;
                 case ActionType.Update:
                     ThrowIfDynamicOrAnonymous(actionType, instance.GetType());
@@ -313,7 +313,18 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="type"></param>
         private void BuildInsertQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
-            var allFields = GetNonIdentityFields(IncludeNonPublicAccessor, type);
+             BuildInsertQuery(sqlBuilder, tableName, type);
+        }
+
+        /// <summary>
+        /// Builds the insert query.
+        /// </summary>
+        /// <param name="sqlBuilder">The SQL builder.</param>
+        /// <param name="tableName">Name of the table.</param>
+        /// <param name="type"></param>
+        private void BuildInsertQuery(StringBuilder sqlBuilder, string tableName, Type type, object instance)
+        {
+            var allFields = GetNonIdentityFields(IncludeNonPublicAccessor, type, instance);
             // Insert sql statement prefix 
             sqlBuilder.Append($"INSERT INTO {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} (");
 
@@ -957,6 +968,20 @@ VALUES
         /// <returns>List&lt;MemberWrapper&gt;.</returns>
         public List<MemberWrapper> GetNonIdentityFields(bool includeNonPublicAccessor, Type type)
         {
+            return ExtFastMember.GetMemberWrappers(type, includeNonPublicAccessor).Where(m => !m.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored()).AsList();
+        }
+
+        /// <summary>
+        /// Gets the non identity fields.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>List&lt;MemberWrapper&gt;.</returns>
+        public List<MemberWrapper> GetNonIdentityFields(bool includeNonPublicAccessor, Type type, object instance)
+        {
+            if (instance != null && instance is IDynamicMetaObjectProvider a)
+            {
+                return ExtFastMember.GetMemberWrappers(a);
+            }
             return ExtFastMember.GetMemberWrappers(type, includeNonPublicAccessor).Where(m => !m.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored()).AsList();
         }
 

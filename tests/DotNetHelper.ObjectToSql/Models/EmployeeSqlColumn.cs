@@ -176,7 +176,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                             return $@"INSERT OR REPLACE INTO Employee 
 ([PrimaryKey],[FirstName2],[LastName]) 
 VALUES
-( (SELECT PrimaryKey FROM Employee WHERE [PrimaryKey]=@PrimaryKey), @FirstName2,@LastName )"; 
+( (SELECT PrimaryKey FROM Employee WHERE [PrimaryKey]=@PrimaryKey), @FirstName,@LastName )"; 
                         case ActionType.Delete:
                             return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                         default:

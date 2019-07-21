@@ -31,7 +31,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 
 
         [Test]
-        public void Test_BuildQuery()
+        public void Test_BuildQuery_Throws_InvalidOperation_ForNonInsert_Actions()
         {
             
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
@@ -42,6 +42,11 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
             var list = System.Enum.GetValues(typeof(ActionType)).Cast<ActionType>().ToList();
             list.ForEach(delegate(ActionType type)
             {
+                if (type == ActionType.Insert)
+                {
+                    Assert.DoesNotThrow(() => sqlServerObjectToSql.BuildQuery(null, type, obj));
+                    return;
+                }
                 Assert.That(() => sqlServerObjectToSql.BuildQuery(null, type, obj),
                     Throws.Exception
                         .TypeOf<InvalidOperationException>());
