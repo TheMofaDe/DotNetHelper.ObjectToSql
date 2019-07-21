@@ -875,8 +875,9 @@ VALUES
             // Get non primary key fields - the ones we want to update.
             if (instance is IDynamicMetaObjectProvider a)
             {
-                //return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => !m.IsMemberAPrimaryKeyColumn() && r.PropertyName == m.Name) != null).AsList();
-                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => r.IsMemberAPrimaryKeyColumn() && r.PropertyName == m.Name) == null).AsList();
+                var members = ExtFastMember.GetMemberWrappers(a);
+                members.RemoveAll(w => runTimeAttributes.FirstOrDefault(r => r.PropertyName == w.Name)?.ShouldMemberBeIgnored() == true || runTimeAttributes.FirstOrDefault(r => r.PropertyName == w.Name)?.IsMemberAPrimaryKeyColumn() == true);
+                return members;
             }
             return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => !r.IsMemberAPrimaryKeyColumn() && r.PropertyName == m.Name) != null).AsList();
         }
@@ -917,7 +918,9 @@ VALUES
             // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
             if (instance is IDynamicMetaObjectProvider a)
             {
-                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => r.IsMemberAPrimaryKeyColumn() && !r.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
+                var members = ExtFastMember.GetMemberWrappers(a);
+                members.RemoveAll(w => runTimeAttributes.FirstOrDefault(r => r.PropertyName == w.Name)?.ShouldMemberBeIgnored() == true || runTimeAttributes.FirstOrDefault(r => r.PropertyName == w.Name)?.IsMemberAPrimaryKeyColumn() != true);
+                return members;
             }
             return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => r.IsMemberAPrimaryKeyColumn() && !r.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
         }
@@ -956,7 +959,9 @@ VALUES
             // Get non primary key fields - the ones we want to update.
             if (instance is IDynamicMetaObjectProvider a)
             {
-                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => r.IsMemberAnIdentityColumn() && !r.ShouldMemberBeIgnored() && r.PropertyName == m.Name) == null).AsList();
+                var members = ExtFastMember.GetMemberWrappers(a);
+                    members.RemoveAll(w => runTimeAttributes.FirstOrDefault(r => r.PropertyName == w.Name)?.ShouldMemberBeIgnored() == true || runTimeAttributes.FirstOrDefault(r => r.PropertyName == w.Name)?.IsMemberAnIdentityColumn() == true);
+                    return members;
             }
             return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => !r.IsMemberAnIdentityColumn() && !r.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
         }
@@ -1010,7 +1015,9 @@ VALUES
             // Get non primary key fields - the ones we want to update.
             if (instance is IDynamicMetaObjectProvider a)
             {
-                return ExtFastMember.GetMemberWrappers(a).Where(m => runTimeAttributes.FirstOrDefault(r => !r.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
+                var members = ExtFastMember.GetMemberWrappers(a);
+                members.RemoveAll(w => runTimeAttributes.FirstOrDefault(r => r.PropertyName == w.Name)?.ShouldMemberBeIgnored() == true);
+                return members;
             }
             return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => !r.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
         }

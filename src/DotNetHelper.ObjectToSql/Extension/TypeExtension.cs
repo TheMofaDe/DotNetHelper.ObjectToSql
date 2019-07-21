@@ -84,7 +84,7 @@ namespace DotNetHelper.ObjectToSql.Extension
         public static string GetTableNameFromCustomAttributeOrDefault(this Type type)
         {
             var t = type;
-            while (type.IsTypeAnIEnumerable())
+            while (t.IsTypeAnIEnumerable())
             {
                 t = type.GetEnumerableItemType();
             }
