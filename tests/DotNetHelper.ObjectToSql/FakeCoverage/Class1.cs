@@ -76,7 +76,7 @@ namespace DotNetHelper.ObjectToSql.Tests.FakeCoverage
 
                 var param = objToSql.BuildDbParameterList(employee,(s, o) => new SqlParameter(s,o), null,o => JsonConvert.SerializeObject(o),null);
                 var tableExistSQL = syntaxHelper.BuildTableExistStatement(new SQLTable(type, "TEST"), "", "");
-                var sql = objToSql.BuildQuery<Employee>(null, ActionType.Insert);
+                var sql = objToSql.BuildQuery<Employee>( ActionType.Insert);
 
                 syntaxHelper.ConvertParameterSqlToReadable(param, sql, Encoding.UTF8);
             });

@@ -28,7 +28,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Uses_Mapped_Column_Name_Instead_Of_PropertyName()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnSqlColumn>(null,ActionType);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnSqlColumn>ActionType);
             Assert.AreEqual(sql, EmployeeWithMappedColumnSqlColumn.ToSql(ActionType));
         }
 
@@ -36,7 +36,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Uses_Mapped_Column_Name_Instead_Of_PropertyName_Insert_Key()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(null, ActionType);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn> ActionType);
             Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType, sqlServerObjectToSql.DatabaseType));
         }
 
@@ -46,7 +46,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Doesnt_Include_Ignored_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIgnorePropertySqlColumn>(null, ActionType);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIgnorePropertySqlColumn> ActionType);
             Assert.AreEqual(sql, EmployeeWithIgnorePropertySqlColumn.ToSql(ActionType));
             
         }
@@ -55,7 +55,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Doesnt_Try_To_Insert_Identity_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(null, ActionType);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn> ActionType);
             Assert.AreEqual(sql, EmployeeWithIdentityKeySqlColumn.ToSql(ActionType));
 
         }
@@ -65,7 +65,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Does_Try_To_Insert_PrimaryKey_Column()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>(null, ActionType);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn> ActionType);
             Assert.AreEqual(sql, EmployeeWithPrimaryKeySqlColumn.ToSql(ActionType));
 
         }

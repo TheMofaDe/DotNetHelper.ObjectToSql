@@ -30,33 +30,39 @@
 + More to come
 
 ## How to use
+
+
+
 ##### How to Use With Generics Types
+
 ```csharp
 public class Employee {
       public FirstName { get; set; }
       public LastName  { get; set; }
 }
-            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            var insertSql = sqlServerObjectToSql.BuildQuery<Employee>("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert);
+```
+```csharp
+var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
+var insertSql = objectToSql.BuildQuery<Employee>("TableName", ActionType.Insert);
 // OR 
-            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,typeof(Employee));
+var insertSql = objectToSql.BuildQuery("TableName", ActionType.Insert,typeof(Employee));
 ```
 
 ##### How to Use With Dynamic Objects
 ```csharp
-            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            dynamic record = new ExpandoObject();
-            record.FirstName = "John";
-            record.LastName = "Doe";
-            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,record);
+var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
+dynamic record = new ExpandoObject();
+record.FirstName = "John";
+record.LastName = "Doe";
+var insertSql = objectToSql.BuildQuery("TableName", ActionType.Insert,record);
 ```
 
 
 ##### How to Use With Anonymous Objects
 ```csharp
-            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            var anonymousObject = new { FirstName = "John" , LastName = "Doe"}
-            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,anonymousObject);
+var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
+var anonymousObject = new { FirstName = "John" , LastName = "Doe"}
+var insertSql = objectToSql.BuildQuery("TableName", ActionType.Insert,anonymousObject);
 ```
 ##### Output
 ```sql
