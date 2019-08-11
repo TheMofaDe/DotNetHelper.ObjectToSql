@@ -27,7 +27,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Anonymous.Insert
         {
             var obj = new { FirstName = 1, LastName = "sfsd"};
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery( "Table",ActionType.Insert,obj);
+            var sql = sqlServerObjectToSql.BuildQuery( ActionType.Insert,obj, "Table");
             Assert.AreEqual(sql, "INSERT INTO Table ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
         }
 
@@ -35,7 +35,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Anonymous.Insert
         public void Test_Anonymous_BuildInsertQuery_uses_type_name_when_null()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<Employee>( null,ActionType.Insert);
+            var sql = sqlServerObjectToSql.BuildQuery<Employee>(ActionType.Insert);
             Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
         }
 

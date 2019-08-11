@@ -94,7 +94,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
         //public void Test_Generic_BuildUpdateQuery_Ignores_All_Keys_Attributes_And_Uses_Only_OverrideKeys()
         //{
         //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-        //    var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>(nameof(EmployeeWithPrimaryKeySqlColumn), ActionType, null);
+        //    var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>( ActionType, null);
         //    Assert.AreEqual(sql, EmployeeWithPrimaryKeySqlColumn.ToSql(ActionType));
         //}
 

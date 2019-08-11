@@ -27,7 +27,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Anonymous.Insert
         {
             var obj = new { FirstName = 1, LastName = "sfsd"};
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery( "Table",ActionType.Insert,obj);
+            var sql = SqliteObjectToSql.BuildQuery( ActionType.Insert,obj);
             Assert.AreEqual(sql, "INSERT INTO Table ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
         }
 
@@ -35,7 +35,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Anonymous.Insert
         public void Test_Anonymous_BuildInsertQuery_uses_type_name_when_null()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery<Employee>( null,ActionType.Insert);
+            var sql = SqliteObjectToSql.BuildQuery<Employee>( ActionType.Insert);
             Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
         }
 

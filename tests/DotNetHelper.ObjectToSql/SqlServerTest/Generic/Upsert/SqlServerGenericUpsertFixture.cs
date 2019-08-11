@@ -34,7 +34,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         public void Test_Generic_Build_Upsert_Query()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>("Employee", ActionType),
+            Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>( ActionType),
                 Throws.Exception
                     .TypeOf<MissingKeyAttributeException>());
         }
@@ -44,7 +44,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         {
             object employee = new Employee();
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => sqlServerObjectToSql.BuildQuery("Employee", ActionType, employee),
+            Assert.That(() => sqlServerObjectToSql.BuildQuery( ActionType, employee),
                 Throws.Exception
                     .TypeOf<MissingKeyAttributeException>());
         }

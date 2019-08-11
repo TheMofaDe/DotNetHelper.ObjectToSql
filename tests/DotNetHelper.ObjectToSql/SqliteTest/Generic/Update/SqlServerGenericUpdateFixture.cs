@@ -25,7 +25,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         //public void Test_Generic_BuildUpdateQuery_Ensure_MissingKeyException_Is_Thrown()
         //{
         //    var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-        //    Assert.That(() => SqliteObjectToSql.BuildQuery<Employee>( nameof(Employee),ActionType,null),
+        //    Assert.That(() => SqliteObjectToSql.BuildQuery<Employee>(ActionType,null),
         //        Throws.Exception
         //            .TypeOf<MissingKeyAttributeException>());
         //}
@@ -35,7 +35,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         {
             object employee = new Employee();
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            Assert.That(() => SqliteObjectToSql.BuildQuery("Employee", ActionType, employee),
+            Assert.That(() => SqliteObjectToSql.BuildQuery( ActionType, employee),
                 Throws.Exception
                     .TypeOf<MissingKeyAttributeException>());
         }

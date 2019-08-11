@@ -27,7 +27,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         public void Test_Generic_BuildUpdateQuery_Uses_MappedColumn_Name_Instead_Of_PropertyName()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>( nameof(EmployeeWithMappedColumnAndPrimaryKeySqlColumn),ActionType);
+            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType);
             Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType,SqliteObjectToSql.DatabaseType));
         }
 
@@ -35,7 +35,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         public void Test_Generic_BuildUpdateQuery_Doesnt_Include_Ignored_Column()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithIgnorePropertyAndKeySqlColumn>(nameof(EmployeeWithIgnorePropertyAndKeySqlColumn), ActionType);
+            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithIgnorePropertyAndKeySqlColumn>( ActionType);
             Assert.AreEqual(sql, EmployeeWithIgnorePropertyAndKeySqlColumn.ToSql(ActionType));
         }
 
@@ -43,7 +43,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         public void Test_Generic_BuildUpdateQuery_Includes_Where_Clause_With_Identity_Column()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(nameof(EmployeeWithIdentityKeySqlColumn), ActionType);
+            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>( ActionType);
             Assert.AreEqual(sql, EmployeeWithIdentityKeySqlColumn.ToSql(ActionType));
         }
 
@@ -51,7 +51,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         public void Test_Generic_Ensure_Table_Attribute_Name_Is_Used()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithTableAttribute>(null, ActionType);
+            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithTableAttribute>(  ActionType);
             Assert.AreEqual(sql, EmployeeWithTableAttribute.ToSql(ActionType));
         }
 
@@ -59,7 +59,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         public void Test_Generic_BuildQuery_Ensure_Override_Keys_Is_Used()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(nameof(EmployeeWithIdentityKeySqlColumn), ActionType,column => column.IdentityKey);
+            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>( ActionType,null,column => column.IdentityKey);
             Assert.AreEqual(sql, EmployeeWithIdentityKeySqlColumn.ToSql(ActionType));
         }
 
@@ -67,7 +67,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         public void Test_Generic_BuildUpdateQuery_Includes_Where_Clause_With_Primary_Column()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>(nameof(EmployeeWithPrimaryKeySqlColumn), ActionType);
+            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>( ActionType);
             Assert.AreEqual(sql, EmployeeWithPrimaryKeySqlColumn.ToSql(ActionType));
 
         }
@@ -76,7 +76,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         public void Test_Generic_BuildUpdateQuery_Includes_Where_Clause_With_Multiple_Primary_Column()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithManyPrimaryKeySqlColumn>(nameof(EmployeeWithManyPrimaryKeySqlColumn), ActionType);
+            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithManyPrimaryKeySqlColumn>( ActionType);
             Assert.AreEqual(sql, EmployeeWithManyPrimaryKeySqlColumn.ToSql(ActionType));
         }
 
@@ -85,8 +85,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         public void Test_Generic_BuildQueryWithOutputs()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(nameof(Employee),
-                ActionType, a => a.PrimaryKey);
+            var sql = SqliteObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(
+                ActionType,null, a => a.PrimaryKey);
             Assert.AreEqual(sql, $@"UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName OUTPUT DELETED.[PrimaryKey]  WHERE [PrimaryKey]=@PrimaryKey");
         }
 
@@ -94,7 +94,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Update
         //public void Test_Generic_BuildUpdateQuery_Ignores_All_Keys_Attributes_And_Uses_Only_OverrideKeys()
         //{
         //    var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-        //    var sql = SqliteObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>(nameof(EmployeeWithPrimaryKeySqlColumn), ActionType, null);
+        //    var sql = SqliteObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>( ActionType, null);
         //    Assert.AreEqual(sql, EmployeeWithPrimaryKeySqlColumn.ToSql(ActionType));
         //}
 

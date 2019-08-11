@@ -10,21 +10,41 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
         public string LastName { get; set; }
 
 
-        public static string ToSql(ActionType action)
+        public static string ToSql(ActionType action,DataBaseType dataBaseType)
         {
-            switch (action)
+            switch (dataBaseType)
             {
-                case ActionType.Insert:
-                    return $"INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
-                case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
-                case ActionType.Upsert:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
-                case ActionType.Delete:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                case DataBaseType.SqlServer:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Upsert:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.MySql:
+                    break;
+                case DataBaseType.Sqlite:
+                    break;
+                case DataBaseType.Oracle:
+                    break;
+                case DataBaseType.Oledb:
+                    break;
+                case DataBaseType.Access95:
+                    break;
+                case DataBaseType.Odbc:
+                    break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    throw new ArgumentOutOfRangeException(nameof(dataBaseType), dataBaseType, null);
             }
+
+            return null;
         }
     }
 }

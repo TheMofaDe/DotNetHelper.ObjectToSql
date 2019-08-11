@@ -27,7 +27,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Upsert
         public void Test_Generic_BuildUpsertQuery_Uses_MappedColumn_Name_Instead_Of_PropertyName()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(nameof(Employee),ActionType.Upsert);
+            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType.Upsert);
             Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType,SqliteObjectToSql.DatabaseType));
         }
 
@@ -36,7 +36,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Upsert
         public void Test_Generic_BuildQuery_Ensure_Override_Keys_Is_Used()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(nameof(EmployeeWithIdentityKeySqlColumn), ActionType.Upsert, column => column.FirstName);
+            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>( ActionType.Upsert,null, column => column.FirstName);
             Assert.AreEqual(sql, "INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) ON CONFLICT ([FirstName] DO UPDATE SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName");
         }
 
@@ -47,7 +47,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Upsert
         //public void Test_Generic_BuildUpsertQuery_Ignores_All_Keys_Attributes_And_Uses_Only_OverrideKeys()
         //{
         //    var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-        //    SqliteObjectToSql.BuildQuery<EmployeeWithPrimaryKeyDataAnnotation>( nameof(Employee),e => e.FirstName);
+        //    SqliteObjectToSql.BuildQuery<EmployeeWithPrimaryKeyDataAnnotation>(e => e.FirstName);
         //    Assert.AreEqual(StringBuilder.ToString(), "IF EXISTS ( SELECT * FROM Employee WHERE [FirstName]=@FirstName ) " +
         //                                              "BEGIN " +
         //                                              "UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [FirstName]=@FirstName " +

@@ -44,10 +44,10 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Insert
             {
                 if (type == ActionType.Insert)
                 {
-                    Assert.DoesNotThrow(() =>  SqliteObjectToSql.BuildQuery(null, type, obj)); 
+                    Assert.DoesNotThrow(() =>  SqliteObjectToSql.BuildQuery( type, obj)); 
                     return;
                 }
-                Assert.That(() => SqliteObjectToSql.BuildQuery(null, type, obj),
+                Assert.That(() => SqliteObjectToSql.BuildQuery( type, obj),
                     Throws.Exception
                         .TypeOf<InvalidOperationException>());
             });

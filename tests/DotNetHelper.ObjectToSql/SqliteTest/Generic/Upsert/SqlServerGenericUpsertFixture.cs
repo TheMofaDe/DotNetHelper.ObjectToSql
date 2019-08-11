@@ -34,7 +34,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Upsert
         public void Test_Generic_Build_Upsert_Query()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            Assert.That(() => SqliteObjectToSql.BuildQuery<Employee>("Employee", ActionType),
+            Assert.That(() => SqliteObjectToSql.BuildQuery<Employee>( ActionType),
                 Throws.Exception
                     .TypeOf<MissingKeyAttributeException>());
         }
@@ -44,7 +44,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Upsert
         {
             object employee = new Employee();
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            Assert.That(() => SqliteObjectToSql.BuildQuery("Employee", ActionType, employee),
+            Assert.That(() => SqliteObjectToSql.BuildQuery( ActionType, employee),
                 Throws.Exception
                     .TypeOf<MissingKeyAttributeException>());
         }

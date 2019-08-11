@@ -30,7 +30,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Delete
         {
             object employee = new Employee();
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            Assert.That(() => SqliteObjectToSql.BuildQuery("Employee", ActionType, employee),
+            Assert.That(() => SqliteObjectToSql.BuildQuery( ActionType, employee),
                 Throws.Exception
                     .TypeOf<MissingKeyAttributeException>());
         }
@@ -38,7 +38,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Delete
         //public void Test_Generic_BuildDeleteQuery_Ensure_MissingKeyException_Is_Thrown_()
         //{
         //    var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-        //    Assert.That(() => SqliteObjectToSql.BuildQuery<EmployeeWithMappedColumnDataAnnotation>( nameof(Employee),ActionType)
+        //    Assert.That(() => SqliteObjectToSql.BuildQuery<EmployeeWithMappedColumnDataAnnotation>(ActionType)
         //        Throws.Exception
         //            .TypeOf<MissingKeyAttributeException>());
         //}
@@ -48,7 +48,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Delete
         public void Test_Generic_BuildDeleteQuery_Includes_Where_Clause_With_Identity_Column()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithIdentityKeyDataAnnotation>(nameof(EmployeeWithIdentityKeyDataAnnotation), ActionType);
+            var sql = SqliteObjectToSql.BuildQuery<EmployeeWithIdentityKeyDataAnnotation>( ActionType);
             Assert.AreEqual(sql, EmployeeWithIdentityKeyDataAnnotation.ToSql(ActionType));
         }
 
@@ -56,7 +56,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Delete
         public void Test_Generic_BuildDeleteQuery_Includes_Where_Clause_With_Primary_Column()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery< EmployeeWithPrimaryKeyDataAnnotation>(nameof(EmployeeWithPrimaryKeyDataAnnotation), ActionType);
+            var sql = SqliteObjectToSql.BuildQuery< EmployeeWithPrimaryKeyDataAnnotation>( ActionType);
             Assert.AreEqual(sql, EmployeeWithPrimaryKeyDataAnnotation.ToSql(ActionType));
         }
 
@@ -64,7 +64,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqliteTest.Generic.Delete
         public void Test_Generic_BuildDeleteQuery_Includes_Where_Clause_With_Multiple_Primary_Column()
         {
             var SqliteObjectToSql = new Services.ObjectToSql(DataBaseType.Sqlite);
-            var sql = SqliteObjectToSql.BuildQuery< EmployeeWithManyPrimaryKeyDataAnnotation>(nameof(EmployeeWithManyPrimaryKeyDataAnnotation), ActionType);
+            var sql = SqliteObjectToSql.BuildQuery< EmployeeWithManyPrimaryKeyDataAnnotation>( ActionType);
             Assert.AreEqual(sql, EmployeeWithManyPrimaryKeyDataAnnotation.ToSql(ActionType));
         }
 

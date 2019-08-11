@@ -25,7 +25,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
         //public void Test_Generic_BuildUpdateQuery_Ensure_MissingKeyException_Is_Thrown()
         //{
         //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-        //    Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>( nameof(Employee),ActionType,null),
+        //    Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>(ActionType,null),
         //        Throws.Exception
         //            .TypeOf<MissingKeyAttributeException>());
         //}
@@ -35,7 +35,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
         {
             object employee = new Employee();
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => sqlServerObjectToSql.BuildQuery("Employee", ActionType, employee),
+            Assert.That(() => sqlServerObjectToSql.BuildQuery( ActionType, employee),
                 Throws.Exception
                     .TypeOf<MissingKeyAttributeException>());
         }

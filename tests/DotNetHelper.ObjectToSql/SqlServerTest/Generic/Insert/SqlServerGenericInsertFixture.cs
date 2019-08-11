@@ -14,7 +14,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
     public class SqlServerGenericInsertFixture
     {
 
-     
+        public DataBaseType DataBaseType { get; } = DataBaseType.SqlServer;
         public ActionType ActionType { get; } = ActionType.Insert;
         public List<RunTimeAttributeMap> RunTimeAttribute { get; } = new List<RunTimeAttributeMap>()
         {
@@ -37,8 +37,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_Build_Insert_Query()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery("Employee", ActionType,new Employee());
-            Assert.AreEqual(sql, Employee.ToSql(ActionType));
+            var sql = sqlServerObjectToSql.BuildQuery( ActionType,new Employee());
+            Assert.AreEqual(sql, Employee.ToSql(ActionType, DataBaseType));
         }
 
         [Test]
@@ -46,35 +46,35 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             object employee = new Employee();
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery("Employee", ActionType,employee);
-            Assert.AreEqual(sql, Employee.ToSql(ActionType));
+            var sql = sqlServerObjectToSql.BuildQuery( ActionType,employee);
+            Assert.AreEqual(sql, Employee.ToSql(ActionType, DataBaseType));
         }
 
         [Test]
         public void Test_Generic_Build_Insert_Query_Uses_Type_Name_When_Table_Name_Is_Not_Specified()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<Employee>(null, ActionType);
-            Assert.AreEqual(sql, Employee.ToSql(ActionType));
+            var sql = sqlServerObjectToSql.BuildQuery<Employee>(  ActionType);
+            Assert.AreEqual(sql, Employee.ToSql(ActionType, DataBaseType));
         }
 
 
 
-        [Test]
-        public void Test_Generic_Build_Insert_Query_Throws_ArgumentNull_When_RunTimeAttribute_Mapping_IsNull()
-        {
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>("Employee", ActionType, new Employee(), null),
-                        Throws.Exception
-                            .TypeOf<ArgumentNullException>());
-        }
+        //[Test]
+        //public void Test_Generic_Build_Insert_Query_Throws_ArgumentNull_When_RunTimeAttribute_Mapping_IsNull()
+        //{
+        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+        //    Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>( ActionType, new Employee(), null),
+        //                Throws.Exception
+        //                    .TypeOf<ArgumentNullException>());
+        //}
 
 
         [Test]
         public void Test_Generic_BuildInsertQueryWithOutputs()
         {
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<Employee>(nameof(Employee),ActionType, e => e.FirstName);
+            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<Employee>(ActionType,null, e => e.FirstName);
             Assert.AreEqual(sql, $"INSERT INTO Employee ([FirstName],[LastName]) {Environment.NewLine} OUTPUT INSERTED.[FirstName] {Environment.NewLine} VALUES (@FirstName,@LastName)");
         }
 
