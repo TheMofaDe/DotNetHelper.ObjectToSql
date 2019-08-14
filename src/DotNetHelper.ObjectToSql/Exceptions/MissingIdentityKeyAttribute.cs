@@ -10,36 +10,19 @@ namespace DotNetHelper.ObjectToSql.Exceptions
     [Serializable()]
     public class MissingIdentityKeyAttributeException : System.Exception
     {
-        /// <inheritdoc />
-        /// <summary>
-        /// Just create the exception
-        /// </summary>
-        public MissingIdentityKeyAttributeException() : base()
-        {
-            
-        }
+
 
         /// <inheritdoc />
         /// <summary>
         /// Create the exception with description
         /// </summary>
         /// <param name="message">Exception description</param>
-        public MissingIdentityKeyAttributeException(string message) : base(message)
+        internal MissingIdentityKeyAttributeException(string message) : base(message)
         {
 
         }
 
-        /// <inheritdoc />
-        /// <summary>
-        /// Create the exception with description and inner cause
-        /// </summary>
-        /// <param name="message">Exception description</param>
-        /// <param name="innerException">Exception inner cause</param>
-        public MissingIdentityKeyAttributeException(string message, System.Exception innerException) : base(message, innerException)
-        {
-
-        }
-
+  
         /// <inheritdoc />
         /// <summary>
         /// Create the exception from serialized data.

@@ -10,35 +10,19 @@ namespace DotNetHelper.ObjectToSql.Exceptions
     [Serializable()]
     public class EmptyArgumentException : System.Exception
     {
-        /// <inheritdoc />
-        /// <summary>
-        /// Just create the exception
-        /// </summary>
-        public EmptyArgumentException() : base()
-        {
-
-        }
+        
 
         /// <inheritdoc />
         /// <summary>
         /// Create the exception with description
         /// </summary>
         /// <param name="message">Exception description</param>
-        public EmptyArgumentException(string message) : base(message)
+        internal EmptyArgumentException(string message) : base(message)
         {
 
         }
 
-        /// <inheritdoc />
-        /// <summary>
-        /// Create the exception with description and inner cause
-        /// </summary>
-        /// <param name="message">Exception description</param>
-        /// <param name="innerException">Exception inner cause</param>
-        public EmptyArgumentException(string message, System.Exception innerException) : base(message, innerException)
-        {
-
-        }
+       
 
         /// <inheritdoc />
         /// <summary>

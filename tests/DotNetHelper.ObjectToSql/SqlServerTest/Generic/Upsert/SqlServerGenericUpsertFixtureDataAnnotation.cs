@@ -1,11 +1,12 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Tests.Models;
 using NUnit.Framework;
 
 namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
 {
-    public class SqlServerGenericUpsertFixtureDataAnnotation
+    public class SqlServerGenericUpsertFixtureDataAnnotation : BaseTest
     {
 
 
@@ -26,18 +27,48 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         [Test]
         public void Test_Generic_BuildUpsertQuery_Uses_MappedColumn_Name_Instead_Of_PropertyName()
         {
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            RunTestOnAllDBTypes(delegate (DataBaseType type) {
+                var sqlServerObjectToSql = new Services.ObjectToSql(type);
             var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType.Upsert);
-            Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType,sqlServerObjectToSql.DatabaseType));
+            Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType,type));
+            });
         }
 
 
         [Test]
         public void Test_Generic_BuildQuery_Ensure_Override_Keys_Is_Used()
         {
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            RunTestOnAllDBTypes(delegate (DataBaseType type) {
+                    var sqlServerObjectToSql = new Services.ObjectToSql(type);
             var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>( ActionType.Upsert,null, column => column.FirstName);
-            Assert.AreEqual(sql, "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END");
+
+
+            var answer = "";
+            switch (type)
+            {
+                case DataBaseType.SqlServer:
+                    answer =
+                        "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END";
+                    break;
+                case DataBaseType.MySql:
+                    break;
+                case DataBaseType.Sqlite:
+                    answer = "INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) ON CONFLICT ([FirstName] DO UPDATE SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName";
+                    break;
+                case DataBaseType.Oracle:
+                    break;
+                case DataBaseType.Oledb:
+                    break;
+                case DataBaseType.Access95:
+                    break;
+                case DataBaseType.Odbc:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+            Assert.AreEqual(sql,answer);
+           
+            });
         }
 
 

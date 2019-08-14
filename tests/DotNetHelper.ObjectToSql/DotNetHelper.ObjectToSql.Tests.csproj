@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="SqliteTest\**" />
+    <EmbeddedResource Remove="SqliteTest\**" />
+    <None Remove="SqliteTest\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="SqlServerTest\Anonymous\AnonymousObjectToSqlFixture.cs" />
   </ItemGroup>
 
@@ -33,7 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="SqliteTest\Generic\Get\" />
     <Folder Include="SqlServerTest\Generic\Get\" />
   </ItemGroup>
 

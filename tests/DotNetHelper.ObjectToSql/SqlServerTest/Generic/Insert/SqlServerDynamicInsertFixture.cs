@@ -12,7 +12,7 @@ using NUnit.Framework;
 
 namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 {
-    public class SqlServerDynamicInsertFixture
+    public class SqlServerDynamicInsertFixture : BaseTest
     {
 
 
