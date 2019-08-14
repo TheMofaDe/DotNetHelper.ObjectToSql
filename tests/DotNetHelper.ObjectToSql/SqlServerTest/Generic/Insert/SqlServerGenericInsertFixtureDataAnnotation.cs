@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Exceptions;
 using DotNetHelper.ObjectToSql.Tests.Models;
@@ -85,11 +86,32 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type) {
                                     var sqlServerObjectToSql = new Services.ObjectToSql(type);
-            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(
-                ActionType, "Employee", a => a.PrimaryKey);
-            Assert.AreEqual(sql, $@"INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) 
- OUTPUT INSERTED.[PrimaryKey] 
- VALUES (@FirstName,@LastName,@PrimaryKey)");
+            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(ActionType, "Employee", a => a.PrimaryKey);
+
+            var answer = string.Empty;
+            switch (type)
+            {
+                case DataBaseType.SqlServer:
+                    answer = "INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) \r\n OUTPUT INSERTED.[PrimaryKey] \r\n VALUES (@FirstName,@LastName,@PrimaryKey)";
+                    break;
+                case DataBaseType.MySql:
+                    break;
+                case DataBaseType.Sqlite:
+                    answer = "INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) \r\n OUTPUT INSERTED.[PrimaryKey] \r\n VALUES (@FirstName,@LastName,@PrimaryKey)";
+                    break;
+                case DataBaseType.Oracle:
+                    break;
+                case DataBaseType.Oledb:
+                    break;
+                case DataBaseType.Access95:
+                    break;
+                case DataBaseType.Odbc:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+
+            Assert.AreEqual(sql, answer);
             });
         }
 
@@ -109,9 +131,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildQueryWithOutputs_Uses_MappedColumn_Name_Instead_Of_PropertyName()
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type) {
-                                            var sqlServerObjectToSql = new Services.ObjectToSql(type);
-
-            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnDataAnnotation>(ActionType, "Employee", e => e.FirstName);
+               var sqlServerObjectToSql = new Services.ObjectToSql(type);
+               var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnDataAnnotation>(ActionType, "Employee", e => e.FirstName);
             Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)");
             });
         }

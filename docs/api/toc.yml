@@ -28,8 +28,6 @@
     name: MissingIdentityKeyAttributeException
   - uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
     name: MissingKeyAttributeException
-  - uid: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException
-    name: NoValidRuntimeAttributeException
 - uid: DotNetHelper.ObjectToSql.Extension
   name: DotNetHelper.ObjectToSql.Extension
   items:

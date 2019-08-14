@@ -9,11 +9,10 @@ items:
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter})
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Object)
-  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType)
-  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,``0,System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap})
-  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(DotNetHelper.ObjectToSql.Enum.ActionType,System.Object,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue(DotNetHelper.FastMember.Extension.Models.MemberWrapper,System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue(System.Object)
@@ -25,6 +24,7 @@ items:
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields``1(System.Boolean)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type,System.Object)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields``1(System.Boolean)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields(System.Boolean,System.Type)
@@ -206,16 +206,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType)
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType)
-  id: BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  id: BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
   parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
   langs:
   - csharp
   - vb
-  name: BuildQuery<T>(String, ActionType)
-  nameWithType: ObjectToSql.BuildQuery<T>(String, ActionType)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery<T>(System.String, DotNetHelper.ObjectToSql.Enum.ActionType)
+  name: BuildQuery<T>(ActionType, String)
+  nameWithType: ObjectToSql.BuildQuery<T>(ActionType, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery<T>(DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
   type: Method
   source:
     remote:
@@ -230,36 +230,36 @@ items:
   namespace: DotNetHelper.ObjectToSql.Services
   syntax:
     content: >-
-      public string BuildQuery<T>(string tableName, ActionType actionType)
+      public string BuildQuery<T>(ActionType actionType, string tableName = null)
           where T : class
     parameters:
-    - id: tableName
-      type: System.String
     - id: actionType
       type: DotNetHelper.ObjectToSql.Enum.ActionType
+    - id: tableName
+      type: System.String
     typeParameters:
     - id: T
     return:
       type: System.String
-    content.vb: Public Function BuildQuery(Of T As Class)(tableName As String, actionType As ActionType) As String
+    content.vb: Public Function BuildQuery(Of T As Class)(actionType As ActionType, tableName As String = Nothing) As String
   overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery*
-  nameWithType.vb: ObjectToSql.BuildQuery(Of T)(String, ActionType)
+  nameWithType.vb: ObjectToSql.BuildQuery(Of T)(ActionType, String)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(Of T)(System.String, DotNetHelper.ObjectToSql.Enum.ActionType)
-  name.vb: BuildQuery(Of T)(String, ActionType)
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(Of T)(DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  name.vb: BuildQuery(Of T)(ActionType, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
   langs:
   - csharp
   - vb
-  name: BuildQuery<T>(String, ActionType, Expression<Func<T, Object>>[])
-  nameWithType: ObjectToSql.BuildQuery<T>(String, ActionType, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery<T>(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  name: BuildQuery<T>(ActionType, String, Expression<Func<T, Object>>[])
+  nameWithType: ObjectToSql.BuildQuery<T>(ActionType, String, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery<T>(DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -274,38 +274,38 @@ items:
   namespace: DotNetHelper.ObjectToSql.Services
   syntax:
     content: >-
-      public string BuildQuery<T>(string tableName, ActionType actionType, params Expression<Func<T, object>>[] primaryKeys)
+      public string BuildQuery<T>(ActionType actionType, string tableName = null, params Expression<Func<T, object>>[] primaryKeys)
           where T : class
     parameters:
-    - id: tableName
-      type: System.String
     - id: actionType
       type: DotNetHelper.ObjectToSql.Enum.ActionType
+    - id: tableName
+      type: System.String
     - id: primaryKeys
       type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
     typeParameters:
     - id: T
     return:
       type: System.String
-    content.vb: Public Function BuildQuery(Of T As Class)(tableName As String, actionType As ActionType, ParamArray primaryKeys As Expression(Of Func(Of T, Object))()) As String
+    content.vb: Public Function BuildQuery(Of T As Class)(actionType As ActionType, tableName As String = Nothing, ParamArray primaryKeys As Expression(Of Func(Of T, Object))()) As String
   overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery*
-  nameWithType.vb: ObjectToSql.BuildQuery(Of T)(String, ActionType, Expression(Of Func(Of T, Object))())
+  nameWithType.vb: ObjectToSql.BuildQuery(Of T)(ActionType, String, Expression(Of Func(Of T, Object))())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(Of T)(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
-  name.vb: BuildQuery(Of T)(String, ActionType, Expression(Of Func(Of T, Object))())
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Object)
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Object)
-  id: BuildQuery(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Object)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(Of T)(DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: BuildQuery(Of T)(ActionType, String, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(DotNetHelper.ObjectToSql.Enum.ActionType,System.Object,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(DotNetHelper.ObjectToSql.Enum.ActionType,System.Object,System.String)
+  id: BuildQuery(DotNetHelper.ObjectToSql.Enum.ActionType,System.Object,System.String)
   parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
   langs:
   - csharp
   - vb
-  name: BuildQuery(String, ActionType, Object)
-  nameWithType: ObjectToSql.BuildQuery(String, ActionType, Object)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, System.Object)
+  name: BuildQuery(ActionType, Object, String)
+  nameWithType: ObjectToSql.BuildQuery(ActionType, Object, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(DotNetHelper.ObjectToSql.Enum.ActionType, System.Object, System.String)
   type: Method
   source:
     remote:
@@ -319,80 +319,32 @@ items:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
   syntax:
-    content: public string BuildQuery(string tableName, ActionType actionType, object instance)
+    content: public string BuildQuery(ActionType actionType, object instance, string tableName = null)
     parameters:
-    - id: tableName
-      type: System.String
     - id: actionType
       type: DotNetHelper.ObjectToSql.Enum.ActionType
     - id: instance
       type: System.Object
-    return:
-      type: System.String
-    content.vb: Public Function BuildQuery(tableName As String, actionType As ActionType, instance As Object) As String
-  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,``0,System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap})
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,``0,System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap})
-  id: BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,``0,System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap})
-  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
-  langs:
-  - csharp
-  - vb
-  name: BuildQuery<T>(String, ActionType, T, List<RunTimeAttributeMap>)
-  nameWithType: ObjectToSql.BuildQuery<T>(String, ActionType, T, List<RunTimeAttributeMap>)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery<T>(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, T, System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: BuildQuery
-    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 171
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Services
-  syntax:
-    content: >-
-      public string BuildQuery<T>(string tableName, ActionType actionType, T instance, List<RunTimeAttributeMap> runTimeAttributes)
-          where T : class
-    parameters:
     - id: tableName
       type: System.String
-    - id: actionType
-      type: DotNetHelper.ObjectToSql.Enum.ActionType
-    - id: instance
-      type: '{T}'
-    - id: runTimeAttributes
-      type: System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap}
-    typeParameters:
-    - id: T
     return:
       type: System.String
-    content.vb: Public Function BuildQuery(Of T As Class)(tableName As String, actionType As ActionType, instance As T, runTimeAttributes As List(Of RunTimeAttributeMap)) As String
+    content.vb: Public Function BuildQuery(actionType As ActionType, instance As Object, tableName As String = Nothing) As String
   overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery*
-  nameWithType.vb: ObjectToSql.BuildQuery(Of T)(String, ActionType, T, List(Of RunTimeAttributeMap))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(Of T)(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, T, System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap))
-  name.vb: BuildQuery(Of T)(String, ActionType, T, List(Of RunTimeAttributeMap))
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: BuildQueryWithOutputs``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
   langs:
   - csharp
   - vb
-  name: BuildQueryWithOutputs<T>(String, ActionType, Expression<Func<T, Object>>[])
-  nameWithType: ObjectToSql.BuildQueryWithOutputs<T>(String, ActionType, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs<T>(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  name: BuildQueryWithOutputs<T>(ActionType, String, Expression<Func<T, Object>>[])
+  nameWithType: ObjectToSql.BuildQueryWithOutputs<T>(ActionType, String, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs<T>(DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -401,7 +353,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryWithOutputs
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 202
+    startLine: 169
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -409,14 +361,14 @@ items:
   example: []
   syntax:
     content: >-
-      public string BuildQueryWithOutputs<T>(string tableName, ActionType actionType, params Expression<Func<T, object>>[] outputFields)
+      public string BuildQueryWithOutputs<T>(ActionType actionType, string tableName = null, params Expression<Func<T, object>>[] outputFields)
           where T : class
     parameters:
-    - id: tableName
-      type: System.String
-      description: ''
     - id: actionType
       type: DotNetHelper.ObjectToSql.Enum.ActionType
+      description: ''
+    - id: tableName
+      type: System.String
       description: ''
     - id: outputFields
       type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
@@ -427,15 +379,15 @@ items:
     return:
       type: System.String
       description: ''
-    content.vb: Public Function BuildQueryWithOutputs(Of T As Class)(tableName As String, actionType As ActionType, ParamArray outputFields As Expression(Of Func(Of T, Object))()) As String
+    content.vb: Public Function BuildQueryWithOutputs(Of T As Class)(actionType As ActionType, tableName As String = Nothing, ParamArray outputFields As Expression(Of Func(Of T, Object))()) As String
   overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs*
-  nameWithType.vb: ObjectToSql.BuildQueryWithOutputs(Of T)(String, ActionType, Expression(Of Func(Of T, Object))())
+  nameWithType.vb: ObjectToSql.BuildQueryWithOutputs(Of T)(ActionType, String, Expression(Of Func(Of T, Object))())
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs(Of T)(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
-  name.vb: BuildQueryWithOutputs(Of T)(String, ActionType, Expression(Of Func(Of T, Object))())
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs(Of T)(DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: BuildQueryWithOutputs(Of T)(ActionType, String, Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields``1(System.Boolean)
   commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields``1(System.Boolean)
   id: GetNonKeyFields``1(System.Boolean)
@@ -454,7 +406,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 851
+    startLine: 786
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -500,7 +452,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 861
+    startLine: 796
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -548,7 +500,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 877
+    startLine: 813
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -588,7 +540,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 892
+    startLine: 828
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -634,7 +586,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 903
+    startLine: 839
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -682,7 +634,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 918
+    startLine: 856
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -722,7 +674,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 932
+    startLine: 870
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -768,7 +720,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 942
+    startLine: 880
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -816,7 +768,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 957
+    startLine: 896
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -833,6 +785,48 @@ items:
       type: System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper}
       description: List&lt;MemberWrapper>.
     content.vb: Public Function GetNonIdentityFields(includeNonPublicAccessor As Boolean, type As Type) As List(Of MemberWrapper)
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type,System.Object)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type,System.Object)
+  id: GetNonIdentityFields(System.Boolean,System.Type,System.Object)
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: GetNonIdentityFields(Boolean, Type, Object)
+  nameWithType: ObjectToSql.GetNonIdentityFields(Boolean, Type, Object)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean, System.Type, System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: GetNonIdentityFields
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 905
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\nGets the non identity fields.\n"
+  example: []
+  syntax:
+    content: public List<MemberWrapper> GetNonIdentityFields(bool includeNonPublicAccessor, Type type, object instance)
+    parameters:
+    - id: includeNonPublicAccessor
+      type: System.Boolean
+    - id: type
+      type: System.Type
+    - id: instance
+      type: System.Object
+    return:
+      type: System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper}
+      description: List&lt;MemberWrapper>.
+    content.vb: Public Function GetNonIdentityFields(includeNonPublicAccessor As Boolean, type As Type, instance As Object) As List(Of MemberWrapper)
   overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields*
   modifiers.csharp:
   - public
@@ -856,7 +850,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 971
+    startLine: 923
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -902,7 +896,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 982
+    startLine: 934
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -950,7 +944,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 998
+    startLine: 951
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -990,7 +984,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertToDatabaseValue
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1015
+    startLine: 968
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1041,7 +1035,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertToDatabaseValue
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1054
+    startLine: 1007
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1080,7 +1074,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1076
+    startLine: 1029
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1136,7 +1130,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1111
+    startLine: 1064
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1186,7 +1180,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildWhereClause
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1124
+    startLine: 1077
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1546,6 +1540,12 @@ references:
   name: BuildQuery
   nameWithType: ObjectToSql.BuildQuery
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.ActionType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: ActionType
+  nameWithType: ActionType
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1553,12 +1553,6 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: DotNetHelper.ObjectToSql.Enum.ActionType
-  commentId: T:DotNetHelper.ObjectToSql.Enum.ActionType
-  parent: DotNetHelper.ObjectToSql.Enum
-  name: ActionType
-  nameWithType: ActionType
-  fullName: DotNetHelper.ObjectToSql.Enum.ActionType
 - uid: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
   isExternal: true
   name: Expression<Func<T, Object>>[]
@@ -1641,103 +1635,6 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap}
-  commentId: T:System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  name: List<RunTimeAttributeMap>
-  nameWithType: List<RunTimeAttributeMap>
-  fullName: System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>
-  nameWithType.vb: List(Of RunTimeAttributeMap)
-  fullName.vb: System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  name.vb: List(Of RunTimeAttributeMap)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-    name: RunTimeAttributeMap
-    nameWithType: RunTimeAttributeMap
-    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-    name: RunTimeAttributeMap
-    nameWithType: RunTimeAttributeMap
-    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs*
   commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs
   name: BuildQueryWithOutputs
@@ -1792,6 +1689,103 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap}
+  commentId: T:System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<RunTimeAttributeMap>
+  nameWithType: List<RunTimeAttributeMap>
+  fullName: System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>
+  nameWithType.vb: List(Of RunTimeAttributeMap)
+  fullName.vb: System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
+  name.vb: List(Of RunTimeAttributeMap)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+    name: RunTimeAttributeMap
+    nameWithType: RunTimeAttributeMap
+    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
 - uid: System.Type
   commentId: T:System.Type
   parent: System

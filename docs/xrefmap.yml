@@ -382,30 +382,12 @@ references:
   commentId: T:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
   fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
   nameWithType: EmptyArgumentException
-- uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor
-  name: EmptyArgumentException()
-  href: api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html#DotNetHelper_ObjectToSql_Exceptions_EmptyArgumentException__ctor
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor
-  fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.EmptyArgumentException()
-  nameWithType: EmptyArgumentException.EmptyArgumentException()
 - uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
   name: EmptyArgumentException(SerializationInfo, StreamingContext)
   href: api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html#DotNetHelper_ObjectToSql_Exceptions_EmptyArgumentException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
   commentId: M:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
   fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.EmptyArgumentException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
   nameWithType: EmptyArgumentException.EmptyArgumentException(SerializationInfo, StreamingContext)
-- uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.String)
-  name: EmptyArgumentException(String)
-  href: api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html#DotNetHelper_ObjectToSql_Exceptions_EmptyArgumentException__ctor_System_String_
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.String)
-  fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.EmptyArgumentException(System.String)
-  nameWithType: EmptyArgumentException.EmptyArgumentException(String)
-- uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.String,System.Exception)
-  name: EmptyArgumentException(String, Exception)
-  href: api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html#DotNetHelper_ObjectToSql_Exceptions_EmptyArgumentException__ctor_System_String_System_Exception_
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.String,System.Exception)
-  fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.EmptyArgumentException(System.String, System.Exception)
-  nameWithType: EmptyArgumentException.EmptyArgumentException(String, Exception)
 - uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor*
   name: EmptyArgumentException
   href: api/DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.html#DotNetHelper_ObjectToSql_Exceptions_EmptyArgumentException__ctor_
@@ -419,30 +401,12 @@ references:
   commentId: T:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
   fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
   nameWithType: MissingIdentityKeyAttributeException
-- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor
-  name: MissingIdentityKeyAttributeException()
-  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor
-  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException()
-  nameWithType: MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException()
 - uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
   name: MissingIdentityKeyAttributeException(SerializationInfo, StreamingContext)
   href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
   commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
   fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
   nameWithType: MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(SerializationInfo, StreamingContext)
-- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.String)
-  name: MissingIdentityKeyAttributeException(String)
-  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor_System_String_
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.String)
-  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(System.String)
-  nameWithType: MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(String)
-- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.String,System.Exception)
-  name: MissingIdentityKeyAttributeException(String, Exception)
-  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor_System_String_System_Exception_
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.String,System.Exception)
-  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(System.String, System.Exception)
-  nameWithType: MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(String, Exception)
 - uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor*
   name: MissingIdentityKeyAttributeException
   href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor_
@@ -456,30 +420,12 @@ references:
   commentId: T:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
   fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
   nameWithType: MissingKeyAttributeException
-- uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor
-  name: MissingKeyAttributeException()
-  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingKeyAttributeException__ctor
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor
-  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.MissingKeyAttributeException()
-  nameWithType: MissingKeyAttributeException.MissingKeyAttributeException()
 - uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
   name: MissingKeyAttributeException(SerializationInfo, StreamingContext)
   href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingKeyAttributeException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
   commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
   fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.MissingKeyAttributeException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
   nameWithType: MissingKeyAttributeException.MissingKeyAttributeException(SerializationInfo, StreamingContext)
-- uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.String)
-  name: MissingKeyAttributeException(String)
-  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingKeyAttributeException__ctor_System_String_
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.String)
-  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.MissingKeyAttributeException(System.String)
-  nameWithType: MissingKeyAttributeException.MissingKeyAttributeException(String)
-- uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.String,System.Exception)
-  name: MissingKeyAttributeException(String, Exception)
-  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingKeyAttributeException__ctor_System_String_System_Exception_
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.String,System.Exception)
-  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.MissingKeyAttributeException(System.String, System.Exception)
-  nameWithType: MissingKeyAttributeException.MissingKeyAttributeException(String, Exception)
 - uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor*
   name: MissingKeyAttributeException
   href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingKeyAttributeException__ctor_
@@ -487,43 +433,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.MissingKeyAttributeException
   nameWithType: MissingKeyAttributeException.MissingKeyAttributeException
-- uid: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException
-  name: NoValidRuntimeAttributeException
-  href: api/DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.html
-  commentId: T:DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException
-  fullName: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException
-  nameWithType: NoValidRuntimeAttributeException
-- uid: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor
-  name: NoValidRuntimeAttributeException()
-  href: api/DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor
-  fullName: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.NoValidRuntimeAttributeException()
-  nameWithType: NoValidRuntimeAttributeException.NoValidRuntimeAttributeException()
-- uid: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-  name: NoValidRuntimeAttributeException(SerializationInfo, StreamingContext)
-  href: api/DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-  fullName: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.NoValidRuntimeAttributeException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
-  nameWithType: NoValidRuntimeAttributeException.NoValidRuntimeAttributeException(SerializationInfo, StreamingContext)
-- uid: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor(System.String)
-  name: NoValidRuntimeAttributeException(String)
-  href: api/DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_System_String_
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor(System.String)
-  fullName: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.NoValidRuntimeAttributeException(System.String)
-  nameWithType: NoValidRuntimeAttributeException.NoValidRuntimeAttributeException(String)
-- uid: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor(System.String,System.Exception)
-  name: NoValidRuntimeAttributeException(String, Exception)
-  href: api/DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_System_String_System_Exception_
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor(System.String,System.Exception)
-  fullName: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.NoValidRuntimeAttributeException(System.String, System.Exception)
-  nameWithType: NoValidRuntimeAttributeException.NoValidRuntimeAttributeException(String, Exception)
-- uid: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor*
-  name: NoValidRuntimeAttributeException
-  href: api/DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_NoValidRuntimeAttributeException__ctor_
-  commentId: Overload:DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.#ctor
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Exceptions.NoValidRuntimeAttributeException.NoValidRuntimeAttributeException
-  nameWithType: NoValidRuntimeAttributeException.NoValidRuntimeAttributeException
 - uid: DotNetHelper.ObjectToSql.Extension
   name: DotNetHelper.ObjectToSql.Extension
   href: api/DotNetHelper.ObjectToSql.Extension.html
@@ -1196,12 +1105,12 @@ references:
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList(Of T)(T, System.Func(Of System.String, System.Object, System.Data.Common.DbParameter), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
   nameWithType: ObjectToSql.BuildDbParameterList<T>(T, Func<String, Object, DbParameter>, Func<Object, String>, Func<Object, String>, Func<Object, String>)
   nameWithType.vb: ObjectToSql.BuildDbParameterList(Of T)(T, Func(Of String, Object, DbParameter), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Object)
-  name: BuildQuery(String, ActionType, Object)
-  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQuery_System_String_DotNetHelper_ObjectToSql_Enum_ActionType_System_Object_
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Object)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, System.Object)
-  nameWithType: ObjectToSql.BuildQuery(String, ActionType, Object)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(DotNetHelper.ObjectToSql.Enum.ActionType,System.Object,System.String)
+  name: BuildQuery(ActionType, Object, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQuery_DotNetHelper_ObjectToSql_Enum_ActionType_System_Object_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(DotNetHelper.ObjectToSql.Enum.ActionType,System.Object,System.String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(DotNetHelper.ObjectToSql.Enum.ActionType, System.Object, System.String)
+  nameWithType: ObjectToSql.BuildQuery(ActionType, Object, String)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery*
   name: BuildQuery
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQuery_
@@ -1209,33 +1118,24 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery
   nameWithType: ObjectToSql.BuildQuery
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType)
-  name: BuildQuery<T>(String, ActionType)
-  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQuery__1_System_String_DotNetHelper_ObjectToSql_Enum_ActionType_
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType)
-  name.vb: BuildQuery(Of T)(String, ActionType)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery<T>(System.String, DotNetHelper.ObjectToSql.Enum.ActionType)
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(Of T)(System.String, DotNetHelper.ObjectToSql.Enum.ActionType)
-  nameWithType: ObjectToSql.BuildQuery<T>(String, ActionType)
-  nameWithType.vb: ObjectToSql.BuildQuery(Of T)(String, ActionType)
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,``0,System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap})
-  name: BuildQuery<T>(String, ActionType, T, List<RunTimeAttributeMap>)
-  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQuery__1_System_String_DotNetHelper_ObjectToSql_Enum_ActionType___0_System_Collections_Generic_List_DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap__
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,``0,System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap})
-  name.vb: BuildQuery(Of T)(String, ActionType, T, List(Of RunTimeAttributeMap))
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery<T>(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, T, System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>)
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(Of T)(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, T, System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap))
-  nameWithType: ObjectToSql.BuildQuery<T>(String, ActionType, T, List<RunTimeAttributeMap>)
-  nameWithType.vb: ObjectToSql.BuildQuery(Of T)(String, ActionType, T, List(Of RunTimeAttributeMap))
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  name: BuildQuery<T>(String, ActionType, Expression<Func<T, Object>>[])
-  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQuery__1_System_String_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  name.vb: BuildQuery(Of T)(String, ActionType, Expression(Of Func(Of T, Object))())
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery<T>(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(Of T)(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
-  nameWithType: ObjectToSql.BuildQuery<T>(String, ActionType, Expression<Func<T, Object>>[])
-  nameWithType.vb: ObjectToSql.BuildQuery(Of T)(String, ActionType, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  name: BuildQuery<T>(ActionType, String)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQuery__1_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  name.vb: BuildQuery(Of T)(ActionType, String)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery<T>(DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(Of T)(DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  nameWithType: ObjectToSql.BuildQuery<T>(ActionType, String)
+  nameWithType.vb: ObjectToSql.BuildQuery(Of T)(ActionType, String)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: BuildQuery<T>(ActionType, String, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQuery__1_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: BuildQuery(Of T)(ActionType, String, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery<T>(DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(Of T)(DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: ObjectToSql.BuildQuery<T>(ActionType, String, Expression<Func<T, Object>>[])
+  nameWithType.vb: ObjectToSql.BuildQuery(Of T)(ActionType, String, Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs*
   name: BuildQueryWithOutputs
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQueryWithOutputs_
@@ -1243,15 +1143,15 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs
   nameWithType: ObjectToSql.BuildQueryWithOutputs
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  name: BuildQueryWithOutputs<T>(String, ActionType, Expression<Func<T, Object>>[])
-  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQueryWithOutputs__1_System_String_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(System.String,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  name.vb: BuildQueryWithOutputs(Of T)(String, ActionType, Expression(Of Func(Of T, Object))())
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs<T>(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs(Of T)(System.String, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
-  nameWithType: ObjectToSql.BuildQueryWithOutputs<T>(String, ActionType, Expression<Func<T, Object>>[])
-  nameWithType.vb: ObjectToSql.BuildQueryWithOutputs(Of T)(String, ActionType, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: BuildQueryWithOutputs<T>(ActionType, String, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQueryWithOutputs__1_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: BuildQueryWithOutputs(Of T)(ActionType, String, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs<T>(DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs(Of T)(DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: ObjectToSql.BuildQueryWithOutputs<T>(ActionType, String, Expression<Func<T, Object>>[])
+  nameWithType.vb: ObjectToSql.BuildQueryWithOutputs(Of T)(ActionType, String, Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
   name: BuildWhereClause(StringBuilder, List<MemberWrapper>)
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildWhereClause_System_Text_StringBuilder_System_Collections_Generic_List_DotNetHelper_FastMember_Extension_Models_MemberWrapper__
@@ -1371,6 +1271,12 @@ references:
   commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type)
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean, System.Type)
   nameWithType: ObjectToSql.GetNonIdentityFields(Boolean, Type)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type,System.Object)
+  name: GetNonIdentityFields(Boolean, Type, Object)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_GetNonIdentityFields_System_Boolean_System_Type_System_Object_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type,System.Object)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean, System.Type, System.Object)
+  nameWithType: ObjectToSql.GetNonIdentityFields(Boolean, Type, Object)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields*
   name: GetNonIdentityFields
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_GetNonIdentityFields_
