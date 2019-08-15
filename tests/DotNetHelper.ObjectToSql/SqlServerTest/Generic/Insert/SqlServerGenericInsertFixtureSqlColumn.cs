@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Exceptions;
 using DotNetHelper.ObjectToSql.Tests.Models;
@@ -28,7 +29,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Uses_Mapped_Column_Name_Instead_Of_PropertyName()
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type) {
-                var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+                var sqlServerObjectToSql = new Services.ObjectToSql(type);
             var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnSqlColumn>(ActionType);
             Assert.AreEqual(sql, EmployeeWithMappedColumnSqlColumn.ToSql(ActionType,type));
             });
@@ -38,7 +39,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Uses_Mapped_Column_Name_Instead_Of_PropertyName_Insert_Key()
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type) {
-                var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+                var sqlServerObjectToSql = new Services.ObjectToSql(type);
             var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType);
             Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType,type));
             });
@@ -50,7 +51,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Doesnt_Include_Ignored_Column()
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type) {
-                var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+                var sqlServerObjectToSql = new Services.ObjectToSql(type);
             var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIgnorePropertySqlColumn>(ActionType);
             Assert.AreEqual(sql, EmployeeWithIgnorePropertySqlColumn.ToSql(ActionType,type));
             });
@@ -61,7 +62,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Doesnt_Try_To_Insert_Identity_Column()
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type) {
-                    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+                    var sqlServerObjectToSql = new Services.ObjectToSql(type);
             var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(ActionType);
             Assert.AreEqual(sql, EmployeeWithIdentityKeySqlColumn.ToSql(ActionType,type));
             });
@@ -73,7 +74,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_Generic_BuildInsertQuery_Does_Try_To_Insert_PrimaryKey_Column()
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type) {
-                        var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+                        var sqlServerObjectToSql = new Services.ObjectToSql(type);
             var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>(ActionType);
             Assert.AreEqual(sql, EmployeeWithPrimaryKeySqlColumn.ToSql(ActionType,type));
             });
@@ -82,33 +83,78 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 
 
 
- //       [Test]
- //       public void Test_Generic_BuildQueryWithOutputs()
- //       {
- //           RunTestOnAllDBTypes(delegate (DataBaseType type) {
- //                           var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
- //           var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(
- //               ActionType, "Employee", a => a.PrimaryKey);
- //           Assert.AreEqual(sql, $@"INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) 
- //OUTPUT INSERTED.[PrimaryKey] 
- //VALUES (@FirstName,@LastName,@PrimaryKey)");
- //           });
- //       }
+        [Test]
+        public void Test_Generic_BuildQueryWithOutputs()
+        {
+            RunTestOnAllDBTypes(delegate (DataBaseType type)
+            {
+                var sqlServerObjectToSql = new Services.ObjectToSql(type);
+                var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(
+                    ActionType, "Employee", a => a.PrimaryKey);
+
+                var value = $"";
+                switch (type)
+                {
+                    case DataBaseType.SqlServer:
+                        value = "INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) \r\n OUTPUT INSERTED.[PrimaryKey] \r\n VALUES (@FirstName,@LastName,@PrimaryKey)";
+                        break;
+                    case DataBaseType.MySql:
+                        break;
+                    case DataBaseType.Sqlite:
+                        value = "INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) \r\n OUTPUT INSERTED.[PrimaryKey] \r\n VALUES (@FirstName,@LastName,@PrimaryKey)";
+                        break;
+                    case DataBaseType.Oracle:
+                        break;
+                    case DataBaseType.Oledb:
+                        break;
+                    case DataBaseType.Access95:
+                        break;
+                    case DataBaseType.Odbc:
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(type), type, null);
+                }
+                Assert.AreEqual(sql, value);
+            });
+        }
 
 
 
 
 
- //       [Test]
- //       public void Test_Generic_BuildQueryWithOutputs_Uses_MappedColumn_Name_Instead_Of_PropertyName()
- //       {
- //           RunTestOnAllDBTypes(delegate (DataBaseType type) {
- //                               var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+        [Test]
+        public void Test_Generic_BuildQueryWithOutputs_Uses_MappedColumn_Name_Instead_Of_PropertyName()
+        {
+            RunTestOnAllDBTypes(delegate (DataBaseType type)
+            {
+                var sqlServerObjectToSql = new Services.ObjectToSql(type);
+                var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnSqlColumn>(ActionType, "Employee", e => e.FirstName);
 
- //           var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnSqlColumn>( ActionType, "Employee", e => e.FirstName);
- //           Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)");
- //           });
- //       }
+                var expected = "";
+                switch (type)
+                {
+                    case DataBaseType.SqlServer:
+                        expected = "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)";
+                        break;
+                    case DataBaseType.MySql:
+                        break;
+                    case DataBaseType.Sqlite:
+                        expected = "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)";
+                        break;
+                    case DataBaseType.Oracle:
+                        break;
+                    case DataBaseType.Oledb:
+                        break;
+                    case DataBaseType.Access95:
+                        break;
+                    case DataBaseType.Odbc:
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(type), type, null);
+                }
+                Assert.AreEqual(sql, expected);
+            });
+        }
 
 
 
