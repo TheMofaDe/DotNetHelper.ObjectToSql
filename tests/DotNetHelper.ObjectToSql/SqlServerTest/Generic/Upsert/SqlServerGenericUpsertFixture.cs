@@ -10,7 +10,7 @@ using NUnit.Framework;
 
 namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
 {
-    public class SqlServerGenericUpsertFixture
+    public class SqlServerGenericUpsertFixture : BaseTest
     {
 
         public ActionType ActionType { get; } = ActionType.Upsert;

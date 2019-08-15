@@ -29,7 +29,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type) {
                 var sqlServerObjectToSql = new Services.ObjectToSql(type);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType.Upsert);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType);
             Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType,type));
             });
         }
@@ -40,7 +40,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type) {
                     var sqlServerObjectToSql = new Services.ObjectToSql(type);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>( ActionType.Upsert,null, column => column.FirstName);
+            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>( ActionType,null, column => column.FirstName);
 
 
             var answer = "";
