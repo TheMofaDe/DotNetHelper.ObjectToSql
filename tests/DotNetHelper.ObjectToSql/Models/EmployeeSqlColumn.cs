@@ -216,7 +216,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                         case ActionType.Update:
                             return $"UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey";
                         case ActionType.Upsert:
-                            return $"IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey ) BEGIN UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey END ELSE BEGIN INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey) END"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                            return "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey ) BEGIN UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey END ELSE BEGIN INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey) END";
                         case ActionType.Delete:
                             return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                         default:
