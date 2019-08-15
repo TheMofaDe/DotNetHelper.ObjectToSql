@@ -161,12 +161,12 @@ Task("Test")
         new FilePath(coverageFile),
         new OpenCoverSettings(){
             LogLevel = OpenCoverLogLevel.Info,
-			OldStyle = false,
+			OldStyle = true,
 			MergeOutput = false
         }     
-		.WithFilter("+[*]*")
-        .WithFilter("-[*.tests]*")
-		.WithFilter("-[*.Tests]*")
+		// .WithFilter("+[*]*")
+        // .WithFilter("-[*.tests]*")
+		// .WithFilter("-[*.Tests]*")
 		);
 
         }
