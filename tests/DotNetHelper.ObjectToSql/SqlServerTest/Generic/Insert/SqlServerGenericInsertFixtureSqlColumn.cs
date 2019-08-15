@@ -82,33 +82,33 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 
 
 
-        [Test]
-        public void Test_Generic_BuildQueryWithOutputs()
-        {
-            RunTestOnAllDBTypes(delegate (DataBaseType type) {
-                            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(
-                ActionType, "Employee", a => a.PrimaryKey);
-            Assert.AreEqual(sql, $@"INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) 
- OUTPUT INSERTED.[PrimaryKey] 
- VALUES (@FirstName,@LastName,@PrimaryKey)");
-            });
-        }
+ //       [Test]
+ //       public void Test_Generic_BuildQueryWithOutputs()
+ //       {
+ //           RunTestOnAllDBTypes(delegate (DataBaseType type) {
+ //                           var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+ //           var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(
+ //               ActionType, "Employee", a => a.PrimaryKey);
+ //           Assert.AreEqual(sql, $@"INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) 
+ //OUTPUT INSERTED.[PrimaryKey] 
+ //VALUES (@FirstName,@LastName,@PrimaryKey)");
+ //           });
+ //       }
 
 
 
 
 
-        [Test]
-        public void Test_Generic_BuildQueryWithOutputs_Uses_MappedColumn_Name_Instead_Of_PropertyName()
-        {
-            RunTestOnAllDBTypes(delegate (DataBaseType type) {
-                                var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+ //       [Test]
+ //       public void Test_Generic_BuildQueryWithOutputs_Uses_MappedColumn_Name_Instead_Of_PropertyName()
+ //       {
+ //           RunTestOnAllDBTypes(delegate (DataBaseType type) {
+ //                               var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
 
-            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnSqlColumn>( ActionType, "Employee", e => e.FirstName);
-            Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)");
-            });
-        }
+ //           var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnSqlColumn>( ActionType, "Employee", e => e.FirstName);
+ //           Assert.AreEqual(sql, "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)");
+ //           });
+ //       }
 
 
 
