@@ -143,10 +143,10 @@ Task("Test")
         foreach(var targetFramework in MyProject.TargetFrameworks){
 
 		var tf = targetFramework.Replace("netstandard","netcoreapp");
-		if(tf.Contains("netcoreapp")){
+	    		if(tf.Contains("netcoreapp")){
 		    continue;
 		}
-	    var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + tf + "/DotNetHelper.ObjectToSql.Tests.dll");
+		var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + tf + "/*DotNetHelper.ObjectToSql.Tests.dll");
 
 		var nunitSettings = new NUnit3Settings
 		{
@@ -163,13 +163,11 @@ Task("Test")
         new FilePath(coverageFile),
         new OpenCoverSettings(){
             LogLevel = OpenCoverLogLevel.Info,
-			OldStyle = false,
+			OldStyle = true,
 			MergeOutput = false
         }     
-		// .WithFilter("+[*]*")
-        // .WithFilter("-[*.tests]*")
-		// .WithFilter("-[*.Tests]*")
-		);
+        .WithFilter("+[*]* -[*.Tests*]*")
+		.WithFilter("-[*NUnit3.*]*"));
 
         }
 		    
