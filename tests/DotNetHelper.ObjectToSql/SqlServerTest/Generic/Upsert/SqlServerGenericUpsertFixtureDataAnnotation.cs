@@ -24,15 +24,15 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         }
 
 
-        [Test]
-        public void Test_Generic_BuildUpsertQuery_Uses_MappedColumn_Name_Instead_Of_PropertyName()
-        {
-            RunTestOnAllDBTypes(delegate (DataBaseType type) {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-            var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType);
-            Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType,type));
-            });
-        }
+        //[Test]
+        //public void Test_Generic_BuildUpsertQuery_Uses_MappedColumn_Name_Instead_Of_PropertyName()
+        //{
+        //    RunTestOnAllDBTypes(delegate (DataBaseType type) {
+        //        var sqlServerObjectToSql = new Services.ObjectToSql(type);
+        //    var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType);
+        //    Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType,type));
+        //    });
+        //}
 
 
         [Test]
@@ -72,7 +72,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         }
 
 
-     
+
 
         //[Test]
         //public void Test_Generic_BuildUpsertQuery_Ignores_All_Keys_Attributes_And_Uses_Only_OverrideKeys()
