@@ -146,7 +146,7 @@ Task("Test")
 	    		if(tf.Contains("netcoreapp")){
 		    continue;
 		}
-		var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + tf + "/*DotNetHelper.ObjectToSql.Tests.dll");
+		var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + tf + "/*.Tests.dll");
 
 		var nunitSettings = new NUnit3Settings
 		{
@@ -557,6 +557,10 @@ Task("Publish-AppVeyor")
     if (FileExists(parameters.Paths.Directories.TestCoverageOutput + $"/TestResult.xml")) {
 
         AppVeyor.UploadTestResults(parameters.Paths.Directories.TestCoverageOutput + $"/TestResult.xml" , AppVeyorTestResultsType.NUnit3);
+    }
+
+	 if (FileExists(parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml")) {
+        AppVeyor.UploadArtifact(parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml" );
     }
 })
 .OnError(exception =>
