@@ -58,7 +58,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentOutOfRangeException"> invalid actionType </exception>
         /// <exception cref="MissingKeyAttributeException"> can only be thrown for UPDATE,DELETE, & UPSERT Queries</exception> 
-        public string BuildQuery<T>( ActionType actionType, string tableName = null) where T : class
+        public string BuildQuery<T>(ActionType actionType, string tableName = null) where T : class
         {
             var sqlBuilder = new StringBuilder();
             switch (actionType)
@@ -131,7 +131,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentOutOfRangeException"> invalid actionType </exception>
         /// <exception cref="MissingKeyAttributeException"> can only be thrown for UPDATE,DELETE, & UPSERT Queries</exception>
-        public string BuildQuery( ActionType actionType, object instance, string tableName = null)
+        public string BuildQuery(ActionType actionType, object instance, string tableName = null)
         {
             instance.IsNullThrow(nameof(instance));
             var sqlBuilder = new StringBuilder();
@@ -139,7 +139,7 @@ namespace DotNetHelper.ObjectToSql.Services
             {
                 case ActionType.Insert:
                     // if (instance.GetType().IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
-                    BuildInsertQuery(sqlBuilder, tableName, instance.GetType(),instance);
+                    BuildInsertQuery(sqlBuilder, tableName, instance.GetType(), instance);
                     break;
                 case ActionType.Update:
                     ThrowIfDynamicOrAnonymous(actionType, instance.GetType());
@@ -158,7 +158,7 @@ namespace DotNetHelper.ObjectToSql.Services
             }
             return sqlBuilder.ToString();
         }
- 
+
 
         /// <summary>
         /// </summary>
@@ -233,7 +233,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="tableName">Name of the table.</param>
         private void BuildInsertQuery<T>(StringBuilder sqlBuilder, string tableName) where T : class
         {
-            BuildInsertQuery(sqlBuilder,tableName,typeof(T));
+            BuildInsertQuery(sqlBuilder, tableName, typeof(T));
         }
 
 
@@ -245,7 +245,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="type"></param>
         private void BuildInsertQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
-            var allFields = GetNonIdentityFields(IncludeNonPublicAccessor,type);
+            var allFields = GetNonIdentityFields(IncludeNonPublicAccessor, type);
             // Insert sql statement prefix 
             sqlBuilder.Append($"INSERT INTO {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} (");
 
@@ -316,7 +316,8 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($" OUTPUT");
 
             var members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
-            outputFields.ForEach(delegate (string s) {
+            outputFields.ForEach(delegate (string s)
+            {
                 sqlBuilder.Append($" INSERTED.[{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}] ,");
             });
             if (!outputFields.IsNullOrEmpty())
@@ -480,7 +481,8 @@ namespace DotNetHelper.ObjectToSql.Services
 
             var members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
             sqlBuilder.Append($" OUTPUT");
-            outputFields.ForEach(delegate (string s) {
+            outputFields.ForEach(delegate (string s)
+            {
                 sqlBuilder.Append($" DELETED.[{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}] ,");
             });
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1);
@@ -594,7 +596,8 @@ namespace DotNetHelper.ObjectToSql.Services
 
             var members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
             sqlBuilder.Append($" OUTPUT");
-            outputFields.ForEach(delegate (string s) {
+            outputFields.ForEach(delegate (string s)
+            {
                 sqlBuilder.Append($" DELETED.[{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}] ,");
             });
 
@@ -617,7 +620,7 @@ namespace DotNetHelper.ObjectToSql.Services
                 sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} 
 ({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))},{string.Join(",", updateFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))}) 
 VALUES
-( {string.Join(",",keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
+( {string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
             }
             else
             {
@@ -632,9 +635,9 @@ VALUES
             }
         }
 
-        private void SQLiteBuildUpsertQuery(StringBuilder sqlBuilder, List<MemberWrapper> keyFields, string tableName, string whereClause, string normalInsertSQl,Type type) 
+        private void SQLiteBuildUpsertQuery(StringBuilder sqlBuilder, List<MemberWrapper> keyFields, string tableName, string whereClause, string normalInsertSQl, Type type)
         {
-            var updateFields = GetNonKeyFields(IncludeNonPublicAccessor,type);
+            var updateFields = GetNonKeyFields(IncludeNonPublicAccessor, type);
 
             var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
             if (trueForAll)
@@ -677,7 +680,7 @@ VALUES
             if (DatabaseType == DataBaseType.Sqlite)
             {
                 tableName = tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault();
-                SQLiteBuildUpsertQuery<T>(sqlBuilder,keyFields,tableName,sb2.ToString(),sb1.ToString());
+                SQLiteBuildUpsertQuery<T>(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString());
             }
             else
             {
@@ -714,7 +717,7 @@ VALUES
             else
             {
                 var sb = new StringBuilder();
-                BuildUpdateQuery(sb, tableName,overrideKeys);
+                BuildUpdateQuery(sb, tableName, overrideKeys);
                 sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
             }
         }
@@ -729,24 +732,24 @@ VALUES
         /// <param name="type">relection is done on this type to generate sql</param>
         private void BuildUpsertQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
-            var keyFields = GetKeyFields(IncludeNonPublicAccessor,type);
+            var keyFields = GetKeyFields(IncludeNonPublicAccessor, type);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
 
             var sb1 = new StringBuilder();
-            BuildInsertQuery(sb1, tableName,type);
+            BuildInsertQuery(sb1, tableName, type);
             var sb2 = new StringBuilder();
             BuildWhereClause(sb2, keyFields);
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
                 tableName = tableName ?? type.GetTableNameFromCustomAttributeOrDefault();
-                SQLiteBuildUpsertQuery(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString(),type);
+                SQLiteBuildUpsertQuery(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString(), type);
             }
             else
             {
                 var sb = new StringBuilder();
-                BuildUpdateQuery(sb, tableName,type);
+                BuildUpdateQuery(sb, tableName, type);
                 sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
             }
         }
@@ -884,8 +887,8 @@ VALUES
             if (instance is IDynamicMetaObjectProvider a)
             {
                 var members = ExtFastMember.GetMemberWrappers(a);
-                    members.RemoveAll(w => runTimeAttributes.FirstOrDefault(r => r.PropertyName == w.Name)?.ShouldMemberBeIgnored() == true || runTimeAttributes.FirstOrDefault(r => r.PropertyName == w.Name)?.IsMemberAnIdentityColumn() == true);
-                    return members;
+                members.RemoveAll(w => runTimeAttributes.FirstOrDefault(r => r.PropertyName == w.Name)?.ShouldMemberBeIgnored() == true || runTimeAttributes.FirstOrDefault(r => r.PropertyName == w.Name)?.IsMemberAnIdentityColumn() == true);
+                return members;
             }
             return ExtFastMember.GetMemberWrappers<T>(true).Where(m => runTimeAttributes.FirstOrDefault(r => !r.IsMemberAnIdentityColumn() && !r.ShouldMemberBeIgnored() && r.PropertyName == m.Name) != null).AsList();
         }

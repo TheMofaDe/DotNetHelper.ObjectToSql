@@ -7,31 +7,31 @@ using DotNetHelper.ObjectToSql.Enum;
 
 namespace DotNetHelper.ObjectToSql.Extension
 {
-   public static class MemberWrapperExtension
-   {
+    public static class MemberWrapperExtension
+    {
 
 
-       //public static object GetMemberValue(this MemberWrapper member, object instanceOfObject , Func<object, string> xmlDeserializer, Func<object, string> jsonDeserializer, Func<object, string> csvDeserializer)
-       //{
-       //    var value = ExtFastMember.GetMemberValue(instanceOfObject, member.Name);
-       //    var sqlAttribute = member.GetCustomAttribute<SqlColumnAttribute>();
-       //    if (sqlAttribute != null && sqlAttribute.SerializableType != SerializableType.NONE)
-       //    {
-       //        switch (sqlAttribute.SerializableType)
-       //        {
-       //            case SerializableType.XML:
-       //                value = xmlDeserializer.Invoke(value);
-       //                break;
-       //            case SerializableType.JSON:
-       //                value = jsonDeserializer.Invoke(value);
-       //                break;
-       //            case SerializableType.CSV:
-       //                value = csvDeserializer.Invoke(value);
-       //                break;
-       //        }
-       //    }
-       //    return value;
-       //}
+        //public static object GetMemberValue(this MemberWrapper member, object instanceOfObject , Func<object, string> xmlDeserializer, Func<object, string> jsonDeserializer, Func<object, string> csvDeserializer)
+        //{
+        //    var value = ExtFastMember.GetMemberValue(instanceOfObject, member.Name);
+        //    var sqlAttribute = member.GetCustomAttribute<SqlColumnAttribute>();
+        //    if (sqlAttribute != null && sqlAttribute.SerializableType != SerializableType.NONE)
+        //    {
+        //        switch (sqlAttribute.SerializableType)
+        //        {
+        //            case SerializableType.XML:
+        //                value = xmlDeserializer.Invoke(value);
+        //                break;
+        //            case SerializableType.JSON:
+        //                value = jsonDeserializer.Invoke(value);
+        //                break;
+        //            case SerializableType.CSV:
+        //                value = csvDeserializer.Invoke(value);
+        //                break;
+        //        }
+        //    }
+        //    return value;
+        //}
 
         public static bool ShouldMemberBeIgnored(this MemberWrapper member)
         {
@@ -46,7 +46,7 @@ namespace DotNetHelper.ObjectToSql.Extension
         {
             if (member.ShouldMemberBeIgnored()) return false;
             var attr1 = member.GetCustomAttribute<SqlColumnAttribute>();
-            if(attr1?.SerializableType == null) return false;
+            if (attr1?.SerializableType == null) return false;
             switch (attr1.SerializableType)
             {
                 case SerializableType.NONE:
@@ -60,7 +60,7 @@ namespace DotNetHelper.ObjectToSql.Extension
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-        
+
         }
 
         public static string GetNameFromCustomAttributeOrDefault(this MemberWrapper member)
@@ -78,9 +78,9 @@ namespace DotNetHelper.ObjectToSql.Extension
             var sqlColumnAttribute = member.GetCustomAttribute<SqlColumnAttribute>();
             var dataAnnotationAttribute = member.GetCustomAttribute<DatabaseGeneratedAttribute>();
             return
-                 (  dataAnnotationAttribute?.DatabaseGeneratedOption == DatabaseGeneratedOption.Identity
+                 (dataAnnotationAttribute?.DatabaseGeneratedOption == DatabaseGeneratedOption.Identity
                  || dataAnnotationAttribute?.DatabaseGeneratedOption == DatabaseGeneratedOption.Computed)
-                 || (sqlColumnAttribute?.IsIdentityKey == true) 
+                 || (sqlColumnAttribute?.IsIdentityKey == true)
                 ;
         }
 
@@ -98,6 +98,6 @@ namespace DotNetHelper.ObjectToSql.Extension
         }
 
 
-        
+
     }
 }

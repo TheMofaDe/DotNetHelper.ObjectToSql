@@ -1,12 +1,6 @@
 ﻿
 using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DotNetHelper.ObjectToSql.Enum;
-using DotNetHelper.ObjectToSql.Model;
 using DotNetHelper.ObjectToSql.Tests.Models;
 using NUnit.Framework;
 
@@ -30,22 +24,22 @@ namespace DotNetHelper.ObjectToSql.Tests
         [Test]
         public void Test_All_Build_Query_Overloads_Throws_ArgumentOutOfRange_When_Passing_Invalid_Action_Type()
         {
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer,false);
-          //  var isInvalid = System.Enum.TryParse<ActionType>("Insert",out var invalidEnum);
-          var invalidEnum = (ActionType) 70;
+            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer, false);
+            //  var isInvalid = System.Enum.TryParse<ActionType>("Insert",out var invalidEnum);
+            var invalidEnum = (ActionType)70;
 
-            Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>( invalidEnum),
+            Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>(invalidEnum),
                 Throws.Exception
                     .TypeOf<ArgumentOutOfRangeException>());
 
-            Assert.That(() => sqlServerObjectToSql.BuildQuery( invalidEnum, new Employee()),
+            Assert.That(() => sqlServerObjectToSql.BuildQuery(invalidEnum, new Employee()),
                 Throws.Exception
                     .TypeOf<ArgumentOutOfRangeException>());
 
-            Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>( invalidEnum, "Employee", e => e.FirstName ),
+            Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>(invalidEnum, "Employee", e => e.FirstName),
                 Throws.Exception
                     .TypeOf<ArgumentOutOfRangeException>());
-          
+
 
 
         }
@@ -58,12 +52,12 @@ namespace DotNetHelper.ObjectToSql.Tests
             //  var isInvalid = System.Enum.TryParse<ActionType>("Insert",out var invalidEnum);
             var invalidEnum = (ActionType)70;
 
-            
-            Assert.That(() => sqlServerObjectToSql.BuildQuery( invalidEnum, null),
+
+            Assert.That(() => sqlServerObjectToSql.BuildQuery(invalidEnum, null),
                 Throws.Exception
                     .TypeOf<ArgumentNullException>());
 
-       
+
 
 
 
@@ -77,7 +71,7 @@ namespace DotNetHelper.ObjectToSql.Tests
         public void EnsureGettingTableDoesntResultInInfiniteLoop()
         {
 
-            
+
         }
 
     }

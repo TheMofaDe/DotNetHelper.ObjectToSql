@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 using System.Linq;
-using System.Text;
 using DotNetHelper.ObjectToSql.Enum;
-using DotNetHelper.ObjectToSql.Exceptions;
-using DotNetHelper.ObjectToSql.Model;
-using DotNetHelper.ObjectToSql.Tests.Models;
 using NUnit.Framework;
 
 namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
@@ -33,26 +27,26 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         [Test]
         public void Test_BuildQuery_Throws_InvalidOperation_ForNonInsert_Actions()
         {
-            
+
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
             dynamic obj = new ExpandoObject();
             obj.FirstName2 = "John";
             obj.LastName = "Doe";
 
             var list = System.Enum.GetValues(typeof(ActionType)).Cast<ActionType>().ToList();
-            list.ForEach(delegate(ActionType type)
+            list.ForEach(delegate (ActionType type)
             {
                 if (type == ActionType.Insert)
                 {
-                    Assert.DoesNotThrow(() => sqlServerObjectToSql.BuildQuery( type, obj));
+                    Assert.DoesNotThrow(() => sqlServerObjectToSql.BuildQuery(type, obj));
                     return;
                 }
-                Assert.That(() => sqlServerObjectToSql.BuildQuery( type, obj),
+                Assert.That(() => sqlServerObjectToSql.BuildQuery(type, obj),
                     Throws.Exception
                         .TypeOf<InvalidOperationException>());
             });
 
-          
+
         }
 
         //[Test]

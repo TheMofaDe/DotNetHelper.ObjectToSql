@@ -1,5 +1,4 @@
-﻿using System.Text;
-using DotNetHelper.ObjectToSql.Enum;
+﻿using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Exceptions;
 using DotNetHelper.ObjectToSql.Tests.Models;
 using NUnit.Framework;
@@ -35,7 +34,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
         {
             object employee = new Employee();
             var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => sqlServerObjectToSql.BuildQuery( ActionType, employee),
+            Assert.That(() => sqlServerObjectToSql.BuildQuery(ActionType, employee),
                 Throws.Exception
                     .TypeOf<MissingKeyAttributeException>());
         }

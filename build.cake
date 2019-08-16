@@ -60,6 +60,7 @@
 #load "./build/tasks/publishchocolatey.cake"
 #load "./build/tasks/publish.cake"
 #load "./build/tasks/default.cake"
+#load "./build/tasks/formatcode.cake"
 
 
 

@@ -12,7 +12,7 @@ namespace DotNetHelper.ObjectToSql.Helper
     public class SqlSyntaxHelper
 
     {
-        public Dictionary<Type,string> EnclosedValueLookup { get; }
+        public Dictionary<Type, string> EnclosedValueLookup { get; }
         public DataBaseType DataBaseType { get; }
         public SqlSyntaxHelper(DataBaseType type)
         {
@@ -264,7 +264,7 @@ namespace DotNetHelper.ObjectToSql.Helper
 
 
 
-        public string BuildIfExistStatement(string selectStatement,string onTrueSql,string onFalseSql)
+        public string BuildIfExistStatement(string selectStatement, string onTrueSql, string onFalseSql)
         {
             switch (DataBaseType)
             {
@@ -298,7 +298,7 @@ namespace DotNetHelper.ObjectToSql.Helper
             switch (DataBaseType)
             {
                 case DataBaseType.SqlServer:
-                    query = $"IF OBJECT_ID(N'{sqlTable.FullNameWithBrackets}', N'U') IS NOT NULL BEGIN {onTrueSql} END ELSE BEGIN {onFalseSql} END"; 
+                    query = $"IF OBJECT_ID(N'{sqlTable.FullNameWithBrackets}', N'U') IS NOT NULL BEGIN {onTrueSql} END ELSE BEGIN {onFalseSql} END";
                     break;
                 case DataBaseType.MySql:
                     query = $"SELECT CASE WHEN COUNT(*) > 0 THEN 'TRUE' ELSE 'FALSE' END FROM information_schema.tables " +
@@ -327,7 +327,7 @@ namespace DotNetHelper.ObjectToSql.Helper
 
 
 
-        public string ConvertParameterSqlToReadable<T>(List<T> parameters, string query,Encoding encoding) where T : DbParameter
+        public string ConvertParameterSqlToReadable<T>(List<T> parameters, string query, Encoding encoding) where T : DbParameter
         {
             var sql = query.Clone().ToString();
             // Convert Query To Human Readable  
@@ -344,7 +344,7 @@ namespace DotNetHelper.ObjectToSql.Helper
         }
 
 
-        private  string CommandToSQl(object obj, Encoding encoding)
+        private string CommandToSQl(object obj, Encoding encoding)
         {
 
             if (obj == null || obj == DBNull.Value)
@@ -359,7 +359,7 @@ namespace DotNetHelper.ObjectToSql.Helper
             else if (obj is string stringValue)
             {
                 var quoteField = EnclosedValueLookup[stringValue.GetType()];
-                return $@"{quoteField}{stringValue.Replace("'", "''")}{quoteField}"; 
+                return $@"{quoteField}{stringValue.Replace("'", "''")}{quoteField}";
             }
             else if (obj is char charValue)
             {
@@ -411,7 +411,7 @@ namespace DotNetHelper.ObjectToSql.Helper
             }
             else if (obj is bool booleanValue)
             {
-                return booleanValue ? $"1" : $"0"; 
+                return booleanValue ? $"1" : $"0";
             }
             else if (obj is Guid guidValue)
             {

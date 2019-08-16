@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
-using DotNetHelper.FastMember.Extension.Models;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Exceptions;
 using DotNetHelper.ObjectToSql.Extension;
@@ -35,7 +34,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <exception cref="MissingKeyAttributeException"> can only be thrown for UPDATE,DELETE, & UPSERT Queries</exception> 
         public string BuildQuery(DataTable dataTable, ActionType actionType)
         {
-            return BuildQuery(dataTable, actionType,dataTable.TableName);
+            return BuildQuery(dataTable, actionType, dataTable.TableName);
         }
 
 
@@ -54,7 +53,7 @@ namespace DotNetHelper.ObjectToSql.Services
             switch (actionType)
             {
                 case ActionType.Insert:
-                    BuildInsertQuery(sqlBuilder, dataTable,tableName);
+                    BuildInsertQuery(sqlBuilder, dataTable, tableName);
                     break;
                 case ActionType.Update:
                     BuildUpdateQuery(sqlBuilder, dataTable, tableName);
@@ -93,7 +92,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentOutOfRangeException"> invalid actionType </exception>
         /// <exception cref="MissingKeyAttributeException"> can only be thrown for UPDATE,DELETE, & UPSERT Queries</exception> 
-        public string BuildQueryFromRowState(DataRow dataRow,  string tableName )
+        public string BuildQueryFromRowState(DataRow dataRow, string tableName)
         {
             var sqlBuilder = new StringBuilder();
             switch (dataRow.RowState)
@@ -123,12 +122,12 @@ namespace DotNetHelper.ObjectToSql.Services
 
 
 
-        private (List<string> keyFields, List<string> identityFields, List<string> nonIdentityFields)  GetFields (DataTable dataTable)
+        private (List<string> keyFields, List<string> identityFields, List<string> nonIdentityFields) GetFields(DataTable dataTable)
         {
-            var identityFields = new List<string>(){};
-            var keyFields = new List<string>(){};
+            var identityFields = new List<string>() { };
+            var keyFields = new List<string>() { };
             var nonIdentityFields = new List<string>() { };
-            
+
             void AddIdentityOrNot(DataColumn column)
             {
                 if (column.AutoIncrement)
@@ -153,7 +152,7 @@ namespace DotNetHelper.ObjectToSql.Services
                     AddIdentityOrNot(column);
                 }
             }
-            return (keyFields, identityFields,nonIdentityFields);
+            return (keyFields, identityFields, nonIdentityFields);
         }
 
         #region INSERT METHODS
@@ -168,7 +167,7 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildInsertQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null)
         {
             var result = GetFields(dataTable);
-            
+
             // Insert sql statement prefix 
             sqlBuilder.Append($"INSERT INTO {tableName ?? dataTable.TableName} (");
 
@@ -183,7 +182,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append(")");
         }
 
-        
+
 
 
 
@@ -198,13 +197,13 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="dataTable"></param>
         /// <param name="tableName">Name of the table.</param>
-        private void BuildUpdateQuery(StringBuilder sqlBuilder,DataTable dataTable, string tableName = null) 
+        private void BuildUpdateQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null)
         {
 
             var result = GetFields(dataTable);
 
             if (result.keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
-          
+
 
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName ?? dataTable.TableName} SET ");
@@ -231,7 +230,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="dataTable"></param>
         /// <param name="tableName">Name of the table.</param>
-        private void BuildDeleteQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null) 
+        private void BuildDeleteQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null)
         {
             var results = GetFields(dataTable);
             if (results.keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
@@ -247,11 +246,11 @@ namespace DotNetHelper.ObjectToSql.Services
         #region UPSERT METHODS
 
 
-        private void SQLiteBuildUpsertQuery(StringBuilder sqlBuilder, List<string> keyFields, List<string> updateFields, string tableName, string whereClause, string normalInsertSQl,bool isAllKeyFieldsInt)
+        private void SQLiteBuildUpsertQuery(StringBuilder sqlBuilder, List<string> keyFields, List<string> updateFields, string tableName, string whereClause, string normalInsertSQl, bool isAllKeyFieldsInt)
         {
-           
 
-           // var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
+
+            // var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
             if (isAllKeyFieldsInt)
             {
                 sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} 
@@ -280,15 +279,15 @@ VALUES
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="dataTable"></param>
         /// <param name="tableName">Name of the table.</param>
-        private void BuildUpsertQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null) 
+        private void BuildUpsertQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null)
         {
             var results = GetFields(dataTable);
             if (results.keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
             var sb = new StringBuilder();
-            BuildUpdateQuery(sb, dataTable,tableName);
+            BuildUpdateQuery(sb, dataTable, tableName);
             var sb1 = new StringBuilder();
-            BuildInsertQuery(sb1,dataTable, tableName);
+            BuildInsertQuery(sb1, dataTable, tableName);
             var sb2 = new StringBuilder();
             BuildWhereClause(sb2, results.keyFields);
 
@@ -304,7 +303,7 @@ VALUES
             }
 
 
-           
+
 
         }
 
@@ -326,7 +325,7 @@ VALUES
                 // if(column.AutoIncrement) continue;
                 if (row.RowState == DataRowState.Deleted)
                 {
-                    list.Add(getNewParameter($"@{column.ColumnName}", row[column.ColumnName,DataRowVersion.Original ]));
+                    list.Add(getNewParameter($"@{column.ColumnName}", row[column.ColumnName, DataRowVersion.Original]));
                 }
                 else
                 {

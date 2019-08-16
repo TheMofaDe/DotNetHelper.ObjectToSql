@@ -14,7 +14,7 @@ namespace DotNetHelper.ObjectToSql.Model
         public string PropertyName { get; }
         public List<System.Attribute> Attributes { get; }
 
-        public RunTimeAttributeMap (string propertyName, List<System.Attribute> attributes)
+        public RunTimeAttributeMap(string propertyName, List<System.Attribute> attributes)
         {
             PropertyName = propertyName;
             Attributes = attributes;
@@ -29,7 +29,7 @@ namespace DotNetHelper.ObjectToSql.Model
 
     public static class RunTimeAttributeMapExtension
     {
-        
+
         public static object GetMemberValue(this RunTimeAttributeMap member, object instanceOfObject, Func<object, string> xmlDeserializer, Func<object, string> jsonDeserializer, Func<object, string> csvDeserializer)
         {
             var value = ExtFastMember.GetMemberValue(instanceOfObject, member.PropertyName);

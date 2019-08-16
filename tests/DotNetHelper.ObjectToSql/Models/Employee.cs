@@ -1,5 +1,4 @@
 ﻿using System;
-using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;
 
 namespace DotNetHelper.ObjectToSql.Tests.Models
@@ -10,7 +9,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
         public string LastName { get; set; }
 
 
-        public static string ToSql(ActionType action,DataBaseType dataBaseType)
+        public static string ToSql(ActionType action, DataBaseType dataBaseType)
         {
             switch (dataBaseType)
             {

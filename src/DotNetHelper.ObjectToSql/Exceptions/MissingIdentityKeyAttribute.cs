@@ -22,7 +22,7 @@ namespace DotNetHelper.ObjectToSql.Exceptions
 
         }
 
-  
+
         /// <inheritdoc />
         /// <summary>
         /// Create the exception from serialized data.

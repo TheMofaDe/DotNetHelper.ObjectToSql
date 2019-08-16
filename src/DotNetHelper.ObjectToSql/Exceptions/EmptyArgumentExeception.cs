@@ -10,7 +10,7 @@ namespace DotNetHelper.ObjectToSql.Exceptions
     [Serializable()]
     public class EmptyArgumentException : System.Exception
     {
-        
+
 
         /// <inheritdoc />
         /// <summary>
@@ -22,7 +22,7 @@ namespace DotNetHelper.ObjectToSql.Exceptions
 
         }
 
-       
+
 
         /// <inheritdoc />
         /// <summary>

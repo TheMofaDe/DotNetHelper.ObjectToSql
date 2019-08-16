@@ -21,9 +21,9 @@ namespace SampleConsoleApp
         {
             var actionType = ActionType.Update; // A enum with the values Insert,Update,Delete,Upsert
             var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            var updateSql = sqlServerObjectToSql.BuildQuery<Employee>( actionType);
-            var upsertSql = sqlServerObjectToSql.BuildQuery<Employee>( ActionType.Upsert, "Employee");
-            var deleteSql = sqlServerObjectToSql.BuildQuery<Employee>( ActionType.Delete, "TableName");
+            var updateSql = sqlServerObjectToSql.BuildQuery<Employee>(actionType);
+            var upsertSql = sqlServerObjectToSql.BuildQuery<Employee>(ActionType.Upsert, "Employee");
+            var deleteSql = sqlServerObjectToSql.BuildQuery<Employee>(ActionType.Delete, "TableName");
 
             Console.WriteLine(updateSql);
             Console.WriteLine(upsertSql);
@@ -31,20 +31,20 @@ namespace SampleConsoleApp
 
 
 
-            var parameters = sqlServerObjectToSql.BuildDbParameterList(new Employee(), (s, o) => new SqlParameter(s, o),null,null,null);
+            var parameters = sqlServerObjectToSql.BuildDbParameterList(new Employee(), (s, o) => new SqlParameter(s, o), null, null, null);
             Console.ReadLine();
 
-            
+
 
 
 
             var dtToSql = new DataTableToSql(DataBaseType.SqlServer);
             var dt = new DataTable(); // obviously you provide a dataTable with actual data
 
-      
-             updateSql = dtToSql.BuildQuery(dt, actionType);
-             upsertSql = dtToSql.BuildQuery(dt, ActionType.Upsert);
-             deleteSql = dtToSql.BuildQuery(dt, ActionType.Delete);
+
+            updateSql = dtToSql.BuildQuery(dt, actionType);
+            upsertSql = dtToSql.BuildQuery(dt, ActionType.Upsert);
+            deleteSql = dtToSql.BuildQuery(dt, ActionType.Delete);
 
             Console.WriteLine(updateSql);
             Console.WriteLine(upsertSql);

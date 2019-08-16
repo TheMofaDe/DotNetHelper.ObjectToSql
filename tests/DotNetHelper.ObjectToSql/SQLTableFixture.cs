@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DotNetHelper.ObjectToSql.Enum;
+﻿using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Model;
-using DotNetHelper.ObjectToSql.Tests.Models;
 using NUnit.Framework;
 
 namespace DotNetHelper.ObjectToSql.Tests
 {
     public class SQLTableFixture
     {
-        
+
 
 
         [Test]
@@ -31,7 +25,7 @@ namespace DotNetHelper.ObjectToSql.Tests
         {
             var sqlTable = new SQLTable(DataBaseType.SqlServer, "Schema.TableName");
             Assert.AreEqual(sqlTable.TableName, "TableName");
-            Assert.AreEqual(sqlTable.SchemaName, "Schema" );
+            Assert.AreEqual(sqlTable.SchemaName, "Schema");
             Assert.AreEqual(sqlTable.FullNameWithBrackets, "[Schema].[TableName]");
             Assert.AreEqual(sqlTable.FullNameWithOutBrackets, "Schema.TableName");
         }
@@ -48,7 +42,7 @@ namespace DotNetHelper.ObjectToSql.Tests
             Assert.AreEqual(sqlTable.FullNameWithOutBrackets, "Database.Schema.TableName");
         }
 
-    
+
 
 
     }

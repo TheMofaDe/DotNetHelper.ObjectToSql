@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Helper;
 using DotNetHelper.ObjectToSql.Model;
-using DotNetHelper.ObjectToSql.Tests.Models;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
@@ -33,7 +28,7 @@ namespace DotNetHelper.ObjectToSql.Tests.FakeCoverage
     {
 
 
-   
+
 
         [SetUp]
         public void Setup()
@@ -59,24 +54,24 @@ namespace DotNetHelper.ObjectToSql.Tests.FakeCoverage
             obj = new Services.ObjectToSql(DataBaseType.Sqlite);
             obj = new Services.ObjectToSql(DataBaseType.Oracle);
 
-           
+
         }
 
         [Test]
         public void Test() // TODO  :: MAKE LEGIT TEST CASES OUT OF THIS 
         {
-            var dbtypes =System.Enum.GetValues(typeof(DataBaseType)).Cast<DataBaseType>().ToList();
-            dbtypes.ForEach(delegate(DataBaseType type)
+            var dbtypes = System.Enum.GetValues(typeof(DataBaseType)).Cast<DataBaseType>().ToList();
+            dbtypes.ForEach(delegate (DataBaseType type)
             {
                 var syntaxHelper = new SqlSyntaxHelper(type);
                 var objToSql = new Services.ObjectToSql(type);
 
-               
+
                 var employee = new Employee();
 
-                var param = objToSql.BuildDbParameterList(employee,(s, o) => new SqlParameter(s,o), null,o => JsonConvert.SerializeObject(o),null);
+                var param = objToSql.BuildDbParameterList(employee, (s, o) => new SqlParameter(s, o), null, o => JsonConvert.SerializeObject(o), null);
                 var tableExistSQL = syntaxHelper.BuildTableExistStatement(new SQLTable(type, "TEST"), "", "");
-                var sql = objToSql.BuildQuery<Employee>( ActionType.Insert);
+                var sql = objToSql.BuildQuery<Employee>(ActionType.Insert);
 
                 syntaxHelper.ConvertParameterSqlToReadable(param, sql, Encoding.UTF8);
             });

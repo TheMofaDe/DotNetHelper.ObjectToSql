@@ -27,7 +27,7 @@ namespace DotNetHelper.ObjectToSql.Extension
             if (error == null) error = new EmptyArgumentException($"The argument {name} was empty");
             throw error;
         }
-        
+
 
 
 

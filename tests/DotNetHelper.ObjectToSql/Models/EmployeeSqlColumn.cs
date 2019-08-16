@@ -14,7 +14,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public static string ToSql(ActionType action,DataBaseType type)
+        public static string ToSql(ActionType action, DataBaseType type)
         {
             switch (action)
             {
@@ -204,7 +204,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public static string ToSql(ActionType action,DataBaseType dataBaseType)
+        public static string ToSql(ActionType action, DataBaseType dataBaseType)
         {
             switch (dataBaseType)
             {
@@ -232,7 +232,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                         case ActionType.Update:
                             return $@"UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey";
                         case ActionType.Upsert:
-                            return "INSERT OR REPLACE INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn \r\n([PrimaryKey],[FirstName2],[LastName]) \r\nVALUES\r\n( (SELECT PrimaryKey FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey), @FirstName,@LastName )"; 
+                            return "INSERT OR REPLACE INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn \r\n([PrimaryKey],[FirstName2],[LastName]) \r\nVALUES\r\n( (SELECT PrimaryKey FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey), @FirstName,@LastName )";
                         case ActionType.Delete:
                             return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                         default:
@@ -280,7 +280,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                         default:
                             throw new ArgumentOutOfRangeException(nameof(action), action, null);
                     }
-                    break;
+
                 case DataBaseType.MySql:
                     break;
                 case DataBaseType.Sqlite:
@@ -297,7 +297,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                         default:
                             throw new ArgumentOutOfRangeException(nameof(action), action, null);
                     }
-                    break;
+
                 case DataBaseType.Oracle:
                     break;
                 case DataBaseType.Oledb:

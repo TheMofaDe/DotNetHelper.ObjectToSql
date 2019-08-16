@@ -53,7 +53,7 @@ namespace DotNetHelper.ObjectToSql.Extension
         public static List<T> AsList<T>(this IEnumerable<T> source) => (source == null || source is List<T>) ? (List<T>)source : source.ToList();
 
 
-   
+
 
 
 

@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DotNetHelper.ObjectToSql.Attribute;
-using DotNetHelper.ObjectToSql.Model;
+﻿using DotNetHelper.ObjectToSql.Attribute;
 using NUnit.Framework;
 
 namespace DotNetHelper.ObjectToSql.Tests.AttributeTest
 {
 
-    
+
 
     public class CustomAttributeFixture
     {
@@ -18,7 +12,7 @@ namespace DotNetHelper.ObjectToSql.Tests.AttributeTest
         [DBTableAttribute(TableName = "NotTestClass")]
         private class TestClass
         {
-            public  string A { get; set; }
+            public string A { get; set; }
         }
 
         [SetUp]
@@ -32,7 +26,7 @@ namespace DotNetHelper.ObjectToSql.Tests.AttributeTest
 
         }
 
-     
+
 
     }
 }

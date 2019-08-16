@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text;
-
-namespace DotNetHelper.ObjectToSql.Extension
+﻿namespace DotNetHelper.ObjectToSql.Extension
 {
     internal static class StringBuilderExtension
     {
