@@ -27,7 +27,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DataTableToSql
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -68,7 +68,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DatabaseType
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -103,7 +103,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 20
+    startLine: 19
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -136,7 +136,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 35
+    startLine: 34
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -173,7 +173,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 50
+    startLine: 49
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -212,7 +212,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryFromRowState
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 81
+    startLine: 80
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -247,7 +247,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryFromRowState
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 95
+    startLine: 94
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -284,7 +284,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 320
+    startLine: 319
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -332,7 +332,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildWhereClause
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 347
+    startLine: 346
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
