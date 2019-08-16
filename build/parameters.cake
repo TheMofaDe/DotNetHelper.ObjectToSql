@@ -126,7 +126,7 @@ public class BuildParameters
 
         var files = Paths.Files;
         Artifacts = BuildArtifacts.GetArtifacts(new[] {
-            files.TestCoverageOutputFilePath,
+            files.TestResultOutputFilePath,
             files.ReleaseNotesOutputFilePath,
             files.VsixOutputFilePath,
             files.VsixCoreFxOutputFilePath,

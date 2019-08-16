@@ -29,26 +29,12 @@ public class BuildPaths
 
         var artifactsDir                  = (DirectoryPath)(context.Directory("./artifacts") + context.Directory("v" + semVersion));
         var artifactsBinDir               = artifactsDir.Combine("bin");
-     //   var artifactsBinFullFxDir         = artifactsBinDir.Combine("net452");  // TODO :: Configurable per project. enter the framework your targeting
-     //   var artifactsBinFullFxILMergeDir  = artifactsBinFullFxDir.Combine("il-merge");
-     //   var artifactsBinFullFxPortableDir = artifactsBinFullFxDir.Combine("portable");
-     //   var artifactsBinFullFxCmdlineDir  = artifactsBinFullFxDir.Combine("cmdline");
         var nugetRootDir                  = artifactsDir.Combine("nuget");
         var buildArtifactDir              = artifactsDir.Combine("build-artifact");
         var testCoverageOutputDir         = artifactsDir.Combine("code-coverage");
 
-//         var zipArtifactPathCoreClr = artifactsDir.CombineWithFilePath("DotNetHelper-Contracts-bin-fx-v" + semVersion + ".zip"); // TODO :: Configurable per project
-//         var zipArtifactPathDesktop = artifactsDir.CombineWithFilePath("DotNetHelper-Contracts-bin-fullfx-v" + semVersion + ".zip"); // TODO :: Configurable per project
-//         var zipArtifactPathStandard = artifactsDir.CombineWithFilePath("DotNetHelper-Contracts-bin-standardfx-v" + semVersion + ".zip"); // TODO :: Configurable per project
- 
-        var testCoverageOutputFilePath = testCoverageOutputDir.CombineWithFilePath("CodeCoverage");
-
-        var releaseNotesOutputFilePath = buildArtifactDir.CombineWithFilePath("releasenotes.md");
-        var gemOutputFilePath  = buildArtifactDir.CombineWithFilePath("-" + version.GemVersion + ".gem");
-
         var tfsSuffix = parameters.IsStableRelease() ? "" : "preview-";
-        var vsixOutputFilePath = buildArtifactDir.CombineWithFilePath("-" + tfsSuffix + version.TfxVersion + ".vsix");
-        var vsixCoreFxOutputFilePath = buildArtifactDir.CombineWithFilePath("-netcore-" + tfsSuffix + version.TfxVersion + ".vsix");
+     
 
         // Directories
         var buildDirectories = new BuildDirectories(
@@ -61,11 +47,12 @@ public class BuildPaths
         // Files
         var buildFiles = new BuildFiles(
             context,
-            testCoverageOutputFilePath,
-            releaseNotesOutputFilePath,
-            vsixOutputFilePath,
-            vsixCoreFxOutputFilePath,
-            gemOutputFilePath);
+            testCoverageOutputDir.CombineWithFilePath("CodeCoverage.xml"),
+            testCoverageOutputDir.CombineWithFilePath("TestResult.xml"),
+            buildArtifactDir.CombineWithFilePath("releasenotes.md"),
+            buildArtifactDir.CombineWithFilePath("-" + tfsSuffix + version.TfxVersion + ".vsix"),
+            buildArtifactDir.CombineWithFilePath("-netcore-" + tfsSuffix + version.TfxVersion + ".vsix"),
+            buildArtifactDir.CombineWithFilePath("-" + version.GemVersion + ".gem"));
 
         return new BuildPaths
         {
@@ -78,6 +65,7 @@ public class BuildPaths
 public class BuildFiles
 {
     public FilePath TestCoverageOutputFilePath { get; private set; }
+    public FilePath TestResultOutputFilePath { get; private set; }
     public FilePath ReleaseNotesOutputFilePath { get; private set; }
     public FilePath VsixOutputFilePath { get; private set; }
     public FilePath VsixCoreFxOutputFilePath { get; private set; }
@@ -86,6 +74,7 @@ public class BuildFiles
     public BuildFiles(
         ICakeContext context,
         FilePath testCoverageOutputFilePath,
+        FilePath testResultOutputFilePath,
         FilePath releaseNotesOutputFilePath,
         FilePath vsixOutputFilePath,
         FilePath vsixCoreFxOutputFilePath,
@@ -93,6 +82,7 @@ public class BuildFiles
         )
     {
         TestCoverageOutputFilePath = testCoverageOutputFilePath;
+        TestResultOutputFilePath = testResultOutputFilePath;
         ReleaseNotesOutputFilePath = releaseNotesOutputFilePath;
         VsixOutputFilePath = vsixOutputFilePath;
         VsixCoreFxOutputFilePath = vsixCoreFxOutputFilePath;

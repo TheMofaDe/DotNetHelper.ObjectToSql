@@ -136,21 +136,19 @@ Task("Test")
 
     // run using dotnet test
     var projects = GetFiles("./tests/**/*.Tests.csproj");
-	var coverageFile = parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml";
+	
     foreach(var project in projects)
     {
 
         foreach(var targetFramework in MyProject.TargetFrameworks){
 
 		var tf = targetFramework.Replace("netstandard","netcoreapp");
-	    		if(tf.Contains("netcoreapp")){
-		    continue;
-		}
-		var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + tf + "/*.Tests.dll");
+
+	    var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + tf + "/*.Tests.dll");
 
 		var nunitSettings = new NUnit3Settings
 		{
-		    Results = new List<NUnit3Result> { new NUnit3Result { FileName = parameters.Paths.Directories.TestCoverageOutput + $"/TestResult.xml"  } }
+		    Results = new List<NUnit3Result> { new NUnit3Result { FileName = parameters.Paths.Files.TestResultOutputFilePath  } }
 		};
 		if(IsRunningOnUnix()) {
 		    nunitSettings.Where = "cat!=NoMono";
@@ -160,14 +158,16 @@ Task("Test")
        OpenCover(tool => {
 			tool.NUnit3(testAssemblies, nunitSettings);
         },
-        new FilePath(coverageFile),
+        new FilePath(parameters.Paths.Files.TestCoverageOutputFilePath),
         new OpenCoverSettings(){
             LogLevel = OpenCoverLogLevel.Info,
 			OldStyle = true,
 			MergeOutput = false
         }     
-        .WithFilter("+[*]* -[*.Tests*]*")
-		.WithFilter("-[*NUnit3.*]*"));
+		.WithFilter("+[*]*")
+        .WithFilter("-[*.tests]*")
+		.WithFilter("-[*.Tests]*")
+		);
 
         }
 		    
@@ -178,6 +178,7 @@ Task("Test")
 
 
 Task("Generate-Docs")
+.WithCriteria<BuildParameters>((context, parameters) => parameters.IsRunningOnWindows,  "Generate-Docs will only run on windows agent.")
 .Does<BuildParameters>((parameters) => 
 {
 	DocFxMetadata("./docs/docfx.json");
@@ -519,22 +520,23 @@ Task("Publish-Coverage")
     .IsDependentOn("Test")
     .Does<BuildParameters>((parameters) =>
 {
-    var coverageFiles = GetFiles(parameters.Paths.Directories.TestCoverageOutput + "/*Coverage.xml");
+    
+     if (FileExists(parameters.Paths.Files.TestCoverageOutputFilePath)) {
+      var token = parameters.Credentials.CodeCov.Token;
+     if(string.IsNullOrEmpty(token)) {
+         throw new InvalidOperationException("Could not resolve CodeCov token.");
+     }
 
-    var token = parameters.Credentials.CodeCov.Token;
-    if(string.IsNullOrEmpty(token)) {
-        throw new InvalidOperationException("Could not resolve CodeCov token.");
-    }
-	 Codecov(parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml",token);
-    // foreach (var coverageFile in coverageFiles) {
-    //     // Upload a coverage report using the CodecovSettings.
-    //     Codecov(new CodecovSettings {
-    //         Files = new [] { parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml" },
-    //         Token = token
-	// 		,Required = true
-    //     });
-	// 	Information("Uploading Coverage File --> " + coverageFile.ToString());
-    // }
+   
+         // Upload a coverage report using the CodecovSettings.
+         Codecov(new CodecovSettings {
+                Files = new [] { parameters.Paths.Files.TestCoverageOutputFilePath },
+                Token = token
+	    	    Required = true
+            });
+	    	Information("Uploading Coverage File --> " + parameters.Paths.Files.TestCoverageOutputFilePath);
+     }
+    
 });
 
 Task("Publish-AppVeyor")
@@ -554,13 +556,8 @@ Task("Publish-AppVeyor")
         if (FileExists(package.PackagePath)) { AppVeyor.UploadArtifact(package.PackagePath); }
     }
 
-    if (FileExists(parameters.Paths.Directories.TestCoverageOutput + $"/TestResult.xml")) {
-
-        AppVeyor.UploadTestResults(parameters.Paths.Directories.TestCoverageOutput + $"/TestResult.xml" , AppVeyorTestResultsType.NUnit3);
-    }
-
-	 if (FileExists(parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml")) {
-        AppVeyor.UploadArtifact(parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml" );
+    if (FileExists(parameters.Paths.Files.TestResultOutputFilePath)) {
+        AppVeyor.UploadTestResults(parameters.Paths.Files.TestResultOutputFilePath , AppVeyorTestResultsType.NUnit3);
     }
 })
 .OnError(exception =>
@@ -587,9 +584,9 @@ Task("Publish-AzurePipeline")
         if (FileExists(package.PackagePath)) { TFBuild.Commands.UploadArtifact("packages", package.PackagePath, package.PackageName); }
     }
 
-    if (FileExists(parameters.Paths.Files.TestCoverageOutputFilePath)) {
+    if (FileExists(parameters.Paths.Files.TestResultOutputFilePath)) {
         var data = new TFBuildPublishTestResultsData {
-            TestResultsFiles = new[] { parameters.Paths.Files.TestCoverageOutputFilePath },
+            TestResultsFiles = new[] { parameters.Paths.Files.TestResultOutputFilePath },
             TestRunner = TFTestRunnerType.NUnit
         };
         TFBuild.Commands.PublishTestResults(data);
