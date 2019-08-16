@@ -4,16 +4,16 @@ variables:
   RUBY_VERSION: '2.5'
 
 jobs:
-#- template: build/tmpl/jobs.yml
-#  parameters:
-#    name: macOS
-#    vmImage: 'macOS 10.13'
-#    installRuby: 'false'
+- template: build/tmpl/jobs.yml
+  parameters:
+    name: macOS
+    vmImage: 'macOS 10.13'
+    installRuby: 'false'
 
-#- template: build/tmpl/jobs.yml
-#  parameters:
-#    name: Linux
-#    vmImage: 'Ubuntu 16.04'
+- template: build/tmpl/jobs.yml
+  parameters:
+    name: Linux
+    vmImage: 'Ubuntu 16.04'
 
 - template: build/tmpl/jobs.yml
   parameters:
