@@ -525,16 +525,16 @@ Task("Publish-Coverage")
     if(string.IsNullOrEmpty(token)) {
         throw new InvalidOperationException("Could not resolve CodeCov token.");
     }
-
-    foreach (var coverageFile in coverageFiles) {
-        // Upload a coverage report using the CodecovSettings.
-        Codecov(new CodecovSettings {
-            Files = new [] { coverageFile.ToString() },
-            Token = token
-		//	,Required = true
-        });
-		Information("Uploading Coverage File --> " + coverageFile.ToString());
-    }
+	 Codecov(parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml",token);
+    // foreach (var coverageFile in coverageFiles) {
+    //     // Upload a coverage report using the CodecovSettings.
+    //     Codecov(new CodecovSettings {
+    //         Files = new [] { parameters.Paths.Directories.TestCoverageOutput + $"/CodeCoverage.xml" },
+    //         Token = token
+	// 		,Required = true
+    //     });
+	// 	Information("Uploading Coverage File --> " + coverageFile.ToString());
+    // }
 });
 
 Task("Publish-AppVeyor")
