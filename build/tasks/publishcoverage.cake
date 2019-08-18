@@ -20,6 +20,7 @@ Task("Publish-Coverage")
                  Files = new [] { parameters.Paths.Files.TestCoverageOutputFilePath.ToString() }
 				,EnvironmentVariables = new Dictionary<string,string> { { "APPVEYOR_BUILD_VERSION", parameters.Version.SemVersion } }
 	    	    ,Required = true
+				,Token = token
          });
 	 }else{
 	

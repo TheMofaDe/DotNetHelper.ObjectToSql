@@ -73,6 +73,50 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
 
 
 
+        [Test]
+        public void Test_Generic_BuildQuery()
+        {
+            RunTestOnAllDBTypes(delegate (DataBaseType type)
+            {
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery(ActionType,new EmployeeWithIdentityKeySqlColumn());
+
+                Assert.AreEqual(sql, EmployeeWithIdentityKeyDataAnnotation.ToSql(ActionType, type));
+
+            });
+        }
+
+
+
+
+        [Test]
+        public void Test_Generic_BuildQueryWithOutputs()
+        {
+            RunTestOnAllDBTypes(delegate (DataBaseType type)
+            {
+                var objectToSql = new Services.ObjectToSql(type);
+
+                var sql = string.Empty;
+                if (type == DataBaseType.Sqlite)
+                {
+                    EnsureExpectedExceptionIsThrown<NotImplementedException>(() =>
+                        objectToSql.BuildQueryWithOutputs<EmployeeWithIdentityKeySqlColumn>(ActionType,
+                            "Employee", a => a.FirstName)
+                    );
+                    return;
+                }
+                else
+                {
+
+                    sql = objectToSql.BuildQueryWithOutputs<EmployeeWithIdentityKeySqlColumn>(
+                        ActionType, nameof(Employee), a => a.FirstName);
+                }
+
+                Assert.AreEqual(sql, "IF EXISTS ( SELECT * FROM Employee WHERE [IdentityKey]=@IdentityKey ) BEGIN UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName OUTPUT DELETED.[FirstName]  WHERE [IdentityKey]=@IdentityKeyINSERT INTO Employee ([FirstName],[LastName]) \r\n OUTPUT INSERTED.[FirstName] \r\n VALUES (@FirstName,@LastName) END ELSE BEGIN  END");
+            });
+        }
+
+
 
         //[Test]
         //public void Test_Generic_BuildUpsertQuery_Ignores_All_Keys_Attributes_And_Uses_Only_OverrideKeys()

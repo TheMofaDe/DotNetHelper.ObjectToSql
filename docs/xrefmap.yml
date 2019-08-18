@@ -1143,6 +1143,15 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs
   nameWithType: ObjectToSql.BuildQueryWithOutputs
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: BuildQueryWithOutputs<T>(ActionType, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQueryWithOutputs__1_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: BuildQueryWithOutputs(Of T)(ActionType, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs<T>(DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs(Of T)(DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: ObjectToSql.BuildQueryWithOutputs<T>(ActionType, Expression<Func<T, Object>>[])
+  nameWithType.vb: ObjectToSql.BuildQueryWithOutputs(Of T)(ActionType, Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   name: BuildQueryWithOutputs<T>(ActionType, String, Expression<Func<T, Object>>[])
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildQueryWithOutputs__1_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
@@ -1216,6 +1225,15 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields
   nameWithType: ObjectToSql.GetAllNonIgnoreFields
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(``0,System.Boolean)
+  name: GetAllNonIgnoreFields<T>(T, Boolean)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_GetAllNonIgnoreFields__1___0_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(``0,System.Boolean)
+  name.vb: GetAllNonIgnoreFields(Of T)(T, Boolean)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields<T>(T, System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields(Of T)(T, System.Boolean)
+  nameWithType: ObjectToSql.GetAllNonIgnoreFields<T>(T, Boolean)
+  nameWithType.vb: ObjectToSql.GetAllNonIgnoreFields(Of T)(T, Boolean)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(System.Boolean)
   name: GetAllNonIgnoreFields<T>(Boolean)
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_GetAllNonIgnoreFields__1_System_Boolean_
@@ -1225,15 +1243,6 @@ references:
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields(Of T)(System.Boolean)
   nameWithType: ObjectToSql.GetAllNonIgnoreFields<T>(Boolean)
   nameWithType.vb: ObjectToSql.GetAllNonIgnoreFields(Of T)(Boolean)
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  name: GetAllNonIgnoreFields<T>(List<RunTimeAttributeMap>, T)
-  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_GetAllNonIgnoreFields__1_System_Collections_Generic_List_DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap____0_
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  name.vb: GetAllNonIgnoreFields(Of T)(List(Of RunTimeAttributeMap), T)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields<T>(System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>, T)
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields(Of T)(System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap), T)
-  nameWithType: ObjectToSql.GetAllNonIgnoreFields<T>(List<RunTimeAttributeMap>, T)
-  nameWithType.vb: ObjectToSql.GetAllNonIgnoreFields(Of T)(List(Of RunTimeAttributeMap), T)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields(System.Boolean,System.Type)
   name: GetKeyFields(Boolean, Type)
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_GetKeyFields_System_Boolean_System_Type_
@@ -1256,15 +1265,6 @@ references:
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields(Of T)(System.Boolean)
   nameWithType: ObjectToSql.GetKeyFields<T>(Boolean)
   nameWithType.vb: ObjectToSql.GetKeyFields(Of T)(Boolean)
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  name: GetKeyFields<T>(List<RunTimeAttributeMap>, T)
-  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_GetKeyFields__1_System_Collections_Generic_List_DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap____0_
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  name.vb: GetKeyFields(Of T)(List(Of RunTimeAttributeMap), T)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields<T>(System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>, T)
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields(Of T)(System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap), T)
-  nameWithType: ObjectToSql.GetKeyFields<T>(List<RunTimeAttributeMap>, T)
-  nameWithType.vb: ObjectToSql.GetKeyFields(Of T)(List(Of RunTimeAttributeMap), T)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type)
   name: GetNonIdentityFields(Boolean, Type)
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_GetNonIdentityFields_System_Boolean_System_Type_
@@ -1293,15 +1293,6 @@ references:
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(Of T)(System.Boolean)
   nameWithType: ObjectToSql.GetNonIdentityFields<T>(Boolean)
   nameWithType.vb: ObjectToSql.GetNonIdentityFields(Of T)(Boolean)
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  name: GetNonIdentityFields<T>(List<RunTimeAttributeMap>, T)
-  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_GetNonIdentityFields__1_System_Collections_Generic_List_DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap____0_
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  name.vb: GetNonIdentityFields(Of T)(List(Of RunTimeAttributeMap), T)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields<T>(System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>, T)
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(Of T)(System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap), T)
-  nameWithType: ObjectToSql.GetNonIdentityFields<T>(List<RunTimeAttributeMap>, T)
-  nameWithType.vb: ObjectToSql.GetNonIdentityFields(Of T)(List(Of RunTimeAttributeMap), T)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields(System.Boolean,System.Type)
   name: GetNonKeyFields(Boolean, Type)
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_GetNonKeyFields_System_Boolean_System_Type_
@@ -1324,15 +1315,6 @@ references:
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields(Of T)(System.Boolean)
   nameWithType: ObjectToSql.GetNonKeyFields<T>(Boolean)
   nameWithType.vb: ObjectToSql.GetNonKeyFields(Of T)(Boolean)
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  name: GetNonKeyFields<T>(List<RunTimeAttributeMap>, T)
-  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_GetNonKeyFields__1_System_Collections_Generic_List_DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap____0_
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  name.vb: GetNonKeyFields(Of T)(List(Of RunTimeAttributeMap), T)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields<T>(System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>, T)
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields(Of T)(System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap), T)
-  nameWithType: ObjectToSql.GetNonKeyFields<T>(List<RunTimeAttributeMap>, T)
-  nameWithType.vb: ObjectToSql.GetNonKeyFields(Of T)(List(Of RunTimeAttributeMap), T)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
   name: IncludeNonPublicAccessor
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_IncludeNonPublicAccessor

@@ -12,24 +12,22 @@ items:
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery(DotNetHelper.ObjectToSql.Enum.ActionType,System.Object,System.String)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue(DotNetHelper.FastMember.Extension.Models.MemberWrapper,System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue(System.Object)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields(System.Type,System.Boolean)
+  - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(``0,System.Boolean)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(System.Boolean)
-  - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields(System.Boolean,System.Type)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields``1(System.Boolean)
-  - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type,System.Object)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields``1(System.Boolean)
-  - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields(System.Boolean,System.Type)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields``1(System.Boolean)
-  - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
   langs:
   - csharp
@@ -335,6 +333,56 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  langs:
+  - csharp
+  - vb
+  name: BuildQueryWithOutputs<T>(ActionType, Expression<Func<T, Object>>[])
+  nameWithType: ObjectToSql.BuildQueryWithOutputs<T>(ActionType, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs<T>(DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: BuildQueryWithOutputs
+    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
+    startLine: 170
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  summary: "\n"
+  example: []
+  syntax:
+    content: >-
+      public string BuildQueryWithOutputs<T>(ActionType actionType, params Expression<Func<T, object>>[] outputFields)
+          where T : class
+    parameters:
+    - id: actionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
+      description: ''
+    - id: outputFields
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function BuildQueryWithOutputs(Of T As Class)(actionType As ActionType, ParamArray outputFields As Expression(Of Func(Of T, Object))()) As String
+  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs*
+  nameWithType.vb: ObjectToSql.BuildQueryWithOutputs(Of T)(ActionType, Expression(Of Func(Of T, Object))())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs(Of T)(DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: BuildQueryWithOutputs(Of T)(ActionType, Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   id: BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
@@ -353,7 +401,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryWithOutputs
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 169
+    startLine: 183
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -406,7 +454,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 789
+    startLine: 738
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -434,54 +482,6 @@ items:
   - Public
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields(Of T)(System.Boolean)
   name.vb: GetNonKeyFields(Of T)(Boolean)
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  id: GetNonKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
-  langs:
-  - csharp
-  - vb
-  name: GetNonKeyFields<T>(List<RunTimeAttributeMap>, T)
-  nameWithType: ObjectToSql.GetNonKeyFields<T>(List<RunTimeAttributeMap>, T)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields<T>(System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>, T)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: GetNonKeyFields
-    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 799
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Services
-  summary: "\nGets the non key fields.\n"
-  example: []
-  syntax:
-    content: >-
-      public List<MemberWrapper> GetNonKeyFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
-          where T : class
-    parameters:
-    - id: runTimeAttributes
-      type: System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap}
-    - id: instance
-      type: '{T}'
-    typeParameters:
-    - id: T
-      description: ''
-    return:
-      type: System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper}
-      description: List&lt;MemberWrapper>.
-    content.vb: Public Function GetNonKeyFields(Of T As Class)(runTimeAttributes As List(Of RunTimeAttributeMap), instance As T) As List(Of MemberWrapper)
-  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields*
-  nameWithType.vb: ObjectToSql.GetNonKeyFields(Of T)(List(Of RunTimeAttributeMap), T)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields(Of T)(System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap), T)
-  name.vb: GetNonKeyFields(Of T)(List(Of RunTimeAttributeMap), T)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields(System.Boolean,System.Type)
   commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonKeyFields(System.Boolean,System.Type)
   id: GetNonKeyFields(System.Boolean,System.Type)
@@ -500,7 +500,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 816
+    startLine: 750
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -540,7 +540,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 831
+    startLine: 765
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -568,54 +568,6 @@ items:
   - Public
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields(Of T)(System.Boolean)
   name.vb: GetKeyFields(Of T)(Boolean)
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  id: GetKeyFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
-  langs:
-  - csharp
-  - vb
-  name: GetKeyFields<T>(List<RunTimeAttributeMap>, T)
-  nameWithType: ObjectToSql.GetKeyFields<T>(List<RunTimeAttributeMap>, T)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields<T>(System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>, T)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: GetKeyFields
-    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 842
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Services
-  summary: "\nGets the key fields.\n"
-  example: []
-  syntax:
-    content: >-
-      public List<MemberWrapper> GetKeyFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
-          where T : class
-    parameters:
-    - id: runTimeAttributes
-      type: System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap}
-    - id: instance
-      type: '{T}'
-    typeParameters:
-    - id: T
-      description: ''
-    return:
-      type: System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper}
-      description: List&lt;MemberWrapper>.
-    content.vb: Public Function GetKeyFields(Of T As Class)(runTimeAttributes As List(Of RunTimeAttributeMap), instance As T) As List(Of MemberWrapper)
-  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields*
-  nameWithType.vb: ObjectToSql.GetKeyFields(Of T)(List(Of RunTimeAttributeMap), T)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields(Of T)(System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap), T)
-  name.vb: GetKeyFields(Of T)(List(Of RunTimeAttributeMap), T)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields(System.Boolean,System.Type)
   commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetKeyFields(System.Boolean,System.Type)
   id: GetKeyFields(System.Boolean,System.Type)
@@ -634,7 +586,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 859
+    startLine: 778
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -674,7 +626,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 873
+    startLine: 792
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -702,54 +654,6 @@ items:
   - Public
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(Of T)(System.Boolean)
   name.vb: GetNonIdentityFields(Of T)(Boolean)
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  id: GetNonIdentityFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
-  langs:
-  - csharp
-  - vb
-  name: GetNonIdentityFields<T>(List<RunTimeAttributeMap>, T)
-  nameWithType: ObjectToSql.GetNonIdentityFields<T>(List<RunTimeAttributeMap>, T)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields<T>(System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>, T)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: GetNonIdentityFields
-    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 883
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Services
-  summary: "\nGets the non identity fields.\n"
-  example: []
-  syntax:
-    content: >-
-      public List<MemberWrapper> GetNonIdentityFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
-          where T : class
-    parameters:
-    - id: runTimeAttributes
-      type: System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap}
-    - id: instance
-      type: '{T}'
-    typeParameters:
-    - id: T
-      description: ''
-    return:
-      type: System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper}
-      description: List&lt;MemberWrapper>.
-    content.vb: Public Function GetNonIdentityFields(Of T As Class)(runTimeAttributes As List(Of RunTimeAttributeMap), instance As T) As List(Of MemberWrapper)
-  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields*
-  nameWithType.vb: ObjectToSql.GetNonIdentityFields(Of T)(List(Of RunTimeAttributeMap), T)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(Of T)(System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap), T)
-  name.vb: GetNonIdentityFields(Of T)(List(Of RunTimeAttributeMap), T)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type)
   commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetNonIdentityFields(System.Boolean,System.Type)
   id: GetNonIdentityFields(System.Boolean,System.Type)
@@ -768,7 +672,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 899
+    startLine: 802
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -808,7 +712,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 908
+    startLine: 811
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -850,7 +754,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 926
+    startLine: 829
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -878,16 +782,16 @@ items:
   - Public
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields(Of T)(System.Boolean)
   name.vb: GetAllNonIgnoreFields(Of T)(Boolean)
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
-  id: GetAllNonIgnoreFields``1(System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap},``0)
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(``0,System.Boolean)
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields``1(``0,System.Boolean)
+  id: GetAllNonIgnoreFields``1(``0,System.Boolean)
   parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
   langs:
   - csharp
   - vb
-  name: GetAllNonIgnoreFields<T>(List<RunTimeAttributeMap>, T)
-  nameWithType: ObjectToSql.GetAllNonIgnoreFields<T>(List<RunTimeAttributeMap>, T)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields<T>(System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>, T)
+  name: GetAllNonIgnoreFields<T>(T, Boolean)
+  nameWithType: ObjectToSql.GetAllNonIgnoreFields<T>(T, Boolean)
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields<T>(T, System.Boolean)
   type: Method
   source:
     remote:
@@ -896,7 +800,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 937
+    startLine: 840
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -904,28 +808,28 @@ items:
   example: []
   syntax:
     content: >-
-      public List<MemberWrapper> GetAllNonIgnoreFields<T>(List<RunTimeAttributeMap> runTimeAttributes, T instance)
+      public List<MemberWrapper> GetAllNonIgnoreFields<T>(T instance, bool includeNonPublicAccessor)
           where T : class
     parameters:
-    - id: runTimeAttributes
-      type: System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap}
     - id: instance
       type: '{T}'
+    - id: includeNonPublicAccessor
+      type: System.Boolean
     typeParameters:
     - id: T
       description: ''
     return:
       type: System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper}
       description: List&lt;MemberWrapper>.
-    content.vb: Public Function GetAllNonIgnoreFields(Of T As Class)(runTimeAttributes As List(Of RunTimeAttributeMap), instance As T) As List(Of MemberWrapper)
+    content.vb: Public Function GetAllNonIgnoreFields(Of T As Class)(instance As T, includeNonPublicAccessor As Boolean) As List(Of MemberWrapper)
   overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields*
-  nameWithType.vb: ObjectToSql.GetAllNonIgnoreFields(Of T)(List(Of RunTimeAttributeMap), T)
+  nameWithType.vb: ObjectToSql.GetAllNonIgnoreFields(Of T)(T, Boolean)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields(Of T)(System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap), T)
-  name.vb: GetAllNonIgnoreFields(Of T)(List(Of RunTimeAttributeMap), T)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields(Of T)(T, System.Boolean)
+  name.vb: GetAllNonIgnoreFields(Of T)(T, Boolean)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields(System.Type,System.Boolean)
   commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields(System.Type,System.Boolean)
   id: GetAllNonIgnoreFields(System.Type,System.Boolean)
@@ -944,7 +848,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 954
+    startLine: 855
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -984,7 +888,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertToDatabaseValue
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 971
+    startLine: 872
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1035,7 +939,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertToDatabaseValue
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1010
+    startLine: 911
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1074,7 +978,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1032
+    startLine: 933
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1130,7 +1034,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1067
+    startLine: 962
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1180,7 +1084,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildWhereClause
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1080
+    startLine: 975
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1734,58 +1638,6 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
-- uid: System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap}
-  commentId: T:System.Collections.Generic.List{DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  name: List<RunTimeAttributeMap>
-  nameWithType: List<RunTimeAttributeMap>
-  fullName: System.Collections.Generic.List<DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap>
-  nameWithType.vb: List(Of RunTimeAttributeMap)
-  fullName.vb: System.Collections.Generic.List(Of DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  name.vb: List(Of RunTimeAttributeMap)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-    name: RunTimeAttributeMap
-    nameWithType: RunTimeAttributeMap
-    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-    name: RunTimeAttributeMap
-    nameWithType: RunTimeAttributeMap
-    fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
 - uid: System.Type
   commentId: T:System.Type
   parent: System
@@ -1808,6 +1660,16 @@ references:
   name: GetAllNonIgnoreFields
   nameWithType: ObjectToSql.GetAllNonIgnoreFields
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue*
   commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue
   name: ConvertToDatabaseValue

@@ -183,7 +183,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <returns></returns>
         public string BuildQueryWithOutputs<T>(ActionType actionType, string tableName = null, params Expression<Func<T, object>>[] outputFields) where T : class
         {
-            if(DatabaseType == DataBaseType.Sqlite) throw new NotImplementedException("BuildQueryWithOutputs is not supported by SQLITE");
+            if (DatabaseType == DataBaseType.Sqlite) throw new NotImplementedException("BuildQueryWithOutputs is not supported by SQLITE");
             var sqlBuilder = new StringBuilder();
             switch (actionType)
             {
@@ -206,7 +206,7 @@ namespace DotNetHelper.ObjectToSql.Services
         }
 
 
-       
+
 
         #endregion
 
@@ -384,7 +384,7 @@ namespace DotNetHelper.ObjectToSql.Services
             BuildWhereClause(sqlBuilder, keyFields);
         }
 
-        
+
 
 
         /// <summary>
@@ -741,7 +741,7 @@ VALUES
             // Get non primary key fields - the ones we want to update.
             return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => !m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).AsList();
         }
-  
+
 
         /// <summary>
         /// Gets the key fields.
@@ -769,7 +769,7 @@ VALUES
             return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).ToList();
         }
 
-    
+
 
         /// <summary>
         /// Gets the key fields.
@@ -795,7 +795,7 @@ VALUES
             return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => !m.IsMemberAnIdentityColumn() && !m.ShouldMemberBeIgnored()).AsList();
         }
 
-      
+
         /// <summary>
         /// Gets the non identity fields.
         /// </summary>
@@ -937,7 +937,7 @@ VALUES
             List<MemberWrapper> members;
             if (instance is IDynamicMetaObjectProvider a)
             {
-                members = GetAllNonIgnoreFields(instance,IncludeNonPublicAccessor); // create a dynamic overload with imeta T
+                members = GetAllNonIgnoreFields(instance, IncludeNonPublicAccessor); // create a dynamic overload with imeta T
             }
             else
             {
@@ -948,7 +948,7 @@ VALUES
                 var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), XmlSerializer, JsonSerializer, CsvSerializer);
 
                 list.Add(getNewParameter($"@{p.Name}", parameterValue));
-            
+
             });
             return list;
         }

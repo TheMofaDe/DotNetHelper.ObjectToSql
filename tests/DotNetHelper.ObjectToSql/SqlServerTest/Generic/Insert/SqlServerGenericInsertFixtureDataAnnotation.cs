@@ -101,8 +101,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
                 else
                 {
 
-                     sql = objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(
-                        ActionType, "Employee", a => a.PrimaryKey);
+                    sql = objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(
+                       ActionType, "Employee", a => a.PrimaryKey);
                 }
 
                 var answer = string.Empty;

@@ -119,8 +119,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
                 else
                 {
 
-                     sql = objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(
-                        ActionType, nameof(Employee), a => a.PrimaryKey);
+                    sql = objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(
+                       ActionType, nameof(Employee), a => a.PrimaryKey);
                 }
 
                 Assert.AreEqual(sql, $@"UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName OUTPUT DELETED.[PrimaryKey]  WHERE [PrimaryKey]=@PrimaryKey");

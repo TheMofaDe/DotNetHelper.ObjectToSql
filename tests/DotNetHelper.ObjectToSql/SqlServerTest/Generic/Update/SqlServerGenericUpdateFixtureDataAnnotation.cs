@@ -43,7 +43,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
             });
 
 
-       
+
         }
 
         [Test]

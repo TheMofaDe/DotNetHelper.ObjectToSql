@@ -104,8 +104,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
                 }
                 else
                 {
-                     sql = objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(ActionType,
-                        "Employee", a => a.PrimaryKey);
+                    sql = objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(ActionType,
+                       "Employee", a => a.PrimaryKey);
                 }
 
                 var value = $"";
@@ -144,8 +144,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
                 else
                 {
 
-                     sql = objectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnSqlColumn>(ActionType,
-                        "Employee", e => e.FirstName);
+                    sql = objectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnSqlColumn>(ActionType,
+                       "Employee", e => e.FirstName);
                 }
 
                 var expected = "";

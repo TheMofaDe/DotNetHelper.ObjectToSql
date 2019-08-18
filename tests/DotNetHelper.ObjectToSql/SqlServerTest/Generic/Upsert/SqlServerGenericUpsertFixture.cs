@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Exceptions;
@@ -12,10 +13,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
     {
 
         public ActionType ActionType { get; } = ActionType.Upsert;
-        public List<RunTimeAttributeMap> RunTimeAttribute { get; } = new List<RunTimeAttributeMap>()
-        {
-            new RunTimeAttributeMap("PrimaryKey",new List<System.Attribute>(){new KeyAttribute()})
-        };
+
 
         [SetUp]
         public void Setup()
@@ -50,7 +48,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
 
 
 
-
+      
 
 
     }

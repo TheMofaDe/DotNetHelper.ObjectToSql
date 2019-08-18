@@ -25,7 +25,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                         case ActionType.Update:
                             return $"UPDATE EmployeeWithIdentityKeyDataAnnotation SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey";
                         case ActionType.Upsert:
-                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                            return "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END";
                         case ActionType.Delete:
                             return $"DELETE FROM EmployeeWithIdentityKeyDataAnnotation WHERE [IdentityKey]=@IdentityKey";
                         default:
@@ -41,7 +41,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                         case ActionType.Update:
                             return $"UPDATE EmployeeWithIdentityKeyDataAnnotation SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey";
                         case ActionType.Upsert:
-                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                            return "INSERT OR REPLACE INTO EmployeeWithIdentityKeySqlColumn \r\n([IdentityKey],[FirstName],[LastName]) \r\nVALUES\r\n( (SELECT IdentityKey FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey), @FirstName,@LastName )"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                         case ActionType.Delete:
                             return $"DELETE FROM EmployeeWithIdentityKeyDataAnnotation WHERE [IdentityKey]=@IdentityKey";
                         default:
