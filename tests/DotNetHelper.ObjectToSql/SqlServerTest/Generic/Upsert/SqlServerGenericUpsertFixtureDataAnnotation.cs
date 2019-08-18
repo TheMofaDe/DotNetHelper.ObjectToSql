@@ -79,7 +79,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
                 var objectToSql = new Services.ObjectToSql(type);
-                var sql = objectToSql.BuildQuery(ActionType,new EmployeeWithIdentityKeySqlColumn());
+                var sql = objectToSql.BuildQuery(ActionType, new EmployeeWithIdentityKeySqlColumn());
 
                 Assert.AreEqual(sql, EmployeeWithIdentityKeyDataAnnotation.ToSql(ActionType, type));
 
