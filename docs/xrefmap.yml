@@ -1347,7 +1347,7 @@ references:
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
   nameWithType: ObjectToSql.IncludeNonPublicAccessor
 - uid: TSD
-  name: The 2 ways to generate sql
+  name: The 3 ways to generate sql
   href: tutorials/index.html
 - uid: Tutorial.GenerateSQL
   name: Primary Key & Identity Fields

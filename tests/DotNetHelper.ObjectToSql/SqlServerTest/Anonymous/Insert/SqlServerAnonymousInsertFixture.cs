@@ -28,8 +28,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Anonymous.Insert
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
                 var obj = new { FirstName = 1, LastName = "sfsd" };
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery(ActionType.Insert, obj, "Table");
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery(ActionType.Insert, obj, "Table");
                 Assert.AreEqual(sql, "INSERT INTO Table ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
             });
         }

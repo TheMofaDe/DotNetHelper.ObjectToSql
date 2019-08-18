@@ -10,10 +10,7 @@
 + UPDATE
 + DELETE
 + UPSERT
-+ INSERT with OUTPUT Columns
-+ UPDATE with OUTPUT Columns
-+ DELETE with OUTPUT Columns
-+ UPSERT with OUTPUT Columns
++ Generate SQL that return inserted or updated column values
 
 ## Supported Databases
 + SQLSERVER
@@ -21,40 +18,65 @@
 + MYSQL
 + More to come
 
+## How to Generate SQL
 
-## How to use
+
 ##### How to Use With Generics Types
+
 ```csharp
 public class Employee {
       public FirstName { get; set; }
       public LastName  { get; set; }
 }
-            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            var insertSql = sqlServerObjectToSql.BuildQuery<Employee>("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert);
-// OR 
-            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,typeof(Employee));
 ```
+```csharp
+ var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery<Employee>(ActionType.Insert);
+ // OR USING EMPLOYEE OBJECT
+ var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert,new Employee());
+```      
+ 
+
+
+
 
 ##### How to Use With Dynamic Objects
 ```csharp
-            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            dynamic record = new ExpandoObject();
-            record.FirstName = "John";
-            record.LastName = "Doe";
-            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,record);
+dynamic record = new ExpandoObject();
+         record.FirstName = "John";
+         record.LastName = "Doe";
+var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert, record, "Employee");
 ```
 
 
 ##### How to Use With Anonymous Objects
 ```csharp
-            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            var anonymousObject = new { FirstName = "John" , LastName = "Doe"}
-            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,anonymousObject);
+var obj = new {FirstName = "John", LastName = "Doe"};
+var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert, obj, "Employee");
 ```
-##### Output
+
+##### How to Generate SQL From DataTables
+
+```csharp
+var insertSql = new DataTableToSql(DataBaseType.SqlServer).BuildQuery(dataTable, ActionType.Insert);
+```
+
+#### Output
 ```sql
-INSERT INTO TableNameGoHere ([FirstName],[LastName]) VALUES (@FirstName,@LastName)
+INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)
 ```
+
+<br/>
+<br/>
+
+## How to Generate DBParameters
+
+```csharp
+var obj2Sql = new ObjectToSql(DataBaseType.SqlServer); 
+var dbParameters = obj2Sql.BuildDbParameterList(new Employee(), (s, o) => new SqlParameter(s, o));
+```
+
+<br/>
+<br/>
 
 
 <!-- Links. -->

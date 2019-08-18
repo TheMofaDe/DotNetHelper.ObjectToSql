@@ -10,15 +10,11 @@ using NUnit.Framework;
 
 namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 {
-    public class SqlServerGenericInsertFixture
+    public class SqlServerGenericInsertFixture : BaseTest
     {
 
-        public DataBaseType DataBaseType { get; } = DataBaseType.SqlServer;
+
         public ActionType ActionType { get; } = ActionType.Insert;
-        public List<RunTimeAttributeMap> RunTimeAttribute { get; } = new List<RunTimeAttributeMap>()
-        {
-            new RunTimeAttributeMap("PrimaryKey",new List<System.Attribute>(){new KeyAttribute()})
-        };
 
         [SetUp]
         public void Setup()
@@ -33,47 +29,87 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 
 
         [Test]
+        public void Test_Generic_Build_Insert_Query_With_Outputs()
+        {
+         
+            RunTestOnAllDBTypes(delegate(DataBaseType type)
+            {
+                if (type == DataBaseType.Sqlite) return;
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQueryWithOutputs<Employee>(ActionType,e => e.FirstName  );
+                
+                var expected = "";
+
+                switch (type)
+                {
+                    case DataBaseType.SqlServer:
+                        expected = "INSERT INTO Employee ([FirstName],[LastName]) \r\n OUTPUT INSERTED.[FirstName] \r\n VALUES (@FirstName,@LastName)";
+                        break;
+                    case DataBaseType.MySql:
+                        break;
+                    case DataBaseType.Sqlite:
+                        expected = "NOT SUPPORTED";
+                        break;
+                    case DataBaseType.Oracle:
+                        break;
+                    case DataBaseType.Oledb:
+                        break;
+                    case DataBaseType.Access95:
+                        break;
+                    case DataBaseType.Odbc:
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(type), type, null);
+                }
+                Assert.AreEqual(sql, expected);
+            });
+        }
+
+
+
+        [Test]
         public void Test_Generic_Build_Insert_Query()
         {
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery(ActionType, new Employee());
-            Assert.AreEqual(sql, Employee.ToSql(ActionType, DataBaseType));
+            RunTestOnAllDBTypes(delegate (DataBaseType type)
+                {
+                var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+                 var sql = objectToSql.BuildQuery(ActionType, new Employee());
+                 Assert.AreEqual(sql, Employee.ToSql(ActionType, type));
+            });
         }
 
         [Test]
         public void Test_Generic_As_Object_Build_Insert_Query()
         {
-            object employee = new Employee();
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery(ActionType, employee);
-            Assert.AreEqual(sql, Employee.ToSql(ActionType, DataBaseType));
+            RunTestOnAllDBTypes(delegate (DataBaseType type)
+                {
+                    object employee = new Employee();
+            var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = objectToSql.BuildQuery(ActionType, employee);
+            Assert.AreEqual(sql, Employee.ToSql(ActionType, type));
+            });
         }
 
         [Test]
         public void Test_Generic_Build_Insert_Query_Uses_Type_Name_When_Table_Name_Is_Not_Specified()
         {
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQuery<Employee>(ActionType);
-            Assert.AreEqual(sql, Employee.ToSql(ActionType, DataBaseType));
+            RunTestOnAllDBTypes(delegate (DataBaseType type)
+            {
+                        var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = objectToSql.BuildQuery<Employee>(ActionType);
+            Assert.AreEqual(sql, Employee.ToSql(ActionType, type));
+            });
         }
 
 
 
-        //[Test]
-        //public void Test_Generic_Build_Insert_Query_Throws_ArgumentNull_When_RunTimeAttribute_Mapping_IsNull()
-        //{
-        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-        //    Assert.That(() => sqlServerObjectToSql.BuildQuery<Employee>( ActionType, new Employee(), null),
-        //                Throws.Exception
-        //                    .TypeOf<ArgumentNullException>());
-        //}
-
+   
 
         [Test]
         public void Test_Generic_BuildInsertQueryWithOutputs()
         {
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            var sql = sqlServerObjectToSql.BuildQueryWithOutputs<Employee>(ActionType, null, e => e.FirstName);
+            var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var sql = objectToSql.BuildQueryWithOutputs<Employee>(ActionType, "Employee", e => e.FirstName);
             Assert.AreEqual(sql, $"INSERT INTO Employee ([FirstName],[LastName]) {Environment.NewLine} OUTPUT INSERTED.[FirstName] {Environment.NewLine} VALUES (@FirstName,@LastName)");
         }
 
@@ -87,9 +123,9 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         public void Test_BuildDbParameterList_Contains_Accurate_Values()
         {
             var employee = new Employee() { LastName = "John", FirstName = "Doe" };
-            var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+            var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
 
-            var parameters = sqlServerObjectToSql.BuildDbParameterList(employee, (s, o) => new SqlParameter(s, o), null, null, null);
+            var parameters = objectToSql.BuildDbParameterList(employee, (s, o) => new SqlParameter(s, o), null, null, null);
 
             Assert.AreEqual(parameters.First().Value, "Doe");
             Assert.AreEqual(parameters.Last().Value, "John");

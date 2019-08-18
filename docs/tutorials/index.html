@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>The 2 ways to generate sql | DotNetHelper.ObjectToSql </title>
+    <title>The 3 ways to generate sql | DotNetHelper.ObjectToSql </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="The 2 ways to generate sql | DotNetHelper.ObjectToSql ">
+    <meta name="title" content="The 3 ways to generate sql | DotNetHelper.ObjectToSql ">
     <meta name="generator" content="docfx 2.44.0.0">
     
     <link rel="shortcut icon" href="../logo/favicon.ico">
@@ -124,13 +124,43 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="TSD">
-<h2 id="the-2-ways-to-generate-sql">The 2 ways to generate sql</h2>
+<h2 id="the-3-ways-to-generate-sql">The 3 ways to generate sql</h2>
 
 <h4 id="objects-to-sql">Objects to sql</h4>
-<pre><code class="lang-csharp">var object2Sql = new ObjectToSql(DataBaseType.SqlServer);
+<pre><code class="lang-csharp">public class Employee {
+      public FirstName { get; set; }
+      public LastName  { get; set; }
+}
+
+var object2Sql = new ObjectToSql(DataBaseType.SqlServer);
+
+// CREATE A INSERT,UPDATE,UPSERT,&amp; DELETE SQL STATEMENT
+var insertSQL = object2Sql.BuildQuery(ActionType.Insert,new Employee());
+var updateSQL = object2Sql.BuildQuery(ActionType.Update,new Employee());
+var upsertSQL = object2Sql.BuildQuery(ActionType.Upsert,new Employee());
+var deleteSQL = object2Sql.BuildQuery(ActionType.Delete,new Employee());
 </code></pre>
 <h4 id="datatable-to-sql">DataTable to sql</h4>
-<pre><code class="lang-csharp">var object2Sql = new DataTableToSql(DataBaseType.SqlServer);
+<pre><code class="lang-csharp">var dataTable2Sql = new DataTableToSql(DataBaseType.SqlServer);
+
+// CREATE A INSERT,UPDATE,UPSERT,&amp; DELETE SQL STATEMENT
+var insertSQL = dataTable2Sql.BuildQuery(dataTable, ActionType.Insert);
+var updateSQL = dataTable2Sql.BuildQuery(dataTable, ActionType.Update);
+var upsertSQL = dataTable2Sql.BuildQuery(dataTable, ActionType.Upsert);
+var deleteSQL = dataTable2Sql.BuildQuery(dataTable, ActionType.Delete);
+</code></pre>
+<h4 id="class-to-sql">Class to sql</h4>
+<pre><code class="lang-csharp">public class Employee {
+      public FirstName { get; set; }
+      public LastName  { get; set; }
+}
+var class2Sql = new DataTableToSql(DataBaseType.SqlServer);
+
+// CREATE A INSERT,UPDATE,UPSERT,&amp; DELETE SQL STATEMENT
+var insertSQL = class2Sql.BuildQuery&lt;Employee&gt;(ActionType.Insert);
+var updateSQL = class2Sql.BuildQuery&lt;Employee&gt;(ActionType.Update);
+var upsertSQL = class2Sql.BuildQuery&lt;Employee&gt;(ActionType.Upsert);
+var deleteSQL = class2Sql.BuildQuery&lt;Employee&gt;(ActionType.Delete);
 </code></pre>
 </article>
           </div>

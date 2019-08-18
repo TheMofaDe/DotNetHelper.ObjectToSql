@@ -27,8 +27,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         //public void Test_Generic_BuildUpsertQuery_Uses_MappedColumn_Name_Instead_Of_PropertyName()
         //{
         //    RunTestOnAllDBTypes(delegate (DataBaseType type) {
-        //        var sqlServerObjectToSql = new Services.ObjectToSql(type);
-        //    var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType);
+        //        var objectToSql = new Services.ObjectToSql(type);
+        //    var sql = objectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType);
         //    Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType,type));
         //    });
         //}
@@ -39,8 +39,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(ActionType, null, column => column.FirstName);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(ActionType, null, column => column.FirstName);
 
 
                 var answer = "";
@@ -77,8 +77,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
         //[Test]
         //public void Test_Generic_BuildUpsertQuery_Ignores_All_Keys_Attributes_And_Uses_Only_OverrideKeys()
         //{
-        //    var sqlServerObjectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-        //    sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeyDataAnnotation>(e => e.FirstName);
+        //    var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+        //    objectToSql.BuildQuery<EmployeeWithPrimaryKeyDataAnnotation>(e => e.FirstName);
         //    Assert.AreEqual(StringBuilder.ToString(), "IF EXISTS ( SELECT * FROM Employee WHERE [FirstName]=@FirstName ) " +
         //                                              "BEGIN " +
         //                                              "UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName,[PrimaryKey]=@PrimaryKey WHERE [FirstName]=@FirstName " +

@@ -30,7 +30,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                 case DataBaseType.MySql:
                     break;
                 case DataBaseType.Sqlite:
-                    break;
+                    return $"INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
                 case DataBaseType.Oracle:
                     break;
                 case DataBaseType.Oledb:

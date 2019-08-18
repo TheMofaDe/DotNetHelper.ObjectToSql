@@ -148,9 +148,9 @@ public class Employee {
 <p>using either version of the model above I can now generate update,delete, &amp; upsert statment by doing the following</p>
 <pre><code class="lang-csharp">   var actionType = ActionType.Update; // A enum with the values Insert,Update,Delete,Upsert
    var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-   var updateSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(null,actionType);
-   var upsertSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(&quot;Employee&quot;,ActionType.Upsert);
-   var deleteSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(&quot;TableName&quot;,ActionType.Delete);
+   var updateSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(actionType);
+   var upsertSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(ActionType.Upsert,&quot;Employee&quot;);
+   var deleteSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(ActionType.Delete,&quot;TableName&quot;);
 
    Console.WriteLine(updateSql);
    Console.WriteLine(upsertSql);
@@ -168,7 +168,7 @@ public class Employee {
 <p>Executing the a update,upsert, or delete query with an object that doesn't have any key attributes will lead to an InvalidOperationException being thrown.</p>
 </div>
 <h2 id="creating-db-parameters-from-object">Creating DB Parameters From Object</h2>
-<pre><code class="lang-csharp">var parameters = sqlServerObjectToSql.BuildDbParameterList(new Employee(), (s, o) =&gt; new SqlParameter(s, o),null,null,null);
+<pre><code class="lang-csharp">var parameters = sqlServerObjectToSql.BuildDbParameterList(new Employee(), (s, o) =&gt; new SqlParameter(s, o));
 </code></pre>
 <blockquote>
 <p>[Tip]

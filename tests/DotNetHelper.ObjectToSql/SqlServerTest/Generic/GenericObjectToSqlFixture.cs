@@ -17,9 +17,9 @@
 //        public void Test_Generic_BuildGetQuery()
 //        {
 //            var stringBuilder = new StringBuilder();
-//            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
+//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
 //            var employee = new {FirstName = "Joseph", LastName = "McNeal Jr"};
-//            sqlServerObjectToSql.BuildGetQuery<Employee>(stringBuilder,"Employee",null);
+//            objectToSql.BuildGetQuery<Employee>(stringBuilder,"Employee",null);
 //            var sql = stringBuilder.ToString();
 //            Assert.AreEqual(sql, "SELECT * FROM Employee ");
 //        }
@@ -28,9 +28,9 @@
 //        public void Test_Generic_BuildGetQuery_WithWhereClause()
 //        {
 //            var stringBuilder = new StringBuilder();
-//            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
+//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
 //            var whereClause = $"WHERE FirstName like '%Joseph%'";
-//            sqlServerObjectToSql.BuildGetQuery<Employee>(stringBuilder, "Employee",  whereClause);
+//            objectToSql.BuildGetQuery<Employee>(stringBuilder, "Employee",  whereClause);
 //            var sql = stringBuilder.ToString();
 //            Assert.AreEqual(sql, "SELECT * FROM Employee " + whereClause);
 //        }
@@ -40,9 +40,9 @@
 //        public void Test_Generic_BuildGetQuery_WithWhereClause_And_NullTableName()
 //        {
 //            var stringBuilder = new StringBuilder();
-//            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
+//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
 //            var whereClause = $"WHERE FirstName like '%Joseph%'";
-//            sqlServerObjectToSql.BuildGetQuery<Employee>(stringBuilder, null, whereClause);
+//            objectToSql.BuildGetQuery<Employee>(stringBuilder, null, whereClause);
 //            var sql = stringBuilder.ToString();
 //            Assert.AreEqual(sql, "SELECT * FROM Employee " + whereClause);
 //        }
@@ -55,9 +55,9 @@
 //        {
 //            var stringBuilder = new StringBuilder();
 //            var employee = new EmployeeSqlColumnAttribute() { FirstName = "Joseph", LastName = "McNeal Jr" };
-//            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
+//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
 
-//            sqlServerObjectToSql.BuildDeleteQuery(stringBuilder, nameof(Employee), employee, e => e.FirstName);
+//            objectToSql.BuildDeleteQuery(stringBuilder, nameof(Employee), employee, e => e.FirstName);
 //            var sql = stringBuilder.ToString();
 //            Assert.AreEqual(sql, "DELETE FROM Employee WHERE [MapColumn]=@FirstName");
 //        }
@@ -68,9 +68,9 @@
 //        {
 //            var stringBuilder = new StringBuilder();
 //            var employee = new EmployeeSqlColumnAttribute() { FirstName = "Joseph", LastName = "McNeal Jr" };
-//            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
+//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
 
-//            sqlServerObjectToSql.BuildUpdateQuery(stringBuilder, nameof(Employee), employee, e => e.FirstName);
+//            objectToSql.BuildUpdateQuery(stringBuilder, nameof(Employee), employee, e => e.FirstName);
 //            var sql = stringBuilder.ToString();
 //            Assert.AreEqual(sql, "UPDATE Employee SET [MapColumn]=@FirstName,[LastName]=@LastName WHERE [MapColumn]=@FirstName");
 //        }
@@ -81,9 +81,9 @@
 //        {
 //            var stringBuilder = new StringBuilder();
 //            var employee = new EmployeeSqlColumnAttribute() { FirstName = "Joseph", LastName = "McNeal Jr" };
-//            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
+//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
 
-//            sqlServerObjectToSql.BuildUpdateQuery(stringBuilder, nameof(Employee), employee, e => e.FirstName);
+//            objectToSql.BuildUpdateQuery(stringBuilder, nameof(Employee), employee, e => e.FirstName);
 //            var sql = stringBuilder.ToString();
 //            Assert.AreEqual(sql, "UPDATE Employee SET [MapColumn]=@FirstName,[LastName]=@LastName WHERE [MapColumn]=@FirstName");
 //        }

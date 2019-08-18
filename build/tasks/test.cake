@@ -36,12 +36,12 @@ Task("Test")
         parameters.Paths.Files.TestCoverageOutputFilePath,
         new OpenCoverSettings(){
             LogLevel = OpenCoverLogLevel.Info,
-			OldStyle = true,
+			OldStyle = false,
 			MergeOutput = false
         }     
-		.WithFilter("+[*]*")
-        .WithFilter("-[*.tests]*")
-		.WithFilter("-[*.Tests]*")
+        .WithFilter("+[*]*")
+		.WithFilter("-[*.Tests*]*")
+		.WithFilter("-[*NUnit3.*]*")
 		);
 
         }

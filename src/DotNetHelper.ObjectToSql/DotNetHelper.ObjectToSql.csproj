@@ -9,7 +9,7 @@
     <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper.ObjectToSql</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Object2Sql,ObjectToSql,Object,To,Sql,</PackageTags>
-    <PackageReleaseNotes>added feature DataTable to Sql</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/CHANGELOG.md</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>

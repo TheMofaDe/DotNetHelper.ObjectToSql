@@ -97,10 +97,7 @@
 <li>UPDATE</li>
 <li>DELETE</li>
 <li>UPSERT</li>
-<li>INSERT with OUTPUT Columns</li>
-<li>UPDATE with OUTPUT Columns</li>
-<li>DELETE with OUTPUT Columns</li>
-<li>UPSERT with OUTPUT Columns</li>
+<li>Generate SQL that return inserted or updated column values</li>
 </ul>
 <h2 id="supported-databases">Supported Databases</h2>
 <ul>
@@ -109,32 +106,41 @@
 <li>MYSQL</li>
 <li>More to come</li>
 </ul>
-<h2 id="how-to-use">How to use</h2>
+<h2 id="how-to-generate-sql">How to Generate SQL</h2>
 <h5 id="how-to-use-with-generics-types">How to Use With Generics Types</h5>
 <pre><code class="lang-csharp">public class Employee {
       public FirstName { get; set; }
       public LastName  { get; set; }
 }
-            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            var insertSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(&quot;TABLE NAME OR DEFAULT TO TYPE NAME&quot;, ActionType.Insert);
-// OR 
-            var insertSql = sqlServerObjectToSql.BuildQuery(&quot;TABLE NAME OR DEFAULT TO TYPE NAME&quot;, ActionType.Insert,typeof(Employee));
+</code></pre>
+<pre><code class="lang-csharp"> var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery&lt;Employee&gt;(ActionType.Insert);
+ // OR USING EMPLOYEE OBJECT
+ var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert,new Employee());
 </code></pre>
 <h5 id="how-to-use-with-dynamic-objects">How to Use With Dynamic Objects</h5>
-<pre><code class="lang-csharp">            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            dynamic record = new ExpandoObject();
-            record.FirstName = &quot;John&quot;;
-            record.LastName = &quot;Doe&quot;;
-            var insertSql = sqlServerObjectToSql.BuildQuery(&quot;TABLE NAME OR DEFAULT TO TYPE NAME&quot;, ActionType.Insert,record);
+<pre><code class="lang-csharp">dynamic record = new ExpandoObject();
+         record.FirstName = &quot;John&quot;;
+         record.LastName = &quot;Doe&quot;;
+var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert, record, &quot;Employee&quot;);
 </code></pre>
 <h5 id="how-to-use-with-anonymous-objects">How to Use With Anonymous Objects</h5>
-<pre><code class="lang-csharp">            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            var anonymousObject = new { FirstName = &quot;John&quot; , LastName = &quot;Doe&quot;}
-            var insertSql = sqlServerObjectToSql.BuildQuery(&quot;TABLE NAME OR DEFAULT TO TYPE NAME&quot;, ActionType.Insert,anonymousObject);
+<pre><code class="lang-csharp">var obj = new {FirstName = &quot;John&quot;, LastName = &quot;Doe&quot;};
+var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert, obj, &quot;Employee&quot;);
 </code></pre>
-<h5 id="output">Output</h5>
-<pre><code class="lang-sql">INSERT INTO TableNameGoHere ([FirstName],[LastName]) VALUES (@FirstName,@LastName)
+<h5 id="how-to-generate-sql-from-datatables">How to Generate SQL From DataTables</h5>
+<pre><code class="lang-csharp">var insertSql = new DataTableToSql(DataBaseType.SqlServer).BuildQuery(dataTable, ActionType.Insert);
 </code></pre>
+<h4 id="output">Output</h4>
+<pre><code class="lang-sql">INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)
+</code></pre>
+<br>
+<br>
+<h2 id="how-to-generate-dbparameters">How to Generate DBParameters</h2>
+<pre><code class="lang-csharp">var obj2Sql = new ObjectToSql(DataBaseType.SqlServer); 
+var dbParameters = obj2Sql.BuildDbParameterList(new Employee(), (s, o) =&gt; new SqlParameter(s, o));
+</code></pre>
+<br>
+<br>
 <!-- Links. -->
 <!-- Documentation Links. -->
 </article>

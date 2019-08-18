@@ -27,8 +27,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnDataAnnotation>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithMappedColumnDataAnnotation>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithMappedColumnDataAnnotation.ToSql(ActionType, type));
             });
         }
@@ -38,8 +38,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeyDataAnnotation>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeyDataAnnotation>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeyDataAnnotation.ToSql(ActionType, type));
             });
         }
@@ -51,8 +51,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIgnorePropertyDataAnnotation>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithIgnorePropertyDataAnnotation>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithIgnorePropertyDataAnnotation.ToSql(ActionType, type));
             });
 
@@ -63,8 +63,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeyDataAnnotation>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithIdentityKeyDataAnnotation>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithIdentityKeyDataAnnotation.ToSql(ActionType, type));
             });
 
@@ -76,8 +76,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeyDataAnnotation>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithPrimaryKeyDataAnnotation>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithPrimaryKeyDataAnnotation.ToSql(ActionType, type));
             });
 
@@ -88,8 +88,22 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(ActionType, "Employee", a => a.PrimaryKey);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = string.Empty;
+                if (type == DataBaseType.Sqlite)
+                {
+                    EnsureExpectedExceptionIsThrown<NotImplementedException>(() =>
+                        objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(
+                            ActionType, "Employee", a => a.PrimaryKey)
+                        );
+                    return;
+                }
+                else
+                {
+
+                     sql = objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(
+                        ActionType, "Employee", a => a.PrimaryKey);
+                }
 
                 var answer = string.Empty;
                 switch (type)
@@ -123,8 +137,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithTableAttribute>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithTableAttribute>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithTableAttribute.ToSql(ActionType, type));
             });
         }
@@ -136,8 +150,23 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnDataAnnotation>(ActionType, "Employee", e => e.FirstName);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = string.Empty;
+                if (type == DataBaseType.Sqlite)
+                {
+                    EnsureExpectedExceptionIsThrown<NotImplementedException>(() =>
+                        objectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnDataAnnotation>(ActionType,
+                            "Employee", e => e.FirstName)
+                    );
+                    return;
+                }
+                else
+                {
+
+                    sql = objectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnDataAnnotation>(ActionType,
+                        "Employee", e => e.FirstName);
+                }
+
                 Assert.AreEqual(sql, $"INSERT INTO Employee ([FirstName2],[LastName]) {Environment.NewLine} OUTPUT INSERTED.[FirstName2] {Environment.NewLine} VALUES (@FirstName,@LastName)");
             });
         }

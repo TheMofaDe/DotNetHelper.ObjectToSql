@@ -18,10 +18,7 @@
 + UPDATE
 + DELETE
 + UPSERT
-+ INSERT with OUTPUT Columns
-+ UPDATE with OUTPUT Columns
-+ DELETE with OUTPUT Columns
-+ UPSERT with OUTPUT Columns
++ Generate SQL that return inserted or updated column values
 
 ## Supported Databases
 + SQLSERVER
@@ -29,8 +26,7 @@
 + MYSQL
 + More to come
 
-## How to use
-
+## How to Generate SQL
 
 
 ##### How to Use With Generics Types
@@ -42,32 +38,56 @@ public class Employee {
 }
 ```
 ```csharp
-var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
-var insertSql = objectToSql.BuildQuery<Employee>("TableName", ActionType.Insert);
-// OR 
-var insertSql = objectToSql.BuildQuery("TableName", ActionType.Insert,typeof(Employee));
-```
+ var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery<Employee>(ActionType.Insert);
+ // OR USING EMPLOYEE OBJECT
+ var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert,new Employee());
+```      
+ 
+
+
+
 
 ##### How to Use With Dynamic Objects
 ```csharp
-var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
 dynamic record = new ExpandoObject();
-record.FirstName = "John";
-record.LastName = "Doe";
-var insertSql = objectToSql.BuildQuery("TableName", ActionType.Insert,record);
+         record.FirstName = "John";
+         record.LastName = "Doe";
+var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert, record, "Employee");
 ```
 
 
 ##### How to Use With Anonymous Objects
 ```csharp
-var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
-var anonymousObject = new { FirstName = "John" , LastName = "Doe"}
-var insertSql = objectToSql.BuildQuery("TableName", ActionType.Insert,anonymousObject);
+var obj = new {FirstName = "John", LastName = "Doe"};
+var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert, obj, "Employee");
 ```
-##### Output
+
+##### How to Generate SQL From DataTables
+
+```csharp
+var insertSql = new DataTableToSql(DataBaseType.SqlServer).BuildQuery(dataTable, ActionType.Insert);
+```
+
+#### Output
 ```sql
-INSERT INTO TableNameGoHere ([FirstName],[LastName]) VALUES (@FirstName,@LastName)
+INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)
 ```
+
+<br/>
+<br/>
+
+## How to Generate DBParameters
+
+```csharp
+var obj2Sql = new ObjectToSql(DataBaseType.SqlServer); 
+var dbParameters = obj2Sql.BuildDbParameterList(new Employee(), (s, o) => new SqlParameter(s, o));
+```
+
+<br/>
+<br/>
+
+
+
 
 
 ## Documentation

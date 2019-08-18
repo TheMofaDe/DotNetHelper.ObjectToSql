@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using DotNetHelper.ObjectToSql.Enum;
+using DotNetHelper.ObjectToSql.Exceptions;
+using NUnit.Framework;
 
 namespace DotNetHelper.ObjectToSql.Tests
 {
@@ -19,6 +21,12 @@ namespace DotNetHelper.ObjectToSql.Tests
             {
                 testCase.Invoke(type);
             });
+        }
+
+
+        public void EnsureExpectedExceptionIsThrown<T>(Action action) where T : Exception
+        {
+            Assert.That(action.Invoke, Throws.Exception.TypeOf<T>());
         }
     }
 }

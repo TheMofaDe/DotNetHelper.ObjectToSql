@@ -29,8 +29,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Delete
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
                 object employee = new Employee();
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                Assert.That(() => sqlServerObjectToSql.BuildQuery(ActionType, employee),
+                var objectToSql = new Services.ObjectToSql(type);
+                Assert.That(() => objectToSql.BuildQuery(ActionType, employee),
                     Throws.Exception
                         .TypeOf<MissingKeyAttributeException>());
             });
@@ -42,8 +42,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Delete
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeyDataAnnotation>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithIdentityKeyDataAnnotation>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithIdentityKeyDataAnnotation.ToSql(ActionType, type));
             });
         }
@@ -53,8 +53,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Delete
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeyDataAnnotation>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithPrimaryKeyDataAnnotation>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithPrimaryKeyDataAnnotation.ToSql(ActionType, type));
             });
         }
@@ -64,8 +64,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Delete
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithManyPrimaryKeyDataAnnotation>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithManyPrimaryKeyDataAnnotation>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithManyPrimaryKeyDataAnnotation.ToSql(ActionType, type));
             });
         }
@@ -74,8 +74,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Delete
         //[Test]
         //public void Test_Generic_BuildDeleteQuery_Ignores_All_Keys_Attributes_And_Uses_Only_OverrideKeys()
         //{
-        //    var sqlServerObjectToSql = new Services.ObjectToSql(type);
-        //    sqlServerObjectToSql.BuildDeleteQuery<EmployeeWithPrimaryKeyDataAnnotation>(StringBuilder, nameof(Employee), e => e.FirstName);
+        //    var objectToSql = new Services.ObjectToSql(type);
+        //    objectToSql.BuildDeleteQuery<EmployeeWithPrimaryKeyDataAnnotation>(StringBuilder, nameof(Employee), e => e.FirstName);
         //    Assert.AreEqual(StringBuilder.ToString(), "DELETE FROM Employee WHERE [FirstName]=@FirstName");
         //}
 

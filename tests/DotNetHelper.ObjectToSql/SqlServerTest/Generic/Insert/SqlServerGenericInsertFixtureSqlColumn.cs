@@ -28,8 +28,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnSqlColumn>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithMappedColumnSqlColumn>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithMappedColumnSqlColumn.ToSql(ActionType, type));
             });
         }
@@ -39,8 +39,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithMappedColumnAndPrimaryKeySqlColumn>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithMappedColumnAndPrimaryKeySqlColumn.ToSql(ActionType, type));
             });
         }
@@ -52,8 +52,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIgnorePropertySqlColumn>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithIgnorePropertySqlColumn>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithIgnorePropertySqlColumn.ToSql(ActionType, type));
             });
 
@@ -64,8 +64,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithIdentityKeySqlColumn>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithIdentityKeySqlColumn.ToSql(ActionType, type));
             });
 
@@ -77,8 +77,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>(ActionType);
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithPrimaryKeySqlColumn>(ActionType);
                 Assert.AreEqual(sql, EmployeeWithPrimaryKeySqlColumn.ToSql(ActionType, type));
             });
 
@@ -91,28 +91,28 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(
-                    ActionType, "Employee", a => a.PrimaryKey);
+                var objectToSql = new Services.ObjectToSql(type);
+
+                var sql = string.Empty;
+                if (type == DataBaseType.Sqlite)
+                {
+                    EnsureExpectedExceptionIsThrown<NotImplementedException>(() =>
+                        objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(ActionType,
+                            "Employee", a => a.PrimaryKey)
+                    );
+                    return;
+                }
+                else
+                {
+                     sql = objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(ActionType,
+                        "Employee", a => a.PrimaryKey);
+                }
 
                 var value = $"";
                 switch (type)
                 {
                     case DataBaseType.SqlServer:
                         value = "INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) \r\n OUTPUT INSERTED.[PrimaryKey] \r\n VALUES (@FirstName,@LastName,@PrimaryKey)";
-                        break;
-                    case DataBaseType.MySql:
-                        break;
-                    case DataBaseType.Sqlite:
-                        value = "INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) \r\n OUTPUT INSERTED.[PrimaryKey] \r\n VALUES (@FirstName,@LastName,@PrimaryKey)";
-                        break;
-                    case DataBaseType.Oracle:
-                        break;
-                    case DataBaseType.Oledb:
-                        break;
-                    case DataBaseType.Access95:
-                        break;
-                    case DataBaseType.Odbc:
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(type), type, null);
@@ -130,8 +130,23 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var sqlServerObjectToSql = new Services.ObjectToSql(type);
-                var sql = sqlServerObjectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnSqlColumn>(ActionType, "Employee", e => e.FirstName);
+                var objectToSql = new Services.ObjectToSql(type);
+
+                var sql = string.Empty;
+                if (type == DataBaseType.Sqlite)
+                {
+                    EnsureExpectedExceptionIsThrown<NotImplementedException>(() =>
+                        objectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnSqlColumn>(ActionType,
+                            "Employee", e => e.FirstName)
+                    );
+                    return;
+                }
+                else
+                {
+
+                     sql = objectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnSqlColumn>(ActionType,
+                        "Employee", e => e.FirstName);
+                }
 
                 var expected = "";
                 switch (type)
