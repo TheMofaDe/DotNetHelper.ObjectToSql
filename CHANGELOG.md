@@ -2,12 +2,18 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
-## [1.0.65] - 2019-08-2
+## [1.0.89] - 2019-08-17
+
+
 ### Changed
-TDB
-
-
-
+-  **BREAKING CHANGES**
+    - Re-Order tableName parameter to the end of all public methods in ObjectToSql 
+```csharp
+// OLD API
+public string BuildQuery(string tableName, ActionType actionType, object instance)
+// NEW API
+public string BuildQuery( ActionType actionType, object instance,string tableName)
+```
 
 ## [1.0.62] - 2019-07-21
 
@@ -32,6 +38,8 @@ TDB
 [1.0.57]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.57
 [1.0.59]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.59
 [1.0.62]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.62
+[1.0.89]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.89
+
 
 
 
