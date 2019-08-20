@@ -2,8 +2,16 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
-## [1.0.89] - 2019-08-17
 
+## [1.0.91] - 2019-08-20
+
+### Changed
+-  Overload now supports update,upsert,delete action type for anonymous types
+    ```csharp
+    public string BuildQuery<T>(ActionType actionType, string tableName = null, params Expression<Func<T, object>>[] primaryKeys) where T : class
+    ``` 
+
+## [1.0.89] - 2019-08-17
 
 ### Changed
 -  **BREAKING CHANGES**
@@ -39,6 +47,7 @@ public string BuildQuery( ActionType actionType, object instance,string tableNam
 [1.0.59]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.59
 [1.0.62]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.62
 [1.0.89]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.89
+[1.0.91]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.91
 
 
 

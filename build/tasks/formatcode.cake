@@ -1,4 +1,5 @@
 Task("Format-Code")
+.WithCriteria<BuildParameters>((context, parameters) => parameters.IsLocalBuild,  "Generate-Docs will only run during a local build")
     .Does<BuildParameters>((parameters) =>
 {
      var exitCode = StartProcess(@"dotnet-format", new ProcessSettings { Arguments = " -w " + MyProject.SolutionDir });

@@ -101,19 +101,16 @@ namespace DotNetHelper.ObjectToSql.Services
             switch (actionType)
             {
                 case ActionType.Insert:
-                    ThrowIfDynamicOrAnonymous<T>(actionType);
                     BuildInsertQuery<T>(sqlBuilder, tableName);
                     break;
                 case ActionType.Update:
-                    ThrowIfDynamicOrAnonymous<T>(actionType);
+
                     BuildUpdateQuery(sqlBuilder, tableName, primaryKeys);
                     break;
                 case ActionType.Upsert:
-                    ThrowIfDynamicOrAnonymous<T>(actionType);
                     BuildUpsertQuery(sqlBuilder, tableName, primaryKeys);
                     break;
                 case ActionType.Delete:
-                    ThrowIfDynamicOrAnonymous<T>(actionType);
                     BuildDeleteQuery(sqlBuilder, tableName, primaryKeys);
                     break;
                 default:
@@ -164,7 +161,6 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <summary>
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="tableName"></param>
         /// <param name="actionType"></param>
         /// <param name="outputFields"></param>
         /// <returns></returns>
