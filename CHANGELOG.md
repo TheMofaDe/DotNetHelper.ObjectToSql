@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
+## [1.0.93] - 2019-08-21
+
+### Changed
+-  removed primary keys from being set when creating update statements. This will allow support for anonymous object to  be inserted into a table have identity keys
+
 ## [1.0.91] - 2019-08-20
 
 ### Changed
@@ -48,7 +53,7 @@ public string BuildQuery( ActionType actionType, object instance,string tableNam
 [1.0.62]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.62
 [1.0.89]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.89
 [1.0.91]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.91
-
+[1.0.93]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.93
 
 
 

@@ -45,12 +45,12 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Anonymous.Insert
                  var deleteSql = ReturnAsT(obj, type, ActionType.Delete, arg => arg.Id);
 
                 Assert.AreEqual(insertSql, "INSERT INTO Employee ([FirstName],[Id],[LastName]) VALUES (@FirstName,@Id,@LastName)");
-                Assert.AreEqual(updateSql, "UPDATE Employee SET [FirstName]=@FirstName,[Id]=@Id,[LastName]=@LastName WHERE [Id]=@Id");
+                Assert.AreEqual(updateSql, "UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [Id]=@Id");
 
                 if(type == DataBaseType.SqlServer)
-                    Assert.AreEqual(upsertSql, "IF EXISTS ( SELECT TOP 1 * FROM Employee WHERE [Id]=@Id ) BEGIN UPDATE Employee SET [FirstName]=@FirstName,[Id]=@Id,[LastName]=@LastName WHERE [Id]=@Id END ELSE BEGIN INSERT INTO Employee ([FirstName],[Id],[LastName]) VALUES (@FirstName,@Id,@LastName) END");
+                    Assert.AreEqual(upsertSql, "IF EXISTS ( SELECT TOP 1 * FROM Employee WHERE [Id]=@Id ) BEGIN UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [Id]=@Id END ELSE BEGIN INSERT INTO Employee ([FirstName],[Id],[LastName]) VALUES (@FirstName,@Id,@LastName) END");
                 if(type == DataBaseType.Sqlite)
-                    Assert.AreEqual(upsertSql, "INSERT OR REPLACE INTO Employee \r\n([Id],[FirstName],[Id],[LastName]) \r\nVALUES\r\n( (SELECT Id FROM Employee WHERE [Id]=@Id), @FirstName,@Id,@LastName )");
+                    Assert.AreEqual(upsertSql, "INSERT OR REPLACE INTO Employee ([Id],[FirstName],[Id],[LastName]) VALUES ( (SELECT Id FROM Employee WHERE [Id]=@Id), @FirstName,@Id,@LastName )");
 
                 Assert.AreEqual(deleteSql, "DELETE FROM Employee WHERE [Id]=@Id");
             });

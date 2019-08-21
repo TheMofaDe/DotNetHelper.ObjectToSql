@@ -9,6 +9,8 @@ namespace DotNetHelper.ObjectToSql.Tests
     public class BaseTest
     {
 
+        public bool SkipTestDueToFalsePositive { get; set; }
+
         public List<DataBaseType> SupportedDBType { get; } = new List<DataBaseType>()
         {
              DataBaseType.SqlServer

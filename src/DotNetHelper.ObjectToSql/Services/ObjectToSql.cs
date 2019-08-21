@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Dynamic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using DotNetHelper.FastMember.Extension;
+﻿using DotNetHelper.FastMember.Extension;
 using DotNetHelper.FastMember.Extension.Models;
 using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Exceptions;
 using DotNetHelper.ObjectToSql.Extension;
 using DotNetHelper.ObjectToSql.Helper;
+using System;
+using System.Collections.Generic;
+using System.Data.Common;
+using System.Dynamic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
 
 
 namespace DotNetHelper.ObjectToSql.Services
@@ -381,27 +381,24 @@ namespace DotNetHelper.ObjectToSql.Services
         }
 
 
-
-
         /// <summary>
-        /// Builds the update query.
+        /// Builds the update query. using the specified primaryKeys
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
-        /// <param name="overrideKeys"></param>
-        private void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys) where T : class
+        /// <param name="primaryKeys">the fields to include in the where clause</param>
+        private void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] primaryKeys) where T : class
         {
-            overrideKeys.IsNullThrow(nameof(overrideKeys));
-            overrideKeys.IsEmptyThrow(nameof(overrideKeys));
+            primaryKeys.IsNullThrow(nameof(primaryKeys));
+            primaryKeys.IsEmptyThrow(nameof(primaryKeys));
 
             var keyFields = new List<MemberWrapper>() { };
-            var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
-            keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
+            var outputFields = primaryKeys.GetPropertyNamesFromExpressions();
+            keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).AsList();
 
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            //var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
-            var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
+            var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor).Where(w => !outputFields.Contains(w.Name)).AsList();
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
 
@@ -513,7 +510,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = new List<MemberWrapper>() { };
 
             var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
-            keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
+            keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).AsList();
 
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
@@ -562,10 +559,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
             if (trueForAll)
             {
-                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} 
-({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))},{string.Join(",", updateFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))}) 
-VALUES
-( {string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
+                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} ({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))},{string.Join(",", updateFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))}) VALUES ( {string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
             }
             else
             {
@@ -587,10 +581,7 @@ VALUES
             var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
             if (trueForAll)
             {
-                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} 
-({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))},{string.Join(",", updateFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))}) 
-VALUES
-( {string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
+                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} ({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))},{string.Join(",", updateFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))}) VALUES ({string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
             }
             else
             {
@@ -644,7 +635,7 @@ VALUES
         private void BuildUpsertQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys) where T : class
         {
             var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
-            var keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).ToList();
+            var keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).AsList();
 
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
@@ -728,7 +719,7 @@ VALUES
         #region GetNonKeyFields
 
         /// <summary>
-        /// Gets the non key fields.
+        /// Gets the non primary key fields.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns>List&lt;MemberWrapper&gt;.</returns>
@@ -740,9 +731,8 @@ VALUES
 
 
         /// <summary>
-        /// Gets the key fields.
+        /// Gets the non primary key fields.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <returns>List&lt;MemberWrapper&gt;.</returns>
         public List<MemberWrapper> GetNonKeyFields(bool includeNonPublicAccessor, Type type)
         {
@@ -762,7 +752,7 @@ VALUES
         public List<MemberWrapper> GetKeyFields<T>(bool includeNonPublicAccessor) where T : class
         {
             // Get the primary key fields - The properties in the class decorated with PrimaryKey attribute.
-            return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).ToList();
+            return ExtFastMember.GetMemberWrappers<T>(includeNonPublicAccessor).Where(m => m.IsMemberAPrimaryKeyColumn() && !m.ShouldMemberBeIgnored()).AsList();
         }
 
 
@@ -770,7 +760,6 @@ VALUES
         /// <summary>
         /// Gets the key fields.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <returns>List&lt;MemberWrapper&gt;.</returns>
         public List<MemberWrapper> GetKeyFields(bool includeNonPublicAccessor, Type type)
         {
@@ -998,7 +987,7 @@ VALUES
         //    var sb = new StringBuilder();
         //    var isFirstTime = true;
         //    var splitOn = "";
-        //    memberWrappers.Where(a1 => a1.GetCustomAttribute<DBTableAttribute>() == null && a1.GetCustomAttribute<SqlColumnAttribute>()?.Ignore != true).ToList().ForEach(delegate (MemberWrapper member) // BUILD SQL COLUMNS
+        //    memberWrappers.Where(a1 => a1.GetCustomAttribute<DBTableAttribute>() == null && a1.GetCustomAttribute<SqlColumnAttribute>()?.Ignore != true).AsList().ForEach(delegate (MemberWrapper member) // BUILD SQL COLUMNS
         //    {
         //        var columnName = $"{tableAlias}.{sqlSyntax.GetKeywordEscapeOpenChar()}{member.Name}{sqlSyntax.GetKeywordEscapeClosedChar()}";
         //        sb.AppendLine($"{columnName} , ");
@@ -1014,10 +1003,10 @@ VALUES
         //internal void BuildJoinOnStatement(List<MemberWrapper> members, char mainTableAlias, List<MemberWrapper> members1, char secondTableAlias, StringBuilder sqlFromBuilder)
         //{
         //    var safeKeyword = " AND ";
-        //    members.Where(a => !a.GetCustomAttribute<SqlColumnAttribute>()?.MappingIds.IsNullOrEmpty() != true && a.GetCustomAttribute<DBTableAttribute>() == null).ToList().ForEach(delegate (MemberWrapper mainTableColumn) // LOOP THRU MAIN TABLE PROPERTIES 
+        //    members.Where(a => !a.GetCustomAttribute<SqlColumnAttribute>()?.MappingIds.IsNullOrEmpty() != true && a.GetCustomAttribute<DBTableAttribute>() == null).AsList().ForEach(delegate (MemberWrapper mainTableColumn) // LOOP THRU MAIN TABLE PROPERTIES 
         //    {
 
-        //        members1.Where(a => !a.GetCustomAttribute<SqlColumnAttribute>()?.MappingIds.IsNullOrEmpty() != true).ToList().ForEach(delegate (MemberWrapper secondTableColumn)
+        //        members1.Where(a => !a.GetCustomAttribute<SqlColumnAttribute>()?.MappingIds.IsNullOrEmpty() != true).AsList().ForEach(delegate (MemberWrapper secondTableColumn)
         //        {
 
         //            var attr = mainTableColumn.GetCustomAttribute<SqlColumnAttribute>();
