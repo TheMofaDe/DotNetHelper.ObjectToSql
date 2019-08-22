@@ -42,7 +42,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                             return $"UPDATE EmployeeWithIdentityKeyDataAnnotation SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey";
                         case ActionType.Upsert:
                             return "INSERT OR REPLACE INTO EmployeeWithIdentityKeySqlColumn ([IdentityKey],[FirstName],[LastName]) VALUES ((SELECT IdentityKey FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey), @FirstName,@LastName )";
-                          //  return "INSERT OR REPLACE INTO EmployeeWithIdentityKeySqlColumn \r\n([IdentityKey],[FirstName],[LastName]) \r\nVALUES\r\n( (SELECT IdentityKey FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey), @FirstName,@LastName )"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        //  return "INSERT OR REPLACE INTO EmployeeWithIdentityKeySqlColumn \r\n([IdentityKey],[FirstName],[LastName]) \r\nVALUES\r\n( (SELECT IdentityKey FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey), @FirstName,@LastName )"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                         case ActionType.Delete:
                             return $"DELETE FROM EmployeeWithIdentityKeyDataAnnotation WHERE [IdentityKey]=@IdentityKey";
                         default:

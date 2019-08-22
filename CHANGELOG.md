@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
+## [1.0.94] - 2019-08-22
+
+### Changed
+- The following overload now support anonymous object insert statement
+~~~csharp
+string BuildQuery<T>(ActionType actionType, string tableName = null) where T : class
+~~~ 
+
 ## [1.0.93] - 2019-08-21
 
 ### Changed
@@ -54,6 +62,7 @@ public string BuildQuery( ActionType actionType, object instance,string tableNam
 [1.0.89]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.89
 [1.0.91]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.91
 [1.0.93]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.93
+[1.0.94]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.94
 
 
 

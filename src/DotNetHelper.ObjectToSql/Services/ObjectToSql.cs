@@ -68,7 +68,7 @@ namespace DotNetHelper.ObjectToSql.Services
             switch (actionType)
             {
                 case ActionType.Insert:
-                    ThrowIfDynamic<T>(actionType,typeof(T));
+                    ThrowIfDynamic<T>(actionType, typeof(T));
                     BuildInsertQuery<T>(sqlBuilder, tableName);
                     break;
                 case ActionType.Update:

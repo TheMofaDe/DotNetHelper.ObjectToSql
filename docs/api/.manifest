@@ -46,8 +46,6 @@
   "DotNetHelper.ObjectToSql.Exceptions": "DotNetHelper.ObjectToSql.Exceptions.yml",
   "DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException": "DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.yml",
   "DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)": "DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.yml",
-  "DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException": "DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.yml",
-  "DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)": "DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.yml",
   "DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException": "DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.yml",
   "DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)": "DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.yml",
   "DotNetHelper.ObjectToSql.Extension": "DotNetHelper.ObjectToSql.Extension.yml",

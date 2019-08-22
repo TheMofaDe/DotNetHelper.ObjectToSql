@@ -88,10 +88,10 @@ namespace DotNetHelper.ObjectToSql.Tests
         public void Test_Ensure_MissingKeyException_Is_Not_Thrown_With_Specified_In_Expression()
         {
 
-             void Execute<T>(DataBaseType type, T instance, ActionType actionType,  params Expression<Func<T, object>>[] keyFields) where T : class
+            void Execute<T>(DataBaseType type, T instance, ActionType actionType, params Expression<Func<T, object>>[] keyFields) where T : class
             {
                 var sql = new Services.ObjectToSql(type).BuildQuery<T>(actionType, "Test", keyFields);
-            
+
             };
 
             RunTestOnAllDBTypes(delegate (DataBaseType type)
@@ -105,7 +105,7 @@ namespace DotNetHelper.ObjectToSql.Tests
                     CreatedAt = DateTime.Now
 
                 };
-                 Execute(type,employee2, ActionType.Insert, o => o.CreatedAt);
+                Execute(type, employee2, ActionType.Insert, o => o.CreatedAt);
             });
         }
 

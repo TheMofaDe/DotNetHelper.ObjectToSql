@@ -5,7 +5,6 @@ items:
   id: DotNetHelper.ObjectToSql.Exceptions
   children:
   - DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
-  - DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
   - DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
   langs:
   - csharp
@@ -22,11 +21,6 @@ references:
   name: EmptyArgumentException
   nameWithType: EmptyArgumentException
   fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
-- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
-  commentId: T:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
-  name: MissingIdentityKeyAttributeException
-  nameWithType: MissingIdentityKeyAttributeException
-  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
 - uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
   commentId: T:DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
   name: MissingKeyAttributeException

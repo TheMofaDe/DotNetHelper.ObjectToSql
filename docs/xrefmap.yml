@@ -395,25 +395,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException.EmptyArgumentException
   nameWithType: EmptyArgumentException.EmptyArgumentException
-- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
-  name: MissingIdentityKeyAttributeException
-  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html
-  commentId: T:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
-  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
-  nameWithType: MissingIdentityKeyAttributeException
-- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-  name: MissingIdentityKeyAttributeException(SerializationInfo, StreamingContext)
-  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
-  commentId: M:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
-  nameWithType: MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException(SerializationInfo, StreamingContext)
-- uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor*
-  name: MissingIdentityKeyAttributeException
-  href: api/DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.html#DotNetHelper_ObjectToSql_Exceptions_MissingIdentityKeyAttributeException__ctor_
-  commentId: Overload:DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.#ctor
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException
-  nameWithType: MissingIdentityKeyAttributeException.MissingIdentityKeyAttributeException
 - uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
   name: MissingKeyAttributeException
   href: api/DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.html

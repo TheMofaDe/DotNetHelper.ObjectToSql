@@ -24,8 +24,6 @@
   items:
   - uid: DotNetHelper.ObjectToSql.Exceptions.EmptyArgumentException
     name: EmptyArgumentException
-  - uid: DotNetHelper.ObjectToSql.Exceptions.MissingIdentityKeyAttributeException
-    name: MissingIdentityKeyAttributeException
   - uid: DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException
     name: MissingKeyAttributeException
 - uid: DotNetHelper.ObjectToSql.Extension
