@@ -1,7 +1,11 @@
 ﻿
 using System;
+using System.Data;
+using System.Dynamic;
+using System.Linq.Expressions;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Exceptions;
+using DotNetHelper.ObjectToSql.Model;
 using DotNetHelper.ObjectToSql.Tests.Models;
 using NUnit.Framework;
 
@@ -76,10 +80,60 @@ namespace DotNetHelper.ObjectToSql.Tests
                         Throws.Exception
                             .TypeOf<EmptyArgumentException>());
                 }
-
             });
         }
 
+
+        [Test]
+        public void Test_Ensure_MissingKeyException_Is_Not_Thrown_With_Specified_In_Expression()
+        {
+
+             void Execute<T>(DataBaseType type, T instance, ActionType actionType,  params Expression<Func<T, object>>[] keyFields) where T : class
+            {
+                var sql = new Services.ObjectToSql(type).BuildQuery<T>(actionType, "Test", keyFields);
+            
+            };
+
+            RunTestOnAllDBTypes(delegate (DataBaseType type)
+            {
+                var employee2 = new // have to not 
+                {
+                    FirstName = "",
+                    LastName = "",
+                    DOB = DateTime.Now,
+                    FavoriteColor = "RED",
+                    CreatedAt = DateTime.Now
+
+                };
+                 Execute(type,employee2, ActionType.Insert, o => o.CreatedAt);
+            });
+        }
+
+
+
+
+        //[Test]
+        //public void Test_BuildQuery_Overload_With_Dynamic_Object_Throws_InvalidOperationException()
+        //{
+
+        //    dynamic dynamicObj = new ExpandoObject();
+        //    dynamicObj.Name = "dsf";
+        //    var obj2Sql = new Services.ObjectToSql(DataBaseType.SqlServer);
+
+        //    Assert.That(() => obj2Sql.BuildQuery(ActionType.Update,dynamicObj,"Name"));
+        //        Throws.Exception
+        //            .TypeOf<InvalidOperationException>();
+
+        //        Assert.That(() => obj2Sql.BuildQuery(ActionType.Upsert, dynamicObj, "Name"));
+        //        Throws.Exception
+        //            .TypeOf<InvalidOperationException>();
+
+        //        Assert.That(() => obj2Sql.BuildQuery(ActionType.Delete, dynamicObj, "Name"));
+        //        Throws.Exception
+        //            .TypeOf<InvalidOperationException>();
+
+
+        //}
 
 
 

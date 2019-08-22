@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using DotNetHelper.ObjectToSql.Enum;
+using DotNetHelper.ObjectToSql.Model;
 using NUnit.Framework;
 
 namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Anonymous.Insert
@@ -41,8 +42,8 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Anonymous.Insert
 
                 var insertSql = ReturnAsT(obj, type, ActionType.Insert, arg => arg.Id);
                 var updateSql = ReturnAsT(obj, type, ActionType.Update, arg => arg.Id);
-                 var upsertSql = ReturnAsT(obj, type, ActionType.Upsert, arg => arg.Id);
-                 var deleteSql = ReturnAsT(obj, type, ActionType.Delete, arg => arg.Id);
+                var upsertSql = ReturnAsT(obj, type, ActionType.Upsert, arg => arg.Id);
+                var deleteSql = ReturnAsT(obj, type, ActionType.Delete, arg => arg.Id);
 
                 Assert.AreEqual(insertSql, "INSERT INTO Employee ([FirstName],[Id],[LastName]) VALUES (@FirstName,@Id,@LastName)");
                 Assert.AreEqual(updateSql, "UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [Id]=@Id");
@@ -56,6 +57,21 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Anonymous.Insert
             });
         }
 
+        [Test]
+        public void Test_Anonymous_T_BuildQuery_INSERT_Doesnt_Throw_Exception_When_Key_Are_Not_Specified()
+        {
+            string ReturnAsT<T>(T obj, DataBaseType type, ActionType actionType, params Expression<Func<T, object>>[] keyFields) where T : class
+            {
+                var objectToSql = new Services.ObjectToSql(type);
+                return objectToSql.BuildQuery<T>(actionType, "Employee", keyFields);
+            }
+
+            RunTestOnAllDBTypes(delegate (DataBaseType type)
+            {
+                var obj = new { FirstName = 1, LastName = "sfsd", Id = 2 };
+                var insertSql = ReturnAsT(obj, type, ActionType.Insert);
+            });
+        }
 
 
         [Test]

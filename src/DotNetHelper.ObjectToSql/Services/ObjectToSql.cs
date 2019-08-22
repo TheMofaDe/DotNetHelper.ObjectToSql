@@ -38,6 +38,10 @@ namespace DotNetHelper.ObjectToSql.Services
             if (typeof(T).IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
             if (typeof(T).IsTypeAnonymousType()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Anonymous"));
         }
+        private void ThrowIfDynamic<T>(ActionType actionType, Type type) where T : class
+        {
+            if (typeof(T).IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, type.Name));
+        }
         private void ThrowIfDynamicOrAnonymous(ActionType actionType, Type type)
         {
             if (type.IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
@@ -64,7 +68,7 @@ namespace DotNetHelper.ObjectToSql.Services
             switch (actionType)
             {
                 case ActionType.Insert:
-                    ThrowIfDynamicOrAnonymous<T>(actionType);
+                    ThrowIfDynamic<T>(actionType,typeof(T));
                     BuildInsertQuery<T>(sqlBuilder, tableName);
                     break;
                 case ActionType.Update:
@@ -104,7 +108,6 @@ namespace DotNetHelper.ObjectToSql.Services
                     BuildInsertQuery<T>(sqlBuilder, tableName);
                     break;
                 case ActionType.Update:
-
                     BuildUpdateQuery(sqlBuilder, tableName, primaryKeys);
                     break;
                 case ActionType.Upsert:
@@ -135,7 +138,6 @@ namespace DotNetHelper.ObjectToSql.Services
             switch (actionType)
             {
                 case ActionType.Insert:
-                    // if (instance.GetType().IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
                     BuildInsertQuery(sqlBuilder, tableName, instance.GetType(), instance);
                     break;
                 case ActionType.Update:
