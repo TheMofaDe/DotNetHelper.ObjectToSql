@@ -15,11 +15,11 @@ namespace DotNetHelper.ObjectToSql.Services
     {
 
         public DataBaseType DatabaseType { get; }
-
-
+        public SqlSyntaxHelper SqlSyntaxHelper { get; }
         public DataTableToSql(DataBaseType type)
         {
             DatabaseType = type;
+            SqlSyntaxHelper = new SqlSyntaxHelper(type);
         }
 
         #region Public Method Build Query
@@ -172,7 +172,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($"INSERT INTO {tableName ?? dataTable.TableName} (");
 
             // Add field names
-            nonIdentityFields.ForEach(p => sqlBuilder.Append($"[{p}],"));
+            nonIdentityFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
             // Add parameter names for values
@@ -209,7 +209,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($"UPDATE {tableName ?? dataTable.TableName} SET ");
 
             // Build Set fields
-            nonIdentityFields.ForEach(p => sqlBuilder.Append($"[{p}]=@{p},"));
+            nonIdentityFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
             // Build Where clause.
@@ -254,16 +254,16 @@ namespace DotNetHelper.ObjectToSql.Services
             if (isAllKeyFieldsInt)
             {
                 sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} 
-({string.Join(",", keyFields.Select(w => $"[{w}]"))},{string.Join(",", updateFields.Select(w => $"[{w}]"))}) 
+({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))},{string.Join(",", updateFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))}) 
 VALUES
 ({string.Join(",", keyFields.Select(w => $"(SELECT {w} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w}"))} )");
             }
             else
             {
-                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"[{w}]"))} DO UPDATE SET ");
+                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE SET ");
 
                 // Build Set fields
-                updateFields.ForEach(p => sqlBuilder.Append($"[{p}]=@{p},"));
+                updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p},"));
                 sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
                 // Build Where clause.
@@ -353,7 +353,7 @@ VALUES
             else
             {
                 sqlBuilder.Append("WHERE");
-                keyFields.ForEach(p => sqlBuilder.Append($" [{p}]=@{p} AND"));
+                keyFields.ForEach(p => sqlBuilder.Append($" {SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p} AND"));
                 if (sqlBuilder.ToString().EndsWith(" AND"))
                     sqlBuilder.Remove(sqlBuilder.Length - 4, 4); // Remove the last AND       
             }

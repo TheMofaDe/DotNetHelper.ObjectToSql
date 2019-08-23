@@ -311,7 +311,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
             outputFields.ForEach(delegate (string s)
             {
-                sqlBuilder.Append($" INSERTED.[{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}] ,");
+                sqlBuilder.Append($" INSERTED.{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()} ,");
             });
             if (!outputFields.IsNullOrEmpty())
             {
@@ -447,7 +447,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($" OUTPUT");
             outputFields.ForEach(delegate (string s)
             {
-                sqlBuilder.Append($" DELETED.[{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}] ,");
+                sqlBuilder.Append($" DELETED.{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()} ,");
             });
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1);
 
@@ -546,7 +546,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($" OUTPUT");
             outputFields.ForEach(delegate (string s)
             {
-                sqlBuilder.Append($" DELETED.[{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}] ,");
+                sqlBuilder.Append($" DELETED.{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()} ,");
             });
 
             BuildWhereClause(sqlBuilder, keyFields);
@@ -565,14 +565,14 @@ namespace DotNetHelper.ObjectToSql.Services
             var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
             if (trueForAll)
             {
-                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} ({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))},{string.Join(",", updateFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))}) VALUES ( {string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
+                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))},{string.Join(",", updateFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))}) VALUES ( {string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
             }
             else
             {
-                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))} DO UPDATE SET ");
+                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE SET ");
 
                 // Build Set fields
-                updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+                updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
                 sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
                 // Build Where clause.
@@ -587,14 +587,14 @@ namespace DotNetHelper.ObjectToSql.Services
             var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
             if (trueForAll)
             {
-                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} ({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))},{string.Join(",", updateFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))}) VALUES ({string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
+                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))},{string.Join(",", updateFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))}) VALUES ({string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
             }
             else
             {
-                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"[{w.GetNameFromCustomAttributeOrDefault()}]"))} DO UPDATE SET ");
+                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE SET ");
 
                 // Build Set fields
-                updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+                updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
                 sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
                 // Build Where clause.
@@ -925,7 +925,7 @@ namespace DotNetHelper.ObjectToSql.Services
         public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer) where T : class
         {
             var list = new List<DbParameter>() { };
-            var members = GetAllNonIgnoreFields(instance, IncludeNonPublicAccessor)
+            var members = GetAllNonIgnoreFields(instance, IncludeNonPublicAccessor);
             members.ForEach(delegate (MemberWrapper p)
             {
                 var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), XmlSerializer, JsonSerializer, CsvSerializer);
