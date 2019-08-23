@@ -22,15 +22,18 @@ namespace DotNetHelper.ObjectToSql.Services
 
         public bool IncludeNonPublicAccessor { get; set; } = true;
         public DataBaseType DatabaseType { get; }
+        public SqlSyntaxHelper SqlSyntaxHelper { get; }
 
         public ObjectToSql(DataBaseType type, bool includeNonPublicAccessor)
         {
             DatabaseType = type;
             IncludeNonPublicAccessor = includeNonPublicAccessor;
+            SqlSyntaxHelper = new SqlSyntaxHelper(type);
         }
         public ObjectToSql(DataBaseType type)
         {
             DatabaseType = type;
+            SqlSyntaxHelper = new SqlSyntaxHelper(type);
         }
 
 
@@ -240,7 +243,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($"INSERT INTO {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} (");
 
             // Add field names
-            allFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}],"));
+            allFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
             // Add parameter names for values
@@ -266,7 +269,7 @@ namespace DotNetHelper.ObjectToSql.Services
             // Add field names
             allFields.ForEach(delegate (MemberWrapper member)
             {
-                sqlBuilder.Append($"[{member.GetNameFromCustomAttributeOrDefault()}],");
+                sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{member.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()},");
 
             });
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
@@ -298,7 +301,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($"INSERT INTO {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} (");
 
             // Add field names
-            allFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}],"));
+            allFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
             // Add parameter names for values
@@ -348,7 +351,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
 
             // Build Set fields
-            updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
             // Build Where clause.
@@ -375,7 +378,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($"UPDATE {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} SET ");
 
             // Build Set fields
-            updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
             // Build Where clause.
@@ -406,7 +409,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
 
             // Build Set fields
-            updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
             // Build Where clause.
@@ -436,7 +439,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
 
             // Build Set fields
-            updateFields.ForEach(p => sqlBuilder.Append($"[{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name},"));
+            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
 
@@ -625,7 +628,7 @@ namespace DotNetHelper.ObjectToSql.Services
             {
                 var sb = new StringBuilder();
                 BuildUpdateQuery<T>(sb, tableName);
-                sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
             }
         }
 
@@ -657,7 +660,7 @@ namespace DotNetHelper.ObjectToSql.Services
             {
                 var sb = new StringBuilder();
                 BuildUpdateQuery(sb, tableName, overrideKeys);
-                sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
             }
         }
 
@@ -689,7 +692,7 @@ namespace DotNetHelper.ObjectToSql.Services
             {
                 var sb = new StringBuilder();
                 BuildUpdateQuery(sb, tableName, type);
-                sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
             }
         }
 
@@ -714,7 +717,7 @@ namespace DotNetHelper.ObjectToSql.Services
             BuildInsertQueryWithOutputs(sb, tableName, outFields);
             var sb2 = new StringBuilder();
             BuildWhereClause(sb2, keyFields);
-            sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+            sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
         }
 
         #endregion
@@ -922,15 +925,7 @@ namespace DotNetHelper.ObjectToSql.Services
         public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer) where T : class
         {
             var list = new List<DbParameter>() { };
-            List<MemberWrapper> members;
-            if (instance is IDynamicMetaObjectProvider a)
-            {
-                members = GetAllNonIgnoreFields(instance, IncludeNonPublicAccessor); // create a dynamic overload with imeta T
-            }
-            else
-            {
-                members = GetAllNonIgnoreFields<T>(IncludeNonPublicAccessor);
-            }
+            var members = GetAllNonIgnoreFields(instance, IncludeNonPublicAccessor)
             members.ForEach(delegate (MemberWrapper p)
             {
                 var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), XmlSerializer, JsonSerializer, CsvSerializer);
@@ -967,7 +962,7 @@ namespace DotNetHelper.ObjectToSql.Services
             List<MemberWrapper> members;
             if (instance is IDynamicMetaObjectProvider a)
             {
-                members = GetAllNonIgnoreFields(instance, IncludeNonPublicAccessor); 
+                members = GetAllNonIgnoreFields(a, IncludeNonPublicAccessor); 
             }
             else
             {
@@ -1010,7 +1005,7 @@ namespace DotNetHelper.ObjectToSql.Services
             else
             {
                 sqlBuilder.Append("WHERE");
-                keyFields.ForEach(p => sqlBuilder.Append($" [{p.GetNameFromCustomAttributeOrDefault()}]=@{p.Name} AND"));
+                keyFields.ForEach(p => sqlBuilder.Append($" {SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name} AND"));
                 if (sqlBuilder.ToString().EndsWith(" AND"))
                     sqlBuilder.Remove(sqlBuilder.Length - 4, 4); // Remove the last AND       
             }

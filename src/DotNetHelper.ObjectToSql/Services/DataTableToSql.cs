@@ -166,18 +166,18 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="tableName">Name of the table.</param>
         private void BuildInsertQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null)
         {
-            var result = GetFields(dataTable);
+            var (_, _, nonIdentityFields) = GetFields(dataTable);
 
             // Insert sql statement prefix 
             sqlBuilder.Append($"INSERT INTO {tableName ?? dataTable.TableName} (");
 
             // Add field names
-            result.nonIdentityFields.ForEach(p => sqlBuilder.Append($"[{p}],"));
+            nonIdentityFields.ForEach(p => sqlBuilder.Append($"[{p}],"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
             // Add parameter names for values
             sqlBuilder.Append(") VALUES (");
-            result.nonIdentityFields.ForEach(p => sqlBuilder.Append($"@{p},"));
+            nonIdentityFields.ForEach(p => sqlBuilder.Append($"@{p},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
             sqlBuilder.Append(")");
         }
@@ -200,21 +200,21 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildUpdateQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null)
         {
 
-            var result = GetFields(dataTable);
+            var (keyFields, identityFields, nonIdentityFields) = GetFields(dataTable);
 
-            if (result.keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
 
 
             // Build Update Statement Prefix
             sqlBuilder.Append($"UPDATE {tableName ?? dataTable.TableName} SET ");
 
             // Build Set fields
-            result.nonIdentityFields.ForEach(p => sqlBuilder.Append($"[{p}]=@{p},"));
+            nonIdentityFields.ForEach(p => sqlBuilder.Append($"[{p}]=@{p},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
 
             // Build Where clause.
             sqlBuilder.Append(" ");
-            BuildWhereClause(sqlBuilder, result.keyFields);
+            BuildWhereClause(sqlBuilder, keyFields);
         }
 
 
@@ -232,11 +232,11 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="tableName">Name of the table.</param>
         private void BuildDeleteQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null)
         {
-            var results = GetFields(dataTable);
-            if (results.keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
+            var (keyFields, identityFields, nonIdentityFields) = GetFields(dataTable);
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
 
             sqlBuilder.Append($"DELETE FROM {tableName ?? dataTable.TableName} ");
-            BuildWhereClause(sqlBuilder, results.keyFields);
+            BuildWhereClause(sqlBuilder, keyFields);
         }
 
 
@@ -281,21 +281,21 @@ VALUES
         /// <param name="tableName">Name of the table.</param>
         private void BuildUpsertQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null)
         {
-            var results = GetFields(dataTable);
-            if (results.keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
+            var (keyFields, identityFields, nonIdentityFields) = GetFields(dataTable);
+            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
             var sb = new StringBuilder();
             BuildUpdateQuery(sb, dataTable, tableName);
             var sb1 = new StringBuilder();
             BuildInsertQuery(sb1, dataTable, tableName);
             var sb2 = new StringBuilder();
-            BuildWhereClause(sb2, results.keyFields);
+            BuildWhereClause(sb2, keyFields);
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
                 var trueForAll = dataTable.PrimaryKey.AsList().TrueForAll(c => c.DataType == typeof(int) || c.DataType == typeof(long));
 
-                SQLiteBuildUpsertQuery(sqlBuilder, results.keyFields, results.nonIdentityFields, tableName ?? dataTable.TableName, sb2.ToString(), sb1.ToString(), trueForAll);
+                SQLiteBuildUpsertQuery(sqlBuilder, keyFields, nonIdentityFields, tableName ?? dataTable.TableName, sb2.ToString(), sb1.ToString(), trueForAll);
             }
             else
             {
