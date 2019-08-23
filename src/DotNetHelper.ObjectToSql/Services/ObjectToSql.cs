@@ -7,6 +7,7 @@ using DotNetHelper.ObjectToSql.Extension;
 using DotNetHelper.ObjectToSql.Helper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Dynamic;
 using System.Linq;
@@ -952,6 +953,47 @@ namespace DotNetHelper.ObjectToSql.Services
             return BuildDbParameterList(instance, getNewParameter, null, null, null);
         }
 
+
+        /// <summary>
+        /// Builds the SQL parameter list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance"></param>
+        /// <param name="getNewParameter"></param>
+        /// <returns>List&lt;DbParameter&gt;.</returns>
+        public List<IDbDataParameter> BuildDbDataParameterList<T>(T instance, Func<string, object, IDbDataParameter> getNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer) where T : class
+        {
+            var list = new List<IDbDataParameter>() { };
+            List<MemberWrapper> members;
+            if (instance is IDynamicMetaObjectProvider a)
+            {
+                members = GetAllNonIgnoreFields(instance, IncludeNonPublicAccessor); 
+            }
+            else
+            {
+                members = GetAllNonIgnoreFields<T>(IncludeNonPublicAccessor);
+            }
+            members.ForEach(delegate (MemberWrapper p)
+            {
+                var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), XmlSerializer, JsonSerializer, CsvSerializer);
+
+                list.Add(getNewParameter($"@{p.Name}", parameterValue));
+
+            });
+            return list;
+        }
+
+        /// <summary>
+        /// Builds the SQL parameter list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance"></param>
+        /// <param name="getNewParameter"></param>
+        /// <returns>List&lt;DbParameter&gt;.</returns>
+        public List<IDbDataParameter> BuildDbDataParameterList<T>(T instance, Func<string, object, IDbDataParameter> getNewParameter) where T : class
+        {
+            return BuildDbDataParameterList(instance, getNewParameter, null, null, null);
+        }
         #endregion
 
         /// <summary>
