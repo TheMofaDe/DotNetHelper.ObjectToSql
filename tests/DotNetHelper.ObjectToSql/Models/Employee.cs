@@ -14,6 +14,7 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
             switch (dataBaseType)
             {
                 case DataBaseType.SqlServer:
+                case DataBaseType.Sqlite:
                     switch (action)
                     {
                         case ActionType.Insert:
@@ -28,9 +29,19 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                             throw new ArgumentOutOfRangeException(nameof(action), action, null);
                     }
                 case DataBaseType.MySql:
-                    break;
-                case DataBaseType.Sqlite:
-                    return $"INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO Employee (`FirstName`,`LastName`) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Upsert:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
                 case DataBaseType.Oracle:
                     break;
                 case DataBaseType.Oledb:

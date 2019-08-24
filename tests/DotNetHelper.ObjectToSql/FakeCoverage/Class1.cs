@@ -53,8 +53,6 @@ namespace DotNetHelper.ObjectToSql.Tests.FakeCoverage
             obj = new Services.ObjectToSql(DataBaseType.Odbc);
             obj = new Services.ObjectToSql(DataBaseType.Sqlite);
             obj = new Services.ObjectToSql(DataBaseType.Oracle);
-
-
         }
 
         [Test]

@@ -68,7 +68,7 @@ namespace DotNetHelper.ObjectToSql.Tests
 
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                if (type == DataBaseType.Sqlite)
+                if (type == DataBaseType.Sqlite || type == DataBaseType.MySql)
                 {
                     Assert.That(() => new Services.ObjectToSql(type).BuildQueryWithOutputs<Employee>(ActionType.Insert),
                         Throws.Exception

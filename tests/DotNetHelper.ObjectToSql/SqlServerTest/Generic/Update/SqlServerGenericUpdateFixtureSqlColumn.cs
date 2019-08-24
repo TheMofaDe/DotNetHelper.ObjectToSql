@@ -108,7 +108,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
                 var objectToSql = new Services.ObjectToSql(type);
 
                 var sql = string.Empty;
-                if (type == DataBaseType.Sqlite)
+                if (type == DataBaseType.Sqlite || type == DataBaseType.MySql)
                 {
                     EnsureExpectedExceptionIsThrown<NotImplementedException>(() =>
                         objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeySqlColumn>(ActionType,

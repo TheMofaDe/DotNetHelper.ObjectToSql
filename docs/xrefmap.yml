@@ -1036,6 +1036,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType
   nameWithType: DataTableToSql.DatabaseType
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
+  name: SqlSyntaxHelper
+  href: api/DotNetHelper.ObjectToSql.Services.DataTableToSql.html#DotNetHelper_ObjectToSql_Services_DataTableToSql_SqlSyntaxHelper
+  commentId: P:DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
+  nameWithType: DataTableToSql.SqlSyntaxHelper
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper*
+  name: SqlSyntaxHelper
+  href: api/DotNetHelper.ObjectToSql.Services.DataTableToSql.html#DotNetHelper_ObjectToSql_Services_DataTableToSql_SqlSyntaxHelper_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
+  nameWithType: DataTableToSql.SqlSyntaxHelper
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
   name: ObjectToSql
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html
@@ -1061,6 +1074,31 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.ObjectToSql
   nameWithType: ObjectToSql.ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList*
+  name: BuildDbDataParameterList
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDbDataParameterList_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList
+  nameWithType: ObjectToSql.BuildDbDataParameterList
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList``1(``0,System.Func{System.String,System.Object,System.Data.IDbDataParameter})
+  name: BuildDbDataParameterList<T>(T, Func<String, Object, IDbDataParameter>)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDbDataParameterList__1___0_System_Func_System_String_System_Object_System_Data_IDbDataParameter__
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList``1(``0,System.Func{System.String,System.Object,System.Data.IDbDataParameter})
+  name.vb: BuildDbDataParameterList(Of T)(T, Func(Of String, Object, IDbDataParameter))
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList<T>(T, System.Func<System.String, System.Object, System.Data.IDbDataParameter>)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList(Of T)(T, System.Func(Of System.String, System.Object, System.Data.IDbDataParameter))
+  nameWithType: ObjectToSql.BuildDbDataParameterList<T>(T, Func<String, Object, IDbDataParameter>)
+  nameWithType.vb: ObjectToSql.BuildDbDataParameterList(Of T)(T, Func(Of String, Object, IDbDataParameter))
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList``1(``0,System.Func{System.String,System.Object,System.Data.IDbDataParameter},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  name: BuildDbDataParameterList<T>(T, Func<String, Object, IDbDataParameter>, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDbDataParameterList__1___0_System_Func_System_String_System_Object_System_Data_IDbDataParameter__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__
+  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList``1(``0,System.Func{System.String,System.Object,System.Data.IDbDataParameter},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  name.vb: BuildDbDataParameterList(Of T)(T, Func(Of String, Object, IDbDataParameter), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList<T>(T, System.Func<System.String, System.Object, System.Data.IDbDataParameter>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList(Of T)(T, System.Func(Of System.String, System.Object, System.Data.IDbDataParameter), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  nameWithType: ObjectToSql.BuildDbDataParameterList<T>(T, Func<String, Object, IDbDataParameter>, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  nameWithType.vb: ObjectToSql.BuildDbDataParameterList(Of T)(T, Func(Of String, Object, IDbDataParameter), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList*
   name: BuildDbParameterList
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDbParameterList_
@@ -1167,12 +1205,6 @@ references:
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue(DotNetHelper.FastMember.Extension.Models.MemberWrapper, System.Object, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
   nameWithType: ObjectToSql.ConvertToDatabaseValue(MemberWrapper, Object, Func<Object, String>, Func<Object, String>, Func<Object, String>)
   nameWithType.vb: ObjectToSql.ConvertToDatabaseValue(MemberWrapper, Object, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue(System.Object)
-  name: ConvertToDatabaseValue(Object)
-  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_ConvertToDatabaseValue_System_Object_
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue(System.Object)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue(System.Object)
-  nameWithType: ObjectToSql.ConvertToDatabaseValue(Object)
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue*
   name: ConvertToDatabaseValue
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_ConvertToDatabaseValue_
@@ -1309,6 +1341,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor
   nameWithType: ObjectToSql.IncludeNonPublicAccessor
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.SqlSyntaxHelper
+  name: SqlSyntaxHelper
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_SqlSyntaxHelper
+  commentId: P:DotNetHelper.ObjectToSql.Services.ObjectToSql.SqlSyntaxHelper
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.SqlSyntaxHelper
+  nameWithType: ObjectToSql.SqlSyntaxHelper
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.SqlSyntaxHelper*
+  name: SqlSyntaxHelper
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_SqlSyntaxHelper_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.SqlSyntaxHelper
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.SqlSyntaxHelper
+  nameWithType: ObjectToSql.SqlSyntaxHelper
 - uid: TSD
   name: The 3 ways to generate sql
   href: tutorials/index.html

@@ -15,6 +15,7 @@ namespace DotNetHelper.ObjectToSql.Tests
         {
              DataBaseType.SqlServer
             ,DataBaseType.Sqlite
+            ,DataBaseType.MySql
         };
 
         public void RunTestOnAllDBTypes(Action<DataBaseType> testCase)

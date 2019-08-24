@@ -23,6 +23,12 @@ references:
   fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap
 - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
   commentId: T:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  parent: DotNetHelper.ObjectToSql.Helper
   name: SqlSyntaxHelper
   nameWithType: SqlSyntaxHelper
   fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+- uid: DotNetHelper.ObjectToSql.Helper
+  commentId: N:DotNetHelper.ObjectToSql.Helper
+  name: DotNetHelper.ObjectToSql.Helper
+  nameWithType: DotNetHelper.ObjectToSql.Helper
+  fullName: DotNetHelper.ObjectToSql.Helper

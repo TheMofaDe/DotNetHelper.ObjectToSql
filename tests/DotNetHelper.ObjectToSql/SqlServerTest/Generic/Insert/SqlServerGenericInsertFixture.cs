@@ -34,7 +34,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
 
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                if (type == DataBaseType.Sqlite) return;
+                if (type == DataBaseType.Sqlite || type == DataBaseType.MySql) return;
                 var objectToSql = new Services.ObjectToSql(type);
                 var sql = objectToSql.BuildQueryWithOutputs<Employee>(ActionType, e => e.FirstName);
 
@@ -72,7 +72,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
                 {
-                    var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+                    var objectToSql = new Services.ObjectToSql(type);
                     var sql = objectToSql.BuildQuery(ActionType, new Employee());
                     Assert.AreEqual(sql, Employee.ToSql(ActionType, type));
                 });
@@ -84,7 +84,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
             RunTestOnAllDBTypes(delegate (DataBaseType type)
                 {
                     object employee = new Employee();
-                    var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+                    var objectToSql = new Services.ObjectToSql(type);
                     var sql = objectToSql.BuildQuery(ActionType, employee);
                     Assert.AreEqual(sql, Employee.ToSql(ActionType, type));
                 });
@@ -95,7 +95,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             RunTestOnAllDBTypes(delegate (DataBaseType type)
             {
-                var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+                var objectToSql = new Services.ObjectToSql(type);
                 var sql = objectToSql.BuildQuery<Employee>(ActionType);
                 Assert.AreEqual(sql, Employee.ToSql(ActionType, type));
             });

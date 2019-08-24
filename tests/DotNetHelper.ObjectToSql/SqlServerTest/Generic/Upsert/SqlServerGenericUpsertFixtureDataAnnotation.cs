@@ -47,10 +47,10 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
                 switch (type)
                 {
                     case DataBaseType.SqlServer:
-                        answer =
-                            "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END";
+                        answer = "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END";
                         break;
                     case DataBaseType.MySql:
+                        answer = "INSERT INTO EmployeeWithIdentityKeySqlColumn (`FirstName`,`LastName`) VALUES (@FirstName,@LastName) ON DUPLICATE KEY UPDATE `FirstName`=@FirstName,`LastName`=@LastName";
                         break;
                     case DataBaseType.Sqlite:
                         answer = "INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) ON CONFLICT ([FirstName] DO UPDATE SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName";
@@ -80,8 +80,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
             {
                 var objectToSql = new Services.ObjectToSql(type);
                 var sql = objectToSql.BuildQuery(ActionType, new EmployeeWithIdentityKeySqlColumn());
-
-                Assert.AreEqual(sql, EmployeeWithIdentityKeyDataAnnotation.ToSql(ActionType, type));
+                Assert.AreEqual(sql, EmployeeWithIdentityKeySqlColumn.ToSql(ActionType, type));
 
             });
         }
@@ -97,7 +96,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
                 var objectToSql = new Services.ObjectToSql(type);
 
                 var sql = string.Empty;
-                if (type == DataBaseType.Sqlite)
+                if (type == DataBaseType.Sqlite || type == DataBaseType.MySql)
                 {
                     EnsureExpectedExceptionIsThrown<NotImplementedException>(() =>
                         objectToSql.BuildQueryWithOutputs<EmployeeWithIdentityKeySqlColumn>(ActionType,

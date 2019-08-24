@@ -13,6 +13,7 @@ items:
   - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow,System.String)
   - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
   - DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType
+  - DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
   langs:
   - csharp
   - vb
@@ -85,6 +86,41 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
+  commentId: P:DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
+  id: SqlSyntaxHelper
+  parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
+  langs:
+  - csharp
+  - vb
+  name: SqlSyntaxHelper
+  nameWithType: DataTableToSql.SqlSyntaxHelper
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: SqlSyntaxHelper
+    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
+    startLine: 17
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  syntax:
+    content: public SqlSyntaxHelper SqlSyntaxHelper { get; }
+    parameters: []
+    return:
+      type: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+    content.vb: Public ReadOnly Property SqlSyntaxHelper As SqlSyntaxHelper
+  overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
 - uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
   commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
   id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)'
@@ -103,7 +139,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 19
+    startLine: 18
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -670,6 +706,22 @@ references:
   name: DotNetHelper.ObjectToSql.Enum
   nameWithType: DotNetHelper.ObjectToSql.Enum
   fullName: DotNetHelper.ObjectToSql.Enum
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
+  name: SqlSyntaxHelper
+  nameWithType: DataTableToSql.SqlSyntaxHelper
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  commentId: T:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  parent: DotNetHelper.ObjectToSql.Helper
+  name: SqlSyntaxHelper
+  nameWithType: SqlSyntaxHelper
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+- uid: DotNetHelper.ObjectToSql.Helper
+  commentId: N:DotNetHelper.ObjectToSql.Helper
+  name: DotNetHelper.ObjectToSql.Helper
+  nameWithType: DotNetHelper.ObjectToSql.Helper
+  fullName: DotNetHelper.ObjectToSql.Helper
 - uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor*
   commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor
   name: DataTableToSql

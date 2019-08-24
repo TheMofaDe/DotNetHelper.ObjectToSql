@@ -20,6 +20,8 @@ namespace DotNetHelper.ObjectToSql.Services
     public class ObjectToSql
     {
 
+        private const string Const_MySql_OnDupeKeyUpdate = "ON DUPLICATE KEY UPDATE";
+        private const string Const_SqlServer_SelectTop1 = "SELECT TOP 1 * FROM";
         public bool IncludeNonPublicAccessor { get; set; } = true;
         public DataBaseType DatabaseType { get; }
         public SqlSyntaxHelper SqlSyntaxHelper { get; }
@@ -185,7 +187,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <returns></returns>
         public string BuildQueryWithOutputs<T>(ActionType actionType, string tableName = null, params Expression<Func<T, object>>[] outputFields) where T : class
         {
-            if (DatabaseType == DataBaseType.Sqlite) throw new NotImplementedException("BuildQueryWithOutputs is not supported by SQLITE");
+            if (DatabaseType == DataBaseType.Sqlite || DatabaseType == DataBaseType.MySql) throw new NotImplementedException($"BuildQueryWithOutputs is not supported by {DatabaseType}");
             var sqlBuilder = new StringBuilder();
             switch (actionType)
             {
@@ -603,6 +605,15 @@ namespace DotNetHelper.ObjectToSql.Services
         }
 
 
+        private void MySQLBuildOnDuplicateKeyUpdate(StringBuilder sqlBuilder, Type type)
+        {
+            var updateFields = GetNonKeyFields(IncludeNonPublicAccessor, type);
+            sqlBuilder.Append($" {Const_MySql_OnDupeKeyUpdate} ");
+            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
+            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+        }
+
+
         /// <summary>
         /// Builds the upsert query.
         /// </summary>
@@ -624,11 +635,16 @@ namespace DotNetHelper.ObjectToSql.Services
                 tableName = tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault();
                 SQLiteBuildUpsertQuery<T>(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString());
             }
+            else if (DatabaseType == DataBaseType.MySql)
+            {
+                sqlBuilder.Append(sb1);
+                MySQLBuildOnDuplicateKeyUpdate(sqlBuilder, typeof(T));
+            }
             else
             {
                 var sb = new StringBuilder();
                 BuildUpdateQuery<T>(sb, tableName);
-                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"{Const_SqlServer_SelectTop1} {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
             }
         }
 
@@ -656,11 +672,16 @@ namespace DotNetHelper.ObjectToSql.Services
                 tableName = tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault();
                 SQLiteBuildUpsertQuery<T>(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString());
             }
+            else if (DatabaseType == DataBaseType.MySql)
+            {
+                sqlBuilder.Append(sb1);
+                MySQLBuildOnDuplicateKeyUpdate(sqlBuilder, typeof(T));
+            }
             else
             {
                 var sb = new StringBuilder();
                 BuildUpdateQuery(sb, tableName, overrideKeys);
-                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"{Const_SqlServer_SelectTop1} {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
             }
         }
 
@@ -676,7 +697,7 @@ namespace DotNetHelper.ObjectToSql.Services
         {
             var keyFields = GetKeyFields(IncludeNonPublicAccessor, type);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-
+            tableName = tableName ?? type.GetTableNameFromCustomAttributeOrDefault();
 
             var sb1 = new StringBuilder();
             BuildInsertQuery(sb1, tableName, type);
@@ -685,14 +706,18 @@ namespace DotNetHelper.ObjectToSql.Services
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
-                tableName = tableName ?? type.GetTableNameFromCustomAttributeOrDefault();
                 SQLiteBuildUpsertQuery(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString(), type);
+            }
+            else if (DatabaseType == DataBaseType.MySql)
+            {
+                sqlBuilder.Append(sb1);
+                MySQLBuildOnDuplicateKeyUpdate(sqlBuilder, type);
             }
             else
             {
                 var sb = new StringBuilder();
                 BuildUpdateQuery(sb, tableName, type);
-                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"{Const_SqlServer_SelectTop1} {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
             }
         }
 
@@ -856,10 +881,13 @@ namespace DotNetHelper.ObjectToSql.Services
         #region DB PARAMETERS
 
         /// <summary>
-        /// Converts to database value.
+        /// Converts to database value. If value is null convert it to DBNull.Value or if property is decorated with a serializable attribute
+        /// then convert the value to its serialize self
         /// </summary>
         /// <param name="member">The member.</param>
         /// <param name="value">The value.</param>
+        /// <param name="CsvSerializer"></param>
+        /// <param name="XmlSerializer"></param>
         /// <returns>System.Object.</returns>
         public object ConvertToDatabaseValue(MemberWrapper member, object value, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
         {
@@ -867,10 +895,11 @@ namespace DotNetHelper.ObjectToSql.Services
             {
                 return DBNull.Value;
             }
-            if (member.Type == typeof(DateTime) && (DateTime)value == DateTime.MinValue || member.Type == typeof(DateTime?) && (DateTime)value == DateTime.MinValue)
-            {
-                return new DateTime(1753, 01, 01);
-            }
+            //if (member.Type == typeof(DateTime) && (DateTime)value == DateTime.MinValue || member.Type == typeof(DateTime?) && (DateTime)value == DateTime.MinValue)
+            //{
+            //    if(DatabaseType == DataBaseType.SqlServer)
+            //        return new DateTime(1753, 01, 01);
+            //}
             if (member.GetCustomAttribute<SqlColumnAttribute>()?.SerializableType != SerializableType.NONE)
             {
                 switch (member.GetCustomAttribute<SqlColumnAttribute>()?.SerializableType)
@@ -894,25 +923,6 @@ namespace DotNetHelper.ObjectToSql.Services
             return value;
         }
 
-        /// <summary>
-        /// Converts to database value.
-        /// </summary>
-        /// <param name="member">The member.</param>
-        /// <param name="value">The value.</param>
-        /// <returns>System.Object.</returns>
-        public object ConvertToDatabaseValue(object value)
-        {
-            if (value == null)
-            {
-                return DBNull.Value;
-            }
-            if (value is DateTime time && time == DateTime.MinValue) // TODO :: VALID NULLABLE DATETIME FALL IN THIS METHOD AS WELL
-            {
-                return new DateTime(1753, 01, 01);
-            }
-            return value;
-        }
-
 
 
         /// <summary>
@@ -929,9 +939,7 @@ namespace DotNetHelper.ObjectToSql.Services
             members.ForEach(delegate (MemberWrapper p)
             {
                 var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), XmlSerializer, JsonSerializer, CsvSerializer);
-
                 list.Add(getNewParameter($"@{p.Name}", parameterValue));
-
             });
             return list;
         }
@@ -962,7 +970,7 @@ namespace DotNetHelper.ObjectToSql.Services
             List<MemberWrapper> members;
             if (instance is IDynamicMetaObjectProvider a)
             {
-                members = GetAllNonIgnoreFields(a, IncludeNonPublicAccessor); 
+                members = GetAllNonIgnoreFields(a, IncludeNonPublicAccessor);
             }
             else
             {

@@ -90,7 +90,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
             {
                 var objectToSql = new Services.ObjectToSql(type);
                 var sql = string.Empty;
-                if (type == DataBaseType.Sqlite)
+                if (type == DataBaseType.Sqlite || type == DataBaseType.MySql)
                 {
                     EnsureExpectedExceptionIsThrown<NotImplementedException>(() =>
                         objectToSql.BuildQueryWithOutputs<EmployeeWithPrimaryKeyDataAnnotation>(
@@ -152,7 +152,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
             {
                 var objectToSql = new Services.ObjectToSql(type);
                 var sql = string.Empty;
-                if (type == DataBaseType.Sqlite)
+                if (type == DataBaseType.Sqlite || type == DataBaseType.MySql)
                 {
                     EnsureExpectedExceptionIsThrown<NotImplementedException>(() =>
                         objectToSql.BuildQueryWithOutputs<EmployeeWithMappedColumnDataAnnotation>(ActionType,

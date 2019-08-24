@@ -16,19 +16,51 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
 
         public static string ToSql(ActionType action, DataBaseType type)
         {
-            switch (action)
+
+            switch (type)
             {
-                case ActionType.Insert:
-                    return $"INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
-                case ActionType.Update:
-                    return $"UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey";
-                case ActionType.Upsert:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
-                case ActionType.Delete:
-                    return $"DELETE FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey";
+                case DataBaseType.SqlServer:
+                case DataBaseType.Sqlite:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return $"UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey";
+                        case ActionType.Upsert:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return $"DELETE FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey";
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.MySql:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithIdentityKeySqlColumn (`FirstName`,`LastName`) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return $"UPDATE EmployeeWithIdentityKeySqlColumn SET `FirstName`=@FirstName,`LastName`=@LastName WHERE `IdentityKey`=@IdentityKey";
+                        case ActionType.Upsert:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return $"DELETE FROM EmployeeWithIdentityKeySqlColumn WHERE `IdentityKey`=@IdentityKey";
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.Oracle:
+                    break;
+                case DataBaseType.Oledb:
+                    break;
+                case DataBaseType.Access95:
+                    break;
+                case DataBaseType.Odbc:
+                    break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
+
+            return null;
         }
     }
 
@@ -51,14 +83,27 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                         case ActionType.Update:
                             return $"UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey";
                         case ActionType.Upsert:
-                            return "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                            return "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END";
+                        //return "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                         case ActionType.Delete:
                             return $"DELETE FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey";
                         default:
                             throw new ArgumentOutOfRangeException(nameof(action), action, null);
                     }
                 case DataBaseType.MySql:
-                    break;
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithIdentityKeySqlColumn (`FirstName`,`LastName`) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return $"UPDATE EmployeeWithIdentityKeySqlColumn SET `FirstName`=@FirstName,`LastName`=@LastName WHERE `IdentityKey`=@IdentityKey";
+                        case ActionType.Upsert:
+                            return "INSERT INTO EmployeeWithIdentityKeySqlColumn (`FirstName`,`LastName`) VALUES (@FirstName,@LastName) ON DUPLICATE KEY UPDATE `FirstName`=@FirstName,`LastName`=@LastName"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return $"DELETE FROM EmployeeWithIdentityKeySqlColumn WHERE `IdentityKey`=@IdentityKey";
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
                 case DataBaseType.Sqlite:
                     switch (action)
                     {
@@ -67,7 +112,8 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                         case ActionType.Update:
                             return $"UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [IdentityKey]=@IdentityKey";
                         case ActionType.Upsert:
-                            return "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                            return $"INSERT OR REPLACE INTO EmployeeWithIdentityKeySqlColumn ([IdentityKey],[FirstName],[LastName]) VALUES ((SELECT IdentityKey FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey), @FirstName,@LastName )";
+                        //  return "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
                         case ActionType.Delete:
                             return $"DELETE FROM EmployeeWithIdentityKeySqlColumn WHERE [IdentityKey]=@IdentityKey";
                         default:
@@ -98,19 +144,50 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
 
         public static string ToSql(ActionType action, DataBaseType dataBaseType)
         {
-            switch (action)
+
+            switch (dataBaseType)
             {
-                case ActionType.Insert:
-                    return $"INSERT INTO EmployeeWithPrimaryKeySqlColumn ([FirstName],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey)";
-                case ActionType.Update:
-                    return $"UPDATE EmployeeWithPrimaryKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey";
-                case ActionType.Upsert:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
-                case ActionType.Delete:
-                    return $"DELETE FROM EmployeeWithPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey";
+                case DataBaseType.SqlServer:
+                case DataBaseType.Sqlite:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithPrimaryKeySqlColumn ([FirstName],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey)";
+                        case ActionType.Update:
+                            return $"UPDATE EmployeeWithPrimaryKeySqlColumn SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey";
+                        case ActionType.Upsert:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return $"DELETE FROM EmployeeWithPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey";
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.MySql:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithPrimaryKeySqlColumn (`FirstName`,`LastName`,`PrimaryKey`) VALUES (@FirstName,@LastName,@PrimaryKey)";
+                        case ActionType.Update:
+                            return $"UPDATE EmployeeWithPrimaryKeySqlColumn SET `FirstName`=@FirstName,`LastName`=@LastName WHERE `PrimaryKey`=@PrimaryKey";
+                        case ActionType.Upsert:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return $"DELETE FROM EmployeeWithPrimaryKeySqlColumn WHERE `PrimaryKey`=@PrimaryKey";
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.Oracle:
+                    break;
+                case DataBaseType.Oledb:
+                    break;
+                case DataBaseType.Access95:
+                    break;
+                case DataBaseType.Odbc:
+                    break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    throw new ArgumentOutOfRangeException(nameof(dataBaseType), dataBaseType, null);
             }
+            return null;
         }
     }
     public class EmployeeWithManyPrimaryKeySqlColumn
@@ -141,7 +218,19 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                             throw new ArgumentOutOfRangeException(nameof(action), action, null);
                     }
                 case DataBaseType.MySql:
-                    break;
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithManyPrimaryKeySqlColumn (`FirstName`,`LastName`) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return $"UPDATE EmployeeWithManyPrimaryKeySqlColumn SET `FirstName`=@FirstName,`LastName`=@LastName WHERE `PrimaryKey`=@PrimaryKey AND `PrimaryKey1`=@PrimaryKey1";
+                        case ActionType.Upsert:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return "DELETE FROM EmployeeWithManyPrimaryKeySqlColumn WHERE `PrimaryKey`=@PrimaryKey AND `PrimaryKey1`=@PrimaryKey1";
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
                 case DataBaseType.Sqlite:
                     switch (action)
                     {
@@ -179,19 +268,62 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
         public string LastName { get; set; }
         public static string ToSql(ActionType action, DataBaseType dataBaseType)
         {
-            switch (action)
+            switch (dataBaseType)
             {
-                case ActionType.Insert:
-                    return $"INSERT INTO EmployeeWithMappedColumnSqlColumn ([FirstName2],[LastName]) VALUES (@FirstName,@LastName)";
-                case ActionType.Update:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
-                case ActionType.Upsert:
-                    return $"IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey ) BEGIN UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey END ELSE BEGIN INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey) END"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
-                case ActionType.Delete:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                case DataBaseType.SqlServer:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithMappedColumnSqlColumn ([FirstName2],[LastName]) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Upsert:
+                            return $"IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey ) BEGIN UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey END ELSE BEGIN INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey) END"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.MySql:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithMappedColumnSqlColumn (`FirstName2`,`LastName`) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Upsert:
+                            return $"IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE `PrimaryKey`=@PrimaryKey ) BEGIN UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET `FirstName2`=@FirstName,`LastName`=@LastName WHERE `PrimaryKey`=@PrimaryKey END ELSE BEGIN INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn (`FirstName2`,`LastName`,`PrimaryKey`) VALUES (@FirstName,@LastName,@PrimaryKey) END"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.Sqlite:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithMappedColumnSqlColumn ([FirstName2],[LastName]) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Upsert:
+                            return $"IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE [PrimaryKey]=@PrimaryKey ) BEGIN UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET [FirstName2]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey END ELSE BEGIN INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn ([FirstName2],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey) END"; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.Oracle:
+                    break;
+                case DataBaseType.Oledb:
+                    break;
+                case DataBaseType.Access95:
+                    break;
+                case DataBaseType.Odbc:
+                    break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    throw new ArgumentOutOfRangeException(nameof(dataBaseType), dataBaseType, null);
             }
+            return null;
         }
     }
 
@@ -223,7 +355,19 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                             throw new ArgumentOutOfRangeException(nameof(action), action, null);
                     }
                 case DataBaseType.MySql:
-                    break;
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn (`FirstName2`,`LastName`,`PrimaryKey`) VALUES (@FirstName,@LastName,@PrimaryKey)";
+                        case ActionType.Update:
+                            return $"UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET `FirstName2`=@FirstName,`LastName`=@LastName WHERE `PrimaryKey`=@PrimaryKey";
+                        case ActionType.Upsert:
+                            return "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithMappedColumnAndPrimaryKeySqlColumn WHERE `PrimaryKey`=@PrimaryKey ) BEGIN UPDATE EmployeeWithMappedColumnAndPrimaryKeySqlColumn SET `FirstName2`=@FirstName,`LastName`=@LastName WHERE `PrimaryKey`=@PrimaryKey END ELSE BEGIN INSERT INTO EmployeeWithMappedColumnAndPrimaryKeySqlColumn (`FirstName2`,`LastName`,`PrimaryKey`) VALUES (@FirstName,@LastName,@PrimaryKey) END";
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
                 case DataBaseType.Sqlite:
                     switch (action)
                     {
@@ -282,7 +426,19 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
                     }
 
                 case DataBaseType.MySql:
-                    break;
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithIgnorePropertySqlColumn (`LastName`) VALUES (@LastName)";
+                        case ActionType.Update:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Upsert:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
                 case DataBaseType.Sqlite:
                     switch (action)
                     {
@@ -324,19 +480,49 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
 
         public static string ToSql(ActionType action, DataBaseType dataBaseType)
         {
-            switch (action)
+            switch (dataBaseType)
             {
-                case ActionType.Insert:
-                    return $"INSERT INTO EmployeeWithIgnorePropertyAndKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)"; // NO TEST CASE FOR tis
-                case ActionType.Update:
-                    return $"UPDATE EmployeeWithIgnorePropertyAndKeySqlColumn SET [LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey";
-                case ActionType.Upsert:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
-                case ActionType.Delete:
-                    return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                case DataBaseType.SqlServer:
+                case DataBaseType.Sqlite:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithIgnorePropertyAndKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)"; // NO TEST CASE FOR tis
+                        case ActionType.Update:
+                            return $"UPDATE EmployeeWithIgnorePropertyAndKeySqlColumn SET [LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey";
+                        case ActionType.Upsert:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.MySql:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithIgnorePropertyAndKeySqlColumn (`FirstName`,`LastName`) VALUES (@FirstName,@LastName)"; // NO TEST CASE FOR tis
+                        case ActionType.Update:
+                            return $"UPDATE EmployeeWithIgnorePropertyAndKeySqlColumn SET `LastName`=@LastName WHERE `PrimaryKey`=@PrimaryKey";
+                        case ActionType.Upsert:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.Oracle:
+                    break;
+                case DataBaseType.Oledb:
+                    break;
+                case DataBaseType.Access95:
+                    break;
+                case DataBaseType.Odbc:
+                    break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    throw new ArgumentOutOfRangeException(nameof(dataBaseType), dataBaseType, null);
             }
+            return null;
         }
     }
 

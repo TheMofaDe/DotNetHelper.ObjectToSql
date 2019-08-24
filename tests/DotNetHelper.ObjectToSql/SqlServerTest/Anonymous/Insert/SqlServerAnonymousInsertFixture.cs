@@ -45,15 +45,30 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Anonymous.Insert
                 var upsertSql = ReturnAsT(obj, type, ActionType.Upsert, arg => arg.Id);
                 var deleteSql = ReturnAsT(obj, type, ActionType.Delete, arg => arg.Id);
 
-                Assert.AreEqual(insertSql, "INSERT INTO Employee ([FirstName],[Id],[LastName]) VALUES (@FirstName,@Id,@LastName)");
-                Assert.AreEqual(updateSql, "UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [Id]=@Id");
 
+                if (type == DataBaseType.MySql)
+                {
+                    Assert.AreEqual(insertSql, "INSERT INTO Employee (`FirstName`,`Id`,`LastName`) VALUES (@FirstName,@Id,@LastName)");
+                    Assert.AreEqual(updateSql, "UPDATE Employee SET `FirstName`=@FirstName,`LastName`=@LastName WHERE `Id`=@Id");
+                }
+                else
+                {
+                    Assert.AreEqual(insertSql, "INSERT INTO Employee ([FirstName],[Id],[LastName]) VALUES (@FirstName,@Id,@LastName)");
+                    Assert.AreEqual(updateSql, "UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [Id]=@Id");
+                }
                 if (type == DataBaseType.SqlServer)
                     Assert.AreEqual(upsertSql, "IF EXISTS ( SELECT TOP 1 * FROM Employee WHERE [Id]=@Id ) BEGIN UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [Id]=@Id END ELSE BEGIN INSERT INTO Employee ([FirstName],[Id],[LastName]) VALUES (@FirstName,@Id,@LastName) END");
                 if (type == DataBaseType.Sqlite)
                     Assert.AreEqual(upsertSql, "INSERT OR REPLACE INTO Employee ([Id],[FirstName],[Id],[LastName]) VALUES ( (SELECT Id FROM Employee WHERE [Id]=@Id), @FirstName,@Id,@LastName )");
 
-                Assert.AreEqual(deleteSql, "DELETE FROM Employee WHERE [Id]=@Id");
+                if (type == DataBaseType.MySql)
+                {
+                    Assert.AreEqual(deleteSql, "DELETE FROM Employee WHERE `Id`=@Id");
+                }
+                else
+                {
+                    Assert.AreEqual(deleteSql, "DELETE FROM Employee WHERE [Id]=@Id");
+                }
             });
         }
 
@@ -82,7 +97,14 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Anonymous.Insert
                 var obj = new { FirstName = 1, LastName = "sfsd" };
                 var objectToSql = new Services.ObjectToSql(type);
                 var sql = objectToSql.BuildQuery(ActionType.Insert, obj, "Table");
-                Assert.AreEqual(sql, "INSERT INTO Table ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
+                if (type == DataBaseType.MySql)
+                {
+                    Assert.AreEqual(sql, "INSERT INTO Table (`FirstName`,`LastName`) VALUES (@FirstName,@LastName)");
+                }
+                else
+                {
+                    Assert.AreEqual(sql, "INSERT INTO Table ([FirstName],[LastName]) VALUES (@FirstName,@LastName)");
+                }
             });
         }
 
