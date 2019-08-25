@@ -191,7 +191,11 @@ namespace DotNetHelper.ObjectToSql.Services
             var (keyFields, identityFields, nonIdentityFields) = GetFields(dataTable);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
 
-            sqlBuilder.Append(SqlGenerator.BuildUpdateQuery(SqlSyntaxHelper, tableName ?? dataTable.TableName, nonIdentityFields, nonIdentityFields));
+            sqlBuilder.Append($"{SqlGenerator.BuildUpdateTable(tableName ?? dataTable.TableName)} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, nonIdentityFields, nonIdentityFields)} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClause(SqlSyntaxHelper, keyFields,keyFields)}");
+
+
         }
 
 
@@ -276,7 +280,7 @@ VALUES
             }
             else
             {
-                sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
+                sqlBuilder.Append(new SqlSyntaxHelper(DatabaseType).BuildIfExistStatement($"SELECT TOP 1 * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
             }
 
 

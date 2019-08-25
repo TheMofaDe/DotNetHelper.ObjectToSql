@@ -460,15 +460,8 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            sqlBuilder.Append($"DELETE FROM {tableName.GetTableName(DatabaseType, typeof(T))} ");
-
-            var members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
-            sqlBuilder.Append($" OUTPUT");
-            outputFields.ForEach(delegate (string s)
-            {
-                sqlBuilder.Append($" DELETED.{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()} ,");
-            });
-
+            sqlBuilder.Append($"{SqlGenerator.BuildDeleteFromTable(tableName.GetTableName(DatabaseType, typeof(T)))} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildOutputFields<T>(SqlSyntaxHelper, outputFields, OutputType.DELETED)}");
             sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
         }
 
@@ -485,7 +478,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
             if (trueForAll)
             {
-                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))},{string.Join(",", updateFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))}) VALUES ( {string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
+                sqlBuilder.Append($@"{SqlGenerator.BuildInsertOrReplace(tableName)} ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))},{string.Join(",", updateFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))}) VALUES ( {string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
             }
             else
             {
@@ -507,7 +500,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var trueForAll = keyFields.TrueForAll(w => (w.Type == typeof(int) || w.Type == typeof(long))); // THESE ARE TREATED LKE IDENTITY FIELDS IF NOT SPECIFIED https://www.sqlite.org/autoinc.html
             if (trueForAll)
             {
-                sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))},{string.Join(",", updateFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))}) VALUES ({string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
+                sqlBuilder.Append($@"{SqlGenerator.BuildInsertOrReplace(tableName)} ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))},{string.Join(",", updateFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))}) VALUES ({string.Join(",", keyFields.Select(w => $"(SELECT {w.GetNameFromCustomAttributeOrDefault()} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w.Name}"))} )");
             }
             else
             {

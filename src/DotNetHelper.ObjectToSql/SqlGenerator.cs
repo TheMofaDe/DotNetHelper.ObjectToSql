@@ -33,6 +33,16 @@ namespace DotNetHelper.ObjectToSql
         }
 
         /// <summary>
+        /// Example *INSERT OR REPLACE INTO TABLE*
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <returns></returns>
+        internal static string BuildInsertOrReplace(string tableName)
+        {
+            return $"INSERT OR REPLACE INTO {tableName}";
+        }
+
+        /// <summary>
         /// Example *INSERT INTO TABLE*
         /// </summary>
         /// <param name="syntax"></param>
@@ -184,13 +194,13 @@ namespace DotNetHelper.ObjectToSql
         /// <param name="columns"></param>
         /// <param name="valueColumns"></param>
         /// <returns></returns>
-        public static string BuildUpdateQuery(SqlSyntaxHelper syntax, string tableName, List<string> columns, List<string> valueColumns)
-        {
-            var updateTableClause = ($"{SqlGenerator.BuildUpdateTable(tableName)} ");
-            var setColumnsClause = ($"{SqlGenerator.BuildSetColumns(syntax, columns, valueColumns)} ");
-            var whereClause = BuildWhereClause(syntax, columns, valueColumns);
-            return $"{updateTableClause}{setColumnsClause}{whereClause}";
-        }
+        //public static string BuildUpdateQuery(SqlSyntaxHelper syntax, string tableName, List<string> columns, List<string> valueColumns)
+        //{
+        //    var updateTableClause = ($"{SqlGenerator.BuildUpdateTable(tableName)} ");
+        //    var setColumnsClause = ($"{SqlGenerator.BuildSetColumns(syntax, columns, valueColumns)} ");
+        //    var whereClause = BuildWhereClause(syntax, columns, valueColumns);
+        //    return $"{updateTableClause}{setColumnsClause}{whereClause}";
+        //}
 
         public static string BuildDeleteQuery(SqlSyntaxHelper syntax, string tableName, List<string> keyColumns)
         {
