@@ -11,14 +11,31 @@ namespace DotNetHelper.ObjectToSql.Helper
 {
     public class SqlSyntaxHelper
     {
-
-        public string Const_Insert_Into { get; } = "INSERT INTO";
-        public char Const_Open_Parens { get; } = '(';
-        public char Const_Close_Parens { get; } = ')';
-        public char Const_At { get; } = '@';
-        public string Const_Values { get; } = "VALUES";
-
-
+        /// <summary>
+        /// INSERT INTO
+        /// </summary>
+        public string ConstInsertInto { get; } = "INSERT INTO";
+        /// <summary>
+        /// (
+        /// </summary>
+        public char ConstOpenParens { get; } = '(';
+        /// <summary>
+        /// )
+        /// </summary>
+        public char ConstCloseParens { get; } = ')';
+        /// <summary>
+        /// @
+        /// </summary>
+        public char ConstAt { get; } = '@';
+        public string ConstValues { get; } = "VALUES";
+        /// <summary>
+        /// ON DUPLICATE KEY UPDATE
+        /// </summary>
+        public string ConstMySqlOnDupeKeyUpdate { get; } = "ON DUPLICATE KEY UPDATE";
+        /// <summary>
+        /// SELECT TOP 1 * FROM
+        /// </summary>
+        public string ConstSqlServerSelectTop1 { get; } = "SELECT TOP 1 * FROM";
 
 
         public Dictionary<Type, string> EnclosedValueLookup { get; }
@@ -300,7 +317,7 @@ namespace DotNetHelper.ObjectToSql.Helper
             return null;
         }
 
-        public string BuildTableExistStatement(SQLTable sqlTable, string onTrueSql, string onFalseSql)
+        public string BuildTableExistStatement(SqlTable sqlTable, string onTrueSql, string onFalseSql)
         {
 
             var query = $"";
@@ -341,7 +358,7 @@ namespace DotNetHelper.ObjectToSql.Helper
             var sql = query.Clone().ToString();
             // Convert Query To Human Readable  
 
-            var orderedParameters = parameters.OrderByDescending(x => x.ParameterName).ToList();
+            var orderedParameters = parameters.OrderByDescending(x => x.ParameterName).AsList();
             orderedParameters.ForEach(delegate (T parameter)
             {
                 var name = parameter.ParameterName;

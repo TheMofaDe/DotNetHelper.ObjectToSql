@@ -38,7 +38,7 @@ namespace DotNetHelper.ObjectToSql.Extension
 
 
 #if NETFRAMEWORK
-        public static V GetValueOrDefault<K, V>(this IDictionary<K, V> dictionary, K key, V defaultValue = default)
+        public static TV GetValueOrDefault<TK, TV>(this IDictionary<TK, TV> dictionary, TK key, TV defaultValue = default)
         {
             if (dictionary.ContainsKey(key))
             {

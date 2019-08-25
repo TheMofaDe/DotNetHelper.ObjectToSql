@@ -11,7 +11,6 @@ items:
   - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
   - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow)
   - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow,System.String)
-  - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
   - DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType
   - DotNetHelper.ObjectToSql.Services.DataTableToSql.SqlSyntaxHelper
   langs:
@@ -320,7 +319,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 319
+    startLine: 296
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -350,48 +349,6 @@ items:
   - Public
   fullName.vb: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList(Of T)(System.Data.DataRow, System.Func(Of System.String, System.Object, T))
   name.vb: BuildDbParameterList(Of T)(DataRow, Func(Of String, Object, T))
-- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
-  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
-  id: BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{System.String})
-  parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
-  langs:
-  - csharp
-  - vb
-  name: BuildWhereClause(StringBuilder, List<String>)
-  nameWithType: DataTableToSql.BuildWhereClause(StringBuilder, List<String>)
-  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause(System.Text.StringBuilder, System.Collections.Generic.List<System.String>)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: BuildWhereClause
-    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 346
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Services
-  summary: "\nBuilds the where clause.\n"
-  example: []
-  syntax:
-    content: public void BuildWhereClause(StringBuilder sqlBuilder, List<string> keyFields)
-    parameters:
-    - id: sqlBuilder
-      type: System.Text.StringBuilder
-      description: The SQL builder.
-    - id: keyFields
-      type: System.Collections.Generic.List{System.String}
-      description: The key fields.
-    content.vb: Public Sub BuildWhereClause(sqlBuilder As StringBuilder, keyFields As List(Of String))
-  overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause*
-  nameWithType.vb: DataTableToSql.BuildWhereClause(StringBuilder, List(Of String))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause(System.Text.StringBuilder, System.Collections.Generic.List(Of System.String))
-  name.vb: BuildWhereClause(StringBuilder, List(Of String))
 references:
 - uid: DotNetHelper.ObjectToSql.Services
   commentId: N:DotNetHelper.ObjectToSql.Services
@@ -995,65 +952,3 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
-- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause*
-  commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause
-  name: BuildWhereClause
-  nameWithType: DataTableToSql.BuildWhereClause
-  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildWhereClause
-- uid: System.Text.StringBuilder
-  commentId: T:System.Text.StringBuilder
-  parent: System.Text
-  isExternal: true
-  name: StringBuilder
-  nameWithType: StringBuilder
-  fullName: System.Text.StringBuilder
-- uid: System.Collections.Generic.List{System.String}
-  commentId: T:System.Collections.Generic.List{System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  name: List<String>
-  nameWithType: List<String>
-  fullName: System.Collections.Generic.List<System.String>
-  nameWithType.vb: List(Of String)
-  fullName.vb: System.Collections.Generic.List(Of System.String)
-  name.vb: List(Of String)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Text
-  commentId: N:System.Text
-  isExternal: true
-  name: System.Text
-  nameWithType: System.Text
-  fullName: System.Text

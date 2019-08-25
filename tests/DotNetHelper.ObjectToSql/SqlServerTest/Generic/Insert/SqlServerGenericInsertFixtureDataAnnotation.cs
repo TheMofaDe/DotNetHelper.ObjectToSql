@@ -109,12 +109,12 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
                 switch (type)
                 {
                     case DataBaseType.SqlServer:
-                        answer = $"INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) {Environment.NewLine} OUTPUT INSERTED.[PrimaryKey] {Environment.NewLine} VALUES (@FirstName,@LastName,@PrimaryKey)";
+                        answer = $"INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) OUTPUT INSERTED.[PrimaryKey] {Environment.NewLine} VALUES (@FirstName,@LastName,@PrimaryKey)";
                         break;
                     case DataBaseType.MySql:
                         break;
                     case DataBaseType.Sqlite:
-                        answer = $"INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) {Environment.NewLine} OUTPUT INSERTED.[PrimaryKey] {Environment.NewLine} VALUES (@FirstName,@LastName,@PrimaryKey)";
+                        answer = $"INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) OUTPUT INSERTED.[PrimaryKey] {Environment.NewLine} VALUES (@FirstName,@LastName,@PrimaryKey)";
                         break;
                     case DataBaseType.Oracle:
                         break;
@@ -167,7 +167,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
                         "Employee", e => e.FirstName);
                 }
 
-                Assert.AreEqual(sql, $"INSERT INTO Employee ([FirstName2],[LastName]) {Environment.NewLine} OUTPUT INSERTED.[FirstName2] {Environment.NewLine} VALUES (@FirstName,@LastName)");
+                Assert.AreEqual(sql, $"INSERT INTO Employee ([FirstName2],[LastName]) OUTPUT INSERTED.[FirstName2] {Environment.NewLine} VALUES (@FirstName,@LastName)");
             });
         }
 

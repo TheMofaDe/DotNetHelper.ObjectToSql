@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql
+  commentId: N:DotNetHelper.ObjectToSql
+  id: DotNetHelper.ObjectToSql
+  children:
+  - DotNetHelper.ObjectToSql.SqlGenerator
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper.ObjectToSql
+  nameWithType: DotNetHelper.ObjectToSql
+  fullName: DotNetHelper.ObjectToSql
+  type: Namespace
+  assemblies:
+  - DotNetHelper.ObjectToSql
+references:
+- uid: DotNetHelper.ObjectToSql.SqlGenerator
+  commentId: T:DotNetHelper.ObjectToSql.SqlGenerator
+  name: SqlGenerator
+  nameWithType: SqlGenerator
+  fullName: DotNetHelper.ObjectToSql.SqlGenerator

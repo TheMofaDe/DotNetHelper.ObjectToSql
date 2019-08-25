@@ -112,7 +112,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
                 switch (type)
                 {
                     case DataBaseType.SqlServer:
-                        value = "INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) \r\n OUTPUT INSERTED.[PrimaryKey] \r\n VALUES (@FirstName,@LastName,@PrimaryKey)";
+                        value = "INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) OUTPUT INSERTED.[PrimaryKey] \r\n VALUES (@FirstName,@LastName,@PrimaryKey)";
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(type), type, null);
@@ -152,12 +152,12 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
                 switch (type)
                 {
                     case DataBaseType.SqlServer:
-                        expected = "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)";
+                        expected = "INSERT INTO Employee ([FirstName2],[LastName]) OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)";
                         break;
                     case DataBaseType.MySql:
                         break;
                     case DataBaseType.Sqlite:
-                        expected = "INSERT INTO Employee ([FirstName2],[LastName]) \r\n OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)";
+                        expected = "INSERT INTO Employee ([FirstName2],[LastName]) OUTPUT INSERTED.[FirstName2] \r\n VALUES (@FirstName,@LastName)";
                         break;
                     case DataBaseType.Oracle:
                         break;

@@ -34,17 +34,17 @@ namespace DotNetHelper.ObjectToSql.Model
         {
             var value = ExtFastMember.GetMemberValue(instanceOfObject, member.PropertyName);
             var sqlAttribute = member.GetCustomAttribute<SqlColumnAttribute>();
-            if (sqlAttribute != null && sqlAttribute.SerializableType != SerializableType.NONE)
+            if (sqlAttribute != null && sqlAttribute.SerializableType != SerializableType.None)
             {
                 switch (sqlAttribute.SerializableType)
                 {
-                    case SerializableType.XML:
+                    case SerializableType.Xml:
                         value = xmlDeserializer.Invoke(value);
                         break;
-                    case SerializableType.JSON:
+                    case SerializableType.Json:
                         value = jsonDeserializer.Invoke(value);
                         break;
-                    case SerializableType.CSV:
+                    case SerializableType.Csv:
                         value = csvDeserializer.Invoke(value);
                         break;
                 }
@@ -68,13 +68,13 @@ namespace DotNetHelper.ObjectToSql.Model
             if (attr1?.SerializableType == null) return false;
             switch (attr1.SerializableType)
             {
-                case SerializableType.NONE:
+                case SerializableType.None:
                     return false;
-                case SerializableType.XML:
+                case SerializableType.Xml:
                     return true;
-                case SerializableType.JSON:
+                case SerializableType.Json:
                     return true;
-                case SerializableType.CSV:
+                case SerializableType.Csv:
                     return true;
                 default:
                     throw new ArgumentOutOfRangeException();

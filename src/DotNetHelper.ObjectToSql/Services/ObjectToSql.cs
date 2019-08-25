@@ -20,8 +20,7 @@ namespace DotNetHelper.ObjectToSql.Services
     public class ObjectToSql
     {
 
-        private const string Const_MySql_OnDupeKeyUpdate = "ON DUPLICATE KEY UPDATE";
-        private const string Const_SqlServer_SelectTop1 = "SELECT TOP 1 * FROM";
+
         public bool IncludeNonPublicAccessor { get; set; } = true;
         public DataBaseType DatabaseType { get; }
         public SqlSyntaxHelper SqlSyntaxHelper { get; }
@@ -53,6 +52,9 @@ namespace DotNetHelper.ObjectToSql.Services
             if (type.IsTypeDynamic()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Dynamic"));
             if (type.IsTypeAnonymousType()) throw new InvalidOperationException(ExceptionHelper.InvalidOperation_Overload_Doesnt_Support_ActionType_For_Type(actionType, "Anonymous"));
         }
+
+
+
 
         #region Public Method Build Query
 
@@ -174,7 +176,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <returns></returns>
         public string BuildQueryWithOutputs<T>(ActionType actionType, params Expression<Func<T, object>>[] outputFields) where T : class
         {
-            return BuildQueryWithOutputs<T>(actionType, null, outputFields);
+            return BuildQueryWithOutputs(actionType, null, outputFields);
         }
 
 
@@ -240,7 +242,8 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="type"></param>
         private void BuildInsertQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
-            BuildInsertQuery(sqlBuilder, tableName, null);
+            // ReSharper disable once IntroduceOptionalParameters.Local
+            BuildInsertQuery(sqlBuilder, tableName, type, null);
         }
 
         /// <summary>
@@ -252,16 +255,16 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="instance"></param>
         private void BuildInsertQuery(StringBuilder sqlBuilder, string tableName, Type type, object instance)
         {
-            var table = tableName ?? type.GetTableNameFromCustomAttributeOrDefault();
 
-            var allFields = instance == null ? 
+
+            var allFields = instance == null ?
                   GetNonIdentityFields(IncludeNonPublicAccessor, type)
                 : GetNonIdentityFields(IncludeNonPublicAccessor, type, instance);
 
             var columns = allFields.Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
             // This uses the .net property name & ignores any attribute mapto name to ensure duplication is prevented
             var valueColumns = allFields.Select(c => c.Name).AsList();
-            sqlBuilder.Append(SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, table, columns, valueColumns));
+            sqlBuilder.Append(SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, tableName.GetTableName(DatabaseType, type), columns, valueColumns));
         }
 
 
@@ -276,35 +279,16 @@ namespace DotNetHelper.ObjectToSql.Services
         {
 
             var outputFields = outFields.GetPropertyNamesFromExpressions();
-
             outputFields.IsEmptyThrow(nameof(outputFields));
+
             var allFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
-            // Insert sql statement prefix 
+            var columns = allFields.Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
+            var valueColumns = allFields.Select(c => c.Name).AsList();
 
-            sqlBuilder.Append($"INSERT INTO {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} (");
-
-            // Add field names
-            allFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-            // Add parameter names for values
-            sqlBuilder.Append($") {Environment.NewLine}");
-            sqlBuilder.Append($" OUTPUT");
-
-            var members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
-            outputFields.ForEach(delegate (string s)
-            {
-                sqlBuilder.Append($" INSERTED.{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()} ,");
-            });
-            if (!outputFields.IsNullOrEmpty())
-            {
-                sqlBuilder.Remove(sqlBuilder.Length - 1, 1);
-            }
-
-            sqlBuilder.Append($"{Environment.NewLine} VALUES (");
-            allFields.ForEach(p => sqlBuilder.Append($"@{p.Name},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-            sqlBuilder.Append(")");
+            sqlBuilder.Append(SqlGenerator.BuildInsertIntoTable(SqlSyntaxHelper, tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()));
+            sqlBuilder.Append($" {SqlGenerator.BuildColumnsInParentheses(SqlSyntaxHelper, columns)}");
+            sqlBuilder.Append($" {SqlGenerator.BuildOutputFields<T>(SqlSyntaxHelper, outputFields, OutputType.INSERTED)}");
+            sqlBuilder.Append($"{Environment.NewLine} {SqlGenerator.BuildValues(SqlSyntaxHelper, valueColumns)}");
         }
 
 
@@ -324,22 +308,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="tableName">Name of the table.</param>
         private void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName) where T : class
         {
-
-            var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
-
-            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
-
-            // Build Update Statement Prefix
-            sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
-
-            // Build Set fields
-            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-            // Build Where clause.
-            sqlBuilder.Append(" ");
-            BuildWhereClause(sqlBuilder, keyFields);
+            BuildUpdateQuery(sqlBuilder, tableName, typeof(T));
         }
 
         /// <summary>
@@ -350,23 +319,16 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="type"></param>
         private void BuildUpdateQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
-
             var keyFields = GetKeyFields(IncludeNonPublicAccessor, type);
-
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            //var updateFields = GetNonIdentityFields(IncludeNonPublicAccessor, type);
             var updateFields = GetNonKeyFields(IncludeNonPublicAccessor, type);
+            var columns = updateFields.Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
+            var valueColumns = updateFields.Select(c => c.Name).AsList();
 
-            // Build Update Statement Prefix
-            sqlBuilder.Append($"UPDATE {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} SET ");
+            sqlBuilder.Append($"{SqlGenerator.BuildUpdateTable(tableName.GetTableName(DatabaseType, type))} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, columns, valueColumns)} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
 
-            // Build Set fields
-            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-            // Build Where clause.
-            sqlBuilder.Append(" ");
-            BuildWhereClause(sqlBuilder, keyFields);
         }
 
 
@@ -379,25 +341,21 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="primaryKeys">the fields to include in the where clause</param>
         private void BuildUpdateQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] primaryKeys) where T : class
         {
-            primaryKeys.IsNullThrow(nameof(primaryKeys));
-            primaryKeys.IsEmptyThrow(nameof(primaryKeys));
 
-            var keyFields = new List<MemberWrapper>() { };
             var outputFields = primaryKeys.GetPropertyNamesFromExpressions();
-            keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).AsList();
+            var allFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
+            var keyFields = allFields.Where(m => outputFields.Contains(m.Name)).AsList();
+            var nonKeyFields = allFields.Where(m => !outputFields.Contains(m.Name)).AsList();
 
+            if (outputFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-            var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor).Where(w => !outputFields.Contains(w.Name)).AsList();
-            // Build Update Statement Prefix
-            sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
 
-            // Build Set fields
-            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+            var columns = nonKeyFields.Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
+            var valueColumns = nonKeyFields.Select(c => c.Name).AsList();
 
-            // Build Where clause.
-            sqlBuilder.Append(" ");
-            BuildWhereClause(sqlBuilder, keyFields);
+            sqlBuilder.Append($"{SqlGenerator.BuildUpdateTable(tableName.GetTableName(DatabaseType, typeof(T)))} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, columns, valueColumns)} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
         }
 
 
@@ -410,34 +368,25 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="outFields"></param>
         private void BuildUpdateQueryWithOutputs<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] outFields) where T : class
         {
-            var outputFields = outFields.GetPropertyNamesFromExpressions();
-            outputFields.IsEmptyThrow(nameof(outputFields));
 
+            var outputFields = outFields.GetPropertyNamesFromExpressions();
             var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
+            var nonKeyFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
+
+            // if (outputFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            //var updateFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
-            var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
-            // Build Update Statement Prefix
-            sqlBuilder.Append($"UPDATE {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} SET ");
+            var columns = nonKeyFields.Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
+            var valueColumns = nonKeyFields.Select(c => c.Name).AsList();
 
-            // Build Set fields
-            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-
-            var members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
-            sqlBuilder.Append($" OUTPUT");
-            outputFields.ForEach(delegate (string s)
-            {
-                sqlBuilder.Append($" DELETED.{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()} ,");
-            });
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1);
+            sqlBuilder.Append($"{SqlGenerator.BuildUpdateTable(tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault())} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, columns, valueColumns)} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildOutputFields<T>(SqlSyntaxHelper, outputFields, OutputType.DELETED)}");
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
 
 
-            // Build Where clause.
-            sqlBuilder.Append(" ");
-            BuildWhereClause(sqlBuilder, keyFields);
+
+
         }
 
 
@@ -458,29 +407,22 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="tableName">Name of the table.</param>
         private void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName) where T : class
         {
-            var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
-            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-
-            sqlBuilder.Append($"DELETE FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} ");
-            BuildWhereClause(sqlBuilder, keyFields);
+            BuildDeleteQuery(sqlBuilder, tableName, typeof(T));
         }
 
         /// <summary>
         /// Builds the delete query.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
+        /// <param name="type"></param>
         private void BuildDeleteQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
 
             var keyFields = GetKeyFields(IncludeNonPublicAccessor, type);
-
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-
-            sqlBuilder.Append($"DELETE FROM {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} ");
-            BuildWhereClause(sqlBuilder, keyFields);
+            sqlBuilder.Append(SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, tableName.GetTableName(DatabaseType, type), keyFields));
         }
 
 
@@ -494,18 +436,13 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="overrideKeys"></param>
         private void BuildDeleteQuery<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] overrideKeys) where T : class
         {
-            overrideKeys.IsNullThrow(nameof(overrideKeys));
-            overrideKeys.IsEmptyThrow(nameof(overrideKeys));
-            var keyFields = new List<MemberWrapper>() { };
+            var primaryKeys = overrideKeys.GetPropertyNamesFromExpressions();
+            if (primaryKeys.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            var outputFields = overrideKeys.GetPropertyNamesFromExpressions();
-            keyFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => outputFields.Contains(m.Name)).AsList();
+            sqlBuilder.Append($"{SqlGenerator.BuildDeleteFromTable(tableName.GetTableName(DatabaseType, typeof(T)))} ");
+            var whereClauseFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => primaryKeys.Contains(m.Name)).AsList();
 
-            if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
-
-
-            sqlBuilder.Append($"DELETE FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} ");
-            BuildWhereClause(sqlBuilder, keyFields);
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, whereClauseFields)}");
         }
 
         /// <summary>
@@ -523,7 +460,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = GetKeyFields<T>(IncludeNonPublicAccessor);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            sqlBuilder.Append($"DELETE FROM {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} ");
+            sqlBuilder.Append($"DELETE FROM {tableName.GetTableName(DatabaseType, typeof(T))} ");
 
             var members = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor);
             sqlBuilder.Append($" OUTPUT");
@@ -532,7 +469,7 @@ namespace DotNetHelper.ObjectToSql.Services
                 sqlBuilder.Append($" DELETED.{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{members.FirstOrDefault(av => av.Name == s)?.GetNameFromCustomAttributeOrDefault() ?? s}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()} ,");
             });
 
-            BuildWhereClause(sqlBuilder, keyFields);
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
         }
 
 
@@ -541,7 +478,7 @@ namespace DotNetHelper.ObjectToSql.Services
         #region UPSERT METHODS
 
 
-        private void SQLiteBuildUpsertQuery<T>(StringBuilder sqlBuilder, List<MemberWrapper> keyFields, string tableName, string whereClause, string normalInsertSQl) where T : class
+        private void SqLiteBuildUpsertQuery<T>(StringBuilder sqlBuilder, List<MemberWrapper> keyFields, string tableName, string whereClause, string normalInsertSQl) where T : class
         {
             var updateFields = GetNonKeyFields<T>(IncludeNonPublicAccessor);
 
@@ -563,7 +500,7 @@ namespace DotNetHelper.ObjectToSql.Services
             }
         }
 
-        private void SQLiteBuildUpsertQuery(StringBuilder sqlBuilder, List<MemberWrapper> keyFields, string tableName, string whereClause, string normalInsertSQl, Type type)
+        private void SqLiteBuildUpsertQuery(StringBuilder sqlBuilder, List<MemberWrapper> keyFields, string tableName, string whereClause, string normalInsertSQl, Type type)
         {
             var updateFields = GetNonKeyFields(IncludeNonPublicAccessor, type);
 
@@ -586,10 +523,10 @@ namespace DotNetHelper.ObjectToSql.Services
         }
 
 
-        private void MySQLBuildOnDuplicateKeyUpdate(StringBuilder sqlBuilder, Type type)
+        private void MySqlBuildOnDuplicateKeyUpdate(StringBuilder sqlBuilder, Type type)
         {
             var updateFields = GetNonKeyFields(IncludeNonPublicAccessor, type);
-            sqlBuilder.Append($" {Const_MySql_OnDupeKeyUpdate} ");
+            sqlBuilder.Append($" {SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate} ");
             updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
         }
@@ -609,23 +546,23 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb1 = new StringBuilder();
             BuildInsertQuery<T>(sb1, tableName);
             var sb2 = new StringBuilder();
-            BuildWhereClause(sb2, keyFields);
+            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
                 tableName = tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault();
-                SQLiteBuildUpsertQuery<T>(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString());
+                SqLiteBuildUpsertQuery<T>(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString());
             }
             else if (DatabaseType == DataBaseType.MySql)
             {
                 sqlBuilder.Append(sb1);
-                MySQLBuildOnDuplicateKeyUpdate(sqlBuilder, typeof(T));
+                MySqlBuildOnDuplicateKeyUpdate(sqlBuilder, typeof(T));
             }
             else
             {
                 var sb = new StringBuilder();
                 BuildUpdateQuery<T>(sb, tableName);
-                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"{Const_SqlServer_SelectTop1} {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"{SqlSyntaxHelper.ConstSqlServerSelectTop1} {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
             }
         }
 
@@ -646,23 +583,23 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb1 = new StringBuilder();
             BuildInsertQuery<T>(sb1, tableName);
             var sb2 = new StringBuilder();
-            BuildWhereClause(sb2, keyFields);
+            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
                 tableName = tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault();
-                SQLiteBuildUpsertQuery<T>(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString());
+                SqLiteBuildUpsertQuery<T>(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString());
             }
             else if (DatabaseType == DataBaseType.MySql)
             {
                 sqlBuilder.Append(sb1);
-                MySQLBuildOnDuplicateKeyUpdate(sqlBuilder, typeof(T));
+                MySqlBuildOnDuplicateKeyUpdate(sqlBuilder, typeof(T));
             }
             else
             {
                 var sb = new StringBuilder();
                 BuildUpdateQuery(sb, tableName, overrideKeys);
-                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"{Const_SqlServer_SelectTop1} {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"{SqlSyntaxHelper.ConstSqlServerSelectTop1} {tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
             }
         }
 
@@ -683,22 +620,22 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb1 = new StringBuilder();
             BuildInsertQuery(sb1, tableName, type);
             var sb2 = new StringBuilder();
-            BuildWhereClause(sb2, keyFields);
+            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
-                SQLiteBuildUpsertQuery(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString(), type);
+                SqLiteBuildUpsertQuery(sqlBuilder, keyFields, tableName, sb2.ToString(), sb1.ToString(), type);
             }
             else if (DatabaseType == DataBaseType.MySql)
             {
                 sqlBuilder.Append(sb1);
-                MySQLBuildOnDuplicateKeyUpdate(sqlBuilder, type);
+                MySqlBuildOnDuplicateKeyUpdate(sqlBuilder, type);
             }
             else
             {
                 var sb = new StringBuilder();
                 BuildUpdateQuery(sb, tableName, type);
-                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"{Const_SqlServer_SelectTop1} {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
+                sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"{SqlSyntaxHelper.ConstSqlServerSelectTop1} {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} {sb2}", sb.ToString(), sb1.ToString()));
             }
         }
 
@@ -722,7 +659,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb1 = new StringBuilder();
             BuildInsertQueryWithOutputs(sb, tableName, outFields);
             var sb2 = new StringBuilder();
-            BuildWhereClause(sb2, keyFields);
+            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
             sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
         }
 
@@ -867,10 +804,10 @@ namespace DotNetHelper.ObjectToSql.Services
         /// </summary>
         /// <param name="member">The member.</param>
         /// <param name="value">The value.</param>
-        /// <param name="CsvSerializer"></param>
-        /// <param name="XmlSerializer"></param>
+        /// <param name="csvSerializer"></param>
+        /// <param name="xmlSerializer"></param>
         /// <returns>System.Object.</returns>
-        public object ConvertToDatabaseValue(MemberWrapper member, object value, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
+        public object ConvertToDatabaseValue(MemberWrapper member, object value, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer)
         {
             if (value == null)
             {
@@ -881,20 +818,20 @@ namespace DotNetHelper.ObjectToSql.Services
             //    if(DatabaseType == DataBaseType.SqlServer)
             //        return new DateTime(1753, 01, 01);
             //}
-            if (member.GetCustomAttribute<SqlColumnAttribute>()?.SerializableType != SerializableType.NONE)
+            if (member.GetCustomAttribute<SqlColumnAttribute>()?.SerializableType != SerializableType.None)
             {
                 switch (member.GetCustomAttribute<SqlColumnAttribute>()?.SerializableType)
                 {
-                    case SerializableType.XML:
-                        XmlSerializer.IsNullThrow(nameof(XmlSerializer), new ArgumentNullException(nameof(XmlSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.XML)}"));
-                        return XmlSerializer.Invoke(value);
-                    case SerializableType.JSON:
-                        JsonSerializer.IsNullThrow(nameof(JsonSerializer), new ArgumentNullException(nameof(JsonSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.JSON)}"));
-                        return JsonSerializer.Invoke(value);
-                    case SerializableType.CSV:
-                        CsvSerializer.IsNullThrow(nameof(CsvSerializer), new ArgumentNullException(nameof(CsvSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.CSV)}"));
-                        return CsvSerializer.Invoke(value);
-                    case SerializableType.NONE:
+                    case SerializableType.Xml:
+                        xmlSerializer.IsNullThrow(nameof(xmlSerializer), new ArgumentNullException(nameof(xmlSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.Xml)}"));
+                        return xmlSerializer.Invoke(value);
+                    case SerializableType.Json:
+                        jsonSerializer.IsNullThrow(nameof(jsonSerializer), new ArgumentNullException(nameof(jsonSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.Json)}"));
+                        return jsonSerializer.Invoke(value);
+                    case SerializableType.Csv:
+                        csvSerializer.IsNullThrow(nameof(csvSerializer), new ArgumentNullException(nameof(csvSerializer), $"{ExceptionHelper.NullSerializer(member, SerializableType.Csv)}"));
+                        return csvSerializer.Invoke(value);
+                    case SerializableType.None:
                     case null:
                         break;
                     default:
@@ -913,13 +850,13 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="instance"></param>
         /// <param name="getNewParameter"></param>
         /// <returns>List&lt;DbParameter&gt;.</returns>
-        public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer) where T : class
+        public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
         {
             var list = new List<DbParameter>() { };
             var members = GetAllNonIgnoreFields(instance, IncludeNonPublicAccessor);
             members.ForEach(delegate (MemberWrapper p)
             {
-                var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), XmlSerializer, JsonSerializer, CsvSerializer);
+                var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), xmlSerializer, jsonSerializer, csvSerializer);
                 list.Add(getNewParameter($"@{p.Name}", parameterValue));
             });
             return list;
@@ -945,7 +882,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="instance"></param>
         /// <param name="getNewParameter"></param>
         /// <returns>List&lt;DbParameter&gt;.</returns>
-        public List<IDbDataParameter> BuildDbDataParameterList<T>(T instance, Func<string, object, IDbDataParameter> getNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer) where T : class
+        public List<IDbDataParameter> BuildDbDataParameterList<T>(T instance, Func<string, object, IDbDataParameter> getNewParameter, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
         {
             var list = new List<IDbDataParameter>() { };
             List<MemberWrapper> members;
@@ -959,7 +896,7 @@ namespace DotNetHelper.ObjectToSql.Services
             }
             members.ForEach(delegate (MemberWrapper p)
             {
-                var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), XmlSerializer, JsonSerializer, CsvSerializer);
+                var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), xmlSerializer, jsonSerializer, csvSerializer);
 
                 list.Add(getNewParameter($"@{p.Name}", parameterValue));
 
@@ -980,26 +917,7 @@ namespace DotNetHelper.ObjectToSql.Services
         }
         #endregion
 
-        /// <summary>
-        /// Builds the where clause.
-        /// </summary>
-        /// <param name="sqlBuilder">The SQL builder.</param>
-        /// <param name="keyFields">The key fields.</param>
 
-        public void BuildWhereClause(StringBuilder sqlBuilder, List<MemberWrapper> keyFields)
-        {
-            if (keyFields.IsNullOrEmpty())
-            {
-            }
-            else
-            {
-                sqlBuilder.Append("WHERE");
-                keyFields.ForEach(p => sqlBuilder.Append($" {SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name} AND"));
-                if (sqlBuilder.ToString().EndsWith(" AND"))
-                    sqlBuilder.Remove(sqlBuilder.Length - 4, 4); // Remove the last AND       
-            }
-
-        }
 
         // TODO :: COME BACK WHEN READY 
         ///// <summary>

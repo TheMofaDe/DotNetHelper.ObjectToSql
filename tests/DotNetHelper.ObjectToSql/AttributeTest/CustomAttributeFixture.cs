@@ -9,7 +9,7 @@ namespace DotNetHelper.ObjectToSql.Tests.AttributeTest
     public class CustomAttributeFixture
     {
 
-        [DBTableAttribute(TableName = "NotTestClass")]
+        [DbTable(TableName = "NotTestClass")]
         private class TestClass
         {
             public string A { get; set; }

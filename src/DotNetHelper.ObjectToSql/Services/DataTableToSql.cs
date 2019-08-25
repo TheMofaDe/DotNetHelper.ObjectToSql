@@ -166,19 +166,8 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildInsertQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null)
         {
             var (_, _, nonIdentityFields) = GetFields(dataTable);
+            sqlBuilder.Append(SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, tableName ?? dataTable.TableName, nonIdentityFields, nonIdentityFields));
 
-            // Insert sql statement prefix 
-            sqlBuilder.Append($"INSERT INTO {tableName ?? dataTable.TableName} (");
-
-            // Add field names
-            nonIdentityFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-            // Add parameter names for values
-            sqlBuilder.Append(") VALUES (");
-            nonIdentityFields.ForEach(p => sqlBuilder.Append($"@{p},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-            sqlBuilder.Append(")");
         }
 
 
@@ -200,20 +189,9 @@ namespace DotNetHelper.ObjectToSql.Services
         {
 
             var (keyFields, identityFields, nonIdentityFields) = GetFields(dataTable);
-
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
 
-
-            // Build Update Statement Prefix
-            sqlBuilder.Append($"UPDATE {tableName ?? dataTable.TableName} SET ");
-
-            // Build Set fields
-            nonIdentityFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-            // Build Where clause.
-            sqlBuilder.Append(" ");
-            BuildWhereClause(sqlBuilder, keyFields);
+            sqlBuilder.Append(SqlGenerator.BuildUpdateQuery(SqlSyntaxHelper, tableName ?? dataTable.TableName, nonIdentityFields, nonIdentityFields));
         }
 
 
@@ -234,8 +212,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var (keyFields, identityFields, nonIdentityFields) = GetFields(dataTable);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
 
-            sqlBuilder.Append($"DELETE FROM {tableName ?? dataTable.TableName} ");
-            BuildWhereClause(sqlBuilder, keyFields);
+            sqlBuilder.Append(SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, tableName ?? dataTable.TableName, keyFields));
         }
 
 
@@ -245,7 +222,7 @@ namespace DotNetHelper.ObjectToSql.Services
         #region UPSERT METHODS
 
 
-        private void SQLiteBuildUpsertQuery(StringBuilder sqlBuilder, List<string> keyFields, List<string> updateFields, string tableName, string whereClause, string normalInsertSQl, bool isAllKeyFieldsInt)
+        private void SqLiteBuildUpsertQuery(StringBuilder sqlBuilder, List<string> keyFields, List<string> updateFields, string tableName, string whereClause, string normalInsertSQl, bool isAllKeyFieldsInt)
         {
 
 
@@ -288,13 +265,14 @@ VALUES
             var sb1 = new StringBuilder();
             BuildInsertQuery(sb1, dataTable, tableName);
             var sb2 = new StringBuilder();
-            BuildWhereClause(sb2, keyFields);
+            sb2.Append(SqlGenerator.BuildWhereClause(SqlSyntaxHelper, keyFields, keyFields));
+
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
                 var trueForAll = dataTable.PrimaryKey.AsList().TrueForAll(c => c.DataType == typeof(int) || c.DataType == typeof(long));
 
-                SQLiteBuildUpsertQuery(sqlBuilder, keyFields, nonIdentityFields, tableName ?? dataTable.TableName, sb2.ToString(), sb1.ToString(), trueForAll);
+                SqLiteBuildUpsertQuery(sqlBuilder, keyFields, nonIdentityFields, tableName ?? dataTable.TableName, sb2.ToString(), sb1.ToString(), trueForAll);
             }
             else
             {
@@ -331,27 +309,7 @@ VALUES
 
         #endregion
 
-        /// <summary>
-        /// Builds the where clause.
-        /// </summary>
-        /// <param name="sqlBuilder">The SQL builder.</param>
-        /// <param name="keyFields">The key fields.</param>
 
-        public void BuildWhereClause(StringBuilder sqlBuilder, List<string> keyFields)
-        {
-            if (keyFields.IsNullOrEmpty())
-            {
-
-            }
-            else
-            {
-                sqlBuilder.Append("WHERE");
-                keyFields.ForEach(p => sqlBuilder.Append($" {SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p} AND"));
-                if (sqlBuilder.ToString().EndsWith(" AND"))
-                    sqlBuilder.Remove(sqlBuilder.Length - 4, 4); // Remove the last AND       
-            }
-
-        }
 
 
 

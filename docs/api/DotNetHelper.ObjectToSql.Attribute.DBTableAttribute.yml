@@ -1,26 +1,26 @@
 ### YamlMime:ManagedReference
 items:
-- uid: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
-  commentId: T:DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
-  id: DBTableAttribute
+- uid: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute
+  commentId: T:DotNetHelper.ObjectToSql.Attribute.DbTableAttribute
+  id: DbTableAttribute
   parent: DotNetHelper.ObjectToSql.Attribute
   children:
-  - DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.JoinType
-  - DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.TableName
-  - DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.XReferenceTable
+  - DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.JoinType
+  - DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.TableName
+  - DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.XReferenceTable
   langs:
   - csharp
   - vb
-  name: DBTableAttribute
-  nameWithType: DBTableAttribute
-  fullName: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
+  name: DbTableAttribute
+  nameWithType: DbTableAttribute
+  fullName: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute
   type: Class
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: DBTableAttribute
+    id: DbTableAttribute
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
     startLine: 10
   assemblies:
@@ -32,11 +32,11 @@ items:
     content: >-
       [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
 
-      public class DBTableAttribute : Attribute, _Attribute
+      public class DbTableAttribute : Attribute, _Attribute
     content.vb: >-
       <AttributeUsage(AttributeTargets.Class Or AttributeTargets.Property)>
 
-      Public Class DBTableAttribute
+      Public Class DbTableAttribute
           Inherits Attribute
           Implements _Attribute
   seealso:
@@ -106,16 +106,16 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.TableName
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.TableName
+- uid: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.TableName
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.TableName
   id: TableName
-  parent: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
+  parent: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute
   langs:
   - csharp
   - vb
   name: TableName
-  nameWithType: DBTableAttribute.TableName
-  fullName: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.TableName
+  nameWithType: DbTableAttribute.TableName
+  fullName: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.TableName
   type: Property
   source:
     remote:
@@ -137,23 +137,23 @@ items:
       type: System.String
       description: The map to.
     content.vb: Public Property TableName As String
-  overload: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.TableName*
+  overload: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.TableName*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.XReferenceTable
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.XReferenceTable
+- uid: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.XReferenceTable
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.XReferenceTable
   id: XReferenceTable
-  parent: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
+  parent: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute
   langs:
   - csharp
   - vb
   name: XReferenceTable
-  nameWithType: DBTableAttribute.XReferenceTable
-  fullName: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.XReferenceTable
+  nameWithType: DbTableAttribute.XReferenceTable
+  fullName: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.XReferenceTable
   type: Property
   source:
     remote:
@@ -172,23 +172,23 @@ items:
     return:
       type: System.Type
     content.vb: Public Property XReferenceTable As Type
-  overload: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.XReferenceTable*
+  overload: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.XReferenceTable*
   modifiers.csharp:
   - public
   - get
   - set
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.JoinType
-  commentId: P:DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.JoinType
+- uid: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.JoinType
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.JoinType
   id: JoinType
-  parent: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
+  parent: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute
   langs:
   - csharp
   - vb
   name: JoinType
-  nameWithType: DBTableAttribute.JoinType
-  fullName: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.JoinType
+  nameWithType: DbTableAttribute.JoinType
+  fullName: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.JoinType
   type: Property
   source:
     remote:
@@ -204,13 +204,13 @@ items:
   summary: "\nGets or sets a value indicating whether [x reference on delete cascade].\n"
   example: []
   syntax:
-    content: public SQLJoinType JoinType { get; set; }
+    content: public SqlJoinType JoinType { get; set; }
     parameters: []
     return:
-      type: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+      type: DotNetHelper.ObjectToSql.Enum.SqlJoinType
       description: <code>null</code> if [x reference on delete cascade] contains no value, <code>true</code> if [x reference on delete cascade]; otherwise, <code>false</code>.
-    content.vb: Public Property JoinType As SQLJoinType
-  overload: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.JoinType*
+    content.vb: Public Property JoinType As SqlJoinType
+  overload: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.JoinType*
   modifiers.csharp:
   - public
   - get
@@ -2946,11 +2946,11 @@ references:
   name: System.Runtime.InteropServices
   nameWithType: System.Runtime.InteropServices
   fullName: System.Runtime.InteropServices
-- uid: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.TableName*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.TableName
+- uid: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.TableName*
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.TableName
   name: TableName
-  nameWithType: DBTableAttribute.TableName
-  fullName: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.TableName
+  nameWithType: DbTableAttribute.TableName
+  fullName: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.TableName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -2958,11 +2958,11 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.XReferenceTable*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.XReferenceTable
+- uid: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.XReferenceTable*
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.XReferenceTable
   name: XReferenceTable
-  nameWithType: DBTableAttribute.XReferenceTable
-  fullName: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.XReferenceTable
+  nameWithType: DbTableAttribute.XReferenceTable
+  fullName: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.XReferenceTable
 - uid: System.Type
   commentId: T:System.Type
   parent: System
@@ -2970,17 +2970,17 @@ references:
   name: Type
   nameWithType: Type
   fullName: System.Type
-- uid: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.JoinType*
-  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.JoinType
+- uid: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.JoinType*
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.JoinType
   name: JoinType
-  nameWithType: DBTableAttribute.JoinType
-  fullName: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.JoinType
-- uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType
-  commentId: T:DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  nameWithType: DbTableAttribute.JoinType
+  fullName: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.JoinType
+- uid: DotNetHelper.ObjectToSql.Enum.SqlJoinType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.SqlJoinType
   parent: DotNetHelper.ObjectToSql.Enum
-  name: SQLJoinType
-  nameWithType: SQLJoinType
-  fullName: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  name: SqlJoinType
+  nameWithType: SqlJoinType
+  fullName: DotNetHelper.ObjectToSql.Enum.SqlJoinType
 - uid: DotNetHelper.ObjectToSql.Enum
   commentId: N:DotNetHelper.ObjectToSql.Enum
   name: DotNetHelper.ObjectToSql.Enum

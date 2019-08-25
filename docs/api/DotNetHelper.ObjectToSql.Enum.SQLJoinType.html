@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum SQLJoinType
+    <title>Enum SqlJoinType
    | DotNetHelper.ObjectToSql </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum SQLJoinType
+    <meta name="title" content="Enum SqlJoinType
    | DotNetHelper.ObjectToSql ">
     <meta name="generator" content="docfx 2.44.0.0">
     
@@ -102,11 +102,20 @@
                   <ul class="nav level1">
                     <li class="">
                       <span class="expand-stub"></span>
+                      <a href="DotNetHelper.ObjectToSql.html" title="DotNetHelper.ObjectToSql" class="">DotNetHelper.ObjectToSql</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper.ObjectToSql.SqlGenerator.html" title="SqlGenerator" class="">SqlGenerator</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
                       <a href="DotNetHelper.ObjectToSql.Attribute.html" title="DotNetHelper.ObjectToSql.Attribute" class="">DotNetHelper.ObjectToSql.Attribute</a>
                         
                         <ul class="nav level2">
                           <li class="">
-                            <a href="DotNetHelper.ObjectToSql.Attribute.DBTableAttribute.html" title="DBTableAttribute" class="">DBTableAttribute</a>
+                            <a href="DotNetHelper.ObjectToSql.Attribute.DbTableAttribute.html" title="DbTableAttribute" class="">DbTableAttribute</a>
                           </li>
                           <li class="">
                             <a href="DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html" title="SqlColumnAttribute" class="">SqlColumnAttribute</a>
@@ -124,13 +133,16 @@
                             <a href="DotNetHelper.ObjectToSql.Enum.DataBaseType.html" title="DataBaseType" class="">DataBaseType</a>
                           </li>
                           <li class="">
+                            <a href="DotNetHelper.ObjectToSql.Enum.OutputType.html" title="OutputType" class="">OutputType</a>
+                          </li>
+                          <li class="">
                             <a href="DotNetHelper.ObjectToSql.Enum.ScriptType.html" title="ScriptType" class="">ScriptType</a>
                           </li>
                           <li class="">
                             <a href="DotNetHelper.ObjectToSql.Enum.SerializableType.html" title="SerializableType" class="">SerializableType</a>
                           </li>
                           <li class="active">
-                            <a href="DotNetHelper.ObjectToSql.Enum.SQLJoinType.html" title="SQLJoinType" class="active">SQLJoinType</a>
+                            <a href="DotNetHelper.ObjectToSql.Enum.SqlJoinType.html" title="SqlJoinType" class="active">SqlJoinType</a>
                           </li>
                         </ul>  </li>
                     <li class="">
@@ -160,7 +172,7 @@
                         
                         <ul class="nav level2">
                           <li class="">
-                            <a href="DotNetHelper.ObjectToSql.Helper.DBTypeMap.html" title="DBTypeMap" class="">DBTypeMap</a>
+                            <a href="DotNetHelper.ObjectToSql.Helper.DbTypeMap.html" title="DbTypeMap" class="">DbTypeMap</a>
                           </li>
                           <li class="">
                             <a href="DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html" title="SqlSyntaxHelper" class="">SqlSyntaxHelper</a>
@@ -178,7 +190,7 @@
                             <a href="DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html" title="RunTimeAttributeMapExtension" class="">RunTimeAttributeMapExtension</a>
                           </li>
                           <li class="">
-                            <a href="DotNetHelper.ObjectToSql.Model.SQLTable.html" title="SQLTable" class="">SQLTable</a>
+                            <a href="DotNetHelper.ObjectToSql.Model.SqlTable.html" title="SqlTable" class="">SqlTable</a>
                           </li>
                         </ul>  </li>
                     <li class="">
@@ -200,18 +212,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DotNetHelper.ObjectToSql.Enum.SQLJoinType">
+            <article class="content wrap" id="_content" data-uid="DotNetHelper.ObjectToSql.Enum.SqlJoinType">
   
   
-  <h1 id="DotNetHelper_ObjectToSql_Enum_SQLJoinType" data-uid="DotNetHelper.ObjectToSql.Enum.SQLJoinType" class="text-break">Enum SQLJoinType
+  <h1 id="DotNetHelper_ObjectToSql_Enum_SqlJoinType" data-uid="DotNetHelper.ObjectToSql.Enum.SqlJoinType" class="text-break">Enum SqlJoinType
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="DotNetHelper.ObjectToSql.Enum.html">DotNetHelper.ObjectToSql.Enum</a></h6>
   <h6><strong>Assembly</strong>: DotNetHelper.ObjectToSql.dll</h6>
-  <h5 id="DotNetHelper_ObjectToSql_Enum_SQLJoinType_syntax">Syntax</h5>
+  <h5 id="DotNetHelper_ObjectToSql_Enum_SqlJoinType_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum SQLJoinType</code></pre>
+    <pre><code class="lang-csharp hljs">public enum SqlJoinType</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -224,12 +236,12 @@
     <thead>
     <tbody>
       <tr>
-        <td id="DotNetHelper_ObjectToSql_Enum_SQLJoinType_INNER">INNER</td>
+        <td id="DotNetHelper_ObjectToSql_Enum_SqlJoinType_Inner">Inner</td>
         <td><p>SQL-style INNER JOIN semantics: Only records that produce a match are returned.</p>
 </td>
       </tr>
       <tr>
-        <td id="DotNetHelper_ObjectToSql_Enum_SQLJoinType_LEFT">LEFT</td>
+        <td id="DotNetHelper_ObjectToSql_Enum_SqlJoinType_Left">Left</td>
         <td><p>SQL-style LEFT OUTER JOIN semantics: All records of the left table are returned. If the right table holds no matching records, the right
 side's columns contain NULL.</p>
 </td>
@@ -244,7 +256,7 @@ side's columns contain NULL.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/docs-ref-overwrite/new?filename=DotNetHelper_ObjectToSql_Enum_SQLJoinType.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Enum.SQLJoinType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/docs-ref-overwrite/new?filename=DotNetHelper_ObjectToSql_Enum_SqlJoinType.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Enum.SqlJoinType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
                     <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs/#L3" class="contribution-link">View Source</a>

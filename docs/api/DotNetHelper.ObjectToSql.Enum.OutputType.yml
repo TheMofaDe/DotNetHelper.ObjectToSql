@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.ObjectToSql.Enum.OutputType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.OutputType
+  id: OutputType
+  parent: DotNetHelper.ObjectToSql.Enum
+  children:
+  - DotNetHelper.ObjectToSql.Enum.OutputType.DELETED
+  - DotNetHelper.ObjectToSql.Enum.OutputType.INSERTED
+  langs:
+  - csharp
+  - vb
+  name: OutputType
+  nameWithType: OutputType
+  fullName: DotNetHelper.ObjectToSql.Enum.OutputType
+  type: Enum
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/OutputType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: OutputType
+    path: ../src/DotNetHelper.ObjectToSql/Enum/OutputType.cs
+    startLine: 7
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: public enum OutputType
+    content.vb: Public Enum OutputType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: DotNetHelper.ObjectToSql.Enum.OutputType.INSERTED
+  commentId: F:DotNetHelper.ObjectToSql.Enum.OutputType.INSERTED
+  id: INSERTED
+  parent: DotNetHelper.ObjectToSql.Enum.OutputType
+  langs:
+  - csharp
+  - vb
+  name: INSERTED
+  nameWithType: OutputType.INSERTED
+  fullName: DotNetHelper.ObjectToSql.Enum.OutputType.INSERTED
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/OutputType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: INSERTED
+    path: ../src/DotNetHelper.ObjectToSql/Enum/OutputType.cs
+    startLine: 9
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: INSERTED = 0
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.OutputType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: DotNetHelper.ObjectToSql.Enum.OutputType.DELETED
+  commentId: F:DotNetHelper.ObjectToSql.Enum.OutputType.DELETED
+  id: DELETED
+  parent: DotNetHelper.ObjectToSql.Enum.OutputType
+  langs:
+  - csharp
+  - vb
+  name: DELETED
+  nameWithType: OutputType.DELETED
+  fullName: DotNetHelper.ObjectToSql.Enum.OutputType.DELETED
+  type: Field
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Enum/OutputType.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: DELETED
+    path: ../src/DotNetHelper.ObjectToSql/Enum/OutputType.cs
+    startLine: 10
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Enum
+  syntax:
+    content: DELETED = 1
+    return:
+      type: DotNetHelper.ObjectToSql.Enum.OutputType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: DotNetHelper.ObjectToSql.Enum
+  commentId: N:DotNetHelper.ObjectToSql.Enum
+  name: DotNetHelper.ObjectToSql.Enum
+  nameWithType: DotNetHelper.ObjectToSql.Enum
+  fullName: DotNetHelper.ObjectToSql.Enum
+- uid: DotNetHelper.ObjectToSql.Enum.OutputType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.OutputType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: OutputType
+  nameWithType: OutputType
+  fullName: DotNetHelper.ObjectToSql.Enum.OutputType

@@ -7,7 +7,14 @@ items:
   children:
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildIfExistStatement(System.String,System.String,System.String)
-  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SqlTable,System.String,System.String)
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstAt
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstCloseParens
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstInsertInto
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstOpenParens
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstSqlServerSelectTop1
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstValues
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable``1(System.Collections.Generic.List{``0},System.String,System.Text.Encoding)
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
@@ -52,6 +59,263 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstInsertInto
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstInsertInto
+  id: ConstInsertInto
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: ConstInsertInto
+  nameWithType: SqlSyntaxHelper.ConstInsertInto
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstInsertInto
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ConstInsertInto
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 16
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  summary: "\nINSERT INTO\n"
+  example: []
+  syntax:
+    content: public string ConstInsertInto { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ConstInsertInto As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstInsertInto*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstOpenParens
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstOpenParens
+  id: ConstOpenParens
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: ConstOpenParens
+  nameWithType: SqlSyntaxHelper.ConstOpenParens
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstOpenParens
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ConstOpenParens
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 20
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  summary: "\n(\n"
+  example: []
+  syntax:
+    content: public char ConstOpenParens { get; }
+    parameters: []
+    return:
+      type: System.Char
+    content.vb: Public ReadOnly Property ConstOpenParens As Char
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstOpenParens*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstCloseParens
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstCloseParens
+  id: ConstCloseParens
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: ConstCloseParens
+  nameWithType: SqlSyntaxHelper.ConstCloseParens
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstCloseParens
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ConstCloseParens
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 24
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  summary: "\n)\n"
+  example: []
+  syntax:
+    content: public char ConstCloseParens { get; }
+    parameters: []
+    return:
+      type: System.Char
+    content.vb: Public ReadOnly Property ConstCloseParens As Char
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstCloseParens*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstAt
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstAt
+  id: ConstAt
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: ConstAt
+  nameWithType: SqlSyntaxHelper.ConstAt
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstAt
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ConstAt
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 28
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  summary: "\n@\n"
+  example: []
+  syntax:
+    content: public char ConstAt { get; }
+    parameters: []
+    return:
+      type: System.Char
+    content.vb: Public ReadOnly Property ConstAt As Char
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstAt*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstValues
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstValues
+  id: ConstValues
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: ConstValues
+  nameWithType: SqlSyntaxHelper.ConstValues
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstValues
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ConstValues
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 29
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  syntax:
+    content: public string ConstValues { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ConstValues As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstValues*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate
+  id: ConstMySqlOnDupeKeyUpdate
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: ConstMySqlOnDupeKeyUpdate
+  nameWithType: SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ConstMySqlOnDupeKeyUpdate
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 33
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  summary: "\nON DUPLICATE KEY UPDATE\n"
+  example: []
+  syntax:
+    content: public string ConstMySqlOnDupeKeyUpdate { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ConstMySqlOnDupeKeyUpdate As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstSqlServerSelectTop1
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstSqlServerSelectTop1
+  id: ConstSqlServerSelectTop1
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: ConstSqlServerSelectTop1
+  nameWithType: SqlSyntaxHelper.ConstSqlServerSelectTop1
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstSqlServerSelectTop1
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: ConstSqlServerSelectTop1
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 37
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  summary: "\nSELECT TOP 1 * FROM\n"
+  example: []
+  syntax:
+    content: public string ConstSqlServerSelectTop1 { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ConstSqlServerSelectTop1 As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstSqlServerSelectTop1*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
 - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
   commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
   id: EnclosedValueLookup
@@ -70,7 +334,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: EnclosedValueLookup
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 14
+    startLine: 40
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -105,7 +369,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DataBaseType
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 15
+    startLine: 41
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -140,7 +404,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 16
+    startLine: 42
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -173,7 +437,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeywordEscapeOpenChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 162
+    startLine: 188
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -205,7 +469,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeywordEscapeClosedChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 184
+    startLine: 210
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -237,7 +501,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: RemoveKeywordEscapeChars
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 206
+    startLine: 232
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -272,7 +536,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetEnclosedValueChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 214
+    startLine: 240
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -307,7 +571,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildIfExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 266
+    startLine: 292
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -328,16 +592,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
-  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
-  id: BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable,System.String,System.String)
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SqlTable,System.String,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SqlTable,System.String,System.String)
+  id: BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SqlTable,System.String,System.String)
   parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
   langs:
   - csharp
   - vb
-  name: BuildTableExistStatement(SQLTable, String, String)
-  nameWithType: SqlSyntaxHelper.BuildTableExistStatement(SQLTable, String, String)
-  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SQLTable, System.String, System.String)
+  name: BuildTableExistStatement(SqlTable, String, String)
+  nameWithType: SqlSyntaxHelper.BuildTableExistStatement(SqlTable, String, String)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement(DotNetHelper.ObjectToSql.Model.SqlTable, System.String, System.String)
   type: Method
   source:
     remote:
@@ -346,22 +610,22 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildTableExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 293
+    startLine: 319
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
   syntax:
-    content: public string BuildTableExistStatement(SQLTable sqlTable, string onTrueSql, string onFalseSql)
+    content: public string BuildTableExistStatement(SqlTable sqlTable, string onTrueSql, string onFalseSql)
     parameters:
     - id: sqlTable
-      type: DotNetHelper.ObjectToSql.Model.SQLTable
+      type: DotNetHelper.ObjectToSql.Model.SqlTable
     - id: onTrueSql
       type: System.String
     - id: onFalseSql
       type: System.String
     return:
       type: System.String
-    content.vb: Public Function BuildTableExistStatement(sqlTable As SQLTable, onTrueSql As String, onFalseSql As String) As String
+    content.vb: Public Function BuildTableExistStatement(sqlTable As SqlTable, onTrueSql As String, onFalseSql As String) As String
   overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement*
   modifiers.csharp:
   - public
@@ -385,7 +649,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertParameterSqlToReadable
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 329
+    startLine: 355
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -711,6 +975,55 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstInsertInto*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstInsertInto
+  name: ConstInsertInto
+  nameWithType: SqlSyntaxHelper.ConstInsertInto
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstInsertInto
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstOpenParens*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstOpenParens
+  name: ConstOpenParens
+  nameWithType: SqlSyntaxHelper.ConstOpenParens
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstOpenParens
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  name: Char
+  nameWithType: Char
+  fullName: System.Char
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstCloseParens*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstCloseParens
+  name: ConstCloseParens
+  nameWithType: SqlSyntaxHelper.ConstCloseParens
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstCloseParens
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstAt*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstAt
+  name: ConstAt
+  nameWithType: SqlSyntaxHelper.ConstAt
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstAt
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstValues*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstValues
+  name: ConstValues
+  nameWithType: SqlSyntaxHelper.ConstValues
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstValues
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate
+  name: ConstMySqlOnDupeKeyUpdate
+  nameWithType: SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstSqlServerSelectTop1*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstSqlServerSelectTop1
+  name: ConstSqlServerSelectTop1
+  nameWithType: SqlSyntaxHelper.ConstSqlServerSelectTop1
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstSqlServerSelectTop1
 - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup*
   commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
   name: EnclosedValueLookup
@@ -859,13 +1172,6 @@ references:
   name: GetKeywordEscapeOpenChar
   nameWithType: SqlSyntaxHelper.GetKeywordEscapeOpenChar
   fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
 - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar*
   commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
   name: GetKeywordEscapeClosedChar
@@ -898,12 +1204,12 @@ references:
   name: BuildTableExistStatement
   nameWithType: SqlSyntaxHelper.BuildTableExistStatement
   fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.BuildTableExistStatement
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable
-  commentId: T:DotNetHelper.ObjectToSql.Model.SQLTable
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable
+  commentId: T:DotNetHelper.ObjectToSql.Model.SqlTable
   parent: DotNetHelper.ObjectToSql.Model
-  name: SQLTable
-  nameWithType: SQLTable
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable
+  name: SqlTable
+  nameWithType: SqlTable
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable
 - uid: DotNetHelper.ObjectToSql.Model
   commentId: N:DotNetHelper.ObjectToSql.Model
   name: DotNetHelper.ObjectToSql.Model

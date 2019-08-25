@@ -44,9 +44,9 @@
 //                var dt2Sql = new Services.DataTableToSql(type);
 
 //                dt2Sql.BuildQuery(MockData, ActionType.Insert);
-                
+
 //            });
-            
+
 //        }
 //    }
 //}

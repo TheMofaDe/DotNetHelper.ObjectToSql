@@ -1,9 +1,14 @@
 ### YamlMime:TableOfContent
+- uid: DotNetHelper.ObjectToSql
+  name: DotNetHelper.ObjectToSql
+  items:
+  - uid: DotNetHelper.ObjectToSql.SqlGenerator
+    name: SqlGenerator
 - uid: DotNetHelper.ObjectToSql.Attribute
   name: DotNetHelper.ObjectToSql.Attribute
   items:
-  - uid: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
-    name: DBTableAttribute
+  - uid: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute
+    name: DbTableAttribute
   - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
     name: SqlColumnAttribute
 - uid: DotNetHelper.ObjectToSql.Enum
@@ -13,12 +18,14 @@
     name: ActionType
   - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
     name: DataBaseType
+  - uid: DotNetHelper.ObjectToSql.Enum.OutputType
+    name: OutputType
   - uid: DotNetHelper.ObjectToSql.Enum.ScriptType
     name: ScriptType
   - uid: DotNetHelper.ObjectToSql.Enum.SerializableType
     name: SerializableType
-  - uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType
-    name: SQLJoinType
+  - uid: DotNetHelper.ObjectToSql.Enum.SqlJoinType
+    name: SqlJoinType
 - uid: DotNetHelper.ObjectToSql.Exceptions
   name: DotNetHelper.ObjectToSql.Exceptions
   items:
@@ -34,8 +41,8 @@
 - uid: DotNetHelper.ObjectToSql.Helper
   name: DotNetHelper.ObjectToSql.Helper
   items:
-  - uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap
-    name: DBTypeMap
+  - uid: DotNetHelper.ObjectToSql.Helper.DbTypeMap
+    name: DbTypeMap
   - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
     name: SqlSyntaxHelper
 - uid: DotNetHelper.ObjectToSql.Model
@@ -45,8 +52,8 @@
     name: RunTimeAttributeMap
   - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
     name: RunTimeAttributeMapExtension
-  - uid: DotNetHelper.ObjectToSql.Model.SQLTable
-    name: SQLTable
+  - uid: DotNetHelper.ObjectToSql.Model.SqlTable
+    name: SqlTable
 - uid: DotNetHelper.ObjectToSql.Services
   name: DotNetHelper.ObjectToSql.Services
   items:

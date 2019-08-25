@@ -9,7 +9,7 @@ namespace DotNetHelper.ObjectToSql.Attribute
     /// </summary>
     /// <seealso cref="T:System.Attribute" />
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
-    public class DBTableAttribute : System.Attribute
+    public class DbTableAttribute : System.Attribute
     {
         /// <summary>
         /// The Sql Table name that this class data belongs to.
@@ -23,6 +23,6 @@ namespace DotNetHelper.ObjectToSql.Attribute
         /// Gets or sets a value indicating whether [x reference on delete cascade].
         /// </summary>
         /// <value><c>null</c> if [x reference on delete cascade] contains no value, <c>true</c> if [x reference on delete cascade]; otherwise, <c>false</c>.</value>
-        public SQLJoinType JoinType { get; set; }
+        public SqlJoinType JoinType { get; set; }
     }
 }

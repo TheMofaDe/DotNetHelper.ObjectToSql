@@ -3,9 +3,9 @@
     public enum SerializableType
     {
 
-        NONE = 0
-        , XML = 1
-        , JSON = 2
-        , CSV = 3
+        None = 0
+        , Xml = 1
+        , Json = 2
+        , Csv = 3
     }
 }

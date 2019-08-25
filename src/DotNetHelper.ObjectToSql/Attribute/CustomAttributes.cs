@@ -38,7 +38,7 @@ namespace DotNetHelper.ObjectToSql.Attribute
         /// Defaults To MAX used for creating table
         /// </summary>
         /// <value>The maximum size of the column.</value>
-        public SerializableType SerializableType { get; set; } = SerializableType.NONE;
+        public SerializableType SerializableType { get; set; } = SerializableType.None;
 
 
         ///// <summary>

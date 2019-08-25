@@ -6,9 +6,10 @@ items:
   children:
   - DotNetHelper.ObjectToSql.Enum.ActionType
   - DotNetHelper.ObjectToSql.Enum.DataBaseType
+  - DotNetHelper.ObjectToSql.Enum.OutputType
   - DotNetHelper.ObjectToSql.Enum.ScriptType
   - DotNetHelper.ObjectToSql.Enum.SerializableType
-  - DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  - DotNetHelper.ObjectToSql.Enum.SqlJoinType
   langs:
   - csharp
   - vb
@@ -37,18 +38,24 @@ references:
   name: DataBaseType
   nameWithType: DataBaseType
   fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
+- uid: DotNetHelper.ObjectToSql.Enum.OutputType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.OutputType
+  parent: DotNetHelper.ObjectToSql.Enum
+  name: OutputType
+  nameWithType: OutputType
+  fullName: DotNetHelper.ObjectToSql.Enum.OutputType
 - uid: DotNetHelper.ObjectToSql.Enum.SerializableType
   commentId: T:DotNetHelper.ObjectToSql.Enum.SerializableType
   parent: DotNetHelper.ObjectToSql.Enum
   name: SerializableType
   nameWithType: SerializableType
   fullName: DotNetHelper.ObjectToSql.Enum.SerializableType
-- uid: DotNetHelper.ObjectToSql.Enum.SQLJoinType
-  commentId: T:DotNetHelper.ObjectToSql.Enum.SQLJoinType
+- uid: DotNetHelper.ObjectToSql.Enum.SqlJoinType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.SqlJoinType
   parent: DotNetHelper.ObjectToSql.Enum
-  name: SQLJoinType
-  nameWithType: SQLJoinType
-  fullName: DotNetHelper.ObjectToSql.Enum.SQLJoinType
+  name: SqlJoinType
+  nameWithType: SqlJoinType
+  fullName: DotNetHelper.ObjectToSql.Enum.SqlJoinType
 - uid: DotNetHelper.ObjectToSql.Enum
   commentId: N:DotNetHelper.ObjectToSql.Enum
   name: DotNetHelper.ObjectToSql.Enum

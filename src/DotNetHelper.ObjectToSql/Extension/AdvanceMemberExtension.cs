@@ -49,13 +49,13 @@ namespace DotNetHelper.ObjectToSql.Extension
             if (attr1?.SerializableType == null) return false;
             switch (attr1.SerializableType)
             {
-                case SerializableType.NONE:
+                case SerializableType.None:
                     return false;
-                case SerializableType.XML:
+                case SerializableType.Xml:
                     return true;
-                case SerializableType.JSON:
+                case SerializableType.Json:
                     return true;
-                case SerializableType.CSV:
+                case SerializableType.Csv:
                     return true;
                 default:
                     throw new ArgumentOutOfRangeException();

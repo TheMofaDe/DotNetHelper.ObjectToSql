@@ -12,7 +12,7 @@ namespace DotNetHelper.ObjectToSql.Tests
         [Test]
         public void Test_SqlTable()
         {
-            var sqlTable = new SQLTable(DataBaseType.SqlServer, "TableName");
+            var sqlTable = new SqlTable(DataBaseType.SqlServer, "TableName");
             Assert.AreEqual(sqlTable.TableName, "TableName");
             Assert.AreEqual(sqlTable.FullNameWithBrackets, "[TableName]");
             Assert.AreEqual(sqlTable.FullNameWithOutBrackets, "TableName");
@@ -23,7 +23,7 @@ namespace DotNetHelper.ObjectToSql.Tests
         [Test]
         public void Test_SqlTable_With_Schema()
         {
-            var sqlTable = new SQLTable(DataBaseType.SqlServer, "Schema.TableName");
+            var sqlTable = new SqlTable(DataBaseType.SqlServer, "Schema.TableName");
             Assert.AreEqual(sqlTable.TableName, "TableName");
             Assert.AreEqual(sqlTable.SchemaName, "Schema");
             Assert.AreEqual(sqlTable.FullNameWithBrackets, "[Schema].[TableName]");
@@ -34,7 +34,7 @@ namespace DotNetHelper.ObjectToSql.Tests
         [Test]
         public void Test_SqlTable_With_Schema_And_Database()
         {
-            var sqlTable = new SQLTable(DataBaseType.SqlServer, "Database.Schema.TableName");
+            var sqlTable = new SqlTable(DataBaseType.SqlServer, "Database.Schema.TableName");
             Assert.AreEqual(sqlTable.TableName, "TableName");
             Assert.AreEqual(sqlTable.SchemaName, "Schema");
             Assert.AreEqual(sqlTable.DatabaseName, "Database");

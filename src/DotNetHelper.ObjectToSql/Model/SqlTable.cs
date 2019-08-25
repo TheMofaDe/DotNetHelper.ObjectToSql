@@ -5,9 +5,9 @@ using DotNetHelper.ObjectToSql.Helper;
 
 namespace DotNetHelper.ObjectToSql.Model
 {
-    public class SQLTable
+    public class SqlTable
     {
-        public DataBaseType DBType { get; private set; }
+        public DataBaseType DbType { get; private set; }
         public string TableName { get; private set; } = string.Empty;
         public string SchemaName { get; private set; } = string.Empty;
         public string DatabaseName { get; private set; } = string.Empty;
@@ -17,18 +17,18 @@ namespace DotNetHelper.ObjectToSql.Model
         public string FullNameWithOutBrackets => GetFullName(false);
 
 
-        public SQLTable(DataBaseType dbType, Type type)
+        public SqlTable(DataBaseType dbType, Type type)
         {
-            DBType = dbType;
+            DbType = dbType;
             var tableName = type.GetTableNameFromCustomAttributeOrDefault();
             Init(tableName);
 
         }
 
 
-        public SQLTable(DataBaseType dbType, string tableName)
+        public SqlTable(DataBaseType dbType, string tableName)
         {
-            DBType = dbType;
+            DbType = dbType;
             Init(tableName);
 
         }
@@ -66,7 +66,7 @@ namespace DotNetHelper.ObjectToSql.Model
 
         private string AddBrackets(string content)
         {
-            var syntaxHelper = new SqlSyntaxHelper(DBType);
+            var syntaxHelper = new SqlSyntaxHelper(DbType);
             if (!content.StartsWith(syntaxHelper.GetKeywordEscapeOpenChar()))
             {
                 content = $"{syntaxHelper.GetKeywordEscapeOpenChar()}{content}";
@@ -80,7 +80,7 @@ namespace DotNetHelper.ObjectToSql.Model
 
         private string RemoveBrackets(string content)
         {
-            var syntaxHelper = new SqlSyntaxHelper(DBType);
+            var syntaxHelper = new SqlSyntaxHelper(DbType);
             if (content.StartsWith(syntaxHelper.GetKeywordEscapeOpenChar()))
             {
                 content = content.ReplaceFirstOccurrence(syntaxHelper.GetKeywordEscapeOpenChar(), string.Empty, StringComparison.Ordinal);

@@ -1,39 +1,39 @@
 ### YamlMime:ManagedReference
 items:
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable
-  commentId: T:DotNetHelper.ObjectToSql.Model.SQLTable
-  id: SQLTable
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable
+  commentId: T:DotNetHelper.ObjectToSql.Model.SqlTable
+  id: SqlTable
   parent: DotNetHelper.ObjectToSql.Model
   children:
-  - DotNetHelper.ObjectToSql.Model.SQLTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)
-  - DotNetHelper.ObjectToSql.Model.SQLTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Type)
-  - DotNetHelper.ObjectToSql.Model.SQLTable.DatabaseName
-  - DotNetHelper.ObjectToSql.Model.SQLTable.DBType
-  - DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithBrackets
-  - DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithOutBrackets
-  - DotNetHelper.ObjectToSql.Model.SQLTable.SchemaName
-  - DotNetHelper.ObjectToSql.Model.SQLTable.TableName
+  - DotNetHelper.ObjectToSql.Model.SqlTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)
+  - DotNetHelper.ObjectToSql.Model.SqlTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Type)
+  - DotNetHelper.ObjectToSql.Model.SqlTable.DatabaseName
+  - DotNetHelper.ObjectToSql.Model.SqlTable.DbType
+  - DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithBrackets
+  - DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithOutBrackets
+  - DotNetHelper.ObjectToSql.Model.SqlTable.SchemaName
+  - DotNetHelper.ObjectToSql.Model.SqlTable.TableName
   langs:
   - csharp
   - vb
-  name: SQLTable
-  nameWithType: SQLTable
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable
+  name: SqlTable
+  nameWithType: SqlTable
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable
   type: Class
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: SQLTable
+    id: SqlTable
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
     startLine: 7
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
   syntax:
-    content: public class SQLTable
-    content.vb: Public Class SQLTable
+    content: public class SqlTable
+    content.vb: Public Class SqlTable
   inheritance:
   - System.Object
   inheritedMembers:
@@ -50,51 +50,51 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.DBType
-  commentId: P:DotNetHelper.ObjectToSql.Model.SQLTable.DBType
-  id: DBType
-  parent: DotNetHelper.ObjectToSql.Model.SQLTable
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.DbType
+  commentId: P:DotNetHelper.ObjectToSql.Model.SqlTable.DbType
+  id: DbType
+  parent: DotNetHelper.ObjectToSql.Model.SqlTable
   langs:
   - csharp
   - vb
-  name: DBType
-  nameWithType: SQLTable.DBType
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.DBType
+  name: DbType
+  nameWithType: SqlTable.DbType
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.DbType
   type: Property
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: DBType
+    id: DbType
     path: ../src/DotNetHelper.ObjectToSql/Model/SqlTable.cs
     startLine: 9
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
   syntax:
-    content: public DataBaseType DBType { get; }
+    content: public DataBaseType DbType { get; }
     parameters: []
     return:
       type: DotNetHelper.ObjectToSql.Enum.DataBaseType
-    content.vb: Public ReadOnly Property DBType As DataBaseType
-  overload: DotNetHelper.ObjectToSql.Model.SQLTable.DBType*
+    content.vb: Public ReadOnly Property DbType As DataBaseType
+  overload: DotNetHelper.ObjectToSql.Model.SqlTable.DbType*
   modifiers.csharp:
   - public
   - get
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.TableName
-  commentId: P:DotNetHelper.ObjectToSql.Model.SQLTable.TableName
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.TableName
+  commentId: P:DotNetHelper.ObjectToSql.Model.SqlTable.TableName
   id: TableName
-  parent: DotNetHelper.ObjectToSql.Model.SQLTable
+  parent: DotNetHelper.ObjectToSql.Model.SqlTable
   langs:
   - csharp
   - vb
   name: TableName
-  nameWithType: SQLTable.TableName
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.TableName
+  nameWithType: SqlTable.TableName
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.TableName
   type: Property
   source:
     remote:
@@ -113,23 +113,23 @@ items:
     return:
       type: System.String
     content.vb: Public ReadOnly Property TableName As String
-  overload: DotNetHelper.ObjectToSql.Model.SQLTable.TableName*
+  overload: DotNetHelper.ObjectToSql.Model.SqlTable.TableName*
   modifiers.csharp:
   - public
   - get
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.SchemaName
-  commentId: P:DotNetHelper.ObjectToSql.Model.SQLTable.SchemaName
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.SchemaName
+  commentId: P:DotNetHelper.ObjectToSql.Model.SqlTable.SchemaName
   id: SchemaName
-  parent: DotNetHelper.ObjectToSql.Model.SQLTable
+  parent: DotNetHelper.ObjectToSql.Model.SqlTable
   langs:
   - csharp
   - vb
   name: SchemaName
-  nameWithType: SQLTable.SchemaName
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.SchemaName
+  nameWithType: SqlTable.SchemaName
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.SchemaName
   type: Property
   source:
     remote:
@@ -148,23 +148,23 @@ items:
     return:
       type: System.String
     content.vb: Public ReadOnly Property SchemaName As String
-  overload: DotNetHelper.ObjectToSql.Model.SQLTable.SchemaName*
+  overload: DotNetHelper.ObjectToSql.Model.SqlTable.SchemaName*
   modifiers.csharp:
   - public
   - get
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.DatabaseName
-  commentId: P:DotNetHelper.ObjectToSql.Model.SQLTable.DatabaseName
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.DatabaseName
+  commentId: P:DotNetHelper.ObjectToSql.Model.SqlTable.DatabaseName
   id: DatabaseName
-  parent: DotNetHelper.ObjectToSql.Model.SQLTable
+  parent: DotNetHelper.ObjectToSql.Model.SqlTable
   langs:
   - csharp
   - vb
   name: DatabaseName
-  nameWithType: SQLTable.DatabaseName
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.DatabaseName
+  nameWithType: SqlTable.DatabaseName
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.DatabaseName
   type: Property
   source:
     remote:
@@ -183,23 +183,23 @@ items:
     return:
       type: System.String
     content.vb: Public ReadOnly Property DatabaseName As String
-  overload: DotNetHelper.ObjectToSql.Model.SQLTable.DatabaseName*
+  overload: DotNetHelper.ObjectToSql.Model.SqlTable.DatabaseName*
   modifiers.csharp:
   - public
   - get
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithBrackets
-  commentId: P:DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithBrackets
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithBrackets
+  commentId: P:DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithBrackets
   id: FullNameWithBrackets
-  parent: DotNetHelper.ObjectToSql.Model.SQLTable
+  parent: DotNetHelper.ObjectToSql.Model.SqlTable
   langs:
   - csharp
   - vb
   name: FullNameWithBrackets
-  nameWithType: SQLTable.FullNameWithBrackets
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithBrackets
+  nameWithType: SqlTable.FullNameWithBrackets
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithBrackets
   type: Property
   source:
     remote:
@@ -218,23 +218,23 @@ items:
     return:
       type: System.String
     content.vb: Public ReadOnly Property FullNameWithBrackets As String
-  overload: DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithBrackets*
+  overload: DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithBrackets*
   modifiers.csharp:
   - public
   - get
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithOutBrackets
-  commentId: P:DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithOutBrackets
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithOutBrackets
+  commentId: P:DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithOutBrackets
   id: FullNameWithOutBrackets
-  parent: DotNetHelper.ObjectToSql.Model.SQLTable
+  parent: DotNetHelper.ObjectToSql.Model.SqlTable
   langs:
   - csharp
   - vb
   name: FullNameWithOutBrackets
-  nameWithType: SQLTable.FullNameWithOutBrackets
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithOutBrackets
+  nameWithType: SqlTable.FullNameWithOutBrackets
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithOutBrackets
   type: Property
   source:
     remote:
@@ -253,23 +253,23 @@ items:
     return:
       type: System.String
     content.vb: Public ReadOnly Property FullNameWithOutBrackets As String
-  overload: DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithOutBrackets*
+  overload: DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithOutBrackets*
   modifiers.csharp:
   - public
   - get
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Type)
-  commentId: M:DotNetHelper.ObjectToSql.Model.SQLTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Type)
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Type)
+  commentId: M:DotNetHelper.ObjectToSql.Model.SqlTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Type)
   id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Type)'
-  parent: DotNetHelper.ObjectToSql.Model.SQLTable
+  parent: DotNetHelper.ObjectToSql.Model.SqlTable
   langs:
   - csharp
   - vb
-  name: SQLTable(DataBaseType, Type)
-  nameWithType: SQLTable.SQLTable(DataBaseType, Type)
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.SQLTable(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Type)
+  name: SqlTable(DataBaseType, Type)
+  nameWithType: SqlTable.SqlTable(DataBaseType, Type)
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.SqlTable(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Type)
   type: Constructor
   source:
     remote:
@@ -283,28 +283,28 @@ items:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
   syntax:
-    content: public SQLTable(DataBaseType dbType, Type type)
+    content: public SqlTable(DataBaseType dbType, Type type)
     parameters:
     - id: dbType
       type: DotNetHelper.ObjectToSql.Enum.DataBaseType
     - id: type
       type: System.Type
     content.vb: Public Sub New(dbType As DataBaseType, type As Type)
-  overload: DotNetHelper.ObjectToSql.Model.SQLTable.#ctor*
+  overload: DotNetHelper.ObjectToSql.Model.SqlTable.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)
-  commentId: M:DotNetHelper.ObjectToSql.Model.SQLTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)
+  commentId: M:DotNetHelper.ObjectToSql.Model.SqlTable.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)
   id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)'
-  parent: DotNetHelper.ObjectToSql.Model.SQLTable
+  parent: DotNetHelper.ObjectToSql.Model.SqlTable
   langs:
   - csharp
   - vb
-  name: SQLTable(DataBaseType, String)
-  nameWithType: SQLTable.SQLTable(DataBaseType, String)
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.SQLTable(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String)
+  name: SqlTable(DataBaseType, String)
+  nameWithType: SqlTable.SqlTable(DataBaseType, String)
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.SqlTable(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String)
   type: Constructor
   source:
     remote:
@@ -318,14 +318,14 @@ items:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Model
   syntax:
-    content: public SQLTable(DataBaseType dbType, string tableName)
+    content: public SqlTable(DataBaseType dbType, string tableName)
     parameters:
     - id: dbType
       type: DotNetHelper.ObjectToSql.Enum.DataBaseType
     - id: tableName
       type: System.String
     content.vb: Public Sub New(dbType As DataBaseType, tableName As String)
-  overload: DotNetHelper.ObjectToSql.Model.SQLTable.#ctor*
+  overload: DotNetHelper.ObjectToSql.Model.SqlTable.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -628,11 +628,11 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.DBType*
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.SQLTable.DBType
-  name: DBType
-  nameWithType: SQLTable.DBType
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.DBType
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.DbType*
+  commentId: Overload:DotNetHelper.ObjectToSql.Model.SqlTable.DbType
+  name: DbType
+  nameWithType: SqlTable.DbType
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.DbType
 - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
   commentId: T:DotNetHelper.ObjectToSql.Enum.DataBaseType
   parent: DotNetHelper.ObjectToSql.Enum
@@ -644,11 +644,11 @@ references:
   name: DotNetHelper.ObjectToSql.Enum
   nameWithType: DotNetHelper.ObjectToSql.Enum
   fullName: DotNetHelper.ObjectToSql.Enum
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.TableName*
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.SQLTable.TableName
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.TableName*
+  commentId: Overload:DotNetHelper.ObjectToSql.Model.SqlTable.TableName
   name: TableName
-  nameWithType: SQLTable.TableName
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.TableName
+  nameWithType: SqlTable.TableName
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.TableName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -656,31 +656,31 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.SchemaName*
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.SQLTable.SchemaName
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.SchemaName*
+  commentId: Overload:DotNetHelper.ObjectToSql.Model.SqlTable.SchemaName
   name: SchemaName
-  nameWithType: SQLTable.SchemaName
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.SchemaName
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.DatabaseName*
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.SQLTable.DatabaseName
+  nameWithType: SqlTable.SchemaName
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.SchemaName
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.DatabaseName*
+  commentId: Overload:DotNetHelper.ObjectToSql.Model.SqlTable.DatabaseName
   name: DatabaseName
-  nameWithType: SQLTable.DatabaseName
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.DatabaseName
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithBrackets*
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithBrackets
+  nameWithType: SqlTable.DatabaseName
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.DatabaseName
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithBrackets*
+  commentId: Overload:DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithBrackets
   name: FullNameWithBrackets
-  nameWithType: SQLTable.FullNameWithBrackets
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithBrackets
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithOutBrackets*
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithOutBrackets
+  nameWithType: SqlTable.FullNameWithBrackets
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithBrackets
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithOutBrackets*
+  commentId: Overload:DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithOutBrackets
   name: FullNameWithOutBrackets
-  nameWithType: SQLTable.FullNameWithOutBrackets
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.FullNameWithOutBrackets
-- uid: DotNetHelper.ObjectToSql.Model.SQLTable.#ctor*
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.SQLTable.#ctor
-  name: SQLTable
-  nameWithType: SQLTable.SQLTable
-  fullName: DotNetHelper.ObjectToSql.Model.SQLTable.SQLTable
+  nameWithType: SqlTable.FullNameWithOutBrackets
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.FullNameWithOutBrackets
+- uid: DotNetHelper.ObjectToSql.Model.SqlTable.#ctor*
+  commentId: Overload:DotNetHelper.ObjectToSql.Model.SqlTable.#ctor
+  name: SqlTable
+  nameWithType: SqlTable.SqlTable
+  fullName: DotNetHelper.ObjectToSql.Model.SqlTable.SqlTable
 - uid: System.Type
   commentId: T:System.Type
   parent: System

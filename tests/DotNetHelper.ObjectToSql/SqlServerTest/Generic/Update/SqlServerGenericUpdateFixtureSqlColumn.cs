@@ -123,7 +123,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Update
                        ActionType, nameof(Employee), a => a.PrimaryKey);
                 }
 
-                Assert.AreEqual(sql, $@"UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName OUTPUT DELETED.[PrimaryKey]  WHERE [PrimaryKey]=@PrimaryKey");
+                Assert.AreEqual(sql, $@"UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName OUTPUT DELETED.[PrimaryKey] WHERE [PrimaryKey]=@PrimaryKey");
             });
         }
 

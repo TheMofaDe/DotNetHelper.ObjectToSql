@@ -1,33 +1,33 @@
 ### YamlMime:ManagedReference
 items:
-- uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap
-  commentId: T:DotNetHelper.ObjectToSql.Helper.DBTypeMap
-  id: DBTypeMap
+- uid: DotNetHelper.ObjectToSql.Helper.DbTypeMap
+  commentId: T:DotNetHelper.ObjectToSql.Helper.DbTypeMap
+  id: DbTypeMap
   parent: DotNetHelper.ObjectToSql.Helper
   children:
-  - DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  - DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap
+  - DotNetHelper.ObjectToSql.Helper.DbTypeMap.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  - DotNetHelper.ObjectToSql.Helper.DbTypeMap.TypeToSqlTypeMap
   langs:
   - csharp
   - vb
-  name: DBTypeMap
-  nameWithType: DBTypeMap
-  fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap
+  name: DbTypeMap
+  nameWithType: DbTypeMap
+  fullName: DotNetHelper.ObjectToSql.Helper.DbTypeMap
   type: Class
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/DBTypeMap.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: DBTypeMap
+    id: DbTypeMap
     path: ../src/DotNetHelper.ObjectToSql/Helper/DBTypeMap.cs
     startLine: 7
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
   syntax:
-    content: public class DBTypeMap
-    content.vb: Public Class DBTypeMap
+    content: public class DbTypeMap
+    content.vb: Public Class DbTypeMap
   inheritance:
   - System.Object
   inheritedMembers:
@@ -44,16 +44,16 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap
-  commentId: P:DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap
+- uid: DotNetHelper.ObjectToSql.Helper.DbTypeMap.TypeToSqlTypeMap
+  commentId: P:DotNetHelper.ObjectToSql.Helper.DbTypeMap.TypeToSqlTypeMap
   id: TypeToSqlTypeMap
-  parent: DotNetHelper.ObjectToSql.Helper.DBTypeMap
+  parent: DotNetHelper.ObjectToSql.Helper.DbTypeMap
   langs:
   - csharp
   - vb
   name: TypeToSqlTypeMap
-  nameWithType: DBTypeMap.TypeToSqlTypeMap
-  fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap
+  nameWithType: DbTypeMap.TypeToSqlTypeMap
+  fullName: DotNetHelper.ObjectToSql.Helper.DbTypeMap.TypeToSqlTypeMap
   type: Property
   source:
     remote:
@@ -72,23 +72,23 @@ items:
     return:
       type: System.Collections.Generic.Dictionary{System.Type,System.Data.DbType}
     content.vb: Public ReadOnly Property TypeToSqlTypeMap As Dictionary(Of Type, DbType)
-  overload: DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap*
+  overload: DotNetHelper.ObjectToSql.Helper.DbTypeMap.TypeToSqlTypeMap*
   modifiers.csharp:
   - public
   - get
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  commentId: M:DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+- uid: DotNetHelper.ObjectToSql.Helper.DbTypeMap.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.DbTypeMap.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
   id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)'
-  parent: DotNetHelper.ObjectToSql.Helper.DBTypeMap
+  parent: DotNetHelper.ObjectToSql.Helper.DbTypeMap
   langs:
   - csharp
   - vb
-  name: DBTypeMap(DataBaseType)
-  nameWithType: DBTypeMap.DBTypeMap(DataBaseType)
-  fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap.DBTypeMap(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  name: DbTypeMap(DataBaseType)
+  nameWithType: DbTypeMap.DbTypeMap(DataBaseType)
+  fullName: DotNetHelper.ObjectToSql.Helper.DbTypeMap.DbTypeMap(DotNetHelper.ObjectToSql.Enum.DataBaseType)
   type: Constructor
   source:
     remote:
@@ -102,12 +102,12 @@ items:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
   syntax:
-    content: public DBTypeMap(DataBaseType dataBaseType)
+    content: public DbTypeMap(DataBaseType dataBaseType)
     parameters:
     - id: dataBaseType
       type: DotNetHelper.ObjectToSql.Enum.DataBaseType
     content.vb: Public Sub New(dataBaseType As DataBaseType)
-  overload: DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor*
+  overload: DotNetHelper.ObjectToSql.Helper.DbTypeMap.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -410,11 +410,11 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap*
-  commentId: Overload:DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap
+- uid: DotNetHelper.ObjectToSql.Helper.DbTypeMap.TypeToSqlTypeMap*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.DbTypeMap.TypeToSqlTypeMap
   name: TypeToSqlTypeMap
-  nameWithType: DBTypeMap.TypeToSqlTypeMap
-  fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap.TypeToSqlTypeMap
+  nameWithType: DbTypeMap.TypeToSqlTypeMap
+  fullName: DotNetHelper.ObjectToSql.Helper.DbTypeMap.TypeToSqlTypeMap
 - uid: System.Collections.Generic.Dictionary{System.Type,System.Data.DbType}
   commentId: T:System.Collections.Generic.Dictionary{System.Type,System.Data.DbType}
   parent: System.Collections.Generic
@@ -532,11 +532,11 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
-- uid: DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor*
-  commentId: Overload:DotNetHelper.ObjectToSql.Helper.DBTypeMap.#ctor
-  name: DBTypeMap
-  nameWithType: DBTypeMap.DBTypeMap
-  fullName: DotNetHelper.ObjectToSql.Helper.DBTypeMap.DBTypeMap
+- uid: DotNetHelper.ObjectToSql.Helper.DbTypeMap.#ctor*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.DbTypeMap.#ctor
+  name: DbTypeMap
+  nameWithType: DbTypeMap.DbTypeMap
+  fullName: DotNetHelper.ObjectToSql.Helper.DbTypeMap.DbTypeMap
 - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
   commentId: T:DotNetHelper.ObjectToSql.Enum.DataBaseType
   parent: DotNetHelper.ObjectToSql.Enum

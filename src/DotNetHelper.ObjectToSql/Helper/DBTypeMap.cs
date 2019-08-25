@@ -5,10 +5,10 @@ using DotNetHelper.ObjectToSql.Enum;
 
 namespace DotNetHelper.ObjectToSql.Helper
 {
-    public class DBTypeMap
+    public class DbTypeMap
     {
         public Dictionary<Type, DbType> TypeToSqlTypeMap { get; }
-        public DBTypeMap(DataBaseType dataBaseType)
+        public DbTypeMap(DataBaseType dataBaseType)
         {
             switch (dataBaseType)
             {

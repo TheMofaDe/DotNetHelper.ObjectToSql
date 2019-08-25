@@ -4,7 +4,7 @@ items:
   commentId: N:DotNetHelper.ObjectToSql.Attribute
   id: DotNetHelper.ObjectToSql.Attribute
   children:
-  - DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
+  - DotNetHelper.ObjectToSql.Attribute.DbTableAttribute
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
   langs:
   - csharp
@@ -21,8 +21,8 @@ references:
   name: SqlColumnAttribute
   nameWithType: SqlColumnAttribute
   fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
-- uid: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
-  commentId: T:DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
-  name: DBTableAttribute
-  nameWithType: DBTableAttribute
-  fullName: DotNetHelper.ObjectToSql.Attribute.DBTableAttribute
+- uid: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute
+  commentId: T:DotNetHelper.ObjectToSql.Attribute.DbTableAttribute
+  name: DbTableAttribute
+  nameWithType: DbTableAttribute
+  fullName: DotNetHelper.ObjectToSql.Attribute.DbTableAttribute

@@ -16,7 +16,6 @@ items:
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQuery``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildQueryWithOutputs``1(DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue(DotNetHelper.FastMember.Extension.Models.MemberWrapper,System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.DatabaseType
   - DotNetHelper.ObjectToSql.Services.ObjectToSql.GetAllNonIgnoreFields(System.Type,System.Boolean)
@@ -86,7 +85,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IncludeNonPublicAccessor
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 24
+    startLine: 23
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -121,7 +120,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: DatabaseType
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 25
+    startLine: 24
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -156,7 +155,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SqlSyntaxHelper
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 26
+    startLine: 25
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -191,7 +190,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 28
+    startLine: 27
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -226,7 +225,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 34
+    startLine: 33
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -259,7 +258,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 70
+    startLine: 72
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -303,7 +302,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 107
+    startLine: 109
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -349,7 +348,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 139
+    startLine: 141
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -388,7 +387,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryWithOutputs
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 174
+    startLine: 176
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -438,7 +437,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildQueryWithOutputs
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 187
+    startLine: 189
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -491,7 +490,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 756
+    startLine: 674
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -537,7 +536,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 767
+    startLine: 685
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -577,7 +576,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 782
+    startLine: 700
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -623,7 +622,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetKeyFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 794
+    startLine: 712
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -663,7 +662,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 808
+    startLine: 726
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -709,7 +708,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 818
+    startLine: 736
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -749,7 +748,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNonIdentityFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 827
+    startLine: 745
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -791,7 +790,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 845
+    startLine: 763
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -837,7 +836,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 856
+    startLine: 774
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -885,7 +884,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetAllNonIgnoreFields
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 871
+    startLine: 789
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -925,14 +924,14 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertToDatabaseValue
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 891
+    startLine: 809
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
   summary: "\nConverts to database value. If value is null convert it to DBNull.Value or if property is decorated with a serializable attribute\nthen convert the value to its serialize self\n"
   example: []
   syntax:
-    content: public object ConvertToDatabaseValue(MemberWrapper member, object value, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
+    content: public object ConvertToDatabaseValue(MemberWrapper member, object value, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer)
     parameters:
     - id: member
       type: DotNetHelper.FastMember.Extension.Models.MemberWrapper
@@ -940,18 +939,18 @@ items:
     - id: value
       type: System.Object
       description: The value.
-    - id: XmlSerializer
+    - id: xmlSerializer
       type: System.Func{System.Object,System.String}
       description: ''
-    - id: JsonSerializer
+    - id: jsonSerializer
       type: System.Func{System.Object,System.String}
-    - id: CsvSerializer
+    - id: csvSerializer
       type: System.Func{System.Object,System.String}
       description: ''
     return:
       type: System.Object
       description: System.Object.
-    content.vb: Public Function ConvertToDatabaseValue(member As MemberWrapper, value As Object, XmlSerializer As Func(Of Object, String), JsonSerializer As Func(Of Object, String), CsvSerializer As Func(Of Object, String)) As Object
+    content.vb: Public Function ConvertToDatabaseValue(member As MemberWrapper, value As Object, xmlSerializer As Func(Of Object, String), jsonSerializer As Func(Of Object, String), csvSerializer As Func(Of Object, String)) As Object
   overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.ConvertToDatabaseValue*
   nameWithType.vb: ObjectToSql.ConvertToDatabaseValue(MemberWrapper, Object, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
   modifiers.csharp:
@@ -978,7 +977,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 934
+    startLine: 852
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -986,7 +985,7 @@ items:
   example: []
   syntax:
     content: >-
-      public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
+      public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer)
           where T : class
     parameters:
     - id: instance
@@ -995,11 +994,11 @@ items:
     - id: getNewParameter
       type: System.Func{System.String,System.Object,System.Data.Common.DbParameter}
       description: ''
-    - id: XmlSerializer
+    - id: xmlSerializer
       type: System.Func{System.Object,System.String}
-    - id: JsonSerializer
+    - id: jsonSerializer
       type: System.Func{System.Object,System.String}
-    - id: CsvSerializer
+    - id: csvSerializer
       type: System.Func{System.Object,System.String}
     typeParameters:
     - id: T
@@ -1007,7 +1006,7 @@ items:
     return:
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
       description: List&lt;DbParameter>.
-    content.vb: Public Function BuildDbParameterList(Of T As Class)(instance As T, getNewParameter As Func(Of String, Object, DbParameter), XmlSerializer As Func(Of Object, String), JsonSerializer As Func(Of Object, String), CsvSerializer As Func(Of Object, String)) As List(Of DbParameter)
+    content.vb: Public Function BuildDbParameterList(Of T As Class)(instance As T, getNewParameter As Func(Of String, Object, DbParameter), xmlSerializer As Func(Of Object, String), jsonSerializer As Func(Of Object, String), csvSerializer As Func(Of Object, String)) As List(Of DbParameter)
   overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList*
   nameWithType.vb: ObjectToSql.BuildDbParameterList(Of T)(T, Func(Of String, Object, DbParameter), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
   modifiers.csharp:
@@ -1034,7 +1033,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 953
+    startLine: 871
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1084,7 +1083,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbDataParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 966
+    startLine: 884
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1092,7 +1091,7 @@ items:
   example: []
   syntax:
     content: >-
-      public List<IDbDataParameter> BuildDbDataParameterList<T>(T instance, Func<string, object, IDbDataParameter> getNewParameter, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer)
+      public List<IDbDataParameter> BuildDbDataParameterList<T>(T instance, Func<string, object, IDbDataParameter> getNewParameter, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer)
           where T : class
     parameters:
     - id: instance
@@ -1101,11 +1100,11 @@ items:
     - id: getNewParameter
       type: System.Func{System.String,System.Object,System.Data.IDbDataParameter}
       description: ''
-    - id: XmlSerializer
+    - id: xmlSerializer
       type: System.Func{System.Object,System.String}
-    - id: JsonSerializer
+    - id: jsonSerializer
       type: System.Func{System.Object,System.String}
-    - id: CsvSerializer
+    - id: csvSerializer
       type: System.Func{System.Object,System.String}
     typeParameters:
     - id: T
@@ -1113,7 +1112,7 @@ items:
     return:
       type: System.Collections.Generic.List{System.Data.IDbDataParameter}
       description: List&lt;DbParameter>.
-    content.vb: Public Function BuildDbDataParameterList(Of T As Class)(instance As T, getNewParameter As Func(Of String, Object, IDbDataParameter), XmlSerializer As Func(Of Object, String), JsonSerializer As Func(Of Object, String), CsvSerializer As Func(Of Object, String)) As List(Of IDbDataParameter)
+    content.vb: Public Function BuildDbDataParameterList(Of T As Class)(instance As T, getNewParameter As Func(Of String, Object, IDbDataParameter), xmlSerializer As Func(Of Object, String), jsonSerializer As Func(Of Object, String), csvSerializer As Func(Of Object, String)) As List(Of IDbDataParameter)
   overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList*
   nameWithType.vb: ObjectToSql.BuildDbDataParameterList(Of T)(T, Func(Of String, Object, IDbDataParameter), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
   modifiers.csharp:
@@ -1140,7 +1139,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDbDataParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 995
+    startLine: 913
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -1172,48 +1171,6 @@ items:
   - Public
   fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList(Of T)(T, System.Func(Of System.String, System.Object, System.Data.IDbDataParameter))
   name.vb: BuildDbDataParameterList(Of T)(T, Func(Of String, Object, IDbDataParameter))
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
-  commentId: M:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
-  id: BuildWhereClause(System.Text.StringBuilder,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
-  parent: DotNetHelper.ObjectToSql.Services.ObjectToSql
-  langs:
-  - csharp
-  - vb
-  name: BuildWhereClause(StringBuilder, List<MemberWrapper>)
-  nameWithType: ObjectToSql.BuildWhereClause(StringBuilder, List<MemberWrapper>)
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause(System.Text.StringBuilder, System.Collections.Generic.List<DotNetHelper.FastMember.Extension.Models.MemberWrapper>)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: BuildWhereClause
-    path: ../src/DotNetHelper.ObjectToSql/Services/ObjectToSql.cs
-    startLine: 1007
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql.Services
-  summary: "\nBuilds the where clause.\n"
-  example: []
-  syntax:
-    content: public void BuildWhereClause(StringBuilder sqlBuilder, List<MemberWrapper> keyFields)
-    parameters:
-    - id: sqlBuilder
-      type: System.Text.StringBuilder
-      description: The SQL builder.
-    - id: keyFields
-      type: System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper}
-      description: The key fields.
-    content.vb: Public Sub BuildWhereClause(sqlBuilder As StringBuilder, keyFields As List(Of MemberWrapper))
-  overload: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause*
-  nameWithType.vb: ObjectToSql.BuildWhereClause(StringBuilder, List(Of MemberWrapper))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause(System.Text.StringBuilder, System.Collections.Generic.List(Of DotNetHelper.FastMember.Extension.Models.MemberWrapper))
-  name.vb: BuildWhereClause(StringBuilder, List(Of MemberWrapper))
 references:
 - uid: DotNetHelper.ObjectToSql.Services
   commentId: N:DotNetHelper.ObjectToSql.Services
@@ -2234,21 +2191,3 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause*
-  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause
-  name: BuildWhereClause
-  nameWithType: ObjectToSql.BuildWhereClause
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildWhereClause
-- uid: System.Text.StringBuilder
-  commentId: T:System.Text.StringBuilder
-  parent: System.Text
-  isExternal: true
-  name: StringBuilder
-  nameWithType: StringBuilder
-  fullName: System.Text.StringBuilder
-- uid: System.Text
-  commentId: N:System.Text
-  isExternal: true
-  name: System.Text
-  nameWithType: System.Text
-  fullName: System.Text

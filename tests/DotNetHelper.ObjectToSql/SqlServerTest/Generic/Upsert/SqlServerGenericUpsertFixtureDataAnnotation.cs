@@ -48,6 +48,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
                 {
                     case DataBaseType.SqlServer:
                         answer = "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END";
+                        answer = "IF EXISTS ( SELECT TOP 1 * FROM EmployeeWithIdentityKeySqlColumn WHERE [FirstName]=@FirstName ) BEGIN UPDATE EmployeeWithIdentityKeySqlColumn SET [IdentityKey]=@IdentityKey,[LastName]=@LastName WHERE [FirstName]=@FirstName END ELSE BEGIN INSERT INTO EmployeeWithIdentityKeySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName) END";
                         break;
                     case DataBaseType.MySql:
                         answer = "INSERT INTO EmployeeWithIdentityKeySqlColumn (`FirstName`,`LastName`) VALUES (@FirstName,@LastName) ON DUPLICATE KEY UPDATE `FirstName`=@FirstName,`LastName`=@LastName";
@@ -111,7 +112,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
                         ActionType, nameof(Employee), a => a.FirstName);
                 }
 
-                Assert.AreEqual(sql, "IF EXISTS ( SELECT * FROM Employee WHERE [IdentityKey]=@IdentityKey ) BEGIN UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName OUTPUT DELETED.[FirstName]  WHERE [IdentityKey]=@IdentityKeyINSERT INTO Employee ([FirstName],[LastName]) \r\n OUTPUT INSERTED.[FirstName] \r\n VALUES (@FirstName,@LastName) END ELSE BEGIN  END");
+                Assert.AreEqual(sql, "IF EXISTS ( SELECT * FROM Employee WHERE [IdentityKey]=@IdentityKey ) BEGIN UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName OUTPUT DELETED.[FirstName] WHERE [IdentityKey]=@IdentityKeyINSERT INTO Employee ([FirstName],[LastName]) OUTPUT INSERTED.[FirstName] \r\n VALUES (@FirstName,@LastName) END ELSE BEGIN  END");
             });
         }
 

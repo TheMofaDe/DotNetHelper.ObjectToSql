@@ -1,4 +1,6 @@
 ﻿using System;
+using DotNetHelper.ObjectToSql.Enum;
+using DotNetHelper.ObjectToSql.Model;
 
 namespace DotNetHelper.ObjectToSql.Extension
 {
@@ -23,6 +25,15 @@ namespace DotNetHelper.ObjectToSql.Extension
                 return source;
             source = source.Remove(place, find.Length).Insert(place, replace);
             return source;
+        }
+
+        public static string GetTableName(this string tableName, DataBaseType dbtype, Type type)
+        {
+            var sqlTable = string.IsNullOrEmpty(tableName) ?
+                    new SqlTable(dbtype, type) : new SqlTable(dbtype, tableName);
+            var table = sqlTable.TableName;
+            sqlTable = null; //
+            return table;
         }
     }
 }

@@ -43,7 +43,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
                 switch (type)
                 {
                     case DataBaseType.SqlServer:
-                        expected = "INSERT INTO Employee ([FirstName],[LastName]) \r\n OUTPUT INSERTED.[FirstName] \r\n VALUES (@FirstName,@LastName)";
+                        expected = "INSERT INTO Employee ([FirstName],[LastName]) OUTPUT INSERTED.[FirstName] \r\n VALUES (@FirstName,@LastName)";
                         break;
                     case DataBaseType.MySql:
                         break;
@@ -110,7 +110,7 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         {
             var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
             var sql = objectToSql.BuildQueryWithOutputs<Employee>(ActionType, "Employee", e => e.FirstName);
-            Assert.AreEqual(sql, $"INSERT INTO Employee ([FirstName],[LastName]) {Environment.NewLine} OUTPUT INSERTED.[FirstName] {Environment.NewLine} VALUES (@FirstName,@LastName)");
+            Assert.AreEqual(sql, $"INSERT INTO Employee ([FirstName],[LastName]) OUTPUT INSERTED.[FirstName] {Environment.NewLine} VALUES (@FirstName,@LastName)");
         }
 
 
