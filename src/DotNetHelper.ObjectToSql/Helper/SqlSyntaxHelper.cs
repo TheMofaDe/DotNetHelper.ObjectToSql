@@ -10,8 +10,17 @@ using DotNetHelper.ObjectToSql.Model;
 namespace DotNetHelper.ObjectToSql.Helper
 {
     public class SqlSyntaxHelper
-
     {
+
+        public string Const_Insert_Into { get; } = "INSERT INTO";
+        public char Const_Open_Parens { get; } = '(';
+        public char Const_Close_Parens { get; } = ')';
+        public char Const_At { get; } = '@';
+        public string Const_Values { get; } = "VALUES";
+
+
+
+
         public Dictionary<Type, string> EnclosedValueLookup { get; }
         public DataBaseType DataBaseType { get; }
         public SqlSyntaxHelper(DataBaseType type)

@@ -160,7 +160,6 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <summary>
         /// Builds the insert query.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="dataTable"></param>
         /// <param name="tableName">Name of the table.</param>
@@ -323,15 +322,9 @@ VALUES
             foreach (DataColumn column in row.Table.Columns)
             {
                 // if(column.AutoIncrement) continue;
-                if (row.RowState == DataRowState.Deleted)
-                {
-                    list.Add(getNewParameter($"@{column.ColumnName}", row[column.ColumnName, DataRowVersion.Original]));
-                }
-                else
-                {
-                    list.Add(getNewParameter($"@{column.ColumnName}", row[column.ColumnName]));
-                }
-
+                list.Add(row.RowState == DataRowState.Deleted
+                    ? getNewParameter($"@{column.ColumnName}", row[column.ColumnName, DataRowVersion.Original])
+                    : getNewParameter($"@{column.ColumnName}", row[column.ColumnName]));
             }
             return list;
         }

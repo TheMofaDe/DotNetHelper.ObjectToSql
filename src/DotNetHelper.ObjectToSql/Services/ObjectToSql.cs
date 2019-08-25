@@ -240,19 +240,7 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="type"></param>
         private void BuildInsertQuery(StringBuilder sqlBuilder, string tableName, Type type)
         {
-            var allFields = GetNonIdentityFields(IncludeNonPublicAccessor, type);
-            // Insert sql statement prefix 
-            sqlBuilder.Append($"INSERT INTO {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} (");
-
-            // Add field names
-            allFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-            // Add parameter names for values
-            sqlBuilder.Append(") VALUES (");
-            allFields.ForEach(p => sqlBuilder.Append($"@{p.Name},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-            sqlBuilder.Append(")");
+            BuildInsertQuery(sqlBuilder, tableName, null);
         }
 
         /// <summary>
@@ -264,23 +252,16 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <param name="instance"></param>
         private void BuildInsertQuery(StringBuilder sqlBuilder, string tableName, Type type, object instance)
         {
-            var allFields = GetNonIdentityFields(IncludeNonPublicAccessor, type, instance);
-            // Insert sql statement prefix 
-            sqlBuilder.Append($"INSERT INTO {tableName ?? type.GetTableNameFromCustomAttributeOrDefault()} (");
+            var table = tableName ?? type.GetTableNameFromCustomAttributeOrDefault();
 
-            // Add field names
-            allFields.ForEach(delegate (MemberWrapper member)
-            {
-                sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{member.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()},");
+            var allFields = instance == null ? 
+                  GetNonIdentityFields(IncludeNonPublicAccessor, type)
+                : GetNonIdentityFields(IncludeNonPublicAccessor, type, instance);
 
-            });
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
-            // Add parameter names for values
-            sqlBuilder.Append(") VALUES (");
-            allFields.ForEach(p => sqlBuilder.Append($"@{p.Name},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-            sqlBuilder.Append(")");
+            var columns = allFields.Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
+            // This uses the .net property name & ignores any attribute mapto name to ensure duplication is prevented
+            var valueColumns = allFields.Select(c => c.Name).AsList();
+            sqlBuilder.Append(SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, table, columns, valueColumns));
         }
 
 
