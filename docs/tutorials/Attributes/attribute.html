@@ -115,6 +115,9 @@
                           <li class="">
                             <a href="../GenerateSql/datatable2sql.html" title="DataTable To Sql" class="">DataTable To Sql</a>
                           </li>
+                          <li class="">
+                            <a href="../GenerateSql/readablesql.html" title="Readable Sql" class="">Readable Sql</a>
+                          </li>
                         </ul>  </li>
                   </ul>        </div>
               </div>
@@ -130,12 +133,20 @@
 <h5 id="mark-a-property-as-an-identity-fields">Mark a property as an identity fields.</h5>
 <pre><code class="lang-csharp">[SqlColumn(SetIsIdentityKey = true)]
 OR 
-[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)] // using data annotation
 </code></pre>
 <h5 id="mark-a-property-as-a-key-field">Mark a property as a key field.</h5>
 <pre><code class="lang-csharp">[SqlColumn(SetIsIdentityKey = true)]
 OR 
-[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+[Key] // using data annotation
+</code></pre>
+<h5 id="mark-a-property-as-a-json-xml-or-csv-field">Mark a property as a Json, Xml, Or Csv Field.</h5>
+<pre><code class="lang-csharp">[SqlColumn(SerializableType = SerializableType.Json)]
+</code></pre>
+<h5 id="mark-a-property-to-be-ignored-">Mark a property to be ignored .</h5>
+<pre><code class="lang-csharp">[SqlColumn(Ignore = true)]
+OR 
+[NotMapped] // using data annotation
 </code></pre>
 <!-- 
 #### Storing Columns As CSV, XML, & JSON

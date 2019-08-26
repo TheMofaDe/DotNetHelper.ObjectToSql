@@ -115,6 +115,9 @@
                           <li class="">
                             <a href="GenerateSql/datatable2sql.html" title="DataTable To Sql" class="">DataTable To Sql</a>
                           </li>
+                          <li class="">
+                            <a href="GenerateSql/readablesql.html" title="Readable Sql" class="">Readable Sql</a>
+                          </li>
                         </ul>  </li>
                   </ul>        </div>
               </div>
@@ -154,7 +157,7 @@ var deleteSQL = dataTable2Sql.BuildQuery(dataTable, ActionType.Delete);
       public FirstName { get; set; }
       public LastName  { get; set; }
 }
-var class2Sql = new DataTableToSql(DataBaseType.SqlServer);
+var class2Sql = new ObjectToSql(DataBaseType.SqlServer);
 
 // CREATE A INSERT,UPDATE,UPSERT,&amp; DELETE SQL STATEMENT
 var insertSQL = class2Sql.BuildQuery&lt;Employee&gt;(ActionType.Insert);

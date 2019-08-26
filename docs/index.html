@@ -1,103 +1,25 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-  
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>DotNetHelper.ObjectToSql | DotNetHelper.ObjectToSql </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="DotNetHelper.ObjectToSql | DotNetHelper.ObjectToSql ">
-    <meta name="generator" content="docfx 2.44.0.0">
-    
-    <link rel="shortcut icon" href="logo/favicon.ico">
-    <link rel="stylesheet" href="styles/docfx.vendor.css">
-    <link rel="stylesheet" href="styles/docfx.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <meta property="docfx:navrel" content="toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="">
-    
-  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="index.html">
-                <img id="logo" class="svg" src="logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
-                
-                <ul class="nav level1 navbar-nav">
-                      <li>
-                          <a href="index.html" title="Home">Home</a>
-                      </li>
-                      <li>
-                          <a href="tutorials/index.html" title="Tutorials">Tutorials</a>
-                      </li>
-                      <li>
-                          <a href="api/DotNetHelper.ObjectToSql.Attribute.html" title="API">API</a>
-                      </li>
-                      <li>
-                          <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/CHANGELOG.md" title="Change Log">Change Log</a>
-                      </li>
-                      <li>
-                          <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql" title="Github">Github</a>
-                      </li>
-                </ul>    </div>
-          </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
-        </div>
-      </header>
-      <div class="container body-content">
-        
-        <div id="search-results">
-          <div class="search-list"></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
-          </div>
-          <ul id="pagination"></ul>
-        </div>
-      </div>
-      <div role="main" class="container body-content hide-when-search">
-        <div class="article row grid">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-<h1 id="dotnethelperobjecttosql">DotNetHelper.ObjectToSql</h1>
+<head>
+    <title>DotNetHelper.ObjectToSql</title>
+</head>
+<body>
 
-<h4 id="dotnethelperobjecttosql-takes-your-generic-types-or-dynamic--anonymous-objects-and-convert-it-to-sql"><em>DotNetHelper.ObjectToSql takes your generic types or dynamic &amp; anonymous objects and convert it to sql.</em></h4>
+    <h1 id="dotnethelper.objecttosql">DotNetHelper.ObjectToSql</h1>
+<h4 id="dotnethelper.objecttosql-takes-your-generic-types-or-dynamic-anonymous-objects-and-convert-it-to-sql"><em>DotNetHelper.ObjectToSql takes your generic types or dynamic &amp; anonymous objects and convert it to sql.</em></h4>
 <p>|| <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql"><strong>View on Github</strong></a> ||</p>
 <h2 id="features">Features</h2>
+<ul>
+<li>Generating the following sqls from objects &amp; datatables
 <ul>
 <li>INSERT</li>
 <li>UPDATE</li>
 <li>DELETE</li>
 <li>UPSERT</li>
-<li>Generate SQL that return inserted or updated column values</li>
+</ul>
+</li>
+<li>Supports SQLServer <a href="https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql?view=sql-server-2017"><strong>OUTPUT CLAUSE</strong></a> Using Expressions</li>
+<li>Create DBParameters from any type of objects</li>
 </ul>
 <h2 id="supported-databases">Supported Databases</h2>
 <ul>
@@ -108,77 +30,42 @@
 </ul>
 <h2 id="how-to-generate-sql">How to Generate SQL</h2>
 <h5 id="how-to-use-with-generics-types">How to Use With Generics Types</h5>
-<pre><code class="lang-csharp">public class Employee {
+<pre><code class="language-csharp">public class Employee {
       public FirstName { get; set; }
       public LastName  { get; set; }
 }
 </code></pre>
-<pre><code class="lang-csharp"> var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery&lt;Employee&gt;(ActionType.Insert);
+<pre><code class="language-csharp"> var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery&lt;Employee&gt;(ActionType.Insert);
  // OR USING EMPLOYEE OBJECT
  var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert,new Employee());
 </code></pre>
 <h5 id="how-to-use-with-dynamic-objects">How to Use With Dynamic Objects</h5>
-<pre><code class="lang-csharp">dynamic record = new ExpandoObject();
+<pre><code class="language-csharp">dynamic record = new ExpandoObject();
          record.FirstName = &quot;John&quot;;
          record.LastName = &quot;Doe&quot;;
 var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert, record, &quot;Employee&quot;);
 </code></pre>
 <h5 id="how-to-use-with-anonymous-objects">How to Use With Anonymous Objects</h5>
-<pre><code class="lang-csharp">var obj = new {FirstName = &quot;John&quot;, LastName = &quot;Doe&quot;};
+<pre><code class="language-csharp">var obj = new {FirstName = &quot;John&quot;, LastName = &quot;Doe&quot;};
 var insertSql = new ObjectToSql(DataBaseType.SqlServer).BuildQuery(ActionType.Insert, obj, &quot;Employee&quot;);
 </code></pre>
 <h5 id="how-to-generate-sql-from-datatables">How to Generate SQL From DataTables</h5>
-<pre><code class="lang-csharp">var insertSql = new DataTableToSql(DataBaseType.SqlServer).BuildQuery(dataTable, ActionType.Insert);
+<pre><code class="language-csharp">var insertSql = new DataTableToSql(DataBaseType.SqlServer).BuildQuery(dataTable, ActionType.Insert);
 </code></pre>
 <h4 id="output">Output</h4>
-<pre><code class="lang-sql">INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)
+<pre><code class="language-sql">INSERT INTO Employee ([FirstName],[LastName]) VALUES (@FirstName,@LastName)
 </code></pre>
-<br>
-<br>
+<br/>
+<br/>
 <h2 id="how-to-generate-dbparameters">How to Generate DBParameters</h2>
-<pre><code class="lang-csharp">var obj2Sql = new ObjectToSql(DataBaseType.SqlServer); 
+<pre><code class="language-csharp">var obj2Sql = new ObjectToSql(DataBaseType.SqlServer); 
 var dbParameters = obj2Sql.BuildDbParameterList(new Employee(), (s, o) =&gt; new SqlParameter(s, o));
 </code></pre>
-<br>
-<br>
+<br/>
+<br/>
 <!-- Links. -->
 <!-- Documentation Links. -->
-</article>
-          </div>
-          
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/docs/index.md/#L1" class="contribution-link">Improve this Doc</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            Copyright © 2019  <strong>Joseph McNeal Jr</strong>
-            
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="styles/docfx.js"></script>
-    <script type="text/javascript" src="styles/main.js"></script>
-  </body>
+
+
+</body>
 </html>

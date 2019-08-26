@@ -36,7 +36,7 @@ if(column.AutoIncrement){
 
 
 ```csharp
-var parameters = dtToSql.BuildDbParameterList(new DataTable().Rows[0] (s, o) => new SqlParameter(s, o),null,null,null);
+var parameters = dtToSql.BuildDbParameterList(new DataTable().Rows[0] (s, o) => new SqlParameter(s, o));
 ```
 
 

@@ -6,11 +6,13 @@
 
 
 ## Features
-+ INSERT
-+ UPDATE
-+ DELETE
-+ UPSERT
-+ Generate SQL that return inserted or updated column values
++ Generating the following sqls from objects & datatables
+  + INSERT
+  + UPDATE
+  + DELETE
+  + UPSERT
++ Supports SQLServer [**OUTPUT CLAUSE**][tsqloutput] Using Expressions
++ Create DBParameters from any type of objects 
 
 ## Supported Databases
 + SQLSERVER
@@ -93,6 +95,7 @@ var dbParameters = obj2Sql.BuildDbParameterList(new Employee(), (s, o) => new Sq
 [WiX]: http://wixtoolset.org/
 [DocFx]: https://dotnet.github.io/docfx/
 [Github]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+[tsqloutput]: https://docs.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql?view=sql-server-2017
 
 
 <!-- Documentation Links. -->

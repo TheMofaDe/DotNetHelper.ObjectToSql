@@ -1484,22 +1484,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery
   nameWithType: SqlGenerator.BuildInsertQuery
-- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
-  name: BuildUpdateQuery(SqlSyntaxHelper, String, List<String>, List<String>)
-  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildUpdateQuery_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_String_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_String__
-  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
-  name.vb: BuildUpdateQuery(SqlSyntaxHelper, String, List(Of String), List(Of String))
-  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.String>)
-  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List(Of System.String), System.Collections.Generic.List(Of System.String))
-  nameWithType: SqlGenerator.BuildUpdateQuery(SqlSyntaxHelper, String, List<String>, List<String>)
-  nameWithType.vb: SqlGenerator.BuildUpdateQuery(SqlSyntaxHelper, String, List(Of String), List(Of String))
-- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery*
-  name: BuildUpdateQuery
-  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildUpdateQuery_
-  commentId: Overload:DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery
-  nameWithType: SqlGenerator.BuildUpdateQuery
 - uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
   name: BuildWhereClause(SqlSyntaxHelper, List<String>, List<String>)
   href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildWhereClause_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_String__

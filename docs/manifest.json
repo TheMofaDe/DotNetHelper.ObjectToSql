@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html",
-          "hash": "eG+B3tdlrQxHHQSLyQrTog=="
+          "hash": "GM6QxXXwhdg3ZYPK177LGA=="
         }
       },
       "is_incremental": false,
@@ -282,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.ObjectToSql.Services.DataTableToSql.html",
-          "hash": "3MvyQYuXhMZ42ISIWcfftw=="
+          "hash": "CrX/7sjEP2YLPGYMR4wjeg=="
         }
       },
       "is_incremental": false,
@@ -294,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html",
-          "hash": "LWUhdNjT76kijLVVC3oGsw=="
+          "hash": "kndz2LrBVhFz4GNcpjEMqw=="
         }
       },
       "is_incremental": false,
@@ -318,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.ObjectToSql.SqlGenerator.html",
-          "hash": "nsmC16XbOIgvWYtSou/RSQ=="
+          "hash": "61mszaubDWABP5kwYBpTyA=="
         }
       },
       "is_incremental": false,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/Attributes/attribute.html",
-          "hash": "kHbNYsXfWoCQ5R1NwIeXqQ=="
+          "hash": "AlGgtsOFg4GZX75Ymu1QZA=="
         }
       },
       "is_incremental": false,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/GenerateSql/datatable2sql.html",
-          "hash": "F9a+6VeNsvW+EuHieEjcww=="
+          "hash": "NLZRuPfJcGyKyZ6R+44MEQ=="
         }
       },
       "is_incremental": false,
@@ -429,7 +429,19 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/GenerateSql/object2sql.html",
-          "hash": "RY+6yDkA7S3abwbqdagBhQ=="
+          "hash": "s65jfPPIeuIkRr3ms0ABoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/GenerateSql/readablesql.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/GenerateSql/readablesql.html",
+          "hash": "7GPlXFwLT2sP4t/8t+jGug=="
         }
       },
       "is_incremental": false,
@@ -441,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/index.html",
-          "hash": "YguFxNKdb+dFKg+PxaHNFA=="
+          "hash": "wR8Lf6L7+sRu31JGoz99tQ=="
         }
       },
       "is_incremental": false,
@@ -453,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/toc.html",
-          "hash": "Ku3uC8uNMfP+72+HoBp5lg=="
+          "hash": "HPqJnSTJA/GaMCAeIVZKYQ=="
         }
       },
       "is_incremental": false,
@@ -476,24 +488,24 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 5,
-          "skipped_file_count": 5
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 27,
-          "skipped_file_count": 12
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 27,
+          "skipped_file_count": 25
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 6,
+          "skipped_file_count": 2
         }
       }
     },

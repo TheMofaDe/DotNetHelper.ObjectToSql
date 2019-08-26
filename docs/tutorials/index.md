@@ -38,7 +38,7 @@ public class Employee {
       public FirstName { get; set; }
       public LastName  { get; set; }
 }
-var class2Sql = new DataTableToSql(DataBaseType.SqlServer);
+var class2Sql = new ObjectToSql(DataBaseType.SqlServer);
 
 // CREATE A INSERT,UPDATE,UPSERT,& DELETE SQL STATEMENT
 var insertSQL = class2Sql.BuildQuery<Employee>(ActionType.Insert);

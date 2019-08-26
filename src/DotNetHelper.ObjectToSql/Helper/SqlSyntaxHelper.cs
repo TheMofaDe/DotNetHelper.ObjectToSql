@@ -352,11 +352,17 @@ namespace DotNetHelper.ObjectToSql.Helper
 
 
 
-
+        /// <summary>
+        /// Converts a A parameterized query to a readable query.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="parameters">a list of dbparameters that is included in your parameterized query</param>
+        /// <param name="query">A parameterized query</param>
+        /// <param name="encoding">Only used for properties of the type byte[]</param>
+        /// <returns></returns>
         public string ConvertParameterSqlToReadable<T>(List<T> parameters, string query, Encoding encoding) where T : DbParameter
         {
             var sql = query.Clone().ToString();
-            // Convert Query To Human Readable  
 
             var orderedParameters = parameters.OrderByDescending(x => x.ParameterName).AsList();
             orderedParameters.ForEach(delegate (T parameter)

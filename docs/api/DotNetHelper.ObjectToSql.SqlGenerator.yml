@@ -8,7 +8,6 @@ items:
   - DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
   - DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String})
   - DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
-  - DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
   - DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
   - DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
   langs:
@@ -67,7 +66,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildWhereClauseFromMembers
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-    startLine: 130
+    startLine: 140
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql
@@ -114,7 +113,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildWhereClause
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-    startLine: 142
+    startLine: 152
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql
@@ -160,7 +159,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildInsertQuery
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-    startLine: 169
+    startLine: 179
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql
@@ -191,59 +190,6 @@ items:
   - Shared
   fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List(Of System.String), System.Collections.Generic.List(Of System.String))
   name.vb: BuildInsertQuery(SqlSyntaxHelper, String, List(Of String), List(Of String))
-- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
-  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
-  id: BuildUpdateQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
-  parent: DotNetHelper.ObjectToSql.SqlGenerator
-  langs:
-  - csharp
-  - vb
-  name: BuildUpdateQuery(SqlSyntaxHelper, String, List<String>, List<String>)
-  nameWithType: SqlGenerator.BuildUpdateQuery(SqlSyntaxHelper, String, List<String>, List<String>)
-  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.String>)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: BuildUpdateQuery
-    path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-    startLine: 186
-  assemblies:
-  - DotNetHelper.ObjectToSql
-  namespace: DotNetHelper.ObjectToSql
-  summary: "\nBuilds an update query\n"
-  example: []
-  syntax:
-    content: public static string BuildUpdateQuery(SqlSyntaxHelper syntax, string tableName, List<string> columns, List<string> valueColumns)
-    parameters:
-    - id: syntax
-      type: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
-      description: ''
-    - id: tableName
-      type: System.String
-      description: ''
-    - id: columns
-      type: System.Collections.Generic.List{System.String}
-      description: ''
-    - id: valueColumns
-      type: System.Collections.Generic.List{System.String}
-      description: ''
-    return:
-      type: System.String
-      description: ''
-    content.vb: Public Shared Function BuildUpdateQuery(syntax As SqlSyntaxHelper, tableName As String, columns As List(Of String), valueColumns As List(Of String)) As String
-  overload: DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery*
-  nameWithType.vb: SqlGenerator.BuildUpdateQuery(SqlSyntaxHelper, String, List(Of String), List(Of String))
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List(Of System.String), System.Collections.Generic.List(Of System.String))
-  name.vb: BuildUpdateQuery(SqlSyntaxHelper, String, List(Of String), List(Of String))
 - uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String})
   commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String})
   id: BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String})
@@ -262,21 +208,26 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDeleteQuery
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-    startLine: 194
+    startLine: 204
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql
+  summary: "\nBuilds an update query\n"
+  example: []
   syntax:
     content: public static string BuildDeleteQuery(SqlSyntaxHelper syntax, string tableName, List<string> keyColumns)
     parameters:
     - id: syntax
       type: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+      description: ''
     - id: tableName
       type: System.String
+      description: ''
     - id: keyColumns
       type: System.Collections.Generic.List{System.String}
     return:
       type: System.String
+      description: ''
     content.vb: Public Shared Function BuildDeleteQuery(syntax As SqlSyntaxHelper, tableName As String, keyColumns As List(Of String)) As String
   overload: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery*
   nameWithType.vb: SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, String, List(Of String))
@@ -306,7 +257,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDeleteQuery
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-    startLine: 200
+    startLine: 210
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql
@@ -796,11 +747,6 @@ references:
   name: BuildInsertQuery
   nameWithType: SqlGenerator.BuildInsertQuery
   fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery
-- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery*
-  commentId: Overload:DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery
-  name: BuildUpdateQuery
-  nameWithType: SqlGenerator.BuildUpdateQuery
-  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery
 - uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery*
   commentId: Overload:DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery
   name: BuildDeleteQuery

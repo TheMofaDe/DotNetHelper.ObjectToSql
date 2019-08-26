@@ -5,20 +5,27 @@ In the secnarios where you need to build Update,Delete, or Upsert Statements. At
 ```csharp
 [SqlColumn(SetIsIdentityKey = true)]
 OR 
-[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)] // using data annotation
 ```
 
 ##### Mark a property as a key field. 
 ```csharp
 [SqlColumn(SetIsIdentityKey = true)]
 OR 
-[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+[Key] // using data annotation
 ```
 
+##### Mark a property as a Json, Xml, Or Csv Field. 
+```csharp
+[SqlColumn(SerializableType = SerializableType.Json)]
+```
 
-
-
-
+##### Mark a property to be ignored . 
+```csharp
+[SqlColumn(Ignore = true)]
+OR 
+[NotMapped] // using data annotation
+```
 
 <!-- 
 #### Storing Columns As CSV, XML, & JSON

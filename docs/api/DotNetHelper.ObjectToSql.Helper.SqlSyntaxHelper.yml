@@ -649,10 +649,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: ConvertParameterSqlToReadable
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 355
+    startLine: 362
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
+  summary: "\nConverts a A parameterized query to a readable query.\n"
+  example: []
   syntax:
     content: >-
       public string ConvertParameterSqlToReadable<T>(List<T> parameters, string query, Encoding encoding)
@@ -660,14 +662,19 @@ items:
     parameters:
     - id: parameters
       type: System.Collections.Generic.List{{T}}
+      description: a list of dbparameters that is included in your parameterized query
     - id: query
       type: System.String
+      description: A parameterized query
     - id: encoding
       type: System.Text.Encoding
+      description: Only used for properties of the type byte[]
     typeParameters:
     - id: T
+      description: ''
     return:
       type: System.String
+      description: ''
     content.vb: Public Function ConvertParameterSqlToReadable(Of T As DbParameter)(parameters As List(Of T), query As String, encoding As Encoding) As String
   overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable*
   nameWithType.vb: SqlSyntaxHelper.ConvertParameterSqlToReadable(Of T)(List(Of T), String, Encoding)

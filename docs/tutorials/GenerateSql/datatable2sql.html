@@ -115,6 +115,9 @@
                           <li class="active">
                             <a href="../GenerateSql/datatable2sql.html" title="DataTable To Sql" class="active">DataTable To Sql</a>
                           </li>
+                          <li class="">
+                            <a href="../GenerateSql/readablesql.html" title="Readable Sql" class="">Readable Sql</a>
+                          </li>
                         </ul>  </li>
                   </ul>        </div>
               </div>
@@ -148,7 +151,7 @@ if(column.AutoIncrement){
 <p>Executing the a update,upsert, or delete query with a datatable that doesn't have any datacolumn declared as primary key will lead to an InvalidOperationException being thrown.</p>
 </div>
 <h2 id="creating-db-parameters-from-datarow">Creating DB Parameters From DataRow</h2>
-<pre><code class="lang-csharp">var parameters = dtToSql.BuildDbParameterList(new DataTable().Rows[0] (s, o) =&gt; new SqlParameter(s, o),null,null,null);
+<pre><code class="lang-csharp">var parameters = dtToSql.BuildDbParameterList(new DataTable().Rows[0] (s, o) =&gt; new SqlParameter(s, o));
 </code></pre>
 <blockquote>
 <p>[Tip]

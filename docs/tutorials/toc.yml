@@ -13,4 +13,7 @@
       topicHref: GenerateSQL/object2sql.md
     - name: "DataTable To Sql"
       href: ../
-      topicHref: GenerateSQL/datatable2sql.md           
+      topicHref: GenerateSQL/datatable2sql.md
+    - name: "Readable Sql"
+      href: ../
+      topicHref: GenerateSQL/readablesql.md  

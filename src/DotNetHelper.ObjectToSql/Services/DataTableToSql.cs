@@ -193,7 +193,7 @@ namespace DotNetHelper.ObjectToSql.Services
 
             sqlBuilder.Append($"{SqlGenerator.BuildUpdateTable(tableName ?? dataTable.TableName)} ");
             sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, nonIdentityFields, nonIdentityFields)} ");
-            sqlBuilder.Append($"{SqlGenerator.BuildWhereClause(SqlSyntaxHelper, keyFields,keyFields)}");
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClause(SqlSyntaxHelper, keyFields, keyFields)}");
 
 
         }

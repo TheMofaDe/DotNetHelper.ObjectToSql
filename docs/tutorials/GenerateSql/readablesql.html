@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Primary Key &amp; Identity Fields | DotNetHelper.ObjectToSql </title>
+    <title>Creating Readable Sql | DotNetHelper.ObjectToSql </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Primary Key &amp; Identity Fields | DotNetHelper.ObjectToSql ">
+    <meta name="title" content="Creating Readable Sql | DotNetHelper.ObjectToSql ">
     <meta name="generator" content="docfx 2.44.0.0">
     
     <link rel="shortcut icon" href="../../logo/favicon.ico">
@@ -109,14 +109,14 @@
                       <a class="">Generating SQL</a>
                         
                         <ul class="nav level2">
-                          <li class="active">
-                            <a href="../GenerateSql/object2sql.html" title="Object To Sql" class="active">Object To Sql</a>
+                          <li class="">
+                            <a href="../GenerateSql/object2sql.html" title="Object To Sql" class="">Object To Sql</a>
                           </li>
                           <li class="">
                             <a href="../GenerateSql/datatable2sql.html" title="DataTable To Sql" class="">DataTable To Sql</a>
                           </li>
-                          <li class="">
-                            <a href="../GenerateSql/readablesql.html" title="Readable Sql" class="">Readable Sql</a>
+                          <li class="active">
+                            <a href="../GenerateSql/readablesql.html" title="Readable Sql" class="active">Readable Sql</a>
                           </li>
                         </ul>  </li>
                   </ul>        </div>
@@ -126,59 +126,53 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Tutorial.GenerateSQL">
-<h1 id="primary-key--identity-fields">Primary Key &amp; Identity Fields</h1>
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="creating-readable-sql">Creating Readable Sql</h2>
 
-<p>In the secnarios where you need to build Update,Delete, or Upsert Statements. Attributes are use to generate the where clause.</p>
-<h3 id="decorating-properties-as-primary-key">Decorating Properties As Primary Key</h3>
-<pre><code class="lang-csharp">// USING SqlColumn Attribute
-public class Employee {
-      [SqlColumn(SetPrimaryKey = true)]
-      public int PrimaryKey {get; set;}
-      public string FirstName { get; set; }
-      public string LastName  { get; set; }
+<p>By default all sql is generated as <strong>parameterized query</strong> as they should be but there may be times where you
+want to create non-parameterized queries. This article will show you how to do that</p>
+<h4 id="create-readable-sql-using-objecttosql-class">Create Readable Sql Using ObjectToSql Class</h4>
+<pre><code class="lang-csharp">public class Employee {
+  public string FirstName { get; set; }
+  public string LastName { get; set; }
 }
 </code></pre>
-<p>OR</p>
-<pre><code class="lang-csharp">// USING DataAnnotation Attribute
-public class Employee {
-      [Key]
-      public int PrimaryKey {get; set;}
-      public string FirstName { get; set; }
-      public string LastName  { get; set; }
-}
-</code></pre>
-<p>using either version of the model above I can now generate update,delete, &amp; upsert statment by doing the following</p>
-<pre><code class="lang-csharp">   var actionType = ActionType.Update; // A enum with the values Insert,Update,Delete,Upsert
-   var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-   var updateSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(actionType);
-   var upsertSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(ActionType.Upsert,&quot;Employee&quot;);
-   var deleteSql = sqlServerObjectToSql.BuildQuery&lt;Employee&gt;(ActionType.Delete,&quot;TableName&quot;);
+<pre><code class="lang-csharp">var obj2Sql = new Services.ObjectToSql(DataBaseType.SqlServer);
+// create an object you want to convert to sql
+var employee = new Employee();
 
-   Console.WriteLine(updateSql);
-   Console.WriteLine(upsertSql);
-   Console.WriteLine(deleteSql);
+// create dbparameters from my object
+var dbParameters = obj2Sql.BuildDbParameterList(employee, (s, o) =&gt; new SqlParameter(s, o));
+// create my parameterized sql based on my specified action type
+var insertSql = obj2Sql.BuildQuery&lt;Employee&gt;(ActionType.Insert);
+// convert my parameterize sql to be readable
+var readAbleSql = obj2Sql.SqlSyntaxHelper.ConvertParameterSqlToReadable(dbParameters, insertSql, Encoding.UTF8);
+// unit test
+Assert.AreEqual(readAbleSql, &quot;INSERT INTO Employee ([FirstName],[LastName]) VALUES (NULL,NULL)&quot;);
 </code></pre>
-<p>running the code above will produces the following sql statments</p>
-<pre><code class="lang-sql">UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey
+<h4 id="create-readable-sql-using-datatabletosql-class">Create Readable Sql Using DataTableToSql Class</h4>
+<pre><code class="lang-csharp"> // create an datatable you want to convert to sql
+  var dt = new DataTable(&quot;Employee&quot;);
+  dt.Columns.Add(&quot;IdentityKey&quot;, typeof(int));
+  dt.Columns[&quot;IdentityKey&quot;].AutoIncrement = true;
+  dt.PrimaryKey = new[] { dt.Columns[&quot;IdentityKey&quot;] };
+  dt.Columns.Add(&quot;FirstName&quot;, typeof(string));
+  dt.Columns.Add(&quot;LastName&quot;, typeof(string));
+  dt.Rows.Add(1, &quot;John&quot;, &quot;Doe&quot;);
 </code></pre>
-<pre><code class="lang-sql">IF EXISTS ( SELECT TOP 1 * FROM Employee WHERE [PrimaryKey]=@PrimaryKey ) BEGIN UPDATE Employee SET [FirstName]=@FirstName,[LastName]=@LastName WHERE [PrimaryKey]=@PrimaryKey END ELSE BEGIN INSERT INTO Employee ([FirstName],[LastName],[PrimaryKey]) VALUES (@FirstName,@LastName,@PrimaryKey) END
+<pre><code class="lang-csharp">var dt2Sql = new Services.DataTableToSql(DataBaseType.SqlServer);
+
+// create dbparameters from my datarow
+var dbParameters = dt2Sql.BuildDbParameterList(dt.Rows[0], (s, o) =&gt; new SqlParameter(s, o));
+
+// create my parameterized sql based on my specified action type
+var insertSql = dt2Sql.BuildQuery(dt, ActionType.Insert);
+
+// convert my parameterize sql to be readable
+var readAbleSql = dt2Sql.SqlSyntaxHelper.ConvertParameterSqlToReadable(dbParameters, insertSql, Encoding.UTF8);
+// unit test
+Assert.AreEqual(readAbleSql, &quot;INSERT INTO Employee ([FirstName],[LastName]) VALUES ('John','Doe')&quot;);
 </code></pre>
-<pre><code class="lang-sql">DELETE FROM TableName WHERE [PrimaryKey]=@PrimaryKey
-</code></pre>
-<div class="WARNING">
-<h5>Warning</h5>
-<p>Executing the a update,upsert, or delete query with an object that doesn't have any key attributes will lead to an InvalidOperationException being thrown.</p>
-</div>
-<h2 id="creating-db-parameters-from-object">Creating DB Parameters From Object</h2>
-<pre><code class="lang-csharp">var parameters = sqlServerObjectToSql.BuildDbParameterList(new Employee(), (s, o) =&gt; new SqlParameter(s, o));
-</code></pre>
-<blockquote>
-<p>[Tip]
-The method BuildDBParameterList has an overload that accepts Func&lt;object, string&gt; to allow for columns to be serialize for those senarios where your storing properties as json,csv or xml</p>
-</blockquote>
-<!-- ### Supported Attributes 
-this library has its own custom attributes and can also work with the common DataAnnotation attributes. With the support of DataAnnotation this means this library could be paired with your favorite orm like Dapper or Enitity Framework -->
 </article>
           </div>
           
@@ -187,7 +181,7 @@ this library has its own custom attributes and can also work with the common Dat
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/docs/tutorials/GenerateSql/object2sql.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/docs/tutorials/GenerateSql/readablesql.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

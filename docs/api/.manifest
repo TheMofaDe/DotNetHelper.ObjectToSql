@@ -143,7 +143,6 @@
   "DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
   "DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String})": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
   "DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
-  "DotNetHelper.ObjectToSql.SqlGenerator.BuildUpdateQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
   "DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
   "DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})": "DotNetHelper.ObjectToSql.SqlGenerator.yml"
 }
