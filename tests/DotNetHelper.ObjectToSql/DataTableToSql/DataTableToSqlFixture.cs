@@ -67,6 +67,34 @@ namespace DotNetHelper.ObjectToSql.Tests.DataTableToSql
 
         }
 
+
+        [Test]
+        public void Test_BuildQueryFromRowState()
+        {
+            var dt2Sql = new Services.DataTableToSql(DataBaseType.SqlServer);
+
+            // create an datatable you want to convert to sql
+            var dt = new DataTable("Employee");
+            dt.Columns.Add("IdentityKey", typeof(int));
+            dt.Columns["IdentityKey"].AutoIncrement = true;
+            dt.PrimaryKey = new[] { dt.Columns["IdentityKey"] };
+            dt.Columns.Add("FirstName", typeof(string));
+            dt.Columns.Add("LastName", typeof(string));
+            dt.Rows.Add(1, "John", "Doe");
+
+            // create dbparameters from my object
+            var dbParameters = dt2Sql.BuildDbParameterList(dt.Rows[0], (s, o) => new SqlParameter(s, o));
+
+            // create my parameterized sql based on my specified action type
+            var insertSql = dt2Sql.BuildQueryFromRowState(dt.Rows[0], "Employee");
+
+            // convert my parameterize sql to be readable
+            var readAble = dt2Sql.SqlSyntaxHelper.ConvertParameterSqlToReadable(dbParameters, insertSql, Encoding.UTF8);
+            // unit test
+            Assert.AreEqual(readAble, "INSERT INTO Employee ([FirstName],[LastName]) VALUES ('John','Doe')");
+
+        }
+
         [Test]
         public void Test_Object2Sql_ConvertSQLToReadable()
         {
