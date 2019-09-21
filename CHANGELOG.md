@@ -4,6 +4,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 <br/> 
 
+## Unreleased
+*	Support for ReadOnly attribute. This allows for you to create insert sql from an object but ignore a specified property.
+for insert sql creation only. You would want this when you have a default value for a column in your table schema and you want 
+to use the default value instead of the .net property value.
+
+
 
 ## [2.0.0] - 2019-08-24
 
