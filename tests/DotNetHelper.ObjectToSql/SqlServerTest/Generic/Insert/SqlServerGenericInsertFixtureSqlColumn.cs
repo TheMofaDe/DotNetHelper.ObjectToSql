@@ -21,7 +21,16 @@ namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Insert
         }
 
 
-
+        [Test]
+        public void Test_Generic_BuildInsertQuery_Doesnt_Try_To_Insert_ReadOnly_Field()
+        {
+            RunTestOnAllDBTypes(delegate (DataBaseType type)
+            {
+                var objectToSql = new Services.ObjectToSql(type);
+                var sql = objectToSql.BuildQuery<EmployeeWithReadOnlySqlColumn>(ActionType);
+                Assert.AreEqual(sql, EmployeeWithReadOnlySqlColumn.ToSql(ActionType, type));
+            });
+        }
 
         [Test]
         public void Test_Generic_BuildInsertQuery_Uses_Mapped_Column_Name_Instead_Of_PropertyName()

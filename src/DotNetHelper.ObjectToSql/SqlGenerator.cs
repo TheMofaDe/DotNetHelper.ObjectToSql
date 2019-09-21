@@ -172,11 +172,12 @@ namespace DotNetHelper.ObjectToSql
         }
 
 
-
         /// <summary>
         /// Builds the insert query.
         /// </summary>
         /// <param name="tableName">Name of the table.</param>
+        /// <param name="columns">column names</param>
+        /// <param name="valueColumns">values of columns</param>
         public static string BuildInsertQuery(SqlSyntaxHelper syntax, string tableName, List<string> columns, List<string> valueColumns)
         {
 
@@ -186,14 +187,14 @@ namespace DotNetHelper.ObjectToSql
             // INSERT INTO TABLE (A,B,C) VALUES (@A,@B,@C)
         }
 
-        /// <summary>
-        /// Builds an update query
-        /// </summary>
-        /// <param name="syntax"></param>
-        /// <param name="tableName"></param>
-        /// <param name="columns"></param>
-        /// <param name="valueColumns"></param>
-        /// <returns></returns>
+        ///// <summary>
+        ///// Builds an update query
+        ///// </summary>
+        ///// <param name="syntax"></param>
+        ///// <param name="tableName"></param>
+        ///// <param name="columns"></param>
+        ///// <param name="valueColumns"></param>
+        ///// <returns></returns>
         //public static string BuildUpdateQuery(SqlSyntaxHelper syntax, string tableName, List<string> columns, List<string> valueColumns)
         //{
         //    var updateTableClause = ($"{SqlGenerator.BuildUpdateTable(tableName)} ");
@@ -204,14 +205,14 @@ namespace DotNetHelper.ObjectToSql
 
         public static string BuildDeleteQuery(SqlSyntaxHelper syntax, string tableName, List<string> keyColumns)
         {
-            var deleteFromClause = ($"{SqlGenerator.BuildDeleteFromTable(tableName)} ");
-            var whereClause = ($"{SqlGenerator.BuildWhereClause(syntax, keyColumns, keyColumns)}");
+            var deleteFromClause = ($"{BuildDeleteFromTable(tableName)} ");
+            var whereClause = ($"{BuildWhereClause(syntax, keyColumns, keyColumns)}");
             return $"{deleteFromClause}{whereClause}";
         }
         public static string BuildDeleteQuery(SqlSyntaxHelper syntax, string tableName, List<MemberWrapper> keyColumns)
         {
-            var deleteFromClause = ($"{SqlGenerator.BuildDeleteFromTable(tableName)} ");
-            var whereClause = ($"{SqlGenerator.BuildWhereClauseFromMembers(syntax, keyColumns)}");
+            var deleteFromClause = ($"{BuildDeleteFromTable(tableName)} ");
+            var whereClause = ($"{BuildWhereClauseFromMembers(syntax, keyColumns)}");
             return $"{deleteFromClause}{whereClause}";
         }
 

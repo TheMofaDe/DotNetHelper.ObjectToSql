@@ -527,4 +527,78 @@ namespace DotNetHelper.ObjectToSql.Tests.Models
     }
 
 
+
+
+
+
+
+
+
+
+    public class EmployeeWithReadOnlySqlColumn
+    {
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        [SqlColumn(SetIsReadOnly = true)]
+        public DateTime HiredDateTime { get; set; }
+        public static string ToSql(ActionType action, DataBaseType dataBaseType)
+        {
+            switch (dataBaseType)
+            {
+                case DataBaseType.SqlServer:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithReadOnlySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Upsert:
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.MySql:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithReadOnlySqlColumn (`FirstName`,`LastName`) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Upsert:
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.Sqlite:
+                    switch (action)
+                    {
+                        case ActionType.Insert:
+                            return $"INSERT INTO EmployeeWithReadOnlySqlColumn ([FirstName],[LastName]) VALUES (@FirstName,@LastName)";
+                        case ActionType.Update:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        case ActionType.Upsert:
+                        case ActionType.Delete:
+                            return null; // SHOULD THROW EXCEPTIONS BECAUSE THERE IS NO KEYS
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(action), action, null);
+                    }
+                case DataBaseType.Oracle:
+                    break;
+                case DataBaseType.Oledb:
+                    break;
+                case DataBaseType.Access95:
+                    break;
+                case DataBaseType.Odbc:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(dataBaseType), dataBaseType, null);
+            }
+            return null;
+        }
+    }
+
+
 }

@@ -261,7 +261,7 @@ namespace DotNetHelper.ObjectToSql.Services
                   GetNonIdentityFields(IncludeNonPublicAccessor, type)
                 : GetNonIdentityFields(IncludeNonPublicAccessor, type, instance);
 
-            var columns = allFields.Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
+            var columns = allFields.Where(m => !m.IsMemberIgnoredForInsertSql()).Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
             // This uses the .net property name & ignores any attribute mapto name to ensure duplication is prevented
             var valueColumns = allFields.Select(c => c.Name).AsList();
             sqlBuilder.Append(SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, tableName.GetTableName(DatabaseType, type), columns, valueColumns));
@@ -274,14 +274,14 @@ namespace DotNetHelper.ObjectToSql.Services
         /// <typeparam name="T"></typeparam>
         /// <param name="sqlBuilder">The SQL builder.</param>
         /// <param name="tableName">Name of the table.</param>
-        /// <param name="outFields"></param>
+        /// <param name="outFields">array of properties you wish to get the inserted values of (Only Support SQL Server)</param>
         private void BuildInsertQueryWithOutputs<T>(StringBuilder sqlBuilder, string tableName, params Expression<Func<T, object>>[] outFields) where T : class
         {
 
             var outputFields = outFields.GetPropertyNamesFromExpressions();
             outputFields.IsEmptyThrow(nameof(outputFields));
 
-            var allFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor);
+            var allFields = GetNonIdentityFields<T>(IncludeNonPublicAccessor).Where(m => !m.IsMemberIgnoredForInsertSql()).AsList();
             var columns = allFields.Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
             var valueColumns = allFields.Select(c => c.Name).AsList();
 

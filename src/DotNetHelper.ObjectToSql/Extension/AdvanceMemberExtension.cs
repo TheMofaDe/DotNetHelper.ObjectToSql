@@ -42,6 +42,13 @@ namespace DotNetHelper.ObjectToSql.Extension
             return false;
         }
 
+        public static bool IsMemberIgnoredForInsertSql(this MemberWrapper member)
+        {
+            var attr1 = member.GetCustomAttribute<SqlColumnAttribute>();
+            if (attr1?.IsReadOnly == true) return true;
+            return false;
+        }
+
         public static bool IsMemberASerializableColumn(this MemberWrapper member)
         {
             if (member.ShouldMemberBeIgnored()) return false;

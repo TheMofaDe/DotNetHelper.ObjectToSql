@@ -12,6 +12,10 @@ namespace DotNetHelper.ObjectToSql.Helper
     public class SqlSyntaxHelper
     {
         /// <summary>
+        /// NULL
+        /// </summary>
+        public string ConstNull { get; } = "NULL";
+        /// <summary>
         /// INSERT INTO
         /// </summary>
         public string ConstInsertInto { get; } = "INSERT INTO";
@@ -375,18 +379,23 @@ namespace DotNetHelper.ObjectToSql.Helper
 
         }
 
-
+        /// <summary>
+        /// Convert the 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="encoding"></param>
+        /// <returns></returns>
         private string CommandToSQl(object obj, Encoding encoding)
         {
 
             if (obj == null || obj == DBNull.Value)
             {
-                return "NULL";
+                return ConstNull;
             }
             else if (obj is byte[] byteArray)
             {
                 var quoteField = EnclosedValueLookup[byteArray.GetType()];
-                return byteArray.Length <= 0 ? $@"NULL" : $@"{quoteField}{encoding.GetString(byteArray)}{quoteField}";
+                return byteArray.Length <= 0 ? ConstNull : $@"{quoteField}{encoding.GetString(byteArray)}{quoteField}";
             }
             else if (obj is string stringValue)
             {
@@ -452,9 +461,7 @@ namespace DotNetHelper.ObjectToSql.Helper
             }
             else
             {
-                // We Convert Non System Types To Json
-                return $"NULL";
-
+                return ConstNull;
             }
         }
 
