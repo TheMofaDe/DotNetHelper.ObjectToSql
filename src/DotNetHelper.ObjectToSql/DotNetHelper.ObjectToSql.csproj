@@ -12,6 +12,8 @@
     <PackageReleaseNotes>https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/CHANGELOG.md</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Joseph McNeal Jr, TheMoFaDe</Authors>
+    <Company>Joseph McNeal Jr</Company>
   </PropertyGroup>
 
 
