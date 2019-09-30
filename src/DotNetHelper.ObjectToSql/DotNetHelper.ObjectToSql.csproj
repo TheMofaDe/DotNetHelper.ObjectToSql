@@ -27,6 +27,7 @@
     <Compile Remove="Interface\**" />
     <EmbeddedResource Remove="Interface\**" />
     <None Remove="Interface\**" />
+    <Compile Remove="Model\RunTimeAttributeMap.cs" />
     <None Include="..\..\LICENSE.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
