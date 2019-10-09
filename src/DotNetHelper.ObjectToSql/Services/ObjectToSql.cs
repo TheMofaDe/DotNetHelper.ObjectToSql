@@ -774,7 +774,7 @@ namespace DotNetHelper.ObjectToSql.Services
             {
                 return ExtFastMember.GetMemberWrappers(a);
             }
-            return GetAllNonIgnoreFields<T>(includeNonPublicAccessor);
+            return GetAllNonIgnoreFields(instance.GetType(),includeNonPublicAccessor);
         }
 
 

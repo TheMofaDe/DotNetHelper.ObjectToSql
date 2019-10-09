@@ -1,93 +1,57 @@
-//using System.Text;
-//using DotNetHelper.FastMember.ObjectToSql.Enum;
-//using DotNetHelper.FastMember.ObjectToSql.Helper;
-//using DotNetHelper.ObjectToSql;
-//using NUnit.Framework;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
 
-//namespace Tests
-//{
-//    public class AnonmyousObjectToSqlFixture
-//    {
-//        [SetUp]
-//        public void Setup()
-//        {
-//        }
+using DotNetHelper.ObjectToSql;
+using DotNetHelper.ObjectToSql.Enum;
+using DotNetHelper.ObjectToSql.Services;
+using DotNetHelper.ObjectToSql.Tests.Models;
+using NUnit.Framework;
 
-//        [Test]
-//        public void Test_Generic_BuildGetQuery()
-//        {
-//            var stringBuilder = new StringBuilder();
-//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
-//            var employee = new {FirstName = "Joseph", LastName = "McNeal Jr"};
-//            objectToSql.BuildGetQuery<Employee>(stringBuilder,"Employee",null);
-//            var sql = stringBuilder.ToString();
-//            Assert.AreEqual(sql, "SELECT * FROM Employee ");
-//        }
+namespace Tests
+{
+    public class AnonmyousObjectToSqlFixture
+    {
+        [SetUp]
+        public void Setup()
+        {
+        }
 
-//        [Test]
-//        public void Test_Generic_BuildGetQuery_WithWhereClause()
-//        {
-//            var stringBuilder = new StringBuilder();
-//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
-//            var whereClause = $"WHERE FirstName like '%Joseph%'";
-//            objectToSql.BuildGetQuery<Employee>(stringBuilder, "Employee",  whereClause);
-//            var sql = stringBuilder.ToString();
-//            Assert.AreEqual(sql, "SELECT * FROM Employee " + whereClause);
-//        }
-
-
-//        [Test]
-//        public void Test_Generic_BuildGetQuery_WithWhereClause_And_NullTableName()
-//        {
-//            var stringBuilder = new StringBuilder();
-//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
-//            var whereClause = $"WHERE FirstName like '%Joseph%'";
-//            objectToSql.BuildGetQuery<Employee>(stringBuilder, null, whereClause);
-//            var sql = stringBuilder.ToString();
-//            Assert.AreEqual(sql, "SELECT * FROM Employee " + whereClause);
-//        }
+        [Test]
+        public void Test_Build_Parameters_Uses_Runtime_Type()
+        {
+            var obj2Sql = new ObjectToSql(DataBaseType.SqlServer,true);
+            var hashSet = new HashSet<Employee>(new List<Employee>() { new Employee(){FirstName = "joif",LastName = "dsfi"}});
+            var data = hashSet.ToList();
+            if (data.GetType().IsTypeAnIEnumerable()) 
+            {
+                if (data is IEnumerable<object> list)
+                {
+                    foreach (var item in list)
+                    {
+                        var parameters = obj2Sql.BuildDbParameterList(item,delegate(string s, object o) { return new SqlParameter(s,o); } );
+                        Assert.That(parameters != null && parameters.Count == 2);
+                    }
+                }
+            }
+        }
 
 
+    
 
 
-//        [Test]
-//        public void Test_Generic_BuildDeleteQuery_With_SQLColumnAttribute_MappedColumn()
-//        {
-//            var stringBuilder = new StringBuilder();
-//            var employee = new EmployeeSqlColumnAttribute() { FirstName = "Joseph", LastName = "McNeal Jr" };
-//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
+    }
 
-//            objectToSql.BuildDeleteQuery(stringBuilder, nameof(Employee), employee, e => e.FirstName);
-//            var sql = stringBuilder.ToString();
-//            Assert.AreEqual(sql, "DELETE FROM Employee WHERE [MapColumn]=@FirstName");
-//        }
+    public static class Extensions {
 
+    public static bool IsTypeAnIEnumerable(this Type type)
+    {
+        return typeof(IEnumerable).IsAssignableFrom(type);
+    }
 
-//        [Test]
-//        public void Test_Generic_BuildUpdateQuery_With_SQLColumnAttribute_MappedColumn()
-//        {
-//            var stringBuilder = new StringBuilder();
-//            var employee = new EmployeeSqlColumnAttribute() { FirstName = "Joseph", LastName = "McNeal Jr" };
-//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
-
-//            objectToSql.BuildUpdateQuery(stringBuilder, nameof(Employee), employee, e => e.FirstName);
-//            var sql = stringBuilder.ToString();
-//            Assert.AreEqual(sql, "UPDATE Employee SET [MapColumn]=@FirstName,[LastName]=@LastName WHERE [MapColumn]=@FirstName");
-//        }
-
-
-//        [Test]
-//        public void Test_Generic_BuildUpdateQuery_With_SQLColumnAttribute_MappedColumn_WithPrimaryKey()
-//        {
-//            var stringBuilder = new StringBuilder();
-//            var employee = new EmployeeSqlColumnAttribute() { FirstName = "Joseph", LastName = "McNeal Jr" };
-//            var objectToSql = new ObjectToSql(DataBaseType.SqlServer);
-
-//            objectToSql.BuildUpdateQuery(stringBuilder, nameof(Employee), employee, e => e.FirstName);
-//            var sql = stringBuilder.ToString();
-//            Assert.AreEqual(sql, "UPDATE Employee SET [MapColumn]=@FirstName,[LastName]=@LastName WHERE [MapColumn]=@FirstName");
-//        }
-
-
-//    }
-//}
+}
+}

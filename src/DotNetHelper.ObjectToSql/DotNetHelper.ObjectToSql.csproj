@@ -38,7 +38,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="DotNetHelper.FastMember.Extension" Version="1.0.25" />
+    <PackageReference Include="DotNetHelper.FastMember.Extension" Version="1.0.26" />
   </ItemGroup>
 
 
