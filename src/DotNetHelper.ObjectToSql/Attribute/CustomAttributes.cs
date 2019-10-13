@@ -71,7 +71,7 @@ namespace DotNetHelper.ObjectToSql.Attribute
         public bool SetIsReadOnly
         {
             get => throw new Exception("Nooo...  Your Using SqlColumnAttribute wrong do not try to get from the Set Property use the orignial ");
-            set => IsIdentityKey = value;
+            set => IsReadOnly = value;
         }
 
 
