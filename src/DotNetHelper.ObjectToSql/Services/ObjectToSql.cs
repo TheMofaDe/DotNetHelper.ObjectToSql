@@ -263,7 +263,7 @@ namespace DotNetHelper.ObjectToSql.Services
 
             var columns = allFields.Where(m => !m.IsMemberIgnoredForInsertSql()).Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
             // This uses the .net property name & ignores any attribute mapto name to ensure duplication is prevented
-            var valueColumns = allFields.Select(c => c.Name).AsList();
+            var valueColumns = allFields.Where(m => !m.IsMemberIgnoredForInsertSql()).Select(c => c.Name).AsList();
             sqlBuilder.Append(SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, tableName.GetTableName(DatabaseType, type), columns, valueColumns));
         }
 
