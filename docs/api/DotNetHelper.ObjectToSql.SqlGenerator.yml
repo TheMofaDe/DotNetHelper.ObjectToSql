@@ -159,7 +159,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildInsertQuery
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-    startLine: 179
+    startLine: 180
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql
@@ -175,8 +175,10 @@ items:
       description: Name of the table.
     - id: columns
       type: System.Collections.Generic.List{System.String}
+      description: column names
     - id: valueColumns
       type: System.Collections.Generic.List{System.String}
+      description: values of columns
     return:
       type: System.String
     content.vb: Public Shared Function BuildInsertQuery(syntax As SqlSyntaxHelper, tableName As String, columns As List(Of String), valueColumns As List(Of String)) As String
@@ -208,26 +210,21 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDeleteQuery
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-    startLine: 204
+    startLine: 205
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql
-  summary: "\nBuilds an update query\n"
-  example: []
   syntax:
     content: public static string BuildDeleteQuery(SqlSyntaxHelper syntax, string tableName, List<string> keyColumns)
     parameters:
     - id: syntax
       type: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
-      description: ''
     - id: tableName
       type: System.String
-      description: ''
     - id: keyColumns
       type: System.Collections.Generic.List{System.String}
     return:
       type: System.String
-      description: ''
     content.vb: Public Shared Function BuildDeleteQuery(syntax As SqlSyntaxHelper, tableName As String, keyColumns As List(Of String)) As String
   overload: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery*
   nameWithType.vb: SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, String, List(Of String))
@@ -257,7 +254,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: BuildDeleteQuery
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-    startLine: 210
+    startLine: 211
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql

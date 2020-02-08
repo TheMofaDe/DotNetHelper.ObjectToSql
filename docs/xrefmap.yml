@@ -90,6 +90,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey
   nameWithType: SqlColumnAttribute.IsIdentityKey
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly
+  name: IsReadOnly
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_IsReadOnly
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly
+  nameWithType: SqlColumnAttribute.IsReadOnly
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly*
+  name: IsReadOnly
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_IsReadOnly_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly
+  nameWithType: SqlColumnAttribute.IsReadOnly
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MappingIds
   name: MappingIds
   href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_MappingIds
@@ -187,6 +200,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsIdentityKey
   nameWithType: SqlColumnAttribute.SetIsIdentityKey
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly
+  name: SetIsReadOnly
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetIsReadOnly
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly
+  nameWithType: SqlColumnAttribute.SetIsReadOnly
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly*
+  name: SetIsReadOnly
+  href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetIsReadOnly_
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly
+  nameWithType: SqlColumnAttribute.SetIsReadOnly
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetMaxColumnSize
   name: SetMaxColumnSize
   href: api/DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.html#DotNetHelper_ObjectToSql_Attribute_SqlColumnAttribute_SetMaxColumnSize
@@ -502,6 +528,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn
   nameWithType: MemberWrapperExtension.IsMemberASerializableColumn
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  name: IsMemberIgnoredForInsertSql(MemberWrapper)
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_IsMemberIgnoredForInsertSql_DotNetHelper_FastMember_Extension_Models_MemberWrapper_
+  commentId: M:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  nameWithType: MemberWrapperExtension.IsMemberIgnoredForInsertSql(MemberWrapper)
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql*
+  name: IsMemberIgnoredForInsertSql
+  href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_IsMemberIgnoredForInsertSql_
+  commentId: Overload:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql
+  nameWithType: MemberWrapperExtension.IsMemberIgnoredForInsertSql
 - uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.ShouldMemberBeIgnored(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
   name: ShouldMemberBeIgnored(MemberWrapper)
   href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html#DotNetHelper_ObjectToSql_Extension_MemberWrapperExtension_ShouldMemberBeIgnored_DotNetHelper_FastMember_Extension_Models_MemberWrapper_
@@ -650,6 +689,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate
   nameWithType: SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstNull
+  name: ConstNull
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_ConstNull
+  commentId: P:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstNull
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstNull
+  nameWithType: SqlSyntaxHelper.ConstNull
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstNull*
+  name: ConstNull
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_ConstNull_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstNull
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstNull
+  nameWithType: SqlSyntaxHelper.ConstNull
 - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConstOpenParens
   name: ConstOpenParens
   href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_ConstOpenParens
@@ -789,157 +841,6 @@ references:
   commentId: N:DotNetHelper.ObjectToSql.Model
   fullName: DotNetHelper.ObjectToSql.Model
   nameWithType: DotNetHelper.ObjectToSql.Model
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-  name: RunTimeAttributeMap
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.html
-  commentId: T:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-  nameWithType: RunTimeAttributeMap
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.#ctor(System.String,System.Collections.Generic.List{System.Attribute})
-  name: RunTimeAttributeMap(String, List<Attribute>)
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap__ctor_System_String_System_Collections_Generic_List_System_Attribute__
-  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.#ctor(System.String,System.Collections.Generic.List{System.Attribute})
-  name.vb: RunTimeAttributeMap(String, List(Of Attribute))
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.RunTimeAttributeMap(System.String, System.Collections.Generic.List<System.Attribute>)
-  fullName.vb: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.RunTimeAttributeMap(System.String, System.Collections.Generic.List(Of System.Attribute))
-  nameWithType: RunTimeAttributeMap.RunTimeAttributeMap(String, List<Attribute>)
-  nameWithType.vb: RunTimeAttributeMap.RunTimeAttributeMap(String, List(Of Attribute))
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.#ctor*
-  name: RunTimeAttributeMap
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap__ctor_
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.#ctor
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.RunTimeAttributeMap
-  nameWithType: RunTimeAttributeMap.RunTimeAttributeMap
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes
-  name: Attributes
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_Attributes
-  commentId: P:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes
-  nameWithType: RunTimeAttributeMap.Attributes
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes*
-  name: Attributes
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_Attributes_
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.Attributes
-  nameWithType: RunTimeAttributeMap.Attributes
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute*
-  name: GetCustomAttribute
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_GetCustomAttribute_
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute
-  nameWithType: RunTimeAttributeMap.GetCustomAttribute
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute``1
-  name: GetCustomAttribute<T>()
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_GetCustomAttribute__1
-  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute``1
-  name.vb: GetCustomAttribute(Of T)()
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute<T>()
-  fullName.vb: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.GetCustomAttribute(Of T)()
-  nameWithType: RunTimeAttributeMap.GetCustomAttribute<T>()
-  nameWithType.vb: RunTimeAttributeMap.GetCustomAttribute(Of T)()
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName
-  name: PropertyName
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_PropertyName
-  commentId: P:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName
-  nameWithType: RunTimeAttributeMap.PropertyName
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName*
-  name: PropertyName
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_PropertyName_
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap.PropertyName
-  nameWithType: RunTimeAttributeMap.PropertyName
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
-  name: RunTimeAttributeMapExtension
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html
-  commentId: T:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
-  nameWithType: RunTimeAttributeMapExtension
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap,System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  name: GetMemberValue(RunTimeAttributeMap, Object, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_GetMemberValue_DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_System_Object_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__
-  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap,System.Object,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  name.vb: GetMemberValue(RunTimeAttributeMap, Object, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap, System.Object, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
-  fullName.vb: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap, System.Object, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
-  nameWithType: RunTimeAttributeMapExtension.GetMemberValue(RunTimeAttributeMap, Object, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  nameWithType.vb: RunTimeAttributeMapExtension.GetMemberValue(RunTimeAttributeMap, Object, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue*
-  name: GetMemberValue
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_GetMemberValue_
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetMemberValue
-  nameWithType: RunTimeAttributeMapExtension.GetMemberValue
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  name: GetNameFromCustomAttributeOrDefault(RunTimeAttributeMap)
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_GetNameFromCustomAttributeOrDefault_DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_
-  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  nameWithType: RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault(RunTimeAttributeMap)
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault*
-  name: GetNameFromCustomAttributeOrDefault
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_GetNameFromCustomAttributeOrDefault_
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
-  nameWithType: RunTimeAttributeMapExtension.GetNameFromCustomAttributeOrDefault
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  name: IsMemberAnIdentityColumn(RunTimeAttributeMap)
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_IsMemberAnIdentityColumn_DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_
-  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  nameWithType: RunTimeAttributeMapExtension.IsMemberAnIdentityColumn(RunTimeAttributeMap)
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn*
-  name: IsMemberAnIdentityColumn
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_IsMemberAnIdentityColumn_
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
-  nameWithType: RunTimeAttributeMapExtension.IsMemberAnIdentityColumn
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  name: IsMemberAPrimaryKeyColumn(RunTimeAttributeMap)
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_IsMemberAPrimaryKeyColumn_DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_
-  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  nameWithType: RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn(RunTimeAttributeMap)
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn*
-  name: IsMemberAPrimaryKeyColumn
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_IsMemberAPrimaryKeyColumn_
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
-  nameWithType: RunTimeAttributeMapExtension.IsMemberAPrimaryKeyColumn
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  name: IsMemberASerializableColumn(RunTimeAttributeMap)
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_IsMemberASerializableColumn_DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_
-  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  nameWithType: RunTimeAttributeMapExtension.IsMemberASerializableColumn(RunTimeAttributeMap)
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn*
-  name: IsMemberASerializableColumn
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_IsMemberASerializableColumn_
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.IsMemberASerializableColumn
-  nameWithType: RunTimeAttributeMapExtension.IsMemberASerializableColumn
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  name: ShouldMemberBeIgnored(RunTimeAttributeMap)
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_ShouldMemberBeIgnored_DotNetHelper_ObjectToSql_Model_RunTimeAttributeMap_
-  commentId: M:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored(DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap)
-  nameWithType: RunTimeAttributeMapExtension.ShouldMemberBeIgnored(RunTimeAttributeMap)
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored*
-  name: ShouldMemberBeIgnored
-  href: api/DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.html#DotNetHelper_ObjectToSql_Model_RunTimeAttributeMapExtension_ShouldMemberBeIgnored_
-  commentId: Overload:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored
-  isSpec: "True"
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension.ShouldMemberBeIgnored
-  nameWithType: RunTimeAttributeMapExtension.ShouldMemberBeIgnored
 - uid: DotNetHelper.ObjectToSql.Model.SqlTable
   name: SqlTable
   href: api/DotNetHelper.ObjectToSql.Model.SqlTable.html

@@ -9,6 +9,7 @@ items:
   - DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAnIdentityColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
   - DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAPrimaryKeyColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
   - DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  - DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
   - DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.ShouldMemberBeIgnored(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
   langs:
   - csharp
@@ -89,6 +90,47 @@ items:
   modifiers.vb:
   - Public
   - Shared
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  commentId: M:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  id: IsMemberIgnoredForInsertSql(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  isExtensionMethod: true
+  parent: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
+  langs:
+  - csharp
+  - vb
+  name: IsMemberIgnoredForInsertSql(MemberWrapper)
+  nameWithType: MemberWrapperExtension.IsMemberIgnoredForInsertSql(MemberWrapper)
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: IsMemberIgnoredForInsertSql
+    path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
+    startLine: 44
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Extension
+  syntax:
+    content: public static bool IsMemberIgnoredForInsertSql(this MemberWrapper member)
+    parameters:
+    - id: member
+      type: DotNetHelper.FastMember.Extension.Models.MemberWrapper
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function IsMemberIgnoredForInsertSql(member As MemberWrapper) As Boolean
+  overload: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
 - uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
   commentId: M:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
   id: IsMemberASerializableColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)
@@ -108,7 +150,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberASerializableColumn
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-    startLine: 44
+    startLine: 51
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Extension
@@ -149,7 +191,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: GetNameFromCustomAttributeOrDefault
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-    startLine: 65
+    startLine: 72
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Extension
@@ -190,7 +232,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberAnIdentityColumn
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-    startLine: 74
+    startLine: 81
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Extension
@@ -231,7 +273,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsMemberAPrimaryKeyColumn
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
-    startLine: 86
+    startLine: 93
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Extension
@@ -576,6 +618,11 @@ references:
   name: DotNetHelper.FastMember.Extension.Models
   nameWithType: DotNetHelper.FastMember.Extension.Models
   fullName: DotNetHelper.FastMember.Extension.Models
+- uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql*
+  commentId: Overload:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql
+  name: IsMemberIgnoredForInsertSql
+  nameWithType: MemberWrapperExtension.IsMemberIgnoredForInsertSql
+  fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberIgnoredForInsertSql
 - uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn*
   commentId: Overload:DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberASerializableColumn
   name: IsMemberASerializableColumn

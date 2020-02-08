@@ -7,6 +7,7 @@ items:
   children:
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.Ignore
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsIdentityKey
+  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MappingIds
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MapTo
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.MaxColumnSize
@@ -15,6 +16,7 @@ items:
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SerializableType
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIgnore
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsIdentityKey
+  - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetMaxColumnSize
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetNullable
   - DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetPrimaryKey
@@ -172,7 +174,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetMaxColumnSize
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -214,7 +216,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SerializableType
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -252,7 +254,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: IsIdentityKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 63
+    startLine: 47
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -290,7 +292,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetIsIdentityKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 69
+    startLine: 53
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -304,6 +306,86 @@ items:
       description: The set automatic increment by.
     content.vb: Public Property SetIsIdentityKey As Boolean
   overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsIdentityKey*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Nooo...  Your Using SqlColumnAttribute wrong do not try to get from the Set Property use the orignial
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly
+  id: IsReadOnly
+  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsReadOnly
+  nameWithType: SqlColumnAttribute.IsReadOnly
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: IsReadOnly
+    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
+    startLine: 64
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Attribute
+  summary: "\nIf true this property will never be included when creating insert sql. This is meant for senarios where you want to use the database default value\n"
+  example: []
+  syntax:
+    content: public bool? IsReadOnly { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+      description: The automatic increment by.
+    content.vb: Public Property IsReadOnly As Boolean?
+  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly
+  commentId: P:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly
+  id: SetIsReadOnly
+  parent: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute
+  langs:
+  - csharp
+  - vb
+  name: SetIsReadOnly
+  nameWithType: SqlColumnAttribute.SetIsReadOnly
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+    id: SetIsReadOnly
+    path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
+    startLine: 70
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Attribute
+  summary: "\nIf true this property will never be included when creating insert sql.This is meant for senarios where you want to use the database default value\n"
+  example: []
+  syntax:
+    content: public bool SetIsReadOnly { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: The set automatic increment by.
+    content.vb: Public Property SetIsReadOnly As Boolean
+  overload: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly*
   exceptions:
   - type: System.Exception
     commentId: T:System.Exception
@@ -332,7 +414,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: PrimaryKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 110
+    startLine: 82
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -370,7 +452,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetPrimaryKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 116
+    startLine: 88
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -412,7 +494,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Nullable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 220
+    startLine: 99
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -450,7 +532,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetNullable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 226
+    startLine: 105
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -492,7 +574,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: Ignore
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 266
+    startLine: 116
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -530,7 +612,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: SetIgnore
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 272
+    startLine: 122
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -572,7 +654,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MapTo
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 294
+    startLine: 139
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -610,7 +692,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
     id: MappingIds
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
-    startLine: 302
+    startLine: 147
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Attribute
@@ -3539,6 +3621,16 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly*
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly
+  name: IsReadOnly
+  nameWithType: SqlColumnAttribute.IsReadOnly
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.IsReadOnly
+- uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly*
+  commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly
+  name: SetIsReadOnly
+  nameWithType: SqlColumnAttribute.SetIsReadOnly
+  fullName: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.SetIsReadOnly
 - uid: DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey*
   commentId: Overload:DotNetHelper.ObjectToSql.Attribute.SqlColumnAttribute.PrimaryKey
   name: PrimaryKey

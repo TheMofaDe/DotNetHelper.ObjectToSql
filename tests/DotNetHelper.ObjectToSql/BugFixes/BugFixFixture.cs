@@ -30,10 +30,10 @@ namespace DotNetHelper.ObjectToSql.Tests.BugFixes
 
     }
 
-    public  class BugFixFixture : BaseTest
+    public class BugFixFixture : BaseTest
     {
 
-     
+
 
         [SetUp]
         public void Setup()
@@ -69,7 +69,7 @@ namespace DotNetHelper.ObjectToSql.Tests.BugFixes
                     Assert.That(member.GetCustomAttribute<SqlColumnAttribute>().IsIdentityKey == true);
                 }
             }
-      
+
         }
 
 

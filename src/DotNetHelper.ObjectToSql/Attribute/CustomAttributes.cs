@@ -75,7 +75,7 @@ namespace DotNetHelper.ObjectToSql.Attribute
         }
 
 
-      
+
         /// <summary>
         /// Gets or sets a value indicating whether [primary key].
         /// </summary>
@@ -108,7 +108,7 @@ namespace DotNetHelper.ObjectToSql.Attribute
             get => throw new Exception("Nooo...  Your Using SqlColumnAttribute wrong do not try to get from the Set Property use the orignial ");
             set => Nullable = value;
         }
-        
+
 
         /// <summary>
         /// If true property will be use when the class is being used by a DATASOURCE Object

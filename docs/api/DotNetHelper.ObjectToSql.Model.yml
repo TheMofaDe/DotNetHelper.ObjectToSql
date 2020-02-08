@@ -4,8 +4,6 @@ items:
   commentId: N:DotNetHelper.ObjectToSql.Model
   id: DotNetHelper.ObjectToSql.Model
   children:
-  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-  - DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
   - DotNetHelper.ObjectToSql.Model.SqlTable
   langs:
   - csharp
@@ -17,18 +15,6 @@ items:
   assemblies:
   - DotNetHelper.ObjectToSql
 references:
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-  commentId: T:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-  parent: DotNetHelper.ObjectToSql.Model
-  name: RunTimeAttributeMap
-  nameWithType: RunTimeAttributeMap
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-- uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
-  commentId: T:DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
-  parent: DotNetHelper.ObjectToSql.Model
-  name: RunTimeAttributeMapExtension
-  nameWithType: RunTimeAttributeMapExtension
-  fullName: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
 - uid: DotNetHelper.ObjectToSql.Model.SqlTable
   commentId: T:DotNetHelper.ObjectToSql.Model.SqlTable
   parent: DotNetHelper.ObjectToSql.Model

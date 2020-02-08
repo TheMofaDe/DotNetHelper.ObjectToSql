@@ -24,16 +24,16 @@ namespace Tests
         [Test]
         public void Test_Build_Parameters_Uses_Runtime_Type()
         {
-            var obj2Sql = new ObjectToSql(DataBaseType.SqlServer,true);
-            var hashSet = new HashSet<Employee>(new List<Employee>() { new Employee(){FirstName = "joif",LastName = "dsfi"}});
+            var obj2Sql = new ObjectToSql(DataBaseType.SqlServer, true);
+            var hashSet = new HashSet<Employee>(new List<Employee>() { new Employee() { FirstName = "joif", LastName = "dsfi" } });
             var data = hashSet.ToList();
-            if (data.GetType().IsTypeAnIEnumerable()) 
+            if (data.GetType().IsTypeAnIEnumerable())
             {
                 if (data is IEnumerable<object> list)
                 {
                     foreach (var item in list)
                     {
-                        var parameters = obj2Sql.BuildDbParameterList(item,delegate(string s, object o) { return new SqlParameter(s,o); } );
+                        var parameters = obj2Sql.BuildDbParameterList(item, delegate (string s, object o) { return new SqlParameter(s, o); });
                         Assert.That(parameters != null && parameters.Count == 2);
                     }
                 }
@@ -41,17 +41,18 @@ namespace Tests
         }
 
 
-    
+
 
 
     }
 
-    public static class Extensions {
-
-    public static bool IsTypeAnIEnumerable(this Type type)
+    public static class Extensions
     {
-        return typeof(IEnumerable).IsAssignableFrom(type);
-    }
 
-}
+        public static bool IsTypeAnIEnumerable(this Type type)
+        {
+            return typeof(IEnumerable).IsAssignableFrom(type);
+        }
+
+    }
 }

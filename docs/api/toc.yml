@@ -48,10 +48,6 @@
 - uid: DotNetHelper.ObjectToSql.Model
   name: DotNetHelper.ObjectToSql.Model
   items:
-  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMap
-    name: RunTimeAttributeMap
-  - uid: DotNetHelper.ObjectToSql.Model.RunTimeAttributeMapExtension
-    name: RunTimeAttributeMapExtension
   - uid: DotNetHelper.ObjectToSql.Model.SqlTable
     name: SqlTable
 - uid: DotNetHelper.ObjectToSql.Services
