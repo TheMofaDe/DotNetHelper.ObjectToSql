@@ -38,13 +38,13 @@
 
 
   <ItemGroup>
-    <PackageReference Include="DotNetHelper.FastMember.Extension" Version="1.0.26" />
+    <PackageReference Include="DotNetHelper.FastMember.Extension" Version="1.0.27" />
   </ItemGroup>
 
 
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  ">

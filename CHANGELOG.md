@@ -7,7 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased
 *	Support for ReadOnly attribute. This allows for you to create insert sql from an object but ignore a specified property.
 for insert sql creation only. You would want this when you have a default value for a column in your table schema and you want 
-to use the default value instead of the .net property value.
+to use that default value instead of the .net property value.
+
+
+
 
 
 
@@ -99,7 +102,7 @@ public string BuildQuery( ActionType actionType, object instance,string tableNam
 [1.0.91]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.91
 [1.0.93]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.93
 [1.0.94]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.94
-[2.0.0]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v2.0.0
+[2.0.0]:  https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v2.0.0
 
 
 
