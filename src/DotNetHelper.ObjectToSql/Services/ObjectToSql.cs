@@ -24,17 +24,20 @@ namespace DotNetHelper.ObjectToSql.Services
         public bool IncludeNonPublicAccessor { get; set; } = true;
         public DataBaseType DatabaseType { get; }
         public SqlSyntaxHelper SqlSyntaxHelper { get; }
+        public bool AlwaysCreateParamaterizedSql { get; set; } 
 
-        public ObjectToSql(DataBaseType type, bool includeNonPublicAccessor)
+        public ObjectToSql(DataBaseType type, bool includeNonPublicAccessor, bool alwaysUseParamerizedSql = true)
         {
             DatabaseType = type;
             IncludeNonPublicAccessor = includeNonPublicAccessor;
             SqlSyntaxHelper = new SqlSyntaxHelper(type);
+            AlwaysCreateParamaterizedSql = alwaysUseParamerizedSql;
         }
-        public ObjectToSql(DataBaseType type)
+        public ObjectToSql(DataBaseType type, bool alwaysUseParamaterizedSql = true)
         {
             DatabaseType = type;
             SqlSyntaxHelper = new SqlSyntaxHelper(type);
+            AlwaysCreateParamaterizedSql = alwaysUseParamaterizedSql;
         }
 
 
@@ -482,11 +485,11 @@ namespace DotNetHelper.ObjectToSql.Services
             }
             else
             {
-                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE SET ");
-
+                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE ");
                 // Build Set fields
-                updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
-                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+                sqlBuilder.Append(SqlGenerator.BuildSetColumns(SqlSyntaxHelper, updateFields.Select(w => w.GetNameFromCustomAttributeOrDefault()).AsList(), updateFields.Select(w => w.Name).AsList()));
+
+              
 
                 // Build Where clause.
                 sqlBuilder.Append($" {whereClause}");
@@ -506,11 +509,9 @@ namespace DotNetHelper.ObjectToSql.Services
             }
             else
             {
-                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE SET ");
-
+                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE ");
                 // Build Set fields
-                updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
-                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+                sqlBuilder.Append(SqlGenerator.BuildSetColumns(SqlSyntaxHelper, updateFields.Select(w => w.GetNameFromCustomAttributeOrDefault()).AsList(),updateFields.Select(w => w.Name).AsList()));
 
                 // Build Where clause.
                 sqlBuilder.Append($" {whereClause}");
@@ -522,7 +523,7 @@ namespace DotNetHelper.ObjectToSql.Services
         {
             var updateFields = GetNonKeyFields(IncludeNonPublicAccessor, type);
             sqlBuilder.Append($" {SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate} ");
-            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p.Name},"));
+            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}={SqlSyntaxHelper.ConstAt}{p.Name},"));
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
         }
 
@@ -852,7 +853,7 @@ namespace DotNetHelper.ObjectToSql.Services
             members.ForEach(delegate (MemberWrapper p)
             {
                 var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), xmlSerializer, jsonSerializer, csvSerializer);
-                list.Add(getNewParameter($"@{p.Name}", parameterValue));
+                list.Add(getNewParameter($"{SqlSyntaxHelper.ConstAt}{p.Name}", parameterValue));
             });
             return list;
         }
@@ -892,8 +893,7 @@ namespace DotNetHelper.ObjectToSql.Services
             members.ForEach(delegate (MemberWrapper p)
             {
                 var parameterValue = ConvertToDatabaseValue(p, p.GetValue(instance), xmlSerializer, jsonSerializer, csvSerializer);
-
-                list.Add(getNewParameter($"@{p.Name}", parameterValue));
+                list.Add(getNewParameter($"{SqlSyntaxHelper.ConstAt}{p.Name}", parameterValue));
 
             });
             return list;

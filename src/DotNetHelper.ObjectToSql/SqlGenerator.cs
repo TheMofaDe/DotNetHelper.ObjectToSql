@@ -99,7 +99,7 @@ namespace DotNetHelper.ObjectToSql
             var i = 0;
             foreach (var col in columns)
             {
-                sqlBuilder.Append($"{syntax.GetKeywordEscapeOpenChar()}{col}{syntax.GetKeywordEscapeClosedChar()}=@{parameterColumns[i]},");
+                sqlBuilder.Append($"{syntax.GetKeywordEscapeOpenChar()}{col}{syntax.GetKeywordEscapeClosedChar()}={syntax.ConstAt}{parameterColumns[i]},");
                 i++;
             }
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
@@ -162,7 +162,7 @@ namespace DotNetHelper.ObjectToSql
                 var i = 0;
                 foreach (var col in columns)
                 {
-                    sqlBuilder.Append($" {syntax.GetKeywordEscapeOpenChar()}{col}{syntax.GetKeywordEscapeClosedChar()}=@{parameterColumns[i]} AND");
+                    sqlBuilder.Append($" {syntax.GetKeywordEscapeOpenChar()}{col}{syntax.GetKeywordEscapeClosedChar()}={syntax.ConstAt}{parameterColumns[i]} AND");
                     i++;
                 }
                 sqlBuilder.Remove(sqlBuilder.Length - 4, 4); // Remove the last AND       

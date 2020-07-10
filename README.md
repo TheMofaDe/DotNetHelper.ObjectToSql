@@ -89,7 +89,10 @@ var dbParameters = obj2Sql.BuildDbParameterList(new Employee(), (s, o) => new Sq
 <br/>
 
 
+## Unit Tests
 
+Unit Test are performed against live instance of databases running via docker containers 
+Make sure you spin up the container via database.ps1
 
 
 ## Documentation

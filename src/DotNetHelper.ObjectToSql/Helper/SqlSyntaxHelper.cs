@@ -201,7 +201,7 @@ namespace DotNetHelper.ObjectToSql.Helper
                 case DataBaseType.Sqlite:
                     return "[";
                 case DataBaseType.Oracle:
-                    return "[";
+                    return "";
                 case DataBaseType.Oledb:
                     return "[";
                 case DataBaseType.Access95:
@@ -223,7 +223,7 @@ namespace DotNetHelper.ObjectToSql.Helper
                 case DataBaseType.Sqlite:
                     return "]";
                 case DataBaseType.Oracle:
-                    return "]";
+                    return "";
                 case DataBaseType.Oledb:
                     return "]";
                 case DataBaseType.Access95:

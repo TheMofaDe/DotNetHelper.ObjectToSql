@@ -236,16 +236,13 @@ namespace DotNetHelper.ObjectToSql.Services
                 sqlBuilder.Append($@"INSERT OR REPLACE INTO {tableName} 
 ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))},{string.Join(",", updateFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))}) 
 VALUES
-({string.Join(",", keyFields.Select(w => $"(SELECT {w} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"@{w}"))} )");
+({string.Join(",", keyFields.Select(w => $"(SELECT {w} FROM {tableName} {whereClause})"))}, {string.Join(",", updateFields.Select(w => $"{SqlSyntaxHelper.ConstAt}{w}"))} )");
             }
             else
             {
-                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE SET ");
-
+                sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE ");
                 // Build Set fields
-                updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}=@{p},"));
-                sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-
+                sqlBuilder.Append(SqlGenerator.BuildSetColumns(SqlSyntaxHelper, updateFields,updateFields));
                 // Build Where clause.
                 sqlBuilder.Append($" {whereClause}");
             }
