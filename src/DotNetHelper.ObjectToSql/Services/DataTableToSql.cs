@@ -16,10 +16,13 @@ namespace DotNetHelper.ObjectToSql.Services
 
         public DataBaseType DatabaseType { get; }
         public SqlSyntaxHelper SqlSyntaxHelper { get; }
-        public DataTableToSql(DataBaseType type)
+        public bool AlwaysCreateParamaterizedSql { get; set; }
+
+        public DataTableToSql(DataBaseType type, bool alwaysUseParamerizedSql = true)
         {
             DatabaseType = type;
             SqlSyntaxHelper = new SqlSyntaxHelper(type);
+            AlwaysCreateParamaterizedSql = alwaysUseParamerizedSql;
         }
 
         #region Public Method Build Query
@@ -166,7 +169,7 @@ namespace DotNetHelper.ObjectToSql.Services
         private void BuildInsertQuery(StringBuilder sqlBuilder, DataTable dataTable, string tableName = null)
         {
             var (_, _, nonIdentityFields) = GetFields(dataTable);
-            sqlBuilder.Append(SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, tableName ?? dataTable.TableName, nonIdentityFields, nonIdentityFields));
+            sqlBuilder.Append(SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, tableName ?? dataTable.TableName, nonIdentityFields, nonIdentityFields, !AlwaysCreateParamaterizedSql));
 
         }
 
@@ -192,8 +195,8 @@ namespace DotNetHelper.ObjectToSql.Services
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
 
             sqlBuilder.Append($"{SqlGenerator.BuildUpdateTable(tableName ?? dataTable.TableName)} ");
-            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, nonIdentityFields, nonIdentityFields)} ");
-            sqlBuilder.Append($"{SqlGenerator.BuildWhereClause(SqlSyntaxHelper, keyFields, keyFields)}");
+            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, nonIdentityFields, nonIdentityFields, !AlwaysCreateParamaterizedSql)} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClause(SqlSyntaxHelper, keyFields, keyFields, !AlwaysCreateParamaterizedSql)}");
 
 
         }
@@ -216,7 +219,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var (keyFields, identityFields, nonIdentityFields) = GetFields(dataTable);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
 
-            sqlBuilder.Append(SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, tableName ?? dataTable.TableName, keyFields));
+            sqlBuilder.Append(SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, tableName ?? dataTable.TableName, keyFields,!AlwaysCreateParamaterizedSql));
         }
 
 
@@ -242,7 +245,7 @@ VALUES
             {
                 sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE ");
                 // Build Set fields
-                sqlBuilder.Append(SqlGenerator.BuildSetColumns(SqlSyntaxHelper, updateFields,updateFields));
+                sqlBuilder.Append(SqlGenerator.BuildSetColumns(SqlSyntaxHelper, updateFields,updateFields, !AlwaysCreateParamaterizedSql));
                 // Build Where clause.
                 sqlBuilder.Append($" {whereClause}");
             }
@@ -266,7 +269,7 @@ VALUES
             var sb1 = new StringBuilder();
             BuildInsertQuery(sb1, dataTable, tableName);
             var sb2 = new StringBuilder();
-            sb2.Append(SqlGenerator.BuildWhereClause(SqlSyntaxHelper, keyFields, keyFields));
+            sb2.Append(SqlGenerator.BuildWhereClause(SqlSyntaxHelper, keyFields, keyFields, !AlwaysCreateParamaterizedSql));
 
 
             if (DatabaseType == DataBaseType.Sqlite)

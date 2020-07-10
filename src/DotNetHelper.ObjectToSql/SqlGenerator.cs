@@ -58,11 +58,12 @@ namespace DotNetHelper.ObjectToSql
         /// <param name="syntax"></param>
         /// <param name="columns"></param>
         /// <returns></returns>
-        internal static string BuildValues(SqlSyntaxHelper syntax, List<string> columns)
+        internal static string BuildValues(SqlSyntaxHelper syntax, List<string> columns,bool isReadableSql)
         {
             var sqlBuilder = new StringBuilder();
+            var prefix = isReadableSql ? string.Empty : syntax.ConstAt.ToString();
             sqlBuilder.Append($"{syntax.ConstValues} {syntax.ConstOpenParens}"); // VALUES (
-            columns.ForEach(s => sqlBuilder.Append($"{syntax.ConstAt}{s},"));  // @test,
+            columns.ForEach(s => sqlBuilder.Append($"{prefix}{s},"));  // @test,
             sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
             sqlBuilder.Append(syntax.ConstCloseParens); // ) 
             return sqlBuilder.ToString(); // VALUES (@TEST,TEST)
@@ -87,22 +88,51 @@ namespace DotNetHelper.ObjectToSql
         }
 
         /// <summary>
+        /// Example *A=@A,*
+        /// </summary>
+        /// <param name="syntax"></param>
+        /// <param name="column"></param>
+        /// <param name="parameterColumn"></param>
+        /// <returns></returns>
+        internal static string BuildColumnEqualColumn(SqlSyntaxHelper syntax, string column, string parameterColumn,bool isReadableSql)
+        {
+	        var prefix = isReadableSql ? string.Empty : syntax.ConstAt.ToString();
+            return $"{syntax.GetKeywordEscapeOpenChar()}{column}{syntax.GetKeywordEscapeClosedChar()}={prefix}{parameterColumn},";
+        }
+
+
+        /// <summary>
+        /// Example *A=@A, B=@b, C=@C*
+        /// </summary>
+        /// <param name="syntax"></param>
+        /// <param name="columns"></param>
+        /// <param name="parameterColumns"></param>
+        /// <returns></returns>
+        internal static string BuildColumnsEqualColumns(SqlSyntaxHelper syntax, List<string> columns, List<string> parameterColumns, bool isReadableSql)
+        {
+	        var sqlBuilder = new StringBuilder(string.Empty);
+	        var i = 0;
+	        foreach (var col in columns)
+	        {
+		        sqlBuilder.Append($"{BuildColumnEqualColumn(syntax,col,parameterColumns[i], isReadableSql)}");
+		        i++;
+	        }
+	        sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+	        return sqlBuilder.ToString();
+        }
+
+
+        /// <summary>
         /// Example *SET A=@A, B=@b, C=@C*
         /// </summary>
         /// <param name="syntax"></param>
         /// <param name="columns"></param>
         /// <param name="parameterColumns"></param>
         /// <returns></returns>
-        internal static string BuildSetColumns(SqlSyntaxHelper syntax, List<string> columns, List<string> parameterColumns)
+        internal static string BuildSetColumns(SqlSyntaxHelper syntax, List<string> columns, List<string> parameterColumns,bool isReadableSql)
         {
             var sqlBuilder = new StringBuilder("SET ");
-            var i = 0;
-            foreach (var col in columns)
-            {
-                sqlBuilder.Append($"{syntax.GetKeywordEscapeOpenChar()}{col}{syntax.GetKeywordEscapeClosedChar()}={syntax.ConstAt}{parameterColumns[i]},");
-                i++;
-            }
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+            sqlBuilder.Append(BuildColumnsEqualColumns(syntax, columns, parameterColumns, isReadableSql));
             return sqlBuilder.ToString();
         }
 
@@ -138,19 +168,20 @@ namespace DotNetHelper.ObjectToSql
         /// <param name="syntax"></param>
         /// <param name="members"> </param>
         /// <returns></returns>
-        public static string BuildWhereClauseFromMembers(SqlSyntaxHelper syntax, List<MemberWrapper> members)
+        public static string BuildWhereClauseFromMembers(SqlSyntaxHelper syntax, List<MemberWrapper> members,bool isReadableSql)
         {
             // This uses the .net property attribute mapto else default property name
             var columns = members.Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
             // This uses the .net property name & ignores any attribute mapto name to ensure duplication is prevented
             var values = members.Select(c => c.Name).AsList();
-            return BuildWhereClause(syntax, columns, values);
+            return BuildWhereClause(syntax, columns, values, isReadableSql);
         }
 
         /// <summary>
         /// Builds the where clause.
+        /// Example *WHERE A=@A AND B=@b*
         /// </summary>
-        public static string BuildWhereClause(SqlSyntaxHelper syntax, List<string> columns, List<string> parameterColumns)
+        public static string BuildWhereClause(SqlSyntaxHelper syntax, List<string> columns, List<string> parameterColumns, bool isReadableSql)
         {
             if (columns.IsNullOrEmpty())
             {
@@ -162,10 +193,12 @@ namespace DotNetHelper.ObjectToSql
                 var i = 0;
                 foreach (var col in columns)
                 {
-                    sqlBuilder.Append($" {syntax.GetKeywordEscapeOpenChar()}{col}{syntax.GetKeywordEscapeClosedChar()}={syntax.ConstAt}{parameterColumns[i]} AND");
+                    sqlBuilder.Append($" {BuildColumnEqualColumn(syntax,col,parameterColumns[i], isReadableSql)}");
+                    sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+	                sqlBuilder.Append(" AND");
                     i++;
                 }
-                sqlBuilder.Remove(sqlBuilder.Length - 4, 4); // Remove the last AND       
+                sqlBuilder.Remove(sqlBuilder.Length - 4, 4); // Remove the last , AND       
                 return sqlBuilder.ToString();
             }
 
@@ -178,11 +211,11 @@ namespace DotNetHelper.ObjectToSql
         /// <param name="tableName">Name of the table.</param>
         /// <param name="columns">column names</param>
         /// <param name="valueColumns">values of columns</param>
-        public static string BuildInsertQuery(SqlSyntaxHelper syntax, string tableName, List<string> columns, List<string> valueColumns)
+        public static string BuildInsertQuery(SqlSyntaxHelper syntax, string tableName, List<string> columns, List<string> valueColumns,bool isReadableSql)
         {
 
             var columnsInParenthesesSection = BuildColumnsInParentheses(syntax, columns);
-            var valueSection = BuildValues(syntax, valueColumns);
+            var valueSection = BuildValues(syntax, valueColumns,isReadableSql);
             return $"{BuildInsertIntoTable(syntax, tableName)} {columnsInParenthesesSection} {valueSection}";
             // INSERT INTO TABLE (A,B,C) VALUES (@A,@B,@C)
         }
@@ -203,16 +236,16 @@ namespace DotNetHelper.ObjectToSql
         //    return $"{updateTableClause}{setColumnsClause}{whereClause}";
         //}
 
-        public static string BuildDeleteQuery(SqlSyntaxHelper syntax, string tableName, List<string> keyColumns)
+        public static string BuildDeleteQuery(SqlSyntaxHelper syntax, string tableName, List<string> keyColumns,bool isReadableSql)
         {
             var deleteFromClause = ($"{BuildDeleteFromTable(tableName)} ");
-            var whereClause = ($"{BuildWhereClause(syntax, keyColumns, keyColumns)}");
+            var whereClause = ($"{BuildWhereClause(syntax, keyColumns, keyColumns, isReadableSql)}");
             return $"{deleteFromClause}{whereClause}";
         }
-        public static string BuildDeleteQuery(SqlSyntaxHelper syntax, string tableName, List<MemberWrapper> keyColumns)
+        public static string BuildDeleteQuery(SqlSyntaxHelper syntax, string tableName, List<MemberWrapper> keyColumns, bool isReadableSql)
         {
             var deleteFromClause = ($"{BuildDeleteFromTable(tableName)} ");
-            var whereClause = ($"{BuildWhereClauseFromMembers(syntax, keyColumns)}");
+            var whereClause = ($"{BuildWhereClauseFromMembers(syntax, keyColumns, isReadableSql)}");
             return $"{deleteFromClause}{whereClause}";
         }
 

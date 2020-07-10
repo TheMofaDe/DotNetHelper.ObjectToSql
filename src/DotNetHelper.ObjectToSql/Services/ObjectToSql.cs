@@ -24,20 +24,20 @@ namespace DotNetHelper.ObjectToSql.Services
         public bool IncludeNonPublicAccessor { get; set; } = true;
         public DataBaseType DatabaseType { get; }
         public SqlSyntaxHelper SqlSyntaxHelper { get; }
-        public bool AlwaysCreateParamaterizedSql { get; set; } 
+        public bool AlwaysCreateParamaterizedSql { get; set; } = true;
 
-        public ObjectToSql(DataBaseType type, bool includeNonPublicAccessor, bool alwaysUseParamerizedSql = true)
+        public ObjectToSql(DataBaseType type, bool includeNonPublicAccessor)
         {
             DatabaseType = type;
             IncludeNonPublicAccessor = includeNonPublicAccessor;
             SqlSyntaxHelper = new SqlSyntaxHelper(type);
-            AlwaysCreateParamaterizedSql = alwaysUseParamerizedSql;
+            //AlwaysCreateParamaterizedSql = alwaysUseParamerizedSql;
         }
-        public ObjectToSql(DataBaseType type, bool alwaysUseParamaterizedSql = true)
+        public ObjectToSql(DataBaseType type)
         {
             DatabaseType = type;
             SqlSyntaxHelper = new SqlSyntaxHelper(type);
-            AlwaysCreateParamaterizedSql = alwaysUseParamaterizedSql;
+            //AlwaysCreateParamaterizedSql = alwaysUseParamaterizedSql;
         }
 
 
@@ -267,7 +267,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var columns = allFields.Where(m => !m.IsMemberIgnoredForInsertSql()).Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
             // This uses the .net property name & ignores any attribute mapto name to ensure duplication is prevented
             var valueColumns = allFields.Where(m => !m.IsMemberIgnoredForInsertSql()).Select(c => c.Name).AsList();
-            sqlBuilder.Append(SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, tableName.GetTableName(DatabaseType, type), columns, valueColumns));
+            sqlBuilder.Append(SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, tableName.GetTableName(DatabaseType, type), columns, valueColumns,!AlwaysCreateParamaterizedSql));
         }
 
 
@@ -291,7 +291,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append(SqlGenerator.BuildInsertIntoTable(SqlSyntaxHelper, tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault()));
             sqlBuilder.Append($" {SqlGenerator.BuildColumnsInParentheses(SqlSyntaxHelper, columns)}");
             sqlBuilder.Append($" {SqlGenerator.BuildOutputFields<T>(SqlSyntaxHelper, outputFields, OutputType.INSERTED)}");
-            sqlBuilder.Append($"{Environment.NewLine} {SqlGenerator.BuildValues(SqlSyntaxHelper, valueColumns)}");
+            sqlBuilder.Append($"{Environment.NewLine} {SqlGenerator.BuildValues(SqlSyntaxHelper, valueColumns, !AlwaysCreateParamaterizedSql)}");
         }
 
 
@@ -329,8 +329,8 @@ namespace DotNetHelper.ObjectToSql.Services
             var valueColumns = updateFields.Select(c => c.Name).AsList();
 
             sqlBuilder.Append($"{SqlGenerator.BuildUpdateTable(tableName.GetTableName(DatabaseType, type))} ");
-            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, columns, valueColumns)} ");
-            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
+            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, columns, valueColumns, !AlwaysCreateParamaterizedSql)} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields, !AlwaysCreateParamaterizedSql)}");
 
         }
 
@@ -357,8 +357,8 @@ namespace DotNetHelper.ObjectToSql.Services
             var valueColumns = nonKeyFields.Select(c => c.Name).AsList();
 
             sqlBuilder.Append($"{SqlGenerator.BuildUpdateTable(tableName.GetTableName(DatabaseType, typeof(T)))} ");
-            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, columns, valueColumns)} ");
-            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
+            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, columns, valueColumns, !AlwaysCreateParamaterizedSql)} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields, !AlwaysCreateParamaterizedSql)}");
         }
 
 
@@ -383,9 +383,9 @@ namespace DotNetHelper.ObjectToSql.Services
             var valueColumns = nonKeyFields.Select(c => c.Name).AsList();
 
             sqlBuilder.Append($"{SqlGenerator.BuildUpdateTable(tableName ?? typeof(T).GetTableNameFromCustomAttributeOrDefault())} ");
-            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, columns, valueColumns)} ");
+            sqlBuilder.Append($"{SqlGenerator.BuildSetColumns(SqlSyntaxHelper, columns, valueColumns, !AlwaysCreateParamaterizedSql)} ");
             sqlBuilder.Append($"{SqlGenerator.BuildOutputFields<T>(SqlSyntaxHelper, outputFields, OutputType.DELETED)}");
-            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields, !AlwaysCreateParamaterizedSql)}");
 
 
 
@@ -425,7 +425,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var keyFields = GetKeyFields(IncludeNonPublicAccessor, type);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessage);
 
-            sqlBuilder.Append(SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, tableName.GetTableName(DatabaseType, type), keyFields));
+            sqlBuilder.Append(SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, tableName.GetTableName(DatabaseType, type), keyFields,!AlwaysCreateParamaterizedSql));
         }
 
 
@@ -445,7 +445,7 @@ namespace DotNetHelper.ObjectToSql.Services
             sqlBuilder.Append($"{SqlGenerator.BuildDeleteFromTable(tableName.GetTableName(DatabaseType, typeof(T)))} ");
             var whereClauseFields = ExtFastMember.GetMemberWrappers<T>(IncludeNonPublicAccessor).Where(m => primaryKeys.Contains(m.Name)).AsList();
 
-            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, whereClauseFields)}");
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, whereClauseFields, !AlwaysCreateParamaterizedSql)}");
         }
 
         /// <summary>
@@ -465,7 +465,7 @@ namespace DotNetHelper.ObjectToSql.Services
 
             sqlBuilder.Append($"{SqlGenerator.BuildDeleteFromTable(tableName.GetTableName(DatabaseType, typeof(T)))} ");
             sqlBuilder.Append($"{SqlGenerator.BuildOutputFields<T>(SqlSyntaxHelper, outputFields, OutputType.DELETED)}");
-            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
+            sqlBuilder.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields, !AlwaysCreateParamaterizedSql)}");
         }
 
 
@@ -487,7 +487,7 @@ namespace DotNetHelper.ObjectToSql.Services
             {
                 sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE ");
                 // Build Set fields
-                sqlBuilder.Append(SqlGenerator.BuildSetColumns(SqlSyntaxHelper, updateFields.Select(w => w.GetNameFromCustomAttributeOrDefault()).AsList(), updateFields.Select(w => w.Name).AsList()));
+                sqlBuilder.Append(SqlGenerator.BuildSetColumns(SqlSyntaxHelper, updateFields.Select(w => w.GetNameFromCustomAttributeOrDefault()).AsList(), updateFields.Select(w => w.Name).AsList(), !AlwaysCreateParamaterizedSql));
 
               
 
@@ -511,7 +511,7 @@ namespace DotNetHelper.ObjectToSql.Services
             {
                 sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE ");
                 // Build Set fields
-                sqlBuilder.Append(SqlGenerator.BuildSetColumns(SqlSyntaxHelper, updateFields.Select(w => w.GetNameFromCustomAttributeOrDefault()).AsList(),updateFields.Select(w => w.Name).AsList()));
+                sqlBuilder.Append(SqlGenerator.BuildSetColumns(SqlSyntaxHelper, updateFields.Select(w => w.GetNameFromCustomAttributeOrDefault()).AsList(),updateFields.Select(w => w.Name).AsList(), !AlwaysCreateParamaterizedSql));
 
                 // Build Where clause.
                 sqlBuilder.Append($" {whereClause}");
@@ -523,8 +523,7 @@ namespace DotNetHelper.ObjectToSql.Services
         {
             var updateFields = GetNonKeyFields(IncludeNonPublicAccessor, type);
             sqlBuilder.Append($" {SqlSyntaxHelper.ConstMySqlOnDupeKeyUpdate} ");
-            updateFields.ForEach(p => sqlBuilder.Append($"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{p.GetNameFromCustomAttributeOrDefault()}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}={SqlSyntaxHelper.ConstAt}{p.Name},"));
-            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+            sqlBuilder.Append(SqlGenerator.BuildColumnsEqualColumns(SqlSyntaxHelper,updateFields.Select(w => w.GetNameFromCustomAttributeOrDefault()).AsList(),updateFields.Select(w => w.Name).AsList(), !AlwaysCreateParamaterizedSql));
         }
 
 
@@ -542,7 +541,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb1 = new StringBuilder();
             BuildInsertQuery<T>(sb1, tableName);
             var sb2 = new StringBuilder();
-            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
+            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields, !AlwaysCreateParamaterizedSql)}");
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
@@ -579,7 +578,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb1 = new StringBuilder();
             BuildInsertQuery<T>(sb1, tableName);
             var sb2 = new StringBuilder();
-            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
+            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields, !AlwaysCreateParamaterizedSql)}");
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
@@ -616,7 +615,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb1 = new StringBuilder();
             BuildInsertQuery(sb1, tableName, type);
             var sb2 = new StringBuilder();
-            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
+            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields, !AlwaysCreateParamaterizedSql)}");
 
             if (DatabaseType == DataBaseType.Sqlite)
             {
@@ -655,7 +654,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var sb1 = new StringBuilder();
             BuildInsertQueryWithOutputs(sb, tableName, outFields);
             var sb2 = new StringBuilder();
-            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields)}");
+            sb2.Append($"{SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, keyFields, !AlwaysCreateParamaterizedSql)}");
             sqlBuilder.Append(SqlSyntaxHelper.BuildIfExistStatement($"SELECT * FROM {tableName} {sb2}", sb.ToString(), sb1.ToString()));
         }
 
