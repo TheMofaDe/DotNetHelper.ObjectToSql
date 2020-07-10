@@ -22,7 +22,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: MemberWrapperExtension
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
     startLine: 9
@@ -65,7 +65,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ShouldMemberBeIgnored
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
     startLine: 35
@@ -106,7 +106,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: IsMemberIgnoredForInsertSql
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
     startLine: 44
@@ -147,7 +147,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: IsMemberASerializableColumn
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
     startLine: 51
@@ -188,7 +188,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: GetNameFromCustomAttributeOrDefault
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
     startLine: 72
@@ -229,7 +229,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: IsMemberAnIdentityColumn
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
     startLine: 81
@@ -270,7 +270,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: IsMemberAPrimaryKeyColumn
     path: ../src/DotNetHelper.ObjectToSql/Extension/AdvanceMemberExtension.cs
     startLine: 93

@@ -219,7 +219,7 @@ namespace DotNetHelper.ObjectToSql.Services
             var (keyFields, identityFields, nonIdentityFields) = GetFields(dataTable);
             if (keyFields.IsNullOrEmpty()) throw new MissingKeyAttributeException(ExceptionHelper.MissingKeyMessageForDataTable);
 
-            sqlBuilder.Append(SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, tableName ?? dataTable.TableName, keyFields,!AlwaysCreateParamaterizedSql));
+            sqlBuilder.Append(SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, tableName ?? dataTable.TableName, keyFields, !AlwaysCreateParamaterizedSql));
         }
 
 
@@ -245,7 +245,7 @@ VALUES
             {
                 sqlBuilder.Append($"{normalInsertSQl} ON CONFLICT ({string.Join(",", keyFields.Select(w => $"{SqlSyntaxHelper.GetKeywordEscapeOpenChar()}{w}{SqlSyntaxHelper.GetKeywordEscapeClosedChar()}"))} DO UPDATE ");
                 // Build Set fields
-                sqlBuilder.Append(SqlGenerator.BuildSetColumns(SqlSyntaxHelper, updateFields,updateFields, !AlwaysCreateParamaterizedSql));
+                sqlBuilder.Append(SqlGenerator.BuildSetColumns(SqlSyntaxHelper, updateFields, updateFields, !AlwaysCreateParamaterizedSql));
                 // Build Where clause.
                 sqlBuilder.Append($" {whereClause}");
             }

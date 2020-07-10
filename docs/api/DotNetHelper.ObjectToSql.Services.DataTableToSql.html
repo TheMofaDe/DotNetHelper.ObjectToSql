@@ -252,18 +252,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/docs-ref-overwrite/new?filename=DotNetHelper_ObjectToSql_Services_DataTableToSql__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Services.DataTableToSql.%23ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/docs-ref-overwrite/new?filename=DotNetHelper_ObjectToSql_Services_DataTableToSql__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Services.DataTableToSql.%23ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs/#L19">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs/#L21">View Source</a>
   </span>
   <a id="DotNetHelper_ObjectToSql_Services_DataTableToSql__ctor_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor*"></a>
-  <h4 id="DotNetHelper_ObjectToSql_Services_DataTableToSql__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)">DataTableToSql(DataBaseType)</h4>
+  <h4 id="DotNetHelper_ObjectToSql_Services_DataTableToSql__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Boolean_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)">DataTableToSql(DataBaseType, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DataTableToSql(DataBaseType type)</code></pre>
+    <pre><code class="lang-csharp hljs">public DataTableToSql(DataBaseType type, bool alwaysUseParamerizedSql = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -280,10 +280,45 @@
         <td><span class="parametername">type</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">alwaysUseParamerizedSql</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/docs-ref-overwrite/new?filename=DotNetHelper_ObjectToSql_Services_DataTableToSql_AlwaysCreateParamaterizedSql.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs/#L19">View Source</a>
+  </span>
+  <a id="DotNetHelper_ObjectToSql_Services_DataTableToSql_AlwaysCreateParamaterizedSql_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql*"></a>
+  <h4 id="DotNetHelper_ObjectToSql_Services_DataTableToSql_AlwaysCreateParamaterizedSql" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql">AlwaysCreateParamaterizedSql</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AlwaysCreateParamaterizedSql { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/docs-ref-overwrite/new?filename=DotNetHelper_ObjectToSql_Services_DataTableToSql_DatabaseType.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Services.DataTableToSql.DatabaseType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -421,7 +456,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/docs-ref-overwrite/new?filename=DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQuery_System_Data_DataTable_DotNetHelper_ObjectToSql_Enum_ActionType_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable%2CDotNetHelper.ObjectToSql.Enum.ActionType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs/#L35">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs/#L38">View Source</a>
   </span>
   <a id="DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQuery_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery*"></a>
   <h4 id="DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQuery_System_Data_DataTable_DotNetHelper_ObjectToSql_Enum_ActionType_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType)">BuildQuery(DataTable, ActionType)</h4>
@@ -473,7 +508,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/docs-ref-overwrite/new?filename=DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQuery_System_Data_DataTable_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable%2CDotNetHelper.ObjectToSql.Enum.ActionType%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs/#L50">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs/#L53">View Source</a>
   </span>
   <a id="DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQuery_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery*"></a>
   <h4 id="DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQuery_System_Data_DataTable_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)">BuildQuery(DataTable, ActionType, String)</h4>
@@ -530,7 +565,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/docs-ref-overwrite/new?filename=DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQueryFromRowState_System_Data_DataRow_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs/#L81">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs/#L84">View Source</a>
   </span>
   <a id="DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQueryFromRowState_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState*"></a>
   <h4 id="DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQueryFromRowState_System_Data_DataRow_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow)">BuildQueryFromRowState(DataRow)</h4>
@@ -577,7 +612,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/new/master/docs-ref-overwrite/new?filename=DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQueryFromRowState_System_Data_DataRow_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs/#L95">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/blob/master/src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs/#L98">View Source</a>
   </span>
   <a id="DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQueryFromRowState_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState*"></a>
   <h4 id="DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildQueryFromRowState_System_Data_DataRow_System_String_" data-uid="DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQueryFromRowState(System.Data.DataRow,System.String)">BuildQueryFromRowState(DataRow, String)</h4>

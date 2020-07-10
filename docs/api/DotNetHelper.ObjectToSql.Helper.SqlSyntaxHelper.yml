@@ -34,7 +34,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SqlSyntaxHelper
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 11
@@ -75,7 +75,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstNull
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 16
@@ -112,7 +112,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstInsertInto
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 20
@@ -149,7 +149,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstOpenParens
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 24
@@ -186,7 +186,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstCloseParens
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 28
@@ -223,7 +223,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstAt
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 32
@@ -260,7 +260,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstValues
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 33
@@ -295,7 +295,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstMySqlOnDupeKeyUpdate
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 37
@@ -332,7 +332,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstSqlServerSelectTop1
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 41
@@ -369,7 +369,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: EnclosedValueLookup
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 44
@@ -404,7 +404,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DataBaseType
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 45
@@ -439,7 +439,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 46
@@ -472,7 +472,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: GetKeywordEscapeOpenChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 192
@@ -504,7 +504,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: GetKeywordEscapeClosedChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 214
@@ -536,7 +536,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: RemoveKeywordEscapeChars
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 236
@@ -571,7 +571,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: GetEnclosedValueChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 244
@@ -606,7 +606,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildIfExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 296
@@ -645,7 +645,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildTableExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 323
@@ -684,7 +684,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConvertParameterSqlToReadable
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
     startLine: 366

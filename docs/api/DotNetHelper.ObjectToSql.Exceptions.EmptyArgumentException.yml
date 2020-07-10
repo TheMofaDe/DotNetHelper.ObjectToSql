@@ -17,7 +17,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/EmptyArgumentExeception.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: EmptyArgumentException
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/EmptyArgumentExeception.cs
     startLine: 9
@@ -87,7 +87,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Exceptions/EmptyArgumentExeception.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Exceptions/EmptyArgumentExeception.cs
     startLine: 34

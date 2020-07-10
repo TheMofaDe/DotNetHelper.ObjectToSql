@@ -956,12 +956,12 @@ references:
   commentId: T:DotNetHelper.ObjectToSql.Services.DataTableToSql
   fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql
   nameWithType: DataTableToSql
-- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  name: DataTableToSql(DataBaseType)
-  href: api/DotNetHelper.ObjectToSql.Services.DataTableToSql.html#DotNetHelper_ObjectToSql_Services_DataTableToSql__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_
-  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.DataTableToSql(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  nameWithType: DataTableToSql.DataTableToSql(DataBaseType)
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
+  name: DataTableToSql(DataBaseType, Boolean)
+  href: api/DotNetHelper.ObjectToSql.Services.DataTableToSql.html#DotNetHelper_ObjectToSql_Services_DataTableToSql__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.DataTableToSql(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Boolean)
+  nameWithType: DataTableToSql.DataTableToSql(DataBaseType, Boolean)
 - uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor*
   name: DataTableToSql
   href: api/DotNetHelper.ObjectToSql.Services.DataTableToSql.html#DotNetHelper_ObjectToSql_Services_DataTableToSql__ctor_
@@ -969,6 +969,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.DataTableToSql
   nameWithType: DataTableToSql.DataTableToSql
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql
+  name: AlwaysCreateParamaterizedSql
+  href: api/DotNetHelper.ObjectToSql.Services.DataTableToSql.html#DotNetHelper_ObjectToSql_Services_DataTableToSql_AlwaysCreateParamaterizedSql
+  commentId: P:DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql
+  nameWithType: DataTableToSql.AlwaysCreateParamaterizedSql
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql*
+  name: AlwaysCreateParamaterizedSql
+  href: api/DotNetHelper.ObjectToSql.Services.DataTableToSql.html#DotNetHelper_ObjectToSql_Services_DataTableToSql_AlwaysCreateParamaterizedSql_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql
+  nameWithType: DataTableToSql.AlwaysCreateParamaterizedSql
 - uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList*
   name: BuildDbParameterList
   href: api/DotNetHelper.ObjectToSql.Services.DataTableToSql.html#DotNetHelper_ObjectToSql_Services_DataTableToSql_BuildDbParameterList_
@@ -1074,6 +1087,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.ObjectToSql
   nameWithType: ObjectToSql.ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.AlwaysCreateParamaterizedSql
+  name: AlwaysCreateParamaterizedSql
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_AlwaysCreateParamaterizedSql
+  commentId: P:DotNetHelper.ObjectToSql.Services.ObjectToSql.AlwaysCreateParamaterizedSql
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.AlwaysCreateParamaterizedSql
+  nameWithType: ObjectToSql.AlwaysCreateParamaterizedSql
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.AlwaysCreateParamaterizedSql*
+  name: AlwaysCreateParamaterizedSql
+  href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_AlwaysCreateParamaterizedSql_
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.ObjectToSql.AlwaysCreateParamaterizedSql
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql.AlwaysCreateParamaterizedSql
+  nameWithType: ObjectToSql.AlwaysCreateParamaterizedSql
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList*
   name: BuildDbDataParameterList
   href: api/DotNetHelper.ObjectToSql.Services.ObjectToSql.html#DotNetHelper_ObjectToSql_Services_ObjectToSql_BuildDbDataParameterList_
@@ -1344,24 +1370,24 @@ references:
   commentId: T:DotNetHelper.ObjectToSql.SqlGenerator
   fullName: DotNetHelper.ObjectToSql.SqlGenerator
   nameWithType: SqlGenerator
-- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
-  name: BuildDeleteQuery(SqlSyntaxHelper, String, List<MemberWrapper>)
-  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildDeleteQuery_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_String_System_Collections_Generic_List_DotNetHelper_FastMember_Extension_Models_MemberWrapper__
-  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
-  name.vb: BuildDeleteQuery(SqlSyntaxHelper, String, List(Of MemberWrapper))
-  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List<DotNetHelper.FastMember.Extension.Models.MemberWrapper>)
-  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List(Of DotNetHelper.FastMember.Extension.Models.MemberWrapper))
-  nameWithType: SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, String, List<MemberWrapper>)
-  nameWithType.vb: SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, String, List(Of MemberWrapper))
-- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String})
-  name: BuildDeleteQuery(SqlSyntaxHelper, String, List<String>)
-  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildDeleteQuery_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_String_System_Collections_Generic_List_System_String__
-  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String})
-  name.vb: BuildDeleteQuery(SqlSyntaxHelper, String, List(Of String))
-  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List<System.String>)
-  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List(Of System.String))
-  nameWithType: SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, String, List<String>)
-  nameWithType.vb: SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, String, List(Of String))
+- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper},System.Boolean)
+  name: BuildDeleteQuery(SqlSyntaxHelper, String, List<MemberWrapper>, Boolean)
+  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildDeleteQuery_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_String_System_Collections_Generic_List_DotNetHelper_FastMember_Extension_Models_MemberWrapper__System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper},System.Boolean)
+  name.vb: BuildDeleteQuery(SqlSyntaxHelper, String, List(Of MemberWrapper), Boolean)
+  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List<DotNetHelper.FastMember.Extension.Models.MemberWrapper>, System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List(Of DotNetHelper.FastMember.Extension.Models.MemberWrapper), System.Boolean)
+  nameWithType: SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, String, List<MemberWrapper>, Boolean)
+  nameWithType.vb: SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, String, List(Of MemberWrapper), Boolean)
+- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Boolean)
+  name: BuildDeleteQuery(SqlSyntaxHelper, String, List<String>, Boolean)
+  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildDeleteQuery_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_String_System_Collections_Generic_List_System_String__System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Boolean)
+  name.vb: BuildDeleteQuery(SqlSyntaxHelper, String, List(Of String), Boolean)
+  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List<System.String>, System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List(Of System.String), System.Boolean)
+  nameWithType: SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, String, List<String>, Boolean)
+  nameWithType.vb: SqlGenerator.BuildDeleteQuery(SqlSyntaxHelper, String, List(Of String), Boolean)
 - uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery*
   name: BuildDeleteQuery
   href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildDeleteQuery_
@@ -1369,15 +1395,15 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery
   nameWithType: SqlGenerator.BuildDeleteQuery
-- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
-  name: BuildInsertQuery(SqlSyntaxHelper, String, List<String>, List<String>)
-  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildInsertQuery_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_String_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_String__
-  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
-  name.vb: BuildInsertQuery(SqlSyntaxHelper, String, List(Of String), List(Of String))
-  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.String>)
-  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List(Of System.String), System.Collections.Generic.List(Of System.String))
-  nameWithType: SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, String, List<String>, List<String>)
-  nameWithType.vb: SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, String, List(Of String), List(Of String))
+- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean)
+  name: BuildInsertQuery(SqlSyntaxHelper, String, List<String>, List<String>, Boolean)
+  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildInsertQuery_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_String_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_String__System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean)
+  name.vb: BuildInsertQuery(SqlSyntaxHelper, String, List(Of String), List(Of String), Boolean)
+  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.String>, System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.String, System.Collections.Generic.List(Of System.String), System.Collections.Generic.List(Of System.String), System.Boolean)
+  nameWithType: SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, String, List<String>, List<String>, Boolean)
+  nameWithType.vb: SqlGenerator.BuildInsertQuery(SqlSyntaxHelper, String, List(Of String), List(Of String), Boolean)
 - uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery*
   name: BuildInsertQuery
   href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildInsertQuery_
@@ -1385,15 +1411,15 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery
   nameWithType: SqlGenerator.BuildInsertQuery
-- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
-  name: BuildWhereClause(SqlSyntaxHelper, List<String>, List<String>)
-  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildWhereClause_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_String__
-  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})
-  name.vb: BuildWhereClause(SqlSyntaxHelper, List(Of String), List(Of String))
-  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.String>)
-  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.Collections.Generic.List(Of System.String), System.Collections.Generic.List(Of System.String))
-  nameWithType: SqlGenerator.BuildWhereClause(SqlSyntaxHelper, List<String>, List<String>)
-  nameWithType.vb: SqlGenerator.BuildWhereClause(SqlSyntaxHelper, List(Of String), List(Of String))
+- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean)
+  name: BuildWhereClause(SqlSyntaxHelper, List<String>, List<String>, Boolean)
+  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildWhereClause_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_String__System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean)
+  name.vb: BuildWhereClause(SqlSyntaxHelper, List(Of String), List(Of String), Boolean)
+  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.String>, System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.Collections.Generic.List(Of System.String), System.Collections.Generic.List(Of System.String), System.Boolean)
+  nameWithType: SqlGenerator.BuildWhereClause(SqlSyntaxHelper, List<String>, List<String>, Boolean)
+  nameWithType.vb: SqlGenerator.BuildWhereClause(SqlSyntaxHelper, List(Of String), List(Of String), Boolean)
 - uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause*
   name: BuildWhereClause
   href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildWhereClause_
@@ -1401,15 +1427,15 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause
   nameWithType: SqlGenerator.BuildWhereClause
-- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
-  name: BuildWhereClauseFromMembers(SqlSyntaxHelper, List<MemberWrapper>)
-  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildWhereClauseFromMembers_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_Collections_Generic_List_DotNetHelper_FastMember_Extension_Models_MemberWrapper__
-  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})
-  name.vb: BuildWhereClauseFromMembers(SqlSyntaxHelper, List(Of MemberWrapper))
-  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.Collections.Generic.List<DotNetHelper.FastMember.Extension.Models.MemberWrapper>)
-  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.Collections.Generic.List(Of DotNetHelper.FastMember.Extension.Models.MemberWrapper))
-  nameWithType: SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, List<MemberWrapper>)
-  nameWithType.vb: SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, List(Of MemberWrapper))
+- uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper},System.Boolean)
+  name: BuildWhereClauseFromMembers(SqlSyntaxHelper, List<MemberWrapper>, Boolean)
+  href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildWhereClauseFromMembers_DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_System_Collections_Generic_List_DotNetHelper_FastMember_Extension_Models_MemberWrapper__System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper},System.Boolean)
+  name.vb: BuildWhereClauseFromMembers(SqlSyntaxHelper, List(Of MemberWrapper), Boolean)
+  fullName: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.Collections.Generic.List<DotNetHelper.FastMember.Extension.Models.MemberWrapper>, System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper, System.Collections.Generic.List(Of DotNetHelper.FastMember.Extension.Models.MemberWrapper), System.Boolean)
+  nameWithType: SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, List<MemberWrapper>, Boolean)
+  nameWithType.vb: SqlGenerator.BuildWhereClauseFromMembers(SqlSyntaxHelper, List(Of MemberWrapper), Boolean)
 - uid: DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers*
   name: BuildWhereClauseFromMembers
   href: api/DotNetHelper.ObjectToSql.SqlGenerator.html#DotNetHelper_ObjectToSql_SqlGenerator_BuildWhereClauseFromMembers_

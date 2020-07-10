@@ -11,6 +11,26 @@ to use that default value instead of the .net property value.
 
 
 
+## [2.0.15] - 2020-07-09
+
+### Added
+- Oracle support
+
+### Changed
+- Affect method *BuildDBParameters* . ConvertToDatabaseValue will no longer auto-convert value of DateTime.MinValue that belongs to a DateTime type property
+  to sqlserver DateTime minimum supported value of *01,01,1753* see https://stackoverflow.com/a/12364243/2445462  
+~~~csharp
+ object ConvertToDatabaseValue(MemberWrapper member, object value, Func<object, string> XmlSerializer, Func<object, string> JsonSerializer, Func<object, string> CsvSerializer) 
+~~~ 
+
+### Removed 
+- (**BREAKING CHANGE**) removed the following api from ObjectToSql 
+~~~csharp
+object ConvertToDatabaseValue(object value)
+~~~ 
+
+<br/> 
+
 
 
 

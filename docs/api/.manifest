@@ -97,7 +97,8 @@
   "DotNetHelper.ObjectToSql.Model.SqlTable.TableName": "DotNetHelper.ObjectToSql.Model.SqlTable.yml",
   "DotNetHelper.ObjectToSql.Services": "DotNetHelper.ObjectToSql.Services.yml",
   "DotNetHelper.ObjectToSql.Services.DataTableToSql": "DotNetHelper.ObjectToSql.Services.DataTableToSql.yml",
-  "DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)": "DotNetHelper.ObjectToSql.Services.DataTableToSql.yml",
+  "DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)": "DotNetHelper.ObjectToSql.Services.DataTableToSql.yml",
+  "DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql": "DotNetHelper.ObjectToSql.Services.DataTableToSql.yml",
   "DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList``1(System.Data.DataRow,System.Func{System.String,System.Object,``0})": "DotNetHelper.ObjectToSql.Services.DataTableToSql.yml",
   "DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType)": "DotNetHelper.ObjectToSql.Services.DataTableToSql.yml",
   "DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)": "DotNetHelper.ObjectToSql.Services.DataTableToSql.yml",
@@ -108,6 +109,7 @@
   "DotNetHelper.ObjectToSql.Services.ObjectToSql": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
+  "DotNetHelper.ObjectToSql.Services.ObjectToSql.AlwaysCreateParamaterizedSql": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList``1(``0,System.Func{System.String,System.Object,System.Data.IDbDataParameter})": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbDataParameterList``1(``0,System.Func{System.String,System.Object,System.Data.IDbDataParameter},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.BuildDbParameterList``1(``0,System.Func{System.String,System.Object,System.Data.Common.DbParameter})": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
@@ -132,9 +134,9 @@
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.IncludeNonPublicAccessor": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.Services.ObjectToSql.SqlSyntaxHelper": "DotNetHelper.ObjectToSql.Services.ObjectToSql.yml",
   "DotNetHelper.ObjectToSql.SqlGenerator": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
-  "DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
-  "DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String})": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
-  "DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
-  "DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
-  "DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper})": "DotNetHelper.ObjectToSql.SqlGenerator.yml"
+  "DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper},System.Boolean)": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
+  "DotNetHelper.ObjectToSql.SqlGenerator.BuildDeleteQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Boolean)": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
+  "DotNetHelper.ObjectToSql.SqlGenerator.BuildInsertQuery(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean)": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
+  "DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClause(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean)": "DotNetHelper.ObjectToSql.SqlGenerator.yml",
+  "DotNetHelper.ObjectToSql.SqlGenerator.BuildWhereClauseFromMembers(DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper,System.Collections.Generic.List{DotNetHelper.FastMember.Extension.Models.MemberWrapper},System.Boolean)": "DotNetHelper.ObjectToSql.SqlGenerator.yml"
 }

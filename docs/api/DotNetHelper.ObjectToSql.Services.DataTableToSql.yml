@@ -5,7 +5,8 @@ items:
   id: DataTableToSql
   parent: DotNetHelper.ObjectToSql.Services
   children:
-  - DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  - DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
+  - DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql
   - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildDbParameterList``1(System.Data.DataRow,System.Func{System.String,System.Object,``0})
   - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType)
   - DotNetHelper.ObjectToSql.Services.DataTableToSql.BuildQuery(System.Data.DataTable,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
@@ -24,7 +25,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DataTableToSql
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 13
@@ -65,7 +66,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DatabaseType
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 16
@@ -100,7 +101,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SqlSyntaxHelper
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 17
@@ -120,34 +121,71 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)'
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql
+  commentId: P:DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql
+  id: AlwaysCreateParamaterizedSql
   parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
   langs:
   - csharp
   - vb
-  name: DataTableToSql(DataBaseType)
-  nameWithType: DataTableToSql.DataTableToSql(DataBaseType)
-  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.DataTableToSql(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  type: Constructor
+  name: AlwaysCreateParamaterizedSql
+  nameWithType: DataTableToSql.AlwaysCreateParamaterizedSql
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql
+  type: Property
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
-    id: .ctor
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+    id: AlwaysCreateParamaterizedSql
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 18
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
   syntax:
-    content: public DataTableToSql(DataBaseType type)
+    content: public bool AlwaysCreateParamaterizedSql { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AlwaysCreateParamaterizedSql As Boolean
+  overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
+  commentId: M:DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)
+  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Boolean)'
+  parent: DotNetHelper.ObjectToSql.Services.DataTableToSql
+  langs:
+  - csharp
+  - vb
+  name: DataTableToSql(DataBaseType, Boolean)
+  nameWithType: DataTableToSql.DataTableToSql(DataBaseType, Boolean)
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.DataTableToSql(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+    id: .ctor
+    path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
+    startLine: 20
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Services
+  syntax:
+    content: public DataTableToSql(DataBaseType type, bool alwaysUseParamerizedSql = true)
     parameters:
     - id: type
       type: DotNetHelper.ObjectToSql.Enum.DataBaseType
-    content.vb: Public Sub New(type As DataBaseType)
+    - id: alwaysUseParamerizedSql
+      type: System.Boolean
+    content.vb: Public Sub New(type As DataBaseType, alwaysUseParamerizedSql As Boolean = True)
   overload: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor*
   modifiers.csharp:
   - public
@@ -168,10 +206,10 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 34
+    startLine: 37
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -205,10 +243,10 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 49
+    startLine: 52
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -244,10 +282,10 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildQueryFromRowState
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 80
+    startLine: 83
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -279,10 +317,10 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildQueryFromRowState
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 94
+    startLine: 97
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
@@ -316,7 +354,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
     startLine: 300
@@ -679,6 +717,18 @@ references:
   name: DotNetHelper.ObjectToSql.Helper
   nameWithType: DotNetHelper.ObjectToSql.Helper
   fullName: DotNetHelper.ObjectToSql.Helper
+- uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql*
+  commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql
+  name: AlwaysCreateParamaterizedSql
+  nameWithType: DataTableToSql.AlwaysCreateParamaterizedSql
+  fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql.AlwaysCreateParamaterizedSql
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
 - uid: DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor*
   commentId: Overload:DotNetHelper.ObjectToSql.Services.DataTableToSql.#ctor
   name: DataTableToSql

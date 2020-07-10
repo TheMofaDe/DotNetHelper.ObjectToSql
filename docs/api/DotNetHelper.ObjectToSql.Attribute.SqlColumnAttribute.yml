@@ -31,7 +31,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SqlColumnAttribute
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 17
@@ -133,7 +133,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: MaxColumnSize
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 24
@@ -171,7 +171,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetMaxColumnSize
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 31
@@ -213,7 +213,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SerializableType
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 41
@@ -251,7 +251,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: IsIdentityKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 47
@@ -289,7 +289,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetIsIdentityKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 53
@@ -331,7 +331,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: IsReadOnly
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 64
@@ -369,7 +369,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetIsReadOnly
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 70
@@ -411,7 +411,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: PrimaryKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 82
@@ -449,7 +449,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetPrimaryKey
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 88
@@ -491,7 +491,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Nullable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 99
@@ -529,7 +529,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetNullable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 105
@@ -571,7 +571,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Ignore
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 116
@@ -609,7 +609,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SetIgnore
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 122
@@ -651,7 +651,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: MapTo
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 139
@@ -689,7 +689,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: MappingIds
     path: ../src/DotNetHelper.ObjectToSql/Attribute/CustomAttributes.cs
     startLine: 147

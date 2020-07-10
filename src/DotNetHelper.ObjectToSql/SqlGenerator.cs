@@ -58,7 +58,7 @@ namespace DotNetHelper.ObjectToSql
         /// <param name="syntax"></param>
         /// <param name="columns"></param>
         /// <returns></returns>
-        internal static string BuildValues(SqlSyntaxHelper syntax, List<string> columns,bool isReadableSql)
+        internal static string BuildValues(SqlSyntaxHelper syntax, List<string> columns, bool isReadableSql)
         {
             var sqlBuilder = new StringBuilder();
             var prefix = isReadableSql ? string.Empty : syntax.ConstAt.ToString();
@@ -94,9 +94,9 @@ namespace DotNetHelper.ObjectToSql
         /// <param name="column"></param>
         /// <param name="parameterColumn"></param>
         /// <returns></returns>
-        internal static string BuildColumnEqualColumn(SqlSyntaxHelper syntax, string column, string parameterColumn,bool isReadableSql)
+        internal static string BuildColumnEqualColumn(SqlSyntaxHelper syntax, string column, string parameterColumn, bool isReadableSql)
         {
-	        var prefix = isReadableSql ? string.Empty : syntax.ConstAt.ToString();
+            var prefix = isReadableSql ? string.Empty : syntax.ConstAt.ToString();
             return $"{syntax.GetKeywordEscapeOpenChar()}{column}{syntax.GetKeywordEscapeClosedChar()}={prefix}{parameterColumn},";
         }
 
@@ -110,15 +110,15 @@ namespace DotNetHelper.ObjectToSql
         /// <returns></returns>
         internal static string BuildColumnsEqualColumns(SqlSyntaxHelper syntax, List<string> columns, List<string> parameterColumns, bool isReadableSql)
         {
-	        var sqlBuilder = new StringBuilder(string.Empty);
-	        var i = 0;
-	        foreach (var col in columns)
-	        {
-		        sqlBuilder.Append($"{BuildColumnEqualColumn(syntax,col,parameterColumns[i], isReadableSql)}");
-		        i++;
-	        }
-	        sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-	        return sqlBuilder.ToString();
+            var sqlBuilder = new StringBuilder(string.Empty);
+            var i = 0;
+            foreach (var col in columns)
+            {
+                sqlBuilder.Append($"{BuildColumnEqualColumn(syntax, col, parameterColumns[i], isReadableSql)}");
+                i++;
+            }
+            sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
+            return sqlBuilder.ToString();
         }
 
 
@@ -129,7 +129,7 @@ namespace DotNetHelper.ObjectToSql
         /// <param name="columns"></param>
         /// <param name="parameterColumns"></param>
         /// <returns></returns>
-        internal static string BuildSetColumns(SqlSyntaxHelper syntax, List<string> columns, List<string> parameterColumns,bool isReadableSql)
+        internal static string BuildSetColumns(SqlSyntaxHelper syntax, List<string> columns, List<string> parameterColumns, bool isReadableSql)
         {
             var sqlBuilder = new StringBuilder("SET ");
             sqlBuilder.Append(BuildColumnsEqualColumns(syntax, columns, parameterColumns, isReadableSql));
@@ -168,7 +168,7 @@ namespace DotNetHelper.ObjectToSql
         /// <param name="syntax"></param>
         /// <param name="members"> </param>
         /// <returns></returns>
-        public static string BuildWhereClauseFromMembers(SqlSyntaxHelper syntax, List<MemberWrapper> members,bool isReadableSql)
+        public static string BuildWhereClauseFromMembers(SqlSyntaxHelper syntax, List<MemberWrapper> members, bool isReadableSql)
         {
             // This uses the .net property attribute mapto else default property name
             var columns = members.Select(c => c.GetNameFromCustomAttributeOrDefault()).AsList();
@@ -193,9 +193,9 @@ namespace DotNetHelper.ObjectToSql
                 var i = 0;
                 foreach (var col in columns)
                 {
-                    sqlBuilder.Append($" {BuildColumnEqualColumn(syntax,col,parameterColumns[i], isReadableSql)}");
+                    sqlBuilder.Append($" {BuildColumnEqualColumn(syntax, col, parameterColumns[i], isReadableSql)}");
                     sqlBuilder.Remove(sqlBuilder.Length - 1, 1); // Remove the last comma
-	                sqlBuilder.Append(" AND");
+                    sqlBuilder.Append(" AND");
                     i++;
                 }
                 sqlBuilder.Remove(sqlBuilder.Length - 4, 4); // Remove the last , AND       
@@ -211,11 +211,11 @@ namespace DotNetHelper.ObjectToSql
         /// <param name="tableName">Name of the table.</param>
         /// <param name="columns">column names</param>
         /// <param name="valueColumns">values of columns</param>
-        public static string BuildInsertQuery(SqlSyntaxHelper syntax, string tableName, List<string> columns, List<string> valueColumns,bool isReadableSql)
+        public static string BuildInsertQuery(SqlSyntaxHelper syntax, string tableName, List<string> columns, List<string> valueColumns, bool isReadableSql)
         {
 
             var columnsInParenthesesSection = BuildColumnsInParentheses(syntax, columns);
-            var valueSection = BuildValues(syntax, valueColumns,isReadableSql);
+            var valueSection = BuildValues(syntax, valueColumns, isReadableSql);
             return $"{BuildInsertIntoTable(syntax, tableName)} {columnsInParenthesesSection} {valueSection}";
             // INSERT INTO TABLE (A,B,C) VALUES (@A,@B,@C)
         }
@@ -236,7 +236,7 @@ namespace DotNetHelper.ObjectToSql
         //    return $"{updateTableClause}{setColumnsClause}{whereClause}";
         //}
 
-        public static string BuildDeleteQuery(SqlSyntaxHelper syntax, string tableName, List<string> keyColumns,bool isReadableSql)
+        public static string BuildDeleteQuery(SqlSyntaxHelper syntax, string tableName, List<string> keyColumns, bool isReadableSql)
         {
             var deleteFromClause = ($"{BuildDeleteFromTable(tableName)} ");
             var whereClause = ($"{BuildWhereClause(syntax, keyColumns, keyColumns, isReadableSql)}");

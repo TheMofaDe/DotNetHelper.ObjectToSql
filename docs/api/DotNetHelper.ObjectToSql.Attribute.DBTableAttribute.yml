@@ -19,7 +19,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DbTableAttribute
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
     startLine: 10
@@ -121,7 +121,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: TableName
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
     startLine: 17
@@ -159,7 +159,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: XReferenceTable
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
     startLine: 19
@@ -194,7 +194,7 @@ items:
     remote:
       path: src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
       branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql.git
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: JoinType
     path: ../src/DotNetHelper.ObjectToSql/Attribute/SqlTableAttribute.cs
     startLine: 25
