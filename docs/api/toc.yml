@@ -36,6 +36,8 @@
 - uid: DotNetHelper.ObjectToSql.Extension
   name: DotNetHelper.ObjectToSql.Extension
   items:
+  - uid: DotNetHelper.ObjectToSql.Extension.DBConnectionExtension
+    name: DBConnectionExtension
   - uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
     name: MemberWrapperExtension
 - uid: DotNetHelper.ObjectToSql.Helper

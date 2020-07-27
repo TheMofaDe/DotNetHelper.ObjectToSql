@@ -4,6 +4,7 @@ items:
   commentId: N:DotNetHelper.ObjectToSql.Extension
   id: DotNetHelper.ObjectToSql.Extension
   children:
+  - DotNetHelper.ObjectToSql.Extension.DBConnectionExtension
   - DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
   langs:
   - csharp
@@ -20,3 +21,8 @@ references:
   name: MemberWrapperExtension
   nameWithType: MemberWrapperExtension
   fullName: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
+- uid: DotNetHelper.ObjectToSql.Extension.DBConnectionExtension
+  commentId: T:DotNetHelper.ObjectToSql.Extension.DBConnectionExtension
+  name: DBConnectionExtension
+  nameWithType: DBConnectionExtension
+  fullName: DotNetHelper.ObjectToSql.Extension.DBConnectionExtension

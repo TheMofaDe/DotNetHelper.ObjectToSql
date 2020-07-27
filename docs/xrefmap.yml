@@ -470,6 +470,28 @@ references:
   commentId: N:DotNetHelper.ObjectToSql.Extension
   fullName: DotNetHelper.ObjectToSql.Extension
   nameWithType: DotNetHelper.ObjectToSql.Extension
+- uid: DotNetHelper.ObjectToSql.Extension.DBConnectionExtension
+  name: DBConnectionExtension
+  href: api/DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.html
+  commentId: T:DotNetHelper.ObjectToSql.Extension.DBConnectionExtension
+  fullName: DotNetHelper.ObjectToSql.Extension.DBConnectionExtension
+  nameWithType: DBConnectionExtension
+- uid: DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.ObjToSql*
+  name: ObjToSql
+  href: api/DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.html#DotNetHelper_ObjectToSql_Extension_DBConnectionExtension_ObjToSql_
+  commentId: Overload:DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.ObjToSql
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.ObjToSql
+  nameWithType: DBConnectionExtension.ObjToSql
+- uid: DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.ObjToSql``1(``0,System.Boolean)
+  name: ObjToSql<T>(T, Boolean)
+  href: api/DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.html#DotNetHelper_ObjectToSql_Extension_DBConnectionExtension_ObjToSql__1___0_System_Boolean_
+  commentId: M:DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.ObjToSql``1(``0,System.Boolean)
+  name.vb: ObjToSql(Of T)(T, Boolean)
+  fullName: DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.ObjToSql<T>(T, System.Boolean)
+  fullName.vb: DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.ObjToSql(Of T)(T, System.Boolean)
+  nameWithType: DBConnectionExtension.ObjToSql<T>(T, Boolean)
+  nameWithType.vb: DBConnectionExtension.ObjToSql(Of T)(T, Boolean)
 - uid: DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension
   name: MemberWrapperExtension
   href: api/DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.html

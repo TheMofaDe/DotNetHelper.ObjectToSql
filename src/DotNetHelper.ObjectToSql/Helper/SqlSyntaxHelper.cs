@@ -372,7 +372,7 @@ namespace DotNetHelper.ObjectToSql.Helper
             orderedParameters.ForEach(delegate (T parameter)
             {
                 var name = parameter.ParameterName;
-                sql = sql.Replace(name.StartsWith("@") ? $"{name}" : $"@{name}", CommandToSQl(parameter.Value, encoding ?? Encoding.UTF8));
+                sql = sql.Replace(name.StartsWith("@") ? $"{name}" : $"@{name}", EscapeSqlValue(parameter.Value, encoding ?? Encoding.UTF8));
             });
 
             return sql;
@@ -380,12 +380,12 @@ namespace DotNetHelper.ObjectToSql.Helper
         }
 
         /// <summary>
-        /// Convert the 
+        /// return the value escaped for valid sql
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="encoding"></param>
         /// <returns></returns>
-        private string CommandToSQl(object obj, Encoding encoding)
+        public string EscapeSqlValue(object obj, Encoding encoding)
         {
 
             if (obj == null || obj == DBNull.Value)

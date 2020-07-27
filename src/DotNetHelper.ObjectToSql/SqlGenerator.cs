@@ -211,9 +211,9 @@ namespace DotNetHelper.ObjectToSql
         /// <param name="tableName">Name of the table.</param>
         /// <param name="columns">column names</param>
         /// <param name="valueColumns">values of columns</param>
+        /// <param name="isReadableSql"></param>
         public static string BuildInsertQuery(SqlSyntaxHelper syntax, string tableName, List<string> columns, List<string> valueColumns, bool isReadableSql)
         {
-
             var columnsInParenthesesSection = BuildColumnsInParentheses(syntax, columns);
             var valueSection = BuildValues(syntax, valueColumns, isReadableSql);
             return $"{BuildInsertIntoTable(syntax, tableName)} {columnsInParenthesesSection} {valueSection}";

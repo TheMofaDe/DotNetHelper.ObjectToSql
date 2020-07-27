@@ -23,6 +23,12 @@ references:
   fullName: DotNetHelper.ObjectToSql.Services.DataTableToSql
 - uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
   commentId: T:DotNetHelper.ObjectToSql.Services.ObjectToSql
+  parent: DotNetHelper.ObjectToSql.Services
   name: ObjectToSql
   nameWithType: ObjectToSql
   fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services
+  commentId: N:DotNetHelper.ObjectToSql.Services
+  name: DotNetHelper.ObjectToSql.Services
+  nameWithType: DotNetHelper.ObjectToSql.Services
+  fullName: DotNetHelper.ObjectToSql.Services

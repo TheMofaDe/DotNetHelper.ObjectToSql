@@ -55,6 +55,8 @@
   "DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException": "DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.yml",
   "DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)": "DotNetHelper.ObjectToSql.Exceptions.MissingKeyAttributeException.yml",
   "DotNetHelper.ObjectToSql.Extension": "DotNetHelper.ObjectToSql.Extension.yml",
+  "DotNetHelper.ObjectToSql.Extension.DBConnectionExtension": "DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.yml",
+  "DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.ObjToSql``1(``0,System.Boolean)": "DotNetHelper.ObjectToSql.Extension.DBConnectionExtension.yml",
   "DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension": "DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.yml",
   "DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.GetNameFromCustomAttributeOrDefault(DotNetHelper.FastMember.Extension.Models.MemberWrapper)": "DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.yml",
   "DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.IsMemberAnIdentityColumn(DotNetHelper.FastMember.Extension.Models.MemberWrapper)": "DotNetHelper.ObjectToSql.Extension.MemberWrapperExtension.yml",
