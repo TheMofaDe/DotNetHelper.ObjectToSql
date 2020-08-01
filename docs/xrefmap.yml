@@ -805,6 +805,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
   nameWithType: SqlSyntaxHelper.EnclosedValueLookup
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue(System.Object,System.Text.Encoding)
+  name: EscapeSqlValue(Object, Encoding)
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_EscapeSqlValue_System_Object_System_Text_Encoding_
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue(System.Object,System.Text.Encoding)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue(System.Object, System.Text.Encoding)
+  nameWithType: SqlSyntaxHelper.EscapeSqlValue(Object, Encoding)
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue*
+  name: EscapeSqlValue
+  href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_EscapeSqlValue_
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue
+  isSpec: "True"
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue
+  nameWithType: SqlSyntaxHelper.EscapeSqlValue
 - uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
   name: GetEnclosedValueChar(Type)
   href: api/DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.html#DotNetHelper_ObjectToSql_Helper_SqlSyntaxHelper_GetEnclosedValueChar_System_Type_

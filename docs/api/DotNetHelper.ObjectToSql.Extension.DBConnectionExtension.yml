@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/DBConnection.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DBConnectionExtension
     path: ../src/DotNetHelper.ObjectToSql/Extension/DBConnection.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Extension/DBConnection.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ObjToSql
     path: ../src/DotNetHelper.ObjectToSql/Extension/DBConnection.cs

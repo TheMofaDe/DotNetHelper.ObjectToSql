@@ -16,13 +16,11 @@ var buildTask = Task("Build")
             Configuration = parameters.Configuration,
             MSBuildSettings = msbuildSettings,
             NoRestore = true,
-            
         };
         DotNetCoreBuild(project.ProjectFilePath.FullPath, settings);  
-        context.SetVersionFromJsonFile(parameters);
-
         CopyDirectory(Directory(System.IO.Path.GetDirectoryName(project.ProjectFilePath.FullPath) + $"/bin/{parameters.Configuration}"), parameters.Paths.Directories.ArtifactsBin);
     }  
+        context.SetVersionFromJsonFile(parameters);
 }).ReportError(exception =>
 {
     Error(exception.Dump());

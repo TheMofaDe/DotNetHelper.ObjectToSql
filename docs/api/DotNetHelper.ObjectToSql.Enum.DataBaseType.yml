@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DataBaseType
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SqlServer
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
@@ -85,7 +85,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: MySql
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
@@ -117,7 +117,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Sqlite
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Oracle
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
@@ -181,7 +181,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Oledb
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
@@ -213,7 +213,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Access95
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
@@ -245,7 +245,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Odbc
     path: ../src/DotNetHelper.ObjectToSql/Enum/DatabaseType.cs

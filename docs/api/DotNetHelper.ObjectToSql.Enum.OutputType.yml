@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/OutputType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: OutputType
     path: ../src/DotNetHelper.ObjectToSql/Enum/OutputType.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/OutputType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: INSERTED
     path: ../src/DotNetHelper.ObjectToSql/Enum/OutputType.cs
@@ -80,7 +80,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/OutputType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DELETED
     path: ../src/DotNetHelper.ObjectToSql/Enum/OutputType.cs

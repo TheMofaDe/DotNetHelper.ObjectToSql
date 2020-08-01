@@ -73,7 +73,7 @@
         &quot;_appTitle&quot;:&quot;$(Product)&quot;,
         &quot;_gitContribute&quot;:{
            &quot;repo&quot;:&quot;$(RepositoryUrl)&quot;,
-           &quot;branch&quot;:&quot;$(GitBranch)&quot;,
+           &quot;branch&quot;:&quot;master&quot;,
            &quot;apiSpecFolder&quot;:&quot;docs-ref-overwrite&quot;
         },
         &quot;_disableContribution&quot;:false,

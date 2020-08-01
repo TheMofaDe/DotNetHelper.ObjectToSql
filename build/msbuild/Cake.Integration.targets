@@ -38,12 +38,12 @@
 <!-- <ArtifactsPath>$(RepoArtifactsPath)$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)\$(Configuration)\</ArtifactsPath> -->
 </PropertyGroup>
 
-
 <WriteLinesToFile
       Overwrite="true"
+      WriteOnlyWhenDifferent="true"
       Lines="$(VersionJson)"
       File="$(RepoArtifactsRootPath)build.version.json"
-      ContinueOnError="false"/>
+      ContinueOnError="true"/>
 </Target>
 
 

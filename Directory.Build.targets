@@ -15,7 +15,7 @@
 </PropertyGroup>
 
 
-  <Target
+<Target
     Name="SetVersionMetadata"
     DependsOnTargets="GitVersion"
     Condition="'$(GitInfoImported)' == 'true'">
