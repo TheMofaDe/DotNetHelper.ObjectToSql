@@ -18,11 +18,11 @@ Task("Publish-AzurePipeline")
     }
     foreach(var package in parameters.Paths.Directories.NugetPackages)
     {
-        if (FileExists(package.FullPath)) { AzurePipelines.Commands.UploadArtifact(package.FullPath); }
+        if (FileExists(package.FullPath)) { AzurePipelines.Commands.UploadArtifact("",package.FullPath,"nuget-packages"); }
     }
     foreach(var artifact in parameters.Paths.Directories.BuildArtifacts)
     {
-        if (FileExists(artifact.FullPath)) { AzurePipelines.Commands.UploadArtifact(artifact.FullPath); }
+        if (FileExists(artifact.FullPath)) { AzurePipelines.Commands.UploadArtifact("",artifact.FullPath,"build-artifacts"); }
     }
 })
 .OnError(exception =>
