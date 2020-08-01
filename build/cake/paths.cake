@@ -73,7 +73,7 @@ public class BuildDirectories
     }}
     public ReadOnlyCollection<FilePath> TestResults { get {
         var list = new List<FilePath>(){};
-        var files =  Context.GetFiles($"{TestResultsOutput.FullPath}/**/*.results.xml");
+        var files =  Context.GetFiles($"{TestResultsOutput.FullPath}/**/*.trx");
         foreach(var file in files){
             list.Add(file);
         }
@@ -87,6 +87,16 @@ public class BuildDirectories
         }
         return list.AsReadOnly();
     }}
+
+    public ReadOnlyCollection<FilePath> BuildArtifacts { get {
+        var list = new List<FilePath>(){};
+        var files =  Context.GetFiles($"{BuildArtifact.FullPath}/**/*.zip");
+        foreach(var file in files){
+            list.Add(file);
+        }
+        return list.AsReadOnly();
+    }}
+
 
     public BuildDirectories(
         DirectoryPath rootDir,

@@ -18,9 +18,9 @@ var buildTask = Task("Build")
             NoRestore = true,
         };
         DotNetCoreBuild(project.ProjectFilePath.FullPath, settings);  
-        CopyDirectory(Directory(System.IO.Path.GetDirectoryName(project.ProjectFilePath.FullPath) + $"/bin/{parameters.Configuration}"), parameters.Paths.Directories.ArtifactsBin);
-    }  
         context.SetVersionFromJsonFile(parameters);
+        CopyDirectory(Directory(System.IO.Path.GetDirectoryName(project.ProjectFilePath.FullPath) + $"/bin/{parameters.Configuration}"), parameters.Paths.Directories.ArtifactsBin);
+    }    
 }).ReportError(exception =>
 {
     Error(exception.Dump());

@@ -19,6 +19,10 @@ Task("Publish-AppVeyor")
     {
         if (FileExists(package.FullPath)) { AppVeyor.UploadArtifact(package.FullPath); }
     }
+    foreach(var artifact in parameters.Paths.Directories.BuildArtifacts)
+    {
+        if (FileExists(artifact.FullPath)) { AppVeyor.UploadArtifact(artifact.FullPath); }
+    }
 })
 .OnError(exception =>
 {

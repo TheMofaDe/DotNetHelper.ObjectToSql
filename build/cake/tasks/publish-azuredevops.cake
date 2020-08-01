@@ -18,7 +18,11 @@ Task("Publish-AzurePipeline")
     }
     foreach(var package in parameters.Paths.Directories.NugetPackages)
     {
-        if (FileExists(package.FullPath)) { AppVeyor.UploadArtifact(package.FullPath); }
+        if (FileExists(package.FullPath)) { AzurePipelines.UploadArtifact(package.FullPath); }
+    }
+    foreach(var artifact in parameters.Paths.Directories.BuildArtifacts)
+    {
+        if (FileExists(artifact.FullPath)) { AzurePipelines.UploadArtifact(artifact.FullPath); }
     }
 })
 .OnError(exception =>
