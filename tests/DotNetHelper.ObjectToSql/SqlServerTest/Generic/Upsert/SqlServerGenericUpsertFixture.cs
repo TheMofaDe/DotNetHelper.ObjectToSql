@@ -9,47 +9,47 @@ using NUnit.Framework;
 
 namespace DotNetHelper.ObjectToSql.Tests.SqlServerTest.Generic.Upsert
 {
-    public class SqlServerGenericUpsertFixture : BaseTest
-    {
+	public class SqlServerGenericUpsertFixture : BaseTest
+	{
 
-        public ActionType ActionType { get; } = ActionType.Upsert;
-
-
-        [SetUp]
-        public void Setup()
-        {
-
-        }
-        [TearDown]
-        public void Teardown()
-        {
-
-        }
-
-        [Test]
-        public void Test_Generic_Build_Upsert_Query()
-        {
-            var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => objectToSql.BuildQuery<Employee>(ActionType),
-                Throws.Exception
-                    .TypeOf<MissingKeyAttributeException>());
-        }
-
-        [Test]
-        public void Test_BuildQuery_Generic_As_Object_Overload_Throws_With_Key_Attribute_Decorated()
-        {
-            object employee = new Employee();
-            var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
-            Assert.That(() => objectToSql.BuildQuery(ActionType, employee),
-                Throws.Exception
-                    .TypeOf<MissingKeyAttributeException>());
-        }
+		public ActionType ActionType { get; } = ActionType.Upsert;
 
 
+		[SetUp]
+		public void Setup()
+		{
+
+		}
+		[TearDown]
+		public void Teardown()
+		{
+
+		}
+
+		[Test]
+		public void Test_Generic_Build_Upsert_Query()
+		{
+			var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+			Assert.That(() => objectToSql.BuildQuery<Employee>(ActionType),
+				Throws.Exception
+					.TypeOf<MissingKeyAttributeException>());
+		}
+
+		[Test]
+		public void Test_BuildQuery_Generic_As_Object_Overload_Throws_With_Key_Attribute_Decorated()
+		{
+			object employee = new Employee();
+			var objectToSql = new Services.ObjectToSql(DataBaseType.SqlServer);
+			Assert.That(() => objectToSql.BuildQuery(ActionType, employee),
+				Throws.Exception
+					.TypeOf<MissingKeyAttributeException>());
+		}
 
 
 
 
 
-    }
+
+
+	}
 }

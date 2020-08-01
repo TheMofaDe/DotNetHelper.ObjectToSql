@@ -5,9 +5,9 @@ using System.Text;
 
 namespace DotNetHelper.ObjectToSql.Enum
 {
-    public enum OutputType
-    {
-        INSERTED
-        , DELETED
-    }
+	public enum OutputType
+	{
+		INSERTED
+		, DELETED
+	}
 }
