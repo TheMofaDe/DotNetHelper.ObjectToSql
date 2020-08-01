@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ScriptType
     path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Parameterized
     path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
@@ -80,7 +80,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/ActionType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: HumanReadable
     path: ../src/DotNetHelper.ObjectToSql/Enum/ActionType.cs

@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SqlGenerator
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
@@ -62,7 +62,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildWhereClauseFromMembers
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildWhereClause
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
@@ -159,11 +159,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildInsertQuery
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-    startLine: 213
+    startLine: 214
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql
@@ -185,6 +185,7 @@ items:
       description: values of columns
     - id: isReadableSql
       type: System.Boolean
+      description: ''
     return:
       type: System.String
     content.vb: Public Shared Function BuildInsertQuery(syntax As SqlSyntaxHelper, tableName As String, columns As List(Of String), valueColumns As List(Of String), isReadableSql As Boolean) As String
@@ -212,7 +213,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildDeleteQuery
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs
@@ -258,7 +259,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/SqlGenerator.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildDeleteQuery
     path: ../src/DotNetHelper.ObjectToSql/SqlGenerator.cs

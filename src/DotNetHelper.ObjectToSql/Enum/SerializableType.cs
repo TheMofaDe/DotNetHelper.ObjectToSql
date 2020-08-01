@@ -1,11 +1,11 @@
 ﻿namespace DotNetHelper.ObjectToSql.Enum
 {
-    public enum SerializableType
-    {
+	public enum SerializableType
+	{
 
-        None = 0
-        , Xml = 1
-        , Json = 2
-        , Csv = 3
-    }
+		None = 0
+		, Xml = 1
+		, Json = 2
+		, Csv = 3
+	}
 }

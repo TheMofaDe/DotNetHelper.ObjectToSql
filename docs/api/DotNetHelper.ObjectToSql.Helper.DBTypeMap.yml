@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/DBTypeMap.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DbTypeMap
     path: ../src/DotNetHelper.ObjectToSql/Helper/DBTypeMap.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/DBTypeMap.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: TypeToSqlTypeMap
     path: ../src/DotNetHelper.ObjectToSql/Helper/DBTypeMap.cs
@@ -93,7 +93,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/DBTypeMap.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Helper/DBTypeMap.cs

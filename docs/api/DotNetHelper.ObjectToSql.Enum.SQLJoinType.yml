@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SqlJoinType
     path: ../src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Left
     path: ../src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Inner
     path: ../src/DotNetHelper.ObjectToSql/Enum/SQLJoinType.cs

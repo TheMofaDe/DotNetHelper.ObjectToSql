@@ -19,6 +19,7 @@ items:
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable``1(System.Collections.Generic.List{``0},System.String,System.Text.Encoding)
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup
+  - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue(System.Object,System.Text.Encoding)
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar
   - DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar
@@ -33,7 +34,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SqlSyntaxHelper
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -74,7 +75,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstNull
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -111,7 +112,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstInsertInto
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -148,7 +149,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstOpenParens
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -185,7 +186,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstCloseParens
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -222,7 +223,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstAt
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -259,7 +260,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstValues
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -294,7 +295,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstMySqlOnDupeKeyUpdate
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -331,7 +332,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConstSqlServerSelectTop1
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -368,7 +369,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: EnclosedValueLookup
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -403,7 +404,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DataBaseType
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -438,7 +439,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -471,7 +472,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: GetKeywordEscapeOpenChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -503,7 +504,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: GetKeywordEscapeClosedChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -535,7 +536,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: RemoveKeywordEscapeChars
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
@@ -570,11 +571,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: GetEnclosedValueChar
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 244
+    startLine: 245
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -605,11 +606,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildIfExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 296
+    startLine: 297
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -644,11 +645,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildTableExistStatement
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 323
+    startLine: 324
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -683,11 +684,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: ConvertParameterSqlToReadable
     path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
-    startLine: 366
+    startLine: 367
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Helper
@@ -722,6 +723,48 @@ items:
   - Public
   fullName.vb: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable(Of T)(System.Collections.Generic.List(Of T), System.String, System.Text.Encoding)
   name.vb: ConvertParameterSqlToReadable(Of T)(List(Of T), String, Encoding)
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue(System.Object,System.Text.Encoding)
+  commentId: M:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue(System.Object,System.Text.Encoding)
+  id: EscapeSqlValue(System.Object,System.Text.Encoding)
+  parent: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
+  langs:
+  - csharp
+  - vb
+  name: EscapeSqlValue(Object, Encoding)
+  nameWithType: SqlSyntaxHelper.EscapeSqlValue(Object, Encoding)
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue(System.Object, System.Text.Encoding)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+      branch: feature/build
+      repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
+    id: EscapeSqlValue
+    path: ../src/DotNetHelper.ObjectToSql/Helper/SqlSyntaxHelper.cs
+    startLine: 388
+  assemblies:
+  - DotNetHelper.ObjectToSql
+  namespace: DotNetHelper.ObjectToSql.Helper
+  summary: "\nreturn the value escaped for valid sql\n"
+  example: []
+  syntax:
+    content: public string EscapeSqlValue(object obj, Encoding encoding)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: ''
+    - id: encoding
+      type: System.Text.Encoding
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function EscapeSqlValue(obj As Object, encoding As Encoding) As String
+  overload: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
 - uid: DotNetHelper.ObjectToSql.Helper
   commentId: N:DotNetHelper.ObjectToSql.Helper
@@ -1362,3 +1405,8 @@ references:
   name: System.Text
   nameWithType: System.Text
   fullName: System.Text
+- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue*
+  commentId: Overload:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue
+  name: EscapeSqlValue
+  nameWithType: SqlSyntaxHelper.EscapeSqlValue
+  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue

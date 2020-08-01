@@ -6,27 +6,27 @@ namespace DotNetHelper.ObjectToSql.Tests.AttributeTest
 
 
 
-    public class CustomAttributeFixture
-    {
+	public class CustomAttributeFixture
+	{
 
-        [DbTable(TableName = "NotTestClass")]
-        private class TestClass
-        {
-            public string A { get; set; }
-        }
+		[DbTable(TableName = "NotTestClass")]
+		private class TestClass
+		{
+			public string A { get; set; }
+		}
 
-        [SetUp]
-        public void Setup()
-        {
+		[SetUp]
+		public void Setup()
+		{
 
-        }
-        [TearDown]
-        public void Teardown()
-        {
+		}
+		[TearDown]
+		public void Teardown()
+		{
 
-        }
+		}
 
 
 
-    }
+	}
 }

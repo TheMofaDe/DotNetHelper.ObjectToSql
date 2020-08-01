@@ -83,6 +83,7 @@
   "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.ConvertParameterSqlToReadable``1(System.Collections.Generic.List{``0},System.String,System.Text.Encoding)": "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.yml",
   "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.DataBaseType": "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.yml",
   "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EnclosedValueLookup": "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.yml",
+  "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.EscapeSqlValue(System.Object,System.Text.Encoding)": "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.yml",
   "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetEnclosedValueChar(System.Type)": "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.yml",
   "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeClosedChar": "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.yml",
   "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.GetKeywordEscapeOpenChar": "DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper.yml",

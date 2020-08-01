@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SerializableType
     path: ../src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
@@ -50,7 +50,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: None
     path: ../src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Xml
     path: ../src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Json
     path: ../src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
@@ -146,7 +146,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: Csv
     path: ../src/DotNetHelper.ObjectToSql/Enum/SerializableType.cs

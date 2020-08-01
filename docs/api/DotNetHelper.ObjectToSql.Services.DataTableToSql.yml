@@ -24,7 +24,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DataTableToSql
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -65,7 +65,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: DatabaseType
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: SqlSyntaxHelper
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -135,7 +135,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: AlwaysCreateParamaterizedSql
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -170,7 +170,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: .ctor
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -205,7 +205,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -242,7 +242,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildQuery
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -281,7 +281,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildQueryFromRowState
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -316,7 +316,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildQueryFromRowState
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
@@ -353,11 +353,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-      branch: master
+      branch: feature/build
       repo: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql
     id: BuildDbParameterList
     path: ../src/DotNetHelper.ObjectToSql/Services/DataTableToSql.cs
-    startLine: 300
+    startLine: 303
   assemblies:
   - DotNetHelper.ObjectToSql
   namespace: DotNetHelper.ObjectToSql.Services
