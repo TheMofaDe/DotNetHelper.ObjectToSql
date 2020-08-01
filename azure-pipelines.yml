@@ -47,30 +47,30 @@ stages:
     
 
 
-- stage: FormatCode
-  displayName: 'Format Code'
-  dependsOn: ["Test"]
-  jobs:
-  - job: FormatCode
-    pool:
-      vmImage: windows-latest
-    steps:
-    - template: build/.azurepipelines/format-code.yml
+# - stage: FormatCode
+#   displayName: 'Format Code'
+#   dependsOn: ["Test"]
+#   jobs:
+#   - job: FormatCode
+#     pool:
+#       vmImage: windows-latest
+#     steps:
+#     - template: build/.azurepipelines/format-code.yml
 
 
 
 
 
 
-- stage: GenerateDocs
-  displayName: 'Generate Docs'
-  dependsOn: ["FormatCode"]
-  jobs:
-  - job: GenerateDocs
-    pool:
-      vmImage: windows-latest
-    steps:
-    - template: build/.azurepipelines/docs.yml    
+# - stage: GenerateDocs
+#   displayName: 'Generate Docs'
+#   dependsOn: ["FormatCode"]
+#   jobs:
+#   - job: GenerateDocs
+#     pool:
+#       vmImage: windows-latest
+#     steps:
+#     - template: build/.azurepipelines/docs.yml    
 
 
 
@@ -98,12 +98,13 @@ stages:
       vmImage: windows-latest
     strategy:
       matrix:
-        Coverage:
-          TASK_NAME: 'Coverage'
+#        Coverage:
+#          TASK_NAME: 'Coverage'
         AzurePipeline:
             TASK_NAME: 'AzurePipeline'  
-        NuGet:
-              TASK_NAME: 'NuGet'            
+
+#        NuGet:
+#              TASK_NAME: 'NuGet'            
 #        Documentation:
 #          TASK_NAME: 'Documentation'
     steps:
