@@ -1,6 +1,5 @@
 <Project>
 
- <Import  Condition="'$(MSBuildProjectExtension)' == '.csproj' AND '$(GenerateDocumentation)' == 'true'"  Project="$(RepoRootPath)\build\msbuild\Cake.Integration.DocsFx.targets"/>
 
 <PropertyGroup>
     <PrepareForBuildDependsOn Condition="'$(ExcludeRestorePackageImports)' != 'true'" >$(PrepareForBuildDependsOn);WriteVersionToFile</PrepareForBuildDependsOn>

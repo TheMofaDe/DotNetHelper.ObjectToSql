@@ -33,7 +33,9 @@
     </PropertyGroup>
 </Target>
 
+<Import  Condition="'$(MSBuildProjectExtension)' == '.csproj'"  Project="$(RepoRootPath)\build\msbuild\Version.targets"/>
 <Import  Condition="'$(MSBuildProjectExtension)' == '.csproj'"  Project="$(RepoRootPath)\build\msbuild\Cake.Integration.targets"/>
+<Import  Condition="'$(MSBuildProjectExtension)' == '.csproj' AND '$(GenerateDocumentation)' == 'true'"  Project="$(RepoRootPath)\build\msbuild\Cake.Integration.DocsFx.targets"/>
 
 
 </Project>

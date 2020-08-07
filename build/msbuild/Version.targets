@@ -6,7 +6,6 @@
     </PackageReference>
 </ItemGroup>
 
-<Import Condition="'$(MSBuildProjectExtension)' == '.csproj'"  Project="$(RepoRootPath)\build\msbuild\Cake.Integration.targets"/>
 
  <PropertyGroup>
     <PrepareForBuildDependsOn>WriteVersions;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>
