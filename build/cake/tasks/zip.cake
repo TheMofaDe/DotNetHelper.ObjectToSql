@@ -9,9 +9,9 @@ var zipFilesTask = Task("Zip-Files")
 
         foreach(var outputPath in project.OutputPaths){
             var targetFramework = System.IO.Path.GetFileName(outputPath.FullPath);
-            var zipFileName = parameters.Paths.Directories.BuildArtifact.CombineWithFilePath($"{project.AssemblyName}-{parameters.Version.SemVersion}-{targetFramework}.zip");
+            var zipFileName = parameters.Paths.Directories.Artifacts.CombineWithFilePath($"{project.AssemblyName}-{parameters.Version.SemVersion}-{targetFramework}.zip");
             
-            CreateDirectory(parameters.Paths.Directories.BuildArtifact);
+            CreateDirectory(parameters.Paths.Directories.Artifacts);
             Zip(outputPath.FullPath,zipFileName);
         }
         // (var targetFramework in project.TargetFrameworkVersions){}

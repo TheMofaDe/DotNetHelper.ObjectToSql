@@ -24,6 +24,7 @@ public class BuildPaths
         var artifactsBinDir               = artifactsDir.Combine("bin");
         var nativeDir                     = artifactsDir.Combine("native");
         var nugetRootDir                  = artifactsDir.Combine("nuget");
+        var installerDir                  = artifactsDir.Combine("installer");
         var buildArtifactDir              = artifactsDir.Combine("build-artifact");
         var testResultsOutputDir          = artifactsDir.Combine("test-results");
         var releaseNotesOutputFilePath    = buildArtifactDir.CombineWithFilePath("releasenotes.md");
@@ -39,6 +40,7 @@ public class BuildPaths
             nugetRootDir,
             artifactsBinDir,
             nativeDir,
+            installerDir,
             context);
 
         return new BuildPaths
@@ -61,6 +63,7 @@ public class BuildDirectories
     public DirectoryPath Native { get; private set; }
     public DirectoryPath TestResultsOutput { get; private set; }
     public DirectoryPath ArtifactsBin { get; private set; }
+    public DirectoryPath Installer { get; private set; }
     public List<DirectoryPath> ToClean { get; private set; }
 
     public ReadOnlyCollection<FilePath> CoverageResults { get {
@@ -87,7 +90,7 @@ public class BuildDirectories
         }
         return list.AsReadOnly();
     }}
-
+    
     public ReadOnlyCollection<FilePath> BuildArtifacts { get {
         var list = new List<FilePath>(){};
         var files =  Context.GetFiles($"{BuildArtifact.FullPath}/**/*.zip");
@@ -96,7 +99,6 @@ public class BuildDirectories
         }
         return list.AsReadOnly();
     }}
-
 
     public BuildDirectories(
         DirectoryPath rootDir,
@@ -108,6 +110,7 @@ public class BuildDirectories
         DirectoryPath nugetRootDir,
         DirectoryPath artifactsBinDir,
         DirectoryPath nativeDir,
+        DirectoryPath installerDir,
         ICakeContext context
         )
     {
@@ -115,6 +118,7 @@ public class BuildDirectories
         Root = rootDir;
         Source = sourceDir;
         ArtifactsRoot = artifactsRootDir;
+        Installer = installerDir;
         Artifacts = artifactsDir;
         BuildArtifact = buildArtifactDir;
         Native = nativeDir;

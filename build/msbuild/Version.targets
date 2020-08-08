@@ -1,14 +1,7 @@
 <Project>
 
-<ItemGroup>
-    <PackageReference Include="GitInfo" Version="2.0.30">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-</ItemGroup>
 
-<Import Condition="'$(MSBuildProjectExtension)' == '.csproj'"  Project="$(RepoRootPath)\build\msbuild\Cake.Integration.targets"/>
-
- <PropertyGroup>
+  <PropertyGroup>
     <PrepareForBuildDependsOn>WriteVersions;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>
   </PropertyGroup>
 

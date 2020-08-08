@@ -1,7 +1,5 @@
 <Project>
 
- <Import  Condition="'$(MSBuildProjectExtension)' == '.csproj' AND '$(GenerateDocumentation)' == 'true'"  Project="$(RepoRootPath)\build\msbuild\Cake.Integration.DocsFx.targets"/>
-
 <PropertyGroup>
     <PrepareForBuildDependsOn Condition="'$(ExcludeRestorePackageImports)' != 'true'" >$(PrepareForBuildDependsOn);WriteVersionToFile</PrepareForBuildDependsOn>
 </PropertyGroup>
@@ -43,7 +41,7 @@
       WriteOnlyWhenDifferent="true"
       Lines="$(VersionJson)"
       File="$(RepoArtifactsRootPath)build.version.json"
-      ContinueOnError="true"/>
+      ContinueOnError="false"/>
 </Target>
 
 

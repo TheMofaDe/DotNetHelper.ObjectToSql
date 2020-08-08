@@ -70,6 +70,7 @@ items:
   syntax:
     content: >-
       public static ObjectToSql ObjToSql<T>(this T dbConnection, bool includeNonPublicProperties = true)
+
           where T : DbConnection
     parameters:
     - id: dbConnection

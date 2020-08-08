@@ -4,7 +4,7 @@ public class BuildParameters
     private readonly ICakeContext _context;
     // TODO :: START
     public const string MainRepoOwner  = "TheMoFaDe";
-    public const string MainRepoName = "DotNetHelper.ObjectToSql";
+    public const string MainRepoName = "DotNetHelper.Database";
     public string SolutionFile { get; } = ""; // You can leave empty if only one solution file exist in the root folder
     // TODO :: END
     public SolutionParserResult SolutionParserResult {get;}
@@ -12,6 +12,7 @@ public class BuildParameters
     public List<string> TargetFrameworks {get;}
     public string Target { get; private set; }  
     public string Configuration { get; private set; } 
+    public string Verbosity { get; private set; } 
     public bool IsRunningOnAppVeyor { get; private set; }
     public bool IsRunningOnTravis { get; private set; }
     public bool IsRunningOnAzurePipeline { get; private set; }
@@ -46,6 +47,7 @@ public class BuildParameters
          Credentials = new BuildCredentials(context); 
          Configuration = context.Argument("configuration", "Release");
          Target =        context.Argument("target", "Default");
+         Verbosity =     context.Argument("verbosity", "Information");
 
          // TODO :: START
          if(string.IsNullOrEmpty(SolutionFile))

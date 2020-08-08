@@ -1,0 +1,102 @@
+<Project>
+
+<Target Name="MetadataForMSI"   DependsOnTargets="SetVersionMetadata"  >
+
+<PropertyGroup>
+    <PrepareForBuildDependsOn Condition="'$(CreateMSI)' == 'true'">$(PrepareForBuildDependsOn);MetadataForMSI</PrepareForBuildDependsOn>
+</PropertyGroup>
+
+<!-- If You need to modify WixMetadata value use tools like https://codebeautify.org/xml-escape-unescape to prettify the code  -->
+<PropertyGroup>
+<WixMetadata>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;Wix xmlns=&quot;http://schemas.microsoft.com/wix/2006/wi&quot;
+     RequiredVersion=&quot;3.11.1.2318&quot;&gt;
+
+  &lt;Product Id=&quot;*&quot;
+           Name=&quot;$(AssemblyName)&quot;
+           Language=&quot;1033&quot;
+           Version=&quot;$(FileVersion)&quot;
+           Manufacturer=&quot;$(Company)&quot;
+           UpgradeCode=&quot;{29535638-A72B-438D-AFF0-0713F1AFAA90}&quot;&gt;
+    &lt;!-- MUST BE GLOBALLY UNIQUE ACROSS APPLICATIONS --&gt;
+
+    &lt;!-- Define Package Details --&gt;
+    &lt;Package InstallerVersion=&quot;200&quot;
+             Compressed=&quot;yes&quot;
+             InstallScope=&quot;perMachine&quot;
+             Manufacturer=&quot;$(Company)&quot;
+             Description=&quot;$(AssemblyName) $(FileVersion)&quot;
+             Keywords=&quot;$(AssemblyName),Installer,MSI&quot;
+             Comments=&quot;$(Copyright) Properties, Inc.&quot;/&gt;
+
+    &lt;!-- Define Upgrade Specifications AllowSameVersionUpgrades=&quot;yes&quot; DowngradeErrorMessage=&quot;A newer version of [ProductName] is already installed.&quot; --&gt;
+    &lt;MajorUpgrade AllowDowngrades=&quot;yes&quot; /&gt;
+
+    &lt;!-- Define Supported Media Types --&gt;
+    &lt;MediaTemplate EmbedCab=&quot;yes&quot; /&gt;
+
+    &lt;!-- Define Features --&gt;
+    &lt;Feature Id=&quot;ProductFeature&quot;
+             Title=&quot;$(AssemblyName)&quot;
+             Level=&quot;1&quot;&gt;
+      &lt;ComponentGroupRef Id=&quot;NetBinComponents&quot; /&gt;
+      &lt;ComponentRef Id=&quot;ApplicationShortcutDesktop&quot; /&gt;
+    &lt;/Feature&gt;
+  &lt;/Product&gt;
+
+
+  &lt;!-- Define the directory structure where program gets installed --&gt;
+  &lt;Fragment&gt;
+
+    &lt;Directory Id=&quot;TARGETDIR&quot; Name=&quot;SourceDir&quot;&gt;
+      &lt;Directory Id=&quot;DesktopFolder&quot; Name=&quot;Desktop&quot;&gt;
+        &lt;Component Id=&quot;ApplicationShortcutDesktop&quot; Guid=&quot;{EEFC9267-1F00-4960-833F-E636F9E5747A}&quot;&gt;
+          &lt;Shortcut Id=&quot;ApplicationDesktopShortcut&quot;
+                    Name=&quot;$(AssemblyName)&quot;
+                    Description=&quot;$(AssemblyName) shortcut&quot;
+                    Target=&quot;[AppDir]$(AssemblyName).exe&quot;
+                    WorkingDirectory=&quot;AppDir&quot;/&gt;
+          &lt;RemoveFolder Id=&quot;DesktopFolder&quot; On=&quot;uninstall&quot;/&gt;
+          &lt;RegistryValue
+            Root=&quot;HKCU&quot;
+            Key=&quot;Software/$(var.Manufacturer)/$(AssemblyName)&quot;
+            Name=&quot;installed&quot;
+            Type=&quot;integer&quot;
+            Value=&quot;1&quot;
+            KeyPath=&quot;yes&quot;/&gt;
+        &lt;/Component&gt;
+      &lt;/Directory&gt;
+
+      &lt;Directory Id=&quot;MyAppsDir&quot; Name=&quot;MyApps&quot;&gt;
+        &lt;Directory Id=&apos;ManufacturerFolder&apos; Name=&apos;$(var.Manufacturer)&apos;&gt;
+          &lt;Directory Id=&quot;AppDir&quot; Name=&quot;$(AssemblyName)&quot; /&gt;
+        &lt;/Directory&gt;
+      &lt;/Directory&gt;
+    &lt;/Directory&gt;
+
+  &lt;/Fragment&gt;
+
+&lt;/Wix&gt;
+</WixMetadata>
+
+</PropertyGroup>
+
+
+   <Message Importance="High" Text="WE MADE IT $(CreateMSI) = $(RepoArtifactsRootPath)v$(PackageVersion)\installer\$(TargetFramework)\wix-metadata.wxs" />
+
+<WriteLinesToFile
+      Overwrite="true"
+      Lines="$(WixMetadata)"
+      File="$(RepoArtifactsRootPath)v$(PackageVersion)\installer\$(TargetFramework)\wix-metadata.wxs"
+      ContinueOnError="false"/>
+
+
+
+</Target>
+
+
+
+
+
+</Project>

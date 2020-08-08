@@ -4,12 +4,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 <br/> 
 
-## Unreleased
-*	Support for ReadOnly attribute. This allows for you to create insert sql from an object but ignore a specified property.
-for insert sql creation only. You would want this when you have a default value for a column in your table schema and you want 
-to use that default value instead of the .net property value.
 
+## [2.0.18] - 2020-08-07
 
+### Fix dll Assembly Version cause by new build process
+
+<br/> 
 
 ## [2.0.17] - 2020-07-09
 
@@ -25,6 +25,9 @@ to use that default value instead of the .net property value.
 
 ### Added
 - MySQL support
+-	Support for ReadOnly attribute. This allows for you to create insert sql from an object but ignore a specified property.
+for insert sql creation only. You would want this when you have a default value for a column in your table schema and you want 
+to use that default value instead of the .net property value.
 
 ### Changed
 - Affect method *BuildDBParameters* . ConvertToDatabaseValue will no longer auto-convert value of DateTime.MinValue that belongs to a DateTime type property
@@ -110,6 +113,7 @@ public string BuildQuery( ActionType actionType, object instance,string tableNam
 [1.0.93]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.93
 [1.0.94]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.94
 [2.0.0]:  https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v2.0.0
+[2.0.18]:  https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v2.0.18
 
 
 
