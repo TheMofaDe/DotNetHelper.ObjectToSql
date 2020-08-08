@@ -7,9 +7,9 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
 
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageTags>.NET,Solution Template</PackageTags>
+    <PackageTags>Object2Sql,ObjectToSql,Object,To,Sql</PackageTags>
     <RepositoryType>git</RepositoryType>
-    <Description>A .NET Solution starter template </Description>
+    <Description>DotNetHelper.ObjectToSql takes your generic types or dynamic &amp; anonymous objects  and convert it to sql. It also works with DataTable</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <Authors>Joseph McNeal Jr</Authors>
     <Company>Joseph McNeal Jr</Company>
