@@ -16,6 +16,8 @@ Task("Pack-Nuget")
      foreach(var project in parameters.SolutionProjects)
      {
         DotNetCorePack(project.ProjectFilePath.FullPath, new DotNetCorePackSettings { 
+            ArgumentCustomization = args => args
+                               .Append($"-p:Version={parameters.Version.SemVersion}"),
             Configuration = parameters.Configuration,
             OutputDirectory =  parameters.Paths.Directories.NugetRoot,
             NoBuild = true, 

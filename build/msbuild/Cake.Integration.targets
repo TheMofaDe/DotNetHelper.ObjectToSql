@@ -1,6 +1,5 @@
 <Project>
 
-
 <PropertyGroup>
     <PrepareForBuildDependsOn Condition="'$(ExcludeRestorePackageImports)' != 'true'" >$(PrepareForBuildDependsOn);WriteVersionToFile</PrepareForBuildDependsOn>
 </PropertyGroup>
@@ -42,7 +41,7 @@
       WriteOnlyWhenDifferent="true"
       Lines="$(VersionJson)"
       File="$(RepoArtifactsRootPath)build.version.json"
-      ContinueOnError="true"/>
+      ContinueOnError="false"/>
 </Target>
 
 

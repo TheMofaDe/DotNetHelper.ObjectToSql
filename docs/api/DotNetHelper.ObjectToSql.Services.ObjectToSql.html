@@ -461,6 +461,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;IDbDataParameter&gt; BuildDbDataParameterList&lt;T&gt;(T instance, Func&lt;string, object, IDbDataParameter&gt; getNewParameter)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -531,6 +532,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;IDbDataParameter&gt; BuildDbDataParameterList&lt;T&gt;(T instance, Func&lt;string, object, IDbDataParameter&gt; getNewParameter, Func&lt;object, string&gt; xmlSerializer, Func&lt;object, string&gt; jsonSerializer, Func&lt;object, string&gt; csvSerializer)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -616,6 +618,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;DbParameter&gt; BuildDbParameterList&lt;T&gt;(T instance, Func&lt;string, object, DbParameter&gt; getNewParameter)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -686,6 +689,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;DbParameter&gt; BuildDbParameterList&lt;T&gt;(T instance, Func&lt;string, object, DbParameter&gt; getNewParameter, Func&lt;object, string&gt; xmlSerializer, Func&lt;object, string&gt; jsonSerializer, Func&lt;object, string&gt; csvSerializer)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -827,6 +831,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string BuildQuery&lt;T&gt;(ActionType actionType, string tableName = null)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -895,6 +900,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string BuildQuery&lt;T&gt;(ActionType actionType, string tableName = null, params Expression&lt;Func&lt;T, object&gt;&gt;[] primaryKeys)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -968,6 +974,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string BuildQueryWithOutputs&lt;T&gt;(ActionType actionType, params Expression&lt;Func&lt;T, object&gt;&gt;[] outputFields)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1036,6 +1043,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string BuildQueryWithOutputs&lt;T&gt;(ActionType actionType, string tableName = null, params Expression&lt;Func&lt;T, object&gt;&gt;[] outputFields)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1236,6 +1244,7 @@ then convert the value to its serialize self</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetAllNonIgnoreFields&lt;T&gt;(T instance, bool includeNonPublicAccessor)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1306,6 +1315,7 @@ then convert the value to its serialize self</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetAllNonIgnoreFields&lt;T&gt;(bool includeNonPublicAccessor)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1425,6 +1435,7 @@ then convert the value to its serialize self</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetKeyFields&lt;T&gt;(bool includeNonPublicAccessor)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1603,6 +1614,7 @@ then convert the value to its serialize self</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetNonIdentityFields&lt;T&gt;(bool includeNonPublicAccessor)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1722,6 +1734,7 @@ then convert the value to its serialize self</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;MemberWrapper&gt; GetNonKeyFields&lt;T&gt;(bool includeNonPublicAccessor)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

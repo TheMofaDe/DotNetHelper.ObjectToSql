@@ -301,6 +301,7 @@ items:
   syntax:
     content: >-
       public string BuildQuery<T>(ActionType actionType, string tableName = null)
+
           where T : class
     parameters:
     - id: actionType
@@ -345,6 +346,7 @@ items:
   syntax:
     content: >-
       public string BuildQuery<T>(ActionType actionType, string tableName = null, params Expression<Func<T, object>>[] primaryKeys)
+
           where T : class
     parameters:
     - id: actionType
@@ -432,6 +434,7 @@ items:
   syntax:
     content: >-
       public string BuildQueryWithOutputs<T>(ActionType actionType, params Expression<Func<T, object>>[] outputFields)
+
           where T : class
     parameters:
     - id: actionType
@@ -482,6 +485,7 @@ items:
   syntax:
     content: >-
       public string BuildQueryWithOutputs<T>(ActionType actionType, string tableName = null, params Expression<Func<T, object>>[] outputFields)
+
           where T : class
     parameters:
     - id: actionType
@@ -535,6 +539,7 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetNonKeyFields<T>(bool includeNonPublicAccessor)
+
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -621,6 +626,7 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetKeyFields<T>(bool includeNonPublicAccessor)
+
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -707,6 +713,7 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetNonIdentityFields<T>(bool includeNonPublicAccessor)
+
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -835,6 +842,7 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetAllNonIgnoreFields<T>(bool includeNonPublicAccessor)
+
           where T : class
     parameters:
     - id: includeNonPublicAccessor
@@ -881,6 +889,7 @@ items:
   syntax:
     content: >-
       public List<MemberWrapper> GetAllNonIgnoreFields<T>(T instance, bool includeNonPublicAccessor)
+
           where T : class
     parameters:
     - id: instance
@@ -1022,6 +1031,7 @@ items:
   syntax:
     content: >-
       public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer)
+
           where T : class
     parameters:
     - id: instance
@@ -1078,6 +1088,7 @@ items:
   syntax:
     content: >-
       public List<DbParameter> BuildDbParameterList<T>(T instance, Func<string, object, DbParameter> getNewParameter)
+
           where T : class
     parameters:
     - id: instance
@@ -1128,6 +1139,7 @@ items:
   syntax:
     content: >-
       public List<IDbDataParameter> BuildDbDataParameterList<T>(T instance, Func<string, object, IDbDataParameter> getNewParameter, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer)
+
           where T : class
     parameters:
     - id: instance
@@ -1184,6 +1196,7 @@ items:
   syntax:
     content: >-
       public List<IDbDataParameter> BuildDbDataParameterList<T>(T instance, Func<string, object, IDbDataParameter> getNewParameter)
+
           where T : class
     parameters:
     - id: instance
