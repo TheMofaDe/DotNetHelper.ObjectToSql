@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 <br/> 
 
 
-## [2.0.18] - 2020-08-07
+## [2.0.28] - 2020-08-07
 
 ### Fix dll Assembly Version cause by new build process
 
@@ -113,7 +113,7 @@ public string BuildQuery( ActionType actionType, object instance,string tableNam
 [1.0.93]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.93
 [1.0.94]: https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v1.0.94
 [2.0.0]:  https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v2.0.0
-[2.0.18]:  https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v2.0.18
+[2.0.28]:  https://github.com/TheMofaDe/DotNetHelper.ObjectToSql/releases/tag/v2.0.18
 
 
 
