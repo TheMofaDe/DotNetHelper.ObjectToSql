@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 <br/> 
 
 
+## [2.0.29] - 2020-08-11
+### Fix bug with oracle parameter binding using @ instead of :
+
+<br/> 
+
+
 ## [2.0.28] - 2020-08-07
 
 ### Fix dll Assembly Version cause by new build process

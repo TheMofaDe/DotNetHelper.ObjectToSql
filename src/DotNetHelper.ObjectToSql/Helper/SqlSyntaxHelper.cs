@@ -47,6 +47,11 @@ namespace DotNetHelper.ObjectToSql.Helper
 		public SqlSyntaxHelper(DataBaseType type)
 		{
 			DataBaseType = type;
+			if(type == DataBaseType.Oracle)
+			{
+				//https://docs.microsoft.com/en-us/dotnet/api/system.data.oracleclient.oraclecommand.parameters?redirectedfrom=MSDN&view=netframework-4.8#System_Data_OracleClient_OracleCommand_Parameters
+				ConstAt = ':';
+			}
 			EnclosedValueLookup = new Dictionary<Type, string>()
 			{
 
